@@ -1,0 +1,138 @@
+{
+  "name": "NodeCache",
+  "path": "./User/Vendor/MSFT",
+  "nodes": [
+    {
+      "name": "",
+      "title": "ProviderID",
+      "path": "./User/Vendor/MSFT/NodeCache/{ProviderID}",
+      "format": "node",
+      "access": [
+        "Add",
+        "Delete",
+        "Get"
+      ],
+      "description": "Group settings per DM server. Each group of settings is distinguished by the server's Provider ID. It should be the same DM server PROVIDER-ID value that was supplied through the w7 APPLICATION configuration service provider XML during the enrollment process. In Windows Phone 8, only one enterprise management server is supported. That is, there should be only one ProviderID node under NodeCache.",
+      "occurrence": "ZeroOrOne",
+      "dynamicNaming": "It should be the same DM server PROVIDER-ID value that was supplied through the w7 APPLICATION configuration service provider XML during the enrollment process.",
+      "children": [
+        {
+          "name": "CacheVersion",
+          "path": "./User/Vendor/MSFT/NodeCache/{ProviderID}/CacheVersion",
+          "format": "chr",
+          "access": [
+            "Add",
+            "Get",
+            "Replace"
+          ],
+          "description": "Character string representing the cache version set by the server.",
+          "occurrence": "ZeroOrOne",
+          "allowedValues": {
+            "type": "None"
+          }
+        },
+        {
+          "name": "ChangedNodes",
+          "path": "./User/Vendor/MSFT/NodeCache/{ProviderID}/ChangedNodes",
+          "format": "chr",
+          "access": [
+            "Get"
+          ],
+          "description": "List of nodes whose values do not match their expected values as specified in /NodeID/ExpectedValue",
+          "occurrence": "ZeroOrOne"
+        },
+        {
+          "name": "ChangedNodesData",
+          "path": "./User/Vendor/MSFT/NodeCache/{ProviderID}/ChangedNodesData",
+          "format": "xml",
+          "access": [
+            "Get"
+          ],
+          "description": "XML containing nodes whose values do not match their expected values as specified in /NodeID/ExpectedValue",
+          "occurrence": "ZeroOrOne",
+          "applicability": {
+            "minOsBuild": "10.0.15063",
+            "cspVersion": "1.1"
+          }
+        },
+        {
+          "name": "Nodes",
+          "path": "./User/Vendor/MSFT/NodeCache/{ProviderID}/Nodes",
+          "format": "node",
+          "access": [
+            "Get"
+          ],
+          "description": "Root node for cached nodes",
+          "occurrence": "One",
+          "children": [
+            {
+              "name": "",
+              "title": "NodeID",
+              "path": "./User/Vendor/MSFT/NodeCache/{ProviderID}/Nodes/{NodeID}",
+              "format": "node",
+              "access": [
+                "Add",
+                "Delete",
+                "Get"
+              ],
+              "description": "Information about each cached node is stored under NodeID as specified by the server. This value must not contain a comma.",
+              "occurrence": "ZeroOrMore",
+              "dynamicNaming": "ServerGeneratedUniqueIdentifier",
+              "allowedValues": {
+                "type": "None"
+              },
+              "children": [
+                {
+                  "name": "AutoSetExpectedValue",
+                  "path": "./User/Vendor/MSFT/NodeCache/{ProviderID}/Nodes/{NodeID}/AutoSetExpectedValue",
+                  "format": "null",
+                  "access": [
+                    "Add",
+                    "Delete",
+                    "Get"
+                  ],
+                  "description": "This will automatically set the value on the device to match the node's actual value. The node is specified in NodeURI.",
+                  "occurrence": "One",
+                  "applicability": {
+                    "minOsBuild": "10.0.15063",
+                    "cspVersion": "1.1"
+                  }
+                },
+                {
+                  "name": "ExpectedValue",
+                  "path": "./User/Vendor/MSFT/NodeCache/{ProviderID}/Nodes/{NodeID}/ExpectedValue",
+                  "format": "chr",
+                  "access": [
+                    "Add",
+                    "Delete",
+                    "Get"
+                  ],
+                  "description": "This is the value that the server expects to be on the device. When the configuration service provider initiates a session, it checks the expected value against the node's actual value.",
+                  "occurrence": "One",
+                  "allowedValues": {
+                    "type": "None"
+                  }
+                },
+                {
+                  "name": "NodeURI",
+                  "path": "./User/Vendor/MSFT/NodeCache/{ProviderID}/Nodes/{NodeID}/NodeURI",
+                  "format": "chr",
+                  "access": [
+                    "Add",
+                    "Delete",
+                    "Get"
+                  ],
+                  "description": "This node's value is a complete OMA DM node URI. It can specify either an interior or leaf node in the device management tree.",
+                  "occurrence": "One",
+                  "allowedValues": {
+                    "type": "None"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

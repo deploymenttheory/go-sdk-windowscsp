@@ -1,0 +1,132 @@
+{
+  "name": "Display",
+  "path": "./User/Vendor/MSFT/Policy/Config",
+  "nodes": [
+    {
+      "name": "ConfigureMultipleDisplayMode",
+      "path": "./User/Vendor/MSFT/Policy/Config/Display/ConfigureMultipleDisplayMode",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "Set the default display arrangement as clone, extend, internalOnly, externalOnly or default Windows Settings.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "99.9.99999",
+        "cspVersion": "9.9",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "Default."
+          },
+          {
+            "value": "1",
+            "description": "Internal Only."
+          },
+          {
+            "value": "2",
+            "description": "External Only."
+          },
+          {
+            "value": "3",
+            "description": "Clone."
+          },
+          {
+            "value": "4",
+            "description": "Extend."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "ConfigureMultipleDisplayMode",
+        "areaPath": "Display~AT~System~DisplayCat",
+        "element": "DisplayConfigureMultipleDisplayModeSettings"
+      }
+    },
+    {
+      "name": "EnablePerProcessDpi",
+      "path": "./User/Vendor/MSFT/Policy/Config/Display/EnablePerProcessDpi",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "Enable or disable Per-Process System DPI for all applications.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.17134",
+        "cspVersion": "7.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "Disable."
+          },
+          {
+            "value": "1",
+            "description": "Enable."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "DisplayPerProcessSystemDpiSettings",
+        "areaPath": "Display~AT~System~DisplayCat",
+        "element": "DisplayGlobalPerProcessSystemDpiSettings"
+      }
+    },
+    {
+      "name": "SetClonePreferredResolutionSource",
+      "path": "./User/Vendor/MSFT/Policy/Config/Display/SetClonePreferredResolutionSource",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "Set the cloned monitor preferred resolution source as internal or external monitor or set to default.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "99.9.99999",
+        "cspVersion": "9.9",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "Default."
+          },
+          {
+            "value": "1",
+            "description": "Internal."
+          },
+          {
+            "value": "2",
+            "description": "External."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "SetClonePreferredResolutionSource",
+        "areaPath": "Display~AT~System~DisplayCat",
+        "element": "DisplaySetClonePreferredResolutionSourceSettings"
+      }
+    }
+  ]
+}

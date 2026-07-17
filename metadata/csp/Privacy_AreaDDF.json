@@ -1,0 +1,3199 @@
+{
+  "name": "Privacy",
+  "path": "./Device/Vendor/MSFT/Policy/Config",
+  "nodes": [
+    {
+      "name": "AllowAutoAcceptPairingAndPrivacyConsentPrompts",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/AllowAutoAcceptPairingAndPrivacyConsentPrompts",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "Allows or disallows the automatic acceptance of the pairing and privacy user consent dialog when launching apps. NoteThere were issues reported with the previous release of this policy and a fix was  Most restricted value is 0.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "Not allowed."
+          },
+          {
+            "value": "1",
+            "description": "Allowed."
+          }
+        ]
+      }
+    },
+    {
+      "name": "AllowCrossDeviceClipboard",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/AllowCrossDeviceClipboard",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "Allows syncing of Clipboard across devices under the same Microsoft account.",
+      "default": "1",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.17763",
+        "cspVersion": "8.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "Not allowed."
+          },
+          {
+            "value": "1",
+            "description": "Allowed."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "AllowCrossDeviceClipboard",
+        "areaPath": "OSPolicy~AT~System~PolicyPolicies"
+      }
+    },
+    {
+      "name": "AllowInputPersonalization",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/AllowInputPersonalization",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "Updated in Windows 10, version 1809. This policy specifies whether users on the device have the option to enable online speech recognition. When enabled, users can use their voice for dictation and to talk to Cortana and other apps that use Microsoft cloud-based speech recognition. Microsoft will use voice input to help improve our speech services. If the policy value is set to 0, online speech recognition will be disabled and users cannot enable online speech recognition via settings. If policy value is set to 1 or is not configured, control is deferred to users. Most restricted value is 0.",
+      "default": "1",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.10240",
+        "cspVersion": "1.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "Not allowed."
+          },
+          {
+            "value": "1",
+            "description": "Choice deferred to user's preference."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "AllowInputPersonalization",
+        "areaPath": "Globalization~AT~ControlPanel~RegionalOptions"
+      }
+    },
+    {
+      "name": "DisableAdvertisingId",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/DisableAdvertisingId",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "Enables or disables the Advertising ID. Most restricted value is 0.",
+      "default": "65535",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "Disabled."
+          },
+          {
+            "value": "1",
+            "description": "Enabled."
+          },
+          {
+            "value": "65535",
+            "description": "Not configured."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "DisableAdvertisingId",
+        "areaPath": "UserProfiles~AT~System~UserProfiles"
+      }
+    },
+    {
+      "name": "DisablePrivacyExperience",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/DisablePrivacyExperience",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "Enabling this policy prevents the privacy experience from launching during user logon for new and upgraded users.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.17763",
+        "cspVersion": "8.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "Allow the 'choose privacy settings for your device' screen for a new user during their first logon or when an existing user logs in for the first time after an upgrade."
+          },
+          {
+            "value": "1",
+            "description": "Do not allow the 'choose privacy settings for your device' screen when a new user logs in or an existing user logs in for the first time after an upgrade."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "DisablePrivacyExperience",
+        "areaPath": "OOBE~AT~WindowsComponents~OOBE"
+      }
+    },
+    {
+      "name": "EnableActivityFeed",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/EnableActivityFeed",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "Enables ActivityFeed, which is responsible for mirroring different activity types (as applicable) across device graph of the user.",
+      "default": "1",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.16299",
+        "cspVersion": "6.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "Disabled. Apps/OS can't publish the activities and roaming is disabled. (not published to the cloud)."
+          },
+          {
+            "value": "1",
+            "description": "Enabled. Apps/OS can publish the activities and will be roamed across device graph."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "EnableActivityFeed",
+        "areaPath": "OSPolicy~AT~System~PolicyPolicies"
+      }
+    },
+    {
+      "name": "LetAppsAccessAccountInfo",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessAccountInfo",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting specifies whether Windows apps can access account information.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "User in control."
+          },
+          {
+            "value": "1",
+            "description": "Force allow."
+          },
+          {
+            "value": "2",
+            "description": "Force deny."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessAccountInfo",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessAccountInfo_Enum"
+      }
+    },
+    {
+      "name": "LetAppsAccessAccountInfo_ForceAllowTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessAccountInfo_ForceAllowTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Windows apps. Listed Windows apps are allowed access to account information. This setting overrides the default LetAppsAccessAccountInfo policy setting for the specified Windows apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessAccountInfo",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessAccountInfo_ForceAllowTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessAccountInfo_ForceDenyTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessAccountInfo_ForceDenyTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Windows apps. Listed Windows apps are denied access to account information. This setting overrides the default LetAppsAccessAccountInfo policy setting for the specified Windows apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessAccountInfo",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessAccountInfo_ForceDenyTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessAccountInfo_UserInControlOfTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessAccountInfo_UserInControlOfTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Windows apps. The user is able to control the account information privacy setting for the listed Windows apps. This setting overrides the default LetAppsAccessAccountInfo policy setting for the specified Windows apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessAccountInfo",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessAccountInfo_UserInControlOfTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessBackgroundSpatialPerception",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessBackgroundSpatialPerception",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting specifies whether Windows apps can access the movement of the user's head, hands, motion controllers, and other tracked objects, while the apps are running in the background.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.18362",
+        "cspVersion": "9.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "User in control."
+          },
+          {
+            "value": "1",
+            "description": "Force allow."
+          },
+          {
+            "value": "2",
+            "description": "Force deny."
+          }
+        ]
+      }
+    },
+    {
+      "name": "LetAppsAccessBackgroundSpatialPerception_ForceAllowTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessBackgroundSpatialPerception_ForceAllowTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Windows Store Apps. Listed apps are allowed access to the user's movements while the apps are running in the background. This setting overrides the default LetAppsAccessBackgroundSpatialPerception policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.18362",
+        "cspVersion": "9.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      }
+    },
+    {
+      "name": "LetAppsAccessBackgroundSpatialPerception_ForceDenyTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessBackgroundSpatialPerception_ForceDenyTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Windows Store Apps. Listed apps are denied access to the user's movements while the apps are running in the background. This setting overrides the default LetAppsAccessBackgroundSpatialPerception policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.18362",
+        "cspVersion": "9.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      }
+    },
+    {
+      "name": "LetAppsAccessBackgroundSpatialPerception_UserInControlOfTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessBackgroundSpatialPerception_UserInControlOfTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Windows Store Apps. The user is able to control the user movements privacy setting for the listed apps. This setting overrides the default LetAppsAccessBackgroundSpatialPerception policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.18362",
+        "cspVersion": "9.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      }
+    },
+    {
+      "name": "LetAppsAccessCalendar",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessCalendar",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting specifies whether Windows apps can access the calendar.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "User in control."
+          },
+          {
+            "value": "1",
+            "description": "Force allow."
+          },
+          {
+            "value": "2",
+            "description": "Force deny."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessCalendar",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessCalendar_Enum"
+      }
+    },
+    {
+      "name": "LetAppsAccessCalendar_ForceAllowTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessCalendar_ForceAllowTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Windows apps. Listed Windows apps are allowed access to the calendar. This setting overrides the default LetAppsAccessCalendar policy setting for the specified Windows apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessCalendar",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessCalendar_ForceAllowTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessCalendar_ForceDenyTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessCalendar_ForceDenyTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Windows apps. Listed Windows apps are denied access to the calendar. This setting overrides the default LetAppsAccessCalendar policy setting for the specified Windows apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessCalendar",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessCalendar_ForceDenyTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessCalendar_UserInControlOfTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessCalendar_UserInControlOfTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Windows apps. The user is able to control the calendar privacy setting for the listed Windows apps. This setting overrides the default LetAppsAccessCalendar policy setting for the specified Windows apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessCalendar",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessCalendar_UserInControlOfTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessCallHistory",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessCallHistory",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting specifies whether Windows apps can access call history.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "User in control."
+          },
+          {
+            "value": "1",
+            "description": "Force allow."
+          },
+          {
+            "value": "2",
+            "description": "Force deny."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessCallHistory",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessCallHistory_Enum"
+      }
+    },
+    {
+      "name": "LetAppsAccessCallHistory_ForceAllowTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessCallHistory_ForceAllowTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Windows apps. Listed Windows apps are allowed access to call history. This setting overrides the default LetAppsAccessCallHistory policy setting for the specified Windows apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessCallHistory",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessCallHistory_ForceAllowTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessCallHistory_ForceDenyTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessCallHistory_ForceDenyTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Windows apps. Listed Windows apps are denied access to call history. This setting overrides the default LetAppsAccessCallHistory policy setting for the specified Windows apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessCallHistory",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessCallHistory_ForceDenyTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessCallHistory_UserInControlOfTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessCallHistory_UserInControlOfTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Windows apps. The user is able to control the call history privacy setting for the listed Windows apps. This setting overrides the default LetAppsAccessCallHistory policy setting for the specified Windows apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessCallHistory",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessCallHistory_UserInControlOfTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessCamera",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessCamera",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting specifies whether Windows apps can access the camera.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "User in control."
+          },
+          {
+            "value": "1",
+            "description": "Force allow."
+          },
+          {
+            "value": "2",
+            "description": "Force deny."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessCamera",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessCamera_Enum"
+      }
+    },
+    {
+      "name": "LetAppsAccessCamera_ForceAllowTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessCamera_ForceAllowTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps are allowed access to the camera. This setting overrides the default LetAppsAccessCamera policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessCamera",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessCamera_ForceAllowTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessCamera_ForceDenyTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessCamera_ForceDenyTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps are denied access to the camera. This setting overrides the default LetAppsAccessCamera policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessCamera",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessCamera_ForceDenyTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessCamera_UserInControlOfTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessCamera_UserInControlOfTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. The user is able to control the camera privacy setting for the listed apps. This setting overrides the default LetAppsAccessCamera policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessCamera",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessCamera_UserInControlOfTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessContacts",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessContacts",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting specifies whether Windows apps can access contacts.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "User in control."
+          },
+          {
+            "value": "1",
+            "description": "Force allow."
+          },
+          {
+            "value": "2",
+            "description": "Force deny."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessContacts",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessContacts_Enum"
+      }
+    },
+    {
+      "name": "LetAppsAccessContacts_ForceAllowTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessContacts_ForceAllowTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps are allowed access to contacts. This setting overrides the default LetAppsAccessContacts policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessContacts",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessContacts_ForceAllowTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessContacts_ForceDenyTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessContacts_ForceDenyTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps are denied access to contacts. This setting overrides the default LetAppsAccessContacts policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessContacts",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessContacts_ForceDenyTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessContacts_UserInControlOfTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessContacts_UserInControlOfTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. The user is able to control the contacts privacy setting for the listed apps. This setting overrides the default LetAppsAccessContacts policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessContacts",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessContacts_UserInControlOfTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessEmail",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessEmail",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting specifies whether Windows apps can access email.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "User in control."
+          },
+          {
+            "value": "1",
+            "description": "Force allow."
+          },
+          {
+            "value": "2",
+            "description": "Force deny."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessEmail",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessEmail_Enum"
+      }
+    },
+    {
+      "name": "LetAppsAccessEmail_ForceAllowTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessEmail_ForceAllowTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps are allowed access to email. This setting overrides the default LetAppsAccessEmail policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessEmail",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessEmail_ForceAllowTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessEmail_ForceDenyTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessEmail_ForceDenyTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps are denied access to email. This setting overrides the default LetAppsAccessEmail policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessEmail",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessEmail_ForceDenyTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessEmail_UserInControlOfTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessEmail_UserInControlOfTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. The user is able to control the email privacy setting for the listed apps. This setting overrides the default LetAppsAccessEmail policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessEmail",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessEmail_UserInControlOfTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessGazeInput",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessGazeInput",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting specifies whether Windows apps can access the eye tracker.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.17134",
+        "cspVersion": "7.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "Range",
+        "value": "[0-2]"
+      }
+    },
+    {
+      "name": "LetAppsAccessGazeInput_ForceAllowTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessGazeInput_ForceAllowTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Windows Store Apps. Listed apps are allowed access to the eye tracker. This setting overrides the default LetAppsAccessGazeInput policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.17134",
+        "cspVersion": "7.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      }
+    },
+    {
+      "name": "LetAppsAccessGazeInput_ForceDenyTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessGazeInput_ForceDenyTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Windows Store Apps. Listed apps are denied access to the eye tracker. This setting overrides the default LetAppsAccessGazeInput policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.17134",
+        "cspVersion": "7.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      }
+    },
+    {
+      "name": "LetAppsAccessGazeInput_UserInControlOfTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessGazeInput_UserInControlOfTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Windows Store Apps. The user is able to control the eye tracker privacy setting for the listed apps. This setting overrides the default LetAppsAccessGazeInput policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.17134",
+        "cspVersion": "7.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      }
+    },
+    {
+      "name": "LetAppsAccessGraphicsCaptureProgrammatic",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessGraphicsCaptureProgrammatic",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting specifies whether Windows apps can use screen capture on arbitrary windows or displays.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "Range",
+        "value": "[0-2]"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessGraphicsCaptureProgrammatic",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessGraphicsCaptureWithoutBorder_Enum"
+      }
+    },
+    {
+      "name": "LetAppsAccessGraphicsCaptureProgrammatic_ForceAllowTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessGraphicsCaptureProgrammatic_ForceAllowTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps are allowed to use screen capture on arbitrary windows or displays. This setting overrides the default LetAppsAccessGraphicsCaptureWithoutBorder policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessGraphicsCaptureProgrammatic",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessGraphicsCaptureWithoutBorder_ForceAllowTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessGraphicsCaptureProgrammatic_ForceDenyTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessGraphicsCaptureProgrammatic_ForceDenyTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps are denied the use of screen capture on arbitrary windows or displays. This setting overrides the default LetAppsAccessGraphicsCaptureWithoutBorder policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessGraphicsCaptureProgrammatic",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessGraphicsCaptureWithoutBorder_ForceDenyTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessGraphicsCaptureProgrammatic_UserInControlOfTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessGraphicsCaptureProgrammatic_UserInControlOfTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. The user is able to control the programmatic screen capture setting for the listed apps. This setting overrides the default LetAppsAccessGraphicsCaptureWithoutBorder policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessGraphicsCaptureProgrammatic",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessGraphicsCaptureWithoutBorder_UserInControlOfTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessGraphicsCaptureWithoutBorder",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessGraphicsCaptureWithoutBorder",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting specifies whether Windows apps can disable the screen capture border.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "Range",
+        "value": "[0-2]"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessGraphicsCaptureWithoutBorder",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessGraphicsCaptureWithoutBorder_Enum"
+      }
+    },
+    {
+      "name": "LetAppsAccessGraphicsCaptureWithoutBorder_ForceAllowTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessGraphicsCaptureWithoutBorder_ForceAllowTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps are allowed to disable the screen capture border. This setting overrides the default LetAppsAccessGraphicsCaptureWithoutBorder policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessGraphicsCaptureWithoutBorder",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessGraphicsCaptureWithoutBorder_ForceAllowTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessGraphicsCaptureWithoutBorder_ForceDenyTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessGraphicsCaptureWithoutBorder_ForceDenyTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps are denied configuration access to the screen capture border. This setting overrides the default LetAppsAccessGraphicsCaptureWithoutBorder policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessGraphicsCaptureWithoutBorder",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessGraphicsCaptureWithoutBorder_ForceDenyTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessGraphicsCaptureWithoutBorder_UserInControlOfTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessGraphicsCaptureWithoutBorder_UserInControlOfTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. The user is able to control the screen capture border privacy setting for the listed apps. This setting overrides the default LetAppsAccessGraphicsCaptureWithoutBorder policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessGraphicsCaptureWithoutBorder",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessGraphicsCaptureWithoutBorder_UserInControlOfTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessHumanPresence",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessHumanPresence",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting specifies whether Windows apps can access the human presence sensor.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.25000",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "User in control."
+          },
+          {
+            "value": "1",
+            "description": "Force allow."
+          },
+          {
+            "value": "2",
+            "description": "Force deny."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessHumanPresence",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessHumanPresence_Enum"
+      }
+    },
+    {
+      "name": "LetAppsAccessHumanPresence_ForceAllowTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessHumanPresence_ForceAllowTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps are allowed access to the human presence sensor. This setting overrides the default LetAppsAccessHumanPresence policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.25000",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessHumanPresence",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessHumanPresence_ForceAllowTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessHumanPresence_ForceDenyTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessHumanPresence_ForceDenyTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps are denied access to the human presence sensor. This setting overrides the default LetAppsAccessHumanPresence policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.25000",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessHumanPresence",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessHumanPresence_ForceDenyTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessHumanPresence_UserInControlOfTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessHumanPresence_UserInControlOfTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. The user is able to control the human presence privacy setting for the listed apps. This setting overrides the default LetAppsAccessHumanPresence policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.25000",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessHumanPresence",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessHumanPresence_UserInControlOfTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessLocation",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessLocation",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting specifies whether Windows apps can access location.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "User in control."
+          },
+          {
+            "value": "1",
+            "description": "Force allow."
+          },
+          {
+            "value": "2",
+            "description": "Force deny."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessLocation",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessLocation_Enum"
+      }
+    },
+    {
+      "name": "LetAppsAccessLocation_ForceAllowTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessLocation_ForceAllowTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps are allowed access to location. This setting overrides the default LetAppsAccessLocation policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessLocation",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessLocation_ForceAllowTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessLocation_ForceDenyTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessLocation_ForceDenyTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps are denied access to location. This setting overrides the default LetAppsAccessLocation policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessLocation",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessLocation_ForceDenyTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessLocation_UserInControlOfTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessLocation_UserInControlOfTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. The user is able to control the location privacy setting for the listed apps. This setting overrides the default LetAppsAccessLocation policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessLocation",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessLocation_UserInControlOfTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessMessaging",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessMessaging",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting specifies whether Windows apps can read or send messages (text or MMS).",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "User in control."
+          },
+          {
+            "value": "1",
+            "description": "Force allow."
+          },
+          {
+            "value": "2",
+            "description": "Force deny."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessMessaging",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessMessaging_Enum"
+      }
+    },
+    {
+      "name": "LetAppsAccessMessaging_ForceAllowTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessMessaging_ForceAllowTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps are allowed to read or send messages (text or MMS). This setting overrides the default LetAppsAccessMessaging policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessMessaging",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessMessaging_ForceAllowTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessMessaging_ForceDenyTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessMessaging_ForceDenyTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps are not allowed to read or send messages (text or MMS). This setting overrides the default LetAppsAccessMessaging policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessMessaging",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessMessaging_ForceDenyTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessMessaging_UserInControlOfTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessMessaging_UserInControlOfTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. The user is able to control the messaging privacy setting for the listed apps. This setting overrides the default LetAppsAccessMessaging policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessMessaging",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessMessaging_UserInControlOfTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessMicrophone",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessMicrophone",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting specifies whether Windows apps can access the microphone.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "User in control."
+          },
+          {
+            "value": "1",
+            "description": "Force allow."
+          },
+          {
+            "value": "2",
+            "description": "Force deny."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessMicrophone",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessMicrophone_Enum"
+      }
+    },
+    {
+      "name": "LetAppsAccessMicrophone_ForceAllowTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessMicrophone_ForceAllowTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps are allowed access to the microphone. This setting overrides the default LetAppsAccessMicrophone policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessMicrophone",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessMicrophone_ForceAllowTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessMicrophone_ForceDenyTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessMicrophone_ForceDenyTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps are denied access to the microphone. This setting overrides the default LetAppsAccessMicrophone policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessMicrophone",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessMicrophone_ForceDenyTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessMicrophone_UserInControlOfTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessMicrophone_UserInControlOfTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. The user is able to control the microphone privacy setting for the listed apps. This setting overrides the default LetAppsAccessMicrophone policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessMicrophone",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessMicrophone_UserInControlOfTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessMotion",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessMotion",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting specifies whether Windows apps can access motion data.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "User in control."
+          },
+          {
+            "value": "1",
+            "description": "Force allow."
+          },
+          {
+            "value": "2",
+            "description": "Force deny."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessMotion",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessMotion_Enum"
+      }
+    },
+    {
+      "name": "LetAppsAccessMotion_ForceAllowTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessMotion_ForceAllowTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps are allowed access to motion data. This setting overrides the default LetAppsAccessMotion policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessMotion",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessMotion_ForceAllowTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessMotion_ForceDenyTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessMotion_ForceDenyTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps are denied access to motion data. This setting overrides the default LetAppsAccessMotion policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessMotion",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessMotion_ForceDenyTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessMotion_UserInControlOfTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessMotion_UserInControlOfTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. The user is able to control the motion privacy setting for the listed apps. This setting overrides the default LetAppsAccessMotion policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessMotion",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessMotion_UserInControlOfTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessNotifications",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessNotifications",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting specifies whether Windows apps can access notifications.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.15063",
+        "cspVersion": "5.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "User in control."
+          },
+          {
+            "value": "1",
+            "description": "Force allow."
+          },
+          {
+            "value": "2",
+            "description": "Force deny."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessNotifications",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessNotifications_Enum"
+      }
+    },
+    {
+      "name": "LetAppsAccessNotifications_ForceAllowTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessNotifications_ForceAllowTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps are allowed access to notifications. This setting overrides the default LetAppsAccessNotifications policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.15063",
+        "cspVersion": "5.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessNotifications",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessNotifications_ForceAllowTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessNotifications_ForceDenyTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessNotifications_ForceDenyTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps are denied access to notifications. This setting overrides the default LetAppsAccessNotifications policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.15063",
+        "cspVersion": "5.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessNotifications",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessNotifications_ForceDenyTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessNotifications_UserInControlOfTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessNotifications_UserInControlOfTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. The user is able to control the notifications privacy setting for the listed apps. This setting overrides the default LetAppsAccessNotifications policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.15063",
+        "cspVersion": "5.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessNotifications",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessNotifications_UserInControlOfTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessPhone",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessPhone",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting specifies whether Windows apps can make phone calls",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "User in control."
+          },
+          {
+            "value": "1",
+            "description": "Force allow."
+          },
+          {
+            "value": "2",
+            "description": "Force deny."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessPhone",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessPhone_Enum"
+      }
+    },
+    {
+      "name": "LetAppsAccessPhone_ForceAllowTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessPhone_ForceAllowTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps are allowed to make phone calls. This setting overrides the default LetAppsAccessPhone policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessPhone",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessPhone_ForceAllowTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessPhone_ForceDenyTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessPhone_ForceDenyTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps are not allowed to make phone calls. This setting overrides the default LetAppsAccessPhone policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessPhone",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessPhone_ForceDenyTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessPhone_UserInControlOfTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessPhone_UserInControlOfTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. The user is able to control the phone call privacy setting for the listed apps. This setting overrides the default LetAppsAccessPhone policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessPhone",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessPhone_UserInControlOfTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessRadios",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessRadios",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting specifies whether Windows apps have access to control radios.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "User in control."
+          },
+          {
+            "value": "1",
+            "description": "Force allow."
+          },
+          {
+            "value": "2",
+            "description": "Force deny."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessRadios",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessRadios_Enum"
+      }
+    },
+    {
+      "name": "LetAppsAccessRadios_ForceAllowTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessRadios_ForceAllowTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps will have access to control radios. This setting overrides the default LetAppsAccessRadios policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessRadios",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessRadios_ForceAllowTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessRadios_ForceDenyTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessRadios_ForceDenyTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps will not have access to control radios. This setting overrides the default LetAppsAccessRadios policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessRadios",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessRadios_ForceDenyTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessRadios_UserInControlOfTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessRadios_UserInControlOfTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. The user is able to control the radios privacy setting for the listed apps. This setting overrides the default LetAppsAccessRadios policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessRadios",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessRadios_UserInControlOfTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessSystemAIModels",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessSystemAIModels",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting specifies whether Windows apps can use text and image generation features of Windows.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "Range",
+        "value": "[0-2]"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessSystemAIModels",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessSystemAIModels_Enum"
+      }
+    },
+    {
+      "name": "LetAppsAccessSystemAIModels_ForceAllowTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessSystemAIModels_ForceAllowTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps are allowed to use text and image generation features of Windows. This setting overrides the default LetAppsAccessSystemAIModels policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessSystemAIModels",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessSystemAIModels_ForceAllowTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessSystemAIModels_ForceDenyTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessSystemAIModels_ForceDenyTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps are denied the use text and image generation features of Windows. This setting overrides the default LetAppsAccessSystemAIModels policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessSystemAIModels",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessSystemAIModels_ForceDenyTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessSystemAIModels_UserInControlOfTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessSystemAIModels_UserInControlOfTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. The user is able to control the text and image generation setting for the listed apps. This setting overrides the default LetAppsAccessSystemAIModels policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessSystemAIModels",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessSystemAIModels_UserInControlOfTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessTasks",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessTasks",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting specifies whether Windows apps can access tasks.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.15063",
+        "cspVersion": "5.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "Range",
+        "value": "[0-2]"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessTasks",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessTasks_Enum"
+      }
+    },
+    {
+      "name": "LetAppsAccessTasks_ForceAllowTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessTasks_ForceAllowTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps are allowed access to tasks. This setting overrides the default LetAppsAccessTasks policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.15063",
+        "cspVersion": "5.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessTasks",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessTasks_ForceAllowTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessTasks_ForceDenyTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessTasks_ForceDenyTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps are denied access to tasks. This setting overrides the default LetAppsAccessTasks policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.15063",
+        "cspVersion": "5.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessTasks",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessTasks_ForceDenyTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessTasks_UserInControlOfTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessTasks_UserInControlOfTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. The user is able to control the tasks privacy setting for the listed apps. This setting overrides the default LetAppsAccessTasks policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.15063",
+        "cspVersion": "5.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessTasks",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessTasks_UserInControlOfTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessTrustedDevices",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessTrustedDevices",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting specifies whether Windows apps can access trusted devices.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "User in control."
+          },
+          {
+            "value": "1",
+            "description": "Force allow."
+          },
+          {
+            "value": "2",
+            "description": "Force deny."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessTrustedDevices",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessTrustedDevices_Enum"
+      }
+    },
+    {
+      "name": "LetAppsAccessTrustedDevices_ForceAllowTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessTrustedDevices_ForceAllowTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps will have access to trusted devices. This setting overrides the default LetAppsAccessTrustedDevices policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessTrustedDevices",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessTrustedDevices_ForceAllowTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessTrustedDevices_ForceDenyTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessTrustedDevices_ForceDenyTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps will not have access to trusted devices. This setting overrides the default LetAppsAccessTrustedDevices policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessTrustedDevices",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessTrustedDevices_ForceDenyTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsAccessTrustedDevices_UserInControlOfTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessTrustedDevices_UserInControlOfTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. The user is able to control the 'trusted devices' privacy setting for the listed apps. This setting overrides the default LetAppsAccessTrustedDevices policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsAccessTrustedDevices",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsAccessTrustedDevices_UserInControlOfTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsActivateWithVoice",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsActivateWithVoice",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting specifies whether Windows apps can be activated by voice.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.18362",
+        "cspVersion": "9.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "User in control. Users can decide if Windows apps can be activated by voice using Settings \u003e Privacy options on the device."
+          },
+          {
+            "value": "1",
+            "description": "Force allow. Windows apps can be activated by voice and users cannot change it."
+          },
+          {
+            "value": "2",
+            "description": "Force deny. Windows apps cannot be activated by voice and users cannot change it."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "LetAppsActivateWithVoice",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsActivateWithVoice_Enum"
+      }
+    },
+    {
+      "name": "LetAppsActivateWithVoiceAboveLock",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsActivateWithVoiceAboveLock",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting specifies whether Windows apps can be activated by voice while the system is locked.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.18362",
+        "cspVersion": "9.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "User in control. Users can decide if Windows apps can be activated by voice while the screen is locked using Settings \u003e Privacy options on the device."
+          },
+          {
+            "value": "1",
+            "description": "Force allow. Windows apps can be activated by voice while the screen is locked, and users cannot change it."
+          },
+          {
+            "value": "2",
+            "description": "Force deny. Windows apps cannot be activated by voice while the screen is locked, and users cannot change it."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "LetAppsActivateWithVoiceAboveLock",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsActivateWithVoiceAboveLock_Enum"
+      }
+    },
+    {
+      "name": "LetAppsGetDiagnosticInfo",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsGetDiagnosticInfo",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting specifies whether Windows apps can get diagnostic information about other apps, including user names.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.15063",
+        "cspVersion": "5.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "User in control."
+          },
+          {
+            "value": "1",
+            "description": "Force allow."
+          },
+          {
+            "value": "2",
+            "description": "Force deny."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "LetAppsGetDiagnosticInfo",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsGetDiagnosticInfo_Enum"
+      }
+    },
+    {
+      "name": "LetAppsGetDiagnosticInfo_ForceAllowTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsGetDiagnosticInfo_ForceAllowTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Windows apps. Listed Windows apps are allowed to get diagnostic information about other apps, including user names. This setting overrides the default LetAppsGetDiagnosticInfo policy setting for the specified Windows apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.15063",
+        "cspVersion": "5.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsGetDiagnosticInfo",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsGetDiagnosticInfo_ForceAllowTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsGetDiagnosticInfo_ForceDenyTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsGetDiagnosticInfo_ForceDenyTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Windows apps. Listed Windows apps are not allowed to get diagnostic information about other apps, including user names. This setting overrides the default LetAppsGetDiagnosticInfo policy setting for the specified Windows apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.15063",
+        "cspVersion": "5.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsGetDiagnosticInfo",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsGetDiagnosticInfo_ForceDenyTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsGetDiagnosticInfo_UserInControlOfTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsGetDiagnosticInfo_UserInControlOfTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Windows apps. The user is able to control the app diagnostics privacy setting for the listed Windows apps. This setting overrides the default LetAppsGetDiagnosticInfo policy setting for the specified Windows apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.15063",
+        "cspVersion": "5.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsGetDiagnosticInfo",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsGetDiagnosticInfo_UserInControlOfTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsRunInBackground",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsRunInBackground",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting specifies whether Windows apps can run in the background.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.15063",
+        "cspVersion": "5.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "."
+          },
+          {
+            "value": "1",
+            "description": "Force allow."
+          },
+          {
+            "value": "2",
+            "description": "Force deny."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "LetAppsRunInBackground",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsRunInBackground_Enum"
+      }
+    },
+    {
+      "name": "LetAppsRunInBackground_ForceAllowTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsRunInBackground_ForceAllowTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Windows apps. Listed Windows apps are allowed to run in the background. This setting overrides the default LetAppsRunInBackground policy setting for the specified Windows apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.15063",
+        "cspVersion": "5.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsRunInBackground",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsRunInBackground_ForceAllowTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsRunInBackground_ForceDenyTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsRunInBackground_ForceDenyTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Windows apps. Listed Windows apps are not allowed to run in the background. This setting overrides the default LetAppsRunInBackground policy setting for the specified Windows apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.15063",
+        "cspVersion": "5.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsRunInBackground",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsRunInBackground_ForceDenyTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsRunInBackground_UserInControlOfTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsRunInBackground_UserInControlOfTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Windows apps. The user is able to control the background apps privacy setting for the listed Windows apps. This setting overrides the default LetAppsRunInBackground policy setting for the specified Windows apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.15063",
+        "cspVersion": "5.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsRunInBackground",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsRunInBackground_UserInControlOfTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsSyncWithDevices",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsSyncWithDevices",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting specifies whether Windows apps can communicate with unpaired wireless devices.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "User in control."
+          },
+          {
+            "value": "1",
+            "description": "Force allow."
+          },
+          {
+            "value": "2",
+            "description": "Force deny."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "LetAppsSyncWithDevices",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsSyncWithDevices_Enum"
+      }
+    },
+    {
+      "name": "LetAppsSyncWithDevices_ForceAllowTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsSyncWithDevices_ForceAllowTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps will be allowed to communicate with unpaired wireless devices. This setting overrides the default LetAppsSyncWithDevices policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsSyncWithDevices",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsSyncWithDevices_ForceAllowTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsSyncWithDevices_ForceDenyTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsSyncWithDevices_ForceDenyTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. Listed apps will not be allowed to communicate with unpaired wireless devices. This setting overrides the default LetAppsSyncWithDevices policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsSyncWithDevices",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsSyncWithDevices_ForceDenyTheseApps_List"
+      }
+    },
+    {
+      "name": "LetAppsSyncWithDevices_UserInControlOfTheseApps",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsSyncWithDevices_UserInControlOfTheseApps",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "List of semi-colon delimited Package Family Names of Microsoft Store Apps. The user is able to control the 'Communicate with unpaired wireless devices' privacy setting for the listed apps. This setting overrides the default LetAppsSyncWithDevices policy setting for the specified apps.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.14393",
+        "cspVersion": "4.1",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "LetAppsSyncWithDevices",
+        "areaPath": "AppPrivacy~AT~WindowsComponents~AppPrivacy",
+        "element": "LetAppsSyncWithDevices_UserInControlOfTheseApps_List"
+      }
+    },
+    {
+      "name": "PublishUserActivities",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/PublishUserActivities",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "Allows apps/system to publish 'User Activities' into ActivityFeed.",
+      "default": "1",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.16299",
+        "cspVersion": "6.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "Disabled. Apps/OS can't publish the user activities."
+          },
+          {
+            "value": "1",
+            "description": "Enabled. Apps/OS can publish the user activities."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "PublishUserActivities",
+        "areaPath": "OSPolicy~AT~System~PolicyPolicies"
+      }
+    },
+    {
+      "name": "UploadUserActivities",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Privacy/UploadUserActivities",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "Allows ActivityFeed to upload published 'User Activities'.",
+      "default": "1",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.17134",
+        "cspVersion": "7.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "Not allowed."
+          },
+          {
+            "value": "1",
+            "description": "Allowed."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "UploadUserActivities",
+        "areaPath": "OSPolicy~AT~System~PolicyPolicies"
+      }
+    }
+  ]
+}

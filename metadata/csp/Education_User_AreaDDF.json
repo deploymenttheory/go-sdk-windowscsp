@@ -1,0 +1,118 @@
+{
+  "name": "Education",
+  "path": "./User/Vendor/MSFT/Policy/Config",
+  "nodes": [
+    {
+      "name": "AllowGraphingCalculator",
+      "path": "./User/Vendor/MSFT/Policy/Config/Education/AllowGraphingCalculator",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting allows you to control whether graphing functionality is available in the Windows Calculator app. If you disable this policy setting, graphing functionality will not be accessible in the Windows Calculator app. If you enable or don't configure this policy setting, users will be able to access graphing functionality.",
+      "default": "1",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.19041",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x62;0x63;0x64;0x65;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "Disabled."
+          },
+          {
+            "value": "1",
+            "description": "Enabled."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "AllowGraphingCalculator",
+        "areaPath": "Programs~AT~WindowsComponents~Calculator"
+      }
+    },
+    {
+      "name": "DefaultPrinterName",
+      "path": "./User/Vendor/MSFT/Policy/Config/Education/DefaultPrinterName",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy sets user's default printer",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.16299",
+        "cspVersion": "6.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      }
+    },
+    {
+      "name": "PreventAddingNewPrinters",
+      "path": "./User/Vendor/MSFT/Policy/Config/Education/PreventAddingNewPrinters",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "Boolean that specifies whether or not to prevent user to install new printers",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.16299",
+        "cspVersion": "6.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "Allow user installation."
+          },
+          {
+            "value": "1",
+            "description": "Prevent user installation."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "NoAddPrinter",
+        "areaPath": "Printing~AT~ControlPanel~CplPrinters"
+      }
+    },
+    {
+      "name": "PrinterNames",
+      "path": "./User/Vendor/MSFT/Policy/Config/Education/PrinterNames",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy provisions per-user network printers",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.16299",
+        "cspVersion": "6.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": "0xF000"
+      }
+    }
+  ]
+}

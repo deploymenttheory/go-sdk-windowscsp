@@ -1,0 +1,86 @@
+{
+  "name": "Office",
+  "path": "./Device/Vendor/MSFT",
+  "nodes": [
+    {
+      "name": "Installation",
+      "path": "./Device/Vendor/MSFT/Office/Installation",
+      "format": "node",
+      "access": [
+        "Get"
+      ],
+      "description": "Installation options for the office CSP.",
+      "occurrence": "One",
+      "children": [
+        {
+          "name": "",
+          "title": "id",
+          "path": "./Device/Vendor/MSFT/Office/Installation/{id}",
+          "format": "node",
+          "access": [
+            "Add",
+            "Delete",
+            "Get"
+          ],
+          "description": "A unique identifier which represents the installation instance id.",
+          "occurrence": "ZeroOrMore",
+          "dynamicNaming": "A unique identifier which represents the installation instance id.",
+          "children": [
+            {
+              "name": "FinalStatus",
+              "path": "./Device/Vendor/MSFT/Office/Installation/{id}/FinalStatus",
+              "format": "int",
+              "access": [
+                "Get"
+              ],
+              "description": "Final Office 365 installation status.",
+              "occurrence": "One",
+              "applicability": {
+                "minOsBuild": "10.0.17763",
+                "cspVersion": "1.5"
+              }
+            },
+            {
+              "name": "Install",
+              "path": "./Device/Vendor/MSFT/Office/Installation/{id}/Install",
+              "format": "chr",
+              "access": [
+                "Exec",
+                "Get"
+              ],
+              "description": "The install action will install office given the configuration in the data.  The string data is the xml configuration to use in order to install office.",
+              "occurrence": "One",
+              "allowedValues": {
+                "type": "None"
+              }
+            },
+            {
+              "name": "Status",
+              "path": "./Device/Vendor/MSFT/Office/Installation/{id}/Status",
+              "format": "int",
+              "access": [
+                "Get"
+              ],
+              "description": "The installation status of the CSP.",
+              "occurrence": "One"
+            }
+          ]
+        },
+        {
+          "name": "CurrentStatus",
+          "path": "./Device/Vendor/MSFT/Office/Installation/CurrentStatus",
+          "format": "chr",
+          "access": [
+            "Get"
+          ],
+          "description": "The current Office 365 installation status on the machine",
+          "occurrence": "One",
+          "applicability": {
+            "minOsBuild": "10.0.16299",
+            "cspVersion": "1.3"
+          }
+        }
+      ]
+    }
+  ]
+}

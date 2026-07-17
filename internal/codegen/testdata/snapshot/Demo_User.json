@@ -1,0 +1,16 @@
+{
+  "name": "Demo",
+  "path": "./User/Vendor/MSFT",
+  "nodes": [
+    {
+      "name": "Greeting",
+      "path": "./User/Vendor/MSFT/Demo/Greeting",
+      "format": "chr",
+      "access": [
+        "Get",
+        "Replace"
+      ],
+      "description": "Per-user greeting text."
+    }
+  ]
+}

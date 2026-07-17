@@ -1,0 +1,381 @@
+{
+  "name": "ADMX_TerminalServer",
+  "path": "./User/Vendor/MSFT/Policy/Config",
+  "nodes": [
+    {
+      "name": "TS_CLIENT_ALLOW_SIGNED_FILES_1",
+      "path": "./User/Vendor/MSFT/Policy/Config/ADMX_TerminalServer/TS_CLIENT_ALLOW_SIGNED_FILES_1",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000, 10.0.19043.1202, 10.0.19042.1202, 10.0.19041.1202",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ADMX",
+        "admx": {
+          "area": "TerminalServer~AT~WindowsComponents~TS_GP_NODE~TS_CLIENT",
+          "name": "TS_CLIENT_ALLOW_SIGNED_FILES_1",
+          "file": "TerminalServer.admx"
+        }
+      }
+    },
+    {
+      "name": "TS_CLIENT_ALLOW_UNSIGNED_FILES_1",
+      "path": "./User/Vendor/MSFT/Policy/Config/ADMX_TerminalServer/TS_CLIENT_ALLOW_UNSIGNED_FILES_1",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000, 10.0.19043.1202, 10.0.19042.1202, 10.0.19041.1202",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ADMX",
+        "admx": {
+          "area": "TerminalServer~AT~WindowsComponents~TS_GP_NODE~TS_CLIENT",
+          "name": "TS_CLIENT_ALLOW_UNSIGNED_FILES_1",
+          "file": "TerminalServer.admx"
+        }
+      }
+    },
+    {
+      "name": "TS_CLIENT_DISABLE_PASSWORD_SAVING_1",
+      "path": "./User/Vendor/MSFT/Policy/Config/ADMX_TerminalServer/TS_CLIENT_DISABLE_PASSWORD_SAVING_1",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000, 10.0.19043.1202, 10.0.19042.1202, 10.0.19041.1202",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ADMX",
+        "admx": {
+          "area": "TerminalServer~AT~WindowsComponents~TS_GP_NODE~TS_CLIENT",
+          "name": "TS_CLIENT_DISABLE_PASSWORD_SAVING_1",
+          "file": "TerminalServer.admx"
+        }
+      }
+    },
+    {
+      "name": "TS_CLIENT_TRUSTED_CERTIFICATE_THUMBPRINTS_2",
+      "path": "./User/Vendor/MSFT/Policy/Config/ADMX_TerminalServer/TS_CLIENT_TRUSTED_CERTIFICATE_THUMBPRINTS_2",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000, 10.0.19043.1202, 10.0.19042.1202, 10.0.19041.1202",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ADMX",
+        "admx": {
+          "area": "TerminalServer~AT~WindowsComponents~TS_GP_NODE~TS_CLIENT",
+          "name": "TS_CLIENT_TRUSTED_CERTIFICATE_THUMBPRINTS_2",
+          "file": "TerminalServer.admx"
+        }
+      }
+    },
+    {
+      "name": "TS_EASY_PRINT_User",
+      "path": "./User/Vendor/MSFT/Policy/Config/ADMX_TerminalServer/TS_EASY_PRINT_User",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000, 10.0.19043.1202, 10.0.19042.1202, 10.0.19041.1202",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ADMX",
+        "admx": {
+          "area": "TerminalServer~AT~WindowsComponents~TS_GP_NODE~TS_TERMINAL_SERVER~TS_PRINT_REDIRECTION",
+          "name": "TS_EASY_PRINT_User",
+          "file": "TerminalServer.admx"
+        }
+      }
+    },
+    {
+      "name": "TS_GATEWAY_POLICY_AUTH_METHOD",
+      "path": "./User/Vendor/MSFT/Policy/Config/ADMX_TerminalServer/TS_GATEWAY_POLICY_AUTH_METHOD",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000, 10.0.19043.1202, 10.0.19042.1202, 10.0.19041.1202",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ADMX",
+        "admx": {
+          "area": "TerminalServer~AT~WindowsComponents~TS_GP_NODE~TS_GATEWAY",
+          "name": "TS_GATEWAY_POLICY_AUTH_METHOD",
+          "file": "TerminalServer.admx"
+        }
+      }
+    },
+    {
+      "name": "TS_GATEWAY_POLICY_ENABLE",
+      "path": "./User/Vendor/MSFT/Policy/Config/ADMX_TerminalServer/TS_GATEWAY_POLICY_ENABLE",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000, 10.0.19043.1202, 10.0.19042.1202, 10.0.19041.1202",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ADMX",
+        "admx": {
+          "area": "TerminalServer~AT~WindowsComponents~TS_GP_NODE~TS_GATEWAY",
+          "name": "TS_GATEWAY_POLICY_ENABLE",
+          "file": "TerminalServer.admx"
+        }
+      }
+    },
+    {
+      "name": "TS_GATEWAY_POLICY_SERVER",
+      "path": "./User/Vendor/MSFT/Policy/Config/ADMX_TerminalServer/TS_GATEWAY_POLICY_SERVER",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000, 10.0.19043.1202, 10.0.19042.1202, 10.0.19041.1202",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ADMX",
+        "admx": {
+          "area": "TerminalServer~AT~WindowsComponents~TS_GP_NODE~TS_GATEWAY",
+          "name": "TS_GATEWAY_POLICY_SERVER",
+          "file": "TerminalServer.admx"
+        }
+      }
+    },
+    {
+      "name": "TS_RADC_DefaultConnection",
+      "path": "./User/Vendor/MSFT/Policy/Config/ADMX_TerminalServer/TS_RADC_DefaultConnection",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000, 10.0.19043.1202, 10.0.19042.1202, 10.0.19041.1202",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ADMX",
+        "admx": {
+          "area": "TerminalServer~AT~WindowsComponents~TS_GP_NODE~TS_RADC",
+          "name": "TS_RADC_DefaultConnection",
+          "file": "TerminalServer.admx"
+        }
+      }
+    },
+    {
+      "name": "TS_RemoteControl_1",
+      "path": "./User/Vendor/MSFT/Policy/Config/ADMX_TerminalServer/TS_RemoteControl_1",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000, 10.0.19043.1202, 10.0.19042.1202, 10.0.19041.1202",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ADMX",
+        "admx": {
+          "area": "TerminalServer~AT~WindowsComponents~TS_GP_NODE~TS_TERMINAL_SERVER~TS_CONNECTIONS",
+          "name": "TS_RemoteControl_1",
+          "file": "TerminalServer.admx"
+        }
+      }
+    },
+    {
+      "name": "TS_SESSIONS_Disconnected_Timeout_1",
+      "path": "./User/Vendor/MSFT/Policy/Config/ADMX_TerminalServer/TS_SESSIONS_Disconnected_Timeout_1",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000, 10.0.19043.1202, 10.0.19042.1202, 10.0.19041.1202",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ADMX",
+        "admx": {
+          "area": "TerminalServer~AT~WindowsComponents~TS_GP_NODE~TS_TERMINAL_SERVER~TS_SESSION_TIME_LIMITS",
+          "name": "TS_SESSIONS_Disconnected_Timeout_1",
+          "file": "TerminalServer.admx"
+        }
+      }
+    },
+    {
+      "name": "TS_SESSIONS_Idle_Limit_1",
+      "path": "./User/Vendor/MSFT/Policy/Config/ADMX_TerminalServer/TS_SESSIONS_Idle_Limit_1",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000, 10.0.19043.1202, 10.0.19042.1202, 10.0.19041.1202",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ADMX",
+        "admx": {
+          "area": "TerminalServer~AT~WindowsComponents~TS_GP_NODE~TS_TERMINAL_SERVER~TS_SESSION_TIME_LIMITS",
+          "name": "TS_SESSIONS_Idle_Limit_1",
+          "file": "TerminalServer.admx"
+        }
+      }
+    },
+    {
+      "name": "TS_SESSIONS_Limits_1",
+      "path": "./User/Vendor/MSFT/Policy/Config/ADMX_TerminalServer/TS_SESSIONS_Limits_1",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000, 10.0.19043.1202, 10.0.19042.1202, 10.0.19041.1202",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ADMX",
+        "admx": {
+          "area": "TerminalServer~AT~WindowsComponents~TS_GP_NODE~TS_TERMINAL_SERVER~TS_SESSION_TIME_LIMITS",
+          "name": "TS_SESSIONS_Limits_1",
+          "file": "TerminalServer.admx"
+        }
+      }
+    },
+    {
+      "name": "TS_START_PROGRAM_1",
+      "path": "./User/Vendor/MSFT/Policy/Config/ADMX_TerminalServer/TS_START_PROGRAM_1",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000, 10.0.19043.1202, 10.0.19042.1202, 10.0.19041.1202",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ADMX",
+        "admx": {
+          "area": "TerminalServer~AT~WindowsComponents~TS_GP_NODE~TS_TERMINAL_SERVER~TS_SESSIONS",
+          "name": "TS_START_PROGRAM_1",
+          "file": "TerminalServer.admx"
+        }
+      }
+    },
+    {
+      "name": "TS_Session_End_On_Limit_1",
+      "path": "./User/Vendor/MSFT/Policy/Config/ADMX_TerminalServer/TS_Session_End_On_Limit_1",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000, 10.0.19043.1202, 10.0.19042.1202, 10.0.19041.1202",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ADMX",
+        "admx": {
+          "area": "TerminalServer~AT~WindowsComponents~TS_GP_NODE~TS_TERMINAL_SERVER~TS_SESSION_TIME_LIMITS",
+          "name": "TS_Session_End_On_Limit_1",
+          "file": "TerminalServer.admx"
+        }
+      }
+    }
+  ]
+}

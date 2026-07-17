@@ -1,0 +1,42 @@
+{{define "registry"}}// Client is the root Windows CSP SDK client. It fans a single transport
+// out to every generated CSP service, grouped into families.
+//
+// Generated from the {{.Release}} DDF v2 release.
+type Client struct {
+	transport client.Client
+{{- range .Families}}
+	// {{.FieldName}} {{.Doc}}
+	{{.FieldName}} *{{.TypeName}}
+{{- end}}
+}
+
+// NewClient wires every generated CSP service to transport.
+func NewClient(transport client.Client) *Client {
+	return &Client{
+		transport: transport,
+{{- range .Families}}
+		{{.FieldName}}: new{{.TypeName}}(transport),
+{{- end}}
+	}
+}
+
+// Transport returns the transport the client was built with.
+func (c *Client) Transport() client.Client { return c.transport }
+
+{{range .Families}}
+// {{.TypeName}} {{.Doc}}
+type {{.TypeName}} struct {
+{{- range .Entries}}
+	{{.FieldName}} *{{.Alias}}.{{.ServiceName}}
+{{- end}}
+}
+
+func new{{.TypeName}}(transport client.Client) *{{.TypeName}} {
+	return &{{.TypeName}}{
+{{- range .Entries}}
+		{{.FieldName}}: {{.Alias}}.New{{.ServiceName}}(transport),
+{{- end}}
+	}
+}
+
+{{end}}{{end}}

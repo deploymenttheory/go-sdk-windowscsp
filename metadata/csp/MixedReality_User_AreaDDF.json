@@ -1,0 +1,38 @@
+{
+  "name": "MixedReality",
+  "path": "./User/Vendor/MSFT/Policy/Config",
+  "nodes": [
+    {
+      "name": "AutoUnlock",
+      "path": "./User/Vendor/MSFT/Policy/Config/MixedReality/AutoUnlock",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy controls whether a signed-in user will be prompted for credentials when returning to the device after the device has entered suspended state. This policy is available both for the device as well as the user scope. When enabled for the device scope, auto unlock will be enabled for all users on the device. When enabled for the user scope, only the specific user will have auto unlock enabled.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "99.9.99999",
+        "cspVersion": "11.0",
+        "editions": "0x88;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "User will be prompted for credentials."
+          },
+          {
+            "value": "1",
+            "description": "User will not be prompted for credentials."
+          }
+        ]
+      }
+    }
+  ]
+}

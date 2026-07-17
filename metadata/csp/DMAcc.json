@@ -1,0 +1,690 @@
+{
+  "name": "DMAcc",
+  "path": "./SyncML",
+  "nodes": [
+    {
+      "name": "",
+      "title": "AccountUID",
+      "path": "./SyncML/DMAcc/{AccountUID}",
+      "format": "node",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This interior node acts as a placeholder for zero or more OMA DM server accounts. If this OMA DM server account is bootstrapped using the w7 APPLICATION, the name of this                                node is generated from the 256-bit version of SHA-2 hash of the w7 PROVIDER-ID parm.",
+      "occurrence": "ZeroOrMore",
+      "dynamicNaming": "ClientInventory",
+      "children": [
+        {
+          "name": "AAuthPref",
+          "title": "Application Authentication Type preference",
+          "path": "./SyncML/DMAcc/{AccountUID}/AAuthPref",
+          "format": "chr",
+          "access": [
+            "Add",
+            "Get",
+            "Replace"
+          ],
+          "description": "Specifies the application authentication preference. Supported values: BASIC, DIGEST. If this value is empty, the client attempts to use the authentication mechanism negotiated in the previous session if one exists. If the value is empty, no previous session exists, and MD5 credentials exist, clients try MD5 authorization first. If the criteria are not met then the client tries BASIC authorization first.",
+          "occurrence": "ZeroOrOne",
+          "allowedValues": {
+            "type": "ENUM",
+            "enum": [
+              {
+                "value": "BASIC",
+                "description": "The client attempts BASIC authentication."
+              },
+              {
+                "value": "DIGEST",
+                "description": "The client attempts MD5 authentication."
+              }
+            ]
+          }
+        },
+        {
+          "name": "AppAddr",
+          "title": "A collection of references to DM server address",
+          "path": "./SyncML/DMAcc/{AccountUID}/AppAddr",
+          "format": "node",
+          "access": [
+            "Add",
+            "Get"
+          ],
+          "description": "Interior node for DM server address.",
+          "occurrence": "One",
+          "children": [
+            {
+              "name": "",
+              "title": "ObjectName",
+              "path": "./SyncML/DMAcc/{AccountUID}/AppAddr/{ObjectName}",
+              "format": "node",
+              "access": [
+                "Add",
+                "Get"
+              ],
+              "description": "Defines the OMA DM server address. Only one server address can be configured. When mapping the w7 APPLICATION configuration service provider to the DMAcc Configuration Service Provider, the name of this element is \"1\". This is the first DM address encountered in the w7 APPLICATION configuration service provider, other DM accounts are ignored.",
+              "occurrence": "One",
+              "dynamicNaming": "ClientInventory",
+              "children": [
+                {
+                  "name": "Addr",
+                  "title": "Management Server Address",
+                  "path": "./SyncML/DMAcc/{AccountUID}/AppAddr/{ObjectName}/Addr",
+                  "format": "chr",
+                  "access": [
+                    "Add",
+                    "Get",
+                    "Replace"
+                  ],
+                  "description": "Specifies the address of the OMA DM account. The type of address stored is specified by the AddrType element.",
+                  "occurrence": "One",
+                  "allowedValues": {
+                    "type": "None"
+                  }
+                },
+                {
+                  "name": "AddrType",
+                  "title": "Management Server Address Type",
+                  "path": "./SyncML/DMAcc/{AccountUID}/AppAddr/{ObjectName}/AddrType",
+                  "format": "chr",
+                  "access": [
+                    "Add",
+                    "Get",
+                    "Replace"
+                  ],
+                  "description": "Specifies the format and interpretation of the Addr node value. The default is \"URI\". The default value of \"URI\" specifies that the OMA DM account address in Addr is a URI address. A value of \"IPv4\" specifies that the OMA DM account address in Addr is an IP address.",
+                  "default": "URI",
+                  "occurrence": "One",
+                  "allowedValues": {
+                    "type": "ENUM",
+                    "enum": [
+                      {
+                        "value": "URI",
+                        "description": "The OMA DM account address in Addr is a URI address."
+                      },
+                      {
+                        "value": "IPv4",
+                        "description": "The OMA DM account address in Addr is an IP address."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "Port",
+                  "title": "A collection of all Port objects",
+                  "path": "./SyncML/DMAcc/{AccountUID}/AppAddr/{ObjectName}/Port",
+                  "format": "node",
+                  "access": [
+                    "Add",
+                    "Get"
+                  ],
+                  "description": "Interior node for port information.",
+                  "occurrence": "ZeroOrOne",
+                  "children": [
+                    {
+                      "name": "",
+                      "title": "ObjectName",
+                      "path": "./SyncML/DMAcc/{AccountUID}/AppAddr/{ObjectName}/Port/{ObjectName}",
+                      "format": "node",
+                      "access": [
+                        "Add",
+                        "Get",
+                        "Replace"
+                      ],
+                      "description": "Only one port number can be configured. When mapping the w7 APPLICATION configuration service provider to the DMAcc Configuration Service Provider, the name of this element is \"1\".",
+                      "occurrence": "One",
+                      "dynamicNaming": "ClientInventory",
+                      "children": [
+                        {
+                          "name": "PortNbr",
+                          "title": "Port",
+                          "path": "./SyncML/DMAcc/{AccountUID}/AppAddr/{ObjectName}/Port/{ObjectName}/PortNbr",
+                          "format": "chr",
+                          "access": [
+                            "Add",
+                            "Get",
+                            "Replace"
+                          ],
+                          "description": "Specifies the port number of the OMA MD account address. This must be a decimal number that fits within the range of a 16-bit unsigned integer.",
+                          "occurrence": "One",
+                          "allowedValues": {
+                            "type": "None"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "AppAuth",
+          "title": "A collection of all references to multiple Application Authentication objects",
+          "path": "./SyncML/DMAcc/{AccountUID}/AppAuth",
+          "format": "node",
+          "access": [
+            "Add",
+            "Get"
+          ],
+          "description": "Defines authentication settings.",
+          "occurrence": "ZeroOrOne",
+          "children": [
+            {
+              "name": "",
+              "title": "ObjectName",
+              "path": "./SyncML/DMAcc/{AccountUID}/AppAuth/{ObjectName}",
+              "format": "node",
+              "access": [
+                "Add",
+                "Get"
+              ],
+              "description": "Defines one set of authentication settings. When mapping the w7 APPLICATION configuration service provider to the DMAcc Configuration Service Provider, the name of this element is same name as the AAuthLevel value (\"CLRED\" or \"SRVCRED\").",
+              "occurrence": "OneOrMore",
+              "dynamicNaming": "ClientInventory",
+              "allowedValues": {
+                "type": "None"
+              },
+              "children": [
+                {
+                  "name": "AAuthData",
+                  "title": "Application Authentication Data",
+                  "path": "./SyncML/DMAcc/{AccountUID}/AppAuth/{ObjectName}/AAuthData",
+                  "format": "bin",
+                  "access": [
+                    "Add",
+                    "Replace"
+                  ],
+                  "description": "Specifies the next nonce used for authentication. \"Nonce\" refers to a number used once. It is often a random or pseudo-random number issued in an authentication protocol to ensure that old communications cannot be reused in repeat attacks.",
+                  "occurrence": "ZeroOrOne",
+                  "allowedValues": {
+                    "type": "None"
+                  }
+                },
+                {
+                  "name": "AAuthLevel",
+                  "title": "Application Authentication level",
+                  "path": "./SyncML/DMAcc/{AccountUID}/AppAuth/{ObjectName}/AAuthLevel",
+                  "format": "chr",
+                  "access": [
+                    "Add",
+                    "Get",
+                    "Replace"
+                  ],
+                  "description": "Specifies the application authentication level. A value of \"CLCRED\" indicates that the credentials client will authenticate itself to the OMA DM server at the OMA DM protocol level. A value of \"SRVCRED\" indicates that the credentials server will authenticate itself to the OMA DM Client at the OMA DM protocol level.",
+                  "occurrence": "One",
+                  "allowedValues": {
+                    "type": "ENUM",
+                    "enum": [
+                      {
+                        "value": "CLCRED",
+                        "description": "The credentials client will authenticate itself to the OMA DM server at the OMA DM protocol level."
+                      },
+                      {
+                        "value": "SRVCRED",
+                        "description": "The credentials server will authenticate itself to the OMA DM Client at the OMA DM protocol level."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "AAuthName",
+                  "title": "Application Authentication Name",
+                  "path": "./SyncML/DMAcc/{AccountUID}/AppAuth/{ObjectName}/AAuthName",
+                  "format": "chr",
+                  "access": [
+                    "Add",
+                    "Get",
+                    "Replace"
+                  ],
+                  "description": "Specifies the authentication name.",
+                  "occurrence": "ZeroOrOne",
+                  "allowedValues": {
+                    "type": "None"
+                  }
+                },
+                {
+                  "name": "AAuthSecret",
+                  "title": "Application Authentication Secret",
+                  "path": "./SyncML/DMAcc/{AccountUID}/AppAuth/{ObjectName}/AAuthSecret",
+                  "format": "chr",
+                  "access": [
+                    "Add",
+                    "Replace"
+                  ],
+                  "description": "Specifies the password or secret used for authentication.",
+                  "occurrence": "ZeroOrOne",
+                  "allowedValues": {
+                    "type": "None"
+                  }
+                },
+                {
+                  "name": "AAuthType",
+                  "title": "Application Authentication Type",
+                  "path": "./SyncML/DMAcc/{AccountUID}/AppAuth/{ObjectName}/AAuthType",
+                  "format": "chr",
+                  "access": [
+                    "Add",
+                    "Get",
+                    "Replace"
+                  ],
+                  "description": "Specifies the authentication type. If AAuthLevel is CLCRED, the supported types include BASIC and DIGEST. If AAuthLevel is SRVCRED, the only supported type is DIGEST.",
+                  "occurrence": "One",
+                  "allowedValues": {
+                    "type": "ENUM",
+                    "enum": [
+                      {
+                        "value": "BASIC",
+                        "description": "BASIC"
+                      },
+                      {
+                        "value": "DIGEST",
+                        "description": "DIGEST"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "AppID",
+          "title": "Application ID for DM Account MO",
+          "path": "./SyncML/DMAcc/{AccountUID}/AppID",
+          "format": "chr",
+          "access": [
+            "Add",
+            "Get",
+            "Replace"
+          ],
+          "description": "Specifies the application identifier for the OMA DM account.. The only supported value is w7.",
+          "default": "w7",
+          "occurrence": "One",
+          "allowedValues": {
+            "type": "ENUM",
+            "enum": [
+              {
+                "value": "w7",
+                "description": "The only supported value."
+              }
+            ]
+          }
+        },
+        {
+          "name": "Ext",
+          "title": "Vendor specific information",
+          "path": "./SyncML/DMAcc/{AccountUID}/Ext",
+          "format": "node",
+          "access": [
+            "Get"
+          ],
+          "description": "Defines a set of extended parameters. This element holds vendor-specific information about the OMA DM account and is created automatically when the OMA DM account is created.",
+          "occurrence": "One",
+          "children": [
+            {
+              "name": "Microsoft",
+              "title": "The collection of Microsoft specific settings",
+              "path": "./SyncML/DMAcc/{AccountUID}/Ext/Microsoft",
+              "format": "node",
+              "access": [
+                "Get"
+              ],
+              "description": "Defines a set of Microsoft-specific extended parameters. This element is created automatically when the OMA DM account is created.",
+              "occurrence": "One",
+              "children": [
+                {
+                  "name": "BackCompatRetryDisabled",
+                  "path": "./SyncML/DMAcc/{AccountUID}/Ext/Microsoft/BackCompatRetryDisabled",
+                  "format": "bool",
+                  "access": [
+                    "Add",
+                    "Get",
+                    "Replace"
+                  ],
+                  "description": "This node specifies whether to disable the ability of the DM client to communicate with a down-level server.\n                                         Possible Values:\n                                         false (default) -- Compatibility with down-level servers is enabled\n                                         true -- Compatibility with down-level servers is disabled",
+                  "default": "0",
+                  "occurrence": "ZeroOrOne",
+                  "allowedValues": {
+                    "type": "ENUM",
+                    "enum": [
+                      {
+                        "value": "0",
+                        "description": "Backward-compatible retries are enabled."
+                      },
+                      {
+                        "value": "1",
+                        "description": "Backward-compatible retries are disabled."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "CRLCheck",
+                  "title": "CRLCheck",
+                  "path": "./SyncML/DMAcc/{AccountUID}/Ext/Microsoft/CRLCheck",
+                  "format": "bool",
+                  "access": [
+                    "Add",
+                    "Get",
+                    "Replace"
+                  ],
+                  "description": "Allows connection to the DM server to check the Certificate Revocation List (CRL). Set to true to enable SSL revocation.",
+                  "occurrence": "ZeroOrOne",
+                  "allowedValues": {
+                    "type": "ENUM",
+                    "enum": [
+                      {
+                        "value": "0",
+                        "description": "False"
+                      },
+                      {
+                        "value": "1",
+                        "description": "True"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "ConnRetryFreq",
+                  "path": "./SyncML/DMAcc/{AccountUID}/Ext/Microsoft/ConnRetryFreq",
+                  "format": "int",
+                  "access": [
+                    "Add",
+                    "Get",
+                    "Replace"
+                  ],
+                  "description": "This node specifies how many times DM client will retry a connection to the server if the connection fails. The default value is 3 retries.",
+                  "default": "3",
+                  "occurrence": "ZeroOrOne",
+                  "allowedValues": {
+                    "type": "None"
+                  }
+                },
+                {
+                  "name": "DefaultEncoding",
+                  "path": "./SyncML/DMAcc/{AccountUID}/Ext/Microsoft/DefaultEncoding",
+                  "format": "chr",
+                  "access": [
+                    "Add",
+                    "Get",
+                    "Replace"
+                  ],
+                  "description": "This node specifies the encoding that the OMA-DM client will use to encode its first package.  Valid values include \"application/vnd.syncml.dm+xml\" (for XML) and                                         \"application/vnd.syncml.dm+wbxml\" (for WBXML).  If this node is left unspecified, the OMA-DM client defaults to \"application/vnd.syncml.dm+xml\".",
+                  "occurrence": "ZeroOrOne",
+                  "allowedValues": {
+                    "type": "ENUM",
+                    "enum": [
+                      {
+                        "value": "application/vnd.syncml.dm+xml",
+                        "description": "XML is used"
+                      },
+                      {
+                        "value": "application/vnd.syncml.dm+wbxml",
+                        "description": "WBXML is used"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "DisableOnRoaming",
+                  "title": "DisableOnRoaming",
+                  "path": "./SyncML/DMAcc/{AccountUID}/Ext/Microsoft/DisableOnRoaming",
+                  "format": "bool",
+                  "access": [
+                    "Add",
+                    "Get",
+                    "Replace"
+                  ],
+                  "description": "Determines whether the OMA DM client should be launched when roaming.",
+                  "occurrence": "ZeroOrOne",
+                  "allowedValues": {
+                    "type": "ENUM",
+                    "enum": [
+                      {
+                        "value": "0",
+                        "description": "False"
+                      },
+                      {
+                        "value": "1",
+                        "description": "True"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "InitialBackOffTime",
+                  "path": "./SyncML/DMAcc/{AccountUID}/Ext/Microsoft/InitialBackOffTime",
+                  "format": "int",
+                  "access": [
+                    "Add",
+                    "Get",
+                    "Replace"
+                  ],
+                  "description": "This node specifies the initial amount of time (in milliseconds) that the DM client waits before attempting a connection retry. After the initial wait, the wait                                          time grows exponentially. The default value is 16000 milliseconds.",
+                  "default": "16000",
+                  "occurrence": "ZeroOrOne",
+                  "allowedValues": {
+                    "type": "None"
+                  }
+                },
+                {
+                  "name": "InitiateSession",
+                  "path": "./SyncML/DMAcc/{AccountUID}/Ext/Microsoft/InitiateSession",
+                  "format": "null",
+                  "access": [
+                    "Add",
+                    "Replace"
+                  ],
+                  "description": "When this node is added, a session is started with the MDM server.",
+                  "occurrence": "ZeroOrOne",
+                  "applicability": {
+                    "minOsBuild": "10.0.15063",
+                    "cspVersion": "1.1"
+                  },
+                  "allowedValues": {
+                    "type": "None"
+                  }
+                },
+                {
+                  "name": "MaxBackOffTime",
+                  "path": "./SyncML/DMAcc/{AccountUID}/Ext/Microsoft/MaxBackOffTime",
+                  "format": "int",
+                  "access": [
+                    "Add",
+                    "Get",
+                    "Replace"
+                  ],
+                  "description": "This node specifies the maximum number of milliseconds to wait before attempting a connection retry. The default value is 86400000.",
+                  "default": "86400000",
+                  "occurrence": "ZeroOrOne",
+                  "allowedValues": {
+                    "type": "None"
+                  }
+                },
+                {
+                  "name": "ProtoVer",
+                  "title": "The OMA-DM protocol version that the client should use in communicating with the server",
+                  "path": "./SyncML/DMAcc/{AccountUID}/Ext/Microsoft/ProtoVer",
+                  "format": "chr",
+                  "access": [
+                    "Add",
+                    "Get",
+                    "Replace"
+                  ],
+                  "description": "This node value corresponds to what the client would put in the VerDTD element of an OMA-DM package. No default value is assumed. The only valid value for this                                           node is 1.1 or 1.2.",
+                  "occurrence": "ZeroOrOne",
+                  "allowedValues": {
+                    "type": "ENUM",
+                    "enum": [
+                      {
+                        "value": "1.1",
+                        "description": "1.1"
+                      },
+                      {
+                        "value": "1.2",
+                        "description": "1.2"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "Role",
+                  "title": "The security role mask that the DM session should run with",
+                  "path": "./SyncML/DMAcc/{AccountUID}/Ext/Microsoft/Role",
+                  "format": "int",
+                  "access": [
+                    "Get",
+                    "Replace"
+                  ],
+                  "description": "If this node is unspecified, its default value is the access role of the session that created the server account. The value for this node must be a subset of the                                         roles used in creating this server account.",
+                  "occurrence": "One",
+                  "allowedValues": {
+                    "type": "Flag",
+                    "enum": [
+                      {
+                        "value": "4",
+                        "description": "SECROLE_OPERATOR"
+                      },
+                      {
+                        "value": "8",
+                        "description": "SECROLE_MANAGER"
+                      },
+                      {
+                        "value": "16",
+                        "description": "SECROLE_USER_AUTH"
+                      },
+                      {
+                        "value": "128",
+                        "description": "SECROLE_OPERATOR_TPS"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "SSLCLIENTCERTSEARCHCRITERIA",
+                  "title": "SSLCLIENTCERTSEARCHCRITERIA",
+                  "path": "./SyncML/DMAcc/{AccountUID}/Ext/Microsoft/SSLCLIENTCERTSEARCHCRITERIA",
+                  "format": "chr",
+                  "access": [
+                    "Add",
+                    "Get",
+                    "Replace"
+                  ],
+                  "description": "The SSLCLIENTCERTSEARCHCRITERIA parameter is used to specify the client certificate search criteria. This parameter supports search by subject attribute and certificate stores. If any other criteria are provided, it is ignored. The string is a concatenation of name/value pairs, each member of the pair delimited by the \"\u0026\" character. The name and values are delimited by the \"=\" character. If there are multiple values, each value is delimited by the Unicode character \"U+F000\". If the name or value contains characters not in the UNRESERVED set (as specified in RFC2396), then those characters are URI-escaped per the RFC. The supported names are Subject and Stores; wildcard certificate search is not supported. Stores specifies which certificate stores the DM client will search to find the SSL client certificate. The valid store value is My%5CUser. The store name is not case sensitive. Subject specifies the certificate to search for. For example, to specify that you want a certificate with a particular Subject attribute (“CN=Tester,O=Microsoft”), use the following:",
+                  "occurrence": "ZeroOrOne",
+                  "allowedValues": {
+                    "type": "None"
+                  }
+                },
+                {
+                  "name": "UseHwDevID",
+                  "path": "./SyncML/DMAcc/{AccountUID}/Ext/Microsoft/UseHwDevID",
+                  "format": "bool",
+                  "access": [
+                    "Add",
+                    "Get",
+                    "Replace"
+                  ],
+                  "description": "A value of true indicates that, during an OMA-DM session with this server, the value of the ./DevInfo/DevId node is the hardware ID of device (e.g, IMEI for a                                            GSM device, ESN for a CDMA Device, hashed UUID for a non-radio device). The default value of false indicates that the value of ./DevInfo/DevId node is a hash of                                          the UUID of the device.",
+                  "default": "0",
+                  "occurrence": "ZeroOrOne",
+                  "allowedValues": {
+                    "type": "ENUM",
+                    "enum": [
+                      {
+                        "value": "0",
+                        "description": "An application-specific GUID is returned for the ./DevInfo/DevID rather than the hardware device ID."
+                      },
+                      {
+                        "value": "1",
+                        "description": "The hardware device ID will be provided for the ./DevInfo/DevID element and the Source LocURI for the OMA DM package that is sent to the server."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "UseNonceResync",
+                  "path": "./SyncML/DMAcc/{AccountUID}/Ext/Microsoft/UseNonceResync",
+                  "format": "bool",
+                  "access": [
+                    "Add",
+                    "Get",
+                    "Replace"
+                  ],
+                  "description": "This node specifies whether the DM client can use the nonce resynchronization protocol when authentication of a server notification fails. If nonce                                                       resynchronization is disabled and authentication of the server notification fails, the notification is dropped.\n                                            Possible Values:\n                                            false (default) : Nonce resynchronization is disabled.\n                                            true : Nonce resynchronization is enabled.",
+                  "default": "0",
+                  "occurrence": "ZeroOrOne",
+                  "allowedValues": {
+                    "type": "ENUM",
+                    "enum": [
+                      {
+                        "value": "0",
+                        "description": "The client does not try to authenticate the notification with the backup server nonce if authentication to the stored nonce fails."
+                      },
+                      {
+                        "value": "1",
+                        "description": "The client initiates a DM session if the backup server nonce is received after authentication failed."
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Name",
+          "title": "Displayable name for the Management Server",
+          "path": "./SyncML/DMAcc/{AccountUID}/Name",
+          "format": "chr",
+          "access": [
+            "Add",
+            "Get",
+            "Replace"
+          ],
+          "description": "Specifies the display name of the application.",
+          "occurrence": "ZeroOrOne",
+          "allowedValues": {
+            "type": "None"
+          }
+        },
+        {
+          "name": "PrefConRef",
+          "title": "Reference to preferred connectivity",
+          "path": "./SyncML/DMAcc/{AccountUID}/PrefConRef",
+          "format": "chr",
+          "access": [
+            "Add",
+            "Get",
+            "Replace"
+          ],
+          "description": "The only supported values include the NAPID of a bootstrapped NAP management object or a connection GUID used by connection manager. If this node is missing, the device                                  will use the default connection provided by connection manager.",
+          "occurrence": "ZeroOrOne",
+          "allowedValues": {
+            "type": "None"
+          }
+        },
+        {
+          "name": "ServerID",
+          "title": "Server Identifier",
+          "path": "./SyncML/DMAcc/{AccountUID}/ServerID",
+          "format": "chr",
+          "access": [
+            "Add",
+            "Get",
+            "Replace"
+          ],
+          "description": "Specifies the OMA DM server's unique identifier for the current OMA DM account. This value is case-sensitive.",
+          "occurrence": "One",
+          "allowedValues": {
+            "type": "None"
+          }
+        }
+      ]
+    }
+  ]
+}

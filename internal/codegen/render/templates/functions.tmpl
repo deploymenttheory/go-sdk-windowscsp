@@ -1,0 +1,28 @@
+{{define "method"}}
+{{- range .CommentLines}}{{if .}}// {{.}}{{else}}//{{end}}
+{{end -}}
+func (s *{{.Recv}}) {{.Name}}({{.ParamStr}}) {{.ReturnSig}} {
+{{- if eq .Verb "Get"}}
+	v, err := s.c.Get(ctx, {{.URIExpr}})
+	if err != nil {
+		return {{.Zero}}, err
+	}
+{{- if .AccessorErr}}
+	return v.{{.Accessor}}()
+{{- else}}
+	return v.{{.Accessor}}(), nil
+{{- end}}
+{{- else if eq .Verb "List"}}
+	return s.c.List(ctx, {{.URIExpr}})
+{{- else if eq .Verb "Add"}}
+	return s.c.Add(ctx, {{.URIExpr}}, {{.ValueExpr}})
+{{- else if eq .Verb "Replace"}}
+	return s.c.Replace(ctx, {{.URIExpr}}, {{.ValueExpr}})
+{{- else if eq .Verb "Delete"}}
+	return s.c.Delete(ctx, {{.URIExpr}})
+{{- else if eq .Verb "Exec"}}
+	return s.c.Exec(ctx, {{.URIExpr}}, {{.ValueExpr}})
+{{- end}}
+}
+
+{{end}}

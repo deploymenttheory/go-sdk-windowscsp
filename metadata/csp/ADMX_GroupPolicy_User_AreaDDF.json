@@ -1,0 +1,231 @@
+{
+  "name": "ADMX_GroupPolicy",
+  "path": "./User/Vendor/MSFT/Policy/Config",
+  "nodes": [
+    {
+      "name": "DenyRsopToInteractiveUser_1",
+      "path": "./User/Vendor/MSFT/Policy/Config/ADMX_GroupPolicy/DenyRsopToInteractiveUser_1",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000, 10.0.19043.1202, 10.0.19042.1202, 10.0.19041.1202",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ADMX",
+        "admx": {
+          "area": "GroupPolicy~AT~System~PolicyPolicies",
+          "name": "DenyRsopToInteractiveUser_1",
+          "file": "GroupPolicy.admx"
+        }
+      }
+    },
+    {
+      "name": "DisableAutoADMUpdate",
+      "path": "./User/Vendor/MSFT/Policy/Config/ADMX_GroupPolicy/DisableAutoADMUpdate",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000, 10.0.19043.1202, 10.0.19042.1202, 10.0.19041.1202",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ADMX",
+        "admx": {
+          "area": "GroupPolicy~AT~System~PolicyPolicies",
+          "name": "DisableAutoADMUpdate",
+          "file": "GroupPolicy.admx"
+        }
+      }
+    },
+    {
+      "name": "EnforcePoliciesOnly",
+      "path": "./User/Vendor/MSFT/Policy/Config/ADMX_GroupPolicy/EnforcePoliciesOnly",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000, 10.0.19043.1202, 10.0.19042.1202, 10.0.19041.1202",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ADMX",
+        "admx": {
+          "area": "GroupPolicy~AT~System~PolicyPolicies",
+          "name": "EnforcePoliciesOnly",
+          "file": "GroupPolicy.admx"
+        }
+      }
+    },
+    {
+      "name": "GPDCOptions",
+      "path": "./User/Vendor/MSFT/Policy/Config/ADMX_GroupPolicy/GPDCOptions",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000, 10.0.19043.1202, 10.0.19042.1202, 10.0.19041.1202",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ADMX",
+        "admx": {
+          "area": "GroupPolicy~AT~System~PolicyPolicies",
+          "name": "GPDCOptions",
+          "file": "GroupPolicy.admx"
+        }
+      }
+    },
+    {
+      "name": "GPTransferRate_1",
+      "path": "./User/Vendor/MSFT/Policy/Config/ADMX_GroupPolicy/GPTransferRate_1",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000, 10.0.19043.1202, 10.0.19042.1202, 10.0.19041.1202",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ADMX",
+        "admx": {
+          "area": "GroupPolicy~AT~System~PolicyPolicies",
+          "name": "GPTransferRate_1",
+          "file": "GroupPolicy.admx"
+        }
+      }
+    },
+    {
+      "name": "GroupPolicyRefreshRateUser",
+      "path": "./User/Vendor/MSFT/Policy/Config/ADMX_GroupPolicy/GroupPolicyRefreshRateUser",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000, 10.0.19043.1202, 10.0.19042.1202, 10.0.19041.1202",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ADMX",
+        "admx": {
+          "area": "GroupPolicy~AT~System~PolicyPolicies",
+          "name": "GroupPolicyRefreshRateUser",
+          "file": "GroupPolicy.admx"
+        }
+      }
+    },
+    {
+      "name": "NewGPODisplayName",
+      "path": "./User/Vendor/MSFT/Policy/Config/ADMX_GroupPolicy/NewGPODisplayName",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000, 10.0.19043.1202, 10.0.19042.1202, 10.0.19041.1202",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ADMX",
+        "admx": {
+          "area": "GroupPolicy~AT~System~PolicyPolicies",
+          "name": "NewGPODisplayName",
+          "file": "GroupPolicy.admx"
+        }
+      }
+    },
+    {
+      "name": "NewGPOLinksDisabled",
+      "path": "./User/Vendor/MSFT/Policy/Config/ADMX_GroupPolicy/NewGPOLinksDisabled",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000, 10.0.19043.1202, 10.0.19042.1202, 10.0.19041.1202",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ADMX",
+        "admx": {
+          "area": "GroupPolicy~AT~System~PolicyPolicies",
+          "name": "NewGPOLinksDisabled",
+          "file": "GroupPolicy.admx"
+        }
+      }
+    },
+    {
+      "name": "ProcessMitigationOptions",
+      "path": "./User/Vendor/MSFT/Policy/Config/ADMX_GroupPolicy/ProcessMitigationOptions",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000, 10.0.19043.1202, 10.0.19042.1202, 10.0.19041.1202",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ADMX",
+        "admx": {
+          "area": "GroupPolicy~AT~System~MitOptions",
+          "name": "ProcessMitigationOptions",
+          "file": "GroupPolicy.admx"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "name": "SecureAssessment",
+  "path": "./Vendor/MSFT",
+  "nodes": [
+    {
+      "name": "AllowScreenMonitoring",
+      "path": "./Vendor/MSFT/SecureAssessment/AllowScreenMonitoring",
+      "format": "int",
+      "access": [
+        "Get",
+        "Replace"
+      ],
+      "description": "Indicates if screen monitoring is allowed by the app.",
+      "default": "0",
+      "occurrence": "One",
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "1",
+            "description": "Screen monitoring is allowed"
+          },
+          {
+            "value": "0",
+            "description": "Screen monitoring is not allowed"
+          }
+        ]
+      }
+    },
+    {
+      "name": "AllowTextSuggestions",
+      "path": "./Vendor/MSFT/SecureAssessment/AllowTextSuggestions",
+      "format": "int",
+      "access": [
+        "Get",
+        "Replace"
+      ],
+      "description": "Indicates if keyboard text suggestions are allowed by the app.",
+      "default": "0",
+      "occurrence": "One",
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "1",
+            "description": "Keyboard text suggestions are allowed"
+          },
+          {
+            "value": "0",
+            "description": "Keyboard text suggestions are not allowed"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Assessments",
+      "path": "./Vendor/MSFT/SecureAssessment/Assessments",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "Enables support for multiple assessments and for assessment grouping. The structure is specified by an XML.",
+      "occurrence": "One",
+      "applicability": {
+        "minOsBuild": "10.0.22621.521"
+      },
+      "allowedValues": {
+        "type": "XSD",
+        "value": "\u003cxs:schema attributeFormDefault=\"unqualified\" elementFormDefault=\"qualified\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\"\u003e\n  \u003cxs:element name=\"AssessmentsRoot\"\u003e\n    \u003cxs:complexType\u003e\n      \u003cxs:sequence\u003e\n        \u003cxs:element name=\"Assessments\"\u003e\n          \u003cxs:complexType\u003e\n            \u003cxs:sequence\u003e\n              \u003cxs:element name=\"Assessment\" maxOccurs=\"unbounded\" minOccurs=\"0\"\u003e\n                \u003cxs:complexType\u003e\n                  \u003cxs:sequence\u003e\n                    \u003cxs:element type=\"xs:string\" name=\"TestName\"/\u003e\n                    \u003cxs:element type=\"xs:string\" name=\"TestUri\"/\u003e\n                  \u003c/xs:sequence\u003e\n                \u003c/xs:complexType\u003e\n              \u003c/xs:element\u003e\n            \u003c/xs:sequence\u003e\n          \u003c/xs:complexType\u003e\n        \u003c/xs:element\u003e\n      \u003c/xs:sequence\u003e\n    \u003c/xs:complexType\u003e\n  \u003c/xs:element\u003e\n\u003c/xs:schema\u003e"
+      }
+    },
+    {
+      "name": "LaunchURI",
+      "path": "./Vendor/MSFT/SecureAssessment/LaunchURI",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "Link to an assessment that's automatically loaded when the Secure Assessment Browser is launched.",
+      "occurrence": "ZeroOrOne",
+      "allowedValues": {
+        "type": "RegEx",
+        "value": "/^https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?\u0026\\/=]*)$/"
+      }
+    },
+    {
+      "name": "RequirePrinting",
+      "path": "./Vendor/MSFT/SecureAssessment/RequirePrinting",
+      "format": "int",
+      "access": [
+        "Get",
+        "Replace"
+      ],
+      "description": "Indicates if printing is required by the app.",
+      "default": "1",
+      "occurrence": "One",
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "1",
+            "description": "Printing is allowed"
+          },
+          {
+            "value": "0",
+            "description": "Printing is not allowed"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TesterAccount",
+      "path": "./Vendor/MSFT/SecureAssessment/TesterAccount",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "The user name of the test taking account.  To specify a domain account, use domain\\user. To specify an AAD account, use username@tenant.com. To specify a local account, use the username.",
+      "occurrence": "ZeroOrOne",
+      "allowedValues": {
+        "type": "None"
+      }
+    }
+  ]
+}

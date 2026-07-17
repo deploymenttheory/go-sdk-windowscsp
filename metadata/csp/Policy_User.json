@@ -1,0 +1,92 @@
+{
+  "name": "Policy",
+  "path": "./User/Vendor/MSFT",
+  "nodes": [
+    {
+      "name": "Config",
+      "path": "./User/Vendor/MSFT/Policy/Config",
+      "format": "node",
+      "access": [
+        "Add",
+        "Delete",
+        "Get"
+      ],
+      "description": "Node for grouping all policies configured by one source. The configuration source can use this path to set policy values and later query any policy value that it previously set. One policy can be configured by multiple configuration sources. If a configuration source wants to query the result of conflict resolution (for example, if Exchange and MDM both attempt to set a value,) the configuration source can use the Policy/Result path to retrieve the resulting value.",
+      "occurrence": "ZeroOrOne",
+      "children": [
+        {
+          "name": "",
+          "title": "AreaName",
+          "path": "./User/Vendor/MSFT/Policy/Config/{AreaName}",
+          "format": "node",
+          "access": [
+            "Add",
+            "Delete",
+            "Get"
+          ],
+          "description": "The area group that can be configured by a single technology for a single provider. Once added, you cannot change the value.  See the individual Area DDFs for Policy CSP for a list of Areas that can be configured.",
+          "occurrence": "ZeroOrMore",
+          "dynamicNaming": "ClientInventory",
+          "children": [
+            {
+              "name": "",
+              "title": "PolicyName",
+              "path": "./User/Vendor/MSFT/Policy/Config/{AreaName}/{PolicyName}",
+              "format": "null",
+              "access": [
+                "Add",
+                "Delete",
+                "Get",
+                "Replace"
+              ],
+              "description": "Specifies the name/value pair used in the policy.  See the individual Area DDFs for more information about the policies available to configure.",
+              "occurrence": "ZeroOrMore",
+              "dynamicNaming": "ClientInventory",
+              "allowedValues": {
+                "type": "None"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Result",
+      "path": "./User/Vendor/MSFT/Policy/Result",
+      "format": "node",
+      "access": [
+        "Get"
+      ],
+      "description": "Groups the evaluated policies from all providers that can be configured.",
+      "occurrence": "One",
+      "children": [
+        {
+          "name": "",
+          "title": "AreaName",
+          "path": "./User/Vendor/MSFT/Policy/Result/{AreaName}",
+          "format": "node",
+          "access": [
+            "Get"
+          ],
+          "description": "The area group that can be configured by a single technology independent of the providers. See the individual Area DDFs for Policy CSP for a list of Areas that can be configured.",
+          "occurrence": "OneOrMore",
+          "dynamicNaming": "ClientInventory",
+          "children": [
+            {
+              "name": "",
+              "title": "PolicyName",
+              "path": "./User/Vendor/MSFT/Policy/Result/{AreaName}/{PolicyName}",
+              "format": "null",
+              "access": [
+                "Get"
+              ],
+              "description": "Specifies the name/value pair used in the policy. See the individual Area DDFs for more information about the policies available to configure.",
+              "occurrence": "OneOrMore",
+              "dynamicNaming": "ServerGeneratedUniqueIdentifier"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

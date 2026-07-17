@@ -1,0 +1,157 @@
+{
+  "name": "MultiSIM",
+  "path": "./Device/Vendor/MSFT",
+  "nodes": [
+    {
+      "name": "",
+      "title": "ModemID",
+      "path": "./Device/Vendor/MSFT/MultiSIM/{ModemID}",
+      "format": "node",
+      "access": [
+        "Get"
+      ],
+      "description": "Node representing a Mobile Broadband Modem. The node name is the Modem ID. Modem ID is a GUID without curly braces, with exception of \"Embedded\" which represents the embedded Modem.",
+      "occurrence": "ZeroOrMore",
+      "dynamicNaming": "The Modem ID associated with the device.",
+      "children": [
+        {
+          "name": "Identifier",
+          "path": "./Device/Vendor/MSFT/MultiSIM/{ModemID}/Identifier",
+          "format": "chr",
+          "access": [
+            "Get"
+          ],
+          "description": "Modem ID.",
+          "occurrence": "One"
+        },
+        {
+          "name": "IsEmbedded",
+          "path": "./Device/Vendor/MSFT/MultiSIM/{ModemID}/IsEmbedded",
+          "format": "bool",
+          "access": [
+            "Get"
+          ],
+          "description": "Indicates whether this Modem is embedded or external.",
+          "occurrence": "One"
+        },
+        {
+          "name": "Policies",
+          "path": "./Device/Vendor/MSFT/MultiSIM/{ModemID}/Policies",
+          "format": "node",
+          "access": [
+            "Get"
+          ],
+          "description": "Policies associated with the Modem.",
+          "occurrence": "One",
+          "children": [
+            {
+              "name": "SlotSelectionEnabled",
+              "path": "./Device/Vendor/MSFT/MultiSIM/{ModemID}/Policies/SlotSelectionEnabled",
+              "format": "bool",
+              "access": [
+                "Get",
+                "Replace"
+              ],
+              "description": "Determines whether the user is allowed to change slots in the Cellular settings UI. Default is true.",
+              "default": "true",
+              "occurrence": "One",
+              "allowedValues": {
+                "type": "ENUM",
+                "enum": [
+                  {
+                    "value": "false",
+                    "description": "Disabled"
+                  },
+                  {
+                    "value": "true",
+                    "description": "Enabled"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Slots",
+          "path": "./Device/Vendor/MSFT/MultiSIM/{ModemID}/Slots",
+          "format": "node",
+          "access": [
+            "Get"
+          ],
+          "description": "Represents all SIM slots in the Modem.",
+          "occurrence": "One",
+          "children": [
+            {
+              "name": "",
+              "title": "SlotID",
+              "path": "./Device/Vendor/MSFT/MultiSIM/{ModemID}/Slots/{SlotID}",
+              "format": "node",
+              "access": [
+                "Get"
+              ],
+              "description": "Node representing a SIM Slot. The node name is the Slot ID. SIM Slot ID format is \"0\", \"1\", etc., with exception of \"Embedded\" which represents the embedded Slot.",
+              "occurrence": "ZeroOrMore",
+              "dynamicNaming": "The SIM slot ID.",
+              "children": [
+                {
+                  "name": "Identifier",
+                  "path": "./Device/Vendor/MSFT/MultiSIM/{ModemID}/Slots/{SlotID}/Identifier",
+                  "format": "int",
+                  "access": [
+                    "Get"
+                  ],
+                  "description": "Slot ID.",
+                  "occurrence": "One"
+                },
+                {
+                  "name": "IsEmbedded",
+                  "path": "./Device/Vendor/MSFT/MultiSIM/{ModemID}/Slots/{SlotID}/IsEmbedded",
+                  "format": "bool",
+                  "access": [
+                    "Get"
+                  ],
+                  "description": "Indicates whether this Slot is embedded or a physical SIM slot.",
+                  "occurrence": "One"
+                },
+                {
+                  "name": "IsSelected",
+                  "path": "./Device/Vendor/MSFT/MultiSIM/{ModemID}/Slots/{SlotID}/IsSelected",
+                  "format": "bool",
+                  "access": [
+                    "Get",
+                    "Replace"
+                  ],
+                  "description": "Indicates whether this Slot is selected or not.",
+                  "occurrence": "One",
+                  "allowedValues": {
+                    "type": "ENUM",
+                    "enum": [
+                      {
+                        "value": "false",
+                        "description": "Not selected"
+                      },
+                      {
+                        "value": "true",
+                        "description": "Selected"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "State",
+                  "path": "./Device/Vendor/MSFT/MultiSIM/{ModemID}/Slots/{SlotID}/State",
+                  "format": "int",
+                  "access": [
+                    "Get"
+                  ],
+                  "description": "Slot state (Unknown = 0, OffEmpty = 1, Off = 2, Empty = 3, NotReady = 4, Active = 5, Error = 6, ActiveEsim = 7, ActiveEsimNoProfile = 8)",
+                  "occurrence": "One"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

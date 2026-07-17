@@ -1,0 +1,11 @@
+{{define "enumblock"}}// {{.Comment}}
+const (
+{{- range .Members}}
+{{- range .CommentLines}}
+	// {{.}}
+{{- end}}
+	{{.Name}}{{if .Typed}} int64{{end}} = {{.Literal}}
+{{- end}}
+)
+
+{{end}}

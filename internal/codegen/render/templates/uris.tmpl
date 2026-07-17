@@ -1,0 +1,16 @@
+{{define "uriconsts"}}// OMA-URIs of the {{.CSPName}} nodes addressed by this package.
+const (
+{{- range .URIs}}{{if not .IsFunc}}
+	// {{.Doc}}
+	{{.Name}} = "{{.Literal}}"
+{{- end}}{{end}}
+)
+
+{{end}}
+
+{{define "urifunc"}}// {{.Name}} returns the OMA-URI for {{.Doc}}
+func {{.Name}}({{join .Params ", "}} string) string {
+	return {{.Expr}}
+}
+
+{{end}}

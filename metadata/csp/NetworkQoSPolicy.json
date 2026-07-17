@@ -1,0 +1,136 @@
+{
+  "name": "NetworkQoSPolicy",
+  "path": "./Device/Vendor/MSFT",
+  "nodes": [
+    {
+      "name": "",
+      "title": "Name",
+      "path": "./Device/Vendor/MSFT/NetworkQoSPolicy/{Name}",
+      "format": "node",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "The value of this node should be a policy name.",
+      "occurrence": "ZeroOrMore",
+      "dynamicNaming": "The value of this node should be a policy name.",
+      "children": [
+        {
+          "name": "AppPathNameMatchCondition",
+          "title": "AppPathNameMatchCondition",
+          "path": "./Device/Vendor/MSFT/NetworkQoSPolicy/{Name}/AppPathNameMatchCondition",
+          "format": "chr",
+          "access": [
+            "Add",
+            "Delete",
+            "Get",
+            "Replace"
+          ],
+          "description": "Specifies the name of an application to be used to match the network traffic, such as application.exe or %ProgramFiles%\\application.exe.",
+          "occurrence": "ZeroOrOne",
+          "allowedValues": {
+            "type": "None"
+          }
+        },
+        {
+          "name": "DSCPAction",
+          "title": "DSCPAction",
+          "path": "./Device/Vendor/MSFT/NetworkQoSPolicy/{Name}/DSCPAction",
+          "format": "int",
+          "access": [
+            "Add",
+            "Delete",
+            "Get",
+            "Replace"
+          ],
+          "description": "The differentiated services code point (DSCP) value to apply to matching network traffic. Valid values are 0-63.",
+          "occurrence": "ZeroOrOne",
+          "allowedValues": {
+            "type": "Range",
+            "value": "[0-63]"
+          }
+        },
+        {
+          "name": "DestinationPortMatchCondition",
+          "title": "DestinationPortMatchCondition",
+          "path": "./Device/Vendor/MSFT/NetworkQoSPolicy/{Name}/DestinationPortMatchCondition",
+          "format": "chr",
+          "access": [
+            "Add",
+            "Delete",
+            "Get",
+            "Replace"
+          ],
+          "description": "Specifies a single port or a range of ports to be used to match the network traffic. Valid values are [first port number]-[last port number] or [port number].",
+          "occurrence": "ZeroOrOne",
+          "allowedValues": {
+            "type": "None"
+          }
+        },
+        {
+          "name": "IPProtocolMatchCondition",
+          "title": "IPProtocolMatchCondition",
+          "path": "./Device/Vendor/MSFT/NetworkQoSPolicy/{Name}/IPProtocolMatchCondition",
+          "format": "int",
+          "access": [
+            "Add",
+            "Delete",
+            "Get",
+            "Replace"
+          ],
+          "description": "Specifies the IP protocol used to match the network traffic. Valid values are 0: Both TCP and UDP (default), 1: TCP, 2: UDP.",
+          "default": "0",
+          "occurrence": "ZeroOrOne"
+        },
+        {
+          "name": "PriorityValue8021Action",
+          "title": "PriorityValue8021Action",
+          "path": "./Device/Vendor/MSFT/NetworkQoSPolicy/{Name}/PriorityValue8021Action",
+          "format": "int",
+          "access": [
+            "Add",
+            "Delete",
+            "Get",
+            "Replace"
+          ],
+          "description": "The IEEE 802.1p value to apply to matching network traffice. Valid values are 0-7.",
+          "occurrence": "ZeroOrOne",
+          "allowedValues": {
+            "type": "Range",
+            "value": "[0-7]"
+          }
+        },
+        {
+          "name": "SourcePortMatchCondition",
+          "title": "SourcePortMatchCondition",
+          "path": "./Device/Vendor/MSFT/NetworkQoSPolicy/{Name}/SourcePortMatchCondition",
+          "format": "chr",
+          "access": [
+            "Add",
+            "Delete",
+            "Get",
+            "Replace"
+          ],
+          "description": "Specifies a single port or a range of ports to be used to match the network traffic. Valid values are [first port number]-[last port number] or [port number].",
+          "occurrence": "ZeroOrOne",
+          "allowedValues": {
+            "type": "None"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Version",
+      "title": "Version",
+      "path": "./Device/Vendor/MSFT/NetworkQoSPolicy/Version",
+      "format": "int",
+      "access": [
+        "Get"
+      ],
+      "description": "Version information.",
+      "occurrence": "One"
+    }
+  ]
+}

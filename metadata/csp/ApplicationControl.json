@@ -1,0 +1,252 @@
+{
+  "name": "ApplicationControl",
+  "path": "./Vendor/MSFT",
+  "nodes": [
+    {
+      "name": "Policies",
+      "title": "Policies",
+      "path": "./Vendor/MSFT/ApplicationControl/Policies",
+      "format": "node",
+      "access": [
+        "Get"
+      ],
+      "description": "Beginning of a Subtree that contains all policies.",
+      "occurrence": "One",
+      "children": [
+        {
+          "name": "",
+          "title": "Policy GUID",
+          "path": "./Vendor/MSFT/ApplicationControl/Policies/{Policy GUID}",
+          "format": "node",
+          "access": [
+            "Get"
+          ],
+          "description": "The GUID of the Policy",
+          "occurrence": "ZeroOrMore",
+          "dynamicNaming": "The ApplicationControl CSP enforces that the \"ID\" segment of a given policy URI is the same GUID as the policy ID in the policy blob.",
+          "children": [
+            {
+              "name": "Policy",
+              "title": "Policy",
+              "path": "./Vendor/MSFT/ApplicationControl/Policies/{Policy GUID}/Policy",
+              "format": "b64",
+              "access": [
+                "Add",
+                "Delete",
+                "Get",
+                "Replace"
+              ],
+              "description": "The policy binary encoded as base64. Supported value is a binary file, converted from the policy XML file by the ConvertFrom-CIPolicy cmdlet.",
+              "occurrence": "One",
+              "allowedValues": {
+                "type": "None"
+              }
+            },
+            {
+              "name": "PolicyInfo",
+              "title": "PolicyInfo",
+              "path": "./Vendor/MSFT/ApplicationControl/Policies/{Policy GUID}/PolicyInfo",
+              "format": "node",
+              "access": [
+                "Get"
+              ],
+              "description": "Information Describing the Policy indicated by the GUID",
+              "occurrence": "One",
+              "children": [
+                {
+                  "name": "BasePolicyId",
+                  "title": "BasePolicyId",
+                  "path": "./Vendor/MSFT/ApplicationControl/Policies/{Policy GUID}/PolicyInfo/BasePolicyId",
+                  "format": "chr",
+                  "access": [
+                    "Get"
+                  ],
+                  "description": "The BasePolicyId of the Policy Indicated by the Policy GUID",
+                  "occurrence": "One"
+                },
+                {
+                  "name": "FriendlyName",
+                  "title": "FriendlyName",
+                  "path": "./Vendor/MSFT/ApplicationControl/Policies/{Policy GUID}/PolicyInfo/FriendlyName",
+                  "format": "chr",
+                  "access": [
+                    "Get"
+                  ],
+                  "description": "The FriendlyName of the Policy Indicated by the Policy GUID",
+                  "occurrence": "One"
+                },
+                {
+                  "name": "IsAuthorized",
+                  "title": "IsAuthorized",
+                  "path": "./Vendor/MSFT/ApplicationControl/Policies/{Policy GUID}/PolicyInfo/IsAuthorized",
+                  "format": "bool",
+                  "access": [
+                    "Get"
+                  ],
+                  "description": "Whether the Policy indicated by the GUID is authorized to be loaded by the enforcement engine on the system",
+                  "occurrence": "One"
+                },
+                {
+                  "name": "IsBasePolicy",
+                  "title": "IsBasePolicy",
+                  "path": "./Vendor/MSFT/ApplicationControl/Policies/{Policy GUID}/PolicyInfo/IsBasePolicy",
+                  "format": "bool",
+                  "access": [
+                    "Get"
+                  ],
+                  "description": "TRUE/FALSE if the Policy is a Base Policy versus a Supplemental Policy",
+                  "occurrence": "One"
+                },
+                {
+                  "name": "IsDeployed",
+                  "title": "IsDeployed",
+                  "path": "./Vendor/MSFT/ApplicationControl/Policies/{Policy GUID}/PolicyInfo/IsDeployed",
+                  "format": "bool",
+                  "access": [
+                    "Get"
+                  ],
+                  "description": "Whether the Policy indicated by the GUID is deployed on the system (on the physical machine)",
+                  "occurrence": "One"
+                },
+                {
+                  "name": "IsEffective",
+                  "title": "IsEffective",
+                  "path": "./Vendor/MSFT/ApplicationControl/Policies/{Policy GUID}/PolicyInfo/IsEffective",
+                  "format": "bool",
+                  "access": [
+                    "Get"
+                  ],
+                  "description": "Whether the Policy indicated by the GUID is Effective on the system (loaded by the enforcement engine and in effect)",
+                  "occurrence": "One"
+                },
+                {
+                  "name": "IsSystemPolicy",
+                  "title": "IsSystemPolicy",
+                  "path": "./Vendor/MSFT/ApplicationControl/Policies/{Policy GUID}/PolicyInfo/IsSystemPolicy",
+                  "format": "bool",
+                  "access": [
+                    "Get"
+                  ],
+                  "description": "TRUE/FALSE if the Policy is a System Policy, that is a policy managed by Microsoft as part of the OS",
+                  "occurrence": "One"
+                },
+                {
+                  "name": "PolicyOptions",
+                  "title": "PolicyOptions",
+                  "path": "./Vendor/MSFT/ApplicationControl/Policies/{Policy GUID}/PolicyInfo/PolicyOptions",
+                  "format": "chr",
+                  "access": [
+                    "Get"
+                  ],
+                  "description": "The PolicyOptions of the Policy Indicated by the Policy GUID",
+                  "occurrence": "One"
+                },
+                {
+                  "name": "Status",
+                  "title": "Status",
+                  "path": "./Vendor/MSFT/ApplicationControl/Policies/{Policy GUID}/PolicyInfo/Status",
+                  "format": "int",
+                  "access": [
+                    "Get"
+                  ],
+                  "description": "The Current Status of the Policy Indicated by the Policy GUID",
+                  "occurrence": "One"
+                },
+                {
+                  "name": "Version",
+                  "title": "Version",
+                  "path": "./Vendor/MSFT/ApplicationControl/Policies/{Policy GUID}/PolicyInfo/Version",
+                  "format": "chr",
+                  "access": [
+                    "Get"
+                  ],
+                  "description": "Version of the Policy indicated by the GUID, as a string. When parsing use a uint64 as the containing data type",
+                  "occurrence": "One"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tokens",
+      "title": "Tokens",
+      "path": "./Vendor/MSFT/ApplicationControl/Tokens",
+      "format": "node",
+      "access": [
+        "Get"
+      ],
+      "description": "Beginning of a Subtree that contains all tokens.",
+      "occurrence": "One",
+      "children": [
+        {
+          "name": "",
+          "title": "ID",
+          "path": "./Vendor/MSFT/ApplicationControl/Tokens/{ID}",
+          "format": "node",
+          "access": [
+            "Get"
+          ],
+          "description": "Arbitrary ID used to differentiate tokens",
+          "occurrence": "ZeroOrMore",
+          "dynamicNaming": "The ApplicationControl CSP enforces that the \"ID\" segment of a given token URI is unique.",
+          "children": [
+            {
+              "name": "Token",
+              "title": "Token",
+              "path": "./Vendor/MSFT/ApplicationControl/Tokens/{ID}/Token",
+              "format": "b64",
+              "access": [
+                "Add",
+                "Delete",
+                "Get",
+                "Replace"
+              ],
+              "description": "The token binary encoded as base64. Supported value is a binary file, obtained from the OneCoreDeviceUnlockService.",
+              "occurrence": "One",
+              "allowedValues": {
+                "type": "None"
+              }
+            },
+            {
+              "name": "TokenInfo",
+              "title": "TokenInfo",
+              "path": "./Vendor/MSFT/ApplicationControl/Tokens/{ID}/TokenInfo",
+              "format": "node",
+              "access": [
+                "Get"
+              ],
+              "description": "Information Describing the Token indicated by the corresponding ID.",
+              "occurrence": "One",
+              "children": [
+                {
+                  "name": "Status",
+                  "title": "Status",
+                  "path": "./Vendor/MSFT/ApplicationControl/Tokens/{ID}/TokenInfo/Status",
+                  "format": "int",
+                  "access": [
+                    "Get"
+                  ],
+                  "description": "The Current Status of the Token Indicated by the Token ID",
+                  "occurrence": "One"
+                },
+                {
+                  "name": "Type",
+                  "title": "Type",
+                  "path": "./Vendor/MSFT/ApplicationControl/Tokens/{ID}/TokenInfo/Type",
+                  "format": "int",
+                  "access": [
+                    "Get"
+                  ],
+                  "description": "The Type of Token Indicated by the Token ID",
+                  "occurrence": "One"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

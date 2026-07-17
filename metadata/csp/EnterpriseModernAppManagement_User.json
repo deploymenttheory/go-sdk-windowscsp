@@ -1,0 +1,1390 @@
+{
+  "name": "EnterpriseModernAppManagement",
+  "path": "./User/Vendor/MSFT",
+  "nodes": [
+    {
+      "name": "AppInstallation",
+      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppInstallation",
+      "format": "node",
+      "access": [
+        "Get"
+      ],
+      "description": "Used to perform app installation.",
+      "occurrence": "One",
+      "children": [
+        {
+          "name": "",
+          "title": "PackageFamilyName",
+          "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppInstallation/{PackageFamilyName}",
+          "format": "node",
+          "access": [
+            "Add",
+            "Delete",
+            "Get",
+            "Replace"
+          ],
+          "description": "Package family name (PFN) of the app. There is one for each PFN on the device when reporting inventory. These items are rooted under their signing origin.",
+          "occurrence": "ZeroOrMore",
+          "dynamicNaming": "Package family name (PFN) of the app.",
+          "children": [
+            {
+              "name": "HostedInstall",
+              "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppInstallation/{PackageFamilyName}/HostedInstall",
+              "format": "xml",
+              "access": [
+                "Add",
+                "Delete",
+                "Exec",
+                "Get"
+              ],
+              "description": "Command to perform an install of an app package from a hosted location (this can be a local drive, a UNC, or https data source).",
+              "occurrence": "One"
+            },
+            {
+              "name": "LastError",
+              "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppInstallation/{PackageFamilyName}/LastError",
+              "format": "int",
+              "access": [
+                "Get"
+              ],
+              "description": "Last error relating to the app installation.",
+              "occurrence": "One"
+            },
+            {
+              "name": "LastErrorDesc",
+              "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppInstallation/{PackageFamilyName}/LastErrorDesc",
+              "format": "chr",
+              "access": [
+                "Get"
+              ],
+              "description": "Description of last error relating to the app installation.",
+              "occurrence": "One"
+            },
+            {
+              "name": "ProgressStatus",
+              "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppInstallation/{PackageFamilyName}/ProgressStatus",
+              "format": "int",
+              "access": [
+                "Get"
+              ],
+              "description": "An integer the indicates the progress of the app installation. For https locations, this indicates the download progress. ProgressStatus is not available for provisioning and it is only for user-based installations. In provisioning, the value is always 0 (zero).",
+              "occurrence": "One"
+            },
+            {
+              "name": "Status",
+              "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppInstallation/{PackageFamilyName}/Status",
+              "format": "int",
+              "access": [
+                "Get"
+              ],
+              "description": "Status of app installation. The following values are returned: NOT_INSTALLED (0) - The node was added, but the execution has not completed. INSTALLING (1) - Execution has started, but the deployment has not completed. If the deployment completes regardless of success, this value is updated. FAILED (2) - Installation failed. The details of the error can be found under LastError and LastErrorDescription. INSTALLED (3) - Once an install is successful this node is cleaned up, however in the event the clean up action has not completed, this state may briefly appear.",
+              "occurrence": "One"
+            },
+            {
+              "name": "StoreInstall",
+              "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppInstallation/{PackageFamilyName}/StoreInstall",
+              "format": "xml",
+              "access": [
+                "Add",
+                "Delete",
+                "Exec",
+                "Get"
+              ],
+              "description": "Command to perform an install of an app and a license from the Microsoft Store.",
+              "occurrence": "One"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AppLicenses",
+      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppLicenses",
+      "format": "node",
+      "access": [
+        "Get"
+      ],
+      "description": "Used to manage licenses for app scenarios.",
+      "occurrence": "One",
+      "children": [
+        {
+          "name": "StoreLicenses",
+          "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppLicenses/StoreLicenses",
+          "format": "node",
+          "access": [
+            "Get"
+          ],
+          "description": "Used to manage licenses for store apps.",
+          "occurrence": "One",
+          "children": [
+            {
+              "name": "",
+              "title": "LicenseID",
+              "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppLicenses/StoreLicenses/{LicenseID}",
+              "format": "node",
+              "access": [
+                "Add",
+                "Delete",
+                "Get"
+              ],
+              "description": "License ID for a store installed app. The license ID is generally the PFN of the app.",
+              "occurrence": "ZeroOrMore",
+              "dynamicNaming": "License ID for a store installed app. The license ID is generally the PFN of the app.",
+              "children": [
+                {
+                  "name": "AddLicense",
+                  "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppLicenses/StoreLicenses/{LicenseID}/AddLicense",
+                  "format": "xml",
+                  "access": [
+                    "Exec"
+                  ],
+                  "description": "Command to add license.",
+                  "occurrence": "One"
+                },
+                {
+                  "name": "GetLicenseFromStore",
+                  "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppLicenses/StoreLicenses/{LicenseID}/GetLicenseFromStore",
+                  "format": "xml",
+                  "access": [
+                    "Exec"
+                  ],
+                  "description": "Command to get license from the store.",
+                  "occurrence": "One"
+                },
+                {
+                  "name": "LicenseCategory",
+                  "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppLicenses/StoreLicenses/{LicenseID}/LicenseCategory",
+                  "format": "chr",
+                  "access": [
+                    "Get"
+                  ],
+                  "description": "Category of license that is used to classify various license sources. Valid value: Unknown - unknown license category. Retail - license sold through retail channels, typically from the Microsoft Store. Enterprise - license sold through the enterprise sales channel, typically from the Store for Business. OEM - license issued to an OEM. Developer - developer license, typically installed during the app development or side-loading scenarios.",
+                  "occurrence": "One"
+                },
+                {
+                  "name": "LicenseUsage",
+                  "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppLicenses/StoreLicenses/{LicenseID}/LicenseUsage",
+                  "format": "chr",
+                  "access": [
+                    "Get"
+                  ],
+                  "description": "Indicates the allowed usage for the license. Valid values: Unknown - usage is unknown. Online - the license is only valid for online usage. This is for applications with concurrence requirements, such as an app used on several computers, but can only be used on one at any given time. Offline - license is valid for use offline. You don't need a connection to the internet to use this license. Enterprise Root - The license is valid for line of business apps.",
+                  "occurrence": "One"
+                },
+                {
+                  "name": "RequesterID",
+                  "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppLicenses/StoreLicenses/{LicenseID}/RequesterID",
+                  "format": "chr",
+                  "access": [
+                    "Get"
+                  ],
+                  "description": "Identifier for the entity that requested the license, such as the client who acquired the license. For example, all licenses issued by the Store for Business for a particular enterprise client has the same RequesterID.",
+                  "occurrence": "One"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AppManagement",
+      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement",
+      "format": "node",
+      "access": [
+        "Get"
+      ],
+      "description": "Used for inventory and app management (post-install).",
+      "occurrence": "One",
+      "children": [
+        {
+          "name": "AppInventoryQuery",
+          "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppInventoryQuery",
+          "format": "xml",
+          "access": [
+            "Get",
+            "Replace"
+          ],
+          "description": "Specifies the query for app inventory.",
+          "occurrence": "One",
+          "allowedValues": {
+            "type": "None"
+          }
+        },
+        {
+          "name": "AppInventoryResults",
+          "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppInventoryResults",
+          "format": "xml",
+          "access": [
+            "Get"
+          ],
+          "description": "Returns the results for app inventory that was created after the AppInventoryQuery operation.",
+          "occurrence": "One"
+        },
+        {
+          "name": "AppStore",
+          "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore",
+          "format": "node",
+          "access": [
+            "Add",
+            "Delete",
+            "Get"
+          ],
+          "occurrence": "OneOrMore",
+          "children": [
+            {
+              "name": "",
+              "title": "PackageFamilyName",
+              "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/{PackageFamilyName}",
+              "format": "node",
+              "access": [
+                "Add",
+                "Delete",
+                "Get"
+              ],
+              "description": "Package family name (PFN) of the app. There is one for each PFN on the device when reporting inventory. These items are rooted under their signing origin.",
+              "occurrence": "ZeroOrMore",
+              "dynamicNaming": "ClientInventory",
+              "children": [
+                {
+                  "name": "",
+                  "title": "PackageFullName",
+                  "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/{PackageFamilyName}/{PackageFullName}",
+                  "format": "node",
+                  "access": [
+                    "Add",
+                    "Delete",
+                    "Get"
+                  ],
+                  "description": "Full name of the package installed.",
+                  "occurrence": "ZeroOrMore",
+                  "dynamicNaming": "ClientInventory",
+                  "children": [
+                    {
+                      "name": "Architecture",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/{PackageFamilyName}/{PackageFullName}/Architecture",
+                      "format": "chr",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Architecture of installed package. Value type is string.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "InstallDate",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/{PackageFamilyName}/{PackageFullName}/InstallDate",
+                      "format": "chr",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Date the app was installed. Value type is string.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "InstallLocation",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/{PackageFamilyName}/{PackageFullName}/InstallLocation",
+                      "format": "chr",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Install location of the app on the device. Value type is string.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "IsBundle",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/{PackageFamilyName}/{PackageFullName}/IsBundle",
+                      "format": "int",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "The value is 1 if the package is an app bundle and 0 (zero) for all other cases. Value type is int.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "IsFramework",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/{PackageFamilyName}/{PackageFullName}/IsFramework",
+                      "format": "int",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Whether or not the app is a framework package. Value type is int. The value is 1 if the app is a framework package and 0 (zero) for all other cases.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "IsProvisioned",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/{PackageFamilyName}/{PackageFullName}/IsProvisioned",
+                      "format": "int",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "The value is 0 or 1 that indicates if the app is provisioned on the device. The value type is int.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "IsStub",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/{PackageFamilyName}/{PackageFullName}/IsStub",
+                      "format": "int",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "This node is used to identify whether the package is a stub package. A stub package is a version of the package with minimal functionality that will reduce the size of the app.",
+                      "occurrence": "One",
+                      "applicability": {
+                        "minOsBuild": "10.0.19041",
+                        "cspVersion": "1.2"
+                      }
+                    },
+                    {
+                      "name": "Name",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/{PackageFamilyName}/{PackageFullName}/Name",
+                      "format": "chr",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Name of the app. Value type is string.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "PackageStatus",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/{PackageFamilyName}/{PackageFullName}/PackageStatus",
+                      "format": "int",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Provides information about the status of the package. Value type is int. Valid values are: OK (0) - The package is usable. LicenseIssue (1) - The license of the package is not valid. Modified (2) - The package payload was modified by an unknown source. Tampered (4) - The package payload was tampered intentionally. Disabled (8) - The package is not available for use. It can still be serviced.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "Publisher",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/{PackageFamilyName}/{PackageFullName}/Publisher",
+                      "format": "chr",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Publisher name of the app. Value type is string.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "RequiresReinstall",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/{PackageFamilyName}/{PackageFullName}/RequiresReinstall",
+                      "format": "int",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Specifies whether the package state has changed and requires a reinstallation of the app. This can occur when new app resources are required, such as when a device has a change in language preference or a new DPI. It can also occur of the package was corrupted. If the value is 1, reinstallation of the app is performed.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "ResourceID",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/{PackageFamilyName}/{PackageFullName}/ResourceID",
+                      "format": "chr",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Resource ID of the app. This is null for the main app, ~ for a bundle, and contains resource information for resources packages.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "Users",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/{PackageFamilyName}/{PackageFullName}/Users",
+                      "format": "chr",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Registered users of the app and the package install state. If the query is at the device level, it returns all the registered users of the device. If you query the user context, it will only return the current user.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "Version",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/{PackageFamilyName}/{PackageFullName}/Version",
+                      "format": "chr",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Version of the app. Value type is string.",
+                      "occurrence": "One"
+                    }
+                  ]
+                },
+                {
+                  "name": "AppSettingPolicy",
+                  "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/{PackageFamilyName}/AppSettingPolicy",
+                  "format": "node",
+                  "access": [
+                    "Add",
+                    "Delete",
+                    "Get",
+                    "Replace"
+                  ],
+                  "description": "Interior node for all managed app setting values.",
+                  "occurrence": "One",
+                  "children": [
+                    {
+                      "name": "",
+                      "title": "SettingValue",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/{PackageFamilyName}/AppSettingPolicy/{SettingValue}",
+                      "format": "chr",
+                      "access": [
+                        "Add",
+                        "Delete",
+                        "Get",
+                        "Replace"
+                      ],
+                      "description": "The SettingValue and data represent a key value pair to be configured for the app. The node represents the name of the key and the data represents the value. You can find this value in LocalSettings in the Managed.App.Settings container.",
+                      "occurrence": "ZeroOrMore",
+                      "dynamicNaming": "SettingValue represents a Key in a Key Value Pair.  Values can be found in LocalSettings in the Managed.App.Settings container."
+                    }
+                  ]
+                },
+                {
+                  "name": "DoNotUpdate",
+                  "title": "DoNotUpdate",
+                  "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/{PackageFamilyName}/DoNotUpdate",
+                  "format": "int",
+                  "access": [
+                    "Add",
+                    "Delete",
+                    "Get",
+                    "Replace"
+                  ],
+                  "description": "Specifies whether you want to block a specific app from being updated via auto-updates.",
+                  "occurrence": "ZeroOrOne",
+                  "allowedValues": {
+                    "type": "ENUM",
+                    "enum": [
+                      {
+                        "value": "0",
+                        "description": "False"
+                      },
+                      {
+                        "value": "1",
+                        "description": "True"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "MaintainProcessorArchitectureOnUpdate",
+                  "title": "MaintainProcessorArchitectureOnUpdate",
+                  "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/{PackageFamilyName}/MaintainProcessorArchitectureOnUpdate",
+                  "format": "int",
+                  "access": [
+                    "Add",
+                    "Delete",
+                    "Get",
+                    "Replace"
+                  ],
+                  "description": "Specify whether on a AMD64 device, across an app update, the architecture of the installed app must not change. For example if you have the x86 flavor of a Windows app installed, with this setting enabled, across an update, the x86 flavor will be installed even when x64 flavor is available.",
+                  "occurrence": "ZeroOrOne",
+                  "applicability": {
+                    "minOsBuild": "10.0.19041",
+                    "cspVersion": "1.2"
+                  },
+                  "allowedValues": {
+                    "type": "ENUM",
+                    "enum": [
+                      {
+                        "value": "0",
+                        "description": "False"
+                      },
+                      {
+                        "value": "1",
+                        "description": "True"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "ReleaseManagement",
+              "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/ReleaseManagement",
+              "format": "node",
+              "access": [
+                "Get",
+                "Replace"
+              ],
+              "description": "Interior node for the managing updates through the Microsoft Store. These settings allow the IT admin to specify update channels for apps that they want their users to use for receiving updates. It allows the IT admin to assign a specific release to a smaller group for testing before the large deployment to the rest of the organization.",
+              "occurrence": "One",
+              "children": [
+                {
+                  "name": "",
+                  "title": "ReleaseManagementKey",
+                  "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/ReleaseManagement/{ReleaseManagementKey}",
+                  "format": "node",
+                  "access": [
+                    "Get",
+                    "Replace"
+                  ],
+                  "description": "Identifier for the app or set of apps. If there is only one app, it is the PackageFamilyName. If it is for a set of apps, it is the PackageFamilyName of the main app.",
+                  "occurrence": "One",
+                  "dynamicNaming": "If there is only one app, the name is the PackageFamilyName. If it is for a set of apps, the name is the PackageFamilyName of the main app.",
+                  "children": [
+                    {
+                      "name": "ChannelId",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/ReleaseManagement/{ReleaseManagementKey}/ChannelId",
+                      "format": "chr",
+                      "access": [
+                        "Add",
+                        "Delete",
+                        "Get",
+                        "Replace"
+                      ],
+                      "description": "Specifies the app channel ID.",
+                      "occurrence": "ZeroOrOne",
+                      "allowedValues": {
+                        "type": "None"
+                      }
+                    },
+                    {
+                      "name": "EffectiveRelease",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/ReleaseManagement/{ReleaseManagementKey}/EffectiveRelease",
+                      "format": "node",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Interior node used to specify the effective app release to use when multiple user policies are set on the device. The device policy or last user policy is used.",
+                      "occurrence": "One",
+                      "children": [
+                        {
+                          "name": "ChannelId",
+                          "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/ReleaseManagement/{ReleaseManagementKey}/EffectiveRelease/ChannelId",
+                          "format": "chr",
+                          "access": [
+                            "Get"
+                          ],
+                          "description": "Returns the last user channel ID on the device.",
+                          "occurrence": "ZeroOrOne"
+                        },
+                        {
+                          "name": "ReleaseManagementId",
+                          "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/ReleaseManagement/{ReleaseManagementKey}/EffectiveRelease/ReleaseManagementId",
+                          "format": "chr",
+                          "access": [
+                            "Get"
+                          ],
+                          "description": "Returns the last user release ID on the device.",
+                          "occurrence": "ZeroOrOne"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "ReleaseManagementId",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/ReleaseManagement/{ReleaseManagementKey}/ReleaseManagementId",
+                      "format": "chr",
+                      "access": [
+                        "Add",
+                        "Delete",
+                        "Get",
+                        "Replace"
+                      ],
+                      "description": "The IT admin can specify a release ID to indicate a specific release that they would like the user or device to be on.",
+                      "occurrence": "ZeroOrOne",
+                      "allowedValues": {
+                        "type": "None"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "LastScanError",
+          "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/LastScanError",
+          "format": "int",
+          "access": [
+            "Get"
+          ],
+          "description": "Reports the last error code returned by the update scan.",
+          "occurrence": "One"
+        },
+        {
+          "name": "RemovePackage",
+          "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/RemovePackage",
+          "format": "xml",
+          "access": [
+            "Exec",
+            "Get"
+          ],
+          "description": "Used to remove packages.",
+          "occurrence": "One",
+          "applicability": {
+            "minOsBuild": "10.0.15063",
+            "cspVersion": "1.2"
+          },
+          "allowedValues": {
+            "type": "None"
+          }
+        },
+        {
+          "name": "ResetPackage",
+          "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/ResetPackage",
+          "format": "xml",
+          "access": [
+            "Exec",
+            "Get"
+          ],
+          "description": "Used to restore the Windows app to its initial configuration.",
+          "occurrence": "One",
+          "applicability": {
+            "minOsBuild": "10.0.22000",
+            "cspVersion": "1.2"
+          },
+          "allowedValues": {
+            "type": "None"
+          }
+        },
+        {
+          "name": "System",
+          "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System",
+          "format": "node",
+          "access": [
+            "Add",
+            "Delete",
+            "Get"
+          ],
+          "occurrence": "OneOrMore",
+          "children": [
+            {
+              "name": "",
+              "title": "PackageFamilyName",
+              "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/{PackageFamilyName}",
+              "format": "node",
+              "access": [
+                "Add",
+                "Delete",
+                "Get"
+              ],
+              "description": "Package family name (PFN) of the app. There is one for each PFN on the device when reporting inventory. These items are rooted under their signing origin.",
+              "occurrence": "ZeroOrMore",
+              "dynamicNaming": "ClientInventory",
+              "children": [
+                {
+                  "name": "",
+                  "title": "PackageFullName",
+                  "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/{PackageFamilyName}/{PackageFullName}",
+                  "format": "node",
+                  "access": [
+                    "Add",
+                    "Delete",
+                    "Get"
+                  ],
+                  "description": "Full name of the package installed.",
+                  "occurrence": "ZeroOrMore",
+                  "dynamicNaming": "ClientInventory",
+                  "children": [
+                    {
+                      "name": "Architecture",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/{PackageFamilyName}/{PackageFullName}/Architecture",
+                      "format": "chr",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Architecture of installed package. Value type is string.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "InstallDate",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/{PackageFamilyName}/{PackageFullName}/InstallDate",
+                      "format": "chr",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Date the app was installed. Value type is string.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "InstallLocation",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/{PackageFamilyName}/{PackageFullName}/InstallLocation",
+                      "format": "chr",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Install location of the app on the device. Value type is string.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "IsBundle",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/{PackageFamilyName}/{PackageFullName}/IsBundle",
+                      "format": "int",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "The value is 1 if the package is an app bundle and 0 (zero) for all other cases. Value type is int.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "IsFramework",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/{PackageFamilyName}/{PackageFullName}/IsFramework",
+                      "format": "int",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Whether or not the app is a framework package. Value type is int. The value is 1 if the app is a framework package and 0 (zero) for all other cases.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "IsProvisioned",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/{PackageFamilyName}/{PackageFullName}/IsProvisioned",
+                      "format": "int",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "The value is 0 or 1 that indicates if the app is provisioned on the device. The value type is int.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "IsStub",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/{PackageFamilyName}/{PackageFullName}/IsStub",
+                      "format": "int",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "This node is used to identify whether the package is a stub package. A stub package is a version of the package with minimal functionality that will reduce the size of the app.",
+                      "occurrence": "One",
+                      "applicability": {
+                        "minOsBuild": "10.0.19041",
+                        "cspVersion": "1.2"
+                      }
+                    },
+                    {
+                      "name": "Name",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/{PackageFamilyName}/{PackageFullName}/Name",
+                      "format": "chr",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Name of the app. Value type is string.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "PackageStatus",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/{PackageFamilyName}/{PackageFullName}/PackageStatus",
+                      "format": "int",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Provides information about the status of the package. Value type is int. Valid values are: OK (0) - The package is usable. LicenseIssue (1) - The license of the package is not valid. Modified (2) - The package payload was modified by an unknown source. Tampered (4) - The package payload was tampered intentionally. Disabled (8) - The package is not available for use. It can still be serviced.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "Publisher",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/{PackageFamilyName}/{PackageFullName}/Publisher",
+                      "format": "chr",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Publisher name of the app. Value type is string.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "RequiresReinstall",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/{PackageFamilyName}/{PackageFullName}/RequiresReinstall",
+                      "format": "int",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Specifies whether the package state has changed and requires a reinstallation of the app. This can occur when new app resources are required, such as when a device has a change in language preference or a new DPI. It can also occur of the package was corrupted. If the value is 1, reinstallation of the app is performed.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "ResourceID",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/{PackageFamilyName}/{PackageFullName}/ResourceID",
+                      "format": "chr",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Resource ID of the app. This is null for the main app, ~ for a bundle, and contains resource information for resources packages.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "Users",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/{PackageFamilyName}/{PackageFullName}/Users",
+                      "format": "chr",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Registered users of the app and the package install state. If the query is at the device level, it returns all the registered users of the device. If you query the user context, it will only return the current user.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "Version",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/{PackageFamilyName}/{PackageFullName}/Version",
+                      "format": "chr",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Version of the app. Value type is string.",
+                      "occurrence": "One"
+                    }
+                  ]
+                },
+                {
+                  "name": "AppSettingPolicy",
+                  "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/{PackageFamilyName}/AppSettingPolicy",
+                  "format": "node",
+                  "access": [
+                    "Add",
+                    "Delete",
+                    "Get",
+                    "Replace"
+                  ],
+                  "description": "Interior node for all managed app setting values.",
+                  "occurrence": "One",
+                  "children": [
+                    {
+                      "name": "",
+                      "title": "SettingValue",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/{PackageFamilyName}/AppSettingPolicy/{SettingValue}",
+                      "format": "chr",
+                      "access": [
+                        "Add",
+                        "Delete",
+                        "Get",
+                        "Replace"
+                      ],
+                      "description": "The SettingValue and data represent a key value pair to be configured for the app. The node represents the name of the key and the data represents the value. You can find this value in LocalSettings in the Managed.App.Settings container.",
+                      "occurrence": "ZeroOrMore",
+                      "dynamicNaming": "SettingValue represents a Key in a Key Value Pair.  Values can be found in LocalSettings in the Managed.App.Settings container."
+                    }
+                  ]
+                },
+                {
+                  "name": "DoNotUpdate",
+                  "title": "DoNotUpdate",
+                  "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/{PackageFamilyName}/DoNotUpdate",
+                  "format": "int",
+                  "access": [
+                    "Add",
+                    "Delete",
+                    "Get",
+                    "Replace"
+                  ],
+                  "description": "Specifies whether you want to block a specific app from being updated via auto-updates.",
+                  "occurrence": "ZeroOrOne",
+                  "allowedValues": {
+                    "type": "ENUM",
+                    "enum": [
+                      {
+                        "value": "0",
+                        "description": "False"
+                      },
+                      {
+                        "value": "1",
+                        "description": "True"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "MaintainProcessorArchitectureOnUpdate",
+                  "title": "MaintainProcessorArchitectureOnUpdate",
+                  "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/{PackageFamilyName}/MaintainProcessorArchitectureOnUpdate",
+                  "format": "int",
+                  "access": [
+                    "Add",
+                    "Delete",
+                    "Get",
+                    "Replace"
+                  ],
+                  "description": "Specify whether on a AMD64 device, across an app update, the architecture of the installed app must not change. For example if you have the x86 flavor of a Windows app installed, with this setting enabled, across an update, the x86 flavor will be installed even when x64 flavor is available.",
+                  "occurrence": "ZeroOrOne",
+                  "applicability": {
+                    "minOsBuild": "10.0.19041",
+                    "cspVersion": "1.2"
+                  },
+                  "allowedValues": {
+                    "type": "ENUM",
+                    "enum": [
+                      {
+                        "value": "0",
+                        "description": "False"
+                      },
+                      {
+                        "value": "1",
+                        "description": "True"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "ReleaseManagement",
+              "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/ReleaseManagement",
+              "format": "node",
+              "access": [
+                "Get",
+                "Replace"
+              ],
+              "description": "Interior node for the managing updates through the Microsoft Store. These settings allow the IT admin to specify update channels for apps that they want their users to use for receiving updates. It allows the IT admin to assign a specific release to a smaller group for testing before the large deployment to the rest of the organization.",
+              "occurrence": "One",
+              "children": [
+                {
+                  "name": "",
+                  "title": "ReleaseManagementKey",
+                  "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/ReleaseManagement/{ReleaseManagementKey}",
+                  "format": "node",
+                  "access": [
+                    "Get",
+                    "Replace"
+                  ],
+                  "description": "Identifier for the app or set of apps. If there is only one app, it is the PackageFamilyName. If it is for a set of apps, it is the PackageFamilyName of the main app.",
+                  "occurrence": "One",
+                  "dynamicNaming": "If there is only one app, the name is the PackageFamilyName. If it is for a set of apps, the name is the PackageFamilyName of the main app.",
+                  "children": [
+                    {
+                      "name": "ChannelId",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/ReleaseManagement/{ReleaseManagementKey}/ChannelId",
+                      "format": "chr",
+                      "access": [
+                        "Add",
+                        "Delete",
+                        "Get",
+                        "Replace"
+                      ],
+                      "description": "Specifies the app channel ID.",
+                      "occurrence": "ZeroOrOne",
+                      "allowedValues": {
+                        "type": "None"
+                      }
+                    },
+                    {
+                      "name": "EffectiveRelease",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/ReleaseManagement/{ReleaseManagementKey}/EffectiveRelease",
+                      "format": "node",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Interior node used to specify the effective app release to use when multiple user policies are set on the device. The device policy or last user policy is used.",
+                      "occurrence": "One",
+                      "children": [
+                        {
+                          "name": "ChannelId",
+                          "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/ReleaseManagement/{ReleaseManagementKey}/EffectiveRelease/ChannelId",
+                          "format": "chr",
+                          "access": [
+                            "Get"
+                          ],
+                          "description": "Returns the last user channel ID on the device.",
+                          "occurrence": "ZeroOrOne"
+                        },
+                        {
+                          "name": "ReleaseManagementId",
+                          "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/ReleaseManagement/{ReleaseManagementKey}/EffectiveRelease/ReleaseManagementId",
+                          "format": "chr",
+                          "access": [
+                            "Get"
+                          ],
+                          "description": "Returns the last user release ID on the device.",
+                          "occurrence": "ZeroOrOne"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "ReleaseManagementId",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/ReleaseManagement/{ReleaseManagementKey}/ReleaseManagementId",
+                      "format": "chr",
+                      "access": [
+                        "Add",
+                        "Delete",
+                        "Get",
+                        "Replace"
+                      ],
+                      "description": "The IT admin can specify a release ID to indicate a specific release that they would like the user or device to be on.",
+                      "occurrence": "ZeroOrOne",
+                      "allowedValues": {
+                        "type": "None"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "UpdateScan",
+          "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/UpdateScan",
+          "format": "null",
+          "access": [
+            "Exec"
+          ],
+          "description": "Used to start the Windows Update scan.",
+          "occurrence": "One"
+        },
+        {
+          "name": "nonStore",
+          "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore",
+          "format": "node",
+          "access": [
+            "Add",
+            "Delete",
+            "Get"
+          ],
+          "occurrence": "OneOrMore",
+          "children": [
+            {
+              "name": "",
+              "title": "PackageFamilyName",
+              "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/{PackageFamilyName}",
+              "format": "node",
+              "access": [
+                "Add",
+                "Delete",
+                "Get"
+              ],
+              "description": "Package family name (PFN) of the app. There is one for each PFN on the device when reporting inventory. These items are rooted under their signing origin.",
+              "occurrence": "ZeroOrMore",
+              "dynamicNaming": "ClientInventory",
+              "children": [
+                {
+                  "name": "",
+                  "title": "PackageFullName",
+                  "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/{PackageFamilyName}/{PackageFullName}",
+                  "format": "node",
+                  "access": [
+                    "Add",
+                    "Delete",
+                    "Get"
+                  ],
+                  "description": "Full name of the package installed.",
+                  "occurrence": "ZeroOrMore",
+                  "dynamicNaming": "ClientInventory",
+                  "children": [
+                    {
+                      "name": "Architecture",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/{PackageFamilyName}/{PackageFullName}/Architecture",
+                      "format": "chr",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Architecture of installed package. Value type is string.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "InstallDate",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/{PackageFamilyName}/{PackageFullName}/InstallDate",
+                      "format": "chr",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Date the app was installed. Value type is string.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "InstallLocation",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/{PackageFamilyName}/{PackageFullName}/InstallLocation",
+                      "format": "chr",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Install location of the app on the device. Value type is string.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "IsBundle",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/{PackageFamilyName}/{PackageFullName}/IsBundle",
+                      "format": "int",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "The value is 1 if the package is an app bundle and 0 (zero) for all other cases. Value type is int.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "IsFramework",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/{PackageFamilyName}/{PackageFullName}/IsFramework",
+                      "format": "int",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Whether or not the app is a framework package. Value type is int. The value is 1 if the app is a framework package and 0 (zero) for all other cases.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "IsProvisioned",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/{PackageFamilyName}/{PackageFullName}/IsProvisioned",
+                      "format": "int",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "The value is 0 or 1 that indicates if the app is provisioned on the device. The value type is int.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "IsStub",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/{PackageFamilyName}/{PackageFullName}/IsStub",
+                      "format": "int",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "This node is used to identify whether the package is a stub package. A stub package is a version of the package with minimal functionality that will reduce the size of the app.",
+                      "occurrence": "One",
+                      "applicability": {
+                        "minOsBuild": "10.0.19041",
+                        "cspVersion": "1.2"
+                      }
+                    },
+                    {
+                      "name": "Name",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/{PackageFamilyName}/{PackageFullName}/Name",
+                      "format": "chr",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Name of the app. Value type is string.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "PackageStatus",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/{PackageFamilyName}/{PackageFullName}/PackageStatus",
+                      "format": "int",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Provides information about the status of the package. Value type is int. Valid values are: OK (0) - The package is usable. LicenseIssue (1) - The license of the package is not valid. Modified (2) - The package payload was modified by an unknown source. Tampered (4) - The package payload was tampered intentionally. Disabled (8) - The package is not available for use. It can still be serviced.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "Publisher",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/{PackageFamilyName}/{PackageFullName}/Publisher",
+                      "format": "chr",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Publisher name of the app. Value type is string.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "RequiresReinstall",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/{PackageFamilyName}/{PackageFullName}/RequiresReinstall",
+                      "format": "int",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Specifies whether the package state has changed and requires a reinstallation of the app. This can occur when new app resources are required, such as when a device has a change in language preference or a new DPI. It can also occur of the package was corrupted. If the value is 1, reinstallation of the app is performed.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "ResourceID",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/{PackageFamilyName}/{PackageFullName}/ResourceID",
+                      "format": "chr",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Resource ID of the app. This is null for the main app, ~ for a bundle, and contains resource information for resources packages.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "Users",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/{PackageFamilyName}/{PackageFullName}/Users",
+                      "format": "chr",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Registered users of the app and the package install state. If the query is at the device level, it returns all the registered users of the device. If you query the user context, it will only return the current user.",
+                      "occurrence": "One"
+                    },
+                    {
+                      "name": "Version",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/{PackageFamilyName}/{PackageFullName}/Version",
+                      "format": "chr",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Version of the app. Value type is string.",
+                      "occurrence": "One"
+                    }
+                  ]
+                },
+                {
+                  "name": "AppSettingPolicy",
+                  "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/{PackageFamilyName}/AppSettingPolicy",
+                  "format": "node",
+                  "access": [
+                    "Add",
+                    "Delete",
+                    "Get",
+                    "Replace"
+                  ],
+                  "description": "Interior node for all managed app setting values.",
+                  "occurrence": "One",
+                  "children": [
+                    {
+                      "name": "",
+                      "title": "SettingValue",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/{PackageFamilyName}/AppSettingPolicy/{SettingValue}",
+                      "format": "chr",
+                      "access": [
+                        "Add",
+                        "Delete",
+                        "Get",
+                        "Replace"
+                      ],
+                      "description": "The SettingValue and data represent a key value pair to be configured for the app. The node represents the name of the key and the data represents the value. You can find this value in LocalSettings in the Managed.App.Settings container.",
+                      "occurrence": "ZeroOrMore",
+                      "dynamicNaming": "SettingValue represents a Key in a Key Value Pair.  Values can be found in LocalSettings in the Managed.App.Settings container."
+                    }
+                  ]
+                },
+                {
+                  "name": "DoNotUpdate",
+                  "title": "DoNotUpdate",
+                  "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/{PackageFamilyName}/DoNotUpdate",
+                  "format": "int",
+                  "access": [
+                    "Add",
+                    "Delete",
+                    "Get",
+                    "Replace"
+                  ],
+                  "description": "Specifies whether you want to block a specific app from being updated via auto-updates.",
+                  "occurrence": "ZeroOrOne",
+                  "allowedValues": {
+                    "type": "ENUM",
+                    "enum": [
+                      {
+                        "value": "0",
+                        "description": "False"
+                      },
+                      {
+                        "value": "1",
+                        "description": "True"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "MaintainProcessorArchitectureOnUpdate",
+                  "title": "MaintainProcessorArchitectureOnUpdate",
+                  "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/{PackageFamilyName}/MaintainProcessorArchitectureOnUpdate",
+                  "format": "int",
+                  "access": [
+                    "Add",
+                    "Delete",
+                    "Get",
+                    "Replace"
+                  ],
+                  "description": "Specify whether on a AMD64 device, across an app update, the architecture of the installed app must not change. For example if you have the x86 flavor of a Windows app installed, with this setting enabled, across an update, the x86 flavor will be installed even when x64 flavor is available.",
+                  "occurrence": "ZeroOrOne",
+                  "applicability": {
+                    "minOsBuild": "10.0.19041",
+                    "cspVersion": "1.2"
+                  },
+                  "allowedValues": {
+                    "type": "ENUM",
+                    "enum": [
+                      {
+                        "value": "0",
+                        "description": "False"
+                      },
+                      {
+                        "value": "1",
+                        "description": "True"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "ReleaseManagement",
+              "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/ReleaseManagement",
+              "format": "node",
+              "access": [
+                "Get",
+                "Replace"
+              ],
+              "description": "Interior node for the managing updates through the Microsoft Store. These settings allow the IT admin to specify update channels for apps that they want their users to use for receiving updates. It allows the IT admin to assign a specific release to a smaller group for testing before the large deployment to the rest of the organization.",
+              "occurrence": "One",
+              "children": [
+                {
+                  "name": "",
+                  "title": "ReleaseManagementKey",
+                  "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/ReleaseManagement/{ReleaseManagementKey}",
+                  "format": "node",
+                  "access": [
+                    "Get",
+                    "Replace"
+                  ],
+                  "description": "Identifier for the app or set of apps. If there is only one app, it is the PackageFamilyName. If it is for a set of apps, it is the PackageFamilyName of the main app.",
+                  "occurrence": "One",
+                  "dynamicNaming": "If there is only one app, the name is the PackageFamilyName. If it is for a set of apps, the name is the PackageFamilyName of the main app.",
+                  "children": [
+                    {
+                      "name": "ChannelId",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/ReleaseManagement/{ReleaseManagementKey}/ChannelId",
+                      "format": "chr",
+                      "access": [
+                        "Add",
+                        "Delete",
+                        "Get",
+                        "Replace"
+                      ],
+                      "description": "Specifies the app channel ID.",
+                      "occurrence": "ZeroOrOne",
+                      "allowedValues": {
+                        "type": "None"
+                      }
+                    },
+                    {
+                      "name": "EffectiveRelease",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/ReleaseManagement/{ReleaseManagementKey}/EffectiveRelease",
+                      "format": "node",
+                      "access": [
+                        "Get"
+                      ],
+                      "description": "Interior node used to specify the effective app release to use when multiple user policies are set on the device. The device policy or last user policy is used.",
+                      "occurrence": "One",
+                      "children": [
+                        {
+                          "name": "ChannelId",
+                          "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/ReleaseManagement/{ReleaseManagementKey}/EffectiveRelease/ChannelId",
+                          "format": "chr",
+                          "access": [
+                            "Get"
+                          ],
+                          "description": "Returns the last user channel ID on the device.",
+                          "occurrence": "ZeroOrOne"
+                        },
+                        {
+                          "name": "ReleaseManagementId",
+                          "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/ReleaseManagement/{ReleaseManagementKey}/EffectiveRelease/ReleaseManagementId",
+                          "format": "chr",
+                          "access": [
+                            "Get"
+                          ],
+                          "description": "Returns the last user release ID on the device.",
+                          "occurrence": "ZeroOrOne"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "ReleaseManagementId",
+                      "path": "./User/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/ReleaseManagement/{ReleaseManagementKey}/ReleaseManagementId",
+                      "format": "chr",
+                      "access": [
+                        "Add",
+                        "Delete",
+                        "Get",
+                        "Replace"
+                      ],
+                      "description": "The IT admin can specify a release ID to indicate a specific release that they would like the user or device to be on.",
+                      "occurrence": "ZeroOrOne",
+                      "allowedValues": {
+                        "type": "None"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

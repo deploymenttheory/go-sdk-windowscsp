@@ -1,0 +1,42 @@
+{
+  "name": "Security",
+  "path": "./User/Vendor/MSFT/Policy/Config",
+  "nodes": [
+    {
+      "name": "RecoveryEnvironmentAuthentication",
+      "path": "./User/Vendor/MSFT/Policy/Config/Security/RecoveryEnvironmentAuthentication",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy controls the requirement of Admin Authentication in RecoveryEnvironment.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.17763",
+        "cspVersion": "8.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;0xD2;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "current) behavior"
+          },
+          {
+            "value": "1",
+            "description": "RequireAuthentication: Admin Authentication is always required for components in RecoveryEnvironment"
+          },
+          {
+            "value": "2",
+            "description": "NoRequireAuthentication: Admin Authentication is not required for components in RecoveryEnvironment"
+          }
+        ]
+      }
+    }
+  ]
+}

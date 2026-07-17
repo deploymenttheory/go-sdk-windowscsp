@@ -1,0 +1,56 @@
+{
+  "name": "WindowsBackupAndRestore",
+  "path": "./Device/Vendor/MSFT",
+  "nodes": [
+    {
+      "name": "EnableWindowsRestore",
+      "title": "Enable Windows Restore",
+      "path": "./Device/Vendor/MSFT/WindowsBackupAndRestore/EnableWindowsRestore",
+      "format": "bool",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "Sets a policy to enable Windows Restore.",
+      "default": "false",
+      "occurrence": "One",
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "false",
+            "description": "Windows Restore Not Configured"
+          },
+          {
+            "value": "true",
+            "description": "Windows Restore Enabled"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RestoreFlowStatus",
+      "title": "Restore Flow Status",
+      "path": "./Device/Vendor/MSFT/WindowsBackupAndRestore/RestoreFlowStatus",
+      "format": "chr",
+      "access": [
+        "Get"
+      ],
+      "description": "Restore Flow status.",
+      "occurrence": "One"
+    },
+    {
+      "name": "RestoreFlowTimeStamp",
+      "title": "Restore Flow Time Stamp",
+      "path": "./Device/Vendor/MSFT/WindowsBackupAndRestore/RestoreFlowTimeStamp",
+      "format": "chr",
+      "access": [
+        "Get"
+      ],
+      "description": "Restore flow entry time.",
+      "occurrence": "One"
+    }
+  ]
+}

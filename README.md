@@ -1,75 +1,134 @@
-# Template
+# go-sdk-windowscsp
 
-This repository serves as a **Default Template Repository** according official [GitHub Contributing Guidelines][ProjectSetup] for healthy contributions. It brings you clean default Templates for several areas:
+A Go SDK for **Windows Configuration Service Providers (CSPs)**, generated
+from Microsoft's canonical [DDF v2](https://learn.microsoft.com/en-us/windows/client-management/mdm/configuration-service-provider-ddf)
+(Device Description Framework) metadata.
 
-- [Azure DevOps Pull Requests](.azuredevops/PULL_REQUEST_TEMPLATE.md) ([`.azuredevops\PULL_REQUEST_TEMPLATE.md`](`.azuredevops\PULL_REQUEST_TEMPLATE.md`))
-- [Azure Pipelines](.pipelines/pipeline.yml) ([`.pipelines/pipeline.yml`](`.pipelines/pipeline.yml`))
-- [GitHub Workflows](.github/workflows/)
-  - [Super Linter](.github/workflows/linter.yml) ([`.github/workflows/linter.yml`](`.github/workflows/linter.yml`))
-  - [Sample Workflows](.github/workflows/workflow.yml) ([`.github/workflows/workflow.yml`](`.github/workflows/workflow.yml`))
-- [GitHub Pull Requests](.github/PULL_REQUEST_TEMPLATE.md) ([`.github/PULL_REQUEST_TEMPLATE.md`](`.github/PULL_REQUEST_TEMPLATE.md`))
-- [GitHub Issues](.github/ISSUE_TEMPLATE/)
-  - [Feature Requests](.github/ISSUE_TEMPLATE/FEATURE_REQUEST.md) ([`.github/ISSUE_TEMPLATE/FEATURE_REQUEST.md`](`.github/ISSUE_TEMPLATE/FEATURE_REQUEST.md`))
-  - [Bug Reports](.github/ISSUE_TEMPLATE/BUG_REPORT.md) ([`.github/ISSUE_TEMPLATE/BUG_REPORT.md`](`.github/ISSUE_TEMPLATE/BUG_REPORT.md`))
-- [Codeowners](.github/CODEOWNERS) ([`.github/CODEOWNERS`](`.github/CODEOWNERS`)) _adjust usernames once cloned_
-- [Wiki and Documentation](docs/) ([`docs/`](`docs/`))
-- [gitignore](.gitignore) ([`.gitignore`](.gitignore))
-- [gitattributes](.gitattributes) ([`.gitattributes`](.gitattributes))
-- [Changelog](CHANGELOG.md) ([`CHANGELOG.md`](`CHANGELOG.md`))
-- [Code of Conduct](CODE_OF_CONDUCT.md) ([`CODE_OF_CONDUCT.md`](`CODE_OF_CONDUCT.md`))
-- [Contribution](CONTRIBUTING.md) ([`CONTRIBUTING.md`](`CONTRIBUTING.md`))
-- [License](LICENSE) ([`LICENSE`](`LICENSE`)) _adjust projectname once cloned_
-- [Readme](README.md) ([`README.md`](`README.md`))
-- [Security](SECURITY.md) ([`SECURITY.md`](`SECURITY.md`))
+Every CSP and every Policy CSP area becomes a strongly-typed Go package with
+**LCRUD** operations — `List`, `Create` (Add), `Get`, `Update` (Replace),
+`Delete`, plus `Exec` — for every node the DDF declares, with OMA-URIs,
+allowed-value constants and applicability metadata carried through from the
+schema.
 
+```
+Microsoft DDF v2 zip ──fetchddf──▶ metadata/csp/*.json ──gencsp──▶ windowscsp/{csp,policy}/<area>/
+   (download.microsoft.com)         (committed, reviewed)           (generated LCRUD packages)
+```
 
-## Status
+## Usage
 
-[![Super Linter](<https://github.com/segraef/Template/actions/workflows/linter.yml/badge.svg>)](<https://github.com/segraef/Template/actions/workflows/linter.yml>)
+The SDK supports two distinct workflows; pick by whether a live endpoint
+answers SyncML.
 
-[![Sample Workflow](<https://github.com/segraef/Template/actions/workflows/workflow.yml/badge.svg>)](<https://github.com/segraef/Template/actions/workflows/workflow.yml>)
+**Execute operations (SyncML fully transparent).** `syncml.Executor`
+renders each typed call to SyncML, delivers it through your `SenderFunc`
+(your OMA-DM session / MDM proxy), and parses the response back into typed
+values and errors — callers never see SyncML, and reads return real values:
 
-## Creating a repository from a template
+```go
+c := windowscsp.NewClient(syncml.NewExecutor(mySender))
 
-You can [generate](https://github.com/segraef/Template/generate) a new repository with the same directory structure and files as an existing repository. More details can be found [here][CreateFromTemplate].
+err := c.Policy.Camera.UpdateAllowCamera(ctx, camera.AllowCameraNotAllowed)
+allow, err := c.Policy.Camera.GetAllowCamera(ctx) // typed result from the device
+```
 
-## Reporting Issues and Feedback
+**Author a SyncML batch document (nothing executes).** With no endpoint,
+`syncml.Recorder` queues the typed calls and the *document is the product*
+— for Intune custom OMA-URI profiles or MDM delivery pipelines. A Recorder
+is write-only (reads fail with `client.ErrDeferred`):
 
-### Issues and Bugs
+```go
+rec := syncml.NewRecorder()
+c := windowscsp.NewClient(rec)
 
-If you find any bugs, please file an issue in the [GitHub Issues][GitHubIssues] page. Please fill out the provided template with the appropriate information.
+_ = c.Policy.Camera.UpdateAllowCamera(ctx, camera.AllowCameraNotAllowed)
+_ = c.CSP.VPNv2.CreateProfileName(ctx, "Corp")
+_ = c.CSP.Reboot.ExecRebootNow(ctx)
 
-If you are taking the time to mention a problem, even a seemingly minor one, it is greatly appreciated, and a totally valid contribution to this project. **Thank you!**
+doc := rec.Document() // the deliverable: a <SyncBody> batch for your MDM
+```
 
-## Feedback
+- `windowscsp.NewClient(transport)` fans one transport out to every service:
+  `c.CSP.<Name>` for the ~60 standalone CSPs, `c.Policy.<Area>` for the ~250
+  Policy areas (including the `ADMX_*` backed ones).
+- Dynamic (runtime-named) nodes become `string` parameters
+  (`GetProfileNameServer(ctx, profileName)`), and their parents get `List`.
+- Raw OMA-URIs are exported per package (`camera.URIAllowCamera`,
+  `vpnv2.URIProfileNameServer("Corp")`) for Intune custom-OMA-URI scenarios.
 
-If there is a feature you would like to see in here, please file an issue or feature request in the [GitHub Issues][GitHubIssues] page to provide direct feedback.
+Runnable, offline examples live under [`examples/<domain>/<example>`](examples/)
+— e.g. `go run ./examples/vpnv2/manage_profiles`.
 
-## Contribution
+### Custom OMA-URIs
 
-If you would like to become an active contributor to this repository or project, please follow the instructions provided in [`CONTRIBUTING.md`][Contributing].
+OMA-URIs are first-class in both directions
+(see `examples/uris/custom_oma_uri`):
 
-## Learn More
+- **Generate a URI from the SDK** — every generated package exports its
+  OMA-URIs: constants for static nodes (`camera.URIAllowCamera`) and builder
+  functions for dynamic nodes (`vpnv2.URIProfileNameAlwaysOn("Corp")`).
+  These are exactly what an Intune custom OMA-URI profile asks for
+  (URI + data type + value).
+- **Operate on a URI the SDK doesn't cover** — the generated services are a
+  convenience layer, not a cage. Every transport implements
+  `client.Client`, whose six verbs take plain URI strings, so OEM /
+  third-party CSP nodes (or nodes newer than the pinned DDF release) work
+  through the same transports:
 
-* [GitHub Documentation][GitHubDocs]
-* [Azure DevOps Documentation][AzureDevOpsDocs]
-* [Microsoft Azure Documentation][MicrosoftAzureDocs]
+  ```go
+  rec.Replace(ctx, "./Device/Vendor/OEM/ContosoAgent/TelemetryLevel", client.Int(2))
+  v, err := exec.Get(ctx, "./Device/Vendor/OEM/ContosoAgent/Status") // typed Value back
+  ```
 
-<!-- References -->
+### Transports
 
-<!-- Local -->
-[ProjectSetup]: <https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions>
-[CreateFromTemplate]: <https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/creating-a-repository-from-a-template>
-[GitHubDocs]: <https://docs.github.com/>
-[AzureDevOpsDocs]: <https://docs.microsoft.com/en-us/azure/devops/?view=azure-devops>
-[GitHubIssues]: <https://github.com/segraef/Template/issues>
-[Contributing]: CONTRIBUTING.md
+Anything implementing the six-verb `client.Client` interface:
 
-<!-- External -->
-[Az]: <https://img.shields.io/powershellgallery/v/Az.svg?style=flat-square&label=Az>
-[AzGallery]: <https://www.powershellgallery.com/packages/Az/>
-[PowerShellCore]: <https://github.com/PowerShell/PowerShell/releases/latest>
+| Transport | Workflow | Purpose |
+|---|---|---|
+| `syncml.Executor` | execute | live SyncML exchange, fully transparent: calls rendered, responses parsed into typed results |
+| `syncml.Recorder` | author | offline batch authoring: queue typed writes, emit the SyncML document (write-only) |
+| `clienttest.InMemory` | test | fake CSP tree for unit tests |
+| yours | execute | an MDM server session, or the local MDM WMI bridge (`root\cimv2\mdm\dmmap`) |
 
-<!-- Docs -->
-[MicrosoftAzureDocs]: <https://docs.microsoft.com/en-us/azure/>
-[PowerShellDocs]: <https://docs.microsoft.com/en-us/powershell/>
+## The pipeline
+
+| Stage | Command | Output |
+|---|---|---|
+| Acquire | `go run ./cmd/fetchddf` | `metadata/csp/*.json` + `PROVENANCE.json` |
+| Generate | `go run ./cmd/gencsp` | `windowscsp/csp/`, `windowscsp/policy/`, `windowscsp/registry.go` |
+
+`fetchddf` downloads the **pinned** DDF v2 release (currently *February
+2026*), verifies its SHA-256 and writes one JSON snapshot per CSP. The
+snapshots are committed; codegen is offline and deterministic from them.
+`-zip` parses a local drop, `-discover` scrapes Microsoft Learn for a newer
+one.
+
+Generated packages separate concerns per file: `doc.go`,
+`<pkg>_service.go` (service struct + constructor), `<pkg>_uris.go`
+(OMA-URI constants/builders), `<pkg>_crud.go` (LCRUD methods),
+`<pkg>_enums.go` (allowed-value constants). Every generated file starts with
+the `DO NOT EDIT` marker, which also drives stale-file pruning.
+
+## CI
+
+- **CI** (`ci.yml`) — build + vet + tests on Ubuntu and Windows, plus a
+  *regeneration determinism gate*: `gencsp` re-runs from the committed
+  snapshots and the build fails if the output differs from the committed
+  tree by a byte.
+- **DDF update** (`ddf-update.yml`) — weekly (and on demand): discovers the
+  current Microsoft drop, refreshes snapshots + generated code, and opens a
+  PR when anything changed.
+
+## Development
+
+```sh
+go test ./cmd/... ./internal/... ./windowscsp/...   # unit + golden + smoke tests
+go run ./cmd/gencsp                                  # regenerate after template/builder changes
+go test ./internal/codegen -run TestGolden -update   # refresh codegen golden files
+```
+
+Architecture notes live in [docs/implementation-plan.md](docs/implementation-plan.md).
+The design borrows deliberately: DDF acquisition/snapshots from
+`go-bindings-wmi`, the client/registry shape from `go-sdk-jamfpro-v2`, and
+the template-firewalled, prune-and-diff codegen from `go-bindings-win32`.

@@ -1,0 +1,65 @@
+{
+  "name": "Notifications",
+  "path": "./Device/Vendor/MSFT/Policy/Config",
+  "nodes": [
+    {
+      "name": "DisallowCloudNotification",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Notifications/DisallowCloudNotification",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting blocks applications from using the network to send tile, badge, toast, and raw notifications. Specifically, this policy setting turns off the connection between Windows and the Windows Push Notification Service (WNS). This policy setting also stops applications from being able to use periodic (polling) notifications. If you enable this policy setting, applications and system features will not be able receive notifications from the network from WNS or via notification polling APIs. If you enable this policy setting, notifications can still be raised by applications running on the machine via local API calls from within the application. If you disable or do not configure this policy setting, the client computer will connect to WNS at user login and applications will be allowed to use periodic (polling) notifications. No reboots or service restarts are required for this policy setting to take effect. WarningThis policy is designed for zero exhaust. This policy may cause some MDM processes to break because WNS notification is used by the MDM server to send real time tasks to the device, such as remote wipe, unenroll, remote find, and mandatory app installation. When this policy is set to disallow WNS, those real time processes will no longer work and some time-sensitive actions such as remote wipe when the device is stolen or unenrollment when the device is compromised will not work.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.17134",
+        "cspVersion": "7.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "Enable cloud notification."
+          },
+          {
+            "value": "1",
+            "description": "Disable cloud notification."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "NoCloudNotification",
+        "areaPath": "WPN~AT~StartMenu~NotificationsCategory"
+      }
+    },
+    {
+      "name": "WnsEndpoint",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Notifications/WnsEndpoint",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "FQDN for the WNS endpoint",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "gpMapping": {
+        "englishName": "WnsEndpoint_Policy",
+        "areaPath": "WPN~AT~StartMenu~NotificationsCategory",
+        "element": "WnsEndpoint_FQDN"
+      }
+    }
+  ]
+}

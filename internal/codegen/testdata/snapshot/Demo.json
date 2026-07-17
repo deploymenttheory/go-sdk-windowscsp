@@ -1,0 +1,63 @@
+{
+  "name": "Demo",
+  "path": "./Device/Vendor/MSFT",
+  "nodes": [
+    {
+      "name": "DoIt",
+      "path": "./Device/Vendor/MSFT/Demo/DoIt",
+      "format": "null",
+      "access": [
+        "Exec"
+      ],
+      "description": "Executes the thing.",
+      "rebootBehavior": "Automatic"
+    },
+    {
+      "name": "Profiles",
+      "path": "./Device/Vendor/MSFT/Demo/Profiles",
+      "format": "node",
+      "access": [
+        "Get"
+      ],
+      "children": [
+        {
+          "name": "",
+          "title": "ProfileName",
+          "path": "./Device/Vendor/MSFT/Demo/Profiles/{ProfileName}",
+          "format": "node",
+          "access": [
+            "Add",
+            "Delete",
+            "Get"
+          ],
+          "description": "A profile, named by the server.",
+          "dynamicNaming": "[a-zA-Z0-9]+",
+          "children": [
+            {
+              "name": "Server",
+              "path": "./Device/Vendor/MSFT/Demo/Profiles/{ProfileName}/Server",
+              "format": "chr",
+              "access": [
+                "Add",
+                "Get",
+                "Replace"
+              ],
+              "description": "The server for this profile."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Version",
+      "path": "./Device/Vendor/MSFT/Demo/Version",
+      "format": "int",
+      "access": [
+        "Get"
+      ],
+      "description": "Schema version.",
+      "default": "2",
+      "deprecatedOsBuild": "10.0.22621"
+    }
+  ]
+}

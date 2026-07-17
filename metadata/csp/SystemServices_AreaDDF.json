@@ -1,0 +1,652 @@
+{
+  "name": "SystemServices",
+  "path": "./Device/Vendor/MSFT/Policy/Config",
+  "nodes": [
+    {
+      "name": "ConfigureComputerBrowserServiceStartupMode",
+      "path": "./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureComputerBrowserServiceStartupMode",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This setting determines whether the service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual.",
+      "default": "3",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.26100, 10.0.22621.5126",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "Range",
+        "value": "[2-4]"
+      },
+      "gpMapping": {
+        "englishName": "Computer Browser",
+        "areaPath": "Windows Settings~Security Settings~System Services"
+      }
+    },
+    {
+      "name": "ConfigureHomeGroupListenerServiceStartupMode",
+      "path": "./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureHomeGroupListenerServiceStartupMode",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This setting determines whether the service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual.",
+      "default": "3",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.17134",
+        "cspVersion": "7.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "Range",
+        "value": "[2-4]"
+      },
+      "gpMapping": {
+        "englishName": "HomeGroup Listener",
+        "areaPath": "Windows Settings~Security Settings~System Services"
+      }
+    },
+    {
+      "name": "ConfigureHomeGroupProviderServiceStartupMode",
+      "path": "./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureHomeGroupProviderServiceStartupMode",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This setting determines whether the service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual.",
+      "default": "3",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.17134",
+        "cspVersion": "7.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "Range",
+        "value": "[2-4]"
+      },
+      "gpMapping": {
+        "englishName": "HomeGroup Provider",
+        "areaPath": "Windows Settings~Security Settings~System Services"
+      }
+    },
+    {
+      "name": "ConfigureIISAdminServiceStartupMode",
+      "path": "./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureIISAdminServiceStartupMode",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This setting determines whether the service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual.",
+      "default": "3",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.26100, 10.0.22621.5126",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "Range",
+        "value": "[2-4]"
+      },
+      "gpMapping": {
+        "englishName": "IIS Admin Service",
+        "areaPath": "Windows Settings~Security Settings~System Services"
+      }
+    },
+    {
+      "name": "ConfigureInfraredMonitorServiceStartupMode",
+      "path": "./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureInfraredMonitorServiceStartupMode",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This setting determines whether the service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual.",
+      "default": "3",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.26100, 10.0.22621.5126",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "Range",
+        "value": "[2-4]"
+      },
+      "gpMapping": {
+        "englishName": "Infrared Monitor Service",
+        "areaPath": "Windows Settings~Security Settings~System Services"
+      }
+    },
+    {
+      "name": "ConfigureInternetConnectionSharingServiceStartupMode",
+      "path": "./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureInternetConnectionSharingServiceStartupMode",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This setting determines whether the service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual.",
+      "default": "3",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.26100, 10.0.22621.5126",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "Range",
+        "value": "[2-4]"
+      },
+      "gpMapping": {
+        "englishName": "Internet Connection Sharing (ICS)",
+        "areaPath": "Windows Settings~Security Settings~System Services"
+      }
+    },
+    {
+      "name": "ConfigureLxssManagerServiceStartupMode",
+      "path": "./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureLxssManagerServiceStartupMode",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This setting determines whether the service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual.",
+      "default": "3",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.26100, 10.0.22621.5126",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "Range",
+        "value": "[2-4]"
+      },
+      "gpMapping": {
+        "englishName": "LxssManager",
+        "areaPath": "Windows Settings~Security Settings~System Services"
+      }
+    },
+    {
+      "name": "ConfigureMicrosoftFTPServiceStartupMode",
+      "path": "./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureMicrosoftFTPServiceStartupMode",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This setting determines whether the service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual.",
+      "default": "3",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.26100, 10.0.22621.5126",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "Range",
+        "value": "[2-4]"
+      },
+      "gpMapping": {
+        "englishName": "Microsoft FTP Service",
+        "areaPath": "Windows Settings~Security Settings~System Services"
+      }
+    },
+    {
+      "name": "ConfigureRemoteProcedureCallLocatorServiceStartupMode",
+      "path": "./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureRemoteProcedureCallLocatorServiceStartupMode",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This setting determines whether the service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual.",
+      "default": "3",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.26100, 10.0.22621.5126",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "Range",
+        "value": "[2-4]"
+      },
+      "gpMapping": {
+        "englishName": "Remote Procedure Call (RPC) Locator",
+        "areaPath": "Windows Settings~Security Settings~System Services"
+      }
+    },
+    {
+      "name": "ConfigureRoutingAndRemoteAccessServiceStartupMode",
+      "path": "./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureRoutingAndRemoteAccessServiceStartupMode",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This setting determines whether the service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual.",
+      "default": "3",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.26100, 10.0.22621.5126",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "Range",
+        "value": "[2-4]"
+      },
+      "gpMapping": {
+        "englishName": "Routing and Remote Access",
+        "areaPath": "Windows Settings~Security Settings~System Services"
+      }
+    },
+    {
+      "name": "ConfigureSSDPDiscoveryServiceStartupMode",
+      "path": "./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureSSDPDiscoveryServiceStartupMode",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This setting determines whether the service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual.",
+      "default": "3",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.26100, 10.0.22621.5126",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "Range",
+        "value": "[2-4]"
+      },
+      "gpMapping": {
+        "englishName": "SSDP Discovery",
+        "areaPath": "Windows Settings~Security Settings~System Services"
+      }
+    },
+    {
+      "name": "ConfigureSimpleTCPIPServicesStartupMode",
+      "path": "./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureSimpleTCPIPServicesStartupMode",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This setting determines whether the service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual.",
+      "default": "3",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.26100, 10.0.22621.5126",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "Range",
+        "value": "[2-4]"
+      },
+      "gpMapping": {
+        "englishName": "Simple TCP/IP Services",
+        "areaPath": "Windows Settings~Security Settings~System Services"
+      }
+    },
+    {
+      "name": "ConfigureSpecialAdministrationConsoleHelperServiceStartupMode",
+      "path": "./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureSpecialAdministrationConsoleHelperServiceStartupMode",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This setting determines whether the service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual.",
+      "default": "3",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.26100, 10.0.22621.5126",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "Range",
+        "value": "[2-4]"
+      },
+      "gpMapping": {
+        "englishName": "Special Administration Console Helper",
+        "areaPath": "Windows Settings~Security Settings~System Services"
+      }
+    },
+    {
+      "name": "ConfigureUPnPDeviceHostServiceStartupMode",
+      "path": "./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureUPnPDeviceHostServiceStartupMode",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This setting determines whether the service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual.",
+      "default": "3",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.26100, 10.0.22621.5126",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "Range",
+        "value": "[2-4]"
+      },
+      "gpMapping": {
+        "englishName": "UPnP Device Host",
+        "areaPath": "Windows Settings~Security Settings~System Services"
+      }
+    },
+    {
+      "name": "ConfigureWebManagementServiceStartupMode",
+      "path": "./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureWebManagementServiceStartupMode",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This setting determines whether the service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual.",
+      "default": "3",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.26100, 10.0.22621.5126",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "Range",
+        "value": "[2-4]"
+      },
+      "gpMapping": {
+        "englishName": "Web Management Service",
+        "areaPath": "Windows Settings~Security Settings~System Services"
+      }
+    },
+    {
+      "name": "ConfigureWindowsMediaPlayerNetworkSharingServiceStartupMode",
+      "path": "./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureWindowsMediaPlayerNetworkSharingServiceStartupMode",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This setting determines whether the service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual.",
+      "default": "3",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.26100, 10.0.22621.5126",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "Range",
+        "value": "[2-4]"
+      },
+      "gpMapping": {
+        "englishName": "Windows Media Player Network Sharing Service",
+        "areaPath": "Windows Settings~Security Settings~System Services"
+      }
+    },
+    {
+      "name": "ConfigureWindowsMobileHotspotServiceStartupMode",
+      "path": "./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureWindowsMobileHotspotServiceStartupMode",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This setting determines whether the service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual.",
+      "default": "3",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.26100, 10.0.22621.5126",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "Range",
+        "value": "[2-4]"
+      },
+      "gpMapping": {
+        "englishName": "Windows Mobile Hotspot Service",
+        "areaPath": "Windows Settings~Security Settings~System Services"
+      }
+    },
+    {
+      "name": "ConfigureWorldWideWebPublishingServiceStartupMode",
+      "path": "./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureWorldWideWebPublishingServiceStartupMode",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This setting determines whether the service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual.",
+      "default": "3",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.26100, 10.0.22621.5126",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "Range",
+        "value": "[2-4]"
+      },
+      "gpMapping": {
+        "englishName": "World Wide Web Publishing Service",
+        "areaPath": "Windows Settings~Security Settings~System Services"
+      }
+    },
+    {
+      "name": "ConfigureXboxAccessoryManagementServiceStartupMode",
+      "path": "./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureXboxAccessoryManagementServiceStartupMode",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This setting determines whether the service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual.",
+      "default": "3",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.17134",
+        "cspVersion": "7.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "2",
+            "description": "Automatic"
+          },
+          {
+            "value": "3",
+            "description": "Manual"
+          },
+          {
+            "value": "4",
+            "description": "Disabled"
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "Xbox Accessory Management Service",
+        "areaPath": "Windows Settings~Security Settings~System Services"
+      }
+    },
+    {
+      "name": "ConfigureXboxLiveAuthManagerServiceStartupMode",
+      "path": "./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureXboxLiveAuthManagerServiceStartupMode",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This setting determines whether the service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual.",
+      "default": "3",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.17134",
+        "cspVersion": "7.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "2",
+            "description": "Automatic"
+          },
+          {
+            "value": "3",
+            "description": "Manual"
+          },
+          {
+            "value": "4",
+            "description": "Disabled"
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "Xbox Live Auth Manager",
+        "areaPath": "Windows Settings~Security Settings~System Services"
+      }
+    },
+    {
+      "name": "ConfigureXboxLiveGameSaveServiceStartupMode",
+      "path": "./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureXboxLiveGameSaveServiceStartupMode",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This setting determines whether the service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual.",
+      "default": "3",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.17134",
+        "cspVersion": "7.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "2",
+            "description": "Automatic"
+          },
+          {
+            "value": "3",
+            "description": "Manual"
+          },
+          {
+            "value": "4",
+            "description": "Disabled"
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "Xbox Live Game Save",
+        "areaPath": "Windows Settings~Security Settings~System Services"
+      }
+    },
+    {
+      "name": "ConfigureXboxLiveNetworkingServiceStartupMode",
+      "path": "./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureXboxLiveNetworkingServiceStartupMode",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This setting determines whether the service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual.",
+      "default": "3",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.17134",
+        "cspVersion": "7.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "2",
+            "description": "Automatic"
+          },
+          {
+            "value": "3",
+            "description": "Manual"
+          },
+          {
+            "value": "4",
+            "description": "Disabled"
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "Xbox Live Networking Service",
+        "areaPath": "Windows Settings~Security Settings~System Services"
+      }
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+name: DDF update
+
+# Weekly check for a new Microsoft DDF v2 drop. -discover scrapes the
+# Microsoft Learn DDF page; when the linked zip differs from the pinned
+# release (or its content changed), the snapshots and generated SDK surface
+# are refreshed and a PR is opened for review. Adopting a drop permanently
+# still means bumping the pin in cmd/fetchddf/main.go.
+on:
+  schedule:
+    - cron: '0 8 * * 1' # Mondays 08:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Set up Go
+        uses: actions/setup-go@7a3fe6cf4cb3a834922a1244abfce67bcef6a0c5 # v6.2.0
+        with:
+          go-version-file: 'go.mod'
+          cache-dependency-path: 'go.sum'
+
+      - name: Fetch the current DDF v2 drop
+        run: go run ./cmd/fetchddf -discover
+
+      - name: Regenerate the SDK surface
+        run: go run ./cmd/gencsp
+
+      - name: Detect changes
+        id: diff
+        run: |
+          if git diff --quiet -- metadata windowscsp; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            git diff --stat -- metadata windowscsp | tail -n 5
+          fi
+
+      - name: Verify the refreshed tree
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          go build ./...
+          go test ./cmd/... ./internal/... ./windowscsp/...
+
+      - name: Open pull request
+        if: steps.diff.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@271a8d0340265f705b14b6d32b9829c1cb33d45e # v7.0.8
+        with:
+          branch: chore/ddf-update
+          title: 'chore: refresh DDF v2 snapshots and generated CSP surface'
+          commit-message: 'chore: refresh DDF v2 snapshots and generated CSP surface'
+          add-paths: |
+            metadata/
+            windowscsp/
+          body: |
+            Automated weekly DDF v2 refresh.
+
+            - `cmd/fetchddf -discover` checked the [Microsoft Learn DDF page](https://learn.microsoft.com/en-us/windows/client-management/mdm/configuration-service-provider-ddf) for the current drop and re-parsed it.
+            - `cmd/gencsp` regenerated the SDK surface from the refreshed snapshots.
+
+            Review `metadata/csp/PROVENANCE.json` for the release that was ingested. If this is a new
+            Microsoft drop, also bump the pinned URL/SHA-256 in `cmd/fetchddf/main.go` on this branch.

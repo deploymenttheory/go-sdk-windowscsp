@@ -1,0 +1,231 @@
+{
+  "name": "ADMX_ICM",
+  "path": "./User/Vendor/MSFT/Policy/Config",
+  "nodes": [
+    {
+      "name": "DisableHTTPPrinting_1",
+      "path": "./User/Vendor/MSFT/Policy/Config/ADMX_ICM/DisableHTTPPrinting_1",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000, 10.0.19043.1202, 10.0.19042.1202, 10.0.19041.1202",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ADMX",
+        "admx": {
+          "area": "ICM~AT~System~InternetManagement~InternetManagement_Settings",
+          "name": "DisableHTTPPrinting_1",
+          "file": "ICM.admx"
+        }
+      }
+    },
+    {
+      "name": "DisableWebPnPDownload_1",
+      "path": "./User/Vendor/MSFT/Policy/Config/ADMX_ICM/DisableWebPnPDownload_1",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000, 10.0.19043.1202, 10.0.19042.1202, 10.0.19041.1202",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ADMX",
+        "admx": {
+          "area": "ICM~AT~System~InternetManagement~InternetManagement_Settings",
+          "name": "DisableWebPnPDownload_1",
+          "file": "ICM.admx"
+        }
+      }
+    },
+    {
+      "name": "InternetManagement_RestrictCommunication_1",
+      "path": "./User/Vendor/MSFT/Policy/Config/ADMX_ICM/InternetManagement_RestrictCommunication_1",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000, 10.0.19043.1202, 10.0.19042.1202, 10.0.19041.1202",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ADMX",
+        "admx": {
+          "area": "ICM~AT~System~InternetManagement",
+          "name": "InternetManagement_RestrictCommunication_1",
+          "file": "ICM.admx"
+        }
+      }
+    },
+    {
+      "name": "ShellNoUseInternetOpenWith_1",
+      "path": "./User/Vendor/MSFT/Policy/Config/ADMX_ICM/ShellNoUseInternetOpenWith_1",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000, 10.0.19043.1202, 10.0.19042.1202, 10.0.19041.1202",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ADMX",
+        "admx": {
+          "area": "ICM~AT~System~InternetManagement~InternetManagement_Settings",
+          "name": "ShellNoUseInternetOpenWith_1",
+          "file": "ICM.admx"
+        }
+      }
+    },
+    {
+      "name": "ShellNoUseStoreOpenWith_1",
+      "path": "./User/Vendor/MSFT/Policy/Config/ADMX_ICM/ShellNoUseStoreOpenWith_1",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000, 10.0.19043.1202, 10.0.19042.1202, 10.0.19041.1202",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ADMX",
+        "admx": {
+          "area": "ICM~AT~System~InternetManagement~InternetManagement_Settings",
+          "name": "ShellNoUseStoreOpenWith_1",
+          "file": "ICM.admx"
+        }
+      }
+    },
+    {
+      "name": "ShellPreventWPWDownload_1",
+      "path": "./User/Vendor/MSFT/Policy/Config/ADMX_ICM/ShellPreventWPWDownload_1",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000, 10.0.19043.1202, 10.0.19042.1202, 10.0.19041.1202",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ADMX",
+        "admx": {
+          "area": "ICM~AT~System~InternetManagement~InternetManagement_Settings",
+          "name": "ShellPreventWPWDownload_1",
+          "file": "ICM.admx"
+        }
+      }
+    },
+    {
+      "name": "ShellRemoveOrderPrints_1",
+      "path": "./User/Vendor/MSFT/Policy/Config/ADMX_ICM/ShellRemoveOrderPrints_1",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000, 10.0.19043.1202, 10.0.19042.1202, 10.0.19041.1202",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ADMX",
+        "admx": {
+          "area": "ICM~AT~System~InternetManagement~InternetManagement_Settings",
+          "name": "ShellRemoveOrderPrints_1",
+          "file": "ICM.admx"
+        }
+      }
+    },
+    {
+      "name": "ShellRemovePublishToWeb_1",
+      "path": "./User/Vendor/MSFT/Policy/Config/ADMX_ICM/ShellRemovePublishToWeb_1",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000, 10.0.19043.1202, 10.0.19042.1202, 10.0.19041.1202",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ADMX",
+        "admx": {
+          "area": "ICM~AT~System~InternetManagement~InternetManagement_Settings",
+          "name": "ShellRemovePublishToWeb_1",
+          "file": "ICM.admx"
+        }
+      }
+    },
+    {
+      "name": "WinMSG_NoInstrumentation_1",
+      "path": "./User/Vendor/MSFT/Policy/Config/ADMX_ICM/WinMSG_NoInstrumentation_1",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22000, 10.0.19043.1202, 10.0.19042.1202, 10.0.19041.1202",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x88;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xAF;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ADMX",
+        "admx": {
+          "area": "ICM~AT~System~InternetManagement~InternetManagement_Settings",
+          "name": "WinMSG_NoInstrumentation_1",
+          "file": "ICM.admx"
+        }
+      }
+    }
+  ]
+}

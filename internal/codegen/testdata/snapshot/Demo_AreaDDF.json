@@ -1,0 +1,61 @@
+{
+  "name": "Demo",
+  "path": "./Device/Vendor/MSFT/Policy/Config",
+  "nodes": [
+    {
+      "name": "AllowThing",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Demo/AllowThing",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "Allows the thing. Most restricted value is 0.",
+      "default": "1",
+      "applicability": {
+        "minOsBuild": "10.0.19041",
+        "cspVersion": "1.0"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "Not allowed."
+          },
+          {
+            "value": "1",
+            "description": "Allowed."
+          }
+        ]
+      }
+    },
+    {
+      "name": "Mode",
+      "path": "./Device/Vendor/MSFT/Policy/Config/Demo/Mode",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "Operating mode.",
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "auto",
+            "description": "Automatic."
+          },
+          {
+            "value": "manual",
+            "description": "Manual."
+          }
+        ]
+      }
+    }
+  ]
+}

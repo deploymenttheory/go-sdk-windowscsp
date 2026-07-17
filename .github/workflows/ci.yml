@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Build & test (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - name: Check out
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Set up Go
+        uses: actions/setup-go@7a3fe6cf4cb3a834922a1244abfce67bcef6a0c5 # v6.2.0
+        with:
+          go-version-file: 'go.mod'
+          cache-dependency-path: 'go.sum'
+
+      - name: Build everything (including all generated packages)
+        run: go build ./...
+
+      - name: Vet
+        run: go vet ./cmd/... ./internal/... ./windowscsp/... ./examples/...
+
+      - name: Test
+        run: go test ./cmd/... ./internal/... ./windowscsp/
+
+      - name: Test runtime packages
+        run: go test ./windowscsp/client/ ./windowscsp/clienttest/ ./windowscsp/syncml/
+
+  regen:
+    name: Regeneration determinism gate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Set up Go
+        uses: actions/setup-go@7a3fe6cf4cb3a834922a1244abfce67bcef6a0c5 # v6.2.0
+        with:
+          go-version-file: 'go.mod'
+          cache-dependency-path: 'go.sum'
+
+      - name: Regenerate the SDK surface from committed snapshots
+        run: go run ./cmd/gencsp
+
+      - name: Generated output must match the committed tree
+        run: |
+          git add -N windowscsp
+          git diff --exit-code --stat -- windowscsp

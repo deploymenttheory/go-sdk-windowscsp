@@ -1,0 +1,11 @@
+{{define "service"}}// {{.ServiceName}} exposes LCRUD operations over the {{.CSPName}} {{if .IsPolicy}}Policy area{{else}}CSP{{end}} nodes.
+type {{.ServiceName}} struct {
+	c client.Client
+}
+
+// New{{.ServiceName}} returns a {{.ServiceName}} service backed by transport c.
+func New{{.ServiceName}}(c client.Client) *{{.ServiceName}} {
+	return &{{.ServiceName}}{c: c}
+}
+
+{{end}}

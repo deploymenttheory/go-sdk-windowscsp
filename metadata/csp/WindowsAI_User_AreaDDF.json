@@ -1,0 +1,364 @@
+{
+  "name": "WindowsAI",
+  "path": "./User/Vendor/MSFT/Policy/Config",
+  "nodes": [
+    {
+      "name": "DisableAIDataAnalysis",
+      "path": "./User/Vendor/MSFT/Policy/Config/WindowsAI/DisableAIDataAnalysis",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting allows you to determine whether snapshots of the screen can be saved for use with Recall. For managed devices, snapshots for Recall are not enabled by default. IT administrators cannot, on their own, enable saving snapshots on behalf of their users. The choice to enable saving snapshots requires individual user opt-in consent. If the policy is not configured, snapshots won't be saved for use with Recall. If you enable this policy, snapshots won't be saved for use with Recall. If snapshots were previously saved on the device, they will be deleted when this policy is enabled. If you set this policy to disabled, end users will have a choice to save snapshots of their screen and use Recall to find things they've seen on their device.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "99.9.99999, 10.0.26100.3915",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "Enable Saving Snapshots for Recall."
+          },
+          {
+            "value": "1",
+            "description": "Disable Saving Snapshots for Recall."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "DisableAIDataAnalysis",
+        "areaPath": "WindowsAI~AT~WindowsComponents~WindowsAI"
+      }
+    },
+    {
+      "name": "DisableClickToDo",
+      "path": "./User/Vendor/MSFT/Policy/Config/WindowsAI/DisableClickToDo",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "Click to Do lets people take action on content on their screens. When activated, it takes a screenshot of their screen and analyzes it to present actions. Click to Do ends when they exit it, and it can't take screenshots while closed. Screenshot analysis is always performed locally on their device. By default, Click to Do is enabled for users. This policy setting allows you to determine whether Click to Do is available for users on their device. When the policy is enabled, the Click to Do component and entry points will not be available to users. When the policy is disabled, users will have Click to Do available on their device.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "99.9.99999",
+        "cspVersion": "9.9",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "Click to Do is enabled"
+          },
+          {
+            "value": "1",
+            "description": "Click to Do is disabled."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "DisableClickToDo",
+        "areaPath": "WindowsAI~AT~WindowsComponents~WindowsAI"
+      }
+    },
+    {
+      "name": "DisableRecallDataProviders",
+      "path": "./User/Vendor/MSFT/Policy/Config/WindowsAI/DisableRecallDataProviders",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting allows you to control whether Recall displays additional activity details delivered by available providers for App Actions on Windows. Providers for App Actions on Windows are displayed under Settings \u003e Apps \u003e Actions. For example, providers may show meeting attendees for meeting Recall snapshots. By default, additional activity details from available providers are displayed in Recall. If this policy isn't configured, users will receive additional details about their snapshots from providers for App Actions on Windows. If this policy is disabled, users won't receive additional details about their snapshots from providers for App Actions on Windows. If the policy is enabled, users will receive additional details about their snapshots from providers for App Actions on Windows. Important: This setting applies to Enterprise and Education client SKUs only. When configuring this policy setting, changes will not take effect until Recall restarts.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "99.9.99999",
+        "cspVersion": "9.9",
+        "editions": "0x4;0x1B;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0xAB;0xAC;0xBC;0xBF;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "Recall data providers enabled"
+          },
+          {
+            "value": "1",
+            "description": "Recall data providers disabled"
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "DisableRecallDataProviders",
+        "areaPath": "WindowsAI~AT~WindowsComponents~WindowsAI"
+      }
+    },
+    {
+      "name": "RemoveMicrosoftCopilotApp",
+      "path": "./User/Vendor/MSFT/Policy/Config/WindowsAI/RemoveMicrosoftCopilotApp",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting allows you to uninstall Microsoft Copilot from devices in a targeted way. It will apply to devices/users that meet the below conditions: Microsoft 365 Copilot and Microsoft Copilot are both installed; the Microsoft Copilot app was not installed by the user; the Microsoft Copilot app was not launched in the last 14 days. If this policy is enabled, the Microsoft Copilot app will be uninstalled. Users can still re-install if they choose to. This setting applies to Enterprise, Professional and Education client SKUs only.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "99.9.99999",
+        "cspVersion": "9.9",
+        "editions": "0x4;0x1B;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0xAB;0xAC;0xBC;0xBF;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "Removal Disabled."
+          },
+          {
+            "value": "1",
+            "description": "Removal Enabled."
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "RemoveMicrosoftCopilotApp",
+        "areaPath": "WindowsAI~AT~WindowsComponents~WindowsAI"
+      }
+    },
+    {
+      "name": "SetCopilotHardwareKey",
+      "path": "./User/Vendor/MSFT/Policy/Config/WindowsAI/SetCopilotHardwareKey",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting determines which app opens when the user presses the Copilot key on their keyboard. If the policy is enabled, the specified app will open when the user presses the Copilot key. Users can change the key assignment in Settings. If the policy is not configured, Copilot will open if it's available in that country or region.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "10.0.22621.4391",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "gpMapping": {
+        "englishName": "SetCopilotHardwareKey",
+        "areaPath": "WindowsCopilot~AT~WindowsComponents~WindowsCopilot"
+      }
+    },
+    {
+      "name": "SetDenyAppListForRecall",
+      "path": "./User/Vendor/MSFT/Policy/Config/WindowsAI/SetDenyAppListForRecall",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy allows you to define a list of apps that won't be included in snapshots for Recall. Users will be able to add additional applications to exclude from snapshots using Recall settings. The list can include Application User Model IDs (AUMID) or the name of the executable file. Use a semicolon-separated list of apps to define the deny app list for Recall. For example:  code.exe;Microsoft.WindowsNotepad_8wekyb3d8bbwe!App;ms-teams.exe. Important: This setting applies to Enterprise and Education client SKUs only.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "99.9.99999, 10.0.26100.3915",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0xAB;0xAC;0xBC;0xBF;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "DenyAppListForRecall",
+        "areaPath": "WindowsAI~AT~WindowsComponents~WindowsAI"
+      }
+    },
+    {
+      "name": "SetDenyUriListForRecall",
+      "path": "./User/Vendor/MSFT/Policy/Config/WindowsAI/SetDenyUriListForRecall",
+      "format": "chr",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting lets you define a list of URIs that won't be included in snapshots for Recall when a supported browser is used. People within your organization can use Recall settings to add more websites to the list. Define the list using a semicolon to separate URIs. Adding https://www.WoodgroveBank.com to the list would also filter https://Account.WoodgroveBank.com and https://www.WoodgroveBank.com/Account. For example: https://www.Contoso.com;https://www.WoodgroveBank.com;https://www.Adatum.com. Important: This setting applies to Enterprise and Education client SKUs only.",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "99.9.99999, 10.0.26100.3915",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0xAB;0xAC;0xBC;0xBF;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "None",
+        "listDelimiter": ";"
+      },
+      "gpMapping": {
+        "englishName": "DenyUriListForRecall",
+        "areaPath": "WindowsAI~AT~WindowsComponents~WindowsAI"
+      }
+    },
+    {
+      "name": "SetMaximumStorageDurationForRecallSnapshots",
+      "path": "./User/Vendor/MSFT/Policy/Config/WindowsAI/SetMaximumStorageDurationForRecallSnapshots",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting allows you to control the maximum amount of time (in days) that Windows saves snapshots for Recall. When the policy is enabled, you can configure the maximum storage duration to be 30, 60, 90, or 180 days. When this policy is not configured, the maximum storage duration is 90 days unless the current user specifies a different value. If both maximum storage duration and maximum storage space are set for Recall, then snapshots are deleted when the first maximum is reached. Important: This setting applies to Enterprise and Education client SKUs only.",
+      "default": "90",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "99.9.99999, 10.0.26100.3915",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0xAB;0xAC;0xBC;0xBF;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "Let the OS define the maximum amount of time the snapshots will be saved"
+          },
+          {
+            "value": "30",
+            "description": "30 days"
+          },
+          {
+            "value": "60",
+            "description": "60 days"
+          },
+          {
+            "value": "90",
+            "description": "90 days"
+          },
+          {
+            "value": "180",
+            "description": "180 days"
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "SetMaximumStorageDurationForRecallSnapshots",
+        "areaPath": "WindowsAI~AT~WindowsComponents~WindowsAI"
+      }
+    },
+    {
+      "name": "SetMaximumStorageSpaceForRecallSnapshots",
+      "path": "./User/Vendor/MSFT/Policy/Config/WindowsAI/SetMaximumStorageSpaceForRecallSnapshots",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting allows you to control the maximum amount of disk space that can be used by Windows to save snapshots for Recall. You can set the maximum amount of disk space for snapshots to be 10, 25, 50, 75, 100, or 150 GB. When this setting is not configured, the OS configures the storage allocation for snapshots based on the device storage capacity unless the current user specifies a different value. 25 GB is allocated when the device storage capacity is 256 GB. 75 GB is allocated when the device storage capacity is 512 GB. 150 GB is allocated when the device storage capacity is 1 TB or higher. If both maximum storage duration and maximum storage space are set for Recall, then snapshots are deleted when the first maximum is reached. Important: This setting applies to Enterprise and Education client SKUs only.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "applicability": {
+        "minOsBuild": "99.9.99999, 10.0.26100.3915",
+        "cspVersion": "11.0",
+        "editions": "0x4;0x1B;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0xAB;0xAC;0xBC;0xBF;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "Let the OS define the maximum storage amount based on hard drive storage size"
+          },
+          {
+            "value": "10240",
+            "description": "10GB"
+          },
+          {
+            "value": "25600",
+            "description": "25GB"
+          },
+          {
+            "value": "51200",
+            "description": "50GB"
+          },
+          {
+            "value": "76800",
+            "description": "75GB"
+          },
+          {
+            "value": "102400",
+            "description": "100GB"
+          },
+          {
+            "value": "153600",
+            "description": "150GB"
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "SetMaximumStorageSpaceForRecallSnapshots",
+        "areaPath": "WindowsAI~AT~WindowsComponents~WindowsAI"
+      }
+    },
+    {
+      "name": "TurnOffWindowsCopilot",
+      "path": "./User/Vendor/MSFT/Policy/Config/WindowsAI/TurnOffWindowsCopilot",
+      "format": "int",
+      "access": [
+        "Add",
+        "Delete",
+        "Get",
+        "Replace"
+      ],
+      "description": "This policy setting allows you to turn off Windows Copilot. If you enable this policy setting, users will not be able to use Copilot. The Copilot icon will not appear on the taskbar either. If you disable or do not configure this policy setting, users will be able to use Copilot when it's available to them.",
+      "default": "0",
+      "occurrence": "ZeroOrOne",
+      "deprecatedOsBuild": "10.0.26100.712",
+      "applicability": {
+        "minOsBuild": "10.0.19044.3758, 10.0.19045.3758, 10.0.22621.2361, 10.0.22631",
+        "cspVersion": "10.0",
+        "editions": "0x4;0x1B;0x30;0x31;0x48;0x54;0x79;0x7A;0x7D;0x7E;0x81;0x82;0x8A;0x8B;0xA1;0xA2;0xA4;0xA5;0xAB;0xAC;0xBC;0xBF;0xCA;0xCB;0xCD;0xCF;"
+      },
+      "allowedValues": {
+        "type": "ENUM",
+        "enum": [
+          {
+            "value": "0",
+            "description": "Enable Copilot"
+          },
+          {
+            "value": "1",
+            "description": "Disable Copilot"
+          }
+        ]
+      },
+      "gpMapping": {
+        "englishName": "TurnOffWindowsCopilot",
+        "areaPath": "WindowsCopilot~AT~WindowsComponents~WindowsCopilot"
+      }
+    }
+  ]
+}
