@@ -13,12 +13,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *WindowsInkWorkspace) GetAllowSuggestedAppsInWindowsInkWorkspace(ctx context.Context) (int64, error) {
+func (s *WindowsInkWorkspace) GetAllowSuggestedAppsInWindowsInkWorkspace(ctx context.Context) (AllowSuggestedAppsInWindowsInkWorkspaceValue, error) {
 	v, err := s.c.Get(ctx, URIAllowSuggestedAppsInWindowsInkWorkspace)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowSuggestedAppsInWindowsInkWorkspaceValue(n), err
 }
 
 // CreateAllowSuggestedAppsInWindowsInkWorkspace creates ./Device/Vendor/MSFT/Policy/Config/WindowsInkWorkspace/AllowSuggestedAppsInWindowsInkWorkspace.
@@ -26,8 +27,8 @@ func (s *WindowsInkWorkspace) GetAllowSuggestedAppsInWindowsInkWorkspace(ctx con
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *WindowsInkWorkspace) CreateAllowSuggestedAppsInWindowsInkWorkspace(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowSuggestedAppsInWindowsInkWorkspace, client.Int(value))
+func (s *WindowsInkWorkspace) CreateAllowSuggestedAppsInWindowsInkWorkspace(ctx context.Context, value AllowSuggestedAppsInWindowsInkWorkspaceValue) error {
+	return s.c.Add(ctx, URIAllowSuggestedAppsInWindowsInkWorkspace, client.Int(int64(value)))
 }
 
 // UpdateAllowSuggestedAppsInWindowsInkWorkspace updates ./Device/Vendor/MSFT/Policy/Config/WindowsInkWorkspace/AllowSuggestedAppsInWindowsInkWorkspace.
@@ -35,8 +36,8 @@ func (s *WindowsInkWorkspace) CreateAllowSuggestedAppsInWindowsInkWorkspace(ctx 
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *WindowsInkWorkspace) UpdateAllowSuggestedAppsInWindowsInkWorkspace(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowSuggestedAppsInWindowsInkWorkspace, client.Int(value))
+func (s *WindowsInkWorkspace) UpdateAllowSuggestedAppsInWindowsInkWorkspace(ctx context.Context, value AllowSuggestedAppsInWindowsInkWorkspaceValue) error {
+	return s.c.Replace(ctx, URIAllowSuggestedAppsInWindowsInkWorkspace, client.Int(int64(value)))
 }
 
 // DeleteAllowSuggestedAppsInWindowsInkWorkspace deletes ./Device/Vendor/MSFT/Policy/Config/WindowsInkWorkspace/AllowSuggestedAppsInWindowsInkWorkspace.
@@ -53,12 +54,13 @@ func (s *WindowsInkWorkspace) DeleteAllowSuggestedAppsInWindowsInkWorkspace(ctx 
 //
 // Default: 2.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *WindowsInkWorkspace) GetAllowWindowsInkWorkspace(ctx context.Context) (int64, error) {
+func (s *WindowsInkWorkspace) GetAllowWindowsInkWorkspace(ctx context.Context) (AllowWindowsInkWorkspaceValue, error) {
 	v, err := s.c.Get(ctx, URIAllowWindowsInkWorkspace)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowWindowsInkWorkspaceValue(n), err
 }
 
 // CreateAllowWindowsInkWorkspace creates ./Device/Vendor/MSFT/Policy/Config/WindowsInkWorkspace/AllowWindowsInkWorkspace.
@@ -66,8 +68,8 @@ func (s *WindowsInkWorkspace) GetAllowWindowsInkWorkspace(ctx context.Context) (
 //
 // Default: 2.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *WindowsInkWorkspace) CreateAllowWindowsInkWorkspace(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowWindowsInkWorkspace, client.Int(value))
+func (s *WindowsInkWorkspace) CreateAllowWindowsInkWorkspace(ctx context.Context, value AllowWindowsInkWorkspaceValue) error {
+	return s.c.Add(ctx, URIAllowWindowsInkWorkspace, client.Int(int64(value)))
 }
 
 // UpdateAllowWindowsInkWorkspace updates ./Device/Vendor/MSFT/Policy/Config/WindowsInkWorkspace/AllowWindowsInkWorkspace.
@@ -75,8 +77,8 @@ func (s *WindowsInkWorkspace) CreateAllowWindowsInkWorkspace(ctx context.Context
 //
 // Default: 2.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *WindowsInkWorkspace) UpdateAllowWindowsInkWorkspace(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowWindowsInkWorkspace, client.Int(value))
+func (s *WindowsInkWorkspace) UpdateAllowWindowsInkWorkspace(ctx context.Context, value AllowWindowsInkWorkspaceValue) error {
+	return s.c.Replace(ctx, URIAllowWindowsInkWorkspace, client.Int(int64(value)))
 }
 
 // DeleteAllowWindowsInkWorkspace deletes ./Device/Vendor/MSFT/Policy/Config/WindowsInkWorkspace/AllowWindowsInkWorkspace.

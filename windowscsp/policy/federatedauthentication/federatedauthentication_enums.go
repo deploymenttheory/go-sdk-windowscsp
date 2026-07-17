@@ -2,14 +2,35 @@
 
 package federatedauthentication
 
-// EnableWebSignInForPrimaryUser allowed values.
+import (
+	"fmt"
+)
+
+// EnableWebSignInForPrimaryUserValue — allowed values for the EnableWebSignInForPrimaryUser node.
+type EnableWebSignInForPrimaryUserValue int64
+
 const (
 	// Feature defaults as appropriate for edition and device capabilities. As of now, all
 	// editions/devices exhibit Disabled behavior by default. However, this may change for future
 	// editions/devices.
-	EnableWebSignInForPrimaryUserFeatureDefaultsAsAppropriateForEdition int64 = 0
+	EnableWebSignInForPrimaryUserFeatureDefaultsAsAppropriateForEdition EnableWebSignInForPrimaryUserValue = 0
 	// Enabled. Web Sign-in Credential Provider will be enabled for device sign-in.
-	EnableWebSignInForPrimaryUserEnabled int64 = 1
+	EnableWebSignInForPrimaryUserEnabled EnableWebSignInForPrimaryUserValue = 1
 	// Disabled. Web Sign-in Credential Provider will be not be enabled for device sign-in.
-	EnableWebSignInForPrimaryUserDisabled int64 = 2
+	EnableWebSignInForPrimaryUserDisabled EnableWebSignInForPrimaryUserValue = 2
 )
+
+// String returns the EnableWebSignInForPrimaryUserValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableWebSignInForPrimaryUserValue) String() string {
+	switch e {
+	case EnableWebSignInForPrimaryUserFeatureDefaultsAsAppropriateForEdition:
+		return "EnableWebSignInForPrimaryUserFeatureDefaultsAsAppropriateForEdition"
+	case EnableWebSignInForPrimaryUserEnabled:
+		return "EnableWebSignInForPrimaryUserEnabled"
+	case EnableWebSignInForPrimaryUserDisabled:
+		return "EnableWebSignInForPrimaryUserDisabled"
+	default:
+		return fmt.Sprintf("EnableWebSignInForPrimaryUserValue(%d)", int64(e))
+	}
+}

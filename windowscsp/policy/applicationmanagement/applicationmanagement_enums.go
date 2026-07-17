@@ -2,144 +2,396 @@
 
 package applicationmanagement
 
-// AllowAllTrustedApps allowed values.
-const (
-	// Explicit deny.
-	AllowAllTrustedAppsExplicitDeny int64 = 0
-	// Explicit allow unlock.
-	AllowAllTrustedAppsExplicitAllowUnlock int64 = 1
-	// Not configured.
-	AllowAllTrustedAppsNotConfigured int64 = 65535
+import (
+	"fmt"
 )
 
-// AllowAppStoreAutoUpdate allowed values.
+// AllowAllTrustedAppsValue — allowed values for the AllowAllTrustedApps node.
+type AllowAllTrustedAppsValue int64
+
+const (
+	// Explicit deny.
+	AllowAllTrustedAppsExplicitDeny AllowAllTrustedAppsValue = 0
+	// Explicit allow unlock.
+	AllowAllTrustedAppsExplicitAllowUnlock AllowAllTrustedAppsValue = 1
+	// Not configured.
+	AllowAllTrustedAppsNotConfigured AllowAllTrustedAppsValue = 65535
+)
+
+// String returns the AllowAllTrustedAppsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowAllTrustedAppsValue) String() string {
+	switch e {
+	case AllowAllTrustedAppsExplicitDeny:
+		return "AllowAllTrustedAppsExplicitDeny"
+	case AllowAllTrustedAppsExplicitAllowUnlock:
+		return "AllowAllTrustedAppsExplicitAllowUnlock"
+	case AllowAllTrustedAppsNotConfigured:
+		return "AllowAllTrustedAppsNotConfigured"
+	default:
+		return fmt.Sprintf("AllowAllTrustedAppsValue(%d)", int64(e))
+	}
+}
+
+// AllowAppStoreAutoUpdateValue — allowed values for the AllowAppStoreAutoUpdate node.
+type AllowAppStoreAutoUpdateValue int64
+
 const (
 	// Not allowed.
-	AllowAppStoreAutoUpdateNotAllowed int64 = 0
+	AllowAppStoreAutoUpdateNotAllowed AllowAppStoreAutoUpdateValue = 0
 	// Allowed.
-	AllowAppStoreAutoUpdateAllowed int64 = 1
+	AllowAppStoreAutoUpdateAllowed AllowAppStoreAutoUpdateValue = 1
 	// Not configured.
-	AllowAppStoreAutoUpdateNotConfigured int64 = 2
+	AllowAppStoreAutoUpdateNotConfigured AllowAppStoreAutoUpdateValue = 2
 )
 
-// AllowAutomaticAppArchiving allowed values.
+// String returns the AllowAppStoreAutoUpdateValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowAppStoreAutoUpdateValue) String() string {
+	switch e {
+	case AllowAppStoreAutoUpdateNotAllowed:
+		return "AllowAppStoreAutoUpdateNotAllowed"
+	case AllowAppStoreAutoUpdateAllowed:
+		return "AllowAppStoreAutoUpdateAllowed"
+	case AllowAppStoreAutoUpdateNotConfigured:
+		return "AllowAppStoreAutoUpdateNotConfigured"
+	default:
+		return fmt.Sprintf("AllowAppStoreAutoUpdateValue(%d)", int64(e))
+	}
+}
+
+// AllowAutomaticAppArchivingValue — allowed values for the AllowAutomaticAppArchiving node.
+type AllowAutomaticAppArchivingValue int64
+
 const (
 	// Explicit deny.
-	AllowAutomaticAppArchivingExplicitDeny int64 = 0
+	AllowAutomaticAppArchivingExplicitDeny AllowAutomaticAppArchivingValue = 0
 	// Explicit enable.
-	AllowAutomaticAppArchivingExplicitEnable int64 = 1
+	AllowAutomaticAppArchivingExplicitEnable AllowAutomaticAppArchivingValue = 1
 	// Not configured. User's Choice.
-	AllowAutomaticAppArchivingNotConfigured int64 = 65535
+	AllowAutomaticAppArchivingNotConfigured AllowAutomaticAppArchivingValue = 65535
 )
 
-// AllowDeveloperUnlock allowed values.
+// String returns the AllowAutomaticAppArchivingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowAutomaticAppArchivingValue) String() string {
+	switch e {
+	case AllowAutomaticAppArchivingExplicitDeny:
+		return "AllowAutomaticAppArchivingExplicitDeny"
+	case AllowAutomaticAppArchivingExplicitEnable:
+		return "AllowAutomaticAppArchivingExplicitEnable"
+	case AllowAutomaticAppArchivingNotConfigured:
+		return "AllowAutomaticAppArchivingNotConfigured"
+	default:
+		return fmt.Sprintf("AllowAutomaticAppArchivingValue(%d)", int64(e))
+	}
+}
+
+// AllowDeveloperUnlockValue — allowed values for the AllowDeveloperUnlock node.
+type AllowDeveloperUnlockValue int64
+
 const (
 	// Explicit deny.
-	AllowDeveloperUnlockExplicitDeny int64 = 0
+	AllowDeveloperUnlockExplicitDeny AllowDeveloperUnlockValue = 0
 	// Explicit allow unlock.
-	AllowDeveloperUnlockExplicitAllowUnlock int64 = 1
+	AllowDeveloperUnlockExplicitAllowUnlock AllowDeveloperUnlockValue = 1
 	// Not configured.
-	AllowDeveloperUnlockNotConfigured int64 = 65535
+	AllowDeveloperUnlockNotConfigured AllowDeveloperUnlockValue = 65535
 )
 
-// AllowGameDVR allowed values.
+// String returns the AllowDeveloperUnlockValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowDeveloperUnlockValue) String() string {
+	switch e {
+	case AllowDeveloperUnlockExplicitDeny:
+		return "AllowDeveloperUnlockExplicitDeny"
+	case AllowDeveloperUnlockExplicitAllowUnlock:
+		return "AllowDeveloperUnlockExplicitAllowUnlock"
+	case AllowDeveloperUnlockNotConfigured:
+		return "AllowDeveloperUnlockNotConfigured"
+	default:
+		return fmt.Sprintf("AllowDeveloperUnlockValue(%d)", int64(e))
+	}
+}
+
+// AllowGameDVRValue — allowed values for the AllowGameDVR node.
+type AllowGameDVRValue int64
+
 const (
 	// Not allowed.
-	AllowGameDVRNotAllowed int64 = 0
+	AllowGameDVRNotAllowed AllowGameDVRValue = 0
 	// Allowed.
-	AllowGameDVRAllowed int64 = 1
+	AllowGameDVRAllowed AllowGameDVRValue = 1
 )
 
-// AllowSharedUserAppData allowed values.
+// String returns the AllowGameDVRValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowGameDVRValue) String() string {
+	switch e {
+	case AllowGameDVRNotAllowed:
+		return "AllowGameDVRNotAllowed"
+	case AllowGameDVRAllowed:
+		return "AllowGameDVRAllowed"
+	default:
+		return fmt.Sprintf("AllowGameDVRValue(%d)", int64(e))
+	}
+}
+
+// AllowSharedUserAppDataValue — allowed values for the AllowSharedUserAppData node.
+type AllowSharedUserAppDataValue int64
+
 const (
 	// Prevented/not allowed, but Microsoft Edge downloads book files to a per-user folder for each
 	// user.
-	AllowSharedUserAppDataPreventedNotAllowedButMicrosoftEdgeDownloads int64 = 0
+	AllowSharedUserAppDataPreventedNotAllowedButMicrosoftEdgeDownloads AllowSharedUserAppDataValue = 0
 	// Allowed. Microsoft Edge downloads book files into a shared folder. For this policy to work
 	// correctly, you must also enable the Allow a Windows app to share application data between users
 	// group policy. Also, the users must be signed in with a school or work account.
-	AllowSharedUserAppDataAllowed int64 = 1
+	AllowSharedUserAppDataAllowed AllowSharedUserAppDataValue = 1
 )
 
-// AllowStore allowed values.
+// String returns the AllowSharedUserAppDataValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowSharedUserAppDataValue) String() string {
+	switch e {
+	case AllowSharedUserAppDataPreventedNotAllowedButMicrosoftEdgeDownloads:
+		return "AllowSharedUserAppDataPreventedNotAllowedButMicrosoftEdgeDownloads"
+	case AllowSharedUserAppDataAllowed:
+		return "AllowSharedUserAppDataAllowed"
+	default:
+		return fmt.Sprintf("AllowSharedUserAppDataValue(%d)", int64(e))
+	}
+}
+
+// AllowStoreValue — allowed values for the AllowStore node.
+type AllowStoreValue int64
+
 const (
 	// Disallow.
-	AllowStoreDisallow int64 = 0
+	AllowStoreDisallow AllowStoreValue = 0
 	// Allow.
-	AllowStoreAllow int64 = 1
+	AllowStoreAllow AllowStoreValue = 1
 )
 
-// BlockNonAdminUserInstall allowed values.
+// String returns the AllowStoreValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowStoreValue) String() string {
+	switch e {
+	case AllowStoreDisallow:
+		return "AllowStoreDisallow"
+	case AllowStoreAllow:
+		return "AllowStoreAllow"
+	default:
+		return fmt.Sprintf("AllowStoreValue(%d)", int64(e))
+	}
+}
+
+// BlockNonAdminUserInstallValue — allowed values for the BlockNonAdminUserInstall node.
+type BlockNonAdminUserInstallValue int64
+
 const (
 	// Disabled. All users will be able to initiate installation of Windows app packages.
-	BlockNonAdminUserInstallDisabled int64 = 0
+	BlockNonAdminUserInstallDisabled BlockNonAdminUserInstallValue = 0
 	// Enabled. Non-administrator users will not be able to initiate installation of Windows app
 	// packages.
-	BlockNonAdminUserInstallEnabled int64 = 1
+	BlockNonAdminUserInstallEnabled BlockNonAdminUserInstallValue = 1
 )
 
-// DisableStoreOriginatedApps allowed values.
+// String returns the BlockNonAdminUserInstallValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e BlockNonAdminUserInstallValue) String() string {
+	switch e {
+	case BlockNonAdminUserInstallDisabled:
+		return "BlockNonAdminUserInstallDisabled"
+	case BlockNonAdminUserInstallEnabled:
+		return "BlockNonAdminUserInstallEnabled"
+	default:
+		return fmt.Sprintf("BlockNonAdminUserInstallValue(%d)", int64(e))
+	}
+}
+
+// DisableStoreOriginatedAppsValue — allowed values for the DisableStoreOriginatedApps node.
+type DisableStoreOriginatedAppsValue int64
+
 const (
 	// Enable launch of apps.
-	DisableStoreOriginatedAppsEnableLaunchOfApps int64 = 0
+	DisableStoreOriginatedAppsEnableLaunchOfApps DisableStoreOriginatedAppsValue = 0
 	// Disable launch of apps.
-	DisableStoreOriginatedAppsDisableLaunchOfApps int64 = 1
+	DisableStoreOriginatedAppsDisableLaunchOfApps DisableStoreOriginatedAppsValue = 1
 )
 
-// EnableMsixAllowedZones allowed values.
+// String returns the DisableStoreOriginatedAppsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableStoreOriginatedAppsValue) String() string {
+	switch e {
+	case DisableStoreOriginatedAppsEnableLaunchOfApps:
+		return "DisableStoreOriginatedAppsEnableLaunchOfApps"
+	case DisableStoreOriginatedAppsDisableLaunchOfApps:
+		return "DisableStoreOriginatedAppsDisableLaunchOfApps"
+	default:
+		return fmt.Sprintf("DisableStoreOriginatedAppsValue(%d)", int64(e))
+	}
+}
+
+// EnableMsixAllowedZonesValue — allowed values for the EnableMsixAllowedZones node.
+type EnableMsixAllowedZonesValue int64
+
 const (
 	// Disabled. Users will be able to install MSIX packages from any zone except for Untrusted.
-	EnableMsixAllowedZonesDisabled int64 = 0
+	EnableMsixAllowedZonesDisabled EnableMsixAllowedZonesValue = 0
 	// Enabled. Users will be able to install MSIX packages according to the configuration for each
 	// zone.
-	EnableMsixAllowedZonesEnabled int64 = 1
+	EnableMsixAllowedZonesEnabled EnableMsixAllowedZonesValue = 1
 )
 
-// EnableMsixSmartScreenCheck allowed values.
+// String returns the EnableMsixAllowedZonesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableMsixAllowedZonesValue) String() string {
+	switch e {
+	case EnableMsixAllowedZonesDisabled:
+		return "EnableMsixAllowedZonesDisabled"
+	case EnableMsixAllowedZonesEnabled:
+		return "EnableMsixAllowedZonesEnabled"
+	default:
+		return fmt.Sprintf("EnableMsixAllowedZonesValue(%d)", int64(e))
+	}
+}
+
+// EnableMsixSmartScreenCheckValue — allowed values for the EnableMsixSmartScreenCheck node.
+type EnableMsixSmartScreenCheckValue int64
+
 const (
 	// Disabled. Microsoft SmartScreen will not be consulted before installing a package.
-	EnableMsixSmartScreenCheckDisabled int64 = 0
+	EnableMsixSmartScreenCheckDisabled EnableMsixSmartScreenCheckValue = 0
 	// Enabled. The package URI will be evaluated with Microsoft SmartScreen before installation. This
 	// check is only done for packages that come from the internet.
-	EnableMsixSmartScreenCheckEnabled int64 = 1
+	EnableMsixSmartScreenCheckEnabled EnableMsixSmartScreenCheckValue = 1
 )
 
-// MSIAllowUserControlOverInstall allowed values.
+// String returns the EnableMsixSmartScreenCheckValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableMsixSmartScreenCheckValue) String() string {
+	switch e {
+	case EnableMsixSmartScreenCheckDisabled:
+		return "EnableMsixSmartScreenCheckDisabled"
+	case EnableMsixSmartScreenCheckEnabled:
+		return "EnableMsixSmartScreenCheckEnabled"
+	default:
+		return fmt.Sprintf("EnableMsixSmartScreenCheckValue(%d)", int64(e))
+	}
+}
+
+// MSIAllowUserControlOverInstallValue — allowed values for the MSIAllowUserControlOverInstall node.
+type MSIAllowUserControlOverInstallValue int64
+
 const (
 	// Disabled
-	MSIAllowUserControlOverInstallDisabled int64 = 0
+	MSIAllowUserControlOverInstallDisabled MSIAllowUserControlOverInstallValue = 0
 	// Enabled
-	MSIAllowUserControlOverInstallEnabled int64 = 1
+	MSIAllowUserControlOverInstallEnabled MSIAllowUserControlOverInstallValue = 1
 )
 
-// MSIAlwaysInstallWithElevatedPrivileges allowed values.
+// String returns the MSIAllowUserControlOverInstallValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MSIAllowUserControlOverInstallValue) String() string {
+	switch e {
+	case MSIAllowUserControlOverInstallDisabled:
+		return "MSIAllowUserControlOverInstallDisabled"
+	case MSIAllowUserControlOverInstallEnabled:
+		return "MSIAllowUserControlOverInstallEnabled"
+	default:
+		return fmt.Sprintf("MSIAllowUserControlOverInstallValue(%d)", int64(e))
+	}
+}
+
+// MSIAlwaysInstallWithElevatedPrivilegesValue — allowed values for the MSIAlwaysInstallWithElevatedPrivileges node.
+type MSIAlwaysInstallWithElevatedPrivilegesValue int64
+
 const (
 	// Disabled
-	MSIAlwaysInstallWithElevatedPrivilegesDisabled int64 = 0
+	MSIAlwaysInstallWithElevatedPrivilegesDisabled MSIAlwaysInstallWithElevatedPrivilegesValue = 0
 	// Enabled
-	MSIAlwaysInstallWithElevatedPrivilegesEnabled int64 = 1
+	MSIAlwaysInstallWithElevatedPrivilegesEnabled MSIAlwaysInstallWithElevatedPrivilegesValue = 1
 )
 
-// RequirePrivateStoreOnly allowed values.
+// String returns the MSIAlwaysInstallWithElevatedPrivilegesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MSIAlwaysInstallWithElevatedPrivilegesValue) String() string {
+	switch e {
+	case MSIAlwaysInstallWithElevatedPrivilegesDisabled:
+		return "MSIAlwaysInstallWithElevatedPrivilegesDisabled"
+	case MSIAlwaysInstallWithElevatedPrivilegesEnabled:
+		return "MSIAlwaysInstallWithElevatedPrivilegesEnabled"
+	default:
+		return fmt.Sprintf("MSIAlwaysInstallWithElevatedPrivilegesValue(%d)", int64(e))
+	}
+}
+
+// RequirePrivateStoreOnlyValue — allowed values for the RequirePrivateStoreOnly node.
+type RequirePrivateStoreOnlyValue int64
+
 const (
 	// Allow both public and Private store.
-	RequirePrivateStoreOnlyAllowBothPublicAndPrivateStore int64 = 0
+	RequirePrivateStoreOnlyAllowBothPublicAndPrivateStore RequirePrivateStoreOnlyValue = 0
 	// Only Private store is enabled.
-	RequirePrivateStoreOnlyOnlyPrivateStoreIsEnabled int64 = 1
+	RequirePrivateStoreOnlyOnlyPrivateStoreIsEnabled RequirePrivateStoreOnlyValue = 1
 )
 
-// RestrictAppDataToSystemVolume allowed values.
+// String returns the RequirePrivateStoreOnlyValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e RequirePrivateStoreOnlyValue) String() string {
+	switch e {
+	case RequirePrivateStoreOnlyAllowBothPublicAndPrivateStore:
+		return "RequirePrivateStoreOnlyAllowBothPublicAndPrivateStore"
+	case RequirePrivateStoreOnlyOnlyPrivateStoreIsEnabled:
+		return "RequirePrivateStoreOnlyOnlyPrivateStoreIsEnabled"
+	default:
+		return fmt.Sprintf("RequirePrivateStoreOnlyValue(%d)", int64(e))
+	}
+}
+
+// RestrictAppDataToSystemVolumeValue — allowed values for the RestrictAppDataToSystemVolume node.
+type RestrictAppDataToSystemVolumeValue int64
+
 const (
 	// Not restricted.
-	RestrictAppDataToSystemVolumeNotRestricted int64 = 0
+	RestrictAppDataToSystemVolumeNotRestricted RestrictAppDataToSystemVolumeValue = 0
 	// Restricted.
-	RestrictAppDataToSystemVolumeRestricted int64 = 1
+	RestrictAppDataToSystemVolumeRestricted RestrictAppDataToSystemVolumeValue = 1
 )
 
-// RestrictAppToSystemVolume allowed values.
+// String returns the RestrictAppDataToSystemVolumeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e RestrictAppDataToSystemVolumeValue) String() string {
+	switch e {
+	case RestrictAppDataToSystemVolumeNotRestricted:
+		return "RestrictAppDataToSystemVolumeNotRestricted"
+	case RestrictAppDataToSystemVolumeRestricted:
+		return "RestrictAppDataToSystemVolumeRestricted"
+	default:
+		return fmt.Sprintf("RestrictAppDataToSystemVolumeValue(%d)", int64(e))
+	}
+}
+
+// RestrictAppToSystemVolumeValue — allowed values for the RestrictAppToSystemVolume node.
+type RestrictAppToSystemVolumeValue int64
+
 const (
 	// Not restricted.
-	RestrictAppToSystemVolumeNotRestricted int64 = 0
+	RestrictAppToSystemVolumeNotRestricted RestrictAppToSystemVolumeValue = 0
 	// Restricted.
-	RestrictAppToSystemVolumeRestricted int64 = 1
+	RestrictAppToSystemVolumeRestricted RestrictAppToSystemVolumeValue = 1
 )
+
+// String returns the RestrictAppToSystemVolumeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e RestrictAppToSystemVolumeValue) String() string {
+	switch e {
+	case RestrictAppToSystemVolumeNotRestricted:
+		return "RestrictAppToSystemVolumeNotRestricted"
+	case RestrictAppToSystemVolumeRestricted:
+		return "RestrictAppToSystemVolumeRestricted"
+	default:
+		return fmt.Sprintf("RestrictAppToSystemVolumeValue(%d)", int64(e))
+	}
+}

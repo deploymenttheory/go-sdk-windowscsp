@@ -2,10 +2,29 @@
 
 package windowsautopilot
 
-// EnableAgilityPostEnrollment allowed values.
+import (
+	"fmt"
+)
+
+// EnableAgilityPostEnrollmentValue — allowed values for the EnableAgilityPostEnrollment node.
+type EnableAgilityPostEnrollmentValue int64
+
 const (
 	// Not enabled
-	EnableAgilityPostEnrollmentNotEnabled int64 = 0
+	EnableAgilityPostEnrollmentNotEnabled EnableAgilityPostEnrollmentValue = 0
 	// Enabled
-	EnableAgilityPostEnrollmentEnabled int64 = 1
+	EnableAgilityPostEnrollmentEnabled EnableAgilityPostEnrollmentValue = 1
 )
+
+// String returns the EnableAgilityPostEnrollmentValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableAgilityPostEnrollmentValue) String() string {
+	switch e {
+	case EnableAgilityPostEnrollmentNotEnabled:
+		return "EnableAgilityPostEnrollmentNotEnabled"
+	case EnableAgilityPostEnrollmentEnabled:
+		return "EnableAgilityPostEnrollmentEnabled"
+	default:
+		return fmt.Sprintf("EnableAgilityPostEnrollmentValue(%d)", int64(e))
+	}
+}

@@ -2,26 +2,75 @@
 
 package newsandinterests
 
-// AllowNewsAndInterests allowed values.
+import (
+	"fmt"
+)
+
+// AllowNewsAndInterestsValue — allowed values for the AllowNewsAndInterests node.
+type AllowNewsAndInterestsValue int64
+
 const (
 	// Not allowed.
-	AllowNewsAndInterestsNotAllowed int64 = 0
+	AllowNewsAndInterestsNotAllowed AllowNewsAndInterestsValue = 0
 	// Allowed.
-	AllowNewsAndInterestsAllowed int64 = 1
+	AllowNewsAndInterestsAllowed AllowNewsAndInterestsValue = 1
 )
 
-// DisableWidgetsBoard allowed values.
+// String returns the AllowNewsAndInterestsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowNewsAndInterestsValue) String() string {
+	switch e {
+	case AllowNewsAndInterestsNotAllowed:
+		return "AllowNewsAndInterestsNotAllowed"
+	case AllowNewsAndInterestsAllowed:
+		return "AllowNewsAndInterestsAllowed"
+	default:
+		return fmt.Sprintf("AllowNewsAndInterestsValue(%d)", int64(e))
+	}
+}
+
+// DisableWidgetsBoardValue — allowed values for the DisableWidgetsBoard node.
+type DisableWidgetsBoardValue int64
+
 const (
 	// Enabled.
-	DisableWidgetsBoardEnabled int64 = 0
+	DisableWidgetsBoardEnabled DisableWidgetsBoardValue = 0
 	// Disabled.
-	DisableWidgetsBoardDisabled int64 = 1
+	DisableWidgetsBoardDisabled DisableWidgetsBoardValue = 1
 )
 
-// DisableWidgetsOnLockScreen allowed values.
+// String returns the DisableWidgetsBoardValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableWidgetsBoardValue) String() string {
+	switch e {
+	case DisableWidgetsBoardEnabled:
+		return "DisableWidgetsBoardEnabled"
+	case DisableWidgetsBoardDisabled:
+		return "DisableWidgetsBoardDisabled"
+	default:
+		return fmt.Sprintf("DisableWidgetsBoardValue(%d)", int64(e))
+	}
+}
+
+// DisableWidgetsOnLockScreenValue — allowed values for the DisableWidgetsOnLockScreen node.
+type DisableWidgetsOnLockScreenValue int64
+
 const (
 	// Enabled.
-	DisableWidgetsOnLockScreenEnabled int64 = 0
+	DisableWidgetsOnLockScreenEnabled DisableWidgetsOnLockScreenValue = 0
 	// Disabled.
-	DisableWidgetsOnLockScreenDisabled int64 = 1
+	DisableWidgetsOnLockScreenDisabled DisableWidgetsOnLockScreenValue = 1
 )
+
+// String returns the DisableWidgetsOnLockScreenValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableWidgetsOnLockScreenValue) String() string {
+	switch e {
+	case DisableWidgetsOnLockScreenEnabled:
+		return "DisableWidgetsOnLockScreenEnabled"
+	case DisableWidgetsOnLockScreenDisabled:
+		return "DisableWidgetsOnLockScreenDisabled"
+	default:
+		return fmt.Sprintf("DisableWidgetsOnLockScreenValue(%d)", int64(e))
+	}
+}

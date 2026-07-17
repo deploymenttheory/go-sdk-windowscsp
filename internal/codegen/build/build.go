@@ -148,16 +148,23 @@ func (b *builder) visit(n *ddf.Node, parent node) {
 	// Leaf node.
 	vk := valueKind(n)
 	emitted := false
+	valued := (access["Get"] && n.Format != "null") || access["Add"] || access["Replace"] || access["Exec"]
+	enumType := ""
+	if valued {
+		// The allowed-values enum type must exist before methods so their
+		// signatures can use it.
+		enumType = b.enumFor(base, n, vk)
+	}
 	if access["Get"] && n.Format != "null" {
-		b.method(getMethod(b.pkg.ServiceName, base, n, cur, vk))
+		b.method(getMethod(b.pkg.ServiceName, base, n, cur, vk, enumType))
 		emitted = true
 	}
 	if access["Add"] {
-		b.method(setMethod("Create", "Add", b.pkg.ServiceName, base, n, cur, vk))
+		b.method(setMethod("Create", "Add", b.pkg.ServiceName, base, n, cur, vk, enumType))
 		emitted = true
 	}
 	if access["Replace"] {
-		b.method(setMethod("Update", "Replace", b.pkg.ServiceName, base, n, cur, vk))
+		b.method(setMethod("Update", "Replace", b.pkg.ServiceName, base, n, cur, vk, enumType))
 		emitted = true
 	}
 	if access["Delete"] {
@@ -165,12 +172,11 @@ func (b *builder) visit(n *ddf.Node, parent node) {
 		emitted = true
 	}
 	if access["Exec"] {
-		b.method(execMethod(b.pkg.ServiceName, base, n, cur, vk))
+		b.method(execMethod(b.pkg.ServiceName, base, n, cur, vk, enumType))
 		emitted = true
 	}
 	if emitted {
 		b.ensureURI(base, cur)
-		b.enums(base, n, vk)
 	}
 }
 
@@ -356,29 +362,43 @@ func paramStr(cur node, valueType string) string {
 	return s
 }
 
-func getMethod(recv, base string, n *ddf.Node, cur node, vk kind) view.Method {
+func getMethod(recv, base string, n *ddf.Node, cur node, vk kind, enumType string) view.Method {
 	name := "Get" + base
+	retType := vk.goType
+	if enumType != "" {
+		retType = enumType
+	}
 	return view.Method{
 		Recv:         recv,
 		Name:         name,
 		CommentLines: comments(name, "reads", n, cur),
 		ParamStr:     paramStr(cur, ""),
-		ReturnSig:    "(" + vk.goType + ", error)",
+		ReturnSig:    "(" + retType + ", error)",
 		Verb:         "Get",
 		URIExpr:      uriExpr(base, cur),
 		Accessor:     vk.accessor,
 		AccessorErr:  vk.accessorErr,
 		Zero:         vk.zero,
+		Cast:         enumType,
 	}
 }
 
-func setMethod(prefix, verb, recv, base string, n *ddf.Node, cur node, vk kind) view.Method {
-	name := prefix + base
-	valueType := vk.goType
-	valueExpr := vk.ctor + "(value)"
-	if valueType == "" {
-		valueExpr = "client.Null()"
+// valueParam resolves the value parameter type and wire-encoding expression
+// for setters: enum-typed nodes take the named type and convert back to the
+// wire scalar.
+func valueParam(vk kind, enumType string) (valueType, valueExpr string) {
+	if vk.goType == "" {
+		return "", "client.Null()"
 	}
+	if enumType == "" {
+		return vk.goType, vk.ctor + "(value)"
+	}
+	return enumType, vk.ctor + "(" + vk.goType + "(value))"
+}
+
+func setMethod(prefix, verb, recv, base string, n *ddf.Node, cur node, vk kind, enumType string) view.Method {
+	name := prefix + base
+	valueType, valueExpr := valueParam(vk, enumType)
 	action := "creates"
 	if verb == "Replace" {
 		action = "updates"
@@ -429,13 +449,12 @@ func listMethod(recv, base string, n *ddf.Node, cur node) view.Method {
 	}
 }
 
-func execMethod(recv, base string, n *ddf.Node, cur node, vk kind) view.Method {
+func execMethod(recv, base string, n *ddf.Node, cur node, vk kind, enumType string) view.Method {
 	name := "Exec" + base
 	valueType := ""
 	valueExpr := "client.Null()"
 	if n.Format != "null" && vk.goType != "" {
-		valueType = vk.goType
-		valueExpr = vk.ctor + "(value)"
+		valueType, valueExpr = valueParam(vk, enumType)
 	}
 	return view.Method{
 		Recv:         recv,
@@ -489,25 +508,38 @@ func comments(name, action string, n *ddf.Node, cur node) []string {
 	return lines
 }
 
-// enums emits allowed-value const blocks for ENUM/Flag leaves.
-func (b *builder) enums(base string, n *ddf.Node, vk kind) {
+// enumFor emits the allowed-values enum type for an ENUM/Flag leaf and
+// returns its type name ("" when the node has no usable enum). Members keep
+// their node-base prefix (AllowCameraNotAllowed); the type itself is named
+// <base>Value.
+func (b *builder) enumFor(base string, n *ddf.Node, vk kind) string {
 	av := n.AllowedValues
 	if av == nil || (av.Type != "ENUM" && av.Type != "Flag") || len(av.Enum) == 0 {
-		return
+		return ""
 	}
 	typed := vk.goType == "int64"
 	if !typed && vk.goType != "string" {
-		return
+		return ""
 	}
 
-	block := view.EnumBlock{Comment: base + " allowed values."}
+	baseType := "string"
+	if typed {
+		baseType = "int64"
+	}
+	typeName := b.claimBase(base + "Value")
+	block := view.EnumBlock{
+		TypeName: typeName,
+		BaseType: baseType,
+		Comment:  "allowed values for the " + n.Name + " node.",
+	}
 	seen := map[string]bool{}
+	seenLit := map[string]bool{}
 	for _, e := range av.Enum {
 		lit := strconv.Quote(e.Value)
 		if typed {
 			v, err := strconv.ParseInt(e.Value, 0, 64)
 			if err != nil {
-				return // non-numeric member in an int enum: skip the block
+				return "" // non-numeric member in an int enum: skip the block
 			}
 			lit = strconv.FormatInt(v, 10)
 		}
@@ -523,14 +555,16 @@ func (b *builder) enums(base string, n *ddf.Node, vk kind) {
 		block.Members = append(block.Members, view.EnumMember{
 			Name:         name,
 			CommentLines: comment,
-			Typed:        typed,
 			Literal:      lit,
+			Dup:          seenLit[lit],
 		})
+		seenLit[lit] = true
 	}
 	for _, m := range block.Members {
 		b.usedConsts[m.Name] = true
 	}
 	b.pkg.Enums = append(b.pkg.Enums, block)
+	return typeName
 }
 
 func (b *builder) method(m view.Method) {

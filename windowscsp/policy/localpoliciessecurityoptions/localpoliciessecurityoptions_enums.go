@@ -2,397 +2,1089 @@
 
 package localpoliciessecurityoptions
 
-// AccountsBlockMicrosoftAccounts allowed values.
+import (
+	"fmt"
+)
+
+// AccountsBlockMicrosoftAccountsValue — allowed values for the Accounts_BlockMicrosoftAccounts node.
+type AccountsBlockMicrosoftAccountsValue int64
+
 const (
 	// Disabled (users will be able to use Microsoft accounts with Windows).
-	AccountsBlockMicrosoftAccountsDisabled int64 = 0
+	AccountsBlockMicrosoftAccountsDisabled AccountsBlockMicrosoftAccountsValue = 0
 	// Enabled (users can't add Microsoft accounts).
-	AccountsBlockMicrosoftAccountsEnabled int64 = 1
+	AccountsBlockMicrosoftAccountsEnabled AccountsBlockMicrosoftAccountsValue = 1
 	// Users can't add or log on with Microsoft accounts
-	AccountsBlockMicrosoftAccountsUsersCanTAddOrLogOn int64 = 3
+	AccountsBlockMicrosoftAccountsUsersCanTAddOrLogOn AccountsBlockMicrosoftAccountsValue = 3
 )
 
-// AccountsEnableAdministratorAccountStatus allowed values.
+// String returns the AccountsBlockMicrosoftAccountsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AccountsBlockMicrosoftAccountsValue) String() string {
+	switch e {
+	case AccountsBlockMicrosoftAccountsDisabled:
+		return "AccountsBlockMicrosoftAccountsDisabled"
+	case AccountsBlockMicrosoftAccountsEnabled:
+		return "AccountsBlockMicrosoftAccountsEnabled"
+	case AccountsBlockMicrosoftAccountsUsersCanTAddOrLogOn:
+		return "AccountsBlockMicrosoftAccountsUsersCanTAddOrLogOn"
+	default:
+		return fmt.Sprintf("AccountsBlockMicrosoftAccountsValue(%d)", int64(e))
+	}
+}
+
+// AccountsEnableAdministratorAccountStatusValue — allowed values for the Accounts_EnableAdministratorAccountStatus node.
+type AccountsEnableAdministratorAccountStatusValue int64
+
 const (
 	// Enable
-	AccountsEnableAdministratorAccountStatusEnable int64 = 1
+	AccountsEnableAdministratorAccountStatusEnable AccountsEnableAdministratorAccountStatusValue = 1
 	// Disable
-	AccountsEnableAdministratorAccountStatusDisable int64 = 0
+	AccountsEnableAdministratorAccountStatusDisable AccountsEnableAdministratorAccountStatusValue = 0
 )
 
-// AccountsEnableGuestAccountStatus allowed values.
+// String returns the AccountsEnableAdministratorAccountStatusValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AccountsEnableAdministratorAccountStatusValue) String() string {
+	switch e {
+	case AccountsEnableAdministratorAccountStatusEnable:
+		return "AccountsEnableAdministratorAccountStatusEnable"
+	case AccountsEnableAdministratorAccountStatusDisable:
+		return "AccountsEnableAdministratorAccountStatusDisable"
+	default:
+		return fmt.Sprintf("AccountsEnableAdministratorAccountStatusValue(%d)", int64(e))
+	}
+}
+
+// AccountsEnableGuestAccountStatusValue — allowed values for the Accounts_EnableGuestAccountStatus node.
+type AccountsEnableGuestAccountStatusValue int64
+
 const (
 	// Enable
-	AccountsEnableGuestAccountStatusEnable int64 = 1
+	AccountsEnableGuestAccountStatusEnable AccountsEnableGuestAccountStatusValue = 1
 	// Disable
-	AccountsEnableGuestAccountStatusDisable int64 = 0
+	AccountsEnableGuestAccountStatusDisable AccountsEnableGuestAccountStatusValue = 0
 )
 
-// AccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnly allowed values.
+// String returns the AccountsEnableGuestAccountStatusValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AccountsEnableGuestAccountStatusValue) String() string {
+	switch e {
+	case AccountsEnableGuestAccountStatusEnable:
+		return "AccountsEnableGuestAccountStatusEnable"
+	case AccountsEnableGuestAccountStatusDisable:
+		return "AccountsEnableGuestAccountStatusDisable"
+	default:
+		return fmt.Sprintf("AccountsEnableGuestAccountStatusValue(%d)", int64(e))
+	}
+}
+
+// AccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnlyValue — allowed values for the Accounts_LimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnly node.
+type AccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnlyValue int64
+
 const (
 	// Disabled
-	AccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnlyDisabled int64 = 0
+	AccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnlyDisabled AccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnlyValue = 0
 	// Enabled
-	AccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnlyEnabled int64 = 1
+	AccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnlyEnabled AccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnlyValue = 1
 )
 
-// DevicesAllowUndockWithoutHavingToLogon allowed values.
+// String returns the AccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnlyValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnlyValue) String() string {
+	switch e {
+	case AccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnlyDisabled:
+		return "AccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnlyDisabled"
+	case AccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnlyEnabled:
+		return "AccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnlyEnabled"
+	default:
+		return fmt.Sprintf("AccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnlyValue(%d)", int64(e))
+	}
+}
+
+// DevicesAllowUndockWithoutHavingToLogonValue — allowed values for the Devices_AllowUndockWithoutHavingToLogon node.
+type DevicesAllowUndockWithoutHavingToLogonValue int64
+
 const (
 	// Allow
-	DevicesAllowUndockWithoutHavingToLogonAllow int64 = 1
+	DevicesAllowUndockWithoutHavingToLogonAllow DevicesAllowUndockWithoutHavingToLogonValue = 1
 	// Block
-	DevicesAllowUndockWithoutHavingToLogonBlock int64 = 0
+	DevicesAllowUndockWithoutHavingToLogonBlock DevicesAllowUndockWithoutHavingToLogonValue = 0
 )
 
-// DevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrinters allowed values.
+// String returns the DevicesAllowUndockWithoutHavingToLogonValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DevicesAllowUndockWithoutHavingToLogonValue) String() string {
+	switch e {
+	case DevicesAllowUndockWithoutHavingToLogonAllow:
+		return "DevicesAllowUndockWithoutHavingToLogonAllow"
+	case DevicesAllowUndockWithoutHavingToLogonBlock:
+		return "DevicesAllowUndockWithoutHavingToLogonBlock"
+	default:
+		return fmt.Sprintf("DevicesAllowUndockWithoutHavingToLogonValue(%d)", int64(e))
+	}
+}
+
+// DevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrintersValue — allowed values for the Devices_PreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrinters node.
+type DevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrintersValue int64
+
 const (
 	// Enable
-	DevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrintersEnable int64 = 1
+	DevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrintersEnable DevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrintersValue = 1
 	// Disable
-	DevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrintersDisable int64 = 0
+	DevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrintersDisable DevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrintersValue = 0
 )
 
-// InteractiveLogonDisplayUserInformationWhenTheSessionIsLocked allowed values.
+// String returns the DevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrintersValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrintersValue) String() string {
+	switch e {
+	case DevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrintersEnable:
+		return "DevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrintersEnable"
+	case DevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrintersDisable:
+		return "DevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrintersDisable"
+	default:
+		return fmt.Sprintf("DevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrintersValue(%d)", int64(e))
+	}
+}
+
+// InteractiveLogonDisplayUserInformationWhenTheSessionIsLockedValue — allowed values for the InteractiveLogon_DisplayUserInformationWhenTheSessionIsLocked node.
+type InteractiveLogonDisplayUserInformationWhenTheSessionIsLockedValue int64
+
 const (
 	// User display name, domain and user names
-	InteractiveLogonDisplayUserInformationWhenTheSessionIsLockedUserDisplayNameDomainAndUser int64 = 1
+	InteractiveLogonDisplayUserInformationWhenTheSessionIsLockedUserDisplayNameDomainAndUser InteractiveLogonDisplayUserInformationWhenTheSessionIsLockedValue = 1
 	// User display name only
-	InteractiveLogonDisplayUserInformationWhenTheSessionIsLockedUserDisplayNameOnly int64 = 2
+	InteractiveLogonDisplayUserInformationWhenTheSessionIsLockedUserDisplayNameOnly InteractiveLogonDisplayUserInformationWhenTheSessionIsLockedValue = 2
 	// Do not display user information
-	InteractiveLogonDisplayUserInformationWhenTheSessionIsLockedDoNotDisplayUserInformation int64 = 3
+	InteractiveLogonDisplayUserInformationWhenTheSessionIsLockedDoNotDisplayUserInformation InteractiveLogonDisplayUserInformationWhenTheSessionIsLockedValue = 3
 	// Domain and user names only
-	InteractiveLogonDisplayUserInformationWhenTheSessionIsLockedDomainAndUserNamesOnly int64 = 4
+	InteractiveLogonDisplayUserInformationWhenTheSessionIsLockedDomainAndUserNamesOnly InteractiveLogonDisplayUserInformationWhenTheSessionIsLockedValue = 4
 )
 
-// InteractiveLogonDoNotDisplayLastSignedIn allowed values.
+// String returns the InteractiveLogonDisplayUserInformationWhenTheSessionIsLockedValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e InteractiveLogonDisplayUserInformationWhenTheSessionIsLockedValue) String() string {
+	switch e {
+	case InteractiveLogonDisplayUserInformationWhenTheSessionIsLockedUserDisplayNameDomainAndUser:
+		return "InteractiveLogonDisplayUserInformationWhenTheSessionIsLockedUserDisplayNameDomainAndUser"
+	case InteractiveLogonDisplayUserInformationWhenTheSessionIsLockedUserDisplayNameOnly:
+		return "InteractiveLogonDisplayUserInformationWhenTheSessionIsLockedUserDisplayNameOnly"
+	case InteractiveLogonDisplayUserInformationWhenTheSessionIsLockedDoNotDisplayUserInformation:
+		return "InteractiveLogonDisplayUserInformationWhenTheSessionIsLockedDoNotDisplayUserInformation"
+	case InteractiveLogonDisplayUserInformationWhenTheSessionIsLockedDomainAndUserNamesOnly:
+		return "InteractiveLogonDisplayUserInformationWhenTheSessionIsLockedDomainAndUserNamesOnly"
+	default:
+		return fmt.Sprintf("InteractiveLogonDisplayUserInformationWhenTheSessionIsLockedValue(%d)", int64(e))
+	}
+}
+
+// InteractiveLogonDoNotDisplayLastSignedInValue — allowed values for the InteractiveLogon_DoNotDisplayLastSignedIn node.
+type InteractiveLogonDoNotDisplayLastSignedInValue int64
+
 const (
 	// Disabled (username will be shown)
-	InteractiveLogonDoNotDisplayLastSignedInDisabled int64 = 0
+	InteractiveLogonDoNotDisplayLastSignedInDisabled InteractiveLogonDoNotDisplayLastSignedInValue = 0
 	// Enabled (username will not be shown)
-	InteractiveLogonDoNotDisplayLastSignedInEnabled int64 = 1
+	InteractiveLogonDoNotDisplayLastSignedInEnabled InteractiveLogonDoNotDisplayLastSignedInValue = 1
 )
 
-// InteractiveLogonDoNotDisplayUsernameAtSignIn allowed values.
+// String returns the InteractiveLogonDoNotDisplayLastSignedInValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e InteractiveLogonDoNotDisplayLastSignedInValue) String() string {
+	switch e {
+	case InteractiveLogonDoNotDisplayLastSignedInDisabled:
+		return "InteractiveLogonDoNotDisplayLastSignedInDisabled"
+	case InteractiveLogonDoNotDisplayLastSignedInEnabled:
+		return "InteractiveLogonDoNotDisplayLastSignedInEnabled"
+	default:
+		return fmt.Sprintf("InteractiveLogonDoNotDisplayLastSignedInValue(%d)", int64(e))
+	}
+}
+
+// InteractiveLogonDoNotDisplayUsernameAtSignInValue — allowed values for the InteractiveLogon_DoNotDisplayUsernameAtSignIn node.
+type InteractiveLogonDoNotDisplayUsernameAtSignInValue int64
+
 const (
 	// Disabled (username will be shown)
-	InteractiveLogonDoNotDisplayUsernameAtSignInDisabled int64 = 0
+	InteractiveLogonDoNotDisplayUsernameAtSignInDisabled InteractiveLogonDoNotDisplayUsernameAtSignInValue = 0
 	// Enabled (username will not be shown)
-	InteractiveLogonDoNotDisplayUsernameAtSignInEnabled int64 = 1
+	InteractiveLogonDoNotDisplayUsernameAtSignInEnabled InteractiveLogonDoNotDisplayUsernameAtSignInValue = 1
 )
 
-// InteractiveLogonDoNotRequireCTRLALTDEL allowed values.
+// String returns the InteractiveLogonDoNotDisplayUsernameAtSignInValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e InteractiveLogonDoNotDisplayUsernameAtSignInValue) String() string {
+	switch e {
+	case InteractiveLogonDoNotDisplayUsernameAtSignInDisabled:
+		return "InteractiveLogonDoNotDisplayUsernameAtSignInDisabled"
+	case InteractiveLogonDoNotDisplayUsernameAtSignInEnabled:
+		return "InteractiveLogonDoNotDisplayUsernameAtSignInEnabled"
+	default:
+		return fmt.Sprintf("InteractiveLogonDoNotDisplayUsernameAtSignInValue(%d)", int64(e))
+	}
+}
+
+// InteractiveLogonDoNotRequireCTRLALTDELValue — allowed values for the InteractiveLogon_DoNotRequireCTRLALTDEL node.
+type InteractiveLogonDoNotRequireCTRLALTDELValue int64
+
 const (
 	// Disabled
-	InteractiveLogonDoNotRequireCTRLALTDELDisabled int64 = 0
+	InteractiveLogonDoNotRequireCTRLALTDELDisabled InteractiveLogonDoNotRequireCTRLALTDELValue = 0
 	// Enabled (a user is not required to press CTRL+ALT+DEL to log on)
-	InteractiveLogonDoNotRequireCTRLALTDELEnabled int64 = 1
+	InteractiveLogonDoNotRequireCTRLALTDELEnabled InteractiveLogonDoNotRequireCTRLALTDELValue = 1
 )
 
-// InteractiveLogonSmartCardRemovalBehavior allowed values.
+// String returns the InteractiveLogonDoNotRequireCTRLALTDELValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e InteractiveLogonDoNotRequireCTRLALTDELValue) String() string {
+	switch e {
+	case InteractiveLogonDoNotRequireCTRLALTDELDisabled:
+		return "InteractiveLogonDoNotRequireCTRLALTDELDisabled"
+	case InteractiveLogonDoNotRequireCTRLALTDELEnabled:
+		return "InteractiveLogonDoNotRequireCTRLALTDELEnabled"
+	default:
+		return fmt.Sprintf("InteractiveLogonDoNotRequireCTRLALTDELValue(%d)", int64(e))
+	}
+}
+
+// InteractiveLogonSmartCardRemovalBehaviorValue — allowed values for the InteractiveLogon_SmartCardRemovalBehavior node.
+type InteractiveLogonSmartCardRemovalBehaviorValue string
+
 const (
 	// No Action
-	InteractiveLogonSmartCardRemovalBehaviorNoAction = "0"
+	InteractiveLogonSmartCardRemovalBehaviorNoAction InteractiveLogonSmartCardRemovalBehaviorValue = "0"
 	// Lock Workstation
-	InteractiveLogonSmartCardRemovalBehaviorLockWorkstation = "1"
+	InteractiveLogonSmartCardRemovalBehaviorLockWorkstation InteractiveLogonSmartCardRemovalBehaviorValue = "1"
 	// Force Logoff
-	InteractiveLogonSmartCardRemovalBehaviorForceLogoff = "2"
+	InteractiveLogonSmartCardRemovalBehaviorForceLogoff InteractiveLogonSmartCardRemovalBehaviorValue = "2"
 	// Disconnect if a Remote Desktop Services session
-	InteractiveLogonSmartCardRemovalBehaviorDisconnectIfARemoteDesktopServices = "3"
+	InteractiveLogonSmartCardRemovalBehaviorDisconnectIfARemoteDesktopServices InteractiveLogonSmartCardRemovalBehaviorValue = "3"
 )
 
-// MicrosoftNetworkClientDigitallySignCommunicationsAlways allowed values.
+// String returns the InteractiveLogonSmartCardRemovalBehaviorValue value as a plain string.
+func (e InteractiveLogonSmartCardRemovalBehaviorValue) String() string { return string(e) }
+
+// MicrosoftNetworkClientDigitallySignCommunicationsAlwaysValue — allowed values for the MicrosoftNetworkClient_DigitallySignCommunicationsAlways node.
+type MicrosoftNetworkClientDigitallySignCommunicationsAlwaysValue int64
+
 const (
 	// Enable
-	MicrosoftNetworkClientDigitallySignCommunicationsAlwaysEnable int64 = 1
+	MicrosoftNetworkClientDigitallySignCommunicationsAlwaysEnable MicrosoftNetworkClientDigitallySignCommunicationsAlwaysValue = 1
 	// Disable
-	MicrosoftNetworkClientDigitallySignCommunicationsAlwaysDisable int64 = 0
+	MicrosoftNetworkClientDigitallySignCommunicationsAlwaysDisable MicrosoftNetworkClientDigitallySignCommunicationsAlwaysValue = 0
 )
 
-// MicrosoftNetworkClientDigitallySignCommunicationsIfServerAgrees allowed values.
+// String returns the MicrosoftNetworkClientDigitallySignCommunicationsAlwaysValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MicrosoftNetworkClientDigitallySignCommunicationsAlwaysValue) String() string {
+	switch e {
+	case MicrosoftNetworkClientDigitallySignCommunicationsAlwaysEnable:
+		return "MicrosoftNetworkClientDigitallySignCommunicationsAlwaysEnable"
+	case MicrosoftNetworkClientDigitallySignCommunicationsAlwaysDisable:
+		return "MicrosoftNetworkClientDigitallySignCommunicationsAlwaysDisable"
+	default:
+		return fmt.Sprintf("MicrosoftNetworkClientDigitallySignCommunicationsAlwaysValue(%d)", int64(e))
+	}
+}
+
+// MicrosoftNetworkClientDigitallySignCommunicationsIfServerAgreesValue — allowed values for the MicrosoftNetworkClient_DigitallySignCommunicationsIfServerAgrees node.
+type MicrosoftNetworkClientDigitallySignCommunicationsIfServerAgreesValue int64
+
 const (
 	// Enable
-	MicrosoftNetworkClientDigitallySignCommunicationsIfServerAgreesEnable int64 = 1
+	MicrosoftNetworkClientDigitallySignCommunicationsIfServerAgreesEnable MicrosoftNetworkClientDigitallySignCommunicationsIfServerAgreesValue = 1
 	// Disable
-	MicrosoftNetworkClientDigitallySignCommunicationsIfServerAgreesDisable int64 = 0
+	MicrosoftNetworkClientDigitallySignCommunicationsIfServerAgreesDisable MicrosoftNetworkClientDigitallySignCommunicationsIfServerAgreesValue = 0
 )
 
-// MicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServers allowed values.
+// String returns the MicrosoftNetworkClientDigitallySignCommunicationsIfServerAgreesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MicrosoftNetworkClientDigitallySignCommunicationsIfServerAgreesValue) String() string {
+	switch e {
+	case MicrosoftNetworkClientDigitallySignCommunicationsIfServerAgreesEnable:
+		return "MicrosoftNetworkClientDigitallySignCommunicationsIfServerAgreesEnable"
+	case MicrosoftNetworkClientDigitallySignCommunicationsIfServerAgreesDisable:
+		return "MicrosoftNetworkClientDigitallySignCommunicationsIfServerAgreesDisable"
+	default:
+		return fmt.Sprintf("MicrosoftNetworkClientDigitallySignCommunicationsIfServerAgreesValue(%d)", int64(e))
+	}
+}
+
+// MicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServersValue — allowed values for the MicrosoftNetworkClient_SendUnencryptedPasswordToThirdPartySMBServers node.
+type MicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServersValue int64
+
 const (
 	// Enable
-	MicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServersEnable int64 = 1
+	MicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServersEnable MicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServersValue = 1
 	// Disable
-	MicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServersDisable int64 = 0
+	MicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServersDisable MicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServersValue = 0
 )
 
-// MicrosoftNetworkServerDigitallySignCommunicationsAlways allowed values.
+// String returns the MicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServersValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServersValue) String() string {
+	switch e {
+	case MicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServersEnable:
+		return "MicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServersEnable"
+	case MicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServersDisable:
+		return "MicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServersDisable"
+	default:
+		return fmt.Sprintf("MicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServersValue(%d)", int64(e))
+	}
+}
+
+// MicrosoftNetworkServerDigitallySignCommunicationsAlwaysValue — allowed values for the MicrosoftNetworkServer_DigitallySignCommunicationsAlways node.
+type MicrosoftNetworkServerDigitallySignCommunicationsAlwaysValue int64
+
 const (
 	// Enable
-	MicrosoftNetworkServerDigitallySignCommunicationsAlwaysEnable int64 = 1
+	MicrosoftNetworkServerDigitallySignCommunicationsAlwaysEnable MicrosoftNetworkServerDigitallySignCommunicationsAlwaysValue = 1
 	// Disable
-	MicrosoftNetworkServerDigitallySignCommunicationsAlwaysDisable int64 = 0
+	MicrosoftNetworkServerDigitallySignCommunicationsAlwaysDisable MicrosoftNetworkServerDigitallySignCommunicationsAlwaysValue = 0
 )
 
-// MicrosoftNetworkServerDigitallySignCommunicationsIfClientAgrees allowed values.
+// String returns the MicrosoftNetworkServerDigitallySignCommunicationsAlwaysValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MicrosoftNetworkServerDigitallySignCommunicationsAlwaysValue) String() string {
+	switch e {
+	case MicrosoftNetworkServerDigitallySignCommunicationsAlwaysEnable:
+		return "MicrosoftNetworkServerDigitallySignCommunicationsAlwaysEnable"
+	case MicrosoftNetworkServerDigitallySignCommunicationsAlwaysDisable:
+		return "MicrosoftNetworkServerDigitallySignCommunicationsAlwaysDisable"
+	default:
+		return fmt.Sprintf("MicrosoftNetworkServerDigitallySignCommunicationsAlwaysValue(%d)", int64(e))
+	}
+}
+
+// MicrosoftNetworkServerDigitallySignCommunicationsIfClientAgreesValue — allowed values for the MicrosoftNetworkServer_DigitallySignCommunicationsIfClientAgrees node.
+type MicrosoftNetworkServerDigitallySignCommunicationsIfClientAgreesValue int64
+
 const (
 	// Enable
-	MicrosoftNetworkServerDigitallySignCommunicationsIfClientAgreesEnable int64 = 1
+	MicrosoftNetworkServerDigitallySignCommunicationsIfClientAgreesEnable MicrosoftNetworkServerDigitallySignCommunicationsIfClientAgreesValue = 1
 	// Disable
-	MicrosoftNetworkServerDigitallySignCommunicationsIfClientAgreesDisable int64 = 0
+	MicrosoftNetworkServerDigitallySignCommunicationsIfClientAgreesDisable MicrosoftNetworkServerDigitallySignCommunicationsIfClientAgreesValue = 0
 )
 
-// NetworkAccessAllowAnonymousSIDOrNameTranslation allowed values.
+// String returns the MicrosoftNetworkServerDigitallySignCommunicationsIfClientAgreesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MicrosoftNetworkServerDigitallySignCommunicationsIfClientAgreesValue) String() string {
+	switch e {
+	case MicrosoftNetworkServerDigitallySignCommunicationsIfClientAgreesEnable:
+		return "MicrosoftNetworkServerDigitallySignCommunicationsIfClientAgreesEnable"
+	case MicrosoftNetworkServerDigitallySignCommunicationsIfClientAgreesDisable:
+		return "MicrosoftNetworkServerDigitallySignCommunicationsIfClientAgreesDisable"
+	default:
+		return fmt.Sprintf("MicrosoftNetworkServerDigitallySignCommunicationsIfClientAgreesValue(%d)", int64(e))
+	}
+}
+
+// NetworkAccessAllowAnonymousSIDOrNameTranslationValue — allowed values for the NetworkAccess_AllowAnonymousSIDOrNameTranslation node.
+type NetworkAccessAllowAnonymousSIDOrNameTranslationValue int64
+
 const (
 	// Enable
-	NetworkAccessAllowAnonymousSIDOrNameTranslationEnable int64 = 1
+	NetworkAccessAllowAnonymousSIDOrNameTranslationEnable NetworkAccessAllowAnonymousSIDOrNameTranslationValue = 1
 	// Disable
-	NetworkAccessAllowAnonymousSIDOrNameTranslationDisable int64 = 0
+	NetworkAccessAllowAnonymousSIDOrNameTranslationDisable NetworkAccessAllowAnonymousSIDOrNameTranslationValue = 0
 )
 
-// NetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccounts allowed values.
+// String returns the NetworkAccessAllowAnonymousSIDOrNameTranslationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e NetworkAccessAllowAnonymousSIDOrNameTranslationValue) String() string {
+	switch e {
+	case NetworkAccessAllowAnonymousSIDOrNameTranslationEnable:
+		return "NetworkAccessAllowAnonymousSIDOrNameTranslationEnable"
+	case NetworkAccessAllowAnonymousSIDOrNameTranslationDisable:
+		return "NetworkAccessAllowAnonymousSIDOrNameTranslationDisable"
+	default:
+		return fmt.Sprintf("NetworkAccessAllowAnonymousSIDOrNameTranslationValue(%d)", int64(e))
+	}
+}
+
+// NetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccountsValue — allowed values for the NetworkAccess_DoNotAllowAnonymousEnumerationOfSAMAccounts node.
+type NetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccountsValue int64
+
 const (
 	// Enabled
-	NetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccountsEnabled int64 = 1
+	NetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccountsEnabled NetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccountsValue = 1
 	// Disabled
-	NetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccountsDisabled int64 = 0
+	NetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccountsDisabled NetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccountsValue = 0
 )
 
-// NetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndShares allowed values.
+// String returns the NetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccountsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e NetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccountsValue) String() string {
+	switch e {
+	case NetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccountsEnabled:
+		return "NetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccountsEnabled"
+	case NetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccountsDisabled:
+		return "NetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccountsDisabled"
+	default:
+		return fmt.Sprintf("NetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccountsValue(%d)", int64(e))
+	}
+}
+
+// NetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndSharesValue — allowed values for the NetworkAccess_DoNotAllowAnonymousEnumerationOfSamAccountsAndShares node.
+type NetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndSharesValue int64
+
 const (
 	// Enabled
-	NetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndSharesEnabled int64 = 1
+	NetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndSharesEnabled NetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndSharesValue = 1
 	// Disabled
-	NetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndSharesDisabled int64 = 0
+	NetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndSharesDisabled NetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndSharesValue = 0
 )
 
-// NetworkAccessRestrictAnonymousAccessToNamedPipesAndShares allowed values.
+// String returns the NetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndSharesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e NetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndSharesValue) String() string {
+	switch e {
+	case NetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndSharesEnabled:
+		return "NetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndSharesEnabled"
+	case NetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndSharesDisabled:
+		return "NetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndSharesDisabled"
+	default:
+		return fmt.Sprintf("NetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndSharesValue(%d)", int64(e))
+	}
+}
+
+// NetworkAccessRestrictAnonymousAccessToNamedPipesAndSharesValue — allowed values for the NetworkAccess_RestrictAnonymousAccessToNamedPipesAndShares node.
+type NetworkAccessRestrictAnonymousAccessToNamedPipesAndSharesValue int64
+
 const (
 	// Enable
-	NetworkAccessRestrictAnonymousAccessToNamedPipesAndSharesEnable int64 = 1
+	NetworkAccessRestrictAnonymousAccessToNamedPipesAndSharesEnable NetworkAccessRestrictAnonymousAccessToNamedPipesAndSharesValue = 1
 	// Disable
-	NetworkAccessRestrictAnonymousAccessToNamedPipesAndSharesDisable int64 = 0
+	NetworkAccessRestrictAnonymousAccessToNamedPipesAndSharesDisable NetworkAccessRestrictAnonymousAccessToNamedPipesAndSharesValue = 0
 )
 
-// NetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLM allowed values.
+// String returns the NetworkAccessRestrictAnonymousAccessToNamedPipesAndSharesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e NetworkAccessRestrictAnonymousAccessToNamedPipesAndSharesValue) String() string {
+	switch e {
+	case NetworkAccessRestrictAnonymousAccessToNamedPipesAndSharesEnable:
+		return "NetworkAccessRestrictAnonymousAccessToNamedPipesAndSharesEnable"
+	case NetworkAccessRestrictAnonymousAccessToNamedPipesAndSharesDisable:
+		return "NetworkAccessRestrictAnonymousAccessToNamedPipesAndSharesDisable"
+	default:
+		return fmt.Sprintf("NetworkAccessRestrictAnonymousAccessToNamedPipesAndSharesValue(%d)", int64(e))
+	}
+}
+
+// NetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLMValue — allowed values for the NetworkSecurity_AllowLocalSystemToUseComputerIdentityForNTLM node.
+type NetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLMValue int64
+
 const (
 	// Allow
-	NetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLMAllow int64 = 1
+	NetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLMAllow NetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLMValue = 1
 	// Block
-	NetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLMBlock int64 = 0
+	NetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLMBlock NetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLMValue = 0
 )
 
-// NetworkSecurityAllowPKU2UAuthenticationRequests allowed values.
+// String returns the NetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLMValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e NetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLMValue) String() string {
+	switch e {
+	case NetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLMAllow:
+		return "NetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLMAllow"
+	case NetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLMBlock:
+		return "NetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLMBlock"
+	default:
+		return fmt.Sprintf("NetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLMValue(%d)", int64(e))
+	}
+}
+
+// NetworkSecurityAllowPKU2UAuthenticationRequestsValue — allowed values for the NetworkSecurity_AllowPKU2UAuthenticationRequests node.
+type NetworkSecurityAllowPKU2UAuthenticationRequestsValue int64
+
 const (
 	// Block
-	NetworkSecurityAllowPKU2UAuthenticationRequestsBlock int64 = 0
+	NetworkSecurityAllowPKU2UAuthenticationRequestsBlock NetworkSecurityAllowPKU2UAuthenticationRequestsValue = 0
 	// Allow
-	NetworkSecurityAllowPKU2UAuthenticationRequestsAllow int64 = 1
+	NetworkSecurityAllowPKU2UAuthenticationRequestsAllow NetworkSecurityAllowPKU2UAuthenticationRequestsValue = 1
 )
 
-// NetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChange allowed values.
+// String returns the NetworkSecurityAllowPKU2UAuthenticationRequestsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e NetworkSecurityAllowPKU2UAuthenticationRequestsValue) String() string {
+	switch e {
+	case NetworkSecurityAllowPKU2UAuthenticationRequestsBlock:
+		return "NetworkSecurityAllowPKU2UAuthenticationRequestsBlock"
+	case NetworkSecurityAllowPKU2UAuthenticationRequestsAllow:
+		return "NetworkSecurityAllowPKU2UAuthenticationRequestsAllow"
+	default:
+		return fmt.Sprintf("NetworkSecurityAllowPKU2UAuthenticationRequestsValue(%d)", int64(e))
+	}
+}
+
+// NetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChangeValue — allowed values for the NetworkSecurity_DoNotStoreLANManagerHashValueOnNextPasswordChange node.
+type NetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChangeValue int64
+
 const (
 	// Enable
-	NetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChangeEnable int64 = 1
+	NetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChangeEnable NetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChangeValue = 1
 	// Disable
-	NetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChangeDisable int64 = 0
+	NetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChangeDisable NetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChangeValue = 0
 )
 
-// NetworkSecurityForceLogoffWhenLogonHoursExpire allowed values.
+// String returns the NetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChangeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e NetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChangeValue) String() string {
+	switch e {
+	case NetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChangeEnable:
+		return "NetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChangeEnable"
+	case NetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChangeDisable:
+		return "NetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChangeDisable"
+	default:
+		return fmt.Sprintf("NetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChangeValue(%d)", int64(e))
+	}
+}
+
+// NetworkSecurityForceLogoffWhenLogonHoursExpireValue — allowed values for the NetworkSecurity_ForceLogoffWhenLogonHoursExpire node.
+type NetworkSecurityForceLogoffWhenLogonHoursExpireValue int64
+
 const (
 	// Enable
-	NetworkSecurityForceLogoffWhenLogonHoursExpireEnable int64 = 1
+	NetworkSecurityForceLogoffWhenLogonHoursExpireEnable NetworkSecurityForceLogoffWhenLogonHoursExpireValue = 1
 	// Disable
-	NetworkSecurityForceLogoffWhenLogonHoursExpireDisable int64 = 0
+	NetworkSecurityForceLogoffWhenLogonHoursExpireDisable NetworkSecurityForceLogoffWhenLogonHoursExpireValue = 0
 )
 
-// NetworkSecurityLANManagerAuthenticationLevel allowed values.
+// String returns the NetworkSecurityForceLogoffWhenLogonHoursExpireValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e NetworkSecurityForceLogoffWhenLogonHoursExpireValue) String() string {
+	switch e {
+	case NetworkSecurityForceLogoffWhenLogonHoursExpireEnable:
+		return "NetworkSecurityForceLogoffWhenLogonHoursExpireEnable"
+	case NetworkSecurityForceLogoffWhenLogonHoursExpireDisable:
+		return "NetworkSecurityForceLogoffWhenLogonHoursExpireDisable"
+	default:
+		return fmt.Sprintf("NetworkSecurityForceLogoffWhenLogonHoursExpireValue(%d)", int64(e))
+	}
+}
+
+// NetworkSecurityLANManagerAuthenticationLevelValue — allowed values for the NetworkSecurity_LANManagerAuthenticationLevel node.
+type NetworkSecurityLANManagerAuthenticationLevelValue int64
+
 const (
 	// Send LM and NTLM responses
-	NetworkSecurityLANManagerAuthenticationLevelSendLMAndNTLMResponses int64 = 0
+	NetworkSecurityLANManagerAuthenticationLevelSendLMAndNTLMResponses NetworkSecurityLANManagerAuthenticationLevelValue = 0
 	// Send LM and NTLM-use NTLMv2 session security if negotiated
-	NetworkSecurityLANManagerAuthenticationLevelSendLMAndNTLMUseNTLMv2Session int64 = 1
+	NetworkSecurityLANManagerAuthenticationLevelSendLMAndNTLMUseNTLMv2Session NetworkSecurityLANManagerAuthenticationLevelValue = 1
 	// Send LM and NTLM responses only
-	NetworkSecurityLANManagerAuthenticationLevelSendLMAndNTLMResponsesOnly int64 = 2
+	NetworkSecurityLANManagerAuthenticationLevelSendLMAndNTLMResponsesOnly NetworkSecurityLANManagerAuthenticationLevelValue = 2
 	// Send LM and NTLMv2 responses only
-	NetworkSecurityLANManagerAuthenticationLevelSendLMAndNTLMv2ResponsesOnly int64 = 3
+	NetworkSecurityLANManagerAuthenticationLevelSendLMAndNTLMv2ResponsesOnly NetworkSecurityLANManagerAuthenticationLevelValue = 3
 	// Send LM and NTLMv2 responses only. Refuse LM
-	NetworkSecurityLANManagerAuthenticationLevelSendLMAndNTLMv2ResponsesOnly2 int64 = 4
+	NetworkSecurityLANManagerAuthenticationLevelSendLMAndNTLMv2ResponsesOnly2 NetworkSecurityLANManagerAuthenticationLevelValue = 4
 	// Send LM and NTLMv2 responses only. Refuse LM and NTLM
-	NetworkSecurityLANManagerAuthenticationLevelSendLMAndNTLMv2ResponsesOnly3 int64 = 5
+	NetworkSecurityLANManagerAuthenticationLevelSendLMAndNTLMv2ResponsesOnly3 NetworkSecurityLANManagerAuthenticationLevelValue = 5
 )
 
-// NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClients allowed values.
+// String returns the NetworkSecurityLANManagerAuthenticationLevelValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e NetworkSecurityLANManagerAuthenticationLevelValue) String() string {
+	switch e {
+	case NetworkSecurityLANManagerAuthenticationLevelSendLMAndNTLMResponses:
+		return "NetworkSecurityLANManagerAuthenticationLevelSendLMAndNTLMResponses"
+	case NetworkSecurityLANManagerAuthenticationLevelSendLMAndNTLMUseNTLMv2Session:
+		return "NetworkSecurityLANManagerAuthenticationLevelSendLMAndNTLMUseNTLMv2Session"
+	case NetworkSecurityLANManagerAuthenticationLevelSendLMAndNTLMResponsesOnly:
+		return "NetworkSecurityLANManagerAuthenticationLevelSendLMAndNTLMResponsesOnly"
+	case NetworkSecurityLANManagerAuthenticationLevelSendLMAndNTLMv2ResponsesOnly:
+		return "NetworkSecurityLANManagerAuthenticationLevelSendLMAndNTLMv2ResponsesOnly"
+	case NetworkSecurityLANManagerAuthenticationLevelSendLMAndNTLMv2ResponsesOnly2:
+		return "NetworkSecurityLANManagerAuthenticationLevelSendLMAndNTLMv2ResponsesOnly2"
+	case NetworkSecurityLANManagerAuthenticationLevelSendLMAndNTLMv2ResponsesOnly3:
+		return "NetworkSecurityLANManagerAuthenticationLevelSendLMAndNTLMv2ResponsesOnly3"
+	default:
+		return fmt.Sprintf("NetworkSecurityLANManagerAuthenticationLevelValue(%d)", int64(e))
+	}
+}
+
+// NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClientsValue — allowed values for the NetworkSecurity_MinimumSessionSecurityForNTLMSSPBasedClients node.
+type NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClientsValue int64
+
 const (
 	// None
-	NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClientsNone int64 = 0
+	NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClientsNone NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClientsValue = 0
 	// Require NTLMv2 session security
-	NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClientsRequireNTLMv2SessionSecurity int64 = 524288
+	NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClientsRequireNTLMv2SessionSecurity NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClientsValue = 524288
 	// Require 128-bit encryption
-	NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClientsRequire128BitEncryption int64 = 536870912
+	NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClientsRequire128BitEncryption NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClientsValue = 536870912
 	// Require NTLM and 128-bit encryption
-	NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClientsRequireNTLMAnd128BitEncryption int64 = 537395200
+	NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClientsRequireNTLMAnd128BitEncryption NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClientsValue = 537395200
 )
 
-// NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServers allowed values.
+// String returns the NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClientsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClientsValue) String() string {
+	switch e {
+	case NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClientsNone:
+		return "NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClientsNone"
+	case NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClientsRequireNTLMv2SessionSecurity:
+		return "NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClientsRequireNTLMv2SessionSecurity"
+	case NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClientsRequire128BitEncryption:
+		return "NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClientsRequire128BitEncryption"
+	case NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClientsRequireNTLMAnd128BitEncryption:
+		return "NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClientsRequireNTLMAnd128BitEncryption"
+	default:
+		return fmt.Sprintf("NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClientsValue(%d)", int64(e))
+	}
+}
+
+// NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServersValue — allowed values for the NetworkSecurity_MinimumSessionSecurityForNTLMSSPBasedServers node.
+type NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServersValue int64
+
 const (
 	// None
-	NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServersNone int64 = 0
+	NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServersNone NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServersValue = 0
 	// Require NTLMv2 session security
-	NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServersRequireNTLMv2SessionSecurity int64 = 524288
+	NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServersRequireNTLMv2SessionSecurity NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServersValue = 524288
 	// Require 128-bit encryption
-	NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServersRequire128BitEncryption int64 = 536870912
+	NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServersRequire128BitEncryption NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServersValue = 536870912
 	// Require NTLM and 128-bit encryption
-	NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServersRequireNTLMAnd128BitEncryption int64 = 537395200
+	NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServersRequireNTLMAnd128BitEncryption NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServersValue = 537395200
 )
 
-// NetworkSecurityRestrictNTLMAuditIncomingNTLMTraffic allowed values.
+// String returns the NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServersValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServersValue) String() string {
+	switch e {
+	case NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServersNone:
+		return "NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServersNone"
+	case NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServersRequireNTLMv2SessionSecurity:
+		return "NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServersRequireNTLMv2SessionSecurity"
+	case NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServersRequire128BitEncryption:
+		return "NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServersRequire128BitEncryption"
+	case NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServersRequireNTLMAnd128BitEncryption:
+		return "NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServersRequireNTLMAnd128BitEncryption"
+	default:
+		return fmt.Sprintf("NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServersValue(%d)", int64(e))
+	}
+}
+
+// NetworkSecurityRestrictNTLMAuditIncomingNTLMTrafficValue — allowed values for the NetworkSecurity_RestrictNTLM_AuditIncomingNTLMTraffic node.
+type NetworkSecurityRestrictNTLMAuditIncomingNTLMTrafficValue int64
+
 const (
 	// Disable
-	NetworkSecurityRestrictNTLMAuditIncomingNTLMTrafficDisable int64 = 0
+	NetworkSecurityRestrictNTLMAuditIncomingNTLMTrafficDisable NetworkSecurityRestrictNTLMAuditIncomingNTLMTrafficValue = 0
 	// Enable auditing for domain accounts
-	NetworkSecurityRestrictNTLMAuditIncomingNTLMTrafficEnableAuditingForDomainAccounts int64 = 1
+	NetworkSecurityRestrictNTLMAuditIncomingNTLMTrafficEnableAuditingForDomainAccounts NetworkSecurityRestrictNTLMAuditIncomingNTLMTrafficValue = 1
 	// Enable auditing for all accounts
-	NetworkSecurityRestrictNTLMAuditIncomingNTLMTrafficEnableAuditingForAllAccounts int64 = 2
+	NetworkSecurityRestrictNTLMAuditIncomingNTLMTrafficEnableAuditingForAllAccounts NetworkSecurityRestrictNTLMAuditIncomingNTLMTrafficValue = 2
 )
 
-// NetworkSecurityRestrictNTLMIncomingNTLMTraffic allowed values.
+// String returns the NetworkSecurityRestrictNTLMAuditIncomingNTLMTrafficValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e NetworkSecurityRestrictNTLMAuditIncomingNTLMTrafficValue) String() string {
+	switch e {
+	case NetworkSecurityRestrictNTLMAuditIncomingNTLMTrafficDisable:
+		return "NetworkSecurityRestrictNTLMAuditIncomingNTLMTrafficDisable"
+	case NetworkSecurityRestrictNTLMAuditIncomingNTLMTrafficEnableAuditingForDomainAccounts:
+		return "NetworkSecurityRestrictNTLMAuditIncomingNTLMTrafficEnableAuditingForDomainAccounts"
+	case NetworkSecurityRestrictNTLMAuditIncomingNTLMTrafficEnableAuditingForAllAccounts:
+		return "NetworkSecurityRestrictNTLMAuditIncomingNTLMTrafficEnableAuditingForAllAccounts"
+	default:
+		return fmt.Sprintf("NetworkSecurityRestrictNTLMAuditIncomingNTLMTrafficValue(%d)", int64(e))
+	}
+}
+
+// NetworkSecurityRestrictNTLMIncomingNTLMTrafficValue — allowed values for the NetworkSecurity_RestrictNTLM_IncomingNTLMTraffic node.
+type NetworkSecurityRestrictNTLMIncomingNTLMTrafficValue int64
+
 const (
 	// Allow all
-	NetworkSecurityRestrictNTLMIncomingNTLMTrafficAllowAll int64 = 0
+	NetworkSecurityRestrictNTLMIncomingNTLMTrafficAllowAll NetworkSecurityRestrictNTLMIncomingNTLMTrafficValue = 0
 	// Deny all domain accounts
-	NetworkSecurityRestrictNTLMIncomingNTLMTrafficDenyAllDomainAccounts int64 = 1
+	NetworkSecurityRestrictNTLMIncomingNTLMTrafficDenyAllDomainAccounts NetworkSecurityRestrictNTLMIncomingNTLMTrafficValue = 1
 	// Deny all accounts
-	NetworkSecurityRestrictNTLMIncomingNTLMTrafficDenyAllAccounts int64 = 2
+	NetworkSecurityRestrictNTLMIncomingNTLMTrafficDenyAllAccounts NetworkSecurityRestrictNTLMIncomingNTLMTrafficValue = 2
 )
 
-// NetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServers allowed values.
+// String returns the NetworkSecurityRestrictNTLMIncomingNTLMTrafficValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e NetworkSecurityRestrictNTLMIncomingNTLMTrafficValue) String() string {
+	switch e {
+	case NetworkSecurityRestrictNTLMIncomingNTLMTrafficAllowAll:
+		return "NetworkSecurityRestrictNTLMIncomingNTLMTrafficAllowAll"
+	case NetworkSecurityRestrictNTLMIncomingNTLMTrafficDenyAllDomainAccounts:
+		return "NetworkSecurityRestrictNTLMIncomingNTLMTrafficDenyAllDomainAccounts"
+	case NetworkSecurityRestrictNTLMIncomingNTLMTrafficDenyAllAccounts:
+		return "NetworkSecurityRestrictNTLMIncomingNTLMTrafficDenyAllAccounts"
+	default:
+		return fmt.Sprintf("NetworkSecurityRestrictNTLMIncomingNTLMTrafficValue(%d)", int64(e))
+	}
+}
+
+// NetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServersValue — allowed values for the NetworkSecurity_RestrictNTLM_OutgoingNTLMTrafficToRemoteServers node.
+type NetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServersValue int64
+
 const (
 	// Allow all
-	NetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServersAllowAll int64 = 0
+	NetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServersAllowAll NetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServersValue = 0
 	// Deny all domain accounts
-	NetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServersDenyAllDomainAccounts int64 = 1
+	NetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServersDenyAllDomainAccounts NetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServersValue = 1
 	// Deny all accounts
-	NetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServersDenyAllAccounts int64 = 2
+	NetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServersDenyAllAccounts NetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServersValue = 2
 )
 
-// ShutdownAllowSystemToBeShutDownWithoutHavingToLogOn allowed values.
+// String returns the NetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServersValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e NetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServersValue) String() string {
+	switch e {
+	case NetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServersAllowAll:
+		return "NetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServersAllowAll"
+	case NetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServersDenyAllDomainAccounts:
+		return "NetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServersDenyAllDomainAccounts"
+	case NetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServersDenyAllAccounts:
+		return "NetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServersDenyAllAccounts"
+	default:
+		return fmt.Sprintf("NetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServersValue(%d)", int64(e))
+	}
+}
+
+// ShutdownAllowSystemToBeShutDownWithoutHavingToLogOnValue — allowed values for the Shutdown_AllowSystemToBeShutDownWithoutHavingToLogOn node.
+type ShutdownAllowSystemToBeShutDownWithoutHavingToLogOnValue int64
+
 const (
 	// disabled
-	ShutdownAllowSystemToBeShutDownWithoutHavingToLogOnDisabled int64 = 0
+	ShutdownAllowSystemToBeShutDownWithoutHavingToLogOnDisabled ShutdownAllowSystemToBeShutDownWithoutHavingToLogOnValue = 0
 	// enabled (allow system to be shut down without having to log on)
-	ShutdownAllowSystemToBeShutDownWithoutHavingToLogOnEnabled int64 = 1
+	ShutdownAllowSystemToBeShutDownWithoutHavingToLogOnEnabled ShutdownAllowSystemToBeShutDownWithoutHavingToLogOnValue = 1
 )
 
-// ShutdownClearVirtualMemoryPageFile allowed values.
+// String returns the ShutdownAllowSystemToBeShutDownWithoutHavingToLogOnValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ShutdownAllowSystemToBeShutDownWithoutHavingToLogOnValue) String() string {
+	switch e {
+	case ShutdownAllowSystemToBeShutDownWithoutHavingToLogOnDisabled:
+		return "ShutdownAllowSystemToBeShutDownWithoutHavingToLogOnDisabled"
+	case ShutdownAllowSystemToBeShutDownWithoutHavingToLogOnEnabled:
+		return "ShutdownAllowSystemToBeShutDownWithoutHavingToLogOnEnabled"
+	default:
+		return fmt.Sprintf("ShutdownAllowSystemToBeShutDownWithoutHavingToLogOnValue(%d)", int64(e))
+	}
+}
+
+// ShutdownClearVirtualMemoryPageFileValue — allowed values for the Shutdown_ClearVirtualMemoryPageFile node.
+type ShutdownClearVirtualMemoryPageFileValue int64
+
 const (
 	// Enable
-	ShutdownClearVirtualMemoryPageFileEnable int64 = 1
+	ShutdownClearVirtualMemoryPageFileEnable ShutdownClearVirtualMemoryPageFileValue = 1
 	// Disable
-	ShutdownClearVirtualMemoryPageFileDisable int64 = 0
+	ShutdownClearVirtualMemoryPageFileDisable ShutdownClearVirtualMemoryPageFileValue = 0
 )
 
-// UserAccountControlAllowUIAccessApplicationsToPromptForElevation allowed values.
+// String returns the ShutdownClearVirtualMemoryPageFileValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ShutdownClearVirtualMemoryPageFileValue) String() string {
+	switch e {
+	case ShutdownClearVirtualMemoryPageFileEnable:
+		return "ShutdownClearVirtualMemoryPageFileEnable"
+	case ShutdownClearVirtualMemoryPageFileDisable:
+		return "ShutdownClearVirtualMemoryPageFileDisable"
+	default:
+		return fmt.Sprintf("ShutdownClearVirtualMemoryPageFileValue(%d)", int64(e))
+	}
+}
+
+// UserAccountControlAllowUIAccessApplicationsToPromptForElevationValue — allowed values for the UserAccountControl_AllowUIAccessApplicationsToPromptForElevation node.
+type UserAccountControlAllowUIAccessApplicationsToPromptForElevationValue int64
+
 const (
 	// disabled
-	UserAccountControlAllowUIAccessApplicationsToPromptForElevationDisabled int64 = 0
+	UserAccountControlAllowUIAccessApplicationsToPromptForElevationDisabled UserAccountControlAllowUIAccessApplicationsToPromptForElevationValue = 0
 	// enabled (allow UIAccess applications to prompt for elevation without using the secure desktop)
-	UserAccountControlAllowUIAccessApplicationsToPromptForElevationEnabled int64 = 1
+	UserAccountControlAllowUIAccessApplicationsToPromptForElevationEnabled UserAccountControlAllowUIAccessApplicationsToPromptForElevationValue = 1
 )
 
-// UserAccountControlBehaviorOfTheElevationPromptForAdministratorProtection allowed values.
+// String returns the UserAccountControlAllowUIAccessApplicationsToPromptForElevationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e UserAccountControlAllowUIAccessApplicationsToPromptForElevationValue) String() string {
+	switch e {
+	case UserAccountControlAllowUIAccessApplicationsToPromptForElevationDisabled:
+		return "UserAccountControlAllowUIAccessApplicationsToPromptForElevationDisabled"
+	case UserAccountControlAllowUIAccessApplicationsToPromptForElevationEnabled:
+		return "UserAccountControlAllowUIAccessApplicationsToPromptForElevationEnabled"
+	default:
+		return fmt.Sprintf("UserAccountControlAllowUIAccessApplicationsToPromptForElevationValue(%d)", int64(e))
+	}
+}
+
+// UserAccountControlBehaviorOfTheElevationPromptForAdministratorProtectionValue — allowed values for the UserAccountControl_BehaviorOfTheElevationPromptForAdministratorProtection node.
+type UserAccountControlBehaviorOfTheElevationPromptForAdministratorProtectionValue int64
+
 const (
 	// Prompt for credentials on the secure desktop
-	UserAccountControlBehaviorOfTheElevationPromptForAdministratorProtectionPromptForCredentialsOnTheSecure int64 = 1
+	UserAccountControlBehaviorOfTheElevationPromptForAdministratorProtectionPromptForCredentialsOnTheSecure UserAccountControlBehaviorOfTheElevationPromptForAdministratorProtectionValue = 1
 	// Prompt for consent on the secure desktop
-	UserAccountControlBehaviorOfTheElevationPromptForAdministratorProtectionPromptForConsentOnTheSecure int64 = 2
+	UserAccountControlBehaviorOfTheElevationPromptForAdministratorProtectionPromptForConsentOnTheSecure UserAccountControlBehaviorOfTheElevationPromptForAdministratorProtectionValue = 2
 )
 
-// UserAccountControlBehaviorOfTheElevationPromptForAdministrators allowed values.
+// String returns the UserAccountControlBehaviorOfTheElevationPromptForAdministratorProtectionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e UserAccountControlBehaviorOfTheElevationPromptForAdministratorProtectionValue) String() string {
+	switch e {
+	case UserAccountControlBehaviorOfTheElevationPromptForAdministratorProtectionPromptForCredentialsOnTheSecure:
+		return "UserAccountControlBehaviorOfTheElevationPromptForAdministratorProtectionPromptForCredentialsOnTheSecure"
+	case UserAccountControlBehaviorOfTheElevationPromptForAdministratorProtectionPromptForConsentOnTheSecure:
+		return "UserAccountControlBehaviorOfTheElevationPromptForAdministratorProtectionPromptForConsentOnTheSecure"
+	default:
+		return fmt.Sprintf("UserAccountControlBehaviorOfTheElevationPromptForAdministratorProtectionValue(%d)", int64(e))
+	}
+}
+
+// UserAccountControlBehaviorOfTheElevationPromptForAdministratorsValue — allowed values for the UserAccountControl_BehaviorOfTheElevationPromptForAdministrators node.
+type UserAccountControlBehaviorOfTheElevationPromptForAdministratorsValue int64
+
 const (
 	// Elevate without prompting
-	UserAccountControlBehaviorOfTheElevationPromptForAdministratorsElevateWithoutPrompting int64 = 0
+	UserAccountControlBehaviorOfTheElevationPromptForAdministratorsElevateWithoutPrompting UserAccountControlBehaviorOfTheElevationPromptForAdministratorsValue = 0
 	// Prompt for credentials on the secure desktop
-	UserAccountControlBehaviorOfTheElevationPromptForAdministratorsPromptForCredentialsOnTheSecure int64 = 1
+	UserAccountControlBehaviorOfTheElevationPromptForAdministratorsPromptForCredentialsOnTheSecure UserAccountControlBehaviorOfTheElevationPromptForAdministratorsValue = 1
 	// Prompt for consent on the secure desktop
-	UserAccountControlBehaviorOfTheElevationPromptForAdministratorsPromptForConsentOnTheSecure int64 = 2
+	UserAccountControlBehaviorOfTheElevationPromptForAdministratorsPromptForConsentOnTheSecure UserAccountControlBehaviorOfTheElevationPromptForAdministratorsValue = 2
 	// Prompt for credentials
-	UserAccountControlBehaviorOfTheElevationPromptForAdministratorsPromptForCredentials int64 = 3
+	UserAccountControlBehaviorOfTheElevationPromptForAdministratorsPromptForCredentials UserAccountControlBehaviorOfTheElevationPromptForAdministratorsValue = 3
 	// Prompt for consent
-	UserAccountControlBehaviorOfTheElevationPromptForAdministratorsPromptForConsent int64 = 4
+	UserAccountControlBehaviorOfTheElevationPromptForAdministratorsPromptForConsent UserAccountControlBehaviorOfTheElevationPromptForAdministratorsValue = 4
 	// Prompt for consent for non-Windows binaries
-	UserAccountControlBehaviorOfTheElevationPromptForAdministratorsPromptForConsentForNonWindowsBinaries int64 = 5
+	UserAccountControlBehaviorOfTheElevationPromptForAdministratorsPromptForConsentForNonWindowsBinaries UserAccountControlBehaviorOfTheElevationPromptForAdministratorsValue = 5
 )
 
-// UserAccountControlBehaviorOfTheElevationPromptForStandardUsers allowed values.
+// String returns the UserAccountControlBehaviorOfTheElevationPromptForAdministratorsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e UserAccountControlBehaviorOfTheElevationPromptForAdministratorsValue) String() string {
+	switch e {
+	case UserAccountControlBehaviorOfTheElevationPromptForAdministratorsElevateWithoutPrompting:
+		return "UserAccountControlBehaviorOfTheElevationPromptForAdministratorsElevateWithoutPrompting"
+	case UserAccountControlBehaviorOfTheElevationPromptForAdministratorsPromptForCredentialsOnTheSecure:
+		return "UserAccountControlBehaviorOfTheElevationPromptForAdministratorsPromptForCredentialsOnTheSecure"
+	case UserAccountControlBehaviorOfTheElevationPromptForAdministratorsPromptForConsentOnTheSecure:
+		return "UserAccountControlBehaviorOfTheElevationPromptForAdministratorsPromptForConsentOnTheSecure"
+	case UserAccountControlBehaviorOfTheElevationPromptForAdministratorsPromptForCredentials:
+		return "UserAccountControlBehaviorOfTheElevationPromptForAdministratorsPromptForCredentials"
+	case UserAccountControlBehaviorOfTheElevationPromptForAdministratorsPromptForConsent:
+		return "UserAccountControlBehaviorOfTheElevationPromptForAdministratorsPromptForConsent"
+	case UserAccountControlBehaviorOfTheElevationPromptForAdministratorsPromptForConsentForNonWindowsBinaries:
+		return "UserAccountControlBehaviorOfTheElevationPromptForAdministratorsPromptForConsentForNonWindowsBinaries"
+	default:
+		return fmt.Sprintf("UserAccountControlBehaviorOfTheElevationPromptForAdministratorsValue(%d)", int64(e))
+	}
+}
+
+// UserAccountControlBehaviorOfTheElevationPromptForStandardUsersValue — allowed values for the UserAccountControl_BehaviorOfTheElevationPromptForStandardUsers node.
+type UserAccountControlBehaviorOfTheElevationPromptForStandardUsersValue int64
+
 const (
 	// Automatically deny elevation requests
-	UserAccountControlBehaviorOfTheElevationPromptForStandardUsersAutomaticallyDenyElevationRequests int64 = 0
+	UserAccountControlBehaviorOfTheElevationPromptForStandardUsersAutomaticallyDenyElevationRequests UserAccountControlBehaviorOfTheElevationPromptForStandardUsersValue = 0
 	// Prompt for credentials on the secure desktop
-	UserAccountControlBehaviorOfTheElevationPromptForStandardUsersPromptForCredentialsOnTheSecure int64 = 1
+	UserAccountControlBehaviorOfTheElevationPromptForStandardUsersPromptForCredentialsOnTheSecure UserAccountControlBehaviorOfTheElevationPromptForStandardUsersValue = 1
 	// Prompt for credentials
-	UserAccountControlBehaviorOfTheElevationPromptForStandardUsersPromptForCredentials int64 = 3
+	UserAccountControlBehaviorOfTheElevationPromptForStandardUsersPromptForCredentials UserAccountControlBehaviorOfTheElevationPromptForStandardUsersValue = 3
 )
 
-// UserAccountControlDetectApplicationInstallationsAndPromptForElevation allowed values.
+// String returns the UserAccountControlBehaviorOfTheElevationPromptForStandardUsersValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e UserAccountControlBehaviorOfTheElevationPromptForStandardUsersValue) String() string {
+	switch e {
+	case UserAccountControlBehaviorOfTheElevationPromptForStandardUsersAutomaticallyDenyElevationRequests:
+		return "UserAccountControlBehaviorOfTheElevationPromptForStandardUsersAutomaticallyDenyElevationRequests"
+	case UserAccountControlBehaviorOfTheElevationPromptForStandardUsersPromptForCredentialsOnTheSecure:
+		return "UserAccountControlBehaviorOfTheElevationPromptForStandardUsersPromptForCredentialsOnTheSecure"
+	case UserAccountControlBehaviorOfTheElevationPromptForStandardUsersPromptForCredentials:
+		return "UserAccountControlBehaviorOfTheElevationPromptForStandardUsersPromptForCredentials"
+	default:
+		return fmt.Sprintf("UserAccountControlBehaviorOfTheElevationPromptForStandardUsersValue(%d)", int64(e))
+	}
+}
+
+// UserAccountControlDetectApplicationInstallationsAndPromptForElevationValue — allowed values for the UserAccountControl_DetectApplicationInstallationsAndPromptForElevation node.
+type UserAccountControlDetectApplicationInstallationsAndPromptForElevationValue int64
+
 const (
 	// Enable
-	UserAccountControlDetectApplicationInstallationsAndPromptForElevationEnable int64 = 1
+	UserAccountControlDetectApplicationInstallationsAndPromptForElevationEnable UserAccountControlDetectApplicationInstallationsAndPromptForElevationValue = 1
 	// Disable
-	UserAccountControlDetectApplicationInstallationsAndPromptForElevationDisable int64 = 0
+	UserAccountControlDetectApplicationInstallationsAndPromptForElevationDisable UserAccountControlDetectApplicationInstallationsAndPromptForElevationValue = 0
 )
 
-// UserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidated allowed values.
+// String returns the UserAccountControlDetectApplicationInstallationsAndPromptForElevationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e UserAccountControlDetectApplicationInstallationsAndPromptForElevationValue) String() string {
+	switch e {
+	case UserAccountControlDetectApplicationInstallationsAndPromptForElevationEnable:
+		return "UserAccountControlDetectApplicationInstallationsAndPromptForElevationEnable"
+	case UserAccountControlDetectApplicationInstallationsAndPromptForElevationDisable:
+		return "UserAccountControlDetectApplicationInstallationsAndPromptForElevationDisable"
+	default:
+		return fmt.Sprintf("UserAccountControlDetectApplicationInstallationsAndPromptForElevationValue(%d)", int64(e))
+	}
+}
+
+// UserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidatedValue — allowed values for the UserAccountControl_OnlyElevateExecutableFilesThatAreSignedAndValidated node.
+type UserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidatedValue int64
+
 const (
 	// Disabled: Does not enforce validation.
-	UserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidatedDisabled int64 = 0
+	UserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidatedDisabled UserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidatedValue = 0
 	// Enabled: Enforces validation.
-	UserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidatedEnabled int64 = 1
+	UserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidatedEnabled UserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidatedValue = 1
 )
 
-// UserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocations allowed values.
+// String returns the UserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidatedValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e UserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidatedValue) String() string {
+	switch e {
+	case UserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidatedDisabled:
+		return "UserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidatedDisabled"
+	case UserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidatedEnabled:
+		return "UserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidatedEnabled"
+	default:
+		return fmt.Sprintf("UserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidatedValue(%d)", int64(e))
+	}
+}
+
+// UserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocationsValue — allowed values for the UserAccountControl_OnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocations node.
+type UserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocationsValue int64
+
 const (
 	// Disabled: Application runs with UIAccess integrity even if it does not reside in a secure
 	// location.
-	UserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocationsDisabled int64 = 0
+	UserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocationsDisabled UserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocationsValue = 0
 	// Enabled: Application runs with UIAccess integrity only if it resides in secure location.
-	UserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocationsEnabled int64 = 1
+	UserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocationsEnabled UserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocationsValue = 1
 )
 
-// UserAccountControlRunAllAdministratorsInAdminApprovalMode allowed values.
+// String returns the UserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocationsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e UserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocationsValue) String() string {
+	switch e {
+	case UserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocationsDisabled:
+		return "UserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocationsDisabled"
+	case UserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocationsEnabled:
+		return "UserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocationsEnabled"
+	default:
+		return fmt.Sprintf("UserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocationsValue(%d)", int64(e))
+	}
+}
+
+// UserAccountControlRunAllAdministratorsInAdminApprovalModeValue — allowed values for the UserAccountControl_RunAllAdministratorsInAdminApprovalMode node.
+type UserAccountControlRunAllAdministratorsInAdminApprovalModeValue int64
+
 const (
 	// Disabled
-	UserAccountControlRunAllAdministratorsInAdminApprovalModeDisabled int64 = 0
+	UserAccountControlRunAllAdministratorsInAdminApprovalModeDisabled UserAccountControlRunAllAdministratorsInAdminApprovalModeValue = 0
 	// Enabled
-	UserAccountControlRunAllAdministratorsInAdminApprovalModeEnabled int64 = 1
+	UserAccountControlRunAllAdministratorsInAdminApprovalModeEnabled UserAccountControlRunAllAdministratorsInAdminApprovalModeValue = 1
 )
 
-// UserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevation allowed values.
+// String returns the UserAccountControlRunAllAdministratorsInAdminApprovalModeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e UserAccountControlRunAllAdministratorsInAdminApprovalModeValue) String() string {
+	switch e {
+	case UserAccountControlRunAllAdministratorsInAdminApprovalModeDisabled:
+		return "UserAccountControlRunAllAdministratorsInAdminApprovalModeDisabled"
+	case UserAccountControlRunAllAdministratorsInAdminApprovalModeEnabled:
+		return "UserAccountControlRunAllAdministratorsInAdminApprovalModeEnabled"
+	default:
+		return fmt.Sprintf("UserAccountControlRunAllAdministratorsInAdminApprovalModeValue(%d)", int64(e))
+	}
+}
+
+// UserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevationValue — allowed values for the UserAccountControl_SwitchToTheSecureDesktopWhenPromptingForElevation node.
+type UserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevationValue int64
+
 const (
 	// Disabled
-	UserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevationDisabled int64 = 0
+	UserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevationDisabled UserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevationValue = 0
 	// Enabled
-	UserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevationEnabled int64 = 1
+	UserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevationEnabled UserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevationValue = 1
 )
 
-// UserAccountControlTypeOfAdminApprovalMode allowed values.
+// String returns the UserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e UserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevationValue) String() string {
+	switch e {
+	case UserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevationDisabled:
+		return "UserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevationDisabled"
+	case UserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevationEnabled:
+		return "UserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevationEnabled"
+	default:
+		return fmt.Sprintf("UserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevationValue(%d)", int64(e))
+	}
+}
+
+// UserAccountControlTypeOfAdminApprovalModeValue — allowed values for the UserAccountControl_TypeOfAdminApprovalMode node.
+type UserAccountControlTypeOfAdminApprovalModeValue int64
+
 const (
 	// Legacy Admin Approval Mode
-	UserAccountControlTypeOfAdminApprovalModeLegacyAdminApprovalMode int64 = 1
+	UserAccountControlTypeOfAdminApprovalModeLegacyAdminApprovalMode UserAccountControlTypeOfAdminApprovalModeValue = 1
 	// Admin Approval Mode with Administrator protection
-	UserAccountControlTypeOfAdminApprovalModeAdminApprovalModeWithAdministratorProtection int64 = 2
+	UserAccountControlTypeOfAdminApprovalModeAdminApprovalModeWithAdministratorProtection UserAccountControlTypeOfAdminApprovalModeValue = 2
 )
 
-// UserAccountControlUseAdminApprovalMode allowed values.
+// String returns the UserAccountControlTypeOfAdminApprovalModeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e UserAccountControlTypeOfAdminApprovalModeValue) String() string {
+	switch e {
+	case UserAccountControlTypeOfAdminApprovalModeLegacyAdminApprovalMode:
+		return "UserAccountControlTypeOfAdminApprovalModeLegacyAdminApprovalMode"
+	case UserAccountControlTypeOfAdminApprovalModeAdminApprovalModeWithAdministratorProtection:
+		return "UserAccountControlTypeOfAdminApprovalModeAdminApprovalModeWithAdministratorProtection"
+	default:
+		return fmt.Sprintf("UserAccountControlTypeOfAdminApprovalModeValue(%d)", int64(e))
+	}
+}
+
+// UserAccountControlUseAdminApprovalModeValue — allowed values for the UserAccountControl_UseAdminApprovalMode node.
+type UserAccountControlUseAdminApprovalModeValue int64
+
 const (
 	// Enable
-	UserAccountControlUseAdminApprovalModeEnable int64 = 1
+	UserAccountControlUseAdminApprovalModeEnable UserAccountControlUseAdminApprovalModeValue = 1
 	// Disable
-	UserAccountControlUseAdminApprovalModeDisable int64 = 0
+	UserAccountControlUseAdminApprovalModeDisable UserAccountControlUseAdminApprovalModeValue = 0
 )
 
-// UserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocations allowed values.
+// String returns the UserAccountControlUseAdminApprovalModeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e UserAccountControlUseAdminApprovalModeValue) String() string {
+	switch e {
+	case UserAccountControlUseAdminApprovalModeEnable:
+		return "UserAccountControlUseAdminApprovalModeEnable"
+	case UserAccountControlUseAdminApprovalModeDisable:
+		return "UserAccountControlUseAdminApprovalModeDisable"
+	default:
+		return fmt.Sprintf("UserAccountControlUseAdminApprovalModeValue(%d)", int64(e))
+	}
+}
+
+// UserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocationsValue — allowed values for the UserAccountControl_VirtualizeFileAndRegistryWriteFailuresToPerUserLocations node.
+type UserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocationsValue int64
+
 const (
 	// Disabled
-	UserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocationsDisabled int64 = 0
+	UserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocationsDisabled UserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocationsValue = 0
 	// Enabled
-	UserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocationsEnabled int64 = 1
+	UserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocationsEnabled UserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocationsValue = 1
 )
+
+// String returns the UserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocationsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e UserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocationsValue) String() string {
+	switch e {
+	case UserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocationsDisabled:
+		return "UserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocationsDisabled"
+	case UserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocationsEnabled:
+		return "UserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocationsEnabled"
+	default:
+		return fmt.Sprintf("UserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocationsValue(%d)", int64(e))
+	}
+}

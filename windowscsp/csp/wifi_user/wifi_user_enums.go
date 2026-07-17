@@ -2,20 +2,56 @@
 
 package wifi_user
 
-// ProfileSSIDProfileSource allowed values.
-const (
-	// Enterprise
-	ProfileSSIDProfileSourceEnterprise int64 = 0
-	// Mobile Operator
-	ProfileSSIDProfileSourceMobileOperator int64 = 1
+import (
+	"fmt"
 )
 
-// ProfileSSIDWiFiCost allowed values.
+// ProfileSSIDProfileSourceValue — allowed values for the ProfileSource node.
+type ProfileSSIDProfileSourceValue int64
+
+const (
+	// Enterprise
+	ProfileSSIDProfileSourceEnterprise ProfileSSIDProfileSourceValue = 0
+	// Mobile Operator
+	ProfileSSIDProfileSourceMobileOperator ProfileSSIDProfileSourceValue = 1
+)
+
+// String returns the ProfileSSIDProfileSourceValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ProfileSSIDProfileSourceValue) String() string {
+	switch e {
+	case ProfileSSIDProfileSourceEnterprise:
+		return "ProfileSSIDProfileSourceEnterprise"
+	case ProfileSSIDProfileSourceMobileOperator:
+		return "ProfileSSIDProfileSourceMobileOperator"
+	default:
+		return fmt.Sprintf("ProfileSSIDProfileSourceValue(%d)", int64(e))
+	}
+}
+
+// ProfileSSIDWiFiCostValue — allowed values for the WiFiCost node.
+type ProfileSSIDWiFiCostValue int64
+
 const (
 	// Unrestricted - unlimited connection.
-	ProfileSSIDWiFiCostUnrestrictedUnlimitedConnection int64 = 1
+	ProfileSSIDWiFiCostUnrestrictedUnlimitedConnection ProfileSSIDWiFiCostValue = 1
 	// Fixed - capacity constraints up to a certain data limit.
-	ProfileSSIDWiFiCostFixedCapacityConstraintsUpTo int64 = 2
+	ProfileSSIDWiFiCostFixedCapacityConstraintsUpTo ProfileSSIDWiFiCostValue = 2
 	// Variable - paid on per byte basic.
-	ProfileSSIDWiFiCostVariablePaidOnPerByte int64 = 3
+	ProfileSSIDWiFiCostVariablePaidOnPerByte ProfileSSIDWiFiCostValue = 3
 )
+
+// String returns the ProfileSSIDWiFiCostValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ProfileSSIDWiFiCostValue) String() string {
+	switch e {
+	case ProfileSSIDWiFiCostUnrestrictedUnlimitedConnection:
+		return "ProfileSSIDWiFiCostUnrestrictedUnlimitedConnection"
+	case ProfileSSIDWiFiCostFixedCapacityConstraintsUpTo:
+		return "ProfileSSIDWiFiCostFixedCapacityConstraintsUpTo"
+	case ProfileSSIDWiFiCostVariablePaidOnPerByte:
+		return "ProfileSSIDWiFiCostVariablePaidOnPerByte"
+	default:
+		return fmt.Sprintf("ProfileSSIDWiFiCostValue(%d)", int64(e))
+	}
+}

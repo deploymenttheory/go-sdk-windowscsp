@@ -15,12 +15,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *ControlPolicyConflict) GetMDMWinsOverGP(ctx context.Context) (int64, error) {
+func (s *ControlPolicyConflict) GetMDMWinsOverGP(ctx context.Context) (MDMWinsOverGPValue, error) {
 	v, err := s.c.Get(ctx, URIMDMWinsOverGP)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MDMWinsOverGPValue(n), err
 }
 
 // CreateMDMWinsOverGP creates ./Device/Vendor/MSFT/Policy/Config/ControlPolicyConflict/MDMWinsOverGP.
@@ -30,8 +31,8 @@ func (s *ControlPolicyConflict) GetMDMWinsOverGP(ctx context.Context) (int64, er
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *ControlPolicyConflict) CreateMDMWinsOverGP(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIMDMWinsOverGP, client.Int(value))
+func (s *ControlPolicyConflict) CreateMDMWinsOverGP(ctx context.Context, value MDMWinsOverGPValue) error {
+	return s.c.Add(ctx, URIMDMWinsOverGP, client.Int(int64(value)))
 }
 
 // UpdateMDMWinsOverGP updates ./Device/Vendor/MSFT/Policy/Config/ControlPolicyConflict/MDMWinsOverGP.
@@ -41,8 +42,8 @@ func (s *ControlPolicyConflict) CreateMDMWinsOverGP(ctx context.Context, value i
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *ControlPolicyConflict) UpdateMDMWinsOverGP(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIMDMWinsOverGP, client.Int(value))
+func (s *ControlPolicyConflict) UpdateMDMWinsOverGP(ctx context.Context, value MDMWinsOverGPValue) error {
+	return s.c.Replace(ctx, URIMDMWinsOverGP, client.Int(int64(value)))
 }
 
 // DeleteMDMWinsOverGP deletes ./Device/Vendor/MSFT/Policy/Config/ControlPolicyConflict/MDMWinsOverGP.

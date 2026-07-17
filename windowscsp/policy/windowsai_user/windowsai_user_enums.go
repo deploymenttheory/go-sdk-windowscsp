@@ -2,74 +2,199 @@
 
 package windowsai_user
 
-// DisableAIDataAnalysis allowed values.
+import (
+	"fmt"
+)
+
+// DisableAIDataAnalysisValue — allowed values for the DisableAIDataAnalysis node.
+type DisableAIDataAnalysisValue int64
+
 const (
 	// Enable Saving Snapshots for Recall.
-	DisableAIDataAnalysisEnableSavingSnapshotsForRecall int64 = 0
+	DisableAIDataAnalysisEnableSavingSnapshotsForRecall DisableAIDataAnalysisValue = 0
 	// Disable Saving Snapshots for Recall.
-	DisableAIDataAnalysisDisableSavingSnapshotsForRecall int64 = 1
+	DisableAIDataAnalysisDisableSavingSnapshotsForRecall DisableAIDataAnalysisValue = 1
 )
 
-// DisableClickToDo allowed values.
+// String returns the DisableAIDataAnalysisValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableAIDataAnalysisValue) String() string {
+	switch e {
+	case DisableAIDataAnalysisEnableSavingSnapshotsForRecall:
+		return "DisableAIDataAnalysisEnableSavingSnapshotsForRecall"
+	case DisableAIDataAnalysisDisableSavingSnapshotsForRecall:
+		return "DisableAIDataAnalysisDisableSavingSnapshotsForRecall"
+	default:
+		return fmt.Sprintf("DisableAIDataAnalysisValue(%d)", int64(e))
+	}
+}
+
+// DisableClickToDoValue — allowed values for the DisableClickToDo node.
+type DisableClickToDoValue int64
+
 const (
 	// Click to Do is enabled
-	DisableClickToDoClickToDoIsEnabled int64 = 0
+	DisableClickToDoClickToDoIsEnabled DisableClickToDoValue = 0
 	// Click to Do is disabled.
-	DisableClickToDoClickToDoIsDisabled int64 = 1
+	DisableClickToDoClickToDoIsDisabled DisableClickToDoValue = 1
 )
 
-// DisableRecallDataProviders allowed values.
+// String returns the DisableClickToDoValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableClickToDoValue) String() string {
+	switch e {
+	case DisableClickToDoClickToDoIsEnabled:
+		return "DisableClickToDoClickToDoIsEnabled"
+	case DisableClickToDoClickToDoIsDisabled:
+		return "DisableClickToDoClickToDoIsDisabled"
+	default:
+		return fmt.Sprintf("DisableClickToDoValue(%d)", int64(e))
+	}
+}
+
+// DisableRecallDataProvidersValue — allowed values for the DisableRecallDataProviders node.
+type DisableRecallDataProvidersValue int64
+
 const (
 	// Recall data providers enabled
-	DisableRecallDataProvidersRecallDataProvidersEnabled int64 = 0
+	DisableRecallDataProvidersRecallDataProvidersEnabled DisableRecallDataProvidersValue = 0
 	// Recall data providers disabled
-	DisableRecallDataProvidersRecallDataProvidersDisabled int64 = 1
+	DisableRecallDataProvidersRecallDataProvidersDisabled DisableRecallDataProvidersValue = 1
 )
 
-// RemoveMicrosoftCopilotApp allowed values.
+// String returns the DisableRecallDataProvidersValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableRecallDataProvidersValue) String() string {
+	switch e {
+	case DisableRecallDataProvidersRecallDataProvidersEnabled:
+		return "DisableRecallDataProvidersRecallDataProvidersEnabled"
+	case DisableRecallDataProvidersRecallDataProvidersDisabled:
+		return "DisableRecallDataProvidersRecallDataProvidersDisabled"
+	default:
+		return fmt.Sprintf("DisableRecallDataProvidersValue(%d)", int64(e))
+	}
+}
+
+// RemoveMicrosoftCopilotAppValue — allowed values for the RemoveMicrosoftCopilotApp node.
+type RemoveMicrosoftCopilotAppValue int64
+
 const (
 	// Removal Disabled.
-	RemoveMicrosoftCopilotAppRemovalDisabled int64 = 0
+	RemoveMicrosoftCopilotAppRemovalDisabled RemoveMicrosoftCopilotAppValue = 0
 	// Removal Enabled.
-	RemoveMicrosoftCopilotAppRemovalEnabled int64 = 1
+	RemoveMicrosoftCopilotAppRemovalEnabled RemoveMicrosoftCopilotAppValue = 1
 )
 
-// SetMaximumStorageDurationForRecallSnapshots allowed values.
+// String returns the RemoveMicrosoftCopilotAppValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e RemoveMicrosoftCopilotAppValue) String() string {
+	switch e {
+	case RemoveMicrosoftCopilotAppRemovalDisabled:
+		return "RemoveMicrosoftCopilotAppRemovalDisabled"
+	case RemoveMicrosoftCopilotAppRemovalEnabled:
+		return "RemoveMicrosoftCopilotAppRemovalEnabled"
+	default:
+		return fmt.Sprintf("RemoveMicrosoftCopilotAppValue(%d)", int64(e))
+	}
+}
+
+// SetMaximumStorageDurationForRecallSnapshotsValue — allowed values for the SetMaximumStorageDurationForRecallSnapshots node.
+type SetMaximumStorageDurationForRecallSnapshotsValue int64
+
 const (
 	// Let the OS define the maximum amount of time the snapshots will be saved
-	SetMaximumStorageDurationForRecallSnapshotsLetTheOSDefineTheMaximum int64 = 0
+	SetMaximumStorageDurationForRecallSnapshotsLetTheOSDefineTheMaximum SetMaximumStorageDurationForRecallSnapshotsValue = 0
 	// 30 days
-	SetMaximumStorageDurationForRecallSnapshotsN30Days int64 = 30
+	SetMaximumStorageDurationForRecallSnapshotsN30Days SetMaximumStorageDurationForRecallSnapshotsValue = 30
 	// 60 days
-	SetMaximumStorageDurationForRecallSnapshotsN60Days int64 = 60
+	SetMaximumStorageDurationForRecallSnapshotsN60Days SetMaximumStorageDurationForRecallSnapshotsValue = 60
 	// 90 days
-	SetMaximumStorageDurationForRecallSnapshotsN90Days int64 = 90
+	SetMaximumStorageDurationForRecallSnapshotsN90Days SetMaximumStorageDurationForRecallSnapshotsValue = 90
 	// 180 days
-	SetMaximumStorageDurationForRecallSnapshotsN180Days int64 = 180
+	SetMaximumStorageDurationForRecallSnapshotsN180Days SetMaximumStorageDurationForRecallSnapshotsValue = 180
 )
 
-// SetMaximumStorageSpaceForRecallSnapshots allowed values.
+// String returns the SetMaximumStorageDurationForRecallSnapshotsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SetMaximumStorageDurationForRecallSnapshotsValue) String() string {
+	switch e {
+	case SetMaximumStorageDurationForRecallSnapshotsLetTheOSDefineTheMaximum:
+		return "SetMaximumStorageDurationForRecallSnapshotsLetTheOSDefineTheMaximum"
+	case SetMaximumStorageDurationForRecallSnapshotsN30Days:
+		return "SetMaximumStorageDurationForRecallSnapshotsN30Days"
+	case SetMaximumStorageDurationForRecallSnapshotsN60Days:
+		return "SetMaximumStorageDurationForRecallSnapshotsN60Days"
+	case SetMaximumStorageDurationForRecallSnapshotsN90Days:
+		return "SetMaximumStorageDurationForRecallSnapshotsN90Days"
+	case SetMaximumStorageDurationForRecallSnapshotsN180Days:
+		return "SetMaximumStorageDurationForRecallSnapshotsN180Days"
+	default:
+		return fmt.Sprintf("SetMaximumStorageDurationForRecallSnapshotsValue(%d)", int64(e))
+	}
+}
+
+// SetMaximumStorageSpaceForRecallSnapshotsValue — allowed values for the SetMaximumStorageSpaceForRecallSnapshots node.
+type SetMaximumStorageSpaceForRecallSnapshotsValue int64
+
 const (
 	// Let the OS define the maximum storage amount based on hard drive storage size
-	SetMaximumStorageSpaceForRecallSnapshotsLetTheOSDefineTheMaximum int64 = 0
+	SetMaximumStorageSpaceForRecallSnapshotsLetTheOSDefineTheMaximum SetMaximumStorageSpaceForRecallSnapshotsValue = 0
 	// 10GB
-	SetMaximumStorageSpaceForRecallSnapshotsN10GB int64 = 10240
+	SetMaximumStorageSpaceForRecallSnapshotsN10GB SetMaximumStorageSpaceForRecallSnapshotsValue = 10240
 	// 25GB
-	SetMaximumStorageSpaceForRecallSnapshotsN25GB int64 = 25600
+	SetMaximumStorageSpaceForRecallSnapshotsN25GB SetMaximumStorageSpaceForRecallSnapshotsValue = 25600
 	// 50GB
-	SetMaximumStorageSpaceForRecallSnapshotsN50GB int64 = 51200
+	SetMaximumStorageSpaceForRecallSnapshotsN50GB SetMaximumStorageSpaceForRecallSnapshotsValue = 51200
 	// 75GB
-	SetMaximumStorageSpaceForRecallSnapshotsN75GB int64 = 76800
+	SetMaximumStorageSpaceForRecallSnapshotsN75GB SetMaximumStorageSpaceForRecallSnapshotsValue = 76800
 	// 100GB
-	SetMaximumStorageSpaceForRecallSnapshotsN100GB int64 = 102400
+	SetMaximumStorageSpaceForRecallSnapshotsN100GB SetMaximumStorageSpaceForRecallSnapshotsValue = 102400
 	// 150GB
-	SetMaximumStorageSpaceForRecallSnapshotsN150GB int64 = 153600
+	SetMaximumStorageSpaceForRecallSnapshotsN150GB SetMaximumStorageSpaceForRecallSnapshotsValue = 153600
 )
 
-// TurnOffWindowsCopilot allowed values.
+// String returns the SetMaximumStorageSpaceForRecallSnapshotsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SetMaximumStorageSpaceForRecallSnapshotsValue) String() string {
+	switch e {
+	case SetMaximumStorageSpaceForRecallSnapshotsLetTheOSDefineTheMaximum:
+		return "SetMaximumStorageSpaceForRecallSnapshotsLetTheOSDefineTheMaximum"
+	case SetMaximumStorageSpaceForRecallSnapshotsN10GB:
+		return "SetMaximumStorageSpaceForRecallSnapshotsN10GB"
+	case SetMaximumStorageSpaceForRecallSnapshotsN25GB:
+		return "SetMaximumStorageSpaceForRecallSnapshotsN25GB"
+	case SetMaximumStorageSpaceForRecallSnapshotsN50GB:
+		return "SetMaximumStorageSpaceForRecallSnapshotsN50GB"
+	case SetMaximumStorageSpaceForRecallSnapshotsN75GB:
+		return "SetMaximumStorageSpaceForRecallSnapshotsN75GB"
+	case SetMaximumStorageSpaceForRecallSnapshotsN100GB:
+		return "SetMaximumStorageSpaceForRecallSnapshotsN100GB"
+	case SetMaximumStorageSpaceForRecallSnapshotsN150GB:
+		return "SetMaximumStorageSpaceForRecallSnapshotsN150GB"
+	default:
+		return fmt.Sprintf("SetMaximumStorageSpaceForRecallSnapshotsValue(%d)", int64(e))
+	}
+}
+
+// TurnOffWindowsCopilotValue — allowed values for the TurnOffWindowsCopilot node.
+type TurnOffWindowsCopilotValue int64
+
 const (
 	// Enable Copilot
-	TurnOffWindowsCopilotEnableCopilot int64 = 0
+	TurnOffWindowsCopilotEnableCopilot TurnOffWindowsCopilotValue = 0
 	// Disable Copilot
-	TurnOffWindowsCopilotDisableCopilot int64 = 1
+	TurnOffWindowsCopilotDisableCopilot TurnOffWindowsCopilotValue = 1
 )
+
+// String returns the TurnOffWindowsCopilotValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e TurnOffWindowsCopilotValue) String() string {
+	switch e {
+	case TurnOffWindowsCopilotEnableCopilot:
+		return "TurnOffWindowsCopilotEnableCopilot"
+	case TurnOffWindowsCopilotDisableCopilot:
+		return "TurnOffWindowsCopilotDisableCopilot"
+	default:
+		return fmt.Sprintf("TurnOffWindowsCopilotValue(%d)", int64(e))
+	}
+}

@@ -13,12 +13,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *FederatedAuthentication) GetEnableWebSignInForPrimaryUser(ctx context.Context) (int64, error) {
+func (s *FederatedAuthentication) GetEnableWebSignInForPrimaryUser(ctx context.Context) (EnableWebSignInForPrimaryUserValue, error) {
 	v, err := s.c.Get(ctx, URIEnableWebSignInForPrimaryUser)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableWebSignInForPrimaryUserValue(n), err
 }
 
 // CreateEnableWebSignInForPrimaryUser creates ./Device/Vendor/MSFT/Policy/Config/FederatedAuthentication/EnableWebSignInForPrimaryUser.
@@ -26,8 +27,8 @@ func (s *FederatedAuthentication) GetEnableWebSignInForPrimaryUser(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *FederatedAuthentication) CreateEnableWebSignInForPrimaryUser(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableWebSignInForPrimaryUser, client.Int(value))
+func (s *FederatedAuthentication) CreateEnableWebSignInForPrimaryUser(ctx context.Context, value EnableWebSignInForPrimaryUserValue) error {
+	return s.c.Add(ctx, URIEnableWebSignInForPrimaryUser, client.Int(int64(value)))
 }
 
 // UpdateEnableWebSignInForPrimaryUser updates ./Device/Vendor/MSFT/Policy/Config/FederatedAuthentication/EnableWebSignInForPrimaryUser.
@@ -35,8 +36,8 @@ func (s *FederatedAuthentication) CreateEnableWebSignInForPrimaryUser(ctx contex
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *FederatedAuthentication) UpdateEnableWebSignInForPrimaryUser(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableWebSignInForPrimaryUser, client.Int(value))
+func (s *FederatedAuthentication) UpdateEnableWebSignInForPrimaryUser(ctx context.Context, value EnableWebSignInForPrimaryUserValue) error {
+	return s.c.Replace(ctx, URIEnableWebSignInForPrimaryUser, client.Int(int64(value)))
 }
 
 // DeleteEnableWebSignInForPrimaryUser deletes ./Device/Vendor/MSFT/Policy/Config/FederatedAuthentication/EnableWebSignInForPrimaryUser.

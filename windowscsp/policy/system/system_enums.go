@@ -2,280 +2,772 @@
 
 package system
 
-// AllowBuildPreview allowed values.
+import (
+	"fmt"
+)
+
+// AllowBuildPreviewValue — allowed values for the AllowBuildPreview node.
+type AllowBuildPreviewValue int64
+
 const (
 	// Not allowed. The item "Get Insider builds" is unavailable, users are unable to make their
 	// devices available for preview software.
-	AllowBuildPreviewNotAllowed int64 = 0
+	AllowBuildPreviewNotAllowed AllowBuildPreviewValue = 0
 	// Allowed. Users can make their devices available for downloading and installing preview software.
-	AllowBuildPreviewAllowed int64 = 1
+	AllowBuildPreviewAllowed AllowBuildPreviewValue = 1
 	// Not configured. Users can make their devices available for downloading and installing preview
 	// software.
-	AllowBuildPreviewNotConfigured int64 = 2
+	AllowBuildPreviewNotConfigured AllowBuildPreviewValue = 2
 )
 
-// AllowCommercialDataPipeline allowed values.
+// String returns the AllowBuildPreviewValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowBuildPreviewValue) String() string {
+	switch e {
+	case AllowBuildPreviewNotAllowed:
+		return "AllowBuildPreviewNotAllowed"
+	case AllowBuildPreviewAllowed:
+		return "AllowBuildPreviewAllowed"
+	case AllowBuildPreviewNotConfigured:
+		return "AllowBuildPreviewNotConfigured"
+	default:
+		return fmt.Sprintf("AllowBuildPreviewValue(%d)", int64(e))
+	}
+}
+
+// AllowCommercialDataPipelineValue — allowed values for the AllowCommercialDataPipeline node.
+type AllowCommercialDataPipelineValue int64
+
 const (
 	// Disabled.
-	AllowCommercialDataPipelineDisabled int64 = 0
+	AllowCommercialDataPipelineDisabled AllowCommercialDataPipelineValue = 0
 	// Enabled.
-	AllowCommercialDataPipelineEnabled int64 = 1
+	AllowCommercialDataPipelineEnabled AllowCommercialDataPipelineValue = 1
 )
 
-// AllowDesktopAnalyticsProcessing allowed values.
+// String returns the AllowCommercialDataPipelineValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowCommercialDataPipelineValue) String() string {
+	switch e {
+	case AllowCommercialDataPipelineDisabled:
+		return "AllowCommercialDataPipelineDisabled"
+	case AllowCommercialDataPipelineEnabled:
+		return "AllowCommercialDataPipelineEnabled"
+	default:
+		return fmt.Sprintf("AllowCommercialDataPipelineValue(%d)", int64(e))
+	}
+}
+
+// AllowDesktopAnalyticsProcessingValue — allowed values for the AllowDesktopAnalyticsProcessing node.
+type AllowDesktopAnalyticsProcessingValue int64
+
 const (
 	// Disabled.
-	AllowDesktopAnalyticsProcessingDisabled int64 = 0
+	AllowDesktopAnalyticsProcessingDisabled AllowDesktopAnalyticsProcessingValue = 0
 	// Allowed.
-	AllowDesktopAnalyticsProcessingAllowed int64 = 2
+	AllowDesktopAnalyticsProcessingAllowed AllowDesktopAnalyticsProcessingValue = 2
 )
 
-// AllowDeviceNameInDiagnosticData allowed values.
+// String returns the AllowDesktopAnalyticsProcessingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowDesktopAnalyticsProcessingValue) String() string {
+	switch e {
+	case AllowDesktopAnalyticsProcessingDisabled:
+		return "AllowDesktopAnalyticsProcessingDisabled"
+	case AllowDesktopAnalyticsProcessingAllowed:
+		return "AllowDesktopAnalyticsProcessingAllowed"
+	default:
+		return fmt.Sprintf("AllowDesktopAnalyticsProcessingValue(%d)", int64(e))
+	}
+}
+
+// AllowDeviceNameInDiagnosticDataValue — allowed values for the AllowDeviceNameInDiagnosticData node.
+type AllowDeviceNameInDiagnosticDataValue int64
+
 const (
 	// Disabled.
-	AllowDeviceNameInDiagnosticDataDisabled int64 = 0
+	AllowDeviceNameInDiagnosticDataDisabled AllowDeviceNameInDiagnosticDataValue = 0
 	// Allowed.
-	AllowDeviceNameInDiagnosticDataAllowed int64 = 1
+	AllowDeviceNameInDiagnosticDataAllowed AllowDeviceNameInDiagnosticDataValue = 1
 )
 
-// AllowEmbeddedMode allowed values.
+// String returns the AllowDeviceNameInDiagnosticDataValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowDeviceNameInDiagnosticDataValue) String() string {
+	switch e {
+	case AllowDeviceNameInDiagnosticDataDisabled:
+		return "AllowDeviceNameInDiagnosticDataDisabled"
+	case AllowDeviceNameInDiagnosticDataAllowed:
+		return "AllowDeviceNameInDiagnosticDataAllowed"
+	default:
+		return fmt.Sprintf("AllowDeviceNameInDiagnosticDataValue(%d)", int64(e))
+	}
+}
+
+// AllowEmbeddedModeValue — allowed values for the AllowEmbeddedMode node.
+type AllowEmbeddedModeValue int64
+
 const (
 	// Not allowed.
-	AllowEmbeddedModeNotAllowed int64 = 0
+	AllowEmbeddedModeNotAllowed AllowEmbeddedModeValue = 0
 	// Allowed.
-	AllowEmbeddedModeAllowed int64 = 1
+	AllowEmbeddedModeAllowed AllowEmbeddedModeValue = 1
 )
 
-// AllowExperimentation allowed values.
+// String returns the AllowEmbeddedModeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowEmbeddedModeValue) String() string {
+	switch e {
+	case AllowEmbeddedModeNotAllowed:
+		return "AllowEmbeddedModeNotAllowed"
+	case AllowEmbeddedModeAllowed:
+		return "AllowEmbeddedModeAllowed"
+	default:
+		return fmt.Sprintf("AllowEmbeddedModeValue(%d)", int64(e))
+	}
+}
+
+// AllowExperimentationValue — allowed values for the AllowExperimentation node.
+type AllowExperimentationValue int64
+
 const (
 	// Disabled.
-	AllowExperimentationDisabled int64 = 0
+	AllowExperimentationDisabled AllowExperimentationValue = 0
 	// Permits Microsoft to configure device settings only.
-	AllowExperimentationPermitsMicrosoftToConfigureDeviceSettings int64 = 1
+	AllowExperimentationPermitsMicrosoftToConfigureDeviceSettings AllowExperimentationValue = 1
 	// Allows Microsoft to conduct full experimentation.
-	AllowExperimentationAllowsMicrosoftToConductFullExperimentation int64 = 2
+	AllowExperimentationAllowsMicrosoftToConductFullExperimentation AllowExperimentationValue = 2
 )
 
-// AllowFontProviders allowed values.
+// String returns the AllowExperimentationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowExperimentationValue) String() string {
+	switch e {
+	case AllowExperimentationDisabled:
+		return "AllowExperimentationDisabled"
+	case AllowExperimentationPermitsMicrosoftToConfigureDeviceSettings:
+		return "AllowExperimentationPermitsMicrosoftToConfigureDeviceSettings"
+	case AllowExperimentationAllowsMicrosoftToConductFullExperimentation:
+		return "AllowExperimentationAllowsMicrosoftToConductFullExperimentation"
+	default:
+		return fmt.Sprintf("AllowExperimentationValue(%d)", int64(e))
+	}
+}
+
+// AllowFontProvidersValue — allowed values for the AllowFontProviders node.
+type AllowFontProvidersValue int64
+
 const (
 	// Not allowed. No traffic to fs.microsoft.com and only locally installed fonts are available.
-	AllowFontProvidersNotAllowed int64 = 0
+	AllowFontProvidersNotAllowed AllowFontProvidersValue = 0
 	// Allowed. There may be network traffic to fs.microsoft.com and downloadable fonts are available
 	// to apps that support them.
-	AllowFontProvidersAllowed int64 = 1
+	AllowFontProvidersAllowed AllowFontProvidersValue = 1
 )
 
-// AllowLocation allowed values.
+// String returns the AllowFontProvidersValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowFontProvidersValue) String() string {
+	switch e {
+	case AllowFontProvidersNotAllowed:
+		return "AllowFontProvidersNotAllowed"
+	case AllowFontProvidersAllowed:
+		return "AllowFontProvidersAllowed"
+	default:
+		return fmt.Sprintf("AllowFontProvidersValue(%d)", int64(e))
+	}
+}
+
+// AllowLocationValue — allowed values for the AllowLocation node.
+type AllowLocationValue int64
+
 const (
 	// Force Location Off. All Location Privacy settings are toggled off and grayed out. Users cannot
 	// change the settings, and no apps are allowed access to the Location service, including Cortana
 	// and Search.
-	AllowLocationForceLocationOff int64 = 0
+	AllowLocationForceLocationOff AllowLocationValue = 0
 	// Location service is allowed. The user has control and can change Location Privacy settings on or
 	// off.
-	AllowLocationLocationServiceIsAllowed int64 = 1
+	AllowLocationLocationServiceIsAllowed AllowLocationValue = 1
 	// Force Location On. All Location Privacy settings are toggled on and grayed out. Users cannot
 	// change the settings and all consent permissions will be automatically suppressed.
-	AllowLocationForceLocationOn int64 = 2
+	AllowLocationForceLocationOn AllowLocationValue = 2
 )
 
-// AllowMicrosoftManagedDesktopProcessing allowed values.
+// String returns the AllowLocationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowLocationValue) String() string {
+	switch e {
+	case AllowLocationForceLocationOff:
+		return "AllowLocationForceLocationOff"
+	case AllowLocationLocationServiceIsAllowed:
+		return "AllowLocationLocationServiceIsAllowed"
+	case AllowLocationForceLocationOn:
+		return "AllowLocationForceLocationOn"
+	default:
+		return fmt.Sprintf("AllowLocationValue(%d)", int64(e))
+	}
+}
+
+// AllowMicrosoftManagedDesktopProcessingValue — allowed values for the AllowMicrosoftManagedDesktopProcessing node.
+type AllowMicrosoftManagedDesktopProcessingValue int64
+
 const (
 	// Disabled.
-	AllowMicrosoftManagedDesktopProcessingDisabled int64 = 0
+	AllowMicrosoftManagedDesktopProcessingDisabled AllowMicrosoftManagedDesktopProcessingValue = 0
 	// Allowed.
-	AllowMicrosoftManagedDesktopProcessingAllowed int64 = 32
+	AllowMicrosoftManagedDesktopProcessingAllowed AllowMicrosoftManagedDesktopProcessingValue = 32
 )
 
-// AllowOOBEUpdates allowed values.
+// String returns the AllowMicrosoftManagedDesktopProcessingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowMicrosoftManagedDesktopProcessingValue) String() string {
+	switch e {
+	case AllowMicrosoftManagedDesktopProcessingDisabled:
+		return "AllowMicrosoftManagedDesktopProcessingDisabled"
+	case AllowMicrosoftManagedDesktopProcessingAllowed:
+		return "AllowMicrosoftManagedDesktopProcessingAllowed"
+	default:
+		return fmt.Sprintf("AllowMicrosoftManagedDesktopProcessingValue(%d)", int64(e))
+	}
+}
+
+// AllowOOBEUpdatesValue — allowed values for the AllowOOBEUpdates node.
+type AllowOOBEUpdatesValue int64
+
 const (
 	// Not allowed.
-	AllowOOBEUpdatesNotAllowed int64 = 0
+	AllowOOBEUpdatesNotAllowed AllowOOBEUpdatesValue = 0
 	// Allowed.
-	AllowOOBEUpdatesAllowed int64 = 1
+	AllowOOBEUpdatesAllowed AllowOOBEUpdatesValue = 1
 )
 
-// AllowStorageCard allowed values.
+// String returns the AllowOOBEUpdatesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowOOBEUpdatesValue) String() string {
+	switch e {
+	case AllowOOBEUpdatesNotAllowed:
+		return "AllowOOBEUpdatesNotAllowed"
+	case AllowOOBEUpdatesAllowed:
+		return "AllowOOBEUpdatesAllowed"
+	default:
+		return fmt.Sprintf("AllowOOBEUpdatesValue(%d)", int64(e))
+	}
+}
+
+// AllowStorageCardValue — allowed values for the AllowStorageCard node.
+type AllowStorageCardValue int64
+
 const (
 	// SD card use is not allowed and USB drives are disabled. This setting does not prevent
 	// programmatic access to the storage card.
-	AllowStorageCardSDCardUseIsNotAllowed int64 = 0
+	AllowStorageCardSDCardUseIsNotAllowed AllowStorageCardValue = 0
 	// Allow a storage card.
-	AllowStorageCardAllowAStorageCard int64 = 1
+	AllowStorageCardAllowAStorageCard AllowStorageCardValue = 1
 )
 
-// AllowTelemetry allowed values.
+// String returns the AllowStorageCardValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowStorageCardValue) String() string {
+	switch e {
+	case AllowStorageCardSDCardUseIsNotAllowed:
+		return "AllowStorageCardSDCardUseIsNotAllowed"
+	case AllowStorageCardAllowAStorageCard:
+		return "AllowStorageCardAllowAStorageCard"
+	default:
+		return fmt.Sprintf("AllowStorageCardValue(%d)", int64(e))
+	}
+}
+
+// AllowTelemetryValue — allowed values for the AllowTelemetry node.
+type AllowTelemetryValue int64
+
 const (
 	// Security. Information that is required to help keep Windows more secure, including data about
 	// the Connected User Experience and Telemetry component settings, the Malicious Software Removal
 	// Tool, and Windows Defender.
-	AllowTelemetrySecurity int64 = 0
+	AllowTelemetrySecurity AllowTelemetryValue = 0
 	// Basic. Basic device info, including: quality-related data, app compatibility, app usage data,
 	// and data from the Security level.
-	AllowTelemetryBasic int64 = 1
+	AllowTelemetryBasic AllowTelemetryValue = 1
 	// Full. All data necessary to identify and help to fix problems, plus data from the Security,
 	// Basic, and Enhanced levels.
-	AllowTelemetryFull int64 = 3
+	AllowTelemetryFull AllowTelemetryValue = 3
 )
 
-// AllowUpdateComplianceProcessing allowed values.
+// String returns the AllowTelemetryValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowTelemetryValue) String() string {
+	switch e {
+	case AllowTelemetrySecurity:
+		return "AllowTelemetrySecurity"
+	case AllowTelemetryBasic:
+		return "AllowTelemetryBasic"
+	case AllowTelemetryFull:
+		return "AllowTelemetryFull"
+	default:
+		return fmt.Sprintf("AllowTelemetryValue(%d)", int64(e))
+	}
+}
+
+// AllowUpdateComplianceProcessingValue — allowed values for the AllowUpdateComplianceProcessing node.
+type AllowUpdateComplianceProcessingValue int64
+
 const (
 	// Disabled.
-	AllowUpdateComplianceProcessingDisabled int64 = 0
+	AllowUpdateComplianceProcessingDisabled AllowUpdateComplianceProcessingValue = 0
 	// Enabled.
-	AllowUpdateComplianceProcessingEnabled int64 = 16
+	AllowUpdateComplianceProcessingEnabled AllowUpdateComplianceProcessingValue = 16
 )
 
-// AllowUserToResetPhone allowed values.
+// String returns the AllowUpdateComplianceProcessingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowUpdateComplianceProcessingValue) String() string {
+	switch e {
+	case AllowUpdateComplianceProcessingDisabled:
+		return "AllowUpdateComplianceProcessingDisabled"
+	case AllowUpdateComplianceProcessingEnabled:
+		return "AllowUpdateComplianceProcessingEnabled"
+	default:
+		return fmt.Sprintf("AllowUpdateComplianceProcessingValue(%d)", int64(e))
+	}
+}
+
+// AllowUserToResetPhoneValue — allowed values for the AllowUserToResetPhone node.
+type AllowUserToResetPhoneValue int64
+
 const (
 	// Not allowed.
-	AllowUserToResetPhoneNotAllowed int64 = 0
+	AllowUserToResetPhoneNotAllowed AllowUserToResetPhoneValue = 0
 	// Allowed to reset to factory default settings.
-	AllowUserToResetPhoneAllowedToResetToFactoryDefault int64 = 1
+	AllowUserToResetPhoneAllowedToResetToFactoryDefault AllowUserToResetPhoneValue = 1
 )
 
-// AllowWUfBCloudProcessing allowed values.
+// String returns the AllowUserToResetPhoneValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowUserToResetPhoneValue) String() string {
+	switch e {
+	case AllowUserToResetPhoneNotAllowed:
+		return "AllowUserToResetPhoneNotAllowed"
+	case AllowUserToResetPhoneAllowedToResetToFactoryDefault:
+		return "AllowUserToResetPhoneAllowedToResetToFactoryDefault"
+	default:
+		return fmt.Sprintf("AllowUserToResetPhoneValue(%d)", int64(e))
+	}
+}
+
+// AllowWUfBCloudProcessingValue — allowed values for the AllowWUfBCloudProcessing node.
+type AllowWUfBCloudProcessingValue int64
+
 const (
 	// Disabled.
-	AllowWUfBCloudProcessingDisabled int64 = 0
+	AllowWUfBCloudProcessingDisabled AllowWUfBCloudProcessingValue = 0
 	// Enabled.
-	AllowWUfBCloudProcessingEnabled int64 = 8
+	AllowWUfBCloudProcessingEnabled AllowWUfBCloudProcessingValue = 8
 )
 
-// ConfigureTelemetryOptInChangeNotification allowed values.
+// String returns the AllowWUfBCloudProcessingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowWUfBCloudProcessingValue) String() string {
+	switch e {
+	case AllowWUfBCloudProcessingDisabled:
+		return "AllowWUfBCloudProcessingDisabled"
+	case AllowWUfBCloudProcessingEnabled:
+		return "AllowWUfBCloudProcessingEnabled"
+	default:
+		return fmt.Sprintf("AllowWUfBCloudProcessingValue(%d)", int64(e))
+	}
+}
+
+// ConfigureTelemetryOptInChangeNotificationValue — allowed values for the ConfigureTelemetryOptInChangeNotification node.
+type ConfigureTelemetryOptInChangeNotificationValue int64
+
 const (
 	// Enable telemetry change notifications.
-	ConfigureTelemetryOptInChangeNotificationEnableTelemetryChangeNotifications int64 = 0
+	ConfigureTelemetryOptInChangeNotificationEnableTelemetryChangeNotifications ConfigureTelemetryOptInChangeNotificationValue = 0
 	// Disable telemetry change notifications.
-	ConfigureTelemetryOptInChangeNotificationDisableTelemetryChangeNotifications int64 = 1
+	ConfigureTelemetryOptInChangeNotificationDisableTelemetryChangeNotifications ConfigureTelemetryOptInChangeNotificationValue = 1
 )
 
-// ConfigureTelemetryOptInSettingsUx allowed values.
+// String returns the ConfigureTelemetryOptInChangeNotificationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureTelemetryOptInChangeNotificationValue) String() string {
+	switch e {
+	case ConfigureTelemetryOptInChangeNotificationEnableTelemetryChangeNotifications:
+		return "ConfigureTelemetryOptInChangeNotificationEnableTelemetryChangeNotifications"
+	case ConfigureTelemetryOptInChangeNotificationDisableTelemetryChangeNotifications:
+		return "ConfigureTelemetryOptInChangeNotificationDisableTelemetryChangeNotifications"
+	default:
+		return fmt.Sprintf("ConfigureTelemetryOptInChangeNotificationValue(%d)", int64(e))
+	}
+}
+
+// ConfigureTelemetryOptInSettingsUxValue — allowed values for the ConfigureTelemetryOptInSettingsUx node.
+type ConfigureTelemetryOptInSettingsUxValue int64
+
 const (
 	// Enable Telemetry opt-in Settings.
-	ConfigureTelemetryOptInSettingsUxEnableTelemetryOptInSettings int64 = 0
+	ConfigureTelemetryOptInSettingsUxEnableTelemetryOptInSettings ConfigureTelemetryOptInSettingsUxValue = 0
 	// Disable Telemetry opt-in Settings.
-	ConfigureTelemetryOptInSettingsUxDisableTelemetryOptInSettings int64 = 1
+	ConfigureTelemetryOptInSettingsUxDisableTelemetryOptInSettings ConfigureTelemetryOptInSettingsUxValue = 1
 )
 
-// DisableCHPE allowed values.
+// String returns the ConfigureTelemetryOptInSettingsUxValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureTelemetryOptInSettingsUxValue) String() string {
+	switch e {
+	case ConfigureTelemetryOptInSettingsUxEnableTelemetryOptInSettings:
+		return "ConfigureTelemetryOptInSettingsUxEnableTelemetryOptInSettings"
+	case ConfigureTelemetryOptInSettingsUxDisableTelemetryOptInSettings:
+		return "ConfigureTelemetryOptInSettingsUxDisableTelemetryOptInSettings"
+	default:
+		return fmt.Sprintf("ConfigureTelemetryOptInSettingsUxValue(%d)", int64(e))
+	}
+}
+
+// DisableCHPEValue — allowed values for the DisableCHPE node.
+type DisableCHPEValue int64
+
 const (
 	// CHPE Binaries Enabled (Default)
-	DisableCHPECHPEBinariesEnabled int64 = 0
+	DisableCHPECHPEBinariesEnabled DisableCHPEValue = 0
 	// CHPE Binaries Disabled
-	DisableCHPECHPEBinariesDisabled int64 = 1
+	DisableCHPECHPEBinariesDisabled DisableCHPEValue = 1
 )
 
-// DisableDeviceDelete allowed values.
+// String returns the DisableCHPEValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableCHPEValue) String() string {
+	switch e {
+	case DisableCHPECHPEBinariesEnabled:
+		return "DisableCHPECHPEBinariesEnabled"
+	case DisableCHPECHPEBinariesDisabled:
+		return "DisableCHPECHPEBinariesDisabled"
+	default:
+		return fmt.Sprintf("DisableCHPEValue(%d)", int64(e))
+	}
+}
+
+// DisableDeviceDeleteValue — allowed values for the DisableDeviceDelete node.
+type DisableDeviceDeleteValue int64
+
 const (
 	// Not disabled.
-	DisableDeviceDeleteNotDisabled int64 = 0
+	DisableDeviceDeleteNotDisabled DisableDeviceDeleteValue = 0
 	// Disabled.
-	DisableDeviceDeleteDisabled int64 = 1
+	DisableDeviceDeleteDisabled DisableDeviceDeleteValue = 1
 )
 
-// DisableDiagnosticDataViewer allowed values.
+// String returns the DisableDeviceDeleteValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableDeviceDeleteValue) String() string {
+	switch e {
+	case DisableDeviceDeleteNotDisabled:
+		return "DisableDeviceDeleteNotDisabled"
+	case DisableDeviceDeleteDisabled:
+		return "DisableDeviceDeleteDisabled"
+	default:
+		return fmt.Sprintf("DisableDeviceDeleteValue(%d)", int64(e))
+	}
+}
+
+// DisableDiagnosticDataViewerValue — allowed values for the DisableDiagnosticDataViewer node.
+type DisableDiagnosticDataViewerValue int64
+
 const (
 	// Not disabled.
-	DisableDiagnosticDataViewerNotDisabled int64 = 0
+	DisableDiagnosticDataViewerNotDisabled DisableDiagnosticDataViewerValue = 0
 	// Disabled.
-	DisableDiagnosticDataViewerDisabled int64 = 1
+	DisableDiagnosticDataViewerDisabled DisableDiagnosticDataViewerValue = 1
 )
 
-// DisableDirectXDatabaseUpdate allowed values.
+// String returns the DisableDiagnosticDataViewerValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableDiagnosticDataViewerValue) String() string {
+	switch e {
+	case DisableDiagnosticDataViewerNotDisabled:
+		return "DisableDiagnosticDataViewerNotDisabled"
+	case DisableDiagnosticDataViewerDisabled:
+		return "DisableDiagnosticDataViewerDisabled"
+	default:
+		return fmt.Sprintf("DisableDiagnosticDataViewerValue(%d)", int64(e))
+	}
+}
+
+// DisableDirectXDatabaseUpdateValue — allowed values for the DisableDirectXDatabaseUpdate node.
+type DisableDirectXDatabaseUpdateValue int64
+
 const (
 	// Not disabled.
-	DisableDirectXDatabaseUpdateNotDisabled int64 = 0
+	DisableDirectXDatabaseUpdateNotDisabled DisableDirectXDatabaseUpdateValue = 0
 	// Disabled.
-	DisableDirectXDatabaseUpdateDisabled int64 = 1
+	DisableDirectXDatabaseUpdateDisabled DisableDirectXDatabaseUpdateValue = 1
 )
 
-// DisableEnterpriseAuthProxy allowed values.
+// String returns the DisableDirectXDatabaseUpdateValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableDirectXDatabaseUpdateValue) String() string {
+	switch e {
+	case DisableDirectXDatabaseUpdateNotDisabled:
+		return "DisableDirectXDatabaseUpdateNotDisabled"
+	case DisableDirectXDatabaseUpdateDisabled:
+		return "DisableDirectXDatabaseUpdateDisabled"
+	default:
+		return fmt.Sprintf("DisableDirectXDatabaseUpdateValue(%d)", int64(e))
+	}
+}
+
+// DisableEnterpriseAuthProxyValue — allowed values for the DisableEnterpriseAuthProxy node.
+type DisableEnterpriseAuthProxyValue int64
+
 const (
 	// Enable
-	DisableEnterpriseAuthProxyEnable int64 = 1
+	DisableEnterpriseAuthProxyEnable DisableEnterpriseAuthProxyValue = 1
 	// Disable
-	DisableEnterpriseAuthProxyDisable int64 = 0
+	DisableEnterpriseAuthProxyDisable DisableEnterpriseAuthProxyValue = 0
 )
 
-// DisableOneDriveFileSync allowed values.
+// String returns the DisableEnterpriseAuthProxyValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableEnterpriseAuthProxyValue) String() string {
+	switch e {
+	case DisableEnterpriseAuthProxyEnable:
+		return "DisableEnterpriseAuthProxyEnable"
+	case DisableEnterpriseAuthProxyDisable:
+		return "DisableEnterpriseAuthProxyDisable"
+	default:
+		return fmt.Sprintf("DisableEnterpriseAuthProxyValue(%d)", int64(e))
+	}
+}
+
+// DisableOneDriveFileSyncValue — allowed values for the DisableOneDriveFileSync node.
+type DisableOneDriveFileSyncValue int64
+
 const (
 	// Sync enabled.
-	DisableOneDriveFileSyncSyncEnabled int64 = 0
+	DisableOneDriveFileSyncSyncEnabled DisableOneDriveFileSyncValue = 0
 	// Sync disabled.
-	DisableOneDriveFileSyncSyncDisabled int64 = 1
+	DisableOneDriveFileSyncSyncDisabled DisableOneDriveFileSyncValue = 1
 )
 
-// DisableOneSettingsDownloads allowed values.
+// String returns the DisableOneDriveFileSyncValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableOneDriveFileSyncValue) String() string {
+	switch e {
+	case DisableOneDriveFileSyncSyncEnabled:
+		return "DisableOneDriveFileSyncSyncEnabled"
+	case DisableOneDriveFileSyncSyncDisabled:
+		return "DisableOneDriveFileSyncSyncDisabled"
+	default:
+		return fmt.Sprintf("DisableOneDriveFileSyncValue(%d)", int64(e))
+	}
+}
+
+// DisableOneSettingsDownloadsValue — allowed values for the DisableOneSettingsDownloads node.
+type DisableOneSettingsDownloadsValue int64
+
 const (
 	// Not disabled.
-	DisableOneSettingsDownloadsNotDisabled int64 = 0
+	DisableOneSettingsDownloadsNotDisabled DisableOneSettingsDownloadsValue = 0
 	// Disabled.
-	DisableOneSettingsDownloadsDisabled int64 = 1
+	DisableOneSettingsDownloadsDisabled DisableOneSettingsDownloadsValue = 1
 )
 
-// EnableHotpatchAutoRemediation allowed values.
+// String returns the DisableOneSettingsDownloadsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableOneSettingsDownloadsValue) String() string {
+	switch e {
+	case DisableOneSettingsDownloadsNotDisabled:
+		return "DisableOneSettingsDownloadsNotDisabled"
+	case DisableOneSettingsDownloadsDisabled:
+		return "DisableOneSettingsDownloadsDisabled"
+	default:
+		return fmt.Sprintf("DisableOneSettingsDownloadsValue(%d)", int64(e))
+	}
+}
+
+// EnableHotpatchAutoRemediationValue — allowed values for the EnableHotpatchAutoRemediation node.
+type EnableHotpatchAutoRemediationValue int64
+
 const (
 	// Automatic Remediation is not enabled (Default)
-	EnableHotpatchAutoRemediationAutomaticRemediationIsNotEnabled int64 = 0
+	EnableHotpatchAutoRemediationAutomaticRemediationIsNotEnabled EnableHotpatchAutoRemediationValue = 0
 	// Automatic Remediation is enabled
-	EnableHotpatchAutoRemediationAutomaticRemediationIsEnabled int64 = 1
+	EnableHotpatchAutoRemediationAutomaticRemediationIsEnabled EnableHotpatchAutoRemediationValue = 1
 )
 
-// EnableOneSettingsAuditing allowed values.
+// String returns the EnableHotpatchAutoRemediationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableHotpatchAutoRemediationValue) String() string {
+	switch e {
+	case EnableHotpatchAutoRemediationAutomaticRemediationIsNotEnabled:
+		return "EnableHotpatchAutoRemediationAutomaticRemediationIsNotEnabled"
+	case EnableHotpatchAutoRemediationAutomaticRemediationIsEnabled:
+		return "EnableHotpatchAutoRemediationAutomaticRemediationIsEnabled"
+	default:
+		return fmt.Sprintf("EnableHotpatchAutoRemediationValue(%d)", int64(e))
+	}
+}
+
+// EnableOneSettingsAuditingValue — allowed values for the EnableOneSettingsAuditing node.
+type EnableOneSettingsAuditingValue int64
+
 const (
 	// Disabled.
-	EnableOneSettingsAuditingDisabled int64 = 0
+	EnableOneSettingsAuditingDisabled EnableOneSettingsAuditingValue = 0
 	// Enabled.
-	EnableOneSettingsAuditingEnabled int64 = 1
+	EnableOneSettingsAuditingEnabled EnableOneSettingsAuditingValue = 1
 )
 
-// FeedbackHubAlwaysSaveDiagnosticsLocally allowed values.
+// String returns the EnableOneSettingsAuditingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableOneSettingsAuditingValue) String() string {
+	switch e {
+	case EnableOneSettingsAuditingDisabled:
+		return "EnableOneSettingsAuditingDisabled"
+	case EnableOneSettingsAuditingEnabled:
+		return "EnableOneSettingsAuditingEnabled"
+	default:
+		return fmt.Sprintf("EnableOneSettingsAuditingValue(%d)", int64(e))
+	}
+}
+
+// FeedbackHubAlwaysSaveDiagnosticsLocallyValue — allowed values for the FeedbackHubAlwaysSaveDiagnosticsLocally node.
+type FeedbackHubAlwaysSaveDiagnosticsLocallyValue int64
+
 const (
 	// False. The Feedback Hub will not always save a local copy of diagnostics that may be created
 	// when a feedback is submitted. The user will have the option to do so.
-	FeedbackHubAlwaysSaveDiagnosticsLocallyFalse int64 = 0
+	FeedbackHubAlwaysSaveDiagnosticsLocallyFalse FeedbackHubAlwaysSaveDiagnosticsLocallyValue = 0
 	// True. The Feedback Hub should always save a local copy of diagnostics that may be created when a
 	// feedback is submitted.
-	FeedbackHubAlwaysSaveDiagnosticsLocallyTrue int64 = 1
+	FeedbackHubAlwaysSaveDiagnosticsLocallyTrue FeedbackHubAlwaysSaveDiagnosticsLocallyValue = 1
 )
 
-// HideUnsupportedHardwareNotifications allowed values.
+// String returns the FeedbackHubAlwaysSaveDiagnosticsLocallyValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e FeedbackHubAlwaysSaveDiagnosticsLocallyValue) String() string {
+	switch e {
+	case FeedbackHubAlwaysSaveDiagnosticsLocallyFalse:
+		return "FeedbackHubAlwaysSaveDiagnosticsLocallyFalse"
+	case FeedbackHubAlwaysSaveDiagnosticsLocallyTrue:
+		return "FeedbackHubAlwaysSaveDiagnosticsLocallyTrue"
+	default:
+		return fmt.Sprintf("FeedbackHubAlwaysSaveDiagnosticsLocallyValue(%d)", int64(e))
+	}
+}
+
+// HideUnsupportedHardwareNotificationsValue — allowed values for the HideUnsupportedHardwareNotifications node.
+type HideUnsupportedHardwareNotificationsValue int64
+
 const (
 	// Disabled.
-	HideUnsupportedHardwareNotificationsDisabled int64 = 0
+	HideUnsupportedHardwareNotificationsDisabled HideUnsupportedHardwareNotificationsValue = 0
 	// Enabled.
-	HideUnsupportedHardwareNotificationsEnabled int64 = 1
+	HideUnsupportedHardwareNotificationsEnabled HideUnsupportedHardwareNotificationsValue = 1
 )
 
-// LimitDiagnosticLogCollection allowed values.
+// String returns the HideUnsupportedHardwareNotificationsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HideUnsupportedHardwareNotificationsValue) String() string {
+	switch e {
+	case HideUnsupportedHardwareNotificationsDisabled:
+		return "HideUnsupportedHardwareNotificationsDisabled"
+	case HideUnsupportedHardwareNotificationsEnabled:
+		return "HideUnsupportedHardwareNotificationsEnabled"
+	default:
+		return fmt.Sprintf("HideUnsupportedHardwareNotificationsValue(%d)", int64(e))
+	}
+}
+
+// LimitDiagnosticLogCollectionValue — allowed values for the LimitDiagnosticLogCollection node.
+type LimitDiagnosticLogCollectionValue int64
+
 const (
 	// Disabled.
-	LimitDiagnosticLogCollectionDisabled int64 = 0
+	LimitDiagnosticLogCollectionDisabled LimitDiagnosticLogCollectionValue = 0
 	// Enabled.
-	LimitDiagnosticLogCollectionEnabled int64 = 1
+	LimitDiagnosticLogCollectionEnabled LimitDiagnosticLogCollectionValue = 1
 )
 
-// LimitDumpCollection allowed values.
+// String returns the LimitDiagnosticLogCollectionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e LimitDiagnosticLogCollectionValue) String() string {
+	switch e {
+	case LimitDiagnosticLogCollectionDisabled:
+		return "LimitDiagnosticLogCollectionDisabled"
+	case LimitDiagnosticLogCollectionEnabled:
+		return "LimitDiagnosticLogCollectionEnabled"
+	default:
+		return fmt.Sprintf("LimitDiagnosticLogCollectionValue(%d)", int64(e))
+	}
+}
+
+// LimitDumpCollectionValue — allowed values for the LimitDumpCollection node.
+type LimitDumpCollectionValue int64
+
 const (
 	// Disabled.
-	LimitDumpCollectionDisabled int64 = 0
+	LimitDumpCollectionDisabled LimitDumpCollectionValue = 0
 	// Enabled.
-	LimitDumpCollectionEnabled int64 = 1
+	LimitDumpCollectionEnabled LimitDumpCollectionValue = 1
 )
 
-// LimitEnhancedDiagnosticDataWindowsAnalytics allowed values.
+// String returns the LimitDumpCollectionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e LimitDumpCollectionValue) String() string {
+	switch e {
+	case LimitDumpCollectionDisabled:
+		return "LimitDumpCollectionDisabled"
+	case LimitDumpCollectionEnabled:
+		return "LimitDumpCollectionEnabled"
+	default:
+		return fmt.Sprintf("LimitDumpCollectionValue(%d)", int64(e))
+	}
+}
+
+// LimitEnhancedDiagnosticDataWindowsAnalyticsValue — allowed values for the LimitEnhancedDiagnosticDataWindowsAnalytics node.
+type LimitEnhancedDiagnosticDataWindowsAnalyticsValue int64
+
 const (
 	// Disabled.
-	LimitEnhancedDiagnosticDataWindowsAnalyticsDisabled int64 = 0
+	LimitEnhancedDiagnosticDataWindowsAnalyticsDisabled LimitEnhancedDiagnosticDataWindowsAnalyticsValue = 0
 	// Enabled.
-	LimitEnhancedDiagnosticDataWindowsAnalyticsEnabled int64 = 1
+	LimitEnhancedDiagnosticDataWindowsAnalyticsEnabled LimitEnhancedDiagnosticDataWindowsAnalyticsValue = 1
 )
 
-// TurnOffFileHistory allowed values.
+// String returns the LimitEnhancedDiagnosticDataWindowsAnalyticsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e LimitEnhancedDiagnosticDataWindowsAnalyticsValue) String() string {
+	switch e {
+	case LimitEnhancedDiagnosticDataWindowsAnalyticsDisabled:
+		return "LimitEnhancedDiagnosticDataWindowsAnalyticsDisabled"
+	case LimitEnhancedDiagnosticDataWindowsAnalyticsEnabled:
+		return "LimitEnhancedDiagnosticDataWindowsAnalyticsEnabled"
+	default:
+		return fmt.Sprintf("LimitEnhancedDiagnosticDataWindowsAnalyticsValue(%d)", int64(e))
+	}
+}
+
+// TurnOffFileHistoryValue — allowed values for the TurnOffFileHistory node.
+type TurnOffFileHistoryValue int64
+
 const (
 	// Allow file history.
-	TurnOffFileHistoryAllowFileHistory int64 = 0
+	TurnOffFileHistoryAllowFileHistory TurnOffFileHistoryValue = 0
 	// Turn off file history.
-	TurnOffFileHistoryTurnOffFileHistory int64 = 1
+	TurnOffFileHistoryTurnOffFileHistory TurnOffFileHistoryValue = 1
 )
+
+// String returns the TurnOffFileHistoryValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e TurnOffFileHistoryValue) String() string {
+	switch e {
+	case TurnOffFileHistoryAllowFileHistory:
+		return "TurnOffFileHistoryAllowFileHistory"
+	case TurnOffFileHistoryTurnOffFileHistory:
+		return "TurnOffFileHistoryTurnOffFileHistory"
+	default:
+		return fmt.Sprintf("TurnOffFileHistoryValue(%d)", int64(e))
+	}
+}

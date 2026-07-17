@@ -2,26 +2,75 @@
 
 package kioskbrowser
 
-// EnableEndSessionButton allowed values.
-const (
-	// Enable
-	EnableEndSessionButtonEnable int64 = 1
-	// Disable
-	EnableEndSessionButtonDisable int64 = 0
+import (
+	"fmt"
 )
 
-// EnableHomeButton allowed values.
+// EnableEndSessionButtonValue — allowed values for the EnableEndSessionButton node.
+type EnableEndSessionButtonValue int64
+
 const (
 	// Enable
-	EnableHomeButtonEnable int64 = 1
+	EnableEndSessionButtonEnable EnableEndSessionButtonValue = 1
 	// Disable
-	EnableHomeButtonDisable int64 = 0
+	EnableEndSessionButtonDisable EnableEndSessionButtonValue = 0
 )
 
-// EnableNavigationButtons allowed values.
+// String returns the EnableEndSessionButtonValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableEndSessionButtonValue) String() string {
+	switch e {
+	case EnableEndSessionButtonEnable:
+		return "EnableEndSessionButtonEnable"
+	case EnableEndSessionButtonDisable:
+		return "EnableEndSessionButtonDisable"
+	default:
+		return fmt.Sprintf("EnableEndSessionButtonValue(%d)", int64(e))
+	}
+}
+
+// EnableHomeButtonValue — allowed values for the EnableHomeButton node.
+type EnableHomeButtonValue int64
+
 const (
 	// Enable
-	EnableNavigationButtonsEnable int64 = 1
+	EnableHomeButtonEnable EnableHomeButtonValue = 1
 	// Disable
-	EnableNavigationButtonsDisable int64 = 0
+	EnableHomeButtonDisable EnableHomeButtonValue = 0
 )
+
+// String returns the EnableHomeButtonValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableHomeButtonValue) String() string {
+	switch e {
+	case EnableHomeButtonEnable:
+		return "EnableHomeButtonEnable"
+	case EnableHomeButtonDisable:
+		return "EnableHomeButtonDisable"
+	default:
+		return fmt.Sprintf("EnableHomeButtonValue(%d)", int64(e))
+	}
+}
+
+// EnableNavigationButtonsValue — allowed values for the EnableNavigationButtons node.
+type EnableNavigationButtonsValue int64
+
+const (
+	// Enable
+	EnableNavigationButtonsEnable EnableNavigationButtonsValue = 1
+	// Disable
+	EnableNavigationButtonsDisable EnableNavigationButtonsValue = 0
+)
+
+// String returns the EnableNavigationButtonsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableNavigationButtonsValue) String() string {
+	switch e {
+	case EnableNavigationButtonsEnable:
+		return "EnableNavigationButtonsEnable"
+	case EnableNavigationButtonsDisable:
+		return "EnableNavigationButtonsDisable"
+	default:
+		return fmt.Sprintf("EnableNavigationButtonsValue(%d)", int64(e))
+	}
+}

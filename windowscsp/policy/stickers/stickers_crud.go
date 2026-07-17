@@ -14,12 +14,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Stickers) GetEnableStickers(ctx context.Context) (int64, error) {
+func (s *Stickers) GetEnableStickers(ctx context.Context) (EnableStickersValue, error) {
 	v, err := s.c.Get(ctx, URIEnableStickers)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableStickersValue(n), err
 }
 
 // CreateEnableStickers creates ./Device/Vendor/MSFT/Policy/Config/Stickers/EnableStickers.
@@ -28,8 +29,8 @@ func (s *Stickers) GetEnableStickers(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Stickers) CreateEnableStickers(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableStickers, client.Int(value))
+func (s *Stickers) CreateEnableStickers(ctx context.Context, value EnableStickersValue) error {
+	return s.c.Add(ctx, URIEnableStickers, client.Int(int64(value)))
 }
 
 // UpdateEnableStickers updates ./Device/Vendor/MSFT/Policy/Config/Stickers/EnableStickers.
@@ -38,8 +39,8 @@ func (s *Stickers) CreateEnableStickers(ctx context.Context, value int64) error 
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Stickers) UpdateEnableStickers(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableStickers, client.Int(value))
+func (s *Stickers) UpdateEnableStickers(ctx context.Context, value EnableStickersValue) error {
+	return s.c.Replace(ctx, URIEnableStickers, client.Int(int64(value)))
 }
 
 // DeleteEnableStickers deletes ./Device/Vendor/MSFT/Policy/Config/Stickers/EnableStickers.

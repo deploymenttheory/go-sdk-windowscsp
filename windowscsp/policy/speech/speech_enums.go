@@ -2,10 +2,29 @@
 
 package speech
 
-// AllowSpeechModelUpdate allowed values.
+import (
+	"fmt"
+)
+
+// AllowSpeechModelUpdateValue — allowed values for the AllowSpeechModelUpdate node.
+type AllowSpeechModelUpdateValue int64
+
 const (
 	// Not allowed.
-	AllowSpeechModelUpdateNotAllowed int64 = 0
+	AllowSpeechModelUpdateNotAllowed AllowSpeechModelUpdateValue = 0
 	// Allowed.
-	AllowSpeechModelUpdateAllowed int64 = 1
+	AllowSpeechModelUpdateAllowed AllowSpeechModelUpdateValue = 1
 )
+
+// String returns the AllowSpeechModelUpdateValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowSpeechModelUpdateValue) String() string {
+	switch e {
+	case AllowSpeechModelUpdateNotAllowed:
+		return "AllowSpeechModelUpdateNotAllowed"
+	case AllowSpeechModelUpdateAllowed:
+		return "AllowSpeechModelUpdateAllowed"
+	default:
+		return fmt.Sprintf("AllowSpeechModelUpdateValue(%d)", int64(e))
+	}
+}

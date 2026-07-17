@@ -2,22 +2,58 @@
 
 package windowsinkworkspace
 
-// AllowSuggestedAppsInWindowsInkWorkspace allowed values.
-const (
-	// Not allowed.
-	AllowSuggestedAppsInWindowsInkWorkspaceNotAllowed int64 = 0
-	// Allowed.
-	AllowSuggestedAppsInWindowsInkWorkspaceAllowed int64 = 1
+import (
+	"fmt"
 )
 
-// AllowWindowsInkWorkspace allowed values.
+// AllowSuggestedAppsInWindowsInkWorkspaceValue — allowed values for the AllowSuggestedAppsInWindowsInkWorkspace node.
+type AllowSuggestedAppsInWindowsInkWorkspaceValue int64
+
+const (
+	// Not allowed.
+	AllowSuggestedAppsInWindowsInkWorkspaceNotAllowed AllowSuggestedAppsInWindowsInkWorkspaceValue = 0
+	// Allowed.
+	AllowSuggestedAppsInWindowsInkWorkspaceAllowed AllowSuggestedAppsInWindowsInkWorkspaceValue = 1
+)
+
+// String returns the AllowSuggestedAppsInWindowsInkWorkspaceValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowSuggestedAppsInWindowsInkWorkspaceValue) String() string {
+	switch e {
+	case AllowSuggestedAppsInWindowsInkWorkspaceNotAllowed:
+		return "AllowSuggestedAppsInWindowsInkWorkspaceNotAllowed"
+	case AllowSuggestedAppsInWindowsInkWorkspaceAllowed:
+		return "AllowSuggestedAppsInWindowsInkWorkspaceAllowed"
+	default:
+		return fmt.Sprintf("AllowSuggestedAppsInWindowsInkWorkspaceValue(%d)", int64(e))
+	}
+}
+
+// AllowWindowsInkWorkspaceValue — allowed values for the AllowWindowsInkWorkspace node.
+type AllowWindowsInkWorkspaceValue int64
+
 const (
 	// access to ink workspace is disabled. The feature is turned off.
-	AllowWindowsInkWorkspaceAccessToInkWorkspaceIsDisabled int64 = 0
+	AllowWindowsInkWorkspaceAccessToInkWorkspaceIsDisabled AllowWindowsInkWorkspaceValue = 0
 	// ink workspace is enabled (feature is turned on), but the user cannot access it above the lock
 	// screen.
-	AllowWindowsInkWorkspaceInkWorkspaceIsEnabled int64 = 1
+	AllowWindowsInkWorkspaceInkWorkspaceIsEnabled AllowWindowsInkWorkspaceValue = 1
 	// ink workspace is enabled (feature is turned on), and the user is allowed to use it above the
 	// lock screen.
-	AllowWindowsInkWorkspaceInkWorkspaceIsEnabled2 int64 = 2
+	AllowWindowsInkWorkspaceInkWorkspaceIsEnabled2 AllowWindowsInkWorkspaceValue = 2
 )
+
+// String returns the AllowWindowsInkWorkspaceValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowWindowsInkWorkspaceValue) String() string {
+	switch e {
+	case AllowWindowsInkWorkspaceAccessToInkWorkspaceIsDisabled:
+		return "AllowWindowsInkWorkspaceAccessToInkWorkspaceIsDisabled"
+	case AllowWindowsInkWorkspaceInkWorkspaceIsEnabled:
+		return "AllowWindowsInkWorkspaceInkWorkspaceIsEnabled"
+	case AllowWindowsInkWorkspaceInkWorkspaceIsEnabled2:
+		return "AllowWindowsInkWorkspaceInkWorkspaceIsEnabled2"
+	default:
+		return fmt.Sprintf("AllowWindowsInkWorkspaceValue(%d)", int64(e))
+	}
+}

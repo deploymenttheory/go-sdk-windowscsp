@@ -2,34 +2,98 @@
 
 package storage
 
-// AllowDiskHealthModelUpdates allowed values.
+import (
+	"fmt"
+)
+
+// AllowDiskHealthModelUpdatesValue — allowed values for the AllowDiskHealthModelUpdates node.
+type AllowDiskHealthModelUpdatesValue int64
+
 const (
 	// Do not allow
-	AllowDiskHealthModelUpdatesDoNotAllow int64 = 0
+	AllowDiskHealthModelUpdatesDoNotAllow AllowDiskHealthModelUpdatesValue = 0
 	// Allow
-	AllowDiskHealthModelUpdatesAllow int64 = 1
+	AllowDiskHealthModelUpdatesAllow AllowDiskHealthModelUpdatesValue = 1
 )
 
-// AllowStorageSenseGlobal allowed values.
+// String returns the AllowDiskHealthModelUpdatesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowDiskHealthModelUpdatesValue) String() string {
+	switch e {
+	case AllowDiskHealthModelUpdatesDoNotAllow:
+		return "AllowDiskHealthModelUpdatesDoNotAllow"
+	case AllowDiskHealthModelUpdatesAllow:
+		return "AllowDiskHealthModelUpdatesAllow"
+	default:
+		return fmt.Sprintf("AllowDiskHealthModelUpdatesValue(%d)", int64(e))
+	}
+}
+
+// AllowStorageSenseGlobalValue — allowed values for the AllowStorageSenseGlobal node.
+type AllowStorageSenseGlobalValue int64
+
 const (
 	// Allow
-	AllowStorageSenseGlobalAllow int64 = 1
+	AllowStorageSenseGlobalAllow AllowStorageSenseGlobalValue = 1
 	// Block
-	AllowStorageSenseGlobalBlock int64 = 0
+	AllowStorageSenseGlobalBlock AllowStorageSenseGlobalValue = 0
 )
 
-// AllowStorageSenseTemporaryFilesCleanup allowed values.
+// String returns the AllowStorageSenseGlobalValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowStorageSenseGlobalValue) String() string {
+	switch e {
+	case AllowStorageSenseGlobalAllow:
+		return "AllowStorageSenseGlobalAllow"
+	case AllowStorageSenseGlobalBlock:
+		return "AllowStorageSenseGlobalBlock"
+	default:
+		return fmt.Sprintf("AllowStorageSenseGlobalValue(%d)", int64(e))
+	}
+}
+
+// AllowStorageSenseTemporaryFilesCleanupValue — allowed values for the AllowStorageSenseTemporaryFilesCleanup node.
+type AllowStorageSenseTemporaryFilesCleanupValue int64
+
 const (
 	// Allow
-	AllowStorageSenseTemporaryFilesCleanupAllow int64 = 1
+	AllowStorageSenseTemporaryFilesCleanupAllow AllowStorageSenseTemporaryFilesCleanupValue = 1
 	// Block
-	AllowStorageSenseTemporaryFilesCleanupBlock int64 = 0
+	AllowStorageSenseTemporaryFilesCleanupBlock AllowStorageSenseTemporaryFilesCleanupValue = 0
 )
 
-// RemovableDiskDenyWriteAccess allowed values.
+// String returns the AllowStorageSenseTemporaryFilesCleanupValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowStorageSenseTemporaryFilesCleanupValue) String() string {
+	switch e {
+	case AllowStorageSenseTemporaryFilesCleanupAllow:
+		return "AllowStorageSenseTemporaryFilesCleanupAllow"
+	case AllowStorageSenseTemporaryFilesCleanupBlock:
+		return "AllowStorageSenseTemporaryFilesCleanupBlock"
+	default:
+		return fmt.Sprintf("AllowStorageSenseTemporaryFilesCleanupValue(%d)", int64(e))
+	}
+}
+
+// RemovableDiskDenyWriteAccessValue — allowed values for the RemovableDiskDenyWriteAccess node.
+type RemovableDiskDenyWriteAccessValue int64
+
 const (
 	// Disabled.
-	RemovableDiskDenyWriteAccessDisabled int64 = 0
+	RemovableDiskDenyWriteAccessDisabled RemovableDiskDenyWriteAccessValue = 0
 	// Enabled.
-	RemovableDiskDenyWriteAccessEnabled int64 = 1
+	RemovableDiskDenyWriteAccessEnabled RemovableDiskDenyWriteAccessValue = 1
 )
+
+// String returns the RemovableDiskDenyWriteAccessValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e RemovableDiskDenyWriteAccessValue) String() string {
+	switch e {
+	case RemovableDiskDenyWriteAccessDisabled:
+		return "RemovableDiskDenyWriteAccessDisabled"
+	case RemovableDiskDenyWriteAccessEnabled:
+		return "RemovableDiskDenyWriteAccessEnabled"
+	default:
+		return fmt.Sprintf("RemovableDiskDenyWriteAccessValue(%d)", int64(e))
+	}
+}

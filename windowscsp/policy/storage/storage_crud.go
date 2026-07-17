@@ -13,12 +13,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Storage) GetAllowDiskHealthModelUpdates(ctx context.Context) (int64, error) {
+func (s *Storage) GetAllowDiskHealthModelUpdates(ctx context.Context) (AllowDiskHealthModelUpdatesValue, error) {
 	v, err := s.c.Get(ctx, URIAllowDiskHealthModelUpdates)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowDiskHealthModelUpdatesValue(n), err
 }
 
 // CreateAllowDiskHealthModelUpdates creates ./Device/Vendor/MSFT/Policy/Config/Storage/AllowDiskHealthModelUpdates.
@@ -26,8 +27,8 @@ func (s *Storage) GetAllowDiskHealthModelUpdates(ctx context.Context) (int64, er
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Storage) CreateAllowDiskHealthModelUpdates(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowDiskHealthModelUpdates, client.Int(value))
+func (s *Storage) CreateAllowDiskHealthModelUpdates(ctx context.Context, value AllowDiskHealthModelUpdatesValue) error {
+	return s.c.Add(ctx, URIAllowDiskHealthModelUpdates, client.Int(int64(value)))
 }
 
 // UpdateAllowDiskHealthModelUpdates updates ./Device/Vendor/MSFT/Policy/Config/Storage/AllowDiskHealthModelUpdates.
@@ -35,8 +36,8 @@ func (s *Storage) CreateAllowDiskHealthModelUpdates(ctx context.Context, value i
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Storage) UpdateAllowDiskHealthModelUpdates(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowDiskHealthModelUpdates, client.Int(value))
+func (s *Storage) UpdateAllowDiskHealthModelUpdates(ctx context.Context, value AllowDiskHealthModelUpdatesValue) error {
+	return s.c.Replace(ctx, URIAllowDiskHealthModelUpdates, client.Int(int64(value)))
 }
 
 // DeleteAllowDiskHealthModelUpdates deletes ./Device/Vendor/MSFT/Policy/Config/Storage/AllowDiskHealthModelUpdates.
@@ -63,12 +64,13 @@ func (s *Storage) DeleteAllowDiskHealthModelUpdates(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Storage) GetAllowStorageSenseGlobal(ctx context.Context) (int64, error) {
+func (s *Storage) GetAllowStorageSenseGlobal(ctx context.Context) (AllowStorageSenseGlobalValue, error) {
 	v, err := s.c.Get(ctx, URIAllowStorageSenseGlobal)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowStorageSenseGlobalValue(n), err
 }
 
 // CreateAllowStorageSenseGlobal creates ./Device/Vendor/MSFT/Policy/Config/Storage/AllowStorageSenseGlobal.
@@ -86,8 +88,8 @@ func (s *Storage) GetAllowStorageSenseGlobal(ctx context.Context) (int64, error)
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Storage) CreateAllowStorageSenseGlobal(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowStorageSenseGlobal, client.Int(value))
+func (s *Storage) CreateAllowStorageSenseGlobal(ctx context.Context, value AllowStorageSenseGlobalValue) error {
+	return s.c.Add(ctx, URIAllowStorageSenseGlobal, client.Int(int64(value)))
 }
 
 // UpdateAllowStorageSenseGlobal updates ./Device/Vendor/MSFT/Policy/Config/Storage/AllowStorageSenseGlobal.
@@ -105,8 +107,8 @@ func (s *Storage) CreateAllowStorageSenseGlobal(ctx context.Context, value int64
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Storage) UpdateAllowStorageSenseGlobal(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowStorageSenseGlobal, client.Int(value))
+func (s *Storage) UpdateAllowStorageSenseGlobal(ctx context.Context, value AllowStorageSenseGlobalValue) error {
+	return s.c.Replace(ctx, URIAllowStorageSenseGlobal, client.Int(int64(value)))
 }
 
 // DeleteAllowStorageSenseGlobal deletes ./Device/Vendor/MSFT/Policy/Config/Storage/AllowStorageSenseGlobal.
@@ -140,12 +142,13 @@ func (s *Storage) DeleteAllowStorageSenseGlobal(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Storage) GetAllowStorageSenseTemporaryFilesCleanup(ctx context.Context) (int64, error) {
+func (s *Storage) GetAllowStorageSenseTemporaryFilesCleanup(ctx context.Context) (AllowStorageSenseTemporaryFilesCleanupValue, error) {
 	v, err := s.c.Get(ctx, URIAllowStorageSenseTemporaryFilesCleanup)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowStorageSenseTemporaryFilesCleanupValue(n), err
 }
 
 // CreateAllowStorageSenseTemporaryFilesCleanup creates ./Device/Vendor/MSFT/Policy/Config/Storage/AllowStorageSenseTemporaryFilesCleanup.
@@ -160,8 +163,8 @@ func (s *Storage) GetAllowStorageSenseTemporaryFilesCleanup(ctx context.Context)
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Storage) CreateAllowStorageSenseTemporaryFilesCleanup(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowStorageSenseTemporaryFilesCleanup, client.Int(value))
+func (s *Storage) CreateAllowStorageSenseTemporaryFilesCleanup(ctx context.Context, value AllowStorageSenseTemporaryFilesCleanupValue) error {
+	return s.c.Add(ctx, URIAllowStorageSenseTemporaryFilesCleanup, client.Int(int64(value)))
 }
 
 // UpdateAllowStorageSenseTemporaryFilesCleanup updates ./Device/Vendor/MSFT/Policy/Config/Storage/AllowStorageSenseTemporaryFilesCleanup.
@@ -176,8 +179,8 @@ func (s *Storage) CreateAllowStorageSenseTemporaryFilesCleanup(ctx context.Conte
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Storage) UpdateAllowStorageSenseTemporaryFilesCleanup(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowStorageSenseTemporaryFilesCleanup, client.Int(value))
+func (s *Storage) UpdateAllowStorageSenseTemporaryFilesCleanup(ctx context.Context, value AllowStorageSenseTemporaryFilesCleanupValue) error {
+	return s.c.Replace(ctx, URIAllowStorageSenseTemporaryFilesCleanup, client.Int(int64(value)))
 }
 
 // DeleteAllowStorageSenseTemporaryFilesCleanup deletes ./Device/Vendor/MSFT/Policy/Config/Storage/AllowStorageSenseTemporaryFilesCleanup.
@@ -514,12 +517,13 @@ func (s *Storage) DeleteEnhancedStorageDevices(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Storage) GetRemovableDiskDenyWriteAccess(ctx context.Context) (int64, error) {
+func (s *Storage) GetRemovableDiskDenyWriteAccess(ctx context.Context) (RemovableDiskDenyWriteAccessValue, error) {
 	v, err := s.c.Get(ctx, URIRemovableDiskDenyWriteAccess)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return RemovableDiskDenyWriteAccessValue(n), err
 }
 
 // CreateRemovableDiskDenyWriteAccess creates ./Device/Vendor/MSFT/Policy/Config/Storage/RemovableDiskDenyWriteAccess.
@@ -532,8 +536,8 @@ func (s *Storage) GetRemovableDiskDenyWriteAccess(ctx context.Context) (int64, e
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Storage) CreateRemovableDiskDenyWriteAccess(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIRemovableDiskDenyWriteAccess, client.Int(value))
+func (s *Storage) CreateRemovableDiskDenyWriteAccess(ctx context.Context, value RemovableDiskDenyWriteAccessValue) error {
+	return s.c.Add(ctx, URIRemovableDiskDenyWriteAccess, client.Int(int64(value)))
 }
 
 // UpdateRemovableDiskDenyWriteAccess updates ./Device/Vendor/MSFT/Policy/Config/Storage/RemovableDiskDenyWriteAccess.
@@ -546,8 +550,8 @@ func (s *Storage) CreateRemovableDiskDenyWriteAccess(ctx context.Context, value 
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Storage) UpdateRemovableDiskDenyWriteAccess(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIRemovableDiskDenyWriteAccess, client.Int(value))
+func (s *Storage) UpdateRemovableDiskDenyWriteAccess(ctx context.Context, value RemovableDiskDenyWriteAccessValue) error {
+	return s.c.Replace(ctx, URIRemovableDiskDenyWriteAccess, client.Int(int64(value)))
 }
 
 // DeleteRemovableDiskDenyWriteAccess deletes ./Device/Vendor/MSFT/Policy/Config/Storage/RemovableDiskDenyWriteAccess.

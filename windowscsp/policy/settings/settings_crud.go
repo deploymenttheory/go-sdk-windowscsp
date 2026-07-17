@@ -14,12 +14,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Settings) GetAllowAutoPlay(ctx context.Context) (int64, error) {
+func (s *Settings) GetAllowAutoPlay(ctx context.Context) (AllowAutoPlayValue, error) {
 	v, err := s.c.Get(ctx, URIAllowAutoPlay)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowAutoPlayValue(n), err
 }
 
 // CreateAllowAutoPlay creates ./Device/Vendor/MSFT/Policy/Config/Settings/AllowAutoPlay.
@@ -28,8 +29,8 @@ func (s *Settings) GetAllowAutoPlay(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Settings) CreateAllowAutoPlay(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowAutoPlay, client.Int(value))
+func (s *Settings) CreateAllowAutoPlay(ctx context.Context, value AllowAutoPlayValue) error {
+	return s.c.Add(ctx, URIAllowAutoPlay, client.Int(int64(value)))
 }
 
 // UpdateAllowAutoPlay updates ./Device/Vendor/MSFT/Policy/Config/Settings/AllowAutoPlay.
@@ -38,8 +39,8 @@ func (s *Settings) CreateAllowAutoPlay(ctx context.Context, value int64) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Settings) UpdateAllowAutoPlay(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowAutoPlay, client.Int(value))
+func (s *Settings) UpdateAllowAutoPlay(ctx context.Context, value AllowAutoPlayValue) error {
+	return s.c.Replace(ctx, URIAllowAutoPlay, client.Int(int64(value)))
 }
 
 // DeleteAllowAutoPlay deletes ./Device/Vendor/MSFT/Policy/Config/Settings/AllowAutoPlay.
@@ -57,12 +58,13 @@ func (s *Settings) DeleteAllowAutoPlay(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Settings) GetAllowDataSense(ctx context.Context) (int64, error) {
+func (s *Settings) GetAllowDataSense(ctx context.Context) (AllowDataSenseValue, error) {
 	v, err := s.c.Get(ctx, URIAllowDataSense)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowDataSenseValue(n), err
 }
 
 // CreateAllowDataSense creates ./Device/Vendor/MSFT/Policy/Config/Settings/AllowDataSense.
@@ -70,8 +72,8 @@ func (s *Settings) GetAllowDataSense(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Settings) CreateAllowDataSense(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowDataSense, client.Int(value))
+func (s *Settings) CreateAllowDataSense(ctx context.Context, value AllowDataSenseValue) error {
+	return s.c.Add(ctx, URIAllowDataSense, client.Int(int64(value)))
 }
 
 // UpdateAllowDataSense updates ./Device/Vendor/MSFT/Policy/Config/Settings/AllowDataSense.
@@ -79,8 +81,8 @@ func (s *Settings) CreateAllowDataSense(ctx context.Context, value int64) error 
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Settings) UpdateAllowDataSense(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowDataSense, client.Int(value))
+func (s *Settings) UpdateAllowDataSense(ctx context.Context, value AllowDataSenseValue) error {
+	return s.c.Replace(ctx, URIAllowDataSense, client.Int(int64(value)))
 }
 
 // DeleteAllowDataSense deletes ./Device/Vendor/MSFT/Policy/Config/Settings/AllowDataSense.
@@ -97,12 +99,13 @@ func (s *Settings) DeleteAllowDataSense(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Settings) GetAllowDateTime(ctx context.Context) (int64, error) {
+func (s *Settings) GetAllowDateTime(ctx context.Context) (AllowDateTimeValue, error) {
 	v, err := s.c.Get(ctx, URIAllowDateTime)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowDateTimeValue(n), err
 }
 
 // CreateAllowDateTime creates ./Device/Vendor/MSFT/Policy/Config/Settings/AllowDateTime.
@@ -110,8 +113,8 @@ func (s *Settings) GetAllowDateTime(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Settings) CreateAllowDateTime(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowDateTime, client.Int(value))
+func (s *Settings) CreateAllowDateTime(ctx context.Context, value AllowDateTimeValue) error {
+	return s.c.Add(ctx, URIAllowDateTime, client.Int(int64(value)))
 }
 
 // UpdateAllowDateTime updates ./Device/Vendor/MSFT/Policy/Config/Settings/AllowDateTime.
@@ -119,8 +122,8 @@ func (s *Settings) CreateAllowDateTime(ctx context.Context, value int64) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Settings) UpdateAllowDateTime(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowDateTime, client.Int(value))
+func (s *Settings) UpdateAllowDateTime(ctx context.Context, value AllowDateTimeValue) error {
+	return s.c.Replace(ctx, URIAllowDateTime, client.Int(int64(value)))
 }
 
 // DeleteAllowDateTime deletes ./Device/Vendor/MSFT/Policy/Config/Settings/AllowDateTime.
@@ -139,12 +142,13 @@ func (s *Settings) DeleteAllowDateTime(ctx context.Context) error {
 // Supported from OS build 10.0.14393 (CSP v4.1).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Settings) GetAllowEditDeviceName(ctx context.Context) (int64, error) {
+func (s *Settings) GetAllowEditDeviceName(ctx context.Context) (AllowEditDeviceNameValue, error) {
 	v, err := s.c.Get(ctx, URIAllowEditDeviceName)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowEditDeviceNameValue(n), err
 }
 
 // CreateAllowEditDeviceName creates ./Device/Vendor/MSFT/Policy/Config/Settings/AllowEditDeviceName.
@@ -154,8 +158,8 @@ func (s *Settings) GetAllowEditDeviceName(ctx context.Context) (int64, error) {
 // Supported from OS build 10.0.14393 (CSP v4.1).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Settings) CreateAllowEditDeviceName(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowEditDeviceName, client.Int(value))
+func (s *Settings) CreateAllowEditDeviceName(ctx context.Context, value AllowEditDeviceNameValue) error {
+	return s.c.Add(ctx, URIAllowEditDeviceName, client.Int(int64(value)))
 }
 
 // UpdateAllowEditDeviceName updates ./Device/Vendor/MSFT/Policy/Config/Settings/AllowEditDeviceName.
@@ -165,8 +169,8 @@ func (s *Settings) CreateAllowEditDeviceName(ctx context.Context, value int64) e
 // Supported from OS build 10.0.14393 (CSP v4.1).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Settings) UpdateAllowEditDeviceName(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowEditDeviceName, client.Int(value))
+func (s *Settings) UpdateAllowEditDeviceName(ctx context.Context, value AllowEditDeviceNameValue) error {
+	return s.c.Replace(ctx, URIAllowEditDeviceName, client.Int(int64(value)))
 }
 
 // DeleteAllowEditDeviceName deletes ./Device/Vendor/MSFT/Policy/Config/Settings/AllowEditDeviceName.
@@ -185,12 +189,13 @@ func (s *Settings) DeleteAllowEditDeviceName(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Settings) GetAllowLanguage(ctx context.Context) (int64, error) {
+func (s *Settings) GetAllowLanguage(ctx context.Context) (AllowLanguageValue, error) {
 	v, err := s.c.Get(ctx, URIAllowLanguage)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowLanguageValue(n), err
 }
 
 // CreateAllowLanguage creates ./Device/Vendor/MSFT/Policy/Config/Settings/AllowLanguage.
@@ -198,8 +203,8 @@ func (s *Settings) GetAllowLanguage(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Settings) CreateAllowLanguage(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowLanguage, client.Int(value))
+func (s *Settings) CreateAllowLanguage(ctx context.Context, value AllowLanguageValue) error {
+	return s.c.Add(ctx, URIAllowLanguage, client.Int(int64(value)))
 }
 
 // UpdateAllowLanguage updates ./Device/Vendor/MSFT/Policy/Config/Settings/AllowLanguage.
@@ -207,8 +212,8 @@ func (s *Settings) CreateAllowLanguage(ctx context.Context, value int64) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Settings) UpdateAllowLanguage(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowLanguage, client.Int(value))
+func (s *Settings) UpdateAllowLanguage(ctx context.Context, value AllowLanguageValue) error {
+	return s.c.Replace(ctx, URIAllowLanguage, client.Int(int64(value)))
 }
 
 // DeleteAllowLanguage deletes ./Device/Vendor/MSFT/Policy/Config/Settings/AllowLanguage.
@@ -226,12 +231,13 @@ func (s *Settings) DeleteAllowLanguage(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Settings) GetAllowOnlineTips(ctx context.Context) (int64, error) {
+func (s *Settings) GetAllowOnlineTips(ctx context.Context) (AllowOnlineTipsValue, error) {
 	v, err := s.c.Get(ctx, URIAllowOnlineTips)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowOnlineTipsValue(n), err
 }
 
 // CreateAllowOnlineTips creates ./Device/Vendor/MSFT/Policy/Config/Settings/AllowOnlineTips.
@@ -240,8 +246,8 @@ func (s *Settings) GetAllowOnlineTips(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Settings) CreateAllowOnlineTips(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowOnlineTips, client.Int(value))
+func (s *Settings) CreateAllowOnlineTips(ctx context.Context, value AllowOnlineTipsValue) error {
+	return s.c.Add(ctx, URIAllowOnlineTips, client.Int(int64(value)))
 }
 
 // UpdateAllowOnlineTips updates ./Device/Vendor/MSFT/Policy/Config/Settings/AllowOnlineTips.
@@ -250,8 +256,8 @@ func (s *Settings) CreateAllowOnlineTips(ctx context.Context, value int64) error
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Settings) UpdateAllowOnlineTips(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowOnlineTips, client.Int(value))
+func (s *Settings) UpdateAllowOnlineTips(ctx context.Context, value AllowOnlineTipsValue) error {
+	return s.c.Replace(ctx, URIAllowOnlineTips, client.Int(int64(value)))
 }
 
 // DeleteAllowOnlineTips deletes ./Device/Vendor/MSFT/Policy/Config/Settings/AllowOnlineTips.
@@ -269,12 +275,13 @@ func (s *Settings) DeleteAllowOnlineTips(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Settings) GetAllowPowerSleep(ctx context.Context) (int64, error) {
+func (s *Settings) GetAllowPowerSleep(ctx context.Context) (AllowPowerSleepValue, error) {
 	v, err := s.c.Get(ctx, URIAllowPowerSleep)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowPowerSleepValue(n), err
 }
 
 // CreateAllowPowerSleep creates ./Device/Vendor/MSFT/Policy/Config/Settings/AllowPowerSleep.
@@ -282,8 +289,8 @@ func (s *Settings) GetAllowPowerSleep(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Settings) CreateAllowPowerSleep(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowPowerSleep, client.Int(value))
+func (s *Settings) CreateAllowPowerSleep(ctx context.Context, value AllowPowerSleepValue) error {
+	return s.c.Add(ctx, URIAllowPowerSleep, client.Int(int64(value)))
 }
 
 // UpdateAllowPowerSleep updates ./Device/Vendor/MSFT/Policy/Config/Settings/AllowPowerSleep.
@@ -291,8 +298,8 @@ func (s *Settings) CreateAllowPowerSleep(ctx context.Context, value int64) error
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Settings) UpdateAllowPowerSleep(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowPowerSleep, client.Int(value))
+func (s *Settings) UpdateAllowPowerSleep(ctx context.Context, value AllowPowerSleepValue) error {
+	return s.c.Replace(ctx, URIAllowPowerSleep, client.Int(int64(value)))
 }
 
 // DeleteAllowPowerSleep deletes ./Device/Vendor/MSFT/Policy/Config/Settings/AllowPowerSleep.
@@ -309,12 +316,13 @@ func (s *Settings) DeleteAllowPowerSleep(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Settings) GetAllowRegion(ctx context.Context) (int64, error) {
+func (s *Settings) GetAllowRegion(ctx context.Context) (AllowRegionValue, error) {
 	v, err := s.c.Get(ctx, URIAllowRegion)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowRegionValue(n), err
 }
 
 // CreateAllowRegion creates ./Device/Vendor/MSFT/Policy/Config/Settings/AllowRegion.
@@ -322,8 +330,8 @@ func (s *Settings) GetAllowRegion(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Settings) CreateAllowRegion(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowRegion, client.Int(value))
+func (s *Settings) CreateAllowRegion(ctx context.Context, value AllowRegionValue) error {
+	return s.c.Add(ctx, URIAllowRegion, client.Int(int64(value)))
 }
 
 // UpdateAllowRegion updates ./Device/Vendor/MSFT/Policy/Config/Settings/AllowRegion.
@@ -331,8 +339,8 @@ func (s *Settings) CreateAllowRegion(ctx context.Context, value int64) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Settings) UpdateAllowRegion(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowRegion, client.Int(value))
+func (s *Settings) UpdateAllowRegion(ctx context.Context, value AllowRegionValue) error {
+	return s.c.Replace(ctx, URIAllowRegion, client.Int(int64(value)))
 }
 
 // DeleteAllowRegion deletes ./Device/Vendor/MSFT/Policy/Config/Settings/AllowRegion.
@@ -349,12 +357,13 @@ func (s *Settings) DeleteAllowRegion(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Settings) GetAllowSignInOptions(ctx context.Context) (int64, error) {
+func (s *Settings) GetAllowSignInOptions(ctx context.Context) (AllowSignInOptionsValue, error) {
 	v, err := s.c.Get(ctx, URIAllowSignInOptions)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowSignInOptionsValue(n), err
 }
 
 // CreateAllowSignInOptions creates ./Device/Vendor/MSFT/Policy/Config/Settings/AllowSignInOptions.
@@ -362,8 +371,8 @@ func (s *Settings) GetAllowSignInOptions(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Settings) CreateAllowSignInOptions(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowSignInOptions, client.Int(value))
+func (s *Settings) CreateAllowSignInOptions(ctx context.Context, value AllowSignInOptionsValue) error {
+	return s.c.Add(ctx, URIAllowSignInOptions, client.Int(int64(value)))
 }
 
 // UpdateAllowSignInOptions updates ./Device/Vendor/MSFT/Policy/Config/Settings/AllowSignInOptions.
@@ -371,8 +380,8 @@ func (s *Settings) CreateAllowSignInOptions(ctx context.Context, value int64) er
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Settings) UpdateAllowSignInOptions(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowSignInOptions, client.Int(value))
+func (s *Settings) UpdateAllowSignInOptions(ctx context.Context, value AllowSignInOptionsValue) error {
+	return s.c.Replace(ctx, URIAllowSignInOptions, client.Int(int64(value)))
 }
 
 // DeleteAllowSignInOptions deletes ./Device/Vendor/MSFT/Policy/Config/Settings/AllowSignInOptions.
@@ -389,12 +398,13 @@ func (s *Settings) DeleteAllowSignInOptions(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Settings) GetAllowVPN(ctx context.Context) (int64, error) {
+func (s *Settings) GetAllowVPN(ctx context.Context) (AllowVPNValue, error) {
 	v, err := s.c.Get(ctx, URIAllowVPN)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowVPNValue(n), err
 }
 
 // CreateAllowVPN creates ./Device/Vendor/MSFT/Policy/Config/Settings/AllowVPN.
@@ -402,8 +412,8 @@ func (s *Settings) GetAllowVPN(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Settings) CreateAllowVPN(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowVPN, client.Int(value))
+func (s *Settings) CreateAllowVPN(ctx context.Context, value AllowVPNValue) error {
+	return s.c.Add(ctx, URIAllowVPN, client.Int(int64(value)))
 }
 
 // UpdateAllowVPN updates ./Device/Vendor/MSFT/Policy/Config/Settings/AllowVPN.
@@ -411,8 +421,8 @@ func (s *Settings) CreateAllowVPN(ctx context.Context, value int64) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Settings) UpdateAllowVPN(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowVPN, client.Int(value))
+func (s *Settings) UpdateAllowVPN(ctx context.Context, value AllowVPNValue) error {
+	return s.c.Replace(ctx, URIAllowVPN, client.Int(int64(value)))
 }
 
 // DeleteAllowVPN deletes ./Device/Vendor/MSFT/Policy/Config/Settings/AllowVPN.
@@ -429,12 +439,13 @@ func (s *Settings) DeleteAllowVPN(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Settings) GetAllowWorkplace(ctx context.Context) (int64, error) {
+func (s *Settings) GetAllowWorkplace(ctx context.Context) (AllowWorkplaceValue, error) {
 	v, err := s.c.Get(ctx, URIAllowWorkplace)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowWorkplaceValue(n), err
 }
 
 // CreateAllowWorkplace creates ./Device/Vendor/MSFT/Policy/Config/Settings/AllowWorkplace.
@@ -442,8 +453,8 @@ func (s *Settings) GetAllowWorkplace(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Settings) CreateAllowWorkplace(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowWorkplace, client.Int(value))
+func (s *Settings) CreateAllowWorkplace(ctx context.Context, value AllowWorkplaceValue) error {
+	return s.c.Add(ctx, URIAllowWorkplace, client.Int(int64(value)))
 }
 
 // UpdateAllowWorkplace updates ./Device/Vendor/MSFT/Policy/Config/Settings/AllowWorkplace.
@@ -451,8 +462,8 @@ func (s *Settings) CreateAllowWorkplace(ctx context.Context, value int64) error 
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Settings) UpdateAllowWorkplace(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowWorkplace, client.Int(value))
+func (s *Settings) UpdateAllowWorkplace(ctx context.Context, value AllowWorkplaceValue) error {
+	return s.c.Replace(ctx, URIAllowWorkplace, client.Int(int64(value)))
 }
 
 // DeleteAllowWorkplace deletes ./Device/Vendor/MSFT/Policy/Config/Settings/AllowWorkplace.
@@ -469,12 +480,13 @@ func (s *Settings) DeleteAllowWorkplace(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Settings) GetAllowYourAccount(ctx context.Context) (int64, error) {
+func (s *Settings) GetAllowYourAccount(ctx context.Context) (AllowYourAccountValue, error) {
 	v, err := s.c.Get(ctx, URIAllowYourAccount)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowYourAccountValue(n), err
 }
 
 // CreateAllowYourAccount creates ./Device/Vendor/MSFT/Policy/Config/Settings/AllowYourAccount.
@@ -482,8 +494,8 @@ func (s *Settings) GetAllowYourAccount(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Settings) CreateAllowYourAccount(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowYourAccount, client.Int(value))
+func (s *Settings) CreateAllowYourAccount(ctx context.Context, value AllowYourAccountValue) error {
+	return s.c.Add(ctx, URIAllowYourAccount, client.Int(int64(value)))
 }
 
 // UpdateAllowYourAccount updates ./Device/Vendor/MSFT/Policy/Config/Settings/AllowYourAccount.
@@ -491,8 +503,8 @@ func (s *Settings) CreateAllowYourAccount(ctx context.Context, value int64) erro
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Settings) UpdateAllowYourAccount(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowYourAccount, client.Int(value))
+func (s *Settings) UpdateAllowYourAccount(ctx context.Context, value AllowYourAccountValue) error {
+	return s.c.Replace(ctx, URIAllowYourAccount, client.Int(int64(value)))
 }
 
 // DeleteAllowYourAccount deletes ./Device/Vendor/MSFT/Policy/Config/Settings/AllowYourAccount.

@@ -2,12 +2,33 @@
 
 package clouddesktop
 
-// BootToCloudPCEnhanced allowed values.
+import (
+	"fmt"
+)
+
+// BootToCloudPCEnhancedValue — allowed values for the BootToCloudPCEnhanced node.
+type BootToCloudPCEnhancedValue int64
+
 const (
 	// Not Configured
-	BootToCloudPCEnhancedNotConfigured int64 = 0
+	BootToCloudPCEnhancedNotConfigured BootToCloudPCEnhancedValue = 0
 	// Enable Boot to Cloud Shared PC Mode
-	BootToCloudPCEnhancedEnableBootToCloudSharedPC int64 = 1
+	BootToCloudPCEnhancedEnableBootToCloudSharedPC BootToCloudPCEnhancedValue = 1
 	// Enable Boot to Cloud Dedicated Mode (Cloud only)
-	BootToCloudPCEnhancedEnableBootToCloudDedicatedMode int64 = 2
+	BootToCloudPCEnhancedEnableBootToCloudDedicatedMode BootToCloudPCEnhancedValue = 2
 )
+
+// String returns the BootToCloudPCEnhancedValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e BootToCloudPCEnhancedValue) String() string {
+	switch e {
+	case BootToCloudPCEnhancedNotConfigured:
+		return "BootToCloudPCEnhancedNotConfigured"
+	case BootToCloudPCEnhancedEnableBootToCloudSharedPC:
+		return "BootToCloudPCEnhancedEnableBootToCloudSharedPC"
+	case BootToCloudPCEnhancedEnableBootToCloudDedicatedMode:
+		return "BootToCloudPCEnhancedEnableBootToCloudDedicatedMode"
+	default:
+		return fmt.Sprintf("BootToCloudPCEnhancedValue(%d)", int64(e))
+	}
+}

@@ -2,68 +2,180 @@
 
 package deliveryoptimization
 
-// DOAllowVPNPeerCaching allowed values.
+import (
+	"fmt"
+)
+
+// DOAllowVPNPeerCachingValue — allowed values for the DOAllowVPNPeerCaching node.
+type DOAllowVPNPeerCachingValue int64
+
 const (
 	// Not allowed
-	DOAllowVPNPeerCachingNotAllowed int64 = 0
+	DOAllowVPNPeerCachingNotAllowed DOAllowVPNPeerCachingValue = 0
 	// Allowed
-	DOAllowVPNPeerCachingAllowed int64 = 1
+	DOAllowVPNPeerCachingAllowed DOAllowVPNPeerCachingValue = 1
 )
 
-// DOCacheHostSource allowed values.
+// String returns the DOAllowVPNPeerCachingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DOAllowVPNPeerCachingValue) String() string {
+	switch e {
+	case DOAllowVPNPeerCachingNotAllowed:
+		return "DOAllowVPNPeerCachingNotAllowed"
+	case DOAllowVPNPeerCachingAllowed:
+		return "DOAllowVPNPeerCachingAllowed"
+	default:
+		return fmt.Sprintf("DOAllowVPNPeerCachingValue(%d)", int64(e))
+	}
+}
+
+// DOCacheHostSourceValue — allowed values for the DOCacheHostSource node.
+type DOCacheHostSourceValue int64
+
 const (
 	// DHCP Option 235
-	DOCacheHostSourceDHCPOption235 int64 = 1
+	DOCacheHostSourceDHCPOption235 DOCacheHostSourceValue = 1
 	// DHCP Option 235 Force
-	DOCacheHostSourceDHCPOption235Force int64 = 2
+	DOCacheHostSourceDHCPOption235Force DOCacheHostSourceValue = 2
 )
 
-// DODisallowCacheServerDownloadsOnVPN allowed values.
+// String returns the DOCacheHostSourceValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DOCacheHostSourceValue) String() string {
+	switch e {
+	case DOCacheHostSourceDHCPOption235:
+		return "DOCacheHostSourceDHCPOption235"
+	case DOCacheHostSourceDHCPOption235Force:
+		return "DOCacheHostSourceDHCPOption235Force"
+	default:
+		return fmt.Sprintf("DOCacheHostSourceValue(%d)", int64(e))
+	}
+}
+
+// DODisallowCacheServerDownloadsOnVPNValue — allowed values for the DODisallowCacheServerDownloadsOnVPN node.
+type DODisallowCacheServerDownloadsOnVPNValue int64
+
 const (
 	// Not Set
-	DODisallowCacheServerDownloadsOnVPNNotSet int64 = 0
+	DODisallowCacheServerDownloadsOnVPNNotSet DODisallowCacheServerDownloadsOnVPNValue = 0
 	// Enabled
-	DODisallowCacheServerDownloadsOnVPNEnabled int64 = 1
+	DODisallowCacheServerDownloadsOnVPNEnabled DODisallowCacheServerDownloadsOnVPNValue = 1
 )
 
-// DODownloadMode allowed values.
+// String returns the DODisallowCacheServerDownloadsOnVPNValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DODisallowCacheServerDownloadsOnVPNValue) String() string {
+	switch e {
+	case DODisallowCacheServerDownloadsOnVPNNotSet:
+		return "DODisallowCacheServerDownloadsOnVPNNotSet"
+	case DODisallowCacheServerDownloadsOnVPNEnabled:
+		return "DODisallowCacheServerDownloadsOnVPNEnabled"
+	default:
+		return fmt.Sprintf("DODisallowCacheServerDownloadsOnVPNValue(%d)", int64(e))
+	}
+}
+
+// DODownloadModeValue — allowed values for the DODownloadMode node.
+type DODownloadModeValue int64
+
 const (
 	// HTTP only, no peering
-	DODownloadModeHTTPOnlyNoPeering int64 = 0
+	DODownloadModeHTTPOnlyNoPeering DODownloadModeValue = 0
 	// HTTP blended with peering behind the same NAT
-	DODownloadModeHTTPBlendedWithPeeringBehindThe int64 = 1
+	DODownloadModeHTTPBlendedWithPeeringBehindThe DODownloadModeValue = 1
 	// HTTP blended with peering across a private group
-	DODownloadModeHTTPBlendedWithPeeringAcrossA int64 = 2
+	DODownloadModeHTTPBlendedWithPeeringAcrossA DODownloadModeValue = 2
 	// HTTP blended with Internet peering
-	DODownloadModeHTTPBlendedWithInternetPeering int64 = 3
+	DODownloadModeHTTPBlendedWithInternetPeering DODownloadModeValue = 3
 	// HTTP only, no peering, no use of DO cloud service
-	DODownloadModeHTTPOnlyNoPeeringNoUse int64 = 99
+	DODownloadModeHTTPOnlyNoPeeringNoUse DODownloadModeValue = 99
 	// Bypass mode, deprecated in Windows 11
-	DODownloadModeBypassModeDeprecatedInWindows11 int64 = 100
+	DODownloadModeBypassModeDeprecatedInWindows11 DODownloadModeValue = 100
 )
 
-// DOGroupIdSource allowed values.
+// String returns the DODownloadModeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DODownloadModeValue) String() string {
+	switch e {
+	case DODownloadModeHTTPOnlyNoPeering:
+		return "DODownloadModeHTTPOnlyNoPeering"
+	case DODownloadModeHTTPBlendedWithPeeringBehindThe:
+		return "DODownloadModeHTTPBlendedWithPeeringBehindThe"
+	case DODownloadModeHTTPBlendedWithPeeringAcrossA:
+		return "DODownloadModeHTTPBlendedWithPeeringAcrossA"
+	case DODownloadModeHTTPBlendedWithInternetPeering:
+		return "DODownloadModeHTTPBlendedWithInternetPeering"
+	case DODownloadModeHTTPOnlyNoPeeringNoUse:
+		return "DODownloadModeHTTPOnlyNoPeeringNoUse"
+	case DODownloadModeBypassModeDeprecatedInWindows11:
+		return "DODownloadModeBypassModeDeprecatedInWindows11"
+	default:
+		return fmt.Sprintf("DODownloadModeValue(%d)", int64(e))
+	}
+}
+
+// DOGroupIdSourceValue — allowed values for the DOGroupIdSource node.
+type DOGroupIdSourceValue int64
+
 const (
 	// Not Set
-	DOGroupIdSourceNotSet int64 = 0
+	DOGroupIdSourceNotSet DOGroupIdSourceValue = 0
 	// AD site
-	DOGroupIdSourceADSite int64 = 1
+	DOGroupIdSourceADSite DOGroupIdSourceValue = 1
 	// Authenticated domain SID
-	DOGroupIdSourceAuthenticatedDomainSID int64 = 2
+	DOGroupIdSourceAuthenticatedDomainSID DOGroupIdSourceValue = 2
 	// DHCP Option ID
-	DOGroupIdSourceDHCPOptionID int64 = 3
+	DOGroupIdSourceDHCPOptionID DOGroupIdSourceValue = 3
 	// DNS Suffix
-	DOGroupIdSourceDNSSuffix int64 = 4
+	DOGroupIdSourceDNSSuffix DOGroupIdSourceValue = 4
 	// Entra ID Tenant ID
-	DOGroupIdSourceEntraIDTenantID int64 = 5
+	DOGroupIdSourceEntraIDTenantID DOGroupIdSourceValue = 5
 )
 
-// DORestrictPeerSelectionBy allowed values.
+// String returns the DOGroupIdSourceValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DOGroupIdSourceValue) String() string {
+	switch e {
+	case DOGroupIdSourceNotSet:
+		return "DOGroupIdSourceNotSet"
+	case DOGroupIdSourceADSite:
+		return "DOGroupIdSourceADSite"
+	case DOGroupIdSourceAuthenticatedDomainSID:
+		return "DOGroupIdSourceAuthenticatedDomainSID"
+	case DOGroupIdSourceDHCPOptionID:
+		return "DOGroupIdSourceDHCPOptionID"
+	case DOGroupIdSourceDNSSuffix:
+		return "DOGroupIdSourceDNSSuffix"
+	case DOGroupIdSourceEntraIDTenantID:
+		return "DOGroupIdSourceEntraIDTenantID"
+	default:
+		return fmt.Sprintf("DOGroupIdSourceValue(%d)", int64(e))
+	}
+}
+
+// DORestrictPeerSelectionByValue — allowed values for the DORestrictPeerSelectionBy node.
+type DORestrictPeerSelectionByValue int64
+
 const (
 	// None
-	DORestrictPeerSelectionByNone int64 = 0
+	DORestrictPeerSelectionByNone DORestrictPeerSelectionByValue = 0
 	// Subnet mask
-	DORestrictPeerSelectionBySubnetMask int64 = 1
+	DORestrictPeerSelectionBySubnetMask DORestrictPeerSelectionByValue = 1
 	// Local discovery (DNS-SD)
-	DORestrictPeerSelectionByLocalDiscovery int64 = 2
+	DORestrictPeerSelectionByLocalDiscovery DORestrictPeerSelectionByValue = 2
 )
+
+// String returns the DORestrictPeerSelectionByValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DORestrictPeerSelectionByValue) String() string {
+	switch e {
+	case DORestrictPeerSelectionByNone:
+		return "DORestrictPeerSelectionByNone"
+	case DORestrictPeerSelectionBySubnetMask:
+		return "DORestrictPeerSelectionBySubnetMask"
+	case DORestrictPeerSelectionByLocalDiscovery:
+		return "DORestrictPeerSelectionByLocalDiscovery"
+	default:
+		return fmt.Sprintf("DORestrictPeerSelectionByValue(%d)", int64(e))
+	}
+}

@@ -18,12 +18,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *SettingsUser) GetConfigureTaskbarCalendar(ctx context.Context) (int64, error) {
+func (s *SettingsUser) GetConfigureTaskbarCalendar(ctx context.Context) (ConfigureTaskbarCalendarValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureTaskbarCalendar)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureTaskbarCalendarValue(n), err
 }
 
 // CreateConfigureTaskbarCalendar creates ./User/Vendor/MSFT/Policy/Config/Settings/ConfigureTaskbarCalendar.
@@ -36,8 +37,8 @@ func (s *SettingsUser) GetConfigureTaskbarCalendar(ctx context.Context) (int64, 
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *SettingsUser) CreateConfigureTaskbarCalendar(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureTaskbarCalendar, client.Int(value))
+func (s *SettingsUser) CreateConfigureTaskbarCalendar(ctx context.Context, value ConfigureTaskbarCalendarValue) error {
+	return s.c.Add(ctx, URIConfigureTaskbarCalendar, client.Int(int64(value)))
 }
 
 // UpdateConfigureTaskbarCalendar updates ./User/Vendor/MSFT/Policy/Config/Settings/ConfigureTaskbarCalendar.
@@ -50,8 +51,8 @@ func (s *SettingsUser) CreateConfigureTaskbarCalendar(ctx context.Context, value
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *SettingsUser) UpdateConfigureTaskbarCalendar(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureTaskbarCalendar, client.Int(value))
+func (s *SettingsUser) UpdateConfigureTaskbarCalendar(ctx context.Context, value ConfigureTaskbarCalendarValue) error {
+	return s.c.Replace(ctx, URIConfigureTaskbarCalendar, client.Int(int64(value)))
 }
 
 // DeleteConfigureTaskbarCalendar deletes ./User/Vendor/MSFT/Policy/Config/Settings/ConfigureTaskbarCalendar.

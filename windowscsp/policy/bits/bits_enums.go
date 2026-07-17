@@ -2,30 +2,76 @@
 
 package bits
 
-// CostedNetworkBehaviorBackgroundPriority allowed values.
-const (
-	// Always transfer
-	CostedNetworkBehaviorBackgroundPriorityAlwaysTransfer int64 = 1
-	// Transfer unless roaming
-	CostedNetworkBehaviorBackgroundPriorityTransferUnlessRoaming int64 = 2
-	// Transfer unless surcharge applies (when not roaming or over cap)
-	CostedNetworkBehaviorBackgroundPriorityTransferUnlessSurchargeApplies int64 = 3
-	// Transfer unless nearing limit (when not roaming or nearing cap)
-	CostedNetworkBehaviorBackgroundPriorityTransferUnlessNearingLimit int64 = 4
-	// Transfer only if unconstrained
-	CostedNetworkBehaviorBackgroundPriorityTransferOnlyIfUnconstrained int64 = 5
+import (
+	"fmt"
 )
 
-// CostedNetworkBehaviorForegroundPriority allowed values.
+// CostedNetworkBehaviorBackgroundPriorityValue — allowed values for the CostedNetworkBehaviorBackgroundPriority node.
+type CostedNetworkBehaviorBackgroundPriorityValue int64
+
 const (
 	// Always transfer
-	CostedNetworkBehaviorForegroundPriorityAlwaysTransfer int64 = 1
+	CostedNetworkBehaviorBackgroundPriorityAlwaysTransfer CostedNetworkBehaviorBackgroundPriorityValue = 1
 	// Transfer unless roaming
-	CostedNetworkBehaviorForegroundPriorityTransferUnlessRoaming int64 = 2
+	CostedNetworkBehaviorBackgroundPriorityTransferUnlessRoaming CostedNetworkBehaviorBackgroundPriorityValue = 2
 	// Transfer unless surcharge applies (when not roaming or over cap)
-	CostedNetworkBehaviorForegroundPriorityTransferUnlessSurchargeApplies int64 = 3
+	CostedNetworkBehaviorBackgroundPriorityTransferUnlessSurchargeApplies CostedNetworkBehaviorBackgroundPriorityValue = 3
 	// Transfer unless nearing limit (when not roaming or nearing cap)
-	CostedNetworkBehaviorForegroundPriorityTransferUnlessNearingLimit int64 = 4
+	CostedNetworkBehaviorBackgroundPriorityTransferUnlessNearingLimit CostedNetworkBehaviorBackgroundPriorityValue = 4
 	// Transfer only if unconstrained
-	CostedNetworkBehaviorForegroundPriorityTransferOnlyIfUnconstrained int64 = 5
+	CostedNetworkBehaviorBackgroundPriorityTransferOnlyIfUnconstrained CostedNetworkBehaviorBackgroundPriorityValue = 5
 )
+
+// String returns the CostedNetworkBehaviorBackgroundPriorityValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e CostedNetworkBehaviorBackgroundPriorityValue) String() string {
+	switch e {
+	case CostedNetworkBehaviorBackgroundPriorityAlwaysTransfer:
+		return "CostedNetworkBehaviorBackgroundPriorityAlwaysTransfer"
+	case CostedNetworkBehaviorBackgroundPriorityTransferUnlessRoaming:
+		return "CostedNetworkBehaviorBackgroundPriorityTransferUnlessRoaming"
+	case CostedNetworkBehaviorBackgroundPriorityTransferUnlessSurchargeApplies:
+		return "CostedNetworkBehaviorBackgroundPriorityTransferUnlessSurchargeApplies"
+	case CostedNetworkBehaviorBackgroundPriorityTransferUnlessNearingLimit:
+		return "CostedNetworkBehaviorBackgroundPriorityTransferUnlessNearingLimit"
+	case CostedNetworkBehaviorBackgroundPriorityTransferOnlyIfUnconstrained:
+		return "CostedNetworkBehaviorBackgroundPriorityTransferOnlyIfUnconstrained"
+	default:
+		return fmt.Sprintf("CostedNetworkBehaviorBackgroundPriorityValue(%d)", int64(e))
+	}
+}
+
+// CostedNetworkBehaviorForegroundPriorityValue — allowed values for the CostedNetworkBehaviorForegroundPriority node.
+type CostedNetworkBehaviorForegroundPriorityValue int64
+
+const (
+	// Always transfer
+	CostedNetworkBehaviorForegroundPriorityAlwaysTransfer CostedNetworkBehaviorForegroundPriorityValue = 1
+	// Transfer unless roaming
+	CostedNetworkBehaviorForegroundPriorityTransferUnlessRoaming CostedNetworkBehaviorForegroundPriorityValue = 2
+	// Transfer unless surcharge applies (when not roaming or over cap)
+	CostedNetworkBehaviorForegroundPriorityTransferUnlessSurchargeApplies CostedNetworkBehaviorForegroundPriorityValue = 3
+	// Transfer unless nearing limit (when not roaming or nearing cap)
+	CostedNetworkBehaviorForegroundPriorityTransferUnlessNearingLimit CostedNetworkBehaviorForegroundPriorityValue = 4
+	// Transfer only if unconstrained
+	CostedNetworkBehaviorForegroundPriorityTransferOnlyIfUnconstrained CostedNetworkBehaviorForegroundPriorityValue = 5
+)
+
+// String returns the CostedNetworkBehaviorForegroundPriorityValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e CostedNetworkBehaviorForegroundPriorityValue) String() string {
+	switch e {
+	case CostedNetworkBehaviorForegroundPriorityAlwaysTransfer:
+		return "CostedNetworkBehaviorForegroundPriorityAlwaysTransfer"
+	case CostedNetworkBehaviorForegroundPriorityTransferUnlessRoaming:
+		return "CostedNetworkBehaviorForegroundPriorityTransferUnlessRoaming"
+	case CostedNetworkBehaviorForegroundPriorityTransferUnlessSurchargeApplies:
+		return "CostedNetworkBehaviorForegroundPriorityTransferUnlessSurchargeApplies"
+	case CostedNetworkBehaviorForegroundPriorityTransferUnlessNearingLimit:
+		return "CostedNetworkBehaviorForegroundPriorityTransferUnlessNearingLimit"
+	case CostedNetworkBehaviorForegroundPriorityTransferOnlyIfUnconstrained:
+		return "CostedNetworkBehaviorForegroundPriorityTransferOnlyIfUnconstrained"
+	default:
+		return fmt.Sprintf("CostedNetworkBehaviorForegroundPriorityValue(%d)", int64(e))
+	}
+}

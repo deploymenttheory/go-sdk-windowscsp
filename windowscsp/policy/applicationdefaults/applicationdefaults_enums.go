@@ -2,10 +2,29 @@
 
 package applicationdefaults
 
-// EnableAppUriHandlers allowed values.
+import (
+	"fmt"
+)
+
+// EnableAppUriHandlersValue — allowed values for the EnableAppUriHandlers node.
+type EnableAppUriHandlersValue int64
+
 const (
 	// Disabled.
-	EnableAppUriHandlersDisabled int64 = 0
+	EnableAppUriHandlersDisabled EnableAppUriHandlersValue = 0
 	// Enabled.
-	EnableAppUriHandlersEnabled int64 = 1
+	EnableAppUriHandlersEnabled EnableAppUriHandlersValue = 1
 )
+
+// String returns the EnableAppUriHandlersValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableAppUriHandlersValue) String() string {
+	switch e {
+	case EnableAppUriHandlersDisabled:
+		return "EnableAppUriHandlersDisabled"
+	case EnableAppUriHandlersEnabled:
+		return "EnableAppUriHandlersEnabled"
+	default:
+		return fmt.Sprintf("EnableAppUriHandlersValue(%d)", int64(e))
+	}
+}

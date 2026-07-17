@@ -2,106 +2,284 @@
 
 package humanpresence
 
-// ForceAllowDimWhenExternalDisplayConnected allowed values.
-const (
-	// ForcedUnchecked.
-	ForceAllowDimWhenExternalDisplayConnectedForcedUnchecked int64 = 2
-	// ForcedChecked.
-	ForceAllowDimWhenExternalDisplayConnectedForcedChecked int64 = 1
-	// DefaultToUserChoice.
-	ForceAllowDimWhenExternalDisplayConnectedDefaultToUserChoice int64 = 0
+import (
+	"fmt"
 )
 
-// ForceAllowLockWhenExternalDisplayConnected allowed values.
+// ForceAllowDimWhenExternalDisplayConnectedValue — allowed values for the ForceAllowDimWhenExternalDisplayConnected node.
+type ForceAllowDimWhenExternalDisplayConnectedValue int64
+
 const (
 	// ForcedUnchecked.
-	ForceAllowLockWhenExternalDisplayConnectedForcedUnchecked int64 = 2
+	ForceAllowDimWhenExternalDisplayConnectedForcedUnchecked ForceAllowDimWhenExternalDisplayConnectedValue = 2
 	// ForcedChecked.
-	ForceAllowLockWhenExternalDisplayConnectedForcedChecked int64 = 1
+	ForceAllowDimWhenExternalDisplayConnectedForcedChecked ForceAllowDimWhenExternalDisplayConnectedValue = 1
 	// DefaultToUserChoice.
-	ForceAllowLockWhenExternalDisplayConnectedDefaultToUserChoice int64 = 0
+	ForceAllowDimWhenExternalDisplayConnectedDefaultToUserChoice ForceAllowDimWhenExternalDisplayConnectedValue = 0
 )
 
-// ForceAllowWakeWhenExternalDisplayConnected allowed values.
+// String returns the ForceAllowDimWhenExternalDisplayConnectedValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ForceAllowDimWhenExternalDisplayConnectedValue) String() string {
+	switch e {
+	case ForceAllowDimWhenExternalDisplayConnectedForcedUnchecked:
+		return "ForceAllowDimWhenExternalDisplayConnectedForcedUnchecked"
+	case ForceAllowDimWhenExternalDisplayConnectedForcedChecked:
+		return "ForceAllowDimWhenExternalDisplayConnectedForcedChecked"
+	case ForceAllowDimWhenExternalDisplayConnectedDefaultToUserChoice:
+		return "ForceAllowDimWhenExternalDisplayConnectedDefaultToUserChoice"
+	default:
+		return fmt.Sprintf("ForceAllowDimWhenExternalDisplayConnectedValue(%d)", int64(e))
+	}
+}
+
+// ForceAllowLockWhenExternalDisplayConnectedValue — allowed values for the ForceAllowLockWhenExternalDisplayConnected node.
+type ForceAllowLockWhenExternalDisplayConnectedValue int64
+
 const (
 	// ForcedUnchecked.
-	ForceAllowWakeWhenExternalDisplayConnectedForcedUnchecked int64 = 2
+	ForceAllowLockWhenExternalDisplayConnectedForcedUnchecked ForceAllowLockWhenExternalDisplayConnectedValue = 2
 	// ForcedChecked.
-	ForceAllowWakeWhenExternalDisplayConnectedForcedChecked int64 = 1
+	ForceAllowLockWhenExternalDisplayConnectedForcedChecked ForceAllowLockWhenExternalDisplayConnectedValue = 1
 	// DefaultToUserChoice.
-	ForceAllowWakeWhenExternalDisplayConnectedDefaultToUserChoice int64 = 0
+	ForceAllowLockWhenExternalDisplayConnectedDefaultToUserChoice ForceAllowLockWhenExternalDisplayConnectedValue = 0
 )
 
-// ForceDisableWakeWhenBatterySaverOn allowed values.
+// String returns the ForceAllowLockWhenExternalDisplayConnectedValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ForceAllowLockWhenExternalDisplayConnectedValue) String() string {
+	switch e {
+	case ForceAllowLockWhenExternalDisplayConnectedForcedUnchecked:
+		return "ForceAllowLockWhenExternalDisplayConnectedForcedUnchecked"
+	case ForceAllowLockWhenExternalDisplayConnectedForcedChecked:
+		return "ForceAllowLockWhenExternalDisplayConnectedForcedChecked"
+	case ForceAllowLockWhenExternalDisplayConnectedDefaultToUserChoice:
+		return "ForceAllowLockWhenExternalDisplayConnectedDefaultToUserChoice"
+	default:
+		return fmt.Sprintf("ForceAllowLockWhenExternalDisplayConnectedValue(%d)", int64(e))
+	}
+}
+
+// ForceAllowWakeWhenExternalDisplayConnectedValue — allowed values for the ForceAllowWakeWhenExternalDisplayConnected node.
+type ForceAllowWakeWhenExternalDisplayConnectedValue int64
+
 const (
 	// ForcedUnchecked.
-	ForceDisableWakeWhenBatterySaverOnForcedUnchecked int64 = 2
+	ForceAllowWakeWhenExternalDisplayConnectedForcedUnchecked ForceAllowWakeWhenExternalDisplayConnectedValue = 2
 	// ForcedChecked.
-	ForceDisableWakeWhenBatterySaverOnForcedChecked int64 = 1
+	ForceAllowWakeWhenExternalDisplayConnectedForcedChecked ForceAllowWakeWhenExternalDisplayConnectedValue = 1
 	// DefaultToUserChoice.
-	ForceDisableWakeWhenBatterySaverOnDefaultToUserChoice int64 = 0
+	ForceAllowWakeWhenExternalDisplayConnectedDefaultToUserChoice ForceAllowWakeWhenExternalDisplayConnectedValue = 0
 )
 
-// ForceInstantDim allowed values.
+// String returns the ForceAllowWakeWhenExternalDisplayConnectedValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ForceAllowWakeWhenExternalDisplayConnectedValue) String() string {
+	switch e {
+	case ForceAllowWakeWhenExternalDisplayConnectedForcedUnchecked:
+		return "ForceAllowWakeWhenExternalDisplayConnectedForcedUnchecked"
+	case ForceAllowWakeWhenExternalDisplayConnectedForcedChecked:
+		return "ForceAllowWakeWhenExternalDisplayConnectedForcedChecked"
+	case ForceAllowWakeWhenExternalDisplayConnectedDefaultToUserChoice:
+		return "ForceAllowWakeWhenExternalDisplayConnectedDefaultToUserChoice"
+	default:
+		return fmt.Sprintf("ForceAllowWakeWhenExternalDisplayConnectedValue(%d)", int64(e))
+	}
+}
+
+// ForceDisableWakeWhenBatterySaverOnValue — allowed values for the ForceDisableWakeWhenBatterySaverOn node.
+type ForceDisableWakeWhenBatterySaverOnValue int64
+
+const (
+	// ForcedUnchecked.
+	ForceDisableWakeWhenBatterySaverOnForcedUnchecked ForceDisableWakeWhenBatterySaverOnValue = 2
+	// ForcedChecked.
+	ForceDisableWakeWhenBatterySaverOnForcedChecked ForceDisableWakeWhenBatterySaverOnValue = 1
+	// DefaultToUserChoice.
+	ForceDisableWakeWhenBatterySaverOnDefaultToUserChoice ForceDisableWakeWhenBatterySaverOnValue = 0
+)
+
+// String returns the ForceDisableWakeWhenBatterySaverOnValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ForceDisableWakeWhenBatterySaverOnValue) String() string {
+	switch e {
+	case ForceDisableWakeWhenBatterySaverOnForcedUnchecked:
+		return "ForceDisableWakeWhenBatterySaverOnForcedUnchecked"
+	case ForceDisableWakeWhenBatterySaverOnForcedChecked:
+		return "ForceDisableWakeWhenBatterySaverOnForcedChecked"
+	case ForceDisableWakeWhenBatterySaverOnDefaultToUserChoice:
+		return "ForceDisableWakeWhenBatterySaverOnDefaultToUserChoice"
+	default:
+		return fmt.Sprintf("ForceDisableWakeWhenBatterySaverOnValue(%d)", int64(e))
+	}
+}
+
+// ForceInstantDimValue — allowed values for the ForceInstantDim node.
+type ForceInstantDimValue int64
+
 const (
 	// ForcedOff.
-	ForceInstantDimForcedOff int64 = 2
+	ForceInstantDimForcedOff ForceInstantDimValue = 2
 	// ForcedOn.
-	ForceInstantDimForcedOn int64 = 1
+	ForceInstantDimForcedOn ForceInstantDimValue = 1
 	// DefaultToUserChoice.
-	ForceInstantDimDefaultToUserChoice int64 = 0
+	ForceInstantDimDefaultToUserChoice ForceInstantDimValue = 0
 )
 
-// ForceInstantLock allowed values.
+// String returns the ForceInstantDimValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ForceInstantDimValue) String() string {
+	switch e {
+	case ForceInstantDimForcedOff:
+		return "ForceInstantDimForcedOff"
+	case ForceInstantDimForcedOn:
+		return "ForceInstantDimForcedOn"
+	case ForceInstantDimDefaultToUserChoice:
+		return "ForceInstantDimDefaultToUserChoice"
+	default:
+		return fmt.Sprintf("ForceInstantDimValue(%d)", int64(e))
+	}
+}
+
+// ForceInstantLockValue — allowed values for the ForceInstantLock node.
+type ForceInstantLockValue int64
+
 const (
 	// ForcedOff.
-	ForceInstantLockForcedOff int64 = 2
+	ForceInstantLockForcedOff ForceInstantLockValue = 2
 	// ForcedOn.
-	ForceInstantLockForcedOn int64 = 1
+	ForceInstantLockForcedOn ForceInstantLockValue = 1
 	// DefaultToUserChoice.
-	ForceInstantLockDefaultToUserChoice int64 = 0
+	ForceInstantLockDefaultToUserChoice ForceInstantLockValue = 0
 )
 
-// ForceInstantWake allowed values.
+// String returns the ForceInstantLockValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ForceInstantLockValue) String() string {
+	switch e {
+	case ForceInstantLockForcedOff:
+		return "ForceInstantLockForcedOff"
+	case ForceInstantLockForcedOn:
+		return "ForceInstantLockForcedOn"
+	case ForceInstantLockDefaultToUserChoice:
+		return "ForceInstantLockDefaultToUserChoice"
+	default:
+		return fmt.Sprintf("ForceInstantLockValue(%d)", int64(e))
+	}
+}
+
+// ForceInstantWakeValue — allowed values for the ForceInstantWake node.
+type ForceInstantWakeValue int64
+
 const (
 	// ForcedOff.
-	ForceInstantWakeForcedOff int64 = 2
+	ForceInstantWakeForcedOff ForceInstantWakeValue = 2
 	// ForcedOn.
-	ForceInstantWakeForcedOn int64 = 1
+	ForceInstantWakeForcedOn ForceInstantWakeValue = 1
 	// DefaultToUserChoice.
-	ForceInstantWakeDefaultToUserChoice int64 = 0
+	ForceInstantWakeDefaultToUserChoice ForceInstantWakeValue = 0
 )
 
-// ForceLockTimeout allowed values.
+// String returns the ForceInstantWakeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ForceInstantWakeValue) String() string {
+	switch e {
+	case ForceInstantWakeForcedOff:
+		return "ForceInstantWakeForcedOff"
+	case ForceInstantWakeForcedOn:
+		return "ForceInstantWakeForcedOn"
+	case ForceInstantWakeDefaultToUserChoice:
+		return "ForceInstantWakeDefaultToUserChoice"
+	default:
+		return fmt.Sprintf("ForceInstantWakeValue(%d)", int64(e))
+	}
+}
+
+// ForceLockTimeoutValue — allowed values for the ForceLockTimeout node.
+type ForceLockTimeoutValue int64
+
 const (
 	// TwoMinutes
-	ForceLockTimeoutTwoMinutes int64 = 120
+	ForceLockTimeoutTwoMinutes ForceLockTimeoutValue = 120
 	// ThirtySeconds.
-	ForceLockTimeoutThirtySeconds int64 = 30
+	ForceLockTimeoutThirtySeconds ForceLockTimeoutValue = 30
 	// TenSeconds.
-	ForceLockTimeoutTenSeconds int64 = 10
+	ForceLockTimeoutTenSeconds ForceLockTimeoutValue = 10
 	// Immediate.
-	ForceLockTimeoutImmediate int64 = 1
+	ForceLockTimeoutImmediate ForceLockTimeoutValue = 1
 	// DefaultToUserChoice.
-	ForceLockTimeoutDefaultToUserChoice int64 = 0
+	ForceLockTimeoutDefaultToUserChoice ForceLockTimeoutValue = 0
 )
 
-// ForceOnlookerDetection allowed values.
+// String returns the ForceLockTimeoutValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ForceLockTimeoutValue) String() string {
+	switch e {
+	case ForceLockTimeoutTwoMinutes:
+		return "ForceLockTimeoutTwoMinutes"
+	case ForceLockTimeoutThirtySeconds:
+		return "ForceLockTimeoutThirtySeconds"
+	case ForceLockTimeoutTenSeconds:
+		return "ForceLockTimeoutTenSeconds"
+	case ForceLockTimeoutImmediate:
+		return "ForceLockTimeoutImmediate"
+	case ForceLockTimeoutDefaultToUserChoice:
+		return "ForceLockTimeoutDefaultToUserChoice"
+	default:
+		return fmt.Sprintf("ForceLockTimeoutValue(%d)", int64(e))
+	}
+}
+
+// ForceOnlookerDetectionValue — allowed values for the ForceOnlookerDetection node.
+type ForceOnlookerDetectionValue int64
+
 const (
 	// ForcedOff.
-	ForceOnlookerDetectionForcedOff int64 = 2
+	ForceOnlookerDetectionForcedOff ForceOnlookerDetectionValue = 2
 	// ForcedOn.
-	ForceOnlookerDetectionForcedOn int64 = 1
+	ForceOnlookerDetectionForcedOn ForceOnlookerDetectionValue = 1
 	// DefaultToUserChoice.
-	ForceOnlookerDetectionDefaultToUserChoice int64 = 0
+	ForceOnlookerDetectionDefaultToUserChoice ForceOnlookerDetectionValue = 0
 )
 
-// ForceOnlookerDetectionAction allowed values.
+// String returns the ForceOnlookerDetectionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ForceOnlookerDetectionValue) String() string {
+	switch e {
+	case ForceOnlookerDetectionForcedOff:
+		return "ForceOnlookerDetectionForcedOff"
+	case ForceOnlookerDetectionForcedOn:
+		return "ForceOnlookerDetectionForcedOn"
+	case ForceOnlookerDetectionDefaultToUserChoice:
+		return "ForceOnlookerDetectionDefaultToUserChoice"
+	default:
+		return fmt.Sprintf("ForceOnlookerDetectionValue(%d)", int64(e))
+	}
+}
+
+// ForceOnlookerDetectionActionValue — allowed values for the ForceOnlookerDetectionAction node.
+type ForceOnlookerDetectionActionValue int64
+
 const (
 	// ForcedDimAndNotify.
-	ForceOnlookerDetectionActionForcedDimAndNotify int64 = 3
+	ForceOnlookerDetectionActionForcedDimAndNotify ForceOnlookerDetectionActionValue = 3
 	// ForcedNotify.
-	ForceOnlookerDetectionActionForcedNotify int64 = 2
+	ForceOnlookerDetectionActionForcedNotify ForceOnlookerDetectionActionValue = 2
 	// DefaultToUserChoice.
-	ForceOnlookerDetectionActionDefaultToUserChoice int64 = 0
+	ForceOnlookerDetectionActionDefaultToUserChoice ForceOnlookerDetectionActionValue = 0
 )
+
+// String returns the ForceOnlookerDetectionActionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ForceOnlookerDetectionActionValue) String() string {
+	switch e {
+	case ForceOnlookerDetectionActionForcedDimAndNotify:
+		return "ForceOnlookerDetectionActionForcedDimAndNotify"
+	case ForceOnlookerDetectionActionForcedNotify:
+		return "ForceOnlookerDetectionActionForcedNotify"
+	case ForceOnlookerDetectionActionDefaultToUserChoice:
+		return "ForceOnlookerDetectionActionDefaultToUserChoice"
+	default:
+		return fmt.Sprintf("ForceOnlookerDetectionActionValue(%d)", int64(e))
+	}
+}

@@ -2,83 +2,216 @@
 
 package dmclient
 
-// ProviderProviderIDConfigLockLock allowed values.
+import (
+	"fmt"
+)
+
+// ProviderProviderIDConfigLockLockValue — allowed values for the Lock node.
+type ProviderProviderIDConfigLockLockValue int64
+
 const (
 	// Unlock
-	ProviderProviderIDConfigLockLockUnlock int64 = 0
+	ProviderProviderIDConfigLockLockUnlock ProviderProviderIDConfigLockLockValue = 0
 	// Lock
-	ProviderProviderIDConfigLockLockLock int64 = 1
+	ProviderProviderIDConfigLockLockLock ProviderProviderIDConfigLockLockValue = 1
 )
 
-// ProviderProviderIDEnhancedAppLayerSecuritySecurityMode allowed values.
+// String returns the ProviderProviderIDConfigLockLockValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ProviderProviderIDConfigLockLockValue) String() string {
+	switch e {
+	case ProviderProviderIDConfigLockLockUnlock:
+		return "ProviderProviderIDConfigLockLockUnlock"
+	case ProviderProviderIDConfigLockLockLock:
+		return "ProviderProviderIDConfigLockLockLock"
+	default:
+		return fmt.Sprintf("ProviderProviderIDConfigLockLockValue(%d)", int64(e))
+	}
+}
+
+// ProviderProviderIDEnhancedAppLayerSecuritySecurityModeValue — allowed values for the SecurityMode node.
+type ProviderProviderIDEnhancedAppLayerSecuritySecurityModeValue int64
+
 const (
 	// no op
-	ProviderProviderIDEnhancedAppLayerSecuritySecurityModeNoOp int64 = 0
+	ProviderProviderIDEnhancedAppLayerSecuritySecurityModeNoOp ProviderProviderIDEnhancedAppLayerSecuritySecurityModeValue = 0
 	// sign only
-	ProviderProviderIDEnhancedAppLayerSecuritySecurityModeSignOnly int64 = 1
+	ProviderProviderIDEnhancedAppLayerSecuritySecurityModeSignOnly ProviderProviderIDEnhancedAppLayerSecuritySecurityModeValue = 1
 	// encrypt only
-	ProviderProviderIDEnhancedAppLayerSecuritySecurityModeEncryptOnly int64 = 2
+	ProviderProviderIDEnhancedAppLayerSecuritySecurityModeEncryptOnly ProviderProviderIDEnhancedAppLayerSecuritySecurityModeValue = 2
 	// sign and encrypt
-	ProviderProviderIDEnhancedAppLayerSecuritySecurityModeSignAndEncrypt int64 = 3
+	ProviderProviderIDEnhancedAppLayerSecuritySecurityModeSignAndEncrypt ProviderProviderIDEnhancedAppLayerSecuritySecurityModeValue = 3
 )
 
-// ProviderProviderIDFirstSyncStatusBlockInStatusPage allowed values.
+// String returns the ProviderProviderIDEnhancedAppLayerSecuritySecurityModeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ProviderProviderIDEnhancedAppLayerSecuritySecurityModeValue) String() string {
+	switch e {
+	case ProviderProviderIDEnhancedAppLayerSecuritySecurityModeNoOp:
+		return "ProviderProviderIDEnhancedAppLayerSecuritySecurityModeNoOp"
+	case ProviderProviderIDEnhancedAppLayerSecuritySecurityModeSignOnly:
+		return "ProviderProviderIDEnhancedAppLayerSecuritySecurityModeSignOnly"
+	case ProviderProviderIDEnhancedAppLayerSecuritySecurityModeEncryptOnly:
+		return "ProviderProviderIDEnhancedAppLayerSecuritySecurityModeEncryptOnly"
+	case ProviderProviderIDEnhancedAppLayerSecuritySecurityModeSignAndEncrypt:
+		return "ProviderProviderIDEnhancedAppLayerSecuritySecurityModeSignAndEncrypt"
+	default:
+		return fmt.Sprintf("ProviderProviderIDEnhancedAppLayerSecuritySecurityModeValue(%d)", int64(e))
+	}
+}
+
+// ProviderProviderIDFirstSyncStatusBlockInStatusPageValue — allowed values for the BlockInStatusPage node.
+type ProviderProviderIDFirstSyncStatusBlockInStatusPageValue int64
+
 const (
 	// Allow the user to exit the page before provisioning completes.
-	ProviderProviderIDFirstSyncStatusBlockInStatusPageAllowTheUserToExitThe int64 = 0
+	ProviderProviderIDFirstSyncStatusBlockInStatusPageAllowTheUserToExitThe ProviderProviderIDFirstSyncStatusBlockInStatusPageValue = 0
 	// Block the user on the page and show the Reset PC button on failure.
-	ProviderProviderIDFirstSyncStatusBlockInStatusPageBlockTheUserOnThePage int64 = 1
+	ProviderProviderIDFirstSyncStatusBlockInStatusPageBlockTheUserOnThePage ProviderProviderIDFirstSyncStatusBlockInStatusPageValue = 1
 	// Block the user on the page and show the Try Again button on failure.
-	ProviderProviderIDFirstSyncStatusBlockInStatusPageBlockTheUserOnThePage2 int64 = 2
+	ProviderProviderIDFirstSyncStatusBlockInStatusPageBlockTheUserOnThePage2 ProviderProviderIDFirstSyncStatusBlockInStatusPageValue = 2
 	// Block the user on the page and show the Continue Anyway button on failure.
-	ProviderProviderIDFirstSyncStatusBlockInStatusPageBlockTheUserOnThePage3 int64 = 4
+	ProviderProviderIDFirstSyncStatusBlockInStatusPageBlockTheUserOnThePage3 ProviderProviderIDFirstSyncStatusBlockInStatusPageValue = 4
 )
 
-// ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisioned allowed values.
+// String returns the ProviderProviderIDFirstSyncStatusBlockInStatusPageValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ProviderProviderIDFirstSyncStatusBlockInStatusPageValue) String() string {
+	switch e {
+	case ProviderProviderIDFirstSyncStatusBlockInStatusPageAllowTheUserToExitThe:
+		return "ProviderProviderIDFirstSyncStatusBlockInStatusPageAllowTheUserToExitThe"
+	case ProviderProviderIDFirstSyncStatusBlockInStatusPageBlockTheUserOnThePage:
+		return "ProviderProviderIDFirstSyncStatusBlockInStatusPageBlockTheUserOnThePage"
+	case ProviderProviderIDFirstSyncStatusBlockInStatusPageBlockTheUserOnThePage2:
+		return "ProviderProviderIDFirstSyncStatusBlockInStatusPageBlockTheUserOnThePage2"
+	case ProviderProviderIDFirstSyncStatusBlockInStatusPageBlockTheUserOnThePage3:
+		return "ProviderProviderIDFirstSyncStatusBlockInStatusPageBlockTheUserOnThePage3"
+	default:
+		return fmt.Sprintf("ProviderProviderIDFirstSyncStatusBlockInStatusPageValue(%d)", int64(e))
+	}
+}
+
+// ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedValue — allowed values for the WasDeviceSuccessfullyProvisioned node.
+type ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedValue int64
+
 const (
 	// The device has failed to provision the device
-	ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedTheDeviceHasFailedToProvision int64 = 0
+	ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedTheDeviceHasFailedToProvision ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedValue = 0
 	// The device has successfully provisioned the device.
-	ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedTheDeviceHasSuccessfullyProvisionedThe int64 = 1
+	ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedTheDeviceHasSuccessfullyProvisionedThe ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedValue = 1
 	// Provisioning is in progress.
-	ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedProvisioningIsInProgress int64 = 2
+	ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedProvisioningIsInProgress ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedValue = 2
 )
 
-// ProviderProviderIDLinkedEnrollmentEnrollStatus allowed values.
+// String returns the ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedValue) String() string {
+	switch e {
+	case ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedTheDeviceHasFailedToProvision:
+		return "ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedTheDeviceHasFailedToProvision"
+	case ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedTheDeviceHasSuccessfullyProvisionedThe:
+		return "ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedTheDeviceHasSuccessfullyProvisionedThe"
+	case ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedProvisioningIsInProgress:
+		return "ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedProvisioningIsInProgress"
+	default:
+		return fmt.Sprintf("ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedValue(%d)", int64(e))
+	}
+}
+
+// ProviderProviderIDLinkedEnrollmentEnrollStatusValue — allowed values for the EnrollStatus node.
+type ProviderProviderIDLinkedEnrollmentEnrollStatusValue int64
+
 const (
 	// Undefined
-	ProviderProviderIDLinkedEnrollmentEnrollStatusUndefined int64 = 0
+	ProviderProviderIDLinkedEnrollmentEnrollStatusUndefined ProviderProviderIDLinkedEnrollmentEnrollStatusValue = 0
 	// Enrollment Not started.
-	ProviderProviderIDLinkedEnrollmentEnrollStatusEnrollmentNotStarted int64 = 1
+	ProviderProviderIDLinkedEnrollmentEnrollStatusEnrollmentNotStarted ProviderProviderIDLinkedEnrollmentEnrollStatusValue = 1
 	// Enrollment In Progress.
-	ProviderProviderIDLinkedEnrollmentEnrollStatusEnrollmentInProgress int64 = 2
+	ProviderProviderIDLinkedEnrollmentEnrollStatusEnrollmentInProgress ProviderProviderIDLinkedEnrollmentEnrollStatusValue = 2
 	// Enrollment Failed.
-	ProviderProviderIDLinkedEnrollmentEnrollStatusEnrollmentFailed int64 = 3
+	ProviderProviderIDLinkedEnrollmentEnrollStatusEnrollmentFailed ProviderProviderIDLinkedEnrollmentEnrollStatusValue = 3
 	// Enrollment Succeeded.
-	ProviderProviderIDLinkedEnrollmentEnrollStatusEnrollmentSucceeded int64 = 4
+	ProviderProviderIDLinkedEnrollmentEnrollStatusEnrollmentSucceeded ProviderProviderIDLinkedEnrollmentEnrollStatusValue = 4
 	// Unenrollment Not started.
-	ProviderProviderIDLinkedEnrollmentEnrollStatusUnenrollmentNotStarted int64 = 5
+	ProviderProviderIDLinkedEnrollmentEnrollStatusUnenrollmentNotStarted ProviderProviderIDLinkedEnrollmentEnrollStatusValue = 5
 	// UnEnrollment In Progress.
-	ProviderProviderIDLinkedEnrollmentEnrollStatusUnEnrollmentInProgress int64 = 6
+	ProviderProviderIDLinkedEnrollmentEnrollStatusUnEnrollmentInProgress ProviderProviderIDLinkedEnrollmentEnrollStatusValue = 6
 	// UnEnrollment Failed.
-	ProviderProviderIDLinkedEnrollmentEnrollStatusUnEnrollmentFailed int64 = 7
+	ProviderProviderIDLinkedEnrollmentEnrollStatusUnEnrollmentFailed ProviderProviderIDLinkedEnrollmentEnrollStatusValue = 7
 	// UnEnrollment Succeeded.
-	ProviderProviderIDLinkedEnrollmentEnrollStatusUnEnrollmentSucceeded int64 = 8
+	ProviderProviderIDLinkedEnrollmentEnrollStatusUnEnrollmentSucceeded ProviderProviderIDLinkedEnrollmentEnrollStatusValue = 8
 )
 
-// ProviderProviderIDRecoveryAllowRecovery allowed values.
+// String returns the ProviderProviderIDLinkedEnrollmentEnrollStatusValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ProviderProviderIDLinkedEnrollmentEnrollStatusValue) String() string {
+	switch e {
+	case ProviderProviderIDLinkedEnrollmentEnrollStatusUndefined:
+		return "ProviderProviderIDLinkedEnrollmentEnrollStatusUndefined"
+	case ProviderProviderIDLinkedEnrollmentEnrollStatusEnrollmentNotStarted:
+		return "ProviderProviderIDLinkedEnrollmentEnrollStatusEnrollmentNotStarted"
+	case ProviderProviderIDLinkedEnrollmentEnrollStatusEnrollmentInProgress:
+		return "ProviderProviderIDLinkedEnrollmentEnrollStatusEnrollmentInProgress"
+	case ProviderProviderIDLinkedEnrollmentEnrollStatusEnrollmentFailed:
+		return "ProviderProviderIDLinkedEnrollmentEnrollStatusEnrollmentFailed"
+	case ProviderProviderIDLinkedEnrollmentEnrollStatusEnrollmentSucceeded:
+		return "ProviderProviderIDLinkedEnrollmentEnrollStatusEnrollmentSucceeded"
+	case ProviderProviderIDLinkedEnrollmentEnrollStatusUnenrollmentNotStarted:
+		return "ProviderProviderIDLinkedEnrollmentEnrollStatusUnenrollmentNotStarted"
+	case ProviderProviderIDLinkedEnrollmentEnrollStatusUnEnrollmentInProgress:
+		return "ProviderProviderIDLinkedEnrollmentEnrollStatusUnEnrollmentInProgress"
+	case ProviderProviderIDLinkedEnrollmentEnrollStatusUnEnrollmentFailed:
+		return "ProviderProviderIDLinkedEnrollmentEnrollStatusUnEnrollmentFailed"
+	case ProviderProviderIDLinkedEnrollmentEnrollStatusUnEnrollmentSucceeded:
+		return "ProviderProviderIDLinkedEnrollmentEnrollStatusUnEnrollmentSucceeded"
+	default:
+		return fmt.Sprintf("ProviderProviderIDLinkedEnrollmentEnrollStatusValue(%d)", int64(e))
+	}
+}
+
+// ProviderProviderIDRecoveryAllowRecoveryValue — allowed values for the AllowRecovery node.
+type ProviderProviderIDRecoveryAllowRecoveryValue int64
+
 const (
 	// MDM Recovery is allowed.
-	ProviderProviderIDRecoveryAllowRecoveryMDMRecoveryIsAllowed int64 = 1
+	ProviderProviderIDRecoveryAllowRecoveryMDMRecoveryIsAllowed ProviderProviderIDRecoveryAllowRecoveryValue = 1
 	// MDM Recovery is not allowed.
-	ProviderProviderIDRecoveryAllowRecoveryMDMRecoveryIsNotAllowed int64 = 0
+	ProviderProviderIDRecoveryAllowRecoveryMDMRecoveryIsNotAllowed ProviderProviderIDRecoveryAllowRecoveryValue = 0
 )
 
-// ProviderProviderIDRecoveryInitiateRecovery allowed values.
+// String returns the ProviderProviderIDRecoveryAllowRecoveryValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ProviderProviderIDRecoveryAllowRecoveryValue) String() string {
+	switch e {
+	case ProviderProviderIDRecoveryAllowRecoveryMDMRecoveryIsAllowed:
+		return "ProviderProviderIDRecoveryAllowRecoveryMDMRecoveryIsAllowed"
+	case ProviderProviderIDRecoveryAllowRecoveryMDMRecoveryIsNotAllowed:
+		return "ProviderProviderIDRecoveryAllowRecoveryMDMRecoveryIsNotAllowed"
+	default:
+		return fmt.Sprintf("ProviderProviderIDRecoveryAllowRecoveryValue(%d)", int64(e))
+	}
+}
+
+// ProviderProviderIDRecoveryInitiateRecoveryValue — allowed values for the InitiateRecovery node.
+type ProviderProviderIDRecoveryInitiateRecoveryValue int64
+
 const (
 	// Initiate MDM Recovery
-	ProviderProviderIDRecoveryInitiateRecoveryInitiateMDMRecovery int64 = 0
+	ProviderProviderIDRecoveryInitiateRecoveryInitiateMDMRecovery ProviderProviderIDRecoveryInitiateRecoveryValue = 0
 	// Initiate Recovery if Keys are not already protected by the TPM, there is a TPM to put the keys
 	// into, AAD keys are protected by TPM, and the TPM is ready for attestation.
-	ProviderProviderIDRecoveryInitiateRecoveryInitiateRecoveryIfKeysAreNot int64 = 1
+	ProviderProviderIDRecoveryInitiateRecoveryInitiateRecoveryIfKeysAreNot ProviderProviderIDRecoveryInitiateRecoveryValue = 1
 )
+
+// String returns the ProviderProviderIDRecoveryInitiateRecoveryValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ProviderProviderIDRecoveryInitiateRecoveryValue) String() string {
+	switch e {
+	case ProviderProviderIDRecoveryInitiateRecoveryInitiateMDMRecovery:
+		return "ProviderProviderIDRecoveryInitiateRecoveryInitiateMDMRecovery"
+	case ProviderProviderIDRecoveryInitiateRecoveryInitiateRecoveryIfKeysAreNot:
+		return "ProviderProviderIDRecoveryInitiateRecoveryInitiateRecoveryIfKeysAreNot"
+	default:
+		return fmt.Sprintf("ProviderProviderIDRecoveryInitiateRecoveryValue(%d)", int64(e))
+	}
+}

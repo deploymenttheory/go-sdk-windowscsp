@@ -13,12 +13,13 @@ import (
 // Application Guard.
 //
 // Default: 0.
-func (s *WindowsDefenderApplicationGuard) GetAuditAuditApplicationGuard(ctx context.Context) (int64, error) {
+func (s *WindowsDefenderApplicationGuard) GetAuditAuditApplicationGuard(ctx context.Context) (AuditAuditApplicationGuardValue, error) {
 	v, err := s.c.Get(ctx, URIAuditAuditApplicationGuard)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AuditAuditApplicationGuardValue(n), err
 }
 
 // CreateAuditAuditApplicationGuard creates ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/Audit/AuditApplicationGuard.
@@ -26,8 +27,8 @@ func (s *WindowsDefenderApplicationGuard) GetAuditAuditApplicationGuard(ctx cont
 // Application Guard.
 //
 // Default: 0.
-func (s *WindowsDefenderApplicationGuard) CreateAuditAuditApplicationGuard(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAuditAuditApplicationGuard, client.Int(value))
+func (s *WindowsDefenderApplicationGuard) CreateAuditAuditApplicationGuard(ctx context.Context, value AuditAuditApplicationGuardValue) error {
+	return s.c.Add(ctx, URIAuditAuditApplicationGuard, client.Int(int64(value)))
 }
 
 // UpdateAuditAuditApplicationGuard updates ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/Audit/AuditApplicationGuard.
@@ -35,8 +36,8 @@ func (s *WindowsDefenderApplicationGuard) CreateAuditAuditApplicationGuard(ctx c
 // Application Guard.
 //
 // Default: 0.
-func (s *WindowsDefenderApplicationGuard) UpdateAuditAuditApplicationGuard(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAuditAuditApplicationGuard, client.Int(value))
+func (s *WindowsDefenderApplicationGuard) UpdateAuditAuditApplicationGuard(ctx context.Context, value AuditAuditApplicationGuardValue) error {
+	return s.c.Replace(ctx, URIAuditAuditApplicationGuard, client.Int(int64(value)))
 }
 
 // DeleteAuditAuditApplicationGuard deletes ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/Audit/AuditApplicationGuard.
@@ -50,18 +51,18 @@ func (s *WindowsDefenderApplicationGuard) DeleteAuditAuditApplicationGuard(ctx c
 
 // GetInstallWindowsDefenderApplicationGuard reads ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/InstallWindowsDefenderApplicationGuard.
 // Initiates remote installation of Application Guard feature.
-func (s *WindowsDefenderApplicationGuard) GetInstallWindowsDefenderApplicationGuard(ctx context.Context) (string, error) {
+func (s *WindowsDefenderApplicationGuard) GetInstallWindowsDefenderApplicationGuard(ctx context.Context) (InstallWindowsDefenderApplicationGuardValue, error) {
 	v, err := s.c.Get(ctx, URIInstallWindowsDefenderApplicationGuard)
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return InstallWindowsDefenderApplicationGuardValue(v.Str()), nil
 }
 
 // ExecInstallWindowsDefenderApplicationGuard executes ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/InstallWindowsDefenderApplicationGuard.
 // Initiates remote installation of Application Guard feature.
-func (s *WindowsDefenderApplicationGuard) ExecInstallWindowsDefenderApplicationGuard(ctx context.Context, value string) error {
-	return s.c.Exec(ctx, URIInstallWindowsDefenderApplicationGuard, client.Chr(value))
+func (s *WindowsDefenderApplicationGuard) ExecInstallWindowsDefenderApplicationGuard(ctx context.Context, value InstallWindowsDefenderApplicationGuardValue) error {
+	return s.c.Exec(ctx, URIInstallWindowsDefenderApplicationGuard, client.Chr(string(value)))
 }
 
 // GetPlatformStatus reads ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/PlatformStatus.
@@ -92,12 +93,13 @@ func (s *WindowsDefenderApplicationGuard) GetPlatformStatus(ctx context.Context)
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v1.3).
-func (s *WindowsDefenderApplicationGuard) GetSettingsAllowCameraMicrophoneRedirection(ctx context.Context) (int64, error) {
+func (s *WindowsDefenderApplicationGuard) GetSettingsAllowCameraMicrophoneRedirection(ctx context.Context) (SettingsAllowCameraMicrophoneRedirectionValue, error) {
 	v, err := s.c.Get(ctx, URISettingsAllowCameraMicrophoneRedirection)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SettingsAllowCameraMicrophoneRedirectionValue(n), err
 }
 
 // CreateSettingsAllowCameraMicrophoneRedirection creates ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/Settings/AllowCameraMicrophoneRedirection.
@@ -111,8 +113,8 @@ func (s *WindowsDefenderApplicationGuard) GetSettingsAllowCameraMicrophoneRedire
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v1.3).
-func (s *WindowsDefenderApplicationGuard) CreateSettingsAllowCameraMicrophoneRedirection(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISettingsAllowCameraMicrophoneRedirection, client.Int(value))
+func (s *WindowsDefenderApplicationGuard) CreateSettingsAllowCameraMicrophoneRedirection(ctx context.Context, value SettingsAllowCameraMicrophoneRedirectionValue) error {
+	return s.c.Add(ctx, URISettingsAllowCameraMicrophoneRedirection, client.Int(int64(value)))
 }
 
 // UpdateSettingsAllowCameraMicrophoneRedirection updates ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/Settings/AllowCameraMicrophoneRedirection.
@@ -126,8 +128,8 @@ func (s *WindowsDefenderApplicationGuard) CreateSettingsAllowCameraMicrophoneRed
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v1.3).
-func (s *WindowsDefenderApplicationGuard) UpdateSettingsAllowCameraMicrophoneRedirection(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISettingsAllowCameraMicrophoneRedirection, client.Int(value))
+func (s *WindowsDefenderApplicationGuard) UpdateSettingsAllowCameraMicrophoneRedirection(ctx context.Context, value SettingsAllowCameraMicrophoneRedirectionValue) error {
+	return s.c.Replace(ctx, URISettingsAllowCameraMicrophoneRedirection, client.Int(int64(value)))
 }
 
 // DeleteSettingsAllowCameraMicrophoneRedirection deletes ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/Settings/AllowCameraMicrophoneRedirection.
@@ -148,26 +150,27 @@ func (s *WindowsDefenderApplicationGuard) DeleteSettingsAllowCameraMicrophoneRed
 // GetSettingsAllowPersistence reads ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/Settings/AllowPersistence.
 // This policy setting allows you to decide whether data should persist across different sessions
 // in Application Guard.
-func (s *WindowsDefenderApplicationGuard) GetSettingsAllowPersistence(ctx context.Context) (int64, error) {
+func (s *WindowsDefenderApplicationGuard) GetSettingsAllowPersistence(ctx context.Context) (SettingsAllowPersistenceValue, error) {
 	v, err := s.c.Get(ctx, URISettingsAllowPersistence)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SettingsAllowPersistenceValue(n), err
 }
 
 // CreateSettingsAllowPersistence creates ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/Settings/AllowPersistence.
 // This policy setting allows you to decide whether data should persist across different sessions
 // in Application Guard.
-func (s *WindowsDefenderApplicationGuard) CreateSettingsAllowPersistence(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISettingsAllowPersistence, client.Int(value))
+func (s *WindowsDefenderApplicationGuard) CreateSettingsAllowPersistence(ctx context.Context, value SettingsAllowPersistenceValue) error {
+	return s.c.Add(ctx, URISettingsAllowPersistence, client.Int(int64(value)))
 }
 
 // UpdateSettingsAllowPersistence updates ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/Settings/AllowPersistence.
 // This policy setting allows you to decide whether data should persist across different sessions
 // in Application Guard.
-func (s *WindowsDefenderApplicationGuard) UpdateSettingsAllowPersistence(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISettingsAllowPersistence, client.Int(value))
+func (s *WindowsDefenderApplicationGuard) UpdateSettingsAllowPersistence(ctx context.Context, value SettingsAllowPersistenceValue) error {
+	return s.c.Replace(ctx, URISettingsAllowPersistence, client.Int(int64(value)))
 }
 
 // DeleteSettingsAllowPersistence deletes ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/Settings/AllowPersistence.
@@ -189,12 +192,13 @@ func (s *WindowsDefenderApplicationGuard) DeleteSettingsAllowPersistence(ctx con
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v1.2).
-func (s *WindowsDefenderApplicationGuard) GetSettingsAllowVirtualGPU(ctx context.Context) (int64, error) {
+func (s *WindowsDefenderApplicationGuard) GetSettingsAllowVirtualGPU(ctx context.Context) (SettingsAllowVirtualGPUValue, error) {
 	v, err := s.c.Get(ctx, URISettingsAllowVirtualGPU)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SettingsAllowVirtualGPUValue(n), err
 }
 
 // CreateSettingsAllowVirtualGPU creates ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/Settings/AllowVirtualGPU.
@@ -209,8 +213,8 @@ func (s *WindowsDefenderApplicationGuard) GetSettingsAllowVirtualGPU(ctx context
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v1.2).
-func (s *WindowsDefenderApplicationGuard) CreateSettingsAllowVirtualGPU(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISettingsAllowVirtualGPU, client.Int(value))
+func (s *WindowsDefenderApplicationGuard) CreateSettingsAllowVirtualGPU(ctx context.Context, value SettingsAllowVirtualGPUValue) error {
+	return s.c.Add(ctx, URISettingsAllowVirtualGPU, client.Int(int64(value)))
 }
 
 // UpdateSettingsAllowVirtualGPU updates ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/Settings/AllowVirtualGPU.
@@ -225,8 +229,8 @@ func (s *WindowsDefenderApplicationGuard) CreateSettingsAllowVirtualGPU(ctx cont
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v1.2).
-func (s *WindowsDefenderApplicationGuard) UpdateSettingsAllowVirtualGPU(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISettingsAllowVirtualGPU, client.Int(value))
+func (s *WindowsDefenderApplicationGuard) UpdateSettingsAllowVirtualGPU(ctx context.Context, value SettingsAllowVirtualGPUValue) error {
+	return s.c.Replace(ctx, URISettingsAllowVirtualGPU, client.Int(int64(value)))
 }
 
 // DeleteSettingsAllowVirtualGPU deletes ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/Settings/AllowVirtualGPU.
@@ -247,24 +251,25 @@ func (s *WindowsDefenderApplicationGuard) DeleteSettingsAllowVirtualGPU(ctx cont
 
 // GetSettingsAllowWindowsDefenderApplicationGuard reads ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/Settings/AllowWindowsDefenderApplicationGuard.
 // Turn on Microsoft Defender Application Guard in Enterprise Mode.
-func (s *WindowsDefenderApplicationGuard) GetSettingsAllowWindowsDefenderApplicationGuard(ctx context.Context) (int64, error) {
+func (s *WindowsDefenderApplicationGuard) GetSettingsAllowWindowsDefenderApplicationGuard(ctx context.Context) (SettingsAllowWindowsDefenderApplicationGuardValue, error) {
 	v, err := s.c.Get(ctx, URISettingsAllowWindowsDefenderApplicationGuard)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SettingsAllowWindowsDefenderApplicationGuardValue(n), err
 }
 
 // CreateSettingsAllowWindowsDefenderApplicationGuard creates ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/Settings/AllowWindowsDefenderApplicationGuard.
 // Turn on Microsoft Defender Application Guard in Enterprise Mode.
-func (s *WindowsDefenderApplicationGuard) CreateSettingsAllowWindowsDefenderApplicationGuard(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISettingsAllowWindowsDefenderApplicationGuard, client.Int(value))
+func (s *WindowsDefenderApplicationGuard) CreateSettingsAllowWindowsDefenderApplicationGuard(ctx context.Context, value SettingsAllowWindowsDefenderApplicationGuardValue) error {
+	return s.c.Add(ctx, URISettingsAllowWindowsDefenderApplicationGuard, client.Int(int64(value)))
 }
 
 // UpdateSettingsAllowWindowsDefenderApplicationGuard updates ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/Settings/AllowWindowsDefenderApplicationGuard.
 // Turn on Microsoft Defender Application Guard in Enterprise Mode.
-func (s *WindowsDefenderApplicationGuard) UpdateSettingsAllowWindowsDefenderApplicationGuard(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISettingsAllowWindowsDefenderApplicationGuard, client.Int(value))
+func (s *WindowsDefenderApplicationGuard) UpdateSettingsAllowWindowsDefenderApplicationGuard(ctx context.Context, value SettingsAllowWindowsDefenderApplicationGuardValue) error {
+	return s.c.Replace(ctx, URISettingsAllowWindowsDefenderApplicationGuard, client.Int(int64(value)))
 }
 
 // DeleteSettingsAllowWindowsDefenderApplicationGuard deletes ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/Settings/AllowWindowsDefenderApplicationGuard.
@@ -280,12 +285,13 @@ func (s *WindowsDefenderApplicationGuard) DeleteSettingsAllowWindowsDefenderAppl
 // Default: 0.
 //
 // Deprecated: no longer recommended.
-func (s *WindowsDefenderApplicationGuard) GetSettingsBlockNonEnterpriseContent(ctx context.Context) (int64, error) {
+func (s *WindowsDefenderApplicationGuard) GetSettingsBlockNonEnterpriseContent(ctx context.Context) (SettingsBlockNonEnterpriseContentValue, error) {
 	v, err := s.c.Get(ctx, URISettingsBlockNonEnterpriseContent)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SettingsBlockNonEnterpriseContentValue(n), err
 }
 
 // CreateSettingsBlockNonEnterpriseContent creates ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/Settings/BlockNonEnterpriseContent.
@@ -295,8 +301,8 @@ func (s *WindowsDefenderApplicationGuard) GetSettingsBlockNonEnterpriseContent(c
 // Default: 0.
 //
 // Deprecated: no longer recommended.
-func (s *WindowsDefenderApplicationGuard) CreateSettingsBlockNonEnterpriseContent(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISettingsBlockNonEnterpriseContent, client.Int(value))
+func (s *WindowsDefenderApplicationGuard) CreateSettingsBlockNonEnterpriseContent(ctx context.Context, value SettingsBlockNonEnterpriseContentValue) error {
+	return s.c.Add(ctx, URISettingsBlockNonEnterpriseContent, client.Int(int64(value)))
 }
 
 // UpdateSettingsBlockNonEnterpriseContent updates ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/Settings/BlockNonEnterpriseContent.
@@ -306,8 +312,8 @@ func (s *WindowsDefenderApplicationGuard) CreateSettingsBlockNonEnterpriseConten
 // Default: 0.
 //
 // Deprecated: no longer recommended.
-func (s *WindowsDefenderApplicationGuard) UpdateSettingsBlockNonEnterpriseContent(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISettingsBlockNonEnterpriseContent, client.Int(value))
+func (s *WindowsDefenderApplicationGuard) UpdateSettingsBlockNonEnterpriseContent(ctx context.Context, value SettingsBlockNonEnterpriseContentValue) error {
+	return s.c.Replace(ctx, URISettingsBlockNonEnterpriseContent, client.Int(int64(value)))
 }
 
 // DeleteSettingsBlockNonEnterpriseContent deletes ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/Settings/BlockNonEnterpriseContent.
@@ -388,26 +394,27 @@ func (s *WindowsDefenderApplicationGuard) DeleteSettingsCertificateThumbprints(c
 // GetSettingsClipboardFileType reads ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/Settings/ClipboardFileType.
 // Determines the type of content that can be copied from the host to Application Guard environment
 // and vice versa.
-func (s *WindowsDefenderApplicationGuard) GetSettingsClipboardFileType(ctx context.Context) (int64, error) {
+func (s *WindowsDefenderApplicationGuard) GetSettingsClipboardFileType(ctx context.Context) (SettingsClipboardFileTypeValue, error) {
 	v, err := s.c.Get(ctx, URISettingsClipboardFileType)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SettingsClipboardFileTypeValue(n), err
 }
 
 // CreateSettingsClipboardFileType creates ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/Settings/ClipboardFileType.
 // Determines the type of content that can be copied from the host to Application Guard environment
 // and vice versa.
-func (s *WindowsDefenderApplicationGuard) CreateSettingsClipboardFileType(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISettingsClipboardFileType, client.Int(value))
+func (s *WindowsDefenderApplicationGuard) CreateSettingsClipboardFileType(ctx context.Context, value SettingsClipboardFileTypeValue) error {
+	return s.c.Add(ctx, URISettingsClipboardFileType, client.Int(int64(value)))
 }
 
 // UpdateSettingsClipboardFileType updates ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/Settings/ClipboardFileType.
 // Determines the type of content that can be copied from the host to Application Guard environment
 // and vice versa.
-func (s *WindowsDefenderApplicationGuard) UpdateSettingsClipboardFileType(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISettingsClipboardFileType, client.Int(value))
+func (s *WindowsDefenderApplicationGuard) UpdateSettingsClipboardFileType(ctx context.Context, value SettingsClipboardFileTypeValue) error {
+	return s.c.Replace(ctx, URISettingsClipboardFileType, client.Int(int64(value)))
 }
 
 // DeleteSettingsClipboardFileType deletes ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/Settings/ClipboardFileType.
@@ -421,28 +428,29 @@ func (s *WindowsDefenderApplicationGuard) DeleteSettingsClipboardFileType(ctx co
 // This policy setting allows you to decide how the clipboard behaves while in Application Guard.
 //
 // Default: 0.
-func (s *WindowsDefenderApplicationGuard) GetSettingsClipboardSettings(ctx context.Context) (int64, error) {
+func (s *WindowsDefenderApplicationGuard) GetSettingsClipboardSettings(ctx context.Context) (SettingsClipboardSettingsValue, error) {
 	v, err := s.c.Get(ctx, URISettingsClipboardSettings)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SettingsClipboardSettingsValue(n), err
 }
 
 // CreateSettingsClipboardSettings creates ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/Settings/ClipboardSettings.
 // This policy setting allows you to decide how the clipboard behaves while in Application Guard.
 //
 // Default: 0.
-func (s *WindowsDefenderApplicationGuard) CreateSettingsClipboardSettings(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISettingsClipboardSettings, client.Int(value))
+func (s *WindowsDefenderApplicationGuard) CreateSettingsClipboardSettings(ctx context.Context, value SettingsClipboardSettingsValue) error {
+	return s.c.Add(ctx, URISettingsClipboardSettings, client.Int(int64(value)))
 }
 
 // UpdateSettingsClipboardSettings updates ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/Settings/ClipboardSettings.
 // This policy setting allows you to decide how the clipboard behaves while in Application Guard.
 //
 // Default: 0.
-func (s *WindowsDefenderApplicationGuard) UpdateSettingsClipboardSettings(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISettingsClipboardSettings, client.Int(value))
+func (s *WindowsDefenderApplicationGuard) UpdateSettingsClipboardSettings(ctx context.Context, value SettingsClipboardSettingsValue) error {
+	return s.c.Replace(ctx, URISettingsClipboardSettings, client.Int(int64(value)))
 }
 
 // DeleteSettingsClipboardSettings deletes ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/Settings/ClipboardSettings.
@@ -458,12 +466,13 @@ func (s *WindowsDefenderApplicationGuard) DeleteSettingsClipboardSettings(ctx co
 // Application Guard.
 //
 // Default: 0.
-func (s *WindowsDefenderApplicationGuard) GetSettingsPrintingSettings(ctx context.Context) (int64, error) {
+func (s *WindowsDefenderApplicationGuard) GetSettingsPrintingSettings(ctx context.Context) (SettingsPrintingSettingsValue, error) {
 	v, err := s.c.Get(ctx, URISettingsPrintingSettings)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SettingsPrintingSettingsValue(n), err
 }
 
 // CreateSettingsPrintingSettings creates ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/Settings/PrintingSettings.
@@ -471,8 +480,8 @@ func (s *WindowsDefenderApplicationGuard) GetSettingsPrintingSettings(ctx contex
 // Application Guard.
 //
 // Default: 0.
-func (s *WindowsDefenderApplicationGuard) CreateSettingsPrintingSettings(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISettingsPrintingSettings, client.Int(value))
+func (s *WindowsDefenderApplicationGuard) CreateSettingsPrintingSettings(ctx context.Context, value SettingsPrintingSettingsValue) error {
+	return s.c.Add(ctx, URISettingsPrintingSettings, client.Int(int64(value)))
 }
 
 // UpdateSettingsPrintingSettings updates ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/Settings/PrintingSettings.
@@ -480,8 +489,8 @@ func (s *WindowsDefenderApplicationGuard) CreateSettingsPrintingSettings(ctx con
 // Application Guard.
 //
 // Default: 0.
-func (s *WindowsDefenderApplicationGuard) UpdateSettingsPrintingSettings(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISettingsPrintingSettings, client.Int(value))
+func (s *WindowsDefenderApplicationGuard) UpdateSettingsPrintingSettings(ctx context.Context, value SettingsPrintingSettingsValue) error {
+	return s.c.Replace(ctx, URISettingsPrintingSettings, client.Int(int64(value)))
 }
 
 // DeleteSettingsPrintingSettings deletes ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/Settings/PrintingSettings.
@@ -499,12 +508,13 @@ func (s *WindowsDefenderApplicationGuard) DeleteSettingsPrintingSettings(ctx con
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v1.2).
-func (s *WindowsDefenderApplicationGuard) GetSettingsSaveFilesToHost(ctx context.Context) (int64, error) {
+func (s *WindowsDefenderApplicationGuard) GetSettingsSaveFilesToHost(ctx context.Context) (SettingsSaveFilesToHostValue, error) {
 	v, err := s.c.Get(ctx, URISettingsSaveFilesToHost)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SettingsSaveFilesToHostValue(n), err
 }
 
 // CreateSettingsSaveFilesToHost creates ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/Settings/SaveFilesToHost.
@@ -513,8 +523,8 @@ func (s *WindowsDefenderApplicationGuard) GetSettingsSaveFilesToHost(ctx context
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v1.2).
-func (s *WindowsDefenderApplicationGuard) CreateSettingsSaveFilesToHost(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISettingsSaveFilesToHost, client.Int(value))
+func (s *WindowsDefenderApplicationGuard) CreateSettingsSaveFilesToHost(ctx context.Context, value SettingsSaveFilesToHostValue) error {
+	return s.c.Add(ctx, URISettingsSaveFilesToHost, client.Int(int64(value)))
 }
 
 // UpdateSettingsSaveFilesToHost updates ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/Settings/SaveFilesToHost.
@@ -523,8 +533,8 @@ func (s *WindowsDefenderApplicationGuard) CreateSettingsSaveFilesToHost(ctx cont
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v1.2).
-func (s *WindowsDefenderApplicationGuard) UpdateSettingsSaveFilesToHost(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISettingsSaveFilesToHost, client.Int(value))
+func (s *WindowsDefenderApplicationGuard) UpdateSettingsSaveFilesToHost(ctx context.Context, value SettingsSaveFilesToHostValue) error {
+	return s.c.Replace(ctx, URISettingsSaveFilesToHost, client.Int(int64(value)))
 }
 
 // DeleteSettingsSaveFilesToHost deletes ./Device/Vendor/MSFT/WindowsDefenderApplicationGuard/Settings/SaveFilesToHost.

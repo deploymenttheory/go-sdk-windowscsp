@@ -26,12 +26,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *ApplicationManagementUser) GetMSIAlwaysInstallWithElevatedPrivileges(ctx context.Context) (int64, error) {
+func (s *ApplicationManagementUser) GetMSIAlwaysInstallWithElevatedPrivileges(ctx context.Context) (MSIAlwaysInstallWithElevatedPrivilegesValue, error) {
 	v, err := s.c.Get(ctx, URIMSIAlwaysInstallWithElevatedPrivileges)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MSIAlwaysInstallWithElevatedPrivilegesValue(n), err
 }
 
 // CreateMSIAlwaysInstallWithElevatedPrivileges creates ./User/Vendor/MSFT/Policy/Config/ApplicationManagement/MSIAlwaysInstallWithElevatedPrivileges.
@@ -52,8 +53,8 @@ func (s *ApplicationManagementUser) GetMSIAlwaysInstallWithElevatedPrivileges(ct
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *ApplicationManagementUser) CreateMSIAlwaysInstallWithElevatedPrivileges(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIMSIAlwaysInstallWithElevatedPrivileges, client.Int(value))
+func (s *ApplicationManagementUser) CreateMSIAlwaysInstallWithElevatedPrivileges(ctx context.Context, value MSIAlwaysInstallWithElevatedPrivilegesValue) error {
+	return s.c.Add(ctx, URIMSIAlwaysInstallWithElevatedPrivileges, client.Int(int64(value)))
 }
 
 // UpdateMSIAlwaysInstallWithElevatedPrivileges updates ./User/Vendor/MSFT/Policy/Config/ApplicationManagement/MSIAlwaysInstallWithElevatedPrivileges.
@@ -74,8 +75,8 @@ func (s *ApplicationManagementUser) CreateMSIAlwaysInstallWithElevatedPrivileges
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *ApplicationManagementUser) UpdateMSIAlwaysInstallWithElevatedPrivileges(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIMSIAlwaysInstallWithElevatedPrivileges, client.Int(value))
+func (s *ApplicationManagementUser) UpdateMSIAlwaysInstallWithElevatedPrivileges(ctx context.Context, value MSIAlwaysInstallWithElevatedPrivilegesValue) error {
+	return s.c.Replace(ctx, URIMSIAlwaysInstallWithElevatedPrivileges, client.Int(int64(value)))
 }
 
 // DeleteMSIAlwaysInstallWithElevatedPrivileges deletes ./User/Vendor/MSFT/Policy/Config/ApplicationManagement/MSIAlwaysInstallWithElevatedPrivileges.
@@ -106,12 +107,13 @@ func (s *ApplicationManagementUser) DeleteMSIAlwaysInstallWithElevatedPrivileges
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *ApplicationManagementUser) GetRequirePrivateStoreOnly(ctx context.Context) (int64, error) {
+func (s *ApplicationManagementUser) GetRequirePrivateStoreOnly(ctx context.Context) (RequirePrivateStoreOnlyValue, error) {
 	v, err := s.c.Get(ctx, URIRequirePrivateStoreOnly)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return RequirePrivateStoreOnlyValue(n), err
 }
 
 // CreateRequirePrivateStoreOnly creates ./User/Vendor/MSFT/Policy/Config/ApplicationManagement/RequirePrivateStoreOnly.
@@ -120,8 +122,8 @@ func (s *ApplicationManagementUser) GetRequirePrivateStoreOnly(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *ApplicationManagementUser) CreateRequirePrivateStoreOnly(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIRequirePrivateStoreOnly, client.Int(value))
+func (s *ApplicationManagementUser) CreateRequirePrivateStoreOnly(ctx context.Context, value RequirePrivateStoreOnlyValue) error {
+	return s.c.Add(ctx, URIRequirePrivateStoreOnly, client.Int(int64(value)))
 }
 
 // UpdateRequirePrivateStoreOnly updates ./User/Vendor/MSFT/Policy/Config/ApplicationManagement/RequirePrivateStoreOnly.
@@ -130,8 +132,8 @@ func (s *ApplicationManagementUser) CreateRequirePrivateStoreOnly(ctx context.Co
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *ApplicationManagementUser) UpdateRequirePrivateStoreOnly(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIRequirePrivateStoreOnly, client.Int(value))
+func (s *ApplicationManagementUser) UpdateRequirePrivateStoreOnly(ctx context.Context, value RequirePrivateStoreOnlyValue) error {
+	return s.c.Replace(ctx, URIRequirePrivateStoreOnly, client.Int(int64(value)))
 }
 
 // DeleteRequirePrivateStoreOnly deletes ./User/Vendor/MSFT/Policy/Config/ApplicationManagement/RequirePrivateStoreOnly.

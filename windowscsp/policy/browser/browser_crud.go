@@ -15,12 +15,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Browser) GetAllowAddressBarDropdown(ctx context.Context) (int64, error) {
+func (s *Browser) GetAllowAddressBarDropdown(ctx context.Context) (AllowAddressBarDropdownValue, error) {
 	v, err := s.c.Get(ctx, URIAllowAddressBarDropdown)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowAddressBarDropdownValue(n), err
 }
 
 // CreateAllowAddressBarDropdown creates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowAddressBarDropdown.
@@ -30,8 +31,8 @@ func (s *Browser) GetAllowAddressBarDropdown(ctx context.Context) (int64, error)
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Browser) CreateAllowAddressBarDropdown(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowAddressBarDropdown, client.Int(value))
+func (s *Browser) CreateAllowAddressBarDropdown(ctx context.Context, value AllowAddressBarDropdownValue) error {
+	return s.c.Add(ctx, URIAllowAddressBarDropdown, client.Int(int64(value)))
 }
 
 // UpdateAllowAddressBarDropdown updates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowAddressBarDropdown.
@@ -41,8 +42,8 @@ func (s *Browser) CreateAllowAddressBarDropdown(ctx context.Context, value int64
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Browser) UpdateAllowAddressBarDropdown(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowAddressBarDropdown, client.Int(value))
+func (s *Browser) UpdateAllowAddressBarDropdown(ctx context.Context, value AllowAddressBarDropdownValue) error {
+	return s.c.Replace(ctx, URIAllowAddressBarDropdown, client.Int(int64(value)))
 }
 
 // DeleteAllowAddressBarDropdown deletes ./Device/Vendor/MSFT/Policy/Config/Browser/AllowAddressBarDropdown.
@@ -62,12 +63,13 @@ func (s *Browser) DeleteAllowAddressBarDropdown(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Browser) GetAllowAutofill(ctx context.Context) (int64, error) {
+func (s *Browser) GetAllowAutofill(ctx context.Context) (AllowAutofillValue, error) {
 	v, err := s.c.Get(ctx, URIAllowAutofill)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowAutofillValue(n), err
 }
 
 // CreateAllowAutofill creates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowAutofill.
@@ -76,8 +78,8 @@ func (s *Browser) GetAllowAutofill(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Browser) CreateAllowAutofill(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowAutofill, client.Int(value))
+func (s *Browser) CreateAllowAutofill(ctx context.Context, value AllowAutofillValue) error {
+	return s.c.Add(ctx, URIAllowAutofill, client.Int(int64(value)))
 }
 
 // UpdateAllowAutofill updates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowAutofill.
@@ -86,8 +88,8 @@ func (s *Browser) CreateAllowAutofill(ctx context.Context, value int64) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Browser) UpdateAllowAutofill(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowAutofill, client.Int(value))
+func (s *Browser) UpdateAllowAutofill(ctx context.Context, value AllowAutofillValue) error {
+	return s.c.Replace(ctx, URIAllowAutofill, client.Int(int64(value)))
 }
 
 // DeleteAllowAutofill deletes ./Device/Vendor/MSFT/Policy/Config/Browser/AllowAutofill.
@@ -107,12 +109,13 @@ func (s *Browser) DeleteAllowAutofill(ctx context.Context) error {
 // Supported from OS build 10.0.10240 (CSP v1.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Browser) GetAllowBrowser(ctx context.Context) (int64, error) {
+func (s *Browser) GetAllowBrowser(ctx context.Context) (AllowBrowserValue, error) {
 	v, err := s.c.Get(ctx, URIAllowBrowser)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowBrowserValue(n), err
 }
 
 // CreateAllowBrowser creates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowBrowser.
@@ -122,8 +125,8 @@ func (s *Browser) GetAllowBrowser(ctx context.Context) (int64, error) {
 // Supported from OS build 10.0.10240 (CSP v1.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Browser) CreateAllowBrowser(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowBrowser, client.Int(value))
+func (s *Browser) CreateAllowBrowser(ctx context.Context, value AllowBrowserValue) error {
+	return s.c.Add(ctx, URIAllowBrowser, client.Int(int64(value)))
 }
 
 // UpdateAllowBrowser updates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowBrowser.
@@ -133,8 +136,8 @@ func (s *Browser) CreateAllowBrowser(ctx context.Context, value int64) error {
 // Supported from OS build 10.0.10240 (CSP v1.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Browser) UpdateAllowBrowser(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowBrowser, client.Int(value))
+func (s *Browser) UpdateAllowBrowser(ctx context.Context, value AllowBrowserValue) error {
+	return s.c.Replace(ctx, URIAllowBrowser, client.Int(int64(value)))
 }
 
 // DeleteAllowBrowser deletes ./Device/Vendor/MSFT/Policy/Config/Browser/AllowBrowser.
@@ -154,12 +157,13 @@ func (s *Browser) DeleteAllowBrowser(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Browser) GetAllowConfigurationUpdateForBooksLibrary(ctx context.Context) (int64, error) {
+func (s *Browser) GetAllowConfigurationUpdateForBooksLibrary(ctx context.Context) (AllowConfigurationUpdateForBooksLibraryValue, error) {
 	v, err := s.c.Get(ctx, URIAllowConfigurationUpdateForBooksLibrary)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowConfigurationUpdateForBooksLibraryValue(n), err
 }
 
 // CreateAllowConfigurationUpdateForBooksLibrary creates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowConfigurationUpdateForBooksLibrary.
@@ -168,8 +172,8 @@ func (s *Browser) GetAllowConfigurationUpdateForBooksLibrary(ctx context.Context
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Browser) CreateAllowConfigurationUpdateForBooksLibrary(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowConfigurationUpdateForBooksLibrary, client.Int(value))
+func (s *Browser) CreateAllowConfigurationUpdateForBooksLibrary(ctx context.Context, value AllowConfigurationUpdateForBooksLibraryValue) error {
+	return s.c.Add(ctx, URIAllowConfigurationUpdateForBooksLibrary, client.Int(int64(value)))
 }
 
 // UpdateAllowConfigurationUpdateForBooksLibrary updates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowConfigurationUpdateForBooksLibrary.
@@ -178,8 +182,8 @@ func (s *Browser) CreateAllowConfigurationUpdateForBooksLibrary(ctx context.Cont
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Browser) UpdateAllowConfigurationUpdateForBooksLibrary(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowConfigurationUpdateForBooksLibrary, client.Int(value))
+func (s *Browser) UpdateAllowConfigurationUpdateForBooksLibrary(ctx context.Context, value AllowConfigurationUpdateForBooksLibraryValue) error {
+	return s.c.Replace(ctx, URIAllowConfigurationUpdateForBooksLibrary, client.Int(int64(value)))
 }
 
 // DeleteAllowConfigurationUpdateForBooksLibrary deletes ./Device/Vendor/MSFT/Policy/Config/Browser/AllowConfigurationUpdateForBooksLibrary.
@@ -197,12 +201,13 @@ func (s *Browser) DeleteAllowConfigurationUpdateForBooksLibrary(ctx context.Cont
 //
 // Default: 2.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Browser) GetAllowCookies(ctx context.Context) (int64, error) {
+func (s *Browser) GetAllowCookies(ctx context.Context) (AllowCookiesValue, error) {
 	v, err := s.c.Get(ctx, URIAllowCookies)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowCookiesValue(n), err
 }
 
 // CreateAllowCookies creates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowCookies.
@@ -210,8 +215,8 @@ func (s *Browser) GetAllowCookies(ctx context.Context) (int64, error) {
 //
 // Default: 2.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Browser) CreateAllowCookies(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowCookies, client.Int(value))
+func (s *Browser) CreateAllowCookies(ctx context.Context, value AllowCookiesValue) error {
+	return s.c.Add(ctx, URIAllowCookies, client.Int(int64(value)))
 }
 
 // UpdateAllowCookies updates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowCookies.
@@ -219,8 +224,8 @@ func (s *Browser) CreateAllowCookies(ctx context.Context, value int64) error {
 //
 // Default: 2.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Browser) UpdateAllowCookies(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowCookies, client.Int(value))
+func (s *Browser) UpdateAllowCookies(ctx context.Context, value AllowCookiesValue) error {
+	return s.c.Replace(ctx, URIAllowCookies, client.Int(int64(value)))
 }
 
 // DeleteAllowCookies deletes ./Device/Vendor/MSFT/Policy/Config/Browser/AllowCookies.
@@ -237,12 +242,13 @@ func (s *Browser) DeleteAllowCookies(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10586 (CSP v2.0).
-func (s *Browser) GetAllowDeveloperTools(ctx context.Context) (int64, error) {
+func (s *Browser) GetAllowDeveloperTools(ctx context.Context) (AllowDeveloperToolsValue, error) {
 	v, err := s.c.Get(ctx, URIAllowDeveloperTools)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowDeveloperToolsValue(n), err
 }
 
 // CreateAllowDeveloperTools creates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowDeveloperTools.
@@ -250,8 +256,8 @@ func (s *Browser) GetAllowDeveloperTools(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.10586 (CSP v2.0).
-func (s *Browser) CreateAllowDeveloperTools(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowDeveloperTools, client.Int(value))
+func (s *Browser) CreateAllowDeveloperTools(ctx context.Context, value AllowDeveloperToolsValue) error {
+	return s.c.Add(ctx, URIAllowDeveloperTools, client.Int(int64(value)))
 }
 
 // UpdateAllowDeveloperTools updates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowDeveloperTools.
@@ -259,8 +265,8 @@ func (s *Browser) CreateAllowDeveloperTools(ctx context.Context, value int64) er
 //
 // Default: 1.
 // Supported from OS build 10.0.10586 (CSP v2.0).
-func (s *Browser) UpdateAllowDeveloperTools(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowDeveloperTools, client.Int(value))
+func (s *Browser) UpdateAllowDeveloperTools(ctx context.Context, value AllowDeveloperToolsValue) error {
+	return s.c.Replace(ctx, URIAllowDeveloperTools, client.Int(int64(value)))
 }
 
 // DeleteAllowDeveloperTools deletes ./Device/Vendor/MSFT/Policy/Config/Browser/AllowDeveloperTools.
@@ -278,12 +284,13 @@ func (s *Browser) DeleteAllowDeveloperTools(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Browser) GetAllowDoNotTrack(ctx context.Context) (int64, error) {
+func (s *Browser) GetAllowDoNotTrack(ctx context.Context) (AllowDoNotTrackValue, error) {
 	v, err := s.c.Get(ctx, URIAllowDoNotTrack)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowDoNotTrackValue(n), err
 }
 
 // CreateAllowDoNotTrack creates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowDoNotTrack.
@@ -292,8 +299,8 @@ func (s *Browser) GetAllowDoNotTrack(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Browser) CreateAllowDoNotTrack(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowDoNotTrack, client.Int(value))
+func (s *Browser) CreateAllowDoNotTrack(ctx context.Context, value AllowDoNotTrackValue) error {
+	return s.c.Add(ctx, URIAllowDoNotTrack, client.Int(int64(value)))
 }
 
 // UpdateAllowDoNotTrack updates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowDoNotTrack.
@@ -302,8 +309,8 @@ func (s *Browser) CreateAllowDoNotTrack(ctx context.Context, value int64) error 
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Browser) UpdateAllowDoNotTrack(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowDoNotTrack, client.Int(value))
+func (s *Browser) UpdateAllowDoNotTrack(ctx context.Context, value AllowDoNotTrackValue) error {
+	return s.c.Replace(ctx, URIAllowDoNotTrack, client.Int(int64(value)))
 }
 
 // DeleteAllowDoNotTrack deletes ./Device/Vendor/MSFT/Policy/Config/Browser/AllowDoNotTrack.
@@ -321,12 +328,13 @@ func (s *Browser) DeleteAllowDoNotTrack(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Browser) GetAllowExtensions(ctx context.Context) (int64, error) {
+func (s *Browser) GetAllowExtensions(ctx context.Context) (AllowExtensionsValue, error) {
 	v, err := s.c.Get(ctx, URIAllowExtensions)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowExtensionsValue(n), err
 }
 
 // CreateAllowExtensions creates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowExtensions.
@@ -334,8 +342,8 @@ func (s *Browser) GetAllowExtensions(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Browser) CreateAllowExtensions(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowExtensions, client.Int(value))
+func (s *Browser) CreateAllowExtensions(ctx context.Context, value AllowExtensionsValue) error {
+	return s.c.Add(ctx, URIAllowExtensions, client.Int(int64(value)))
 }
 
 // UpdateAllowExtensions updates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowExtensions.
@@ -343,8 +351,8 @@ func (s *Browser) CreateAllowExtensions(ctx context.Context, value int64) error 
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Browser) UpdateAllowExtensions(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowExtensions, client.Int(value))
+func (s *Browser) UpdateAllowExtensions(ctx context.Context, value AllowExtensionsValue) error {
+	return s.c.Replace(ctx, URIAllowExtensions, client.Int(int64(value)))
 }
 
 // DeleteAllowExtensions deletes ./Device/Vendor/MSFT/Policy/Config/Browser/AllowExtensions.
@@ -361,12 +369,13 @@ func (s *Browser) DeleteAllowExtensions(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Browser) GetAllowFlash(ctx context.Context) (int64, error) {
+func (s *Browser) GetAllowFlash(ctx context.Context) (AllowFlashValue, error) {
 	v, err := s.c.Get(ctx, URIAllowFlash)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowFlashValue(n), err
 }
 
 // CreateAllowFlash creates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowFlash.
@@ -374,8 +383,8 @@ func (s *Browser) GetAllowFlash(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Browser) CreateAllowFlash(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowFlash, client.Int(value))
+func (s *Browser) CreateAllowFlash(ctx context.Context, value AllowFlashValue) error {
+	return s.c.Add(ctx, URIAllowFlash, client.Int(int64(value)))
 }
 
 // UpdateAllowFlash updates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowFlash.
@@ -383,8 +392,8 @@ func (s *Browser) CreateAllowFlash(ctx context.Context, value int64) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Browser) UpdateAllowFlash(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowFlash, client.Int(value))
+func (s *Browser) UpdateAllowFlash(ctx context.Context, value AllowFlashValue) error {
+	return s.c.Replace(ctx, URIAllowFlash, client.Int(int64(value)))
 }
 
 // DeleteAllowFlash deletes ./Device/Vendor/MSFT/Policy/Config/Browser/AllowFlash.
@@ -401,12 +410,13 @@ func (s *Browser) DeleteAllowFlash(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Browser) GetAllowFlashClickToRun(ctx context.Context) (int64, error) {
+func (s *Browser) GetAllowFlashClickToRun(ctx context.Context) (AllowFlashClickToRunValue, error) {
 	v, err := s.c.Get(ctx, URIAllowFlashClickToRun)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowFlashClickToRunValue(n), err
 }
 
 // CreateAllowFlashClickToRun creates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowFlashClickToRun.
@@ -414,8 +424,8 @@ func (s *Browser) GetAllowFlashClickToRun(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Browser) CreateAllowFlashClickToRun(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowFlashClickToRun, client.Int(value))
+func (s *Browser) CreateAllowFlashClickToRun(ctx context.Context, value AllowFlashClickToRunValue) error {
+	return s.c.Add(ctx, URIAllowFlashClickToRun, client.Int(int64(value)))
 }
 
 // UpdateAllowFlashClickToRun updates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowFlashClickToRun.
@@ -423,8 +433,8 @@ func (s *Browser) CreateAllowFlashClickToRun(ctx context.Context, value int64) e
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Browser) UpdateAllowFlashClickToRun(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowFlashClickToRun, client.Int(value))
+func (s *Browser) UpdateAllowFlashClickToRun(ctx context.Context, value AllowFlashClickToRunValue) error {
+	return s.c.Replace(ctx, URIAllowFlashClickToRun, client.Int(int64(value)))
 }
 
 // DeleteAllowFlashClickToRun deletes ./Device/Vendor/MSFT/Policy/Config/Browser/AllowFlashClickToRun.
@@ -444,12 +454,13 @@ func (s *Browser) DeleteAllowFlashClickToRun(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) GetAllowFullScreenMode(ctx context.Context) (int64, error) {
+func (s *Browser) GetAllowFullScreenMode(ctx context.Context) (AllowFullScreenModeValue, error) {
 	v, err := s.c.Get(ctx, URIAllowFullScreenMode)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowFullScreenModeValue(n), err
 }
 
 // CreateAllowFullScreenMode creates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowFullScreenMode.
@@ -460,8 +471,8 @@ func (s *Browser) GetAllowFullScreenMode(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) CreateAllowFullScreenMode(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowFullScreenMode, client.Int(value))
+func (s *Browser) CreateAllowFullScreenMode(ctx context.Context, value AllowFullScreenModeValue) error {
+	return s.c.Add(ctx, URIAllowFullScreenMode, client.Int(int64(value)))
 }
 
 // UpdateAllowFullScreenMode updates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowFullScreenMode.
@@ -472,8 +483,8 @@ func (s *Browser) CreateAllowFullScreenMode(ctx context.Context, value int64) er
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) UpdateAllowFullScreenMode(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowFullScreenMode, client.Int(value))
+func (s *Browser) UpdateAllowFullScreenMode(ctx context.Context, value AllowFullScreenModeValue) error {
+	return s.c.Replace(ctx, URIAllowFullScreenMode, client.Int(int64(value)))
 }
 
 // DeleteAllowFullScreenMode deletes ./Device/Vendor/MSFT/Policy/Config/Browser/AllowFullScreenMode.
@@ -493,12 +504,13 @@ func (s *Browser) DeleteAllowFullScreenMode(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10586 (CSP v2.0).
-func (s *Browser) GetAllowInPrivate(ctx context.Context) (int64, error) {
+func (s *Browser) GetAllowInPrivate(ctx context.Context) (AllowInPrivateValue, error) {
 	v, err := s.c.Get(ctx, URIAllowInPrivate)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowInPrivateValue(n), err
 }
 
 // CreateAllowInPrivate creates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowInPrivate.
@@ -506,8 +518,8 @@ func (s *Browser) GetAllowInPrivate(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.10586 (CSP v2.0).
-func (s *Browser) CreateAllowInPrivate(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowInPrivate, client.Int(value))
+func (s *Browser) CreateAllowInPrivate(ctx context.Context, value AllowInPrivateValue) error {
+	return s.c.Add(ctx, URIAllowInPrivate, client.Int(int64(value)))
 }
 
 // UpdateAllowInPrivate updates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowInPrivate.
@@ -515,8 +527,8 @@ func (s *Browser) CreateAllowInPrivate(ctx context.Context, value int64) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10586 (CSP v2.0).
-func (s *Browser) UpdateAllowInPrivate(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowInPrivate, client.Int(value))
+func (s *Browser) UpdateAllowInPrivate(ctx context.Context, value AllowInPrivateValue) error {
+	return s.c.Replace(ctx, URIAllowInPrivate, client.Int(int64(value)))
 }
 
 // DeleteAllowInPrivate deletes ./Device/Vendor/MSFT/Policy/Config/Browser/AllowInPrivate.
@@ -543,12 +555,13 @@ func (s *Browser) DeleteAllowInPrivate(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Browser) GetAllowMicrosoftCompatibilityList(ctx context.Context) (int64, error) {
+func (s *Browser) GetAllowMicrosoftCompatibilityList(ctx context.Context) (AllowMicrosoftCompatibilityListValue, error) {
 	v, err := s.c.Get(ctx, URIAllowMicrosoftCompatibilityList)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowMicrosoftCompatibilityListValue(n), err
 }
 
 // CreateAllowMicrosoftCompatibilityList creates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowMicrosoftCompatibilityList.
@@ -566,8 +579,8 @@ func (s *Browser) GetAllowMicrosoftCompatibilityList(ctx context.Context) (int64
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Browser) CreateAllowMicrosoftCompatibilityList(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowMicrosoftCompatibilityList, client.Int(value))
+func (s *Browser) CreateAllowMicrosoftCompatibilityList(ctx context.Context, value AllowMicrosoftCompatibilityListValue) error {
+	return s.c.Add(ctx, URIAllowMicrosoftCompatibilityList, client.Int(int64(value)))
 }
 
 // UpdateAllowMicrosoftCompatibilityList updates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowMicrosoftCompatibilityList.
@@ -585,8 +598,8 @@ func (s *Browser) CreateAllowMicrosoftCompatibilityList(ctx context.Context, val
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Browser) UpdateAllowMicrosoftCompatibilityList(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowMicrosoftCompatibilityList, client.Int(value))
+func (s *Browser) UpdateAllowMicrosoftCompatibilityList(ctx context.Context, value AllowMicrosoftCompatibilityListValue) error {
+	return s.c.Replace(ctx, URIAllowMicrosoftCompatibilityList, client.Int(int64(value)))
 }
 
 // DeleteAllowMicrosoftCompatibilityList deletes ./Device/Vendor/MSFT/Policy/Config/Browser/AllowMicrosoftCompatibilityList.
@@ -614,12 +627,13 @@ func (s *Browser) DeleteAllowMicrosoftCompatibilityList(ctx context.Context) err
 //
 // Default: 1.
 // Supported from OS build 10.0.10586 (CSP v2.0).
-func (s *Browser) GetAllowPasswordManager(ctx context.Context) (int64, error) {
+func (s *Browser) GetAllowPasswordManager(ctx context.Context) (AllowPasswordManagerValue, error) {
 	v, err := s.c.Get(ctx, URIAllowPasswordManager)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowPasswordManagerValue(n), err
 }
 
 // CreateAllowPasswordManager creates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowPasswordManager.
@@ -628,8 +642,8 @@ func (s *Browser) GetAllowPasswordManager(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.10586 (CSP v2.0).
-func (s *Browser) CreateAllowPasswordManager(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowPasswordManager, client.Int(value))
+func (s *Browser) CreateAllowPasswordManager(ctx context.Context, value AllowPasswordManagerValue) error {
+	return s.c.Add(ctx, URIAllowPasswordManager, client.Int(int64(value)))
 }
 
 // UpdateAllowPasswordManager updates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowPasswordManager.
@@ -638,8 +652,8 @@ func (s *Browser) CreateAllowPasswordManager(ctx context.Context, value int64) e
 //
 // Default: 1.
 // Supported from OS build 10.0.10586 (CSP v2.0).
-func (s *Browser) UpdateAllowPasswordManager(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowPasswordManager, client.Int(value))
+func (s *Browser) UpdateAllowPasswordManager(ctx context.Context, value AllowPasswordManagerValue) error {
+	return s.c.Replace(ctx, URIAllowPasswordManager, client.Int(int64(value)))
 }
 
 // DeleteAllowPasswordManager deletes ./Device/Vendor/MSFT/Policy/Config/Browser/AllowPasswordManager.
@@ -658,12 +672,13 @@ func (s *Browser) DeleteAllowPasswordManager(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Browser) GetAllowPopups(ctx context.Context) (int64, error) {
+func (s *Browser) GetAllowPopups(ctx context.Context) (AllowPopupsValue, error) {
 	v, err := s.c.Get(ctx, URIAllowPopups)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowPopupsValue(n), err
 }
 
 // CreateAllowPopups creates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowPopups.
@@ -672,8 +687,8 @@ func (s *Browser) GetAllowPopups(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Browser) CreateAllowPopups(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowPopups, client.Int(value))
+func (s *Browser) CreateAllowPopups(ctx context.Context, value AllowPopupsValue) error {
+	return s.c.Add(ctx, URIAllowPopups, client.Int(int64(value)))
 }
 
 // UpdateAllowPopups updates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowPopups.
@@ -682,8 +697,8 @@ func (s *Browser) CreateAllowPopups(ctx context.Context, value int64) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Browser) UpdateAllowPopups(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowPopups, client.Int(value))
+func (s *Browser) UpdateAllowPopups(ctx context.Context, value AllowPopupsValue) error {
+	return s.c.Replace(ctx, URIAllowPopups, client.Int(int64(value)))
 }
 
 // DeleteAllowPopups deletes ./Device/Vendor/MSFT/Policy/Config/Browser/AllowPopups.
@@ -702,12 +717,13 @@ func (s *Browser) DeleteAllowPopups(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) GetAllowPrelaunch(ctx context.Context) (int64, error) {
+func (s *Browser) GetAllowPrelaunch(ctx context.Context) (AllowPrelaunchValue, error) {
 	v, err := s.c.Get(ctx, URIAllowPrelaunch)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowPrelaunchValue(n), err
 }
 
 // CreateAllowPrelaunch creates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowPrelaunch.
@@ -716,8 +732,8 @@ func (s *Browser) GetAllowPrelaunch(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) CreateAllowPrelaunch(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowPrelaunch, client.Int(value))
+func (s *Browser) CreateAllowPrelaunch(ctx context.Context, value AllowPrelaunchValue) error {
+	return s.c.Add(ctx, URIAllowPrelaunch, client.Int(int64(value)))
 }
 
 // UpdateAllowPrelaunch updates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowPrelaunch.
@@ -726,8 +742,8 @@ func (s *Browser) CreateAllowPrelaunch(ctx context.Context, value int64) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) UpdateAllowPrelaunch(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowPrelaunch, client.Int(value))
+func (s *Browser) UpdateAllowPrelaunch(ctx context.Context, value AllowPrelaunchValue) error {
+	return s.c.Replace(ctx, URIAllowPrelaunch, client.Int(int64(value)))
 }
 
 // DeleteAllowPrelaunch deletes ./Device/Vendor/MSFT/Policy/Config/Browser/AllowPrelaunch.
@@ -746,12 +762,13 @@ func (s *Browser) DeleteAllowPrelaunch(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) GetAllowPrinting(ctx context.Context) (int64, error) {
+func (s *Browser) GetAllowPrinting(ctx context.Context) (AllowPrintingValue, error) {
 	v, err := s.c.Get(ctx, URIAllowPrinting)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowPrintingValue(n), err
 }
 
 // CreateAllowPrinting creates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowPrinting.
@@ -760,8 +777,8 @@ func (s *Browser) GetAllowPrinting(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) CreateAllowPrinting(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowPrinting, client.Int(value))
+func (s *Browser) CreateAllowPrinting(ctx context.Context, value AllowPrintingValue) error {
+	return s.c.Add(ctx, URIAllowPrinting, client.Int(int64(value)))
 }
 
 // UpdateAllowPrinting updates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowPrinting.
@@ -770,8 +787,8 @@ func (s *Browser) CreateAllowPrinting(ctx context.Context, value int64) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) UpdateAllowPrinting(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowPrinting, client.Int(value))
+func (s *Browser) UpdateAllowPrinting(ctx context.Context, value AllowPrintingValue) error {
+	return s.c.Replace(ctx, URIAllowPrinting, client.Int(int64(value)))
 }
 
 // DeleteAllowPrinting deletes ./Device/Vendor/MSFT/Policy/Config/Browser/AllowPrinting.
@@ -794,12 +811,13 @@ func (s *Browser) DeleteAllowPrinting(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) GetAllowSavingHistory(ctx context.Context) (int64, error) {
+func (s *Browser) GetAllowSavingHistory(ctx context.Context) (AllowSavingHistoryValue, error) {
 	v, err := s.c.Get(ctx, URIAllowSavingHistory)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowSavingHistoryValue(n), err
 }
 
 // CreateAllowSavingHistory creates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowSavingHistory.
@@ -812,8 +830,8 @@ func (s *Browser) GetAllowSavingHistory(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) CreateAllowSavingHistory(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowSavingHistory, client.Int(value))
+func (s *Browser) CreateAllowSavingHistory(ctx context.Context, value AllowSavingHistoryValue) error {
+	return s.c.Add(ctx, URIAllowSavingHistory, client.Int(int64(value)))
 }
 
 // UpdateAllowSavingHistory updates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowSavingHistory.
@@ -826,8 +844,8 @@ func (s *Browser) CreateAllowSavingHistory(ctx context.Context, value int64) err
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) UpdateAllowSavingHistory(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowSavingHistory, client.Int(value))
+func (s *Browser) UpdateAllowSavingHistory(ctx context.Context, value AllowSavingHistoryValue) error {
+	return s.c.Replace(ctx, URIAllowSavingHistory, client.Int(int64(value)))
 }
 
 // DeleteAllowSavingHistory deletes ./Device/Vendor/MSFT/Policy/Config/Browser/AllowSavingHistory.
@@ -854,12 +872,13 @@ func (s *Browser) DeleteAllowSavingHistory(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Browser) GetAllowSearchEngineCustomization(ctx context.Context) (int64, error) {
+func (s *Browser) GetAllowSearchEngineCustomization(ctx context.Context) (AllowSearchEngineCustomizationValue, error) {
 	v, err := s.c.Get(ctx, URIAllowSearchEngineCustomization)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowSearchEngineCustomizationValue(n), err
 }
 
 // CreateAllowSearchEngineCustomization creates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowSearchEngineCustomization.
@@ -872,8 +891,8 @@ func (s *Browser) GetAllowSearchEngineCustomization(ctx context.Context) (int64,
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Browser) CreateAllowSearchEngineCustomization(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowSearchEngineCustomization, client.Int(value))
+func (s *Browser) CreateAllowSearchEngineCustomization(ctx context.Context, value AllowSearchEngineCustomizationValue) error {
+	return s.c.Add(ctx, URIAllowSearchEngineCustomization, client.Int(int64(value)))
 }
 
 // UpdateAllowSearchEngineCustomization updates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowSearchEngineCustomization.
@@ -886,8 +905,8 @@ func (s *Browser) CreateAllowSearchEngineCustomization(ctx context.Context, valu
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Browser) UpdateAllowSearchEngineCustomization(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowSearchEngineCustomization, client.Int(value))
+func (s *Browser) UpdateAllowSearchEngineCustomization(ctx context.Context, value AllowSearchEngineCustomizationValue) error {
+	return s.c.Replace(ctx, URIAllowSearchEngineCustomization, client.Int(int64(value)))
 }
 
 // DeleteAllowSearchEngineCustomization deletes ./Device/Vendor/MSFT/Policy/Config/Browser/AllowSearchEngineCustomization.
@@ -910,12 +929,13 @@ func (s *Browser) DeleteAllowSearchEngineCustomization(ctx context.Context) erro
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Browser) GetAllowSearchSuggestionsinAddressBar(ctx context.Context) (int64, error) {
+func (s *Browser) GetAllowSearchSuggestionsinAddressBar(ctx context.Context) (AllowSearchSuggestionsinAddressBarValue, error) {
 	v, err := s.c.Get(ctx, URIAllowSearchSuggestionsinAddressBar)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowSearchSuggestionsinAddressBarValue(n), err
 }
 
 // CreateAllowSearchSuggestionsinAddressBar creates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowSearchSuggestionsinAddressBar.
@@ -924,8 +944,8 @@ func (s *Browser) GetAllowSearchSuggestionsinAddressBar(ctx context.Context) (in
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Browser) CreateAllowSearchSuggestionsinAddressBar(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowSearchSuggestionsinAddressBar, client.Int(value))
+func (s *Browser) CreateAllowSearchSuggestionsinAddressBar(ctx context.Context, value AllowSearchSuggestionsinAddressBarValue) error {
+	return s.c.Add(ctx, URIAllowSearchSuggestionsinAddressBar, client.Int(int64(value)))
 }
 
 // UpdateAllowSearchSuggestionsinAddressBar updates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowSearchSuggestionsinAddressBar.
@@ -934,8 +954,8 @@ func (s *Browser) CreateAllowSearchSuggestionsinAddressBar(ctx context.Context, 
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Browser) UpdateAllowSearchSuggestionsinAddressBar(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowSearchSuggestionsinAddressBar, client.Int(value))
+func (s *Browser) UpdateAllowSearchSuggestionsinAddressBar(ctx context.Context, value AllowSearchSuggestionsinAddressBarValue) error {
+	return s.c.Replace(ctx, URIAllowSearchSuggestionsinAddressBar, client.Int(int64(value)))
 }
 
 // DeleteAllowSearchSuggestionsinAddressBar deletes ./Device/Vendor/MSFT/Policy/Config/Browser/AllowSearchSuggestionsinAddressBar.
@@ -953,12 +973,13 @@ func (s *Browser) DeleteAllowSearchSuggestionsinAddressBar(ctx context.Context) 
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) GetAllowSideloadingOfExtensions(ctx context.Context) (int64, error) {
+func (s *Browser) GetAllowSideloadingOfExtensions(ctx context.Context) (AllowSideloadingOfExtensionsValue, error) {
 	v, err := s.c.Get(ctx, URIAllowSideloadingOfExtensions)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowSideloadingOfExtensionsValue(n), err
 }
 
 // CreateAllowSideloadingOfExtensions creates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowSideloadingOfExtensions.
@@ -966,8 +987,8 @@ func (s *Browser) GetAllowSideloadingOfExtensions(ctx context.Context) (int64, e
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) CreateAllowSideloadingOfExtensions(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowSideloadingOfExtensions, client.Int(value))
+func (s *Browser) CreateAllowSideloadingOfExtensions(ctx context.Context, value AllowSideloadingOfExtensionsValue) error {
+	return s.c.Add(ctx, URIAllowSideloadingOfExtensions, client.Int(int64(value)))
 }
 
 // UpdateAllowSideloadingOfExtensions updates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowSideloadingOfExtensions.
@@ -975,8 +996,8 @@ func (s *Browser) CreateAllowSideloadingOfExtensions(ctx context.Context, value 
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) UpdateAllowSideloadingOfExtensions(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowSideloadingOfExtensions, client.Int(value))
+func (s *Browser) UpdateAllowSideloadingOfExtensions(ctx context.Context, value AllowSideloadingOfExtensionsValue) error {
+	return s.c.Replace(ctx, URIAllowSideloadingOfExtensions, client.Int(int64(value)))
 }
 
 // DeleteAllowSideloadingOfExtensions deletes ./Device/Vendor/MSFT/Policy/Config/Browser/AllowSideloadingOfExtensions.
@@ -993,12 +1014,13 @@ func (s *Browser) DeleteAllowSideloadingOfExtensions(ctx context.Context) error 
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Browser) GetAllowSmartScreen(ctx context.Context) (int64, error) {
+func (s *Browser) GetAllowSmartScreen(ctx context.Context) (AllowSmartScreenValue, error) {
 	v, err := s.c.Get(ctx, URIAllowSmartScreen)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowSmartScreenValue(n), err
 }
 
 // CreateAllowSmartScreen creates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowSmartScreen.
@@ -1006,8 +1028,8 @@ func (s *Browser) GetAllowSmartScreen(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Browser) CreateAllowSmartScreen(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowSmartScreen, client.Int(value))
+func (s *Browser) CreateAllowSmartScreen(ctx context.Context, value AllowSmartScreenValue) error {
+	return s.c.Add(ctx, URIAllowSmartScreen, client.Int(int64(value)))
 }
 
 // UpdateAllowSmartScreen updates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowSmartScreen.
@@ -1015,8 +1037,8 @@ func (s *Browser) CreateAllowSmartScreen(ctx context.Context, value int64) error
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Browser) UpdateAllowSmartScreen(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowSmartScreen, client.Int(value))
+func (s *Browser) UpdateAllowSmartScreen(ctx context.Context, value AllowSmartScreenValue) error {
+	return s.c.Replace(ctx, URIAllowSmartScreen, client.Int(int64(value)))
 }
 
 // DeleteAllowSmartScreen deletes ./Device/Vendor/MSFT/Policy/Config/Browser/AllowSmartScreen.
@@ -1034,12 +1056,13 @@ func (s *Browser) DeleteAllowSmartScreen(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) GetAllowTabPreloading(ctx context.Context) (int64, error) {
+func (s *Browser) GetAllowTabPreloading(ctx context.Context) (AllowTabPreloadingValue, error) {
 	v, err := s.c.Get(ctx, URIAllowTabPreloading)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowTabPreloadingValue(n), err
 }
 
 // CreateAllowTabPreloading creates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowTabPreloading.
@@ -1048,8 +1071,8 @@ func (s *Browser) GetAllowTabPreloading(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) CreateAllowTabPreloading(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowTabPreloading, client.Int(value))
+func (s *Browser) CreateAllowTabPreloading(ctx context.Context, value AllowTabPreloadingValue) error {
+	return s.c.Add(ctx, URIAllowTabPreloading, client.Int(int64(value)))
 }
 
 // UpdateAllowTabPreloading updates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowTabPreloading.
@@ -1058,8 +1081,8 @@ func (s *Browser) CreateAllowTabPreloading(ctx context.Context, value int64) err
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) UpdateAllowTabPreloading(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowTabPreloading, client.Int(value))
+func (s *Browser) UpdateAllowTabPreloading(ctx context.Context, value AllowTabPreloadingValue) error {
+	return s.c.Replace(ctx, URIAllowTabPreloading, client.Int(int64(value)))
 }
 
 // DeleteAllowTabPreloading deletes ./Device/Vendor/MSFT/Policy/Config/Browser/AllowTabPreloading.
@@ -1081,12 +1104,13 @@ func (s *Browser) DeleteAllowTabPreloading(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) GetAllowWebContentOnNewTabPage(ctx context.Context) (int64, error) {
+func (s *Browser) GetAllowWebContentOnNewTabPage(ctx context.Context) (AllowWebContentOnNewTabPageValue, error) {
 	v, err := s.c.Get(ctx, URIAllowWebContentOnNewTabPage)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowWebContentOnNewTabPageValue(n), err
 }
 
 // CreateAllowWebContentOnNewTabPage creates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowWebContentOnNewTabPage.
@@ -1098,8 +1122,8 @@ func (s *Browser) GetAllowWebContentOnNewTabPage(ctx context.Context) (int64, er
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) CreateAllowWebContentOnNewTabPage(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowWebContentOnNewTabPage, client.Int(value))
+func (s *Browser) CreateAllowWebContentOnNewTabPage(ctx context.Context, value AllowWebContentOnNewTabPageValue) error {
+	return s.c.Add(ctx, URIAllowWebContentOnNewTabPage, client.Int(int64(value)))
 }
 
 // UpdateAllowWebContentOnNewTabPage updates ./Device/Vendor/MSFT/Policy/Config/Browser/AllowWebContentOnNewTabPage.
@@ -1111,8 +1135,8 @@ func (s *Browser) CreateAllowWebContentOnNewTabPage(ctx context.Context, value i
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) UpdateAllowWebContentOnNewTabPage(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowWebContentOnNewTabPage, client.Int(value))
+func (s *Browser) UpdateAllowWebContentOnNewTabPage(ctx context.Context, value AllowWebContentOnNewTabPageValue) error {
+	return s.c.Replace(ctx, URIAllowWebContentOnNewTabPage, client.Int(int64(value)))
 }
 
 // DeleteAllowWebContentOnNewTabPage deletes ./Device/Vendor/MSFT/Policy/Config/Browser/AllowWebContentOnNewTabPage.
@@ -1134,12 +1158,13 @@ func (s *Browser) DeleteAllowWebContentOnNewTabPage(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Browser) GetAlwaysEnableBooksLibrary(ctx context.Context) (int64, error) {
+func (s *Browser) GetAlwaysEnableBooksLibrary(ctx context.Context) (AlwaysEnableBooksLibraryValue, error) {
 	v, err := s.c.Get(ctx, URIAlwaysEnableBooksLibrary)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AlwaysEnableBooksLibraryValue(n), err
 }
 
 // CreateAlwaysEnableBooksLibrary creates ./Device/Vendor/MSFT/Policy/Config/Browser/AlwaysEnableBooksLibrary.
@@ -1148,8 +1173,8 @@ func (s *Browser) GetAlwaysEnableBooksLibrary(ctx context.Context) (int64, error
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Browser) CreateAlwaysEnableBooksLibrary(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAlwaysEnableBooksLibrary, client.Int(value))
+func (s *Browser) CreateAlwaysEnableBooksLibrary(ctx context.Context, value AlwaysEnableBooksLibraryValue) error {
+	return s.c.Add(ctx, URIAlwaysEnableBooksLibrary, client.Int(int64(value)))
 }
 
 // UpdateAlwaysEnableBooksLibrary updates ./Device/Vendor/MSFT/Policy/Config/Browser/AlwaysEnableBooksLibrary.
@@ -1158,8 +1183,8 @@ func (s *Browser) CreateAlwaysEnableBooksLibrary(ctx context.Context, value int6
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Browser) UpdateAlwaysEnableBooksLibrary(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAlwaysEnableBooksLibrary, client.Int(value))
+func (s *Browser) UpdateAlwaysEnableBooksLibrary(ctx context.Context, value AlwaysEnableBooksLibraryValue) error {
+	return s.c.Replace(ctx, URIAlwaysEnableBooksLibrary, client.Int(int64(value)))
 }
 
 // DeleteAlwaysEnableBooksLibrary deletes ./Device/Vendor/MSFT/Policy/Config/Browser/AlwaysEnableBooksLibrary.
@@ -1177,12 +1202,13 @@ func (s *Browser) DeleteAlwaysEnableBooksLibrary(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Browser) GetClearBrowsingDataOnExit(ctx context.Context) (int64, error) {
+func (s *Browser) GetClearBrowsingDataOnExit(ctx context.Context) (ClearBrowsingDataOnExitValue, error) {
 	v, err := s.c.Get(ctx, URIClearBrowsingDataOnExit)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ClearBrowsingDataOnExitValue(n), err
 }
 
 // CreateClearBrowsingDataOnExit creates ./Device/Vendor/MSFT/Policy/Config/Browser/ClearBrowsingDataOnExit.
@@ -1190,8 +1216,8 @@ func (s *Browser) GetClearBrowsingDataOnExit(ctx context.Context) (int64, error)
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Browser) CreateClearBrowsingDataOnExit(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIClearBrowsingDataOnExit, client.Int(value))
+func (s *Browser) CreateClearBrowsingDataOnExit(ctx context.Context, value ClearBrowsingDataOnExitValue) error {
+	return s.c.Add(ctx, URIClearBrowsingDataOnExit, client.Int(int64(value)))
 }
 
 // UpdateClearBrowsingDataOnExit updates ./Device/Vendor/MSFT/Policy/Config/Browser/ClearBrowsingDataOnExit.
@@ -1199,8 +1225,8 @@ func (s *Browser) CreateClearBrowsingDataOnExit(ctx context.Context, value int64
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Browser) UpdateClearBrowsingDataOnExit(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIClearBrowsingDataOnExit, client.Int(value))
+func (s *Browser) UpdateClearBrowsingDataOnExit(ctx context.Context, value ClearBrowsingDataOnExitValue) error {
+	return s.c.Replace(ctx, URIClearBrowsingDataOnExit, client.Int(int64(value)))
 }
 
 // DeleteClearBrowsingDataOnExit deletes ./Device/Vendor/MSFT/Policy/Config/Browser/ClearBrowsingDataOnExit.
@@ -1299,12 +1325,13 @@ func (s *Browser) DeleteConfigureAdditionalSearchEngines(ctx context.Context) er
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) GetConfigureFavoritesBar(ctx context.Context) (int64, error) {
+func (s *Browser) GetConfigureFavoritesBar(ctx context.Context) (ConfigureFavoritesBarValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureFavoritesBar)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureFavoritesBarValue(n), err
 }
 
 // CreateConfigureFavoritesBar creates ./Device/Vendor/MSFT/Policy/Config/Browser/ConfigureFavoritesBar.
@@ -1322,8 +1349,8 @@ func (s *Browser) GetConfigureFavoritesBar(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) CreateConfigureFavoritesBar(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureFavoritesBar, client.Int(value))
+func (s *Browser) CreateConfigureFavoritesBar(ctx context.Context, value ConfigureFavoritesBarValue) error {
+	return s.c.Add(ctx, URIConfigureFavoritesBar, client.Int(int64(value)))
 }
 
 // UpdateConfigureFavoritesBar updates ./Device/Vendor/MSFT/Policy/Config/Browser/ConfigureFavoritesBar.
@@ -1341,8 +1368,8 @@ func (s *Browser) CreateConfigureFavoritesBar(ctx context.Context, value int64) 
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) UpdateConfigureFavoritesBar(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureFavoritesBar, client.Int(value))
+func (s *Browser) UpdateConfigureFavoritesBar(ctx context.Context, value ConfigureFavoritesBarValue) error {
+	return s.c.Replace(ctx, URIConfigureFavoritesBar, client.Int(int64(value)))
 }
 
 // DeleteConfigureFavoritesBar deletes ./Device/Vendor/MSFT/Policy/Config/Browser/ConfigureFavoritesBar.
@@ -1379,12 +1406,13 @@ func (s *Browser) DeleteConfigureFavoritesBar(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) GetConfigureHomeButton(ctx context.Context) (int64, error) {
+func (s *Browser) GetConfigureHomeButton(ctx context.Context) (ConfigureHomeButtonValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureHomeButton)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureHomeButtonValue(n), err
 }
 
 // CreateConfigureHomeButton creates ./Device/Vendor/MSFT/Policy/Config/Browser/ConfigureHomeButton.
@@ -1402,8 +1430,8 @@ func (s *Browser) GetConfigureHomeButton(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) CreateConfigureHomeButton(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureHomeButton, client.Int(value))
+func (s *Browser) CreateConfigureHomeButton(ctx context.Context, value ConfigureHomeButtonValue) error {
+	return s.c.Add(ctx, URIConfigureHomeButton, client.Int(int64(value)))
 }
 
 // UpdateConfigureHomeButton updates ./Device/Vendor/MSFT/Policy/Config/Browser/ConfigureHomeButton.
@@ -1421,8 +1449,8 @@ func (s *Browser) CreateConfigureHomeButton(ctx context.Context, value int64) er
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) UpdateConfigureHomeButton(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureHomeButton, client.Int(value))
+func (s *Browser) UpdateConfigureHomeButton(ctx context.Context, value ConfigureHomeButtonValue) error {
+	return s.c.Replace(ctx, URIConfigureHomeButton, client.Int(int64(value)))
 }
 
 // DeleteConfigureHomeButton deletes ./Device/Vendor/MSFT/Policy/Config/Browser/ConfigureHomeButton.
@@ -1465,12 +1493,13 @@ func (s *Browser) DeleteConfigureHomeButton(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) GetConfigureKioskMode(ctx context.Context) (int64, error) {
+func (s *Browser) GetConfigureKioskMode(ctx context.Context) (ConfigureKioskModeValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureKioskMode)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureKioskModeValue(n), err
 }
 
 // CreateConfigureKioskMode creates ./Device/Vendor/MSFT/Policy/Config/Browser/ConfigureKioskMode.
@@ -1494,8 +1523,8 @@ func (s *Browser) GetConfigureKioskMode(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) CreateConfigureKioskMode(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureKioskMode, client.Int(value))
+func (s *Browser) CreateConfigureKioskMode(ctx context.Context, value ConfigureKioskModeValue) error {
+	return s.c.Add(ctx, URIConfigureKioskMode, client.Int(int64(value)))
 }
 
 // UpdateConfigureKioskMode updates ./Device/Vendor/MSFT/Policy/Config/Browser/ConfigureKioskMode.
@@ -1519,8 +1548,8 @@ func (s *Browser) CreateConfigureKioskMode(ctx context.Context, value int64) err
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) UpdateConfigureKioskMode(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureKioskMode, client.Int(value))
+func (s *Browser) UpdateConfigureKioskMode(ctx context.Context, value ConfigureKioskModeValue) error {
+	return s.c.Replace(ctx, URIConfigureKioskMode, client.Int(int64(value)))
 }
 
 // DeleteConfigureKioskMode deletes ./Device/Vendor/MSFT/Policy/Config/Browser/ConfigureKioskMode.
@@ -1641,12 +1670,13 @@ func (s *Browser) DeleteConfigureKioskResetAfterIdleTimeout(ctx context.Context)
 //
 // Default: 3.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) GetConfigureOpenMicrosoftEdgeWith(ctx context.Context) (int64, error) {
+func (s *Browser) GetConfigureOpenMicrosoftEdgeWith(ctx context.Context) (ConfigureOpenMicrosoftEdgeWithValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureOpenMicrosoftEdgeWith)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureOpenMicrosoftEdgeWithValue(n), err
 }
 
 // CreateConfigureOpenMicrosoftEdgeWith creates ./Device/Vendor/MSFT/Policy/Config/Browser/ConfigureOpenMicrosoftEdgeWith.
@@ -1666,8 +1696,8 @@ func (s *Browser) GetConfigureOpenMicrosoftEdgeWith(ctx context.Context) (int64,
 //
 // Default: 3.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) CreateConfigureOpenMicrosoftEdgeWith(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureOpenMicrosoftEdgeWith, client.Int(value))
+func (s *Browser) CreateConfigureOpenMicrosoftEdgeWith(ctx context.Context, value ConfigureOpenMicrosoftEdgeWithValue) error {
+	return s.c.Add(ctx, URIConfigureOpenMicrosoftEdgeWith, client.Int(int64(value)))
 }
 
 // UpdateConfigureOpenMicrosoftEdgeWith updates ./Device/Vendor/MSFT/Policy/Config/Browser/ConfigureOpenMicrosoftEdgeWith.
@@ -1687,8 +1717,8 @@ func (s *Browser) CreateConfigureOpenMicrosoftEdgeWith(ctx context.Context, valu
 //
 // Default: 3.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) UpdateConfigureOpenMicrosoftEdgeWith(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureOpenMicrosoftEdgeWith, client.Int(value))
+func (s *Browser) UpdateConfigureOpenMicrosoftEdgeWith(ctx context.Context, value ConfigureOpenMicrosoftEdgeWithValue) error {
+	return s.c.Replace(ctx, URIConfigureOpenMicrosoftEdgeWith, client.Int(int64(value)))
 }
 
 // DeleteConfigureOpenMicrosoftEdgeWith deletes ./Device/Vendor/MSFT/Policy/Config/Browser/ConfigureOpenMicrosoftEdgeWith.
@@ -1720,12 +1750,13 @@ func (s *Browser) DeleteConfigureOpenMicrosoftEdgeWith(ctx context.Context) erro
 // Supported from OS build 10.0.17763 (CSP v8.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Browser) GetConfigureTelemetryForMicrosoft365Analytics(ctx context.Context) (int64, error) {
+func (s *Browser) GetConfigureTelemetryForMicrosoft365Analytics(ctx context.Context) (ConfigureTelemetryForMicrosoft365AnalyticsValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureTelemetryForMicrosoft365Analytics)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureTelemetryForMicrosoft365AnalyticsValue(n), err
 }
 
 // CreateConfigureTelemetryForMicrosoft365Analytics creates ./Device/Vendor/MSFT/Policy/Config/Browser/ConfigureTelemetryForMicrosoft365Analytics.
@@ -1736,8 +1767,8 @@ func (s *Browser) GetConfigureTelemetryForMicrosoft365Analytics(ctx context.Cont
 // Supported from OS build 10.0.17763 (CSP v8.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Browser) CreateConfigureTelemetryForMicrosoft365Analytics(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureTelemetryForMicrosoft365Analytics, client.Int(value))
+func (s *Browser) CreateConfigureTelemetryForMicrosoft365Analytics(ctx context.Context, value ConfigureTelemetryForMicrosoft365AnalyticsValue) error {
+	return s.c.Add(ctx, URIConfigureTelemetryForMicrosoft365Analytics, client.Int(int64(value)))
 }
 
 // UpdateConfigureTelemetryForMicrosoft365Analytics updates ./Device/Vendor/MSFT/Policy/Config/Browser/ConfigureTelemetryForMicrosoft365Analytics.
@@ -1748,8 +1779,8 @@ func (s *Browser) CreateConfigureTelemetryForMicrosoft365Analytics(ctx context.C
 // Supported from OS build 10.0.17763 (CSP v8.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Browser) UpdateConfigureTelemetryForMicrosoft365Analytics(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureTelemetryForMicrosoft365Analytics, client.Int(value))
+func (s *Browser) UpdateConfigureTelemetryForMicrosoft365Analytics(ctx context.Context, value ConfigureTelemetryForMicrosoft365AnalyticsValue) error {
+	return s.c.Replace(ctx, URIConfigureTelemetryForMicrosoft365Analytics, client.Int(int64(value)))
 }
 
 // DeleteConfigureTelemetryForMicrosoft365Analytics deletes ./Device/Vendor/MSFT/Policy/Config/Browser/ConfigureTelemetryForMicrosoft365Analytics.
@@ -1776,12 +1807,13 @@ func (s *Browser) DeleteConfigureTelemetryForMicrosoft365Analytics(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Browser) GetDisableLockdownOfStartPages(ctx context.Context) (int64, error) {
+func (s *Browser) GetDisableLockdownOfStartPages(ctx context.Context) (DisableLockdownOfStartPagesValue, error) {
 	v, err := s.c.Get(ctx, URIDisableLockdownOfStartPages)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableLockdownOfStartPagesValue(n), err
 }
 
 // CreateDisableLockdownOfStartPages creates ./Device/Vendor/MSFT/Policy/Config/Browser/DisableLockdownOfStartPages.
@@ -1796,8 +1828,8 @@ func (s *Browser) GetDisableLockdownOfStartPages(ctx context.Context) (int64, er
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Browser) CreateDisableLockdownOfStartPages(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableLockdownOfStartPages, client.Int(value))
+func (s *Browser) CreateDisableLockdownOfStartPages(ctx context.Context, value DisableLockdownOfStartPagesValue) error {
+	return s.c.Add(ctx, URIDisableLockdownOfStartPages, client.Int(int64(value)))
 }
 
 // UpdateDisableLockdownOfStartPages updates ./Device/Vendor/MSFT/Policy/Config/Browser/DisableLockdownOfStartPages.
@@ -1812,8 +1844,8 @@ func (s *Browser) CreateDisableLockdownOfStartPages(ctx context.Context, value i
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Browser) UpdateDisableLockdownOfStartPages(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableLockdownOfStartPages, client.Int(value))
+func (s *Browser) UpdateDisableLockdownOfStartPages(ctx context.Context, value DisableLockdownOfStartPagesValue) error {
+	return s.c.Replace(ctx, URIDisableLockdownOfStartPages, client.Int(int64(value)))
 }
 
 // DeleteDisableLockdownOfStartPages deletes ./Device/Vendor/MSFT/Policy/Config/Browser/DisableLockdownOfStartPages.
@@ -1838,12 +1870,13 @@ func (s *Browser) DeleteDisableLockdownOfStartPages(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Browser) GetEnableExtendedBooksTelemetry(ctx context.Context) (int64, error) {
+func (s *Browser) GetEnableExtendedBooksTelemetry(ctx context.Context) (EnableExtendedBooksTelemetryValue, error) {
 	v, err := s.c.Get(ctx, URIEnableExtendedBooksTelemetry)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableExtendedBooksTelemetryValue(n), err
 }
 
 // CreateEnableExtendedBooksTelemetry creates ./Device/Vendor/MSFT/Policy/Config/Browser/EnableExtendedBooksTelemetry.
@@ -1852,8 +1885,8 @@ func (s *Browser) GetEnableExtendedBooksTelemetry(ctx context.Context) (int64, e
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Browser) CreateEnableExtendedBooksTelemetry(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableExtendedBooksTelemetry, client.Int(value))
+func (s *Browser) CreateEnableExtendedBooksTelemetry(ctx context.Context, value EnableExtendedBooksTelemetryValue) error {
+	return s.c.Add(ctx, URIEnableExtendedBooksTelemetry, client.Int(int64(value)))
 }
 
 // UpdateEnableExtendedBooksTelemetry updates ./Device/Vendor/MSFT/Policy/Config/Browser/EnableExtendedBooksTelemetry.
@@ -1862,8 +1895,8 @@ func (s *Browser) CreateEnableExtendedBooksTelemetry(ctx context.Context, value 
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Browser) UpdateEnableExtendedBooksTelemetry(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableExtendedBooksTelemetry, client.Int(value))
+func (s *Browser) UpdateEnableExtendedBooksTelemetry(ctx context.Context, value EnableExtendedBooksTelemetryValue) error {
+	return s.c.Replace(ctx, URIEnableExtendedBooksTelemetry, client.Int(int64(value)))
 }
 
 // DeleteEnableExtendedBooksTelemetry deletes ./Device/Vendor/MSFT/Policy/Config/Browser/EnableExtendedBooksTelemetry.
@@ -2088,12 +2121,13 @@ func (s *Browser) DeleteHomePages(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Browser) GetLockdownFavorites(ctx context.Context) (int64, error) {
+func (s *Browser) GetLockdownFavorites(ctx context.Context) (LockdownFavoritesValue, error) {
 	v, err := s.c.Get(ctx, URILockdownFavorites)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return LockdownFavoritesValue(n), err
 }
 
 // CreateLockdownFavorites creates ./Device/Vendor/MSFT/Policy/Config/Browser/LockdownFavorites.
@@ -2108,8 +2142,8 @@ func (s *Browser) GetLockdownFavorites(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Browser) CreateLockdownFavorites(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URILockdownFavorites, client.Int(value))
+func (s *Browser) CreateLockdownFavorites(ctx context.Context, value LockdownFavoritesValue) error {
+	return s.c.Add(ctx, URILockdownFavorites, client.Int(int64(value)))
 }
 
 // UpdateLockdownFavorites updates ./Device/Vendor/MSFT/Policy/Config/Browser/LockdownFavorites.
@@ -2124,8 +2158,8 @@ func (s *Browser) CreateLockdownFavorites(ctx context.Context, value int64) erro
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Browser) UpdateLockdownFavorites(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URILockdownFavorites, client.Int(value))
+func (s *Browser) UpdateLockdownFavorites(ctx context.Context, value LockdownFavoritesValue) error {
+	return s.c.Replace(ctx, URILockdownFavorites, client.Int(int64(value)))
 }
 
 // DeleteLockdownFavorites deletes ./Device/Vendor/MSFT/Policy/Config/Browser/LockdownFavorites.
@@ -2149,12 +2183,13 @@ func (s *Browser) DeleteLockdownFavorites(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Browser) GetPreventAccessToAboutFlagsInMicrosoftEdge(ctx context.Context) (int64, error) {
+func (s *Browser) GetPreventAccessToAboutFlagsInMicrosoftEdge(ctx context.Context) (PreventAccessToAboutFlagsInMicrosoftEdgeValue, error) {
 	v, err := s.c.Get(ctx, URIPreventAccessToAboutFlagsInMicrosoftEdge)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PreventAccessToAboutFlagsInMicrosoftEdgeValue(n), err
 }
 
 // CreatePreventAccessToAboutFlagsInMicrosoftEdge creates ./Device/Vendor/MSFT/Policy/Config/Browser/PreventAccessToAboutFlagsInMicrosoftEdge.
@@ -2162,8 +2197,8 @@ func (s *Browser) GetPreventAccessToAboutFlagsInMicrosoftEdge(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Browser) CreatePreventAccessToAboutFlagsInMicrosoftEdge(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPreventAccessToAboutFlagsInMicrosoftEdge, client.Int(value))
+func (s *Browser) CreatePreventAccessToAboutFlagsInMicrosoftEdge(ctx context.Context, value PreventAccessToAboutFlagsInMicrosoftEdgeValue) error {
+	return s.c.Add(ctx, URIPreventAccessToAboutFlagsInMicrosoftEdge, client.Int(int64(value)))
 }
 
 // UpdatePreventAccessToAboutFlagsInMicrosoftEdge updates ./Device/Vendor/MSFT/Policy/Config/Browser/PreventAccessToAboutFlagsInMicrosoftEdge.
@@ -2171,8 +2206,8 @@ func (s *Browser) CreatePreventAccessToAboutFlagsInMicrosoftEdge(ctx context.Con
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Browser) UpdatePreventAccessToAboutFlagsInMicrosoftEdge(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPreventAccessToAboutFlagsInMicrosoftEdge, client.Int(value))
+func (s *Browser) UpdatePreventAccessToAboutFlagsInMicrosoftEdge(ctx context.Context, value PreventAccessToAboutFlagsInMicrosoftEdgeValue) error {
+	return s.c.Replace(ctx, URIPreventAccessToAboutFlagsInMicrosoftEdge, client.Int(int64(value)))
 }
 
 // DeletePreventAccessToAboutFlagsInMicrosoftEdge deletes ./Device/Vendor/MSFT/Policy/Config/Browser/PreventAccessToAboutFlagsInMicrosoftEdge.
@@ -2193,12 +2228,13 @@ func (s *Browser) DeletePreventAccessToAboutFlagsInMicrosoftEdge(ctx context.Con
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) GetPreventCertErrorOverrides(ctx context.Context) (int64, error) {
+func (s *Browser) GetPreventCertErrorOverrides(ctx context.Context) (PreventCertErrorOverridesValue, error) {
 	v, err := s.c.Get(ctx, URIPreventCertErrorOverrides)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PreventCertErrorOverridesValue(n), err
 }
 
 // CreatePreventCertErrorOverrides creates ./Device/Vendor/MSFT/Policy/Config/Browser/PreventCertErrorOverrides.
@@ -2210,8 +2246,8 @@ func (s *Browser) GetPreventCertErrorOverrides(ctx context.Context) (int64, erro
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) CreatePreventCertErrorOverrides(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPreventCertErrorOverrides, client.Int(value))
+func (s *Browser) CreatePreventCertErrorOverrides(ctx context.Context, value PreventCertErrorOverridesValue) error {
+	return s.c.Add(ctx, URIPreventCertErrorOverrides, client.Int(int64(value)))
 }
 
 // UpdatePreventCertErrorOverrides updates ./Device/Vendor/MSFT/Policy/Config/Browser/PreventCertErrorOverrides.
@@ -2223,8 +2259,8 @@ func (s *Browser) CreatePreventCertErrorOverrides(ctx context.Context, value int
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) UpdatePreventCertErrorOverrides(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPreventCertErrorOverrides, client.Int(value))
+func (s *Browser) UpdatePreventCertErrorOverrides(ctx context.Context, value PreventCertErrorOverridesValue) error {
+	return s.c.Replace(ctx, URIPreventCertErrorOverrides, client.Int(int64(value)))
 }
 
 // DeletePreventCertErrorOverrides deletes ./Device/Vendor/MSFT/Policy/Config/Browser/PreventCertErrorOverrides.
@@ -2248,12 +2284,13 @@ func (s *Browser) DeletePreventCertErrorOverrides(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Browser) GetPreventFirstRunPage(ctx context.Context) (int64, error) {
+func (s *Browser) GetPreventFirstRunPage(ctx context.Context) (PreventFirstRunPageValue, error) {
 	v, err := s.c.Get(ctx, URIPreventFirstRunPage)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PreventFirstRunPageValue(n), err
 }
 
 // CreatePreventFirstRunPage creates ./Device/Vendor/MSFT/Policy/Config/Browser/PreventFirstRunPage.
@@ -2264,8 +2301,8 @@ func (s *Browser) GetPreventFirstRunPage(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Browser) CreatePreventFirstRunPage(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPreventFirstRunPage, client.Int(value))
+func (s *Browser) CreatePreventFirstRunPage(ctx context.Context, value PreventFirstRunPageValue) error {
+	return s.c.Add(ctx, URIPreventFirstRunPage, client.Int(int64(value)))
 }
 
 // UpdatePreventFirstRunPage updates ./Device/Vendor/MSFT/Policy/Config/Browser/PreventFirstRunPage.
@@ -2276,8 +2313,8 @@ func (s *Browser) CreatePreventFirstRunPage(ctx context.Context, value int64) er
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Browser) UpdatePreventFirstRunPage(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPreventFirstRunPage, client.Int(value))
+func (s *Browser) UpdatePreventFirstRunPage(ctx context.Context, value PreventFirstRunPageValue) error {
+	return s.c.Replace(ctx, URIPreventFirstRunPage, client.Int(int64(value)))
 }
 
 // DeletePreventFirstRunPage deletes ./Device/Vendor/MSFT/Policy/Config/Browser/PreventFirstRunPage.
@@ -2300,12 +2337,13 @@ func (s *Browser) DeletePreventFirstRunPage(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Browser) GetPreventLiveTileDataCollection(ctx context.Context) (int64, error) {
+func (s *Browser) GetPreventLiveTileDataCollection(ctx context.Context) (PreventLiveTileDataCollectionValue, error) {
 	v, err := s.c.Get(ctx, URIPreventLiveTileDataCollection)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PreventLiveTileDataCollectionValue(n), err
 }
 
 // CreatePreventLiveTileDataCollection creates ./Device/Vendor/MSFT/Policy/Config/Browser/PreventLiveTileDataCollection.
@@ -2316,8 +2354,8 @@ func (s *Browser) GetPreventLiveTileDataCollection(ctx context.Context) (int64, 
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Browser) CreatePreventLiveTileDataCollection(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPreventLiveTileDataCollection, client.Int(value))
+func (s *Browser) CreatePreventLiveTileDataCollection(ctx context.Context, value PreventLiveTileDataCollectionValue) error {
+	return s.c.Add(ctx, URIPreventLiveTileDataCollection, client.Int(int64(value)))
 }
 
 // UpdatePreventLiveTileDataCollection updates ./Device/Vendor/MSFT/Policy/Config/Browser/PreventLiveTileDataCollection.
@@ -2328,8 +2366,8 @@ func (s *Browser) CreatePreventLiveTileDataCollection(ctx context.Context, value
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Browser) UpdatePreventLiveTileDataCollection(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPreventLiveTileDataCollection, client.Int(value))
+func (s *Browser) UpdatePreventLiveTileDataCollection(ctx context.Context, value PreventLiveTileDataCollectionValue) error {
+	return s.c.Replace(ctx, URIPreventLiveTileDataCollection, client.Int(int64(value)))
 }
 
 // DeletePreventLiveTileDataCollection deletes ./Device/Vendor/MSFT/Policy/Config/Browser/PreventLiveTileDataCollection.
@@ -2349,12 +2387,13 @@ func (s *Browser) DeletePreventLiveTileDataCollection(ctx context.Context) error
 //
 // Default: 0.
 // Supported from OS build 10.0.10586 (CSP v2.0).
-func (s *Browser) GetPreventSmartScreenPromptOverride(ctx context.Context) (int64, error) {
+func (s *Browser) GetPreventSmartScreenPromptOverride(ctx context.Context) (PreventSmartScreenPromptOverrideValue, error) {
 	v, err := s.c.Get(ctx, URIPreventSmartScreenPromptOverride)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PreventSmartScreenPromptOverrideValue(n), err
 }
 
 // CreatePreventSmartScreenPromptOverride creates ./Device/Vendor/MSFT/Policy/Config/Browser/PreventSmartScreenPromptOverride.
@@ -2362,8 +2401,8 @@ func (s *Browser) GetPreventSmartScreenPromptOverride(ctx context.Context) (int6
 //
 // Default: 0.
 // Supported from OS build 10.0.10586 (CSP v2.0).
-func (s *Browser) CreatePreventSmartScreenPromptOverride(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPreventSmartScreenPromptOverride, client.Int(value))
+func (s *Browser) CreatePreventSmartScreenPromptOverride(ctx context.Context, value PreventSmartScreenPromptOverrideValue) error {
+	return s.c.Add(ctx, URIPreventSmartScreenPromptOverride, client.Int(int64(value)))
 }
 
 // UpdatePreventSmartScreenPromptOverride updates ./Device/Vendor/MSFT/Policy/Config/Browser/PreventSmartScreenPromptOverride.
@@ -2371,8 +2410,8 @@ func (s *Browser) CreatePreventSmartScreenPromptOverride(ctx context.Context, va
 //
 // Default: 0.
 // Supported from OS build 10.0.10586 (CSP v2.0).
-func (s *Browser) UpdatePreventSmartScreenPromptOverride(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPreventSmartScreenPromptOverride, client.Int(value))
+func (s *Browser) UpdatePreventSmartScreenPromptOverride(ctx context.Context, value PreventSmartScreenPromptOverrideValue) error {
+	return s.c.Replace(ctx, URIPreventSmartScreenPromptOverride, client.Int(int64(value)))
 }
 
 // DeletePreventSmartScreenPromptOverride deletes ./Device/Vendor/MSFT/Policy/Config/Browser/PreventSmartScreenPromptOverride.
@@ -2389,12 +2428,13 @@ func (s *Browser) DeletePreventSmartScreenPromptOverride(ctx context.Context) er
 //
 // Default: 0.
 // Supported from OS build 10.0.10586 (CSP v2.0).
-func (s *Browser) GetPreventSmartScreenPromptOverrideForFiles(ctx context.Context) (int64, error) {
+func (s *Browser) GetPreventSmartScreenPromptOverrideForFiles(ctx context.Context) (PreventSmartScreenPromptOverrideForFilesValue, error) {
 	v, err := s.c.Get(ctx, URIPreventSmartScreenPromptOverrideForFiles)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PreventSmartScreenPromptOverrideForFilesValue(n), err
 }
 
 // CreatePreventSmartScreenPromptOverrideForFiles creates ./Device/Vendor/MSFT/Policy/Config/Browser/PreventSmartScreenPromptOverrideForFiles.
@@ -2402,8 +2442,8 @@ func (s *Browser) GetPreventSmartScreenPromptOverrideForFiles(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.10586 (CSP v2.0).
-func (s *Browser) CreatePreventSmartScreenPromptOverrideForFiles(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPreventSmartScreenPromptOverrideForFiles, client.Int(value))
+func (s *Browser) CreatePreventSmartScreenPromptOverrideForFiles(ctx context.Context, value PreventSmartScreenPromptOverrideForFilesValue) error {
+	return s.c.Add(ctx, URIPreventSmartScreenPromptOverrideForFiles, client.Int(int64(value)))
 }
 
 // UpdatePreventSmartScreenPromptOverrideForFiles updates ./Device/Vendor/MSFT/Policy/Config/Browser/PreventSmartScreenPromptOverrideForFiles.
@@ -2411,8 +2451,8 @@ func (s *Browser) CreatePreventSmartScreenPromptOverrideForFiles(ctx context.Con
 //
 // Default: 0.
 // Supported from OS build 10.0.10586 (CSP v2.0).
-func (s *Browser) UpdatePreventSmartScreenPromptOverrideForFiles(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPreventSmartScreenPromptOverrideForFiles, client.Int(value))
+func (s *Browser) UpdatePreventSmartScreenPromptOverrideForFiles(ctx context.Context, value PreventSmartScreenPromptOverrideForFilesValue) error {
+	return s.c.Replace(ctx, URIPreventSmartScreenPromptOverrideForFiles, client.Int(int64(value)))
 }
 
 // DeletePreventSmartScreenPromptOverrideForFiles deletes ./Device/Vendor/MSFT/Policy/Config/Browser/PreventSmartScreenPromptOverrideForFiles.
@@ -2557,12 +2597,13 @@ func (s *Browser) DeletePreventTurningOffRequiredExtensions(ctx context.Context)
 //
 // Default: 0.
 // Supported from OS build 10.0.10586 (CSP v2.0).
-func (s *Browser) GetPreventUsingLocalHostIPAddressForWebRTC(ctx context.Context) (int64, error) {
+func (s *Browser) GetPreventUsingLocalHostIPAddressForWebRTC(ctx context.Context) (PreventUsingLocalHostIPAddressForWebRTCValue, error) {
 	v, err := s.c.Get(ctx, URIPreventUsingLocalHostIPAddressForWebRTC)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PreventUsingLocalHostIPAddressForWebRTCValue(n), err
 }
 
 // CreatePreventUsingLocalHostIPAddressForWebRTC creates ./Device/Vendor/MSFT/Policy/Config/Browser/PreventUsingLocalHostIPAddressForWebRTC.
@@ -2570,8 +2611,8 @@ func (s *Browser) GetPreventUsingLocalHostIPAddressForWebRTC(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.10586 (CSP v2.0).
-func (s *Browser) CreatePreventUsingLocalHostIPAddressForWebRTC(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPreventUsingLocalHostIPAddressForWebRTC, client.Int(value))
+func (s *Browser) CreatePreventUsingLocalHostIPAddressForWebRTC(ctx context.Context, value PreventUsingLocalHostIPAddressForWebRTCValue) error {
+	return s.c.Add(ctx, URIPreventUsingLocalHostIPAddressForWebRTC, client.Int(int64(value)))
 }
 
 // UpdatePreventUsingLocalHostIPAddressForWebRTC updates ./Device/Vendor/MSFT/Policy/Config/Browser/PreventUsingLocalHostIPAddressForWebRTC.
@@ -2579,8 +2620,8 @@ func (s *Browser) CreatePreventUsingLocalHostIPAddressForWebRTC(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 10.0.10586 (CSP v2.0).
-func (s *Browser) UpdatePreventUsingLocalHostIPAddressForWebRTC(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPreventUsingLocalHostIPAddressForWebRTC, client.Int(value))
+func (s *Browser) UpdatePreventUsingLocalHostIPAddressForWebRTC(ctx context.Context, value PreventUsingLocalHostIPAddressForWebRTCValue) error {
+	return s.c.Replace(ctx, URIPreventUsingLocalHostIPAddressForWebRTC, client.Int(int64(value)))
 }
 
 // DeletePreventUsingLocalHostIPAddressForWebRTC deletes ./Device/Vendor/MSFT/Policy/Config/Browser/PreventUsingLocalHostIPAddressForWebRTC.
@@ -2665,12 +2706,13 @@ func (s *Browser) DeleteProvisionFavorites(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Browser) GetSendIntranetTraffictoInternetExplorer(ctx context.Context) (int64, error) {
+func (s *Browser) GetSendIntranetTraffictoInternetExplorer(ctx context.Context) (SendIntranetTraffictoInternetExplorerValue, error) {
 	v, err := s.c.Get(ctx, URISendIntranetTraffictoInternetExplorer)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SendIntranetTraffictoInternetExplorerValue(n), err
 }
 
 // CreateSendIntranetTraffictoInternetExplorer creates ./Device/Vendor/MSFT/Policy/Config/Browser/SendIntranetTraffictoInternetExplorer.
@@ -2678,8 +2720,8 @@ func (s *Browser) GetSendIntranetTraffictoInternetExplorer(ctx context.Context) 
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Browser) CreateSendIntranetTraffictoInternetExplorer(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISendIntranetTraffictoInternetExplorer, client.Int(value))
+func (s *Browser) CreateSendIntranetTraffictoInternetExplorer(ctx context.Context, value SendIntranetTraffictoInternetExplorerValue) error {
+	return s.c.Add(ctx, URISendIntranetTraffictoInternetExplorer, client.Int(int64(value)))
 }
 
 // UpdateSendIntranetTraffictoInternetExplorer updates ./Device/Vendor/MSFT/Policy/Config/Browser/SendIntranetTraffictoInternetExplorer.
@@ -2687,8 +2729,8 @@ func (s *Browser) CreateSendIntranetTraffictoInternetExplorer(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Browser) UpdateSendIntranetTraffictoInternetExplorer(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISendIntranetTraffictoInternetExplorer, client.Int(value))
+func (s *Browser) UpdateSendIntranetTraffictoInternetExplorer(ctx context.Context, value SendIntranetTraffictoInternetExplorerValue) error {
+	return s.c.Replace(ctx, URISendIntranetTraffictoInternetExplorer, client.Int(int64(value)))
 }
 
 // DeleteSendIntranetTraffictoInternetExplorer deletes ./Device/Vendor/MSFT/Policy/Config/Browser/SendIntranetTraffictoInternetExplorer.
@@ -2904,12 +2946,13 @@ func (s *Browser) DeleteSetNewTabPageURL(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Browser) GetShowMessageWhenOpeningSitesInInternetExplorer(ctx context.Context) (int64, error) {
+func (s *Browser) GetShowMessageWhenOpeningSitesInInternetExplorer(ctx context.Context) (ShowMessageWhenOpeningSitesInInternetExplorerValue, error) {
 	v, err := s.c.Get(ctx, URIShowMessageWhenOpeningSitesInInternetExplorer)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ShowMessageWhenOpeningSitesInInternetExplorerValue(n), err
 }
 
 // CreateShowMessageWhenOpeningSitesInInternetExplorer creates ./Device/Vendor/MSFT/Policy/Config/Browser/ShowMessageWhenOpeningSitesInInternetExplorer.
@@ -2924,8 +2967,8 @@ func (s *Browser) GetShowMessageWhenOpeningSitesInInternetExplorer(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Browser) CreateShowMessageWhenOpeningSitesInInternetExplorer(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIShowMessageWhenOpeningSitesInInternetExplorer, client.Int(value))
+func (s *Browser) CreateShowMessageWhenOpeningSitesInInternetExplorer(ctx context.Context, value ShowMessageWhenOpeningSitesInInternetExplorerValue) error {
+	return s.c.Add(ctx, URIShowMessageWhenOpeningSitesInInternetExplorer, client.Int(int64(value)))
 }
 
 // UpdateShowMessageWhenOpeningSitesInInternetExplorer updates ./Device/Vendor/MSFT/Policy/Config/Browser/ShowMessageWhenOpeningSitesInInternetExplorer.
@@ -2940,8 +2983,8 @@ func (s *Browser) CreateShowMessageWhenOpeningSitesInInternetExplorer(ctx contex
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Browser) UpdateShowMessageWhenOpeningSitesInInternetExplorer(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIShowMessageWhenOpeningSitesInInternetExplorer, client.Int(value))
+func (s *Browser) UpdateShowMessageWhenOpeningSitesInInternetExplorer(ctx context.Context, value ShowMessageWhenOpeningSitesInInternetExplorerValue) error {
+	return s.c.Replace(ctx, URIShowMessageWhenOpeningSitesInInternetExplorer, client.Int(int64(value)))
 }
 
 // DeleteShowMessageWhenOpeningSitesInInternetExplorer deletes ./Device/Vendor/MSFT/Policy/Config/Browser/ShowMessageWhenOpeningSitesInInternetExplorer.
@@ -2967,12 +3010,13 @@ func (s *Browser) DeleteShowMessageWhenOpeningSitesInInternetExplorer(ctx contex
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Browser) GetSyncFavoritesBetweenIEAndMicrosoftEdge(ctx context.Context) (int64, error) {
+func (s *Browser) GetSyncFavoritesBetweenIEAndMicrosoftEdge(ctx context.Context) (SyncFavoritesBetweenIEAndMicrosoftEdgeValue, error) {
 	v, err := s.c.Get(ctx, URISyncFavoritesBetweenIEAndMicrosoftEdge)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SyncFavoritesBetweenIEAndMicrosoftEdgeValue(n), err
 }
 
 // CreateSyncFavoritesBetweenIEAndMicrosoftEdge creates ./Device/Vendor/MSFT/Policy/Config/Browser/SyncFavoritesBetweenIEAndMicrosoftEdge.
@@ -2982,8 +3026,8 @@ func (s *Browser) GetSyncFavoritesBetweenIEAndMicrosoftEdge(ctx context.Context)
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Browser) CreateSyncFavoritesBetweenIEAndMicrosoftEdge(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISyncFavoritesBetweenIEAndMicrosoftEdge, client.Int(value))
+func (s *Browser) CreateSyncFavoritesBetweenIEAndMicrosoftEdge(ctx context.Context, value SyncFavoritesBetweenIEAndMicrosoftEdgeValue) error {
+	return s.c.Add(ctx, URISyncFavoritesBetweenIEAndMicrosoftEdge, client.Int(int64(value)))
 }
 
 // UpdateSyncFavoritesBetweenIEAndMicrosoftEdge updates ./Device/Vendor/MSFT/Policy/Config/Browser/SyncFavoritesBetweenIEAndMicrosoftEdge.
@@ -2993,8 +3037,8 @@ func (s *Browser) CreateSyncFavoritesBetweenIEAndMicrosoftEdge(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Browser) UpdateSyncFavoritesBetweenIEAndMicrosoftEdge(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISyncFavoritesBetweenIEAndMicrosoftEdge, client.Int(value))
+func (s *Browser) UpdateSyncFavoritesBetweenIEAndMicrosoftEdge(ctx context.Context, value SyncFavoritesBetweenIEAndMicrosoftEdgeValue) error {
+	return s.c.Replace(ctx, URISyncFavoritesBetweenIEAndMicrosoftEdge, client.Int(int64(value)))
 }
 
 // DeleteSyncFavoritesBetweenIEAndMicrosoftEdge deletes ./Device/Vendor/MSFT/Policy/Config/Browser/SyncFavoritesBetweenIEAndMicrosoftEdge.
@@ -3020,12 +3064,13 @@ func (s *Browser) DeleteSyncFavoritesBetweenIEAndMicrosoftEdge(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) GetUnlockHomeButton(ctx context.Context) (int64, error) {
+func (s *Browser) GetUnlockHomeButton(ctx context.Context) (UnlockHomeButtonValue, error) {
 	v, err := s.c.Get(ctx, URIUnlockHomeButton)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return UnlockHomeButtonValue(n), err
 }
 
 // CreateUnlockHomeButton creates ./Device/Vendor/MSFT/Policy/Config/Browser/UnlockHomeButton.
@@ -3040,8 +3085,8 @@ func (s *Browser) GetUnlockHomeButton(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) CreateUnlockHomeButton(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIUnlockHomeButton, client.Int(value))
+func (s *Browser) CreateUnlockHomeButton(ctx context.Context, value UnlockHomeButtonValue) error {
+	return s.c.Add(ctx, URIUnlockHomeButton, client.Int(int64(value)))
 }
 
 // UpdateUnlockHomeButton updates ./Device/Vendor/MSFT/Policy/Config/Browser/UnlockHomeButton.
@@ -3056,8 +3101,8 @@ func (s *Browser) CreateUnlockHomeButton(ctx context.Context, value int64) error
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Browser) UpdateUnlockHomeButton(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIUnlockHomeButton, client.Int(value))
+func (s *Browser) UpdateUnlockHomeButton(ctx context.Context, value UnlockHomeButtonValue) error {
+	return s.c.Replace(ctx, URIUnlockHomeButton, client.Int(int64(value)))
 }
 
 // DeleteUnlockHomeButton deletes ./Device/Vendor/MSFT/Policy/Config/Browser/UnlockHomeButton.
@@ -3082,12 +3127,13 @@ func (s *Browser) DeleteUnlockHomeButton(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Browser) GetUseSharedFolderForBooks(ctx context.Context) (int64, error) {
+func (s *Browser) GetUseSharedFolderForBooks(ctx context.Context) (UseSharedFolderForBooksValue, error) {
 	v, err := s.c.Get(ctx, URIUseSharedFolderForBooks)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return UseSharedFolderForBooksValue(n), err
 }
 
 // CreateUseSharedFolderForBooks creates ./Device/Vendor/MSFT/Policy/Config/Browser/UseSharedFolderForBooks.
@@ -3096,8 +3142,8 @@ func (s *Browser) GetUseSharedFolderForBooks(ctx context.Context) (int64, error)
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Browser) CreateUseSharedFolderForBooks(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIUseSharedFolderForBooks, client.Int(value))
+func (s *Browser) CreateUseSharedFolderForBooks(ctx context.Context, value UseSharedFolderForBooksValue) error {
+	return s.c.Add(ctx, URIUseSharedFolderForBooks, client.Int(int64(value)))
 }
 
 // UpdateUseSharedFolderForBooks updates ./Device/Vendor/MSFT/Policy/Config/Browser/UseSharedFolderForBooks.
@@ -3106,8 +3152,8 @@ func (s *Browser) CreateUseSharedFolderForBooks(ctx context.Context, value int64
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Browser) UpdateUseSharedFolderForBooks(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIUseSharedFolderForBooks, client.Int(value))
+func (s *Browser) UpdateUseSharedFolderForBooks(ctx context.Context, value UseSharedFolderForBooksValue) error {
+	return s.c.Replace(ctx, URIUseSharedFolderForBooks, client.Int(int64(value)))
 }
 
 // DeleteUseSharedFolderForBooks deletes ./Device/Vendor/MSFT/Policy/Config/Browser/UseSharedFolderForBooks.

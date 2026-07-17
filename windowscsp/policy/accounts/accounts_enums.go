@@ -2,34 +2,98 @@
 
 package accounts
 
-// AllowAddingNonMicrosoftAccountsManually allowed values.
-const (
-	// Not allowed.
-	AllowAddingNonMicrosoftAccountsManuallyNotAllowed int64 = 0
-	// Allowed.
-	AllowAddingNonMicrosoftAccountsManuallyAllowed int64 = 1
+import (
+	"fmt"
 )
 
-// AllowMicrosoftAccountConnection allowed values.
+// AllowAddingNonMicrosoftAccountsManuallyValue — allowed values for the AllowAddingNonMicrosoftAccountsManually node.
+type AllowAddingNonMicrosoftAccountsManuallyValue int64
+
 const (
 	// Not allowed.
-	AllowMicrosoftAccountConnectionNotAllowed int64 = 0
+	AllowAddingNonMicrosoftAccountsManuallyNotAllowed AllowAddingNonMicrosoftAccountsManuallyValue = 0
 	// Allowed.
-	AllowMicrosoftAccountConnectionAllowed int64 = 1
+	AllowAddingNonMicrosoftAccountsManuallyAllowed AllowAddingNonMicrosoftAccountsManuallyValue = 1
 )
 
-// AllowMicrosoftAccountSignInAssistant allowed values.
+// String returns the AllowAddingNonMicrosoftAccountsManuallyValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowAddingNonMicrosoftAccountsManuallyValue) String() string {
+	switch e {
+	case AllowAddingNonMicrosoftAccountsManuallyNotAllowed:
+		return "AllowAddingNonMicrosoftAccountsManuallyNotAllowed"
+	case AllowAddingNonMicrosoftAccountsManuallyAllowed:
+		return "AllowAddingNonMicrosoftAccountsManuallyAllowed"
+	default:
+		return fmt.Sprintf("AllowAddingNonMicrosoftAccountsManuallyValue(%d)", int64(e))
+	}
+}
+
+// AllowMicrosoftAccountConnectionValue — allowed values for the AllowMicrosoftAccountConnection node.
+type AllowMicrosoftAccountConnectionValue int64
+
+const (
+	// Not allowed.
+	AllowMicrosoftAccountConnectionNotAllowed AllowMicrosoftAccountConnectionValue = 0
+	// Allowed.
+	AllowMicrosoftAccountConnectionAllowed AllowMicrosoftAccountConnectionValue = 1
+)
+
+// String returns the AllowMicrosoftAccountConnectionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowMicrosoftAccountConnectionValue) String() string {
+	switch e {
+	case AllowMicrosoftAccountConnectionNotAllowed:
+		return "AllowMicrosoftAccountConnectionNotAllowed"
+	case AllowMicrosoftAccountConnectionAllowed:
+		return "AllowMicrosoftAccountConnectionAllowed"
+	default:
+		return fmt.Sprintf("AllowMicrosoftAccountConnectionValue(%d)", int64(e))
+	}
+}
+
+// AllowMicrosoftAccountSignInAssistantValue — allowed values for the AllowMicrosoftAccountSignInAssistant node.
+type AllowMicrosoftAccountSignInAssistantValue int64
+
 const (
 	// Disabled.
-	AllowMicrosoftAccountSignInAssistantDisabled int64 = 0
+	AllowMicrosoftAccountSignInAssistantDisabled AllowMicrosoftAccountSignInAssistantValue = 0
 	// Manual start.
-	AllowMicrosoftAccountSignInAssistantManualStart int64 = 1
+	AllowMicrosoftAccountSignInAssistantManualStart AllowMicrosoftAccountSignInAssistantValue = 1
 )
 
-// RestrictToEnterpriseDeviceAuthenticationOnly allowed values.
+// String returns the AllowMicrosoftAccountSignInAssistantValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowMicrosoftAccountSignInAssistantValue) String() string {
+	switch e {
+	case AllowMicrosoftAccountSignInAssistantDisabled:
+		return "AllowMicrosoftAccountSignInAssistantDisabled"
+	case AllowMicrosoftAccountSignInAssistantManualStart:
+		return "AllowMicrosoftAccountSignInAssistantManualStart"
+	default:
+		return fmt.Sprintf("AllowMicrosoftAccountSignInAssistantValue(%d)", int64(e))
+	}
+}
+
+// RestrictToEnterpriseDeviceAuthenticationOnlyValue — allowed values for the RestrictToEnterpriseDeviceAuthenticationOnly node.
+type RestrictToEnterpriseDeviceAuthenticationOnlyValue int64
+
 const (
 	// Allow both device and user authentication. Do not block user authentication.
-	RestrictToEnterpriseDeviceAuthenticationOnlyAllowBothDeviceAndUserAuthentication int64 = 0
+	RestrictToEnterpriseDeviceAuthenticationOnlyAllowBothDeviceAndUserAuthentication RestrictToEnterpriseDeviceAuthenticationOnlyValue = 0
 	// Only allow device authentication. Block user authentication.
-	RestrictToEnterpriseDeviceAuthenticationOnlyOnlyAllowDeviceAuthentication int64 = 1
+	RestrictToEnterpriseDeviceAuthenticationOnlyOnlyAllowDeviceAuthentication RestrictToEnterpriseDeviceAuthenticationOnlyValue = 1
 )
+
+// String returns the RestrictToEnterpriseDeviceAuthenticationOnlyValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e RestrictToEnterpriseDeviceAuthenticationOnlyValue) String() string {
+	switch e {
+	case RestrictToEnterpriseDeviceAuthenticationOnlyAllowBothDeviceAndUserAuthentication:
+		return "RestrictToEnterpriseDeviceAuthenticationOnlyAllowBothDeviceAndUserAuthentication"
+	case RestrictToEnterpriseDeviceAuthenticationOnlyOnlyAllowDeviceAuthentication:
+		return "RestrictToEnterpriseDeviceAuthenticationOnlyOnlyAllowDeviceAuthentication"
+	default:
+		return fmt.Sprintf("RestrictToEnterpriseDeviceAuthenticationOnlyValue(%d)", int64(e))
+	}
+}

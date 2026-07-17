@@ -2,46 +2,108 @@
 
 package clouddesktop
 
-// BootToCloudMode allowed values.
-const (
-	// Not Configured
-	BootToCloudModeNotConfigured int64 = 0
-	// Enable Boot to Cloud Desktop
-	BootToCloudModeEnableBootToCloudDesktop int64 = 1
+import (
+	"fmt"
 )
 
-// SetMaxConnectionTimeout allowed values.
+// BootToCloudModeValue — allowed values for the BootToCloudMode node.
+type BootToCloudModeValue int64
+
+const (
+	// Not Configured
+	BootToCloudModeNotConfigured BootToCloudModeValue = 0
+	// Enable Boot to Cloud Desktop
+	BootToCloudModeEnableBootToCloudDesktop BootToCloudModeValue = 1
+)
+
+// String returns the BootToCloudModeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e BootToCloudModeValue) String() string {
+	switch e {
+	case BootToCloudModeNotConfigured:
+		return "BootToCloudModeNotConfigured"
+	case BootToCloudModeEnableBootToCloudDesktop:
+		return "BootToCloudModeEnableBootToCloudDesktop"
+	default:
+		return fmt.Sprintf("BootToCloudModeValue(%d)", int64(e))
+	}
+}
+
+// SetMaxConnectionTimeoutValue — allowed values for the SetMaxConnectionTimeout node.
+type SetMaxConnectionTimeoutValue int64
+
 const (
 	// 5 min
-	SetMaxConnectionTimeoutN5Min int64 = 5
+	SetMaxConnectionTimeoutN5Min SetMaxConnectionTimeoutValue = 5
 	// 6 min
-	SetMaxConnectionTimeoutN6Min int64 = 6
+	SetMaxConnectionTimeoutN6Min SetMaxConnectionTimeoutValue = 6
 	// 7 min
-	SetMaxConnectionTimeoutN7Min int64 = 7
+	SetMaxConnectionTimeoutN7Min SetMaxConnectionTimeoutValue = 7
 	// 8 min
-	SetMaxConnectionTimeoutN8Min int64 = 8
+	SetMaxConnectionTimeoutN8Min SetMaxConnectionTimeoutValue = 8
 	// 9 min
-	SetMaxConnectionTimeoutN9Min int64 = 9
+	SetMaxConnectionTimeoutN9Min SetMaxConnectionTimeoutValue = 9
 	// 10 min
-	SetMaxConnectionTimeoutN10Min int64 = 10
+	SetMaxConnectionTimeoutN10Min SetMaxConnectionTimeoutValue = 10
 	// 11 min
-	SetMaxConnectionTimeoutN11Min int64 = 11
+	SetMaxConnectionTimeoutN11Min SetMaxConnectionTimeoutValue = 11
 	// 12 min
-	SetMaxConnectionTimeoutN12Min int64 = 12
+	SetMaxConnectionTimeoutN12Min SetMaxConnectionTimeoutValue = 12
 	// 13 min
-	SetMaxConnectionTimeoutN13Min int64 = 13
+	SetMaxConnectionTimeoutN13Min SetMaxConnectionTimeoutValue = 13
 	// 14 min
-	SetMaxConnectionTimeoutN14Min int64 = 14
+	SetMaxConnectionTimeoutN14Min SetMaxConnectionTimeoutValue = 14
 	// 15 min
-	SetMaxConnectionTimeoutN15Min int64 = 15
+	SetMaxConnectionTimeoutN15Min SetMaxConnectionTimeoutValue = 15
 	// 16 min
-	SetMaxConnectionTimeoutN16Min int64 = 16
+	SetMaxConnectionTimeoutN16Min SetMaxConnectionTimeoutValue = 16
 	// 17 min
-	SetMaxConnectionTimeoutN17Min int64 = 17
+	SetMaxConnectionTimeoutN17Min SetMaxConnectionTimeoutValue = 17
 	// 18 min
-	SetMaxConnectionTimeoutN18Min int64 = 18
+	SetMaxConnectionTimeoutN18Min SetMaxConnectionTimeoutValue = 18
 	// 19 min
-	SetMaxConnectionTimeoutN19Min int64 = 19
+	SetMaxConnectionTimeoutN19Min SetMaxConnectionTimeoutValue = 19
 	// 20 min
-	SetMaxConnectionTimeoutN20Min int64 = 20
+	SetMaxConnectionTimeoutN20Min SetMaxConnectionTimeoutValue = 20
 )
+
+// String returns the SetMaxConnectionTimeoutValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SetMaxConnectionTimeoutValue) String() string {
+	switch e {
+	case SetMaxConnectionTimeoutN5Min:
+		return "SetMaxConnectionTimeoutN5Min"
+	case SetMaxConnectionTimeoutN6Min:
+		return "SetMaxConnectionTimeoutN6Min"
+	case SetMaxConnectionTimeoutN7Min:
+		return "SetMaxConnectionTimeoutN7Min"
+	case SetMaxConnectionTimeoutN8Min:
+		return "SetMaxConnectionTimeoutN8Min"
+	case SetMaxConnectionTimeoutN9Min:
+		return "SetMaxConnectionTimeoutN9Min"
+	case SetMaxConnectionTimeoutN10Min:
+		return "SetMaxConnectionTimeoutN10Min"
+	case SetMaxConnectionTimeoutN11Min:
+		return "SetMaxConnectionTimeoutN11Min"
+	case SetMaxConnectionTimeoutN12Min:
+		return "SetMaxConnectionTimeoutN12Min"
+	case SetMaxConnectionTimeoutN13Min:
+		return "SetMaxConnectionTimeoutN13Min"
+	case SetMaxConnectionTimeoutN14Min:
+		return "SetMaxConnectionTimeoutN14Min"
+	case SetMaxConnectionTimeoutN15Min:
+		return "SetMaxConnectionTimeoutN15Min"
+	case SetMaxConnectionTimeoutN16Min:
+		return "SetMaxConnectionTimeoutN16Min"
+	case SetMaxConnectionTimeoutN17Min:
+		return "SetMaxConnectionTimeoutN17Min"
+	case SetMaxConnectionTimeoutN18Min:
+		return "SetMaxConnectionTimeoutN18Min"
+	case SetMaxConnectionTimeoutN19Min:
+		return "SetMaxConnectionTimeoutN19Min"
+	case SetMaxConnectionTimeoutN20Min:
+		return "SetMaxConnectionTimeoutN20Min"
+	default:
+		return fmt.Sprintf("SetMaxConnectionTimeoutValue(%d)", int64(e))
+	}
+}

@@ -14,12 +14,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v3.0).
-func (s *BitLocker) GetAllowStandardUserEncryption(ctx context.Context) (int64, error) {
+func (s *BitLocker) GetAllowStandardUserEncryption(ctx context.Context) (AllowStandardUserEncryptionValue, error) {
 	v, err := s.c.Get(ctx, URIAllowStandardUserEncryption)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowStandardUserEncryptionValue(n), err
 }
 
 // CreateAllowStandardUserEncryption creates ./Device/Vendor/MSFT/BitLocker/AllowStandardUserEncryption.
@@ -28,8 +29,8 @@ func (s *BitLocker) GetAllowStandardUserEncryption(ctx context.Context) (int64, 
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v3.0).
-func (s *BitLocker) CreateAllowStandardUserEncryption(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowStandardUserEncryption, client.Int(value))
+func (s *BitLocker) CreateAllowStandardUserEncryption(ctx context.Context, value AllowStandardUserEncryptionValue) error {
+	return s.c.Add(ctx, URIAllowStandardUserEncryption, client.Int(int64(value)))
 }
 
 // UpdateAllowStandardUserEncryption updates ./Device/Vendor/MSFT/BitLocker/AllowStandardUserEncryption.
@@ -38,8 +39,8 @@ func (s *BitLocker) CreateAllowStandardUserEncryption(ctx context.Context, value
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v3.0).
-func (s *BitLocker) UpdateAllowStandardUserEncryption(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowStandardUserEncryption, client.Int(value))
+func (s *BitLocker) UpdateAllowStandardUserEncryption(ctx context.Context, value AllowStandardUserEncryptionValue) error {
+	return s.c.Replace(ctx, URIAllowStandardUserEncryption, client.Int(int64(value)))
 }
 
 // DeleteAllowStandardUserEncryption deletes ./Device/Vendor/MSFT/BitLocker/AllowStandardUserEncryption.
@@ -57,12 +58,13 @@ func (s *BitLocker) DeleteAllowStandardUserEncryption(ctx context.Context) error
 // encryption)
 //
 // Default: 1.
-func (s *BitLocker) GetAllowWarningForOtherDiskEncryption(ctx context.Context) (int64, error) {
+func (s *BitLocker) GetAllowWarningForOtherDiskEncryption(ctx context.Context) (AllowWarningForOtherDiskEncryptionValue, error) {
 	v, err := s.c.Get(ctx, URIAllowWarningForOtherDiskEncryption)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowWarningForOtherDiskEncryptionValue(n), err
 }
 
 // CreateAllowWarningForOtherDiskEncryption creates ./Device/Vendor/MSFT/BitLocker/AllowWarningForOtherDiskEncryption.
@@ -70,8 +72,8 @@ func (s *BitLocker) GetAllowWarningForOtherDiskEncryption(ctx context.Context) (
 // encryption)
 //
 // Default: 1.
-func (s *BitLocker) CreateAllowWarningForOtherDiskEncryption(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowWarningForOtherDiskEncryption, client.Int(value))
+func (s *BitLocker) CreateAllowWarningForOtherDiskEncryption(ctx context.Context, value AllowWarningForOtherDiskEncryptionValue) error {
+	return s.c.Add(ctx, URIAllowWarningForOtherDiskEncryption, client.Int(int64(value)))
 }
 
 // UpdateAllowWarningForOtherDiskEncryption updates ./Device/Vendor/MSFT/BitLocker/AllowWarningForOtherDiskEncryption.
@@ -79,8 +81,8 @@ func (s *BitLocker) CreateAllowWarningForOtherDiskEncryption(ctx context.Context
 // encryption)
 //
 // Default: 1.
-func (s *BitLocker) UpdateAllowWarningForOtherDiskEncryption(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowWarningForOtherDiskEncryption, client.Int(value))
+func (s *BitLocker) UpdateAllowWarningForOtherDiskEncryption(ctx context.Context, value AllowWarningForOtherDiskEncryptionValue) error {
+	return s.c.Replace(ctx, URIAllowWarningForOtherDiskEncryption, client.Int(int64(value)))
 }
 
 // DeleteAllowWarningForOtherDiskEncryption deletes ./Device/Vendor/MSFT/BitLocker/AllowWarningForOtherDiskEncryption.
@@ -98,12 +100,13 @@ func (s *BitLocker) DeleteAllowWarningForOtherDiskEncryption(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.18363 (CSP v5.0).
-func (s *BitLocker) GetConfigureRecoveryPasswordRotation(ctx context.Context) (int64, error) {
+func (s *BitLocker) GetConfigureRecoveryPasswordRotation(ctx context.Context) (ConfigureRecoveryPasswordRotationValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureRecoveryPasswordRotation)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureRecoveryPasswordRotationValue(n), err
 }
 
 // CreateConfigureRecoveryPasswordRotation creates ./Device/Vendor/MSFT/BitLocker/ConfigureRecoveryPasswordRotation.
@@ -112,8 +115,8 @@ func (s *BitLocker) GetConfigureRecoveryPasswordRotation(ctx context.Context) (i
 //
 // Default: 0.
 // Supported from OS build 10.0.18363 (CSP v5.0).
-func (s *BitLocker) CreateConfigureRecoveryPasswordRotation(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureRecoveryPasswordRotation, client.Int(value))
+func (s *BitLocker) CreateConfigureRecoveryPasswordRotation(ctx context.Context, value ConfigureRecoveryPasswordRotationValue) error {
+	return s.c.Add(ctx, URIConfigureRecoveryPasswordRotation, client.Int(int64(value)))
 }
 
 // UpdateConfigureRecoveryPasswordRotation updates ./Device/Vendor/MSFT/BitLocker/ConfigureRecoveryPasswordRotation.
@@ -122,8 +125,8 @@ func (s *BitLocker) CreateConfigureRecoveryPasswordRotation(ctx context.Context,
 //
 // Default: 0.
 // Supported from OS build 10.0.18363 (CSP v5.0).
-func (s *BitLocker) UpdateConfigureRecoveryPasswordRotation(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureRecoveryPasswordRotation, client.Int(value))
+func (s *BitLocker) UpdateConfigureRecoveryPasswordRotation(ctx context.Context, value ConfigureRecoveryPasswordRotationValue) error {
+	return s.c.Replace(ctx, URIConfigureRecoveryPasswordRotation, client.Int(int64(value)))
 }
 
 // DeleteConfigureRecoveryPasswordRotation deletes ./Device/Vendor/MSFT/BitLocker/ConfigureRecoveryPasswordRotation.
@@ -564,28 +567,29 @@ func (s *BitLocker) DeleteRemovableDrivesRequireEncryption(ctx context.Context) 
 // Allows the Admin to require encryption to be turned on using BitLocker\Device Encryption.
 //
 // Default: 0.
-func (s *BitLocker) GetRequireDeviceEncryption(ctx context.Context) (int64, error) {
+func (s *BitLocker) GetRequireDeviceEncryption(ctx context.Context) (RequireDeviceEncryptionValue, error) {
 	v, err := s.c.Get(ctx, URIRequireDeviceEncryption)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return RequireDeviceEncryptionValue(n), err
 }
 
 // CreateRequireDeviceEncryption creates ./Device/Vendor/MSFT/BitLocker/RequireDeviceEncryption.
 // Allows the Admin to require encryption to be turned on using BitLocker\Device Encryption.
 //
 // Default: 0.
-func (s *BitLocker) CreateRequireDeviceEncryption(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIRequireDeviceEncryption, client.Int(value))
+func (s *BitLocker) CreateRequireDeviceEncryption(ctx context.Context, value RequireDeviceEncryptionValue) error {
+	return s.c.Add(ctx, URIRequireDeviceEncryption, client.Int(int64(value)))
 }
 
 // UpdateRequireDeviceEncryption updates ./Device/Vendor/MSFT/BitLocker/RequireDeviceEncryption.
 // Allows the Admin to require encryption to be turned on using BitLocker\Device Encryption.
 //
 // Default: 0.
-func (s *BitLocker) UpdateRequireDeviceEncryption(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIRequireDeviceEncryption, client.Int(value))
+func (s *BitLocker) UpdateRequireDeviceEncryption(ctx context.Context, value RequireDeviceEncryptionValue) error {
+	return s.c.Replace(ctx, URIRequireDeviceEncryption, client.Int(int64(value)))
 }
 
 // DeleteRequireDeviceEncryption deletes ./Device/Vendor/MSFT/BitLocker/RequireDeviceEncryption.
@@ -602,12 +606,13 @@ func (s *BitLocker) DeleteRequireDeviceEncryption(ctx context.Context) error {
 // Default: 0.
 //
 // Deprecated: no longer recommended.
-func (s *BitLocker) GetRequireStorageCardEncryption(ctx context.Context) (int64, error) {
+func (s *BitLocker) GetRequireStorageCardEncryption(ctx context.Context) (RequireStorageCardEncryptionValue, error) {
 	v, err := s.c.Get(ctx, URIRequireStorageCardEncryption)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return RequireStorageCardEncryptionValue(n), err
 }
 
 // CreateRequireStorageCardEncryption creates ./Device/Vendor/MSFT/BitLocker/RequireStorageCardEncryption.
@@ -616,8 +621,8 @@ func (s *BitLocker) GetRequireStorageCardEncryption(ctx context.Context) (int64,
 // Default: 0.
 //
 // Deprecated: no longer recommended.
-func (s *BitLocker) CreateRequireStorageCardEncryption(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIRequireStorageCardEncryption, client.Int(value))
+func (s *BitLocker) CreateRequireStorageCardEncryption(ctx context.Context, value RequireStorageCardEncryptionValue) error {
+	return s.c.Add(ctx, URIRequireStorageCardEncryption, client.Int(int64(value)))
 }
 
 // UpdateRequireStorageCardEncryption updates ./Device/Vendor/MSFT/BitLocker/RequireStorageCardEncryption.
@@ -626,8 +631,8 @@ func (s *BitLocker) CreateRequireStorageCardEncryption(ctx context.Context, valu
 // Default: 0.
 //
 // Deprecated: no longer recommended.
-func (s *BitLocker) UpdateRequireStorageCardEncryption(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIRequireStorageCardEncryption, client.Int(value))
+func (s *BitLocker) UpdateRequireStorageCardEncryption(ctx context.Context, value RequireStorageCardEncryptionValue) error {
+	return s.c.Replace(ctx, URIRequireStorageCardEncryption, client.Int(int64(value)))
 }
 
 // DeleteRequireStorageCardEncryption deletes ./Device/Vendor/MSFT/BitLocker/RequireStorageCardEncryption.

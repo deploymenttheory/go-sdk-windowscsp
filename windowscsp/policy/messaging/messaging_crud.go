@@ -14,12 +14,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Messaging) GetAllowMMS(ctx context.Context) (int64, error) {
+func (s *Messaging) GetAllowMMS(ctx context.Context) (AllowMMSValue, error) {
 	v, err := s.c.Get(ctx, URIAllowMMS)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowMMSValue(n), err
 }
 
 // CreateAllowMMS creates ./Device/Vendor/MSFT/Policy/Config/Messaging/AllowMMS.
@@ -28,8 +29,8 @@ func (s *Messaging) GetAllowMMS(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Messaging) CreateAllowMMS(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowMMS, client.Int(value))
+func (s *Messaging) CreateAllowMMS(ctx context.Context, value AllowMMSValue) error {
+	return s.c.Add(ctx, URIAllowMMS, client.Int(int64(value)))
 }
 
 // UpdateAllowMMS updates ./Device/Vendor/MSFT/Policy/Config/Messaging/AllowMMS.
@@ -38,8 +39,8 @@ func (s *Messaging) CreateAllowMMS(ctx context.Context, value int64) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Messaging) UpdateAllowMMS(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowMMS, client.Int(value))
+func (s *Messaging) UpdateAllowMMS(ctx context.Context, value AllowMMSValue) error {
+	return s.c.Replace(ctx, URIAllowMMS, client.Int(int64(value)))
 }
 
 // DeleteAllowMMS deletes ./Device/Vendor/MSFT/Policy/Config/Messaging/AllowMMS.
@@ -58,12 +59,13 @@ func (s *Messaging) DeleteAllowMMS(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Messaging) GetAllowMessageSync(ctx context.Context) (int64, error) {
+func (s *Messaging) GetAllowMessageSync(ctx context.Context) (AllowMessageSyncValue, error) {
 	v, err := s.c.Get(ctx, URIAllowMessageSync)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowMessageSyncValue(n), err
 }
 
 // CreateAllowMessageSync creates ./Device/Vendor/MSFT/Policy/Config/Messaging/AllowMessageSync.
@@ -72,8 +74,8 @@ func (s *Messaging) GetAllowMessageSync(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Messaging) CreateAllowMessageSync(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowMessageSync, client.Int(value))
+func (s *Messaging) CreateAllowMessageSync(ctx context.Context, value AllowMessageSyncValue) error {
+	return s.c.Add(ctx, URIAllowMessageSync, client.Int(int64(value)))
 }
 
 // UpdateAllowMessageSync updates ./Device/Vendor/MSFT/Policy/Config/Messaging/AllowMessageSync.
@@ -82,8 +84,8 @@ func (s *Messaging) CreateAllowMessageSync(ctx context.Context, value int64) err
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Messaging) UpdateAllowMessageSync(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowMessageSync, client.Int(value))
+func (s *Messaging) UpdateAllowMessageSync(ctx context.Context, value AllowMessageSyncValue) error {
+	return s.c.Replace(ctx, URIAllowMessageSync, client.Int(int64(value)))
 }
 
 // DeleteAllowMessageSync deletes ./Device/Vendor/MSFT/Policy/Config/Messaging/AllowMessageSync.
@@ -102,12 +104,13 @@ func (s *Messaging) DeleteAllowMessageSync(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Messaging) GetAllowRCS(ctx context.Context) (int64, error) {
+func (s *Messaging) GetAllowRCS(ctx context.Context) (AllowRCSValue, error) {
 	v, err := s.c.Get(ctx, URIAllowRCS)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowRCSValue(n), err
 }
 
 // CreateAllowRCS creates ./Device/Vendor/MSFT/Policy/Config/Messaging/AllowRCS.
@@ -116,8 +119,8 @@ func (s *Messaging) GetAllowRCS(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Messaging) CreateAllowRCS(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowRCS, client.Int(value))
+func (s *Messaging) CreateAllowRCS(ctx context.Context, value AllowRCSValue) error {
+	return s.c.Add(ctx, URIAllowRCS, client.Int(int64(value)))
 }
 
 // UpdateAllowRCS updates ./Device/Vendor/MSFT/Policy/Config/Messaging/AllowRCS.
@@ -126,8 +129,8 @@ func (s *Messaging) CreateAllowRCS(ctx context.Context, value int64) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Messaging) UpdateAllowRCS(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowRCS, client.Int(value))
+func (s *Messaging) UpdateAllowRCS(ctx context.Context, value AllowRCSValue) error {
+	return s.c.Replace(ctx, URIAllowRCS, client.Int(int64(value)))
 }
 
 // DeleteAllowRCS deletes ./Device/Vendor/MSFT/Policy/Config/Messaging/AllowRCS.

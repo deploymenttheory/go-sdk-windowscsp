@@ -13,12 +13,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Cellular) GetLetAppsAccessCellularData(ctx context.Context) (int64, error) {
+func (s *Cellular) GetLetAppsAccessCellularData(ctx context.Context) (LetAppsAccessCellularDataValue, error) {
 	v, err := s.c.Get(ctx, URILetAppsAccessCellularData)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return LetAppsAccessCellularDataValue(n), err
 }
 
 // CreateLetAppsAccessCellularData creates ./Device/Vendor/MSFT/Policy/Config/Cellular/LetAppsAccessCellularData.
@@ -26,8 +27,8 @@ func (s *Cellular) GetLetAppsAccessCellularData(ctx context.Context) (int64, err
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Cellular) CreateLetAppsAccessCellularData(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URILetAppsAccessCellularData, client.Int(value))
+func (s *Cellular) CreateLetAppsAccessCellularData(ctx context.Context, value LetAppsAccessCellularDataValue) error {
+	return s.c.Add(ctx, URILetAppsAccessCellularData, client.Int(int64(value)))
 }
 
 // UpdateLetAppsAccessCellularData updates ./Device/Vendor/MSFT/Policy/Config/Cellular/LetAppsAccessCellularData.
@@ -35,8 +36,8 @@ func (s *Cellular) CreateLetAppsAccessCellularData(ctx context.Context, value in
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Cellular) UpdateLetAppsAccessCellularData(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URILetAppsAccessCellularData, client.Int(value))
+func (s *Cellular) UpdateLetAppsAccessCellularData(ctx context.Context, value LetAppsAccessCellularDataValue) error {
+	return s.c.Replace(ctx, URILetAppsAccessCellularData, client.Int(int64(value)))
 }
 
 // DeleteLetAppsAccessCellularData deletes ./Device/Vendor/MSFT/Policy/Config/Cellular/LetAppsAccessCellularData.

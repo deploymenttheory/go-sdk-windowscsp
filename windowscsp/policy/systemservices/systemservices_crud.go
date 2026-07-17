@@ -806,12 +806,13 @@ func (s *SystemServices) DeleteConfigureWorldWideWebPublishingServiceStartupMode
 //
 // Default: 3.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *SystemServices) GetConfigureXboxAccessoryManagementServiceStartupMode(ctx context.Context) (int64, error) {
+func (s *SystemServices) GetConfigureXboxAccessoryManagementServiceStartupMode(ctx context.Context) (ConfigureXboxAccessoryManagementServiceStartupModeValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureXboxAccessoryManagementServiceStartupMode)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureXboxAccessoryManagementServiceStartupModeValue(n), err
 }
 
 // CreateConfigureXboxAccessoryManagementServiceStartupMode creates ./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureXboxAccessoryManagementServiceStartupMode.
@@ -820,8 +821,8 @@ func (s *SystemServices) GetConfigureXboxAccessoryManagementServiceStartupMode(c
 //
 // Default: 3.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *SystemServices) CreateConfigureXboxAccessoryManagementServiceStartupMode(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureXboxAccessoryManagementServiceStartupMode, client.Int(value))
+func (s *SystemServices) CreateConfigureXboxAccessoryManagementServiceStartupMode(ctx context.Context, value ConfigureXboxAccessoryManagementServiceStartupModeValue) error {
+	return s.c.Add(ctx, URIConfigureXboxAccessoryManagementServiceStartupMode, client.Int(int64(value)))
 }
 
 // UpdateConfigureXboxAccessoryManagementServiceStartupMode updates ./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureXboxAccessoryManagementServiceStartupMode.
@@ -830,8 +831,8 @@ func (s *SystemServices) CreateConfigureXboxAccessoryManagementServiceStartupMod
 //
 // Default: 3.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *SystemServices) UpdateConfigureXboxAccessoryManagementServiceStartupMode(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureXboxAccessoryManagementServiceStartupMode, client.Int(value))
+func (s *SystemServices) UpdateConfigureXboxAccessoryManagementServiceStartupMode(ctx context.Context, value ConfigureXboxAccessoryManagementServiceStartupModeValue) error {
+	return s.c.Replace(ctx, URIConfigureXboxAccessoryManagementServiceStartupMode, client.Int(int64(value)))
 }
 
 // DeleteConfigureXboxAccessoryManagementServiceStartupMode deletes ./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureXboxAccessoryManagementServiceStartupMode.
@@ -850,12 +851,13 @@ func (s *SystemServices) DeleteConfigureXboxAccessoryManagementServiceStartupMod
 //
 // Default: 3.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *SystemServices) GetConfigureXboxLiveAuthManagerServiceStartupMode(ctx context.Context) (int64, error) {
+func (s *SystemServices) GetConfigureXboxLiveAuthManagerServiceStartupMode(ctx context.Context) (ConfigureXboxLiveAuthManagerServiceStartupModeValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureXboxLiveAuthManagerServiceStartupMode)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureXboxLiveAuthManagerServiceStartupModeValue(n), err
 }
 
 // CreateConfigureXboxLiveAuthManagerServiceStartupMode creates ./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureXboxLiveAuthManagerServiceStartupMode.
@@ -864,8 +866,8 @@ func (s *SystemServices) GetConfigureXboxLiveAuthManagerServiceStartupMode(ctx c
 //
 // Default: 3.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *SystemServices) CreateConfigureXboxLiveAuthManagerServiceStartupMode(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureXboxLiveAuthManagerServiceStartupMode, client.Int(value))
+func (s *SystemServices) CreateConfigureXboxLiveAuthManagerServiceStartupMode(ctx context.Context, value ConfigureXboxLiveAuthManagerServiceStartupModeValue) error {
+	return s.c.Add(ctx, URIConfigureXboxLiveAuthManagerServiceStartupMode, client.Int(int64(value)))
 }
 
 // UpdateConfigureXboxLiveAuthManagerServiceStartupMode updates ./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureXboxLiveAuthManagerServiceStartupMode.
@@ -874,8 +876,8 @@ func (s *SystemServices) CreateConfigureXboxLiveAuthManagerServiceStartupMode(ct
 //
 // Default: 3.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *SystemServices) UpdateConfigureXboxLiveAuthManagerServiceStartupMode(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureXboxLiveAuthManagerServiceStartupMode, client.Int(value))
+func (s *SystemServices) UpdateConfigureXboxLiveAuthManagerServiceStartupMode(ctx context.Context, value ConfigureXboxLiveAuthManagerServiceStartupModeValue) error {
+	return s.c.Replace(ctx, URIConfigureXboxLiveAuthManagerServiceStartupMode, client.Int(int64(value)))
 }
 
 // DeleteConfigureXboxLiveAuthManagerServiceStartupMode deletes ./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureXboxLiveAuthManagerServiceStartupMode.
@@ -894,12 +896,13 @@ func (s *SystemServices) DeleteConfigureXboxLiveAuthManagerServiceStartupMode(ct
 //
 // Default: 3.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *SystemServices) GetConfigureXboxLiveGameSaveServiceStartupMode(ctx context.Context) (int64, error) {
+func (s *SystemServices) GetConfigureXboxLiveGameSaveServiceStartupMode(ctx context.Context) (ConfigureXboxLiveGameSaveServiceStartupModeValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureXboxLiveGameSaveServiceStartupMode)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureXboxLiveGameSaveServiceStartupModeValue(n), err
 }
 
 // CreateConfigureXboxLiveGameSaveServiceStartupMode creates ./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureXboxLiveGameSaveServiceStartupMode.
@@ -908,8 +911,8 @@ func (s *SystemServices) GetConfigureXboxLiveGameSaveServiceStartupMode(ctx cont
 //
 // Default: 3.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *SystemServices) CreateConfigureXboxLiveGameSaveServiceStartupMode(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureXboxLiveGameSaveServiceStartupMode, client.Int(value))
+func (s *SystemServices) CreateConfigureXboxLiveGameSaveServiceStartupMode(ctx context.Context, value ConfigureXboxLiveGameSaveServiceStartupModeValue) error {
+	return s.c.Add(ctx, URIConfigureXboxLiveGameSaveServiceStartupMode, client.Int(int64(value)))
 }
 
 // UpdateConfigureXboxLiveGameSaveServiceStartupMode updates ./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureXboxLiveGameSaveServiceStartupMode.
@@ -918,8 +921,8 @@ func (s *SystemServices) CreateConfigureXboxLiveGameSaveServiceStartupMode(ctx c
 //
 // Default: 3.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *SystemServices) UpdateConfigureXboxLiveGameSaveServiceStartupMode(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureXboxLiveGameSaveServiceStartupMode, client.Int(value))
+func (s *SystemServices) UpdateConfigureXboxLiveGameSaveServiceStartupMode(ctx context.Context, value ConfigureXboxLiveGameSaveServiceStartupModeValue) error {
+	return s.c.Replace(ctx, URIConfigureXboxLiveGameSaveServiceStartupMode, client.Int(int64(value)))
 }
 
 // DeleteConfigureXboxLiveGameSaveServiceStartupMode deletes ./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureXboxLiveGameSaveServiceStartupMode.
@@ -938,12 +941,13 @@ func (s *SystemServices) DeleteConfigureXboxLiveGameSaveServiceStartupMode(ctx c
 //
 // Default: 3.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *SystemServices) GetConfigureXboxLiveNetworkingServiceStartupMode(ctx context.Context) (int64, error) {
+func (s *SystemServices) GetConfigureXboxLiveNetworkingServiceStartupMode(ctx context.Context) (ConfigureXboxLiveNetworkingServiceStartupModeValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureXboxLiveNetworkingServiceStartupMode)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureXboxLiveNetworkingServiceStartupModeValue(n), err
 }
 
 // CreateConfigureXboxLiveNetworkingServiceStartupMode creates ./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureXboxLiveNetworkingServiceStartupMode.
@@ -952,8 +956,8 @@ func (s *SystemServices) GetConfigureXboxLiveNetworkingServiceStartupMode(ctx co
 //
 // Default: 3.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *SystemServices) CreateConfigureXboxLiveNetworkingServiceStartupMode(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureXboxLiveNetworkingServiceStartupMode, client.Int(value))
+func (s *SystemServices) CreateConfigureXboxLiveNetworkingServiceStartupMode(ctx context.Context, value ConfigureXboxLiveNetworkingServiceStartupModeValue) error {
+	return s.c.Add(ctx, URIConfigureXboxLiveNetworkingServiceStartupMode, client.Int(int64(value)))
 }
 
 // UpdateConfigureXboxLiveNetworkingServiceStartupMode updates ./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureXboxLiveNetworkingServiceStartupMode.
@@ -962,8 +966,8 @@ func (s *SystemServices) CreateConfigureXboxLiveNetworkingServiceStartupMode(ctx
 //
 // Default: 3.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *SystemServices) UpdateConfigureXboxLiveNetworkingServiceStartupMode(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureXboxLiveNetworkingServiceStartupMode, client.Int(value))
+func (s *SystemServices) UpdateConfigureXboxLiveNetworkingServiceStartupMode(ctx context.Context, value ConfigureXboxLiveNetworkingServiceStartupModeValue) error {
+	return s.c.Replace(ctx, URIConfigureXboxLiveNetworkingServiceStartupMode, client.Int(int64(value)))
 }
 
 // DeleteConfigureXboxLiveNetworkingServiceStartupMode deletes ./Device/Vendor/MSFT/Policy/Config/SystemServices/ConfigureXboxLiveNetworkingServiceStartupMode.

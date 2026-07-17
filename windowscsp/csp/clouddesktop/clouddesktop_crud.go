@@ -21,12 +21,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.22621.3374 (CSP v1.0).
-func (s *CloudDesktop) GetBootToCloudPCEnhanced(ctx context.Context) (int64, error) {
+func (s *CloudDesktop) GetBootToCloudPCEnhanced(ctx context.Context) (BootToCloudPCEnhancedValue, error) {
 	v, err := s.c.Get(ctx, URIBootToCloudPCEnhanced)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return BootToCloudPCEnhancedValue(n), err
 }
 
 // CreateBootToCloudPCEnhanced creates ./Device/Vendor/MSFT/CloudDesktop/BootToCloudPCEnhanced.
@@ -42,8 +43,8 @@ func (s *CloudDesktop) GetBootToCloudPCEnhanced(ctx context.Context) (int64, err
 //
 // Default: 0.
 // Supported from OS build 10.0.22621.3374 (CSP v1.0).
-func (s *CloudDesktop) CreateBootToCloudPCEnhanced(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIBootToCloudPCEnhanced, client.Int(value))
+func (s *CloudDesktop) CreateBootToCloudPCEnhanced(ctx context.Context, value BootToCloudPCEnhancedValue) error {
+	return s.c.Add(ctx, URIBootToCloudPCEnhanced, client.Int(int64(value)))
 }
 
 // UpdateBootToCloudPCEnhanced updates ./Device/Vendor/MSFT/CloudDesktop/BootToCloudPCEnhanced.
@@ -59,8 +60,8 @@ func (s *CloudDesktop) CreateBootToCloudPCEnhanced(ctx context.Context, value in
 //
 // Default: 0.
 // Supported from OS build 10.0.22621.3374 (CSP v1.0).
-func (s *CloudDesktop) UpdateBootToCloudPCEnhanced(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIBootToCloudPCEnhanced, client.Int(value))
+func (s *CloudDesktop) UpdateBootToCloudPCEnhanced(ctx context.Context, value BootToCloudPCEnhancedValue) error {
+	return s.c.Replace(ctx, URIBootToCloudPCEnhanced, client.Int(int64(value)))
 }
 
 // DeleteBootToCloudPCEnhanced deletes ./Device/Vendor/MSFT/CloudDesktop/BootToCloudPCEnhanced.

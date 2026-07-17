@@ -2,12 +2,33 @@
 
 package dmclient_user
 
-// ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisioned allowed values.
+import (
+	"fmt"
+)
+
+// ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedValue — allowed values for the WasDeviceSuccessfullyProvisioned node.
+type ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedValue int64
+
 const (
 	// The device has failed to provision the user
-	ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedTheDeviceHasFailedToProvision int64 = 0
+	ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedTheDeviceHasFailedToProvision ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedValue = 0
 	// The device has successfully provisioned the user.
-	ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedTheDeviceHasSuccessfullyProvisionedThe int64 = 1
+	ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedTheDeviceHasSuccessfullyProvisionedThe ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedValue = 1
 	// Provisioning is in progress.
-	ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedProvisioningIsInProgress int64 = 2
+	ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedProvisioningIsInProgress ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedValue = 2
 )
+
+// String returns the ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedValue) String() string {
+	switch e {
+	case ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedTheDeviceHasFailedToProvision:
+		return "ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedTheDeviceHasFailedToProvision"
+	case ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedTheDeviceHasSuccessfullyProvisionedThe:
+		return "ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedTheDeviceHasSuccessfullyProvisionedThe"
+	case ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedProvisioningIsInProgress:
+		return "ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedProvisioningIsInProgress"
+	default:
+		return fmt.Sprintf("ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedValue(%d)", int64(e))
+	}
+}

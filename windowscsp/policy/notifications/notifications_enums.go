@@ -2,10 +2,29 @@
 
 package notifications
 
-// DisallowCloudNotification allowed values.
+import (
+	"fmt"
+)
+
+// DisallowCloudNotificationValue — allowed values for the DisallowCloudNotification node.
+type DisallowCloudNotificationValue int64
+
 const (
 	// Enable cloud notification.
-	DisallowCloudNotificationEnableCloudNotification int64 = 0
+	DisallowCloudNotificationEnableCloudNotification DisallowCloudNotificationValue = 0
 	// Disable cloud notification.
-	DisallowCloudNotificationDisableCloudNotification int64 = 1
+	DisallowCloudNotificationDisableCloudNotification DisallowCloudNotificationValue = 1
 )
+
+// String returns the DisallowCloudNotificationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisallowCloudNotificationValue) String() string {
+	switch e {
+	case DisallowCloudNotificationEnableCloudNotification:
+		return "DisallowCloudNotificationEnableCloudNotification"
+	case DisallowCloudNotificationDisableCloudNotification:
+		return "DisallowCloudNotificationDisableCloudNotification"
+	default:
+		return fmt.Sprintf("DisallowCloudNotificationValue(%d)", int64(e))
+	}
+}

@@ -2,146 +2,399 @@
 
 package windowsai
 
-// AgentConnectorMinimumPolicy allowed values.
-const (
-	// User in control.
-	AgentConnectorMinimumPolicyUserInControl int64 = 0
-	// Restricted.
-	AgentConnectorMinimumPolicyRestricted int64 = 1
-	// Bypass.
-	AgentConnectorMinimumPolicyBypass int64 = 2
+import (
+	"fmt"
 )
 
-// AllowRecallEnablement allowed values.
+// AgentConnectorMinimumPolicyValue — allowed values for the AgentConnectorMinimumPolicy node.
+type AgentConnectorMinimumPolicyValue int64
+
+const (
+	// User in control.
+	AgentConnectorMinimumPolicyUserInControl AgentConnectorMinimumPolicyValue = 0
+	// Restricted.
+	AgentConnectorMinimumPolicyRestricted AgentConnectorMinimumPolicyValue = 1
+	// Bypass.
+	AgentConnectorMinimumPolicyBypass AgentConnectorMinimumPolicyValue = 2
+)
+
+// String returns the AgentConnectorMinimumPolicyValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AgentConnectorMinimumPolicyValue) String() string {
+	switch e {
+	case AgentConnectorMinimumPolicyUserInControl:
+		return "AgentConnectorMinimumPolicyUserInControl"
+	case AgentConnectorMinimumPolicyRestricted:
+		return "AgentConnectorMinimumPolicyRestricted"
+	case AgentConnectorMinimumPolicyBypass:
+		return "AgentConnectorMinimumPolicyBypass"
+	default:
+		return fmt.Sprintf("AgentConnectorMinimumPolicyValue(%d)", int64(e))
+	}
+}
+
+// AllowRecallEnablementValue — allowed values for the AllowRecallEnablement node.
+type AllowRecallEnablementValue int64
+
 const (
 	// Recall is not available
-	AllowRecallEnablementRecallIsNotAvailable int64 = 0
+	AllowRecallEnablementRecallIsNotAvailable AllowRecallEnablementValue = 0
 	// Recall is available
-	AllowRecallEnablementRecallIsAvailable int64 = 1
+	AllowRecallEnablementRecallIsAvailable AllowRecallEnablementValue = 1
 )
 
-// AllowRecallExport allowed values.
+// String returns the AllowRecallEnablementValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowRecallEnablementValue) String() string {
+	switch e {
+	case AllowRecallEnablementRecallIsNotAvailable:
+		return "AllowRecallEnablementRecallIsNotAvailable"
+	case AllowRecallEnablementRecallIsAvailable:
+		return "AllowRecallEnablementRecallIsAvailable"
+	default:
+		return fmt.Sprintf("AllowRecallEnablementValue(%d)", int64(e))
+	}
+}
+
+// AllowRecallExportValue — allowed values for the AllowRecallExport node.
+type AllowRecallExportValue int64
+
 const (
 	// Deny export of Recall and snapshots information
-	AllowRecallExportDenyExportOfRecallAndSnapshots int64 = 0
+	AllowRecallExportDenyExportOfRecallAndSnapshots AllowRecallExportValue = 0
 	// Allow export of Recall and snapshot information
-	AllowRecallExportAllowExportOfRecallAndSnapshot int64 = 1
+	AllowRecallExportAllowExportOfRecallAndSnapshot AllowRecallExportValue = 1
 )
 
-// DisableAIDataAnalysis allowed values.
+// String returns the AllowRecallExportValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowRecallExportValue) String() string {
+	switch e {
+	case AllowRecallExportDenyExportOfRecallAndSnapshots:
+		return "AllowRecallExportDenyExportOfRecallAndSnapshots"
+	case AllowRecallExportAllowExportOfRecallAndSnapshot:
+		return "AllowRecallExportAllowExportOfRecallAndSnapshot"
+	default:
+		return fmt.Sprintf("AllowRecallExportValue(%d)", int64(e))
+	}
+}
+
+// DisableAIDataAnalysisValue — allowed values for the DisableAIDataAnalysis node.
+type DisableAIDataAnalysisValue int64
+
 const (
 	// Enable Saving Snapshots for Recall.
-	DisableAIDataAnalysisEnableSavingSnapshotsForRecall int64 = 0
+	DisableAIDataAnalysisEnableSavingSnapshotsForRecall DisableAIDataAnalysisValue = 0
 	// Disable Saving Snapshots for Recall.
-	DisableAIDataAnalysisDisableSavingSnapshotsForRecall int64 = 1
+	DisableAIDataAnalysisDisableSavingSnapshotsForRecall DisableAIDataAnalysisValue = 1
 )
 
-// DisableAgentConnectors allowed values.
+// String returns the DisableAIDataAnalysisValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableAIDataAnalysisValue) String() string {
+	switch e {
+	case DisableAIDataAnalysisEnableSavingSnapshotsForRecall:
+		return "DisableAIDataAnalysisEnableSavingSnapshotsForRecall"
+	case DisableAIDataAnalysisDisableSavingSnapshotsForRecall:
+		return "DisableAIDataAnalysisDisableSavingSnapshotsForRecall"
+	default:
+		return fmt.Sprintf("DisableAIDataAnalysisValue(%d)", int64(e))
+	}
+}
+
+// DisableAgentConnectorsValue — allowed values for the DisableAgentConnectors node.
+type DisableAgentConnectorsValue int64
+
 const (
 	// User in control.
-	DisableAgentConnectorsUserInControl int64 = 0
+	DisableAgentConnectorsUserInControl DisableAgentConnectorsValue = 0
 	// Force Enable.
-	DisableAgentConnectorsForceEnable int64 = 1
+	DisableAgentConnectorsForceEnable DisableAgentConnectorsValue = 1
 	// Force Disable.
-	DisableAgentConnectorsForceDisable int64 = 2
+	DisableAgentConnectorsForceDisable DisableAgentConnectorsValue = 2
 )
 
-// DisableAgentWorkspaces allowed values.
+// String returns the DisableAgentConnectorsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableAgentConnectorsValue) String() string {
+	switch e {
+	case DisableAgentConnectorsUserInControl:
+		return "DisableAgentConnectorsUserInControl"
+	case DisableAgentConnectorsForceEnable:
+		return "DisableAgentConnectorsForceEnable"
+	case DisableAgentConnectorsForceDisable:
+		return "DisableAgentConnectorsForceDisable"
+	default:
+		return fmt.Sprintf("DisableAgentConnectorsValue(%d)", int64(e))
+	}
+}
+
+// DisableAgentWorkspacesValue — allowed values for the DisableAgentWorkspaces node.
+type DisableAgentWorkspacesValue int64
+
 const (
 	// User in control.
-	DisableAgentWorkspacesUserInControl int64 = 0
+	DisableAgentWorkspacesUserInControl DisableAgentWorkspacesValue = 0
 	// Force Enable.
-	DisableAgentWorkspacesForceEnable int64 = 1
+	DisableAgentWorkspacesForceEnable DisableAgentWorkspacesValue = 1
 	// Force Disable.
-	DisableAgentWorkspacesForceDisable int64 = 2
+	DisableAgentWorkspacesForceDisable DisableAgentWorkspacesValue = 2
 )
 
-// DisableClickToDo allowed values.
+// String returns the DisableAgentWorkspacesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableAgentWorkspacesValue) String() string {
+	switch e {
+	case DisableAgentWorkspacesUserInControl:
+		return "DisableAgentWorkspacesUserInControl"
+	case DisableAgentWorkspacesForceEnable:
+		return "DisableAgentWorkspacesForceEnable"
+	case DisableAgentWorkspacesForceDisable:
+		return "DisableAgentWorkspacesForceDisable"
+	default:
+		return fmt.Sprintf("DisableAgentWorkspacesValue(%d)", int64(e))
+	}
+}
+
+// DisableClickToDoValue — allowed values for the DisableClickToDo node.
+type DisableClickToDoValue int64
+
 const (
 	// Click to Do is enabled
-	DisableClickToDoClickToDoIsEnabled int64 = 0
+	DisableClickToDoClickToDoIsEnabled DisableClickToDoValue = 0
 	// Click to Do is disabled.
-	DisableClickToDoClickToDoIsDisabled int64 = 1
+	DisableClickToDoClickToDoIsDisabled DisableClickToDoValue = 1
 )
 
-// DisableCocreator allowed values.
+// String returns the DisableClickToDoValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableClickToDoValue) String() string {
+	switch e {
+	case DisableClickToDoClickToDoIsEnabled:
+		return "DisableClickToDoClickToDoIsEnabled"
+	case DisableClickToDoClickToDoIsDisabled:
+		return "DisableClickToDoClickToDoIsDisabled"
+	default:
+		return fmt.Sprintf("DisableClickToDoValue(%d)", int64(e))
+	}
+}
+
+// DisableCocreatorValue — allowed values for the DisableCocreator node.
+type DisableCocreatorValue int64
+
 const (
 	// Cocreator is enabled.
-	DisableCocreatorCocreatorIsEnabled int64 = 0
+	DisableCocreatorCocreatorIsEnabled DisableCocreatorValue = 0
 	// Cocreator is disabled.
-	DisableCocreatorCocreatorIsDisabled int64 = 1
+	DisableCocreatorCocreatorIsDisabled DisableCocreatorValue = 1
 )
 
-// DisableGenerativeFill allowed values.
+// String returns the DisableCocreatorValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableCocreatorValue) String() string {
+	switch e {
+	case DisableCocreatorCocreatorIsEnabled:
+		return "DisableCocreatorCocreatorIsEnabled"
+	case DisableCocreatorCocreatorIsDisabled:
+		return "DisableCocreatorCocreatorIsDisabled"
+	default:
+		return fmt.Sprintf("DisableCocreatorValue(%d)", int64(e))
+	}
+}
+
+// DisableGenerativeFillValue — allowed values for the DisableGenerativeFill node.
+type DisableGenerativeFillValue int64
+
 const (
 	// Generative fill is enabled.
-	DisableGenerativeFillGenerativeFillIsEnabled int64 = 0
+	DisableGenerativeFillGenerativeFillIsEnabled DisableGenerativeFillValue = 0
 	// Generative fill is disabled.
-	DisableGenerativeFillGenerativeFillIsDisabled int64 = 1
+	DisableGenerativeFillGenerativeFillIsDisabled DisableGenerativeFillValue = 1
 )
 
-// DisableImageCreator allowed values.
+// String returns the DisableGenerativeFillValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableGenerativeFillValue) String() string {
+	switch e {
+	case DisableGenerativeFillGenerativeFillIsEnabled:
+		return "DisableGenerativeFillGenerativeFillIsEnabled"
+	case DisableGenerativeFillGenerativeFillIsDisabled:
+		return "DisableGenerativeFillGenerativeFillIsDisabled"
+	default:
+		return fmt.Sprintf("DisableGenerativeFillValue(%d)", int64(e))
+	}
+}
+
+// DisableImageCreatorValue — allowed values for the DisableImageCreator node.
+type DisableImageCreatorValue int64
+
 const (
 	// Image Creator is enabled.
-	DisableImageCreatorImageCreatorIsEnabled int64 = 0
+	DisableImageCreatorImageCreatorIsEnabled DisableImageCreatorValue = 0
 	// Image Creator is disabled.
-	DisableImageCreatorImageCreatorIsDisabled int64 = 1
+	DisableImageCreatorImageCreatorIsDisabled DisableImageCreatorValue = 1
 )
 
-// DisableRemoteAgentConnectors allowed values.
+// String returns the DisableImageCreatorValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableImageCreatorValue) String() string {
+	switch e {
+	case DisableImageCreatorImageCreatorIsEnabled:
+		return "DisableImageCreatorImageCreatorIsEnabled"
+	case DisableImageCreatorImageCreatorIsDisabled:
+		return "DisableImageCreatorImageCreatorIsDisabled"
+	default:
+		return fmt.Sprintf("DisableImageCreatorValue(%d)", int64(e))
+	}
+}
+
+// DisableRemoteAgentConnectorsValue — allowed values for the DisableRemoteAgentConnectors node.
+type DisableRemoteAgentConnectorsValue int64
+
 const (
 	// User in control.
-	DisableRemoteAgentConnectorsUserInControl int64 = 0
+	DisableRemoteAgentConnectorsUserInControl DisableRemoteAgentConnectorsValue = 0
 	// Force Enable.
-	DisableRemoteAgentConnectorsForceEnable int64 = 1
+	DisableRemoteAgentConnectorsForceEnable DisableRemoteAgentConnectorsValue = 1
 	// Force Disable.
-	DisableRemoteAgentConnectorsForceDisable int64 = 2
+	DisableRemoteAgentConnectorsForceDisable DisableRemoteAgentConnectorsValue = 2
 )
 
-// DisableSettingsAgent allowed values.
+// String returns the DisableRemoteAgentConnectorsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableRemoteAgentConnectorsValue) String() string {
+	switch e {
+	case DisableRemoteAgentConnectorsUserInControl:
+		return "DisableRemoteAgentConnectorsUserInControl"
+	case DisableRemoteAgentConnectorsForceEnable:
+		return "DisableRemoteAgentConnectorsForceEnable"
+	case DisableRemoteAgentConnectorsForceDisable:
+		return "DisableRemoteAgentConnectorsForceDisable"
+	default:
+		return fmt.Sprintf("DisableRemoteAgentConnectorsValue(%d)", int64(e))
+	}
+}
+
+// DisableSettingsAgentValue — allowed values for the DisableSettingsAgent node.
+type DisableSettingsAgentValue int64
+
 const (
 	// Settings Agentic search experience is enabled
-	DisableSettingsAgentSettingsAgenticSearchExperienceIsEnabled int64 = 0
+	DisableSettingsAgentSettingsAgenticSearchExperienceIsEnabled DisableSettingsAgentValue = 0
 	// Settings Agentic search experience is not enabled
-	DisableSettingsAgentSettingsAgenticSearchExperienceIsNot int64 = 1
+	DisableSettingsAgentSettingsAgenticSearchExperienceIsNot DisableSettingsAgentValue = 1
 )
 
-// RemoveMicrosoftCopilotApp allowed values.
+// String returns the DisableSettingsAgentValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableSettingsAgentValue) String() string {
+	switch e {
+	case DisableSettingsAgentSettingsAgenticSearchExperienceIsEnabled:
+		return "DisableSettingsAgentSettingsAgenticSearchExperienceIsEnabled"
+	case DisableSettingsAgentSettingsAgenticSearchExperienceIsNot:
+		return "DisableSettingsAgentSettingsAgenticSearchExperienceIsNot"
+	default:
+		return fmt.Sprintf("DisableSettingsAgentValue(%d)", int64(e))
+	}
+}
+
+// RemoveMicrosoftCopilotAppValue — allowed values for the RemoveMicrosoftCopilotApp node.
+type RemoveMicrosoftCopilotAppValue int64
+
 const (
 	// Removal Disabled.
-	RemoveMicrosoftCopilotAppRemovalDisabled int64 = 0
+	RemoveMicrosoftCopilotAppRemovalDisabled RemoveMicrosoftCopilotAppValue = 0
 	// Removal Enabled.
-	RemoveMicrosoftCopilotAppRemovalEnabled int64 = 1
+	RemoveMicrosoftCopilotAppRemovalEnabled RemoveMicrosoftCopilotAppValue = 1
 )
 
-// SetMaximumStorageDurationForRecallSnapshots allowed values.
+// String returns the RemoveMicrosoftCopilotAppValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e RemoveMicrosoftCopilotAppValue) String() string {
+	switch e {
+	case RemoveMicrosoftCopilotAppRemovalDisabled:
+		return "RemoveMicrosoftCopilotAppRemovalDisabled"
+	case RemoveMicrosoftCopilotAppRemovalEnabled:
+		return "RemoveMicrosoftCopilotAppRemovalEnabled"
+	default:
+		return fmt.Sprintf("RemoveMicrosoftCopilotAppValue(%d)", int64(e))
+	}
+}
+
+// SetMaximumStorageDurationForRecallSnapshotsValue — allowed values for the SetMaximumStorageDurationForRecallSnapshots node.
+type SetMaximumStorageDurationForRecallSnapshotsValue int64
+
 const (
 	// Let the OS define the maximum amount of time the snapshots will be saved
-	SetMaximumStorageDurationForRecallSnapshotsLetTheOSDefineTheMaximum int64 = 0
+	SetMaximumStorageDurationForRecallSnapshotsLetTheOSDefineTheMaximum SetMaximumStorageDurationForRecallSnapshotsValue = 0
 	// 30 days
-	SetMaximumStorageDurationForRecallSnapshotsN30Days int64 = 30
+	SetMaximumStorageDurationForRecallSnapshotsN30Days SetMaximumStorageDurationForRecallSnapshotsValue = 30
 	// 60 days
-	SetMaximumStorageDurationForRecallSnapshotsN60Days int64 = 60
+	SetMaximumStorageDurationForRecallSnapshotsN60Days SetMaximumStorageDurationForRecallSnapshotsValue = 60
 	// 90 days
-	SetMaximumStorageDurationForRecallSnapshotsN90Days int64 = 90
+	SetMaximumStorageDurationForRecallSnapshotsN90Days SetMaximumStorageDurationForRecallSnapshotsValue = 90
 	// 180 days
-	SetMaximumStorageDurationForRecallSnapshotsN180Days int64 = 180
+	SetMaximumStorageDurationForRecallSnapshotsN180Days SetMaximumStorageDurationForRecallSnapshotsValue = 180
 )
 
-// SetMaximumStorageSpaceForRecallSnapshots allowed values.
+// String returns the SetMaximumStorageDurationForRecallSnapshotsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SetMaximumStorageDurationForRecallSnapshotsValue) String() string {
+	switch e {
+	case SetMaximumStorageDurationForRecallSnapshotsLetTheOSDefineTheMaximum:
+		return "SetMaximumStorageDurationForRecallSnapshotsLetTheOSDefineTheMaximum"
+	case SetMaximumStorageDurationForRecallSnapshotsN30Days:
+		return "SetMaximumStorageDurationForRecallSnapshotsN30Days"
+	case SetMaximumStorageDurationForRecallSnapshotsN60Days:
+		return "SetMaximumStorageDurationForRecallSnapshotsN60Days"
+	case SetMaximumStorageDurationForRecallSnapshotsN90Days:
+		return "SetMaximumStorageDurationForRecallSnapshotsN90Days"
+	case SetMaximumStorageDurationForRecallSnapshotsN180Days:
+		return "SetMaximumStorageDurationForRecallSnapshotsN180Days"
+	default:
+		return fmt.Sprintf("SetMaximumStorageDurationForRecallSnapshotsValue(%d)", int64(e))
+	}
+}
+
+// SetMaximumStorageSpaceForRecallSnapshotsValue — allowed values for the SetMaximumStorageSpaceForRecallSnapshots node.
+type SetMaximumStorageSpaceForRecallSnapshotsValue int64
+
 const (
 	// Let the OS define the maximum storage amount based on hard drive storage size
-	SetMaximumStorageSpaceForRecallSnapshotsLetTheOSDefineTheMaximum int64 = 0
+	SetMaximumStorageSpaceForRecallSnapshotsLetTheOSDefineTheMaximum SetMaximumStorageSpaceForRecallSnapshotsValue = 0
 	// 10GB
-	SetMaximumStorageSpaceForRecallSnapshotsN10GB int64 = 10240
+	SetMaximumStorageSpaceForRecallSnapshotsN10GB SetMaximumStorageSpaceForRecallSnapshotsValue = 10240
 	// 25GB
-	SetMaximumStorageSpaceForRecallSnapshotsN25GB int64 = 25600
+	SetMaximumStorageSpaceForRecallSnapshotsN25GB SetMaximumStorageSpaceForRecallSnapshotsValue = 25600
 	// 50GB
-	SetMaximumStorageSpaceForRecallSnapshotsN50GB int64 = 51200
+	SetMaximumStorageSpaceForRecallSnapshotsN50GB SetMaximumStorageSpaceForRecallSnapshotsValue = 51200
 	// 75GB
-	SetMaximumStorageSpaceForRecallSnapshotsN75GB int64 = 76800
+	SetMaximumStorageSpaceForRecallSnapshotsN75GB SetMaximumStorageSpaceForRecallSnapshotsValue = 76800
 	// 100GB
-	SetMaximumStorageSpaceForRecallSnapshotsN100GB int64 = 102400
+	SetMaximumStorageSpaceForRecallSnapshotsN100GB SetMaximumStorageSpaceForRecallSnapshotsValue = 102400
 	// 150GB
-	SetMaximumStorageSpaceForRecallSnapshotsN150GB int64 = 153600
+	SetMaximumStorageSpaceForRecallSnapshotsN150GB SetMaximumStorageSpaceForRecallSnapshotsValue = 153600
 )
+
+// String returns the SetMaximumStorageSpaceForRecallSnapshotsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SetMaximumStorageSpaceForRecallSnapshotsValue) String() string {
+	switch e {
+	case SetMaximumStorageSpaceForRecallSnapshotsLetTheOSDefineTheMaximum:
+		return "SetMaximumStorageSpaceForRecallSnapshotsLetTheOSDefineTheMaximum"
+	case SetMaximumStorageSpaceForRecallSnapshotsN10GB:
+		return "SetMaximumStorageSpaceForRecallSnapshotsN10GB"
+	case SetMaximumStorageSpaceForRecallSnapshotsN25GB:
+		return "SetMaximumStorageSpaceForRecallSnapshotsN25GB"
+	case SetMaximumStorageSpaceForRecallSnapshotsN50GB:
+		return "SetMaximumStorageSpaceForRecallSnapshotsN50GB"
+	case SetMaximumStorageSpaceForRecallSnapshotsN75GB:
+		return "SetMaximumStorageSpaceForRecallSnapshotsN75GB"
+	case SetMaximumStorageSpaceForRecallSnapshotsN100GB:
+		return "SetMaximumStorageSpaceForRecallSnapshotsN100GB"
+	case SetMaximumStorageSpaceForRecallSnapshotsN150GB:
+		return "SetMaximumStorageSpaceForRecallSnapshotsN150GB"
+	default:
+		return fmt.Sprintf("SetMaximumStorageSpaceForRecallSnapshotsValue(%d)", int64(e))
+	}
+}

@@ -51,12 +51,13 @@ func (s *Defender) DeleteConfigurationASROnlyPerRuleExclusions(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationAllowDatagramProcessingOnWinServer(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationAllowDatagramProcessingOnWinServer(ctx context.Context) (ConfigurationAllowDatagramProcessingOnWinServerValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationAllowDatagramProcessingOnWinServer)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationAllowDatagramProcessingOnWinServerValue(n), err
 }
 
 // CreateConfigurationAllowDatagramProcessingOnWinServer creates ./Device/Vendor/MSFT/Defender/Configuration/AllowDatagramProcessingOnWinServer.
@@ -66,8 +67,8 @@ func (s *Defender) GetConfigurationAllowDatagramProcessingOnWinServer(ctx contex
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationAllowDatagramProcessingOnWinServer(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationAllowDatagramProcessingOnWinServer, client.Int(value))
+func (s *Defender) CreateConfigurationAllowDatagramProcessingOnWinServer(ctx context.Context, value ConfigurationAllowDatagramProcessingOnWinServerValue) error {
+	return s.c.Add(ctx, URIConfigurationAllowDatagramProcessingOnWinServer, client.Int(int64(value)))
 }
 
 // UpdateConfigurationAllowDatagramProcessingOnWinServer updates ./Device/Vendor/MSFT/Defender/Configuration/AllowDatagramProcessingOnWinServer.
@@ -77,8 +78,8 @@ func (s *Defender) CreateConfigurationAllowDatagramProcessingOnWinServer(ctx con
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationAllowDatagramProcessingOnWinServer(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationAllowDatagramProcessingOnWinServer, client.Int(value))
+func (s *Defender) UpdateConfigurationAllowDatagramProcessingOnWinServer(ctx context.Context, value ConfigurationAllowDatagramProcessingOnWinServerValue) error {
+	return s.c.Replace(ctx, URIConfigurationAllowDatagramProcessingOnWinServer, client.Int(int64(value)))
 }
 
 // DeleteConfigurationAllowDatagramProcessingOnWinServer deletes ./Device/Vendor/MSFT/Defender/Configuration/AllowDatagramProcessingOnWinServer.
@@ -99,12 +100,13 @@ func (s *Defender) DeleteConfigurationAllowDatagramProcessingOnWinServer(ctx con
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationAllowNetworkProtectionDownLevel(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationAllowNetworkProtectionDownLevel(ctx context.Context) (ConfigurationAllowNetworkProtectionDownLevelValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationAllowNetworkProtectionDownLevel)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationAllowNetworkProtectionDownLevelValue(n), err
 }
 
 // CreateConfigurationAllowNetworkProtectionDownLevel creates ./Device/Vendor/MSFT/Defender/Configuration/AllowNetworkProtectionDownLevel.
@@ -114,8 +116,8 @@ func (s *Defender) GetConfigurationAllowNetworkProtectionDownLevel(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationAllowNetworkProtectionDownLevel(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationAllowNetworkProtectionDownLevel, client.Int(value))
+func (s *Defender) CreateConfigurationAllowNetworkProtectionDownLevel(ctx context.Context, value ConfigurationAllowNetworkProtectionDownLevelValue) error {
+	return s.c.Add(ctx, URIConfigurationAllowNetworkProtectionDownLevel, client.Int(int64(value)))
 }
 
 // UpdateConfigurationAllowNetworkProtectionDownLevel updates ./Device/Vendor/MSFT/Defender/Configuration/AllowNetworkProtectionDownLevel.
@@ -125,8 +127,8 @@ func (s *Defender) CreateConfigurationAllowNetworkProtectionDownLevel(ctx contex
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationAllowNetworkProtectionDownLevel(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationAllowNetworkProtectionDownLevel, client.Int(value))
+func (s *Defender) UpdateConfigurationAllowNetworkProtectionDownLevel(ctx context.Context, value ConfigurationAllowNetworkProtectionDownLevelValue) error {
+	return s.c.Replace(ctx, URIConfigurationAllowNetworkProtectionDownLevel, client.Int(int64(value)))
 }
 
 // DeleteConfigurationAllowNetworkProtectionDownLevel deletes ./Device/Vendor/MSFT/Defender/Configuration/AllowNetworkProtectionDownLevel.
@@ -146,12 +148,13 @@ func (s *Defender) DeleteConfigurationAllowNetworkProtectionDownLevel(ctx contex
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v1.3).
-func (s *Defender) GetConfigurationAllowNetworkProtectionOnWinServer(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationAllowNetworkProtectionOnWinServer(ctx context.Context) (ConfigurationAllowNetworkProtectionOnWinServerValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationAllowNetworkProtectionOnWinServer)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationAllowNetworkProtectionOnWinServerValue(n), err
 }
 
 // CreateConfigurationAllowNetworkProtectionOnWinServer creates ./Device/Vendor/MSFT/Defender/Configuration/AllowNetworkProtectionOnWinServer.
@@ -160,8 +163,8 @@ func (s *Defender) GetConfigurationAllowNetworkProtectionOnWinServer(ctx context
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v1.3).
-func (s *Defender) CreateConfigurationAllowNetworkProtectionOnWinServer(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationAllowNetworkProtectionOnWinServer, client.Int(value))
+func (s *Defender) CreateConfigurationAllowNetworkProtectionOnWinServer(ctx context.Context, value ConfigurationAllowNetworkProtectionOnWinServerValue) error {
+	return s.c.Add(ctx, URIConfigurationAllowNetworkProtectionOnWinServer, client.Int(int64(value)))
 }
 
 // UpdateConfigurationAllowNetworkProtectionOnWinServer updates ./Device/Vendor/MSFT/Defender/Configuration/AllowNetworkProtectionOnWinServer.
@@ -170,8 +173,8 @@ func (s *Defender) CreateConfigurationAllowNetworkProtectionOnWinServer(ctx cont
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v1.3).
-func (s *Defender) UpdateConfigurationAllowNetworkProtectionOnWinServer(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationAllowNetworkProtectionOnWinServer, client.Int(value))
+func (s *Defender) UpdateConfigurationAllowNetworkProtectionOnWinServer(ctx context.Context, value ConfigurationAllowNetworkProtectionOnWinServerValue) error {
+	return s.c.Replace(ctx, URIConfigurationAllowNetworkProtectionOnWinServer, client.Int(int64(value)))
 }
 
 // DeleteConfigurationAllowNetworkProtectionOnWinServer deletes ./Device/Vendor/MSFT/Defender/Configuration/AllowNetworkProtectionOnWinServer.
@@ -190,12 +193,13 @@ func (s *Defender) DeleteConfigurationAllowNetworkProtectionOnWinServer(ctx cont
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v1.3).
-func (s *Defender) GetConfigurationAllowSwitchToAsyncInspection(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationAllowSwitchToAsyncInspection(ctx context.Context) (ConfigurationAllowSwitchToAsyncInspectionValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationAllowSwitchToAsyncInspection)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationAllowSwitchToAsyncInspectionValue(n), err
 }
 
 // CreateConfigurationAllowSwitchToAsyncInspection creates ./Device/Vendor/MSFT/Defender/Configuration/AllowSwitchToAsyncInspection.
@@ -204,8 +208,8 @@ func (s *Defender) GetConfigurationAllowSwitchToAsyncInspection(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v1.3).
-func (s *Defender) CreateConfigurationAllowSwitchToAsyncInspection(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationAllowSwitchToAsyncInspection, client.Int(value))
+func (s *Defender) CreateConfigurationAllowSwitchToAsyncInspection(ctx context.Context, value ConfigurationAllowSwitchToAsyncInspectionValue) error {
+	return s.c.Add(ctx, URIConfigurationAllowSwitchToAsyncInspection, client.Int(int64(value)))
 }
 
 // UpdateConfigurationAllowSwitchToAsyncInspection updates ./Device/Vendor/MSFT/Defender/Configuration/AllowSwitchToAsyncInspection.
@@ -214,8 +218,8 @@ func (s *Defender) CreateConfigurationAllowSwitchToAsyncInspection(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v1.3).
-func (s *Defender) UpdateConfigurationAllowSwitchToAsyncInspection(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationAllowSwitchToAsyncInspection, client.Int(value))
+func (s *Defender) UpdateConfigurationAllowSwitchToAsyncInspection(ctx context.Context, value ConfigurationAllowSwitchToAsyncInspectionValue) error {
+	return s.c.Replace(ctx, URIConfigurationAllowSwitchToAsyncInspection, client.Int(int64(value)))
 }
 
 // DeleteConfigurationAllowSwitchToAsyncInspection deletes ./Device/Vendor/MSFT/Defender/Configuration/AllowSwitchToAsyncInspection.
@@ -329,12 +333,13 @@ func (s *Defender) DeleteConfigurationArchiveMaxSize(ctx context.Context) error 
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressiveness(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressiveness(ctx context.Context) (ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressivenessValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressiveness)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressivenessValue(n), err
 }
 
 // CreateConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressiveness creates ./Device/Vendor/MSFT/Defender/Configuration/BehavioralNetworkBlocks/BruteForceProtection/BruteForceProtectionAggressiveness.
@@ -342,8 +347,8 @@ func (s *Defender) GetConfigurationBehavioralNetworkBlocksBruteForceProtectionBr
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressiveness(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressiveness, client.Int(value))
+func (s *Defender) CreateConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressiveness(ctx context.Context, value ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressivenessValue) error {
+	return s.c.Add(ctx, URIConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressiveness, client.Int(int64(value)))
 }
 
 // UpdateConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressiveness updates ./Device/Vendor/MSFT/Defender/Configuration/BehavioralNetworkBlocks/BruteForceProtection/BruteForceProtectionAggressiveness.
@@ -351,8 +356,8 @@ func (s *Defender) CreateConfigurationBehavioralNetworkBlocksBruteForceProtectio
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressiveness(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressiveness, client.Int(value))
+func (s *Defender) UpdateConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressiveness(ctx context.Context, value ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressivenessValue) error {
+	return s.c.Replace(ctx, URIConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressiveness, client.Int(int64(value)))
 }
 
 // DeleteConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressiveness deletes ./Device/Vendor/MSFT/Defender/Configuration/BehavioralNetworkBlocks/BruteForceProtection/BruteForceProtectionAggressiveness.
@@ -370,12 +375,13 @@ func (s *Defender) DeleteConfigurationBehavioralNetworkBlocksBruteForceProtectio
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredState(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredState(ctx context.Context) (ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredStateValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredState)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredStateValue(n), err
 }
 
 // CreateConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredState creates ./Device/Vendor/MSFT/Defender/Configuration/BehavioralNetworkBlocks/BruteForceProtection/BruteForceProtectionConfiguredState.
@@ -384,8 +390,8 @@ func (s *Defender) GetConfigurationBehavioralNetworkBlocksBruteForceProtectionBr
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredState(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredState, client.Int(value))
+func (s *Defender) CreateConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredState(ctx context.Context, value ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredStateValue) error {
+	return s.c.Add(ctx, URIConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredState, client.Int(int64(value)))
 }
 
 // UpdateConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredState updates ./Device/Vendor/MSFT/Defender/Configuration/BehavioralNetworkBlocks/BruteForceProtection/BruteForceProtectionConfiguredState.
@@ -394,8 +400,8 @@ func (s *Defender) CreateConfigurationBehavioralNetworkBlocksBruteForceProtectio
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredState(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredState, client.Int(value))
+func (s *Defender) UpdateConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredState(ctx context.Context, value ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredStateValue) error {
+	return s.c.Replace(ctx, URIConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredState, client.Int(int64(value)))
 }
 
 // DeleteConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredState deletes ./Device/Vendor/MSFT/Defender/Configuration/BehavioralNetworkBlocks/BruteForceProtection/BruteForceProtectionConfiguredState.
@@ -502,12 +508,13 @@ func (s *Defender) DeleteConfigurationBehavioralNetworkBlocksBruteForceProtectio
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v1.3).
-func (s *Defender) GetConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlocking(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlocking(ctx context.Context) (ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlockingValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlocking)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlockingValue(n), err
 }
 
 // CreateConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlocking creates ./Device/Vendor/MSFT/Defender/Configuration/BehavioralNetworkBlocks/BruteForceProtection/BruteForceProtectionPlugins/BruteForceProtectionLocalNetworkBlocking.
@@ -516,8 +523,8 @@ func (s *Defender) GetConfigurationBehavioralNetworkBlocksBruteForceProtectionBr
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v1.3).
-func (s *Defender) CreateConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlocking(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlocking, client.Int(value))
+func (s *Defender) CreateConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlocking(ctx context.Context, value ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlockingValue) error {
+	return s.c.Add(ctx, URIConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlocking, client.Int(int64(value)))
 }
 
 // UpdateConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlocking updates ./Device/Vendor/MSFT/Defender/Configuration/BehavioralNetworkBlocks/BruteForceProtection/BruteForceProtectionPlugins/BruteForceProtectionLocalNetworkBlocking.
@@ -526,8 +533,8 @@ func (s *Defender) CreateConfigurationBehavioralNetworkBlocksBruteForceProtectio
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v1.3).
-func (s *Defender) UpdateConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlocking(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlocking, client.Int(value))
+func (s *Defender) UpdateConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlocking(ctx context.Context, value ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlockingValue) error {
+	return s.c.Replace(ctx, URIConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlocking, client.Int(int64(value)))
 }
 
 // DeleteConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlocking deletes ./Device/Vendor/MSFT/Defender/Configuration/BehavioralNetworkBlocks/BruteForceProtection/BruteForceProtectionPlugins/BruteForceProtectionLocalNetworkBlocking.
@@ -546,12 +553,13 @@ func (s *Defender) DeleteConfigurationBehavioralNetworkBlocksBruteForceProtectio
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v1.3).
-func (s *Defender) GetConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriod(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriod(ctx context.Context) (ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriodValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriod)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriodValue(n), err
 }
 
 // CreateConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriod creates ./Device/Vendor/MSFT/Defender/Configuration/BehavioralNetworkBlocks/BruteForceProtection/BruteForceProtectionPlugins/BruteForceProtectionSkipLearningPeriod.
@@ -560,8 +568,8 @@ func (s *Defender) GetConfigurationBehavioralNetworkBlocksBruteForceProtectionBr
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v1.3).
-func (s *Defender) CreateConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriod(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriod, client.Int(value))
+func (s *Defender) CreateConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriod(ctx context.Context, value ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriodValue) error {
+	return s.c.Add(ctx, URIConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriod, client.Int(int64(value)))
 }
 
 // UpdateConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriod updates ./Device/Vendor/MSFT/Defender/Configuration/BehavioralNetworkBlocks/BruteForceProtection/BruteForceProtectionPlugins/BruteForceProtectionSkipLearningPeriod.
@@ -570,8 +578,8 @@ func (s *Defender) CreateConfigurationBehavioralNetworkBlocksBruteForceProtectio
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v1.3).
-func (s *Defender) UpdateConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriod(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriod, client.Int(value))
+func (s *Defender) UpdateConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriod(ctx context.Context, value ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriodValue) error {
+	return s.c.Replace(ctx, URIConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriod, client.Int(int64(value)))
 }
 
 // DeleteConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriod deletes ./Device/Vendor/MSFT/Defender/Configuration/BehavioralNetworkBlocks/BruteForceProtection/BruteForceProtectionPlugins/BruteForceProtectionSkipLearningPeriod.
@@ -589,12 +597,13 @@ func (s *Defender) DeleteConfigurationBehavioralNetworkBlocksBruteForceProtectio
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressiveness(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressiveness(ctx context.Context) (ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressivenessValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressiveness)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressivenessValue(n), err
 }
 
 // CreateConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressiveness creates ./Device/Vendor/MSFT/Defender/Configuration/BehavioralNetworkBlocks/RemoteEncryptionProtection/RemoteEncryptionProtectionAggressiveness.
@@ -602,8 +611,8 @@ func (s *Defender) GetConfigurationBehavioralNetworkBlocksRemoteEncryptionProtec
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressiveness(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressiveness, client.Int(value))
+func (s *Defender) CreateConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressiveness(ctx context.Context, value ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressivenessValue) error {
+	return s.c.Add(ctx, URIConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressiveness, client.Int(int64(value)))
 }
 
 // UpdateConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressiveness updates ./Device/Vendor/MSFT/Defender/Configuration/BehavioralNetworkBlocks/RemoteEncryptionProtection/RemoteEncryptionProtectionAggressiveness.
@@ -611,8 +620,8 @@ func (s *Defender) CreateConfigurationBehavioralNetworkBlocksRemoteEncryptionPro
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressiveness(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressiveness, client.Int(value))
+func (s *Defender) UpdateConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressiveness(ctx context.Context, value ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressivenessValue) error {
+	return s.c.Replace(ctx, URIConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressiveness, client.Int(int64(value)))
 }
 
 // DeleteConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressiveness deletes ./Device/Vendor/MSFT/Defender/Configuration/BehavioralNetworkBlocks/RemoteEncryptionProtection/RemoteEncryptionProtectionAggressiveness.
@@ -630,12 +639,13 @@ func (s *Defender) DeleteConfigurationBehavioralNetworkBlocksRemoteEncryptionPro
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredState(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredState(ctx context.Context) (ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredStateValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredState)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredStateValue(n), err
 }
 
 // CreateConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredState creates ./Device/Vendor/MSFT/Defender/Configuration/BehavioralNetworkBlocks/RemoteEncryptionProtection/RemoteEncryptionProtectionConfiguredState.
@@ -644,8 +654,8 @@ func (s *Defender) GetConfigurationBehavioralNetworkBlocksRemoteEncryptionProtec
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredState(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredState, client.Int(value))
+func (s *Defender) CreateConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredState(ctx context.Context, value ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredStateValue) error {
+	return s.c.Add(ctx, URIConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredState, client.Int(int64(value)))
 }
 
 // UpdateConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredState updates ./Device/Vendor/MSFT/Defender/Configuration/BehavioralNetworkBlocks/RemoteEncryptionProtection/RemoteEncryptionProtectionConfiguredState.
@@ -654,8 +664,8 @@ func (s *Defender) CreateConfigurationBehavioralNetworkBlocksRemoteEncryptionPro
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredState(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredState, client.Int(value))
+func (s *Defender) UpdateConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredState(ctx context.Context, value ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredStateValue) error {
+	return s.c.Replace(ctx, URIConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredState, client.Int(int64(value)))
 }
 
 // DeleteConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredState deletes ./Device/Vendor/MSFT/Defender/Configuration/BehavioralNetworkBlocks/RemoteEncryptionProtection/RemoteEncryptionProtectionConfiguredState.
@@ -994,12 +1004,13 @@ func (s *Defender) DeleteConfigurationDaysUntilAggressiveCatchupQuickScan(ctx co
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v1.3).
-func (s *Defender) GetConfigurationDefaultEnforcement(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationDefaultEnforcement(ctx context.Context) (ConfigurationDefaultEnforcementValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationDefaultEnforcement)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationDefaultEnforcementValue(n), err
 }
 
 // CreateConfigurationDefaultEnforcement creates ./Device/Vendor/MSFT/Defender/Configuration/DefaultEnforcement.
@@ -1008,8 +1019,8 @@ func (s *Defender) GetConfigurationDefaultEnforcement(ctx context.Context) (int6
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v1.3).
-func (s *Defender) CreateConfigurationDefaultEnforcement(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationDefaultEnforcement, client.Int(value))
+func (s *Defender) CreateConfigurationDefaultEnforcement(ctx context.Context, value ConfigurationDefaultEnforcementValue) error {
+	return s.c.Add(ctx, URIConfigurationDefaultEnforcement, client.Int(int64(value)))
 }
 
 // UpdateConfigurationDefaultEnforcement updates ./Device/Vendor/MSFT/Defender/Configuration/DefaultEnforcement.
@@ -1018,8 +1029,8 @@ func (s *Defender) CreateConfigurationDefaultEnforcement(ctx context.Context, va
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v1.3).
-func (s *Defender) UpdateConfigurationDefaultEnforcement(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationDefaultEnforcement, client.Int(value))
+func (s *Defender) UpdateConfigurationDefaultEnforcement(ctx context.Context, value ConfigurationDefaultEnforcementValue) error {
+	return s.c.Replace(ctx, URIConfigurationDefaultEnforcement, client.Int(int64(value)))
 }
 
 // DeleteConfigurationDefaultEnforcement deletes ./Device/Vendor/MSFT/Defender/Configuration/DefaultEnforcement.
@@ -1131,12 +1142,13 @@ func (s *Defender) DeleteConfigurationDeviceControlPolicyRulesRuleIdRuleData(ctx
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v1.3).
-func (s *Defender) GetConfigurationDeviceControlEnabled(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationDeviceControlEnabled(ctx context.Context) (ConfigurationDeviceControlEnabledValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationDeviceControlEnabled)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationDeviceControlEnabledValue(n), err
 }
 
 // CreateConfigurationDeviceControlEnabled creates ./Device/Vendor/MSFT/Defender/Configuration/DeviceControlEnabled.
@@ -1144,8 +1156,8 @@ func (s *Defender) GetConfigurationDeviceControlEnabled(ctx context.Context) (in
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v1.3).
-func (s *Defender) CreateConfigurationDeviceControlEnabled(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationDeviceControlEnabled, client.Int(value))
+func (s *Defender) CreateConfigurationDeviceControlEnabled(ctx context.Context, value ConfigurationDeviceControlEnabledValue) error {
+	return s.c.Add(ctx, URIConfigurationDeviceControlEnabled, client.Int(int64(value)))
 }
 
 // UpdateConfigurationDeviceControlEnabled updates ./Device/Vendor/MSFT/Defender/Configuration/DeviceControlEnabled.
@@ -1153,8 +1165,8 @@ func (s *Defender) CreateConfigurationDeviceControlEnabled(ctx context.Context, 
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v1.3).
-func (s *Defender) UpdateConfigurationDeviceControlEnabled(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationDeviceControlEnabled, client.Int(value))
+func (s *Defender) UpdateConfigurationDeviceControlEnabled(ctx context.Context, value ConfigurationDeviceControlEnabledValue) error {
+	return s.c.Replace(ctx, URIConfigurationDeviceControlEnabled, client.Int(int64(value)))
 }
 
 // DeleteConfigurationDeviceControlEnabled deletes ./Device/Vendor/MSFT/Defender/Configuration/DeviceControlEnabled.
@@ -1171,12 +1183,13 @@ func (s *Defender) DeleteConfigurationDeviceControlEnabled(ctx context.Context) 
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v1.3).
-func (s *Defender) GetConfigurationDisableCacheMaintenance(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationDisableCacheMaintenance(ctx context.Context) (ConfigurationDisableCacheMaintenanceValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationDisableCacheMaintenance)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationDisableCacheMaintenanceValue(n), err
 }
 
 // CreateConfigurationDisableCacheMaintenance creates ./Device/Vendor/MSFT/Defender/Configuration/DisableCacheMaintenance.
@@ -1184,8 +1197,8 @@ func (s *Defender) GetConfigurationDisableCacheMaintenance(ctx context.Context) 
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v1.3).
-func (s *Defender) CreateConfigurationDisableCacheMaintenance(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationDisableCacheMaintenance, client.Int(value))
+func (s *Defender) CreateConfigurationDisableCacheMaintenance(ctx context.Context, value ConfigurationDisableCacheMaintenanceValue) error {
+	return s.c.Add(ctx, URIConfigurationDisableCacheMaintenance, client.Int(int64(value)))
 }
 
 // UpdateConfigurationDisableCacheMaintenance updates ./Device/Vendor/MSFT/Defender/Configuration/DisableCacheMaintenance.
@@ -1193,8 +1206,8 @@ func (s *Defender) CreateConfigurationDisableCacheMaintenance(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v1.3).
-func (s *Defender) UpdateConfigurationDisableCacheMaintenance(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationDisableCacheMaintenance, client.Int(value))
+func (s *Defender) UpdateConfigurationDisableCacheMaintenance(ctx context.Context, value ConfigurationDisableCacheMaintenanceValue) error {
+	return s.c.Replace(ctx, URIConfigurationDisableCacheMaintenance, client.Int(int64(value)))
 }
 
 // DeleteConfigurationDisableCacheMaintenance deletes ./Device/Vendor/MSFT/Defender/Configuration/DisableCacheMaintenance.
@@ -1211,12 +1224,13 @@ func (s *Defender) DeleteConfigurationDisableCacheMaintenance(ctx context.Contex
 //
 // Default: 0x0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationDisableCoreServiceECSIntegration(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationDisableCoreServiceECSIntegration(ctx context.Context) (ConfigurationDisableCoreServiceECSIntegrationValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationDisableCoreServiceECSIntegration)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationDisableCoreServiceECSIntegrationValue(n), err
 }
 
 // CreateConfigurationDisableCoreServiceECSIntegration creates ./Device/Vendor/MSFT/Defender/Configuration/DisableCoreServiceECSIntegration.
@@ -1224,8 +1238,8 @@ func (s *Defender) GetConfigurationDisableCoreServiceECSIntegration(ctx context.
 //
 // Default: 0x0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationDisableCoreServiceECSIntegration(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationDisableCoreServiceECSIntegration, client.Int(value))
+func (s *Defender) CreateConfigurationDisableCoreServiceECSIntegration(ctx context.Context, value ConfigurationDisableCoreServiceECSIntegrationValue) error {
+	return s.c.Add(ctx, URIConfigurationDisableCoreServiceECSIntegration, client.Int(int64(value)))
 }
 
 // UpdateConfigurationDisableCoreServiceECSIntegration updates ./Device/Vendor/MSFT/Defender/Configuration/DisableCoreServiceECSIntegration.
@@ -1233,8 +1247,8 @@ func (s *Defender) CreateConfigurationDisableCoreServiceECSIntegration(ctx conte
 //
 // Default: 0x0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationDisableCoreServiceECSIntegration(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationDisableCoreServiceECSIntegration, client.Int(value))
+func (s *Defender) UpdateConfigurationDisableCoreServiceECSIntegration(ctx context.Context, value ConfigurationDisableCoreServiceECSIntegrationValue) error {
+	return s.c.Replace(ctx, URIConfigurationDisableCoreServiceECSIntegration, client.Int(int64(value)))
 }
 
 // DeleteConfigurationDisableCoreServiceECSIntegration deletes ./Device/Vendor/MSFT/Defender/Configuration/DisableCoreServiceECSIntegration.
@@ -1251,12 +1265,13 @@ func (s *Defender) DeleteConfigurationDisableCoreServiceECSIntegration(ctx conte
 //
 // Default: 0x0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationDisableCoreServiceTelemetry(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationDisableCoreServiceTelemetry(ctx context.Context) (ConfigurationDisableCoreServiceTelemetryValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationDisableCoreServiceTelemetry)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationDisableCoreServiceTelemetryValue(n), err
 }
 
 // CreateConfigurationDisableCoreServiceTelemetry creates ./Device/Vendor/MSFT/Defender/Configuration/DisableCoreServiceTelemetry.
@@ -1264,8 +1279,8 @@ func (s *Defender) GetConfigurationDisableCoreServiceTelemetry(ctx context.Conte
 //
 // Default: 0x0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationDisableCoreServiceTelemetry(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationDisableCoreServiceTelemetry, client.Int(value))
+func (s *Defender) CreateConfigurationDisableCoreServiceTelemetry(ctx context.Context, value ConfigurationDisableCoreServiceTelemetryValue) error {
+	return s.c.Add(ctx, URIConfigurationDisableCoreServiceTelemetry, client.Int(int64(value)))
 }
 
 // UpdateConfigurationDisableCoreServiceTelemetry updates ./Device/Vendor/MSFT/Defender/Configuration/DisableCoreServiceTelemetry.
@@ -1273,8 +1288,8 @@ func (s *Defender) CreateConfigurationDisableCoreServiceTelemetry(ctx context.Co
 //
 // Default: 0x0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationDisableCoreServiceTelemetry(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationDisableCoreServiceTelemetry, client.Int(value))
+func (s *Defender) UpdateConfigurationDisableCoreServiceTelemetry(ctx context.Context, value ConfigurationDisableCoreServiceTelemetryValue) error {
+	return s.c.Replace(ctx, URIConfigurationDisableCoreServiceTelemetry, client.Int(int64(value)))
 }
 
 // DeleteConfigurationDisableCoreServiceTelemetry deletes ./Device/Vendor/MSFT/Defender/Configuration/DisableCoreServiceTelemetry.
@@ -1294,12 +1309,13 @@ func (s *Defender) DeleteConfigurationDisableCoreServiceTelemetry(ctx context.Co
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationDisableCpuThrottleOnIdleScans(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationDisableCpuThrottleOnIdleScans(ctx context.Context) (ConfigurationDisableCpuThrottleOnIdleScansValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationDisableCpuThrottleOnIdleScans)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationDisableCpuThrottleOnIdleScansValue(n), err
 }
 
 // CreateConfigurationDisableCpuThrottleOnIdleScans creates ./Device/Vendor/MSFT/Defender/Configuration/DisableCpuThrottleOnIdleScans.
@@ -1310,8 +1326,8 @@ func (s *Defender) GetConfigurationDisableCpuThrottleOnIdleScans(ctx context.Con
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationDisableCpuThrottleOnIdleScans(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationDisableCpuThrottleOnIdleScans, client.Int(value))
+func (s *Defender) CreateConfigurationDisableCpuThrottleOnIdleScans(ctx context.Context, value ConfigurationDisableCpuThrottleOnIdleScansValue) error {
+	return s.c.Add(ctx, URIConfigurationDisableCpuThrottleOnIdleScans, client.Int(int64(value)))
 }
 
 // UpdateConfigurationDisableCpuThrottleOnIdleScans updates ./Device/Vendor/MSFT/Defender/Configuration/DisableCpuThrottleOnIdleScans.
@@ -1322,8 +1338,8 @@ func (s *Defender) CreateConfigurationDisableCpuThrottleOnIdleScans(ctx context.
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationDisableCpuThrottleOnIdleScans(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationDisableCpuThrottleOnIdleScans, client.Int(value))
+func (s *Defender) UpdateConfigurationDisableCpuThrottleOnIdleScans(ctx context.Context, value ConfigurationDisableCpuThrottleOnIdleScansValue) error {
+	return s.c.Replace(ctx, URIConfigurationDisableCpuThrottleOnIdleScans, client.Int(int64(value)))
 }
 
 // DeleteConfigurationDisableCpuThrottleOnIdleScans deletes ./Device/Vendor/MSFT/Defender/Configuration/DisableCpuThrottleOnIdleScans.
@@ -1343,12 +1359,13 @@ func (s *Defender) DeleteConfigurationDisableCpuThrottleOnIdleScans(ctx context.
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v1.3).
-func (s *Defender) GetConfigurationDisableDatagramProcessing(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationDisableDatagramProcessing(ctx context.Context) (ConfigurationDisableDatagramProcessingValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationDisableDatagramProcessing)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationDisableDatagramProcessingValue(n), err
 }
 
 // CreateConfigurationDisableDatagramProcessing creates ./Device/Vendor/MSFT/Defender/Configuration/DisableDatagramProcessing.
@@ -1356,8 +1373,8 @@ func (s *Defender) GetConfigurationDisableDatagramProcessing(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v1.3).
-func (s *Defender) CreateConfigurationDisableDatagramProcessing(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationDisableDatagramProcessing, client.Int(value))
+func (s *Defender) CreateConfigurationDisableDatagramProcessing(ctx context.Context, value ConfigurationDisableDatagramProcessingValue) error {
+	return s.c.Add(ctx, URIConfigurationDisableDatagramProcessing, client.Int(int64(value)))
 }
 
 // UpdateConfigurationDisableDatagramProcessing updates ./Device/Vendor/MSFT/Defender/Configuration/DisableDatagramProcessing.
@@ -1365,8 +1382,8 @@ func (s *Defender) CreateConfigurationDisableDatagramProcessing(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v1.3).
-func (s *Defender) UpdateConfigurationDisableDatagramProcessing(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationDisableDatagramProcessing, client.Int(value))
+func (s *Defender) UpdateConfigurationDisableDatagramProcessing(ctx context.Context, value ConfigurationDisableDatagramProcessingValue) error {
+	return s.c.Replace(ctx, URIConfigurationDisableDatagramProcessing, client.Int(int64(value)))
 }
 
 // DeleteConfigurationDisableDatagramProcessing deletes ./Device/Vendor/MSFT/Defender/Configuration/DisableDatagramProcessing.
@@ -1383,12 +1400,13 @@ func (s *Defender) DeleteConfigurationDisableDatagramProcessing(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationDisableDnsOverTcpParsing(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationDisableDnsOverTcpParsing(ctx context.Context) (ConfigurationDisableDnsOverTcpParsingValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationDisableDnsOverTcpParsing)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationDisableDnsOverTcpParsingValue(n), err
 }
 
 // CreateConfigurationDisableDnsOverTcpParsing creates ./Device/Vendor/MSFT/Defender/Configuration/DisableDnsOverTcpParsing.
@@ -1396,8 +1414,8 @@ func (s *Defender) GetConfigurationDisableDnsOverTcpParsing(ctx context.Context)
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationDisableDnsOverTcpParsing(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationDisableDnsOverTcpParsing, client.Int(value))
+func (s *Defender) CreateConfigurationDisableDnsOverTcpParsing(ctx context.Context, value ConfigurationDisableDnsOverTcpParsingValue) error {
+	return s.c.Add(ctx, URIConfigurationDisableDnsOverTcpParsing, client.Int(int64(value)))
 }
 
 // UpdateConfigurationDisableDnsOverTcpParsing updates ./Device/Vendor/MSFT/Defender/Configuration/DisableDnsOverTcpParsing.
@@ -1405,8 +1423,8 @@ func (s *Defender) CreateConfigurationDisableDnsOverTcpParsing(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationDisableDnsOverTcpParsing(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationDisableDnsOverTcpParsing, client.Int(value))
+func (s *Defender) UpdateConfigurationDisableDnsOverTcpParsing(ctx context.Context, value ConfigurationDisableDnsOverTcpParsingValue) error {
+	return s.c.Replace(ctx, URIConfigurationDisableDnsOverTcpParsing, client.Int(int64(value)))
 }
 
 // DeleteConfigurationDisableDnsOverTcpParsing deletes ./Device/Vendor/MSFT/Defender/Configuration/DisableDnsOverTcpParsing.
@@ -1423,12 +1441,13 @@ func (s *Defender) DeleteConfigurationDisableDnsOverTcpParsing(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationDisableDnsParsing(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationDisableDnsParsing(ctx context.Context) (ConfigurationDisableDnsParsingValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationDisableDnsParsing)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationDisableDnsParsingValue(n), err
 }
 
 // CreateConfigurationDisableDnsParsing creates ./Device/Vendor/MSFT/Defender/Configuration/DisableDnsParsing.
@@ -1436,8 +1455,8 @@ func (s *Defender) GetConfigurationDisableDnsParsing(ctx context.Context) (int64
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationDisableDnsParsing(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationDisableDnsParsing, client.Int(value))
+func (s *Defender) CreateConfigurationDisableDnsParsing(ctx context.Context, value ConfigurationDisableDnsParsingValue) error {
+	return s.c.Add(ctx, URIConfigurationDisableDnsParsing, client.Int(int64(value)))
 }
 
 // UpdateConfigurationDisableDnsParsing updates ./Device/Vendor/MSFT/Defender/Configuration/DisableDnsParsing.
@@ -1445,8 +1464,8 @@ func (s *Defender) CreateConfigurationDisableDnsParsing(ctx context.Context, val
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationDisableDnsParsing(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationDisableDnsParsing, client.Int(value))
+func (s *Defender) UpdateConfigurationDisableDnsParsing(ctx context.Context, value ConfigurationDisableDnsParsingValue) error {
+	return s.c.Replace(ctx, URIConfigurationDisableDnsParsing, client.Int(int64(value)))
 }
 
 // DeleteConfigurationDisableDnsParsing deletes ./Device/Vendor/MSFT/Defender/Configuration/DisableDnsParsing.
@@ -1463,12 +1482,13 @@ func (s *Defender) DeleteConfigurationDisableDnsParsing(ctx context.Context) err
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationDisableFtpParsing(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationDisableFtpParsing(ctx context.Context) (ConfigurationDisableFtpParsingValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationDisableFtpParsing)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationDisableFtpParsingValue(n), err
 }
 
 // CreateConfigurationDisableFtpParsing creates ./Device/Vendor/MSFT/Defender/Configuration/DisableFtpParsing.
@@ -1476,8 +1496,8 @@ func (s *Defender) GetConfigurationDisableFtpParsing(ctx context.Context) (int64
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationDisableFtpParsing(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationDisableFtpParsing, client.Int(value))
+func (s *Defender) CreateConfigurationDisableFtpParsing(ctx context.Context, value ConfigurationDisableFtpParsingValue) error {
+	return s.c.Add(ctx, URIConfigurationDisableFtpParsing, client.Int(int64(value)))
 }
 
 // UpdateConfigurationDisableFtpParsing updates ./Device/Vendor/MSFT/Defender/Configuration/DisableFtpParsing.
@@ -1485,8 +1505,8 @@ func (s *Defender) CreateConfigurationDisableFtpParsing(ctx context.Context, val
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationDisableFtpParsing(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationDisableFtpParsing, client.Int(value))
+func (s *Defender) UpdateConfigurationDisableFtpParsing(ctx context.Context, value ConfigurationDisableFtpParsingValue) error {
+	return s.c.Replace(ctx, URIConfigurationDisableFtpParsing, client.Int(int64(value)))
 }
 
 // DeleteConfigurationDisableFtpParsing deletes ./Device/Vendor/MSFT/Defender/Configuration/DisableFtpParsing.
@@ -1503,12 +1523,13 @@ func (s *Defender) DeleteConfigurationDisableFtpParsing(ctx context.Context) err
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationDisableGradualRelease(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationDisableGradualRelease(ctx context.Context) (ConfigurationDisableGradualReleaseValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationDisableGradualRelease)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationDisableGradualReleaseValue(n), err
 }
 
 // CreateConfigurationDisableGradualRelease creates ./Device/Vendor/MSFT/Defender/Configuration/DisableGradualRelease.
@@ -1516,8 +1537,8 @@ func (s *Defender) GetConfigurationDisableGradualRelease(ctx context.Context) (i
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationDisableGradualRelease(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationDisableGradualRelease, client.Int(value))
+func (s *Defender) CreateConfigurationDisableGradualRelease(ctx context.Context, value ConfigurationDisableGradualReleaseValue) error {
+	return s.c.Add(ctx, URIConfigurationDisableGradualRelease, client.Int(int64(value)))
 }
 
 // UpdateConfigurationDisableGradualRelease updates ./Device/Vendor/MSFT/Defender/Configuration/DisableGradualRelease.
@@ -1525,8 +1546,8 @@ func (s *Defender) CreateConfigurationDisableGradualRelease(ctx context.Context,
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationDisableGradualRelease(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationDisableGradualRelease, client.Int(value))
+func (s *Defender) UpdateConfigurationDisableGradualRelease(ctx context.Context, value ConfigurationDisableGradualReleaseValue) error {
+	return s.c.Replace(ctx, URIConfigurationDisableGradualRelease, client.Int(int64(value)))
 }
 
 // DeleteConfigurationDisableGradualRelease deletes ./Device/Vendor/MSFT/Defender/Configuration/DisableGradualRelease.
@@ -1543,12 +1564,13 @@ func (s *Defender) DeleteConfigurationDisableGradualRelease(ctx context.Context)
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationDisableHttpParsing(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationDisableHttpParsing(ctx context.Context) (ConfigurationDisableHttpParsingValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationDisableHttpParsing)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationDisableHttpParsingValue(n), err
 }
 
 // CreateConfigurationDisableHttpParsing creates ./Device/Vendor/MSFT/Defender/Configuration/DisableHttpParsing.
@@ -1556,8 +1578,8 @@ func (s *Defender) GetConfigurationDisableHttpParsing(ctx context.Context) (int6
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationDisableHttpParsing(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationDisableHttpParsing, client.Int(value))
+func (s *Defender) CreateConfigurationDisableHttpParsing(ctx context.Context, value ConfigurationDisableHttpParsingValue) error {
+	return s.c.Add(ctx, URIConfigurationDisableHttpParsing, client.Int(int64(value)))
 }
 
 // UpdateConfigurationDisableHttpParsing updates ./Device/Vendor/MSFT/Defender/Configuration/DisableHttpParsing.
@@ -1565,8 +1587,8 @@ func (s *Defender) CreateConfigurationDisableHttpParsing(ctx context.Context, va
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationDisableHttpParsing(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationDisableHttpParsing, client.Int(value))
+func (s *Defender) UpdateConfigurationDisableHttpParsing(ctx context.Context, value ConfigurationDisableHttpParsingValue) error {
+	return s.c.Replace(ctx, URIConfigurationDisableHttpParsing, client.Int(int64(value)))
 }
 
 // DeleteConfigurationDisableHttpParsing deletes ./Device/Vendor/MSFT/Defender/Configuration/DisableHttpParsing.
@@ -1583,12 +1605,13 @@ func (s *Defender) DeleteConfigurationDisableHttpParsing(ctx context.Context) er
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationDisableInboundConnectionFiltering(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationDisableInboundConnectionFiltering(ctx context.Context) (ConfigurationDisableInboundConnectionFilteringValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationDisableInboundConnectionFiltering)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationDisableInboundConnectionFilteringValue(n), err
 }
 
 // CreateConfigurationDisableInboundConnectionFiltering creates ./Device/Vendor/MSFT/Defender/Configuration/DisableInboundConnectionFiltering.
@@ -1596,8 +1619,8 @@ func (s *Defender) GetConfigurationDisableInboundConnectionFiltering(ctx context
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationDisableInboundConnectionFiltering(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationDisableInboundConnectionFiltering, client.Int(value))
+func (s *Defender) CreateConfigurationDisableInboundConnectionFiltering(ctx context.Context, value ConfigurationDisableInboundConnectionFilteringValue) error {
+	return s.c.Add(ctx, URIConfigurationDisableInboundConnectionFiltering, client.Int(int64(value)))
 }
 
 // UpdateConfigurationDisableInboundConnectionFiltering updates ./Device/Vendor/MSFT/Defender/Configuration/DisableInboundConnectionFiltering.
@@ -1605,8 +1628,8 @@ func (s *Defender) CreateConfigurationDisableInboundConnectionFiltering(ctx cont
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationDisableInboundConnectionFiltering(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationDisableInboundConnectionFiltering, client.Int(value))
+func (s *Defender) UpdateConfigurationDisableInboundConnectionFiltering(ctx context.Context, value ConfigurationDisableInboundConnectionFilteringValue) error {
+	return s.c.Replace(ctx, URIConfigurationDisableInboundConnectionFiltering, client.Int(int64(value)))
 }
 
 // DeleteConfigurationDisableInboundConnectionFiltering deletes ./Device/Vendor/MSFT/Defender/Configuration/DisableInboundConnectionFiltering.
@@ -1625,12 +1648,13 @@ func (s *Defender) DeleteConfigurationDisableInboundConnectionFiltering(ctx cont
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationDisableLocalAdminMerge(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationDisableLocalAdminMerge(ctx context.Context) (ConfigurationDisableLocalAdminMergeValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationDisableLocalAdminMerge)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationDisableLocalAdminMergeValue(n), err
 }
 
 // CreateConfigurationDisableLocalAdminMerge creates ./Device/Vendor/MSFT/Defender/Configuration/DisableLocalAdminMerge.
@@ -1640,8 +1664,8 @@ func (s *Defender) GetConfigurationDisableLocalAdminMerge(ctx context.Context) (
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationDisableLocalAdminMerge(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationDisableLocalAdminMerge, client.Int(value))
+func (s *Defender) CreateConfigurationDisableLocalAdminMerge(ctx context.Context, value ConfigurationDisableLocalAdminMergeValue) error {
+	return s.c.Add(ctx, URIConfigurationDisableLocalAdminMerge, client.Int(int64(value)))
 }
 
 // UpdateConfigurationDisableLocalAdminMerge updates ./Device/Vendor/MSFT/Defender/Configuration/DisableLocalAdminMerge.
@@ -1651,8 +1675,8 @@ func (s *Defender) CreateConfigurationDisableLocalAdminMerge(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationDisableLocalAdminMerge(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationDisableLocalAdminMerge, client.Int(value))
+func (s *Defender) UpdateConfigurationDisableLocalAdminMerge(ctx context.Context, value ConfigurationDisableLocalAdminMergeValue) error {
+	return s.c.Replace(ctx, URIConfigurationDisableLocalAdminMerge, client.Int(int64(value)))
 }
 
 // DeleteConfigurationDisableLocalAdminMerge deletes ./Device/Vendor/MSFT/Defender/Configuration/DisableLocalAdminMerge.
@@ -1671,12 +1695,13 @@ func (s *Defender) DeleteConfigurationDisableLocalAdminMerge(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationDisableNetworkProtectionPerfTelemetry(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationDisableNetworkProtectionPerfTelemetry(ctx context.Context) (ConfigurationDisableNetworkProtectionPerfTelemetryValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationDisableNetworkProtectionPerfTelemetry)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationDisableNetworkProtectionPerfTelemetryValue(n), err
 }
 
 // CreateConfigurationDisableNetworkProtectionPerfTelemetry creates ./Device/Vendor/MSFT/Defender/Configuration/DisableNetworkProtectionPerfTelemetry.
@@ -1684,8 +1709,8 @@ func (s *Defender) GetConfigurationDisableNetworkProtectionPerfTelemetry(ctx con
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationDisableNetworkProtectionPerfTelemetry(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationDisableNetworkProtectionPerfTelemetry, client.Int(value))
+func (s *Defender) CreateConfigurationDisableNetworkProtectionPerfTelemetry(ctx context.Context, value ConfigurationDisableNetworkProtectionPerfTelemetryValue) error {
+	return s.c.Add(ctx, URIConfigurationDisableNetworkProtectionPerfTelemetry, client.Int(int64(value)))
 }
 
 // UpdateConfigurationDisableNetworkProtectionPerfTelemetry updates ./Device/Vendor/MSFT/Defender/Configuration/DisableNetworkProtectionPerfTelemetry.
@@ -1693,8 +1718,8 @@ func (s *Defender) CreateConfigurationDisableNetworkProtectionPerfTelemetry(ctx 
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationDisableNetworkProtectionPerfTelemetry(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationDisableNetworkProtectionPerfTelemetry, client.Int(value))
+func (s *Defender) UpdateConfigurationDisableNetworkProtectionPerfTelemetry(ctx context.Context, value ConfigurationDisableNetworkProtectionPerfTelemetryValue) error {
+	return s.c.Replace(ctx, URIConfigurationDisableNetworkProtectionPerfTelemetry, client.Int(int64(value)))
 }
 
 // DeleteConfigurationDisableNetworkProtectionPerfTelemetry deletes ./Device/Vendor/MSFT/Defender/Configuration/DisableNetworkProtectionPerfTelemetry.
@@ -1713,12 +1738,13 @@ func (s *Defender) DeleteConfigurationDisableNetworkProtectionPerfTelemetry(ctx 
 // Supported from OS build 10.0.14393 (CSP v1.3).
 //
 // Deprecated: no longer recommended since OS build 10.0.14393.
-func (s *Defender) GetConfigurationDisableQuicParsing(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationDisableQuicParsing(ctx context.Context) (ConfigurationDisableQuicParsingValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationDisableQuicParsing)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationDisableQuicParsingValue(n), err
 }
 
 // CreateConfigurationDisableQuicParsing creates ./Device/Vendor/MSFT/Defender/Configuration/DisableQuicParsing.
@@ -1728,8 +1754,8 @@ func (s *Defender) GetConfigurationDisableQuicParsing(ctx context.Context) (int6
 // Supported from OS build 10.0.14393 (CSP v1.3).
 //
 // Deprecated: no longer recommended since OS build 10.0.14393.
-func (s *Defender) CreateConfigurationDisableQuicParsing(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationDisableQuicParsing, client.Int(value))
+func (s *Defender) CreateConfigurationDisableQuicParsing(ctx context.Context, value ConfigurationDisableQuicParsingValue) error {
+	return s.c.Add(ctx, URIConfigurationDisableQuicParsing, client.Int(int64(value)))
 }
 
 // UpdateConfigurationDisableQuicParsing updates ./Device/Vendor/MSFT/Defender/Configuration/DisableQuicParsing.
@@ -1739,8 +1765,8 @@ func (s *Defender) CreateConfigurationDisableQuicParsing(ctx context.Context, va
 // Supported from OS build 10.0.14393 (CSP v1.3).
 //
 // Deprecated: no longer recommended since OS build 10.0.14393.
-func (s *Defender) UpdateConfigurationDisableQuicParsing(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationDisableQuicParsing, client.Int(value))
+func (s *Defender) UpdateConfigurationDisableQuicParsing(ctx context.Context, value ConfigurationDisableQuicParsingValue) error {
+	return s.c.Replace(ctx, URIConfigurationDisableQuicParsing, client.Int(int64(value)))
 }
 
 // DeleteConfigurationDisableQuicParsing deletes ./Device/Vendor/MSFT/Defender/Configuration/DisableQuicParsing.
@@ -1759,12 +1785,13 @@ func (s *Defender) DeleteConfigurationDisableQuicParsing(ctx context.Context) er
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationDisableRdpParsing(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationDisableRdpParsing(ctx context.Context) (ConfigurationDisableRdpParsingValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationDisableRdpParsing)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationDisableRdpParsingValue(n), err
 }
 
 // CreateConfigurationDisableRdpParsing creates ./Device/Vendor/MSFT/Defender/Configuration/DisableRdpParsing.
@@ -1772,8 +1799,8 @@ func (s *Defender) GetConfigurationDisableRdpParsing(ctx context.Context) (int64
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationDisableRdpParsing(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationDisableRdpParsing, client.Int(value))
+func (s *Defender) CreateConfigurationDisableRdpParsing(ctx context.Context, value ConfigurationDisableRdpParsingValue) error {
+	return s.c.Add(ctx, URIConfigurationDisableRdpParsing, client.Int(int64(value)))
 }
 
 // UpdateConfigurationDisableRdpParsing updates ./Device/Vendor/MSFT/Defender/Configuration/DisableRdpParsing.
@@ -1781,8 +1808,8 @@ func (s *Defender) CreateConfigurationDisableRdpParsing(ctx context.Context, val
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationDisableRdpParsing(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationDisableRdpParsing, client.Int(value))
+func (s *Defender) UpdateConfigurationDisableRdpParsing(ctx context.Context, value ConfigurationDisableRdpParsingValue) error {
+	return s.c.Replace(ctx, URIConfigurationDisableRdpParsing, client.Int(int64(value)))
 }
 
 // DeleteConfigurationDisableRdpParsing deletes ./Device/Vendor/MSFT/Defender/Configuration/DisableRdpParsing.
@@ -1799,12 +1826,13 @@ func (s *Defender) DeleteConfigurationDisableRdpParsing(ctx context.Context) err
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationDisableSmtpParsing(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationDisableSmtpParsing(ctx context.Context) (ConfigurationDisableSmtpParsingValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationDisableSmtpParsing)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationDisableSmtpParsingValue(n), err
 }
 
 // CreateConfigurationDisableSmtpParsing creates ./Device/Vendor/MSFT/Defender/Configuration/DisableSmtpParsing.
@@ -1812,8 +1840,8 @@ func (s *Defender) GetConfigurationDisableSmtpParsing(ctx context.Context) (int6
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationDisableSmtpParsing(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationDisableSmtpParsing, client.Int(value))
+func (s *Defender) CreateConfigurationDisableSmtpParsing(ctx context.Context, value ConfigurationDisableSmtpParsingValue) error {
+	return s.c.Add(ctx, URIConfigurationDisableSmtpParsing, client.Int(int64(value)))
 }
 
 // UpdateConfigurationDisableSmtpParsing updates ./Device/Vendor/MSFT/Defender/Configuration/DisableSmtpParsing.
@@ -1821,8 +1849,8 @@ func (s *Defender) CreateConfigurationDisableSmtpParsing(ctx context.Context, va
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationDisableSmtpParsing(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationDisableSmtpParsing, client.Int(value))
+func (s *Defender) UpdateConfigurationDisableSmtpParsing(ctx context.Context, value ConfigurationDisableSmtpParsingValue) error {
+	return s.c.Replace(ctx, URIConfigurationDisableSmtpParsing, client.Int(int64(value)))
 }
 
 // DeleteConfigurationDisableSmtpParsing deletes ./Device/Vendor/MSFT/Defender/Configuration/DisableSmtpParsing.
@@ -1839,12 +1867,13 @@ func (s *Defender) DeleteConfigurationDisableSmtpParsing(ctx context.Context) er
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationDisableSshParsing(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationDisableSshParsing(ctx context.Context) (ConfigurationDisableSshParsingValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationDisableSshParsing)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationDisableSshParsingValue(n), err
 }
 
 // CreateConfigurationDisableSshParsing creates ./Device/Vendor/MSFT/Defender/Configuration/DisableSshParsing.
@@ -1852,8 +1881,8 @@ func (s *Defender) GetConfigurationDisableSshParsing(ctx context.Context) (int64
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationDisableSshParsing(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationDisableSshParsing, client.Int(value))
+func (s *Defender) CreateConfigurationDisableSshParsing(ctx context.Context, value ConfigurationDisableSshParsingValue) error {
+	return s.c.Add(ctx, URIConfigurationDisableSshParsing, client.Int(int64(value)))
 }
 
 // UpdateConfigurationDisableSshParsing updates ./Device/Vendor/MSFT/Defender/Configuration/DisableSshParsing.
@@ -1861,8 +1890,8 @@ func (s *Defender) CreateConfigurationDisableSshParsing(ctx context.Context, val
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationDisableSshParsing(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationDisableSshParsing, client.Int(value))
+func (s *Defender) UpdateConfigurationDisableSshParsing(ctx context.Context, value ConfigurationDisableSshParsingValue) error {
+	return s.c.Replace(ctx, URIConfigurationDisableSshParsing, client.Int(int64(value)))
 }
 
 // DeleteConfigurationDisableSshParsing deletes ./Device/Vendor/MSFT/Defender/Configuration/DisableSshParsing.
@@ -1879,12 +1908,13 @@ func (s *Defender) DeleteConfigurationDisableSshParsing(ctx context.Context) err
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationDisableTlsParsing(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationDisableTlsParsing(ctx context.Context) (ConfigurationDisableTlsParsingValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationDisableTlsParsing)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationDisableTlsParsingValue(n), err
 }
 
 // CreateConfigurationDisableTlsParsing creates ./Device/Vendor/MSFT/Defender/Configuration/DisableTlsParsing.
@@ -1892,8 +1922,8 @@ func (s *Defender) GetConfigurationDisableTlsParsing(ctx context.Context) (int64
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationDisableTlsParsing(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationDisableTlsParsing, client.Int(value))
+func (s *Defender) CreateConfigurationDisableTlsParsing(ctx context.Context, value ConfigurationDisableTlsParsingValue) error {
+	return s.c.Add(ctx, URIConfigurationDisableTlsParsing, client.Int(int64(value)))
 }
 
 // UpdateConfigurationDisableTlsParsing updates ./Device/Vendor/MSFT/Defender/Configuration/DisableTlsParsing.
@@ -1901,8 +1931,8 @@ func (s *Defender) CreateConfigurationDisableTlsParsing(ctx context.Context, val
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationDisableTlsParsing(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationDisableTlsParsing, client.Int(value))
+func (s *Defender) UpdateConfigurationDisableTlsParsing(ctx context.Context, value ConfigurationDisableTlsParsingValue) error {
+	return s.c.Replace(ctx, URIConfigurationDisableTlsParsing, client.Int(int64(value)))
 }
 
 // DeleteConfigurationDisableTlsParsing deletes ./Device/Vendor/MSFT/Defender/Configuration/DisableTlsParsing.
@@ -1920,12 +1950,13 @@ func (s *Defender) DeleteConfigurationDisableTlsParsing(ctx context.Context) err
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v1.3).
-func (s *Defender) GetConfigurationEnableConvertWarnToBlock(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationEnableConvertWarnToBlock(ctx context.Context) (ConfigurationEnableConvertWarnToBlockValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationEnableConvertWarnToBlock)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationEnableConvertWarnToBlockValue(n), err
 }
 
 // CreateConfigurationEnableConvertWarnToBlock creates ./Device/Vendor/MSFT/Defender/Configuration/EnableConvertWarnToBlock.
@@ -1934,8 +1965,8 @@ func (s *Defender) GetConfigurationEnableConvertWarnToBlock(ctx context.Context)
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v1.3).
-func (s *Defender) CreateConfigurationEnableConvertWarnToBlock(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationEnableConvertWarnToBlock, client.Int(value))
+func (s *Defender) CreateConfigurationEnableConvertWarnToBlock(ctx context.Context, value ConfigurationEnableConvertWarnToBlockValue) error {
+	return s.c.Add(ctx, URIConfigurationEnableConvertWarnToBlock, client.Int(int64(value)))
 }
 
 // UpdateConfigurationEnableConvertWarnToBlock updates ./Device/Vendor/MSFT/Defender/Configuration/EnableConvertWarnToBlock.
@@ -1944,8 +1975,8 @@ func (s *Defender) CreateConfigurationEnableConvertWarnToBlock(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v1.3).
-func (s *Defender) UpdateConfigurationEnableConvertWarnToBlock(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationEnableConvertWarnToBlock, client.Int(value))
+func (s *Defender) UpdateConfigurationEnableConvertWarnToBlock(ctx context.Context, value ConfigurationEnableConvertWarnToBlockValue) error {
+	return s.c.Replace(ctx, URIConfigurationEnableConvertWarnToBlock, client.Int(int64(value)))
 }
 
 // DeleteConfigurationEnableConvertWarnToBlock deletes ./Device/Vendor/MSFT/Defender/Configuration/EnableConvertWarnToBlock.
@@ -1966,12 +1997,13 @@ func (s *Defender) DeleteConfigurationEnableConvertWarnToBlock(ctx context.Conte
 // Supported from OS build 10.0.14393 (CSP v1.3).
 //
 // Deprecated: no longer recommended since OS build 10.0.14393.
-func (s *Defender) GetConfigurationEnableDnsSinkhole(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationEnableDnsSinkhole(ctx context.Context) (ConfigurationEnableDnsSinkholeValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationEnableDnsSinkhole)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationEnableDnsSinkholeValue(n), err
 }
 
 // CreateConfigurationEnableDnsSinkhole creates ./Device/Vendor/MSFT/Defender/Configuration/EnableDnsSinkhole.
@@ -1982,8 +2014,8 @@ func (s *Defender) GetConfigurationEnableDnsSinkhole(ctx context.Context) (int64
 // Supported from OS build 10.0.14393 (CSP v1.3).
 //
 // Deprecated: no longer recommended since OS build 10.0.14393.
-func (s *Defender) CreateConfigurationEnableDnsSinkhole(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationEnableDnsSinkhole, client.Int(value))
+func (s *Defender) CreateConfigurationEnableDnsSinkhole(ctx context.Context, value ConfigurationEnableDnsSinkholeValue) error {
+	return s.c.Add(ctx, URIConfigurationEnableDnsSinkhole, client.Int(int64(value)))
 }
 
 // UpdateConfigurationEnableDnsSinkhole updates ./Device/Vendor/MSFT/Defender/Configuration/EnableDnsSinkhole.
@@ -1994,8 +2026,8 @@ func (s *Defender) CreateConfigurationEnableDnsSinkhole(ctx context.Context, val
 // Supported from OS build 10.0.14393 (CSP v1.3).
 //
 // Deprecated: no longer recommended since OS build 10.0.14393.
-func (s *Defender) UpdateConfigurationEnableDnsSinkhole(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationEnableDnsSinkhole, client.Int(value))
+func (s *Defender) UpdateConfigurationEnableDnsSinkhole(ctx context.Context, value ConfigurationEnableDnsSinkholeValue) error {
+	return s.c.Replace(ctx, URIConfigurationEnableDnsSinkhole, client.Int(int64(value)))
 }
 
 // DeleteConfigurationEnableDnsSinkhole deletes ./Device/Vendor/MSFT/Defender/Configuration/EnableDnsSinkhole.
@@ -2015,12 +2047,13 @@ func (s *Defender) DeleteConfigurationEnableDnsSinkhole(ctx context.Context) err
 // will compute hashes for files it scans.
 //
 // Default: 0.
-func (s *Defender) GetConfigurationEnableFileHashComputation(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationEnableFileHashComputation(ctx context.Context) (ConfigurationEnableFileHashComputationValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationEnableFileHashComputation)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationEnableFileHashComputationValue(n), err
 }
 
 // CreateConfigurationEnableFileHashComputation creates ./Device/Vendor/MSFT/Defender/Configuration/EnableFileHashComputation.
@@ -2028,8 +2061,8 @@ func (s *Defender) GetConfigurationEnableFileHashComputation(ctx context.Context
 // will compute hashes for files it scans.
 //
 // Default: 0.
-func (s *Defender) CreateConfigurationEnableFileHashComputation(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationEnableFileHashComputation, client.Int(value))
+func (s *Defender) CreateConfigurationEnableFileHashComputation(ctx context.Context, value ConfigurationEnableFileHashComputationValue) error {
+	return s.c.Add(ctx, URIConfigurationEnableFileHashComputation, client.Int(int64(value)))
 }
 
 // UpdateConfigurationEnableFileHashComputation updates ./Device/Vendor/MSFT/Defender/Configuration/EnableFileHashComputation.
@@ -2037,8 +2070,8 @@ func (s *Defender) CreateConfigurationEnableFileHashComputation(ctx context.Cont
 // will compute hashes for files it scans.
 //
 // Default: 0.
-func (s *Defender) UpdateConfigurationEnableFileHashComputation(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationEnableFileHashComputation, client.Int(value))
+func (s *Defender) UpdateConfigurationEnableFileHashComputation(ctx context.Context, value ConfigurationEnableFileHashComputationValue) error {
+	return s.c.Replace(ctx, URIConfigurationEnableFileHashComputation, client.Int(int64(value)))
 }
 
 // DeleteConfigurationEnableFileHashComputation deletes ./Device/Vendor/MSFT/Defender/Configuration/EnableFileHashComputation.
@@ -2055,12 +2088,13 @@ func (s *Defender) DeleteConfigurationEnableFileHashComputation(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationEnableUdpReceiveOffload(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationEnableUdpReceiveOffload(ctx context.Context) (ConfigurationEnableUdpReceiveOffloadValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationEnableUdpReceiveOffload)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationEnableUdpReceiveOffloadValue(n), err
 }
 
 // CreateConfigurationEnableUdpReceiveOffload creates ./Device/Vendor/MSFT/Defender/Configuration/EnableUdpReceiveOffload.
@@ -2068,8 +2102,8 @@ func (s *Defender) GetConfigurationEnableUdpReceiveOffload(ctx context.Context) 
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationEnableUdpReceiveOffload(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationEnableUdpReceiveOffload, client.Int(value))
+func (s *Defender) CreateConfigurationEnableUdpReceiveOffload(ctx context.Context, value ConfigurationEnableUdpReceiveOffloadValue) error {
+	return s.c.Add(ctx, URIConfigurationEnableUdpReceiveOffload, client.Int(int64(value)))
 }
 
 // UpdateConfigurationEnableUdpReceiveOffload updates ./Device/Vendor/MSFT/Defender/Configuration/EnableUdpReceiveOffload.
@@ -2077,8 +2111,8 @@ func (s *Defender) CreateConfigurationEnableUdpReceiveOffload(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationEnableUdpReceiveOffload(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationEnableUdpReceiveOffload, client.Int(value))
+func (s *Defender) UpdateConfigurationEnableUdpReceiveOffload(ctx context.Context, value ConfigurationEnableUdpReceiveOffloadValue) error {
+	return s.c.Replace(ctx, URIConfigurationEnableUdpReceiveOffload, client.Int(int64(value)))
 }
 
 // DeleteConfigurationEnableUdpReceiveOffload deletes ./Device/Vendor/MSFT/Defender/Configuration/EnableUdpReceiveOffload.
@@ -2095,12 +2129,13 @@ func (s *Defender) DeleteConfigurationEnableUdpReceiveOffload(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationEnableUdpSegmentationOffload(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationEnableUdpSegmentationOffload(ctx context.Context) (ConfigurationEnableUdpSegmentationOffloadValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationEnableUdpSegmentationOffload)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationEnableUdpSegmentationOffloadValue(n), err
 }
 
 // CreateConfigurationEnableUdpSegmentationOffload creates ./Device/Vendor/MSFT/Defender/Configuration/EnableUdpSegmentationOffload.
@@ -2108,8 +2143,8 @@ func (s *Defender) GetConfigurationEnableUdpSegmentationOffload(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationEnableUdpSegmentationOffload(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationEnableUdpSegmentationOffload, client.Int(value))
+func (s *Defender) CreateConfigurationEnableUdpSegmentationOffload(ctx context.Context, value ConfigurationEnableUdpSegmentationOffloadValue) error {
+	return s.c.Add(ctx, URIConfigurationEnableUdpSegmentationOffload, client.Int(int64(value)))
 }
 
 // UpdateConfigurationEnableUdpSegmentationOffload updates ./Device/Vendor/MSFT/Defender/Configuration/EnableUdpSegmentationOffload.
@@ -2117,8 +2152,8 @@ func (s *Defender) CreateConfigurationEnableUdpSegmentationOffload(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationEnableUdpSegmentationOffload(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationEnableUdpSegmentationOffload, client.Int(value))
+func (s *Defender) UpdateConfigurationEnableUdpSegmentationOffload(ctx context.Context, value ConfigurationEnableUdpSegmentationOffloadValue) error {
+	return s.c.Replace(ctx, URIConfigurationEnableUdpSegmentationOffload, client.Int(int64(value)))
 }
 
 // DeleteConfigurationEnableUdpSegmentationOffload deletes ./Device/Vendor/MSFT/Defender/Configuration/EnableUdpSegmentationOffload.
@@ -2136,12 +2171,13 @@ func (s *Defender) DeleteConfigurationEnableUdpSegmentationOffload(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationEngineUpdatesChannel(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationEngineUpdatesChannel(ctx context.Context) (ConfigurationEngineUpdatesChannelValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationEngineUpdatesChannel)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationEngineUpdatesChannelValue(n), err
 }
 
 // CreateConfigurationEngineUpdatesChannel creates ./Device/Vendor/MSFT/Defender/Configuration/EngineUpdatesChannel.
@@ -2150,8 +2186,8 @@ func (s *Defender) GetConfigurationEngineUpdatesChannel(ctx context.Context) (in
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationEngineUpdatesChannel(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationEngineUpdatesChannel, client.Int(value))
+func (s *Defender) CreateConfigurationEngineUpdatesChannel(ctx context.Context, value ConfigurationEngineUpdatesChannelValue) error {
+	return s.c.Add(ctx, URIConfigurationEngineUpdatesChannel, client.Int(int64(value)))
 }
 
 // UpdateConfigurationEngineUpdatesChannel updates ./Device/Vendor/MSFT/Defender/Configuration/EngineUpdatesChannel.
@@ -2160,8 +2196,8 @@ func (s *Defender) CreateConfigurationEngineUpdatesChannel(ctx context.Context, 
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationEngineUpdatesChannel(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationEngineUpdatesChannel, client.Int(value))
+func (s *Defender) UpdateConfigurationEngineUpdatesChannel(ctx context.Context, value ConfigurationEngineUpdatesChannelValue) error {
+	return s.c.Replace(ctx, URIConfigurationEngineUpdatesChannel, client.Int(int64(value)))
 }
 
 // DeleteConfigurationEngineUpdatesChannel deletes ./Device/Vendor/MSFT/Defender/Configuration/EngineUpdatesChannel.
@@ -2221,12 +2257,13 @@ func (s *Defender) DeleteConfigurationExcludedIpAddresses(ctx context.Context) e
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v1.3).
-func (s *Defender) GetConfigurationHideExclusionsFromLocalAdmins(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationHideExclusionsFromLocalAdmins(ctx context.Context) (ConfigurationHideExclusionsFromLocalAdminsValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationHideExclusionsFromLocalAdmins)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationHideExclusionsFromLocalAdminsValue(n), err
 }
 
 // CreateConfigurationHideExclusionsFromLocalAdmins creates ./Device/Vendor/MSFT/Defender/Configuration/HideExclusionsFromLocalAdmins.
@@ -2236,8 +2273,8 @@ func (s *Defender) GetConfigurationHideExclusionsFromLocalAdmins(ctx context.Con
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v1.3).
-func (s *Defender) CreateConfigurationHideExclusionsFromLocalAdmins(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationHideExclusionsFromLocalAdmins, client.Int(value))
+func (s *Defender) CreateConfigurationHideExclusionsFromLocalAdmins(ctx context.Context, value ConfigurationHideExclusionsFromLocalAdminsValue) error {
+	return s.c.Add(ctx, URIConfigurationHideExclusionsFromLocalAdmins, client.Int(int64(value)))
 }
 
 // UpdateConfigurationHideExclusionsFromLocalAdmins updates ./Device/Vendor/MSFT/Defender/Configuration/HideExclusionsFromLocalAdmins.
@@ -2247,8 +2284,8 @@ func (s *Defender) CreateConfigurationHideExclusionsFromLocalAdmins(ctx context.
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v1.3).
-func (s *Defender) UpdateConfigurationHideExclusionsFromLocalAdmins(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationHideExclusionsFromLocalAdmins, client.Int(value))
+func (s *Defender) UpdateConfigurationHideExclusionsFromLocalAdmins(ctx context.Context, value ConfigurationHideExclusionsFromLocalAdminsValue) error {
+	return s.c.Replace(ctx, URIConfigurationHideExclusionsFromLocalAdmins, client.Int(int64(value)))
 }
 
 // DeleteConfigurationHideExclusionsFromLocalAdmins deletes ./Device/Vendor/MSFT/Defender/Configuration/HideExclusionsFromLocalAdmins.
@@ -2268,12 +2305,13 @@ func (s *Defender) DeleteConfigurationHideExclusionsFromLocalAdmins(ctx context.
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v1.3).
-func (s *Defender) GetConfigurationHideExclusionsFromLocalUsers(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationHideExclusionsFromLocalUsers(ctx context.Context) (ConfigurationHideExclusionsFromLocalUsersValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationHideExclusionsFromLocalUsers)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationHideExclusionsFromLocalUsersValue(n), err
 }
 
 // CreateConfigurationHideExclusionsFromLocalUsers creates ./Device/Vendor/MSFT/Defender/Configuration/HideExclusionsFromLocalUsers.
@@ -2282,8 +2320,8 @@ func (s *Defender) GetConfigurationHideExclusionsFromLocalUsers(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v1.3).
-func (s *Defender) CreateConfigurationHideExclusionsFromLocalUsers(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationHideExclusionsFromLocalUsers, client.Int(value))
+func (s *Defender) CreateConfigurationHideExclusionsFromLocalUsers(ctx context.Context, value ConfigurationHideExclusionsFromLocalUsersValue) error {
+	return s.c.Add(ctx, URIConfigurationHideExclusionsFromLocalUsers, client.Int(int64(value)))
 }
 
 // UpdateConfigurationHideExclusionsFromLocalUsers updates ./Device/Vendor/MSFT/Defender/Configuration/HideExclusionsFromLocalUsers.
@@ -2292,8 +2330,8 @@ func (s *Defender) CreateConfigurationHideExclusionsFromLocalUsers(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v1.3).
-func (s *Defender) UpdateConfigurationHideExclusionsFromLocalUsers(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationHideExclusionsFromLocalUsers, client.Int(value))
+func (s *Defender) UpdateConfigurationHideExclusionsFromLocalUsers(ctx context.Context, value ConfigurationHideExclusionsFromLocalUsersValue) error {
+	return s.c.Replace(ctx, URIConfigurationHideExclusionsFromLocalUsers, client.Int(int64(value)))
 }
 
 // DeleteConfigurationHideExclusionsFromLocalUsers deletes ./Device/Vendor/MSFT/Defender/Configuration/HideExclusionsFromLocalUsers.
@@ -2311,12 +2349,13 @@ func (s *Defender) DeleteConfigurationHideExclusionsFromLocalUsers(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.19041 (CSP v1.3).
-func (s *Defender) GetConfigurationIntelTDTEnabled(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationIntelTDTEnabled(ctx context.Context) (ConfigurationIntelTDTEnabledValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationIntelTDTEnabled)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationIntelTDTEnabledValue(n), err
 }
 
 // CreateConfigurationIntelTDTEnabled creates ./Device/Vendor/MSFT/Defender/Configuration/IntelTDTEnabled.
@@ -2324,8 +2363,8 @@ func (s *Defender) GetConfigurationIntelTDTEnabled(ctx context.Context) (int64, 
 //
 // Default: 0.
 // Supported from OS build 10.0.19041 (CSP v1.3).
-func (s *Defender) CreateConfigurationIntelTDTEnabled(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationIntelTDTEnabled, client.Int(value))
+func (s *Defender) CreateConfigurationIntelTDTEnabled(ctx context.Context, value ConfigurationIntelTDTEnabledValue) error {
+	return s.c.Add(ctx, URIConfigurationIntelTDTEnabled, client.Int(int64(value)))
 }
 
 // UpdateConfigurationIntelTDTEnabled updates ./Device/Vendor/MSFT/Defender/Configuration/IntelTDTEnabled.
@@ -2333,8 +2372,8 @@ func (s *Defender) CreateConfigurationIntelTDTEnabled(ctx context.Context, value
 //
 // Default: 0.
 // Supported from OS build 10.0.19041 (CSP v1.3).
-func (s *Defender) UpdateConfigurationIntelTDTEnabled(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationIntelTDTEnabled, client.Int(value))
+func (s *Defender) UpdateConfigurationIntelTDTEnabled(ctx context.Context, value ConfigurationIntelTDTEnabledValue) error {
+	return s.c.Replace(ctx, URIConfigurationIntelTDTEnabled, client.Int(int64(value)))
 }
 
 // DeleteConfigurationIntelTDTEnabled deletes ./Device/Vendor/MSFT/Defender/Configuration/IntelTDTEnabled.
@@ -2352,12 +2391,13 @@ func (s *Defender) DeleteConfigurationIntelTDTEnabled(ctx context.Context) error
 //
 // Default: 0.
 // Supported from OS build 10.0.14393.
-func (s *Defender) GetConfigurationMeteredConnectionUpdates(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationMeteredConnectionUpdates(ctx context.Context) (ConfigurationMeteredConnectionUpdatesValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationMeteredConnectionUpdates)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationMeteredConnectionUpdatesValue(n), err
 }
 
 // CreateConfigurationMeteredConnectionUpdates creates ./Device/Vendor/MSFT/Defender/Configuration/MeteredConnectionUpdates.
@@ -2366,8 +2406,8 @@ func (s *Defender) GetConfigurationMeteredConnectionUpdates(ctx context.Context)
 //
 // Default: 0.
 // Supported from OS build 10.0.14393.
-func (s *Defender) CreateConfigurationMeteredConnectionUpdates(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationMeteredConnectionUpdates, client.Int(value))
+func (s *Defender) CreateConfigurationMeteredConnectionUpdates(ctx context.Context, value ConfigurationMeteredConnectionUpdatesValue) error {
+	return s.c.Add(ctx, URIConfigurationMeteredConnectionUpdates, client.Int(int64(value)))
 }
 
 // UpdateConfigurationMeteredConnectionUpdates updates ./Device/Vendor/MSFT/Defender/Configuration/MeteredConnectionUpdates.
@@ -2376,8 +2416,8 @@ func (s *Defender) CreateConfigurationMeteredConnectionUpdates(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.14393.
-func (s *Defender) UpdateConfigurationMeteredConnectionUpdates(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationMeteredConnectionUpdates, client.Int(value))
+func (s *Defender) UpdateConfigurationMeteredConnectionUpdates(ctx context.Context, value ConfigurationMeteredConnectionUpdatesValue) error {
+	return s.c.Replace(ctx, URIConfigurationMeteredConnectionUpdates, client.Int(int64(value)))
 }
 
 // DeleteConfigurationMeteredConnectionUpdates deletes ./Device/Vendor/MSFT/Defender/Configuration/MeteredConnectionUpdates.
@@ -2395,12 +2435,13 @@ func (s *Defender) DeleteConfigurationMeteredConnectionUpdates(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationNetworkProtectionReputationMode(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationNetworkProtectionReputationMode(ctx context.Context) (ConfigurationNetworkProtectionReputationModeValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationNetworkProtectionReputationMode)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationNetworkProtectionReputationModeValue(n), err
 }
 
 // CreateConfigurationNetworkProtectionReputationMode creates ./Device/Vendor/MSFT/Defender/Configuration/NetworkProtectionReputationMode.
@@ -2408,8 +2449,8 @@ func (s *Defender) GetConfigurationNetworkProtectionReputationMode(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationNetworkProtectionReputationMode(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationNetworkProtectionReputationMode, client.Int(value))
+func (s *Defender) CreateConfigurationNetworkProtectionReputationMode(ctx context.Context, value ConfigurationNetworkProtectionReputationModeValue) error {
+	return s.c.Add(ctx, URIConfigurationNetworkProtectionReputationMode, client.Int(int64(value)))
 }
 
 // UpdateConfigurationNetworkProtectionReputationMode updates ./Device/Vendor/MSFT/Defender/Configuration/NetworkProtectionReputationMode.
@@ -2417,8 +2458,8 @@ func (s *Defender) CreateConfigurationNetworkProtectionReputationMode(ctx contex
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationNetworkProtectionReputationMode(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationNetworkProtectionReputationMode, client.Int(value))
+func (s *Defender) UpdateConfigurationNetworkProtectionReputationMode(ctx context.Context, value ConfigurationNetworkProtectionReputationModeValue) error {
+	return s.c.Replace(ctx, URIConfigurationNetworkProtectionReputationMode, client.Int(int64(value)))
 }
 
 // DeleteConfigurationNetworkProtectionReputationMode deletes ./Device/Vendor/MSFT/Defender/Configuration/NetworkProtectionReputationMode.
@@ -2436,12 +2477,13 @@ func (s *Defender) DeleteConfigurationNetworkProtectionReputationMode(ctx contex
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationOobeEnableRtpAndSigUpdate(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationOobeEnableRtpAndSigUpdate(ctx context.Context) (ConfigurationOobeEnableRtpAndSigUpdateValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationOobeEnableRtpAndSigUpdate)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationOobeEnableRtpAndSigUpdateValue(n), err
 }
 
 // CreateConfigurationOobeEnableRtpAndSigUpdate creates ./Device/Vendor/MSFT/Defender/Configuration/OobeEnableRtpAndSigUpdate.
@@ -2450,8 +2492,8 @@ func (s *Defender) GetConfigurationOobeEnableRtpAndSigUpdate(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationOobeEnableRtpAndSigUpdate(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationOobeEnableRtpAndSigUpdate, client.Int(value))
+func (s *Defender) CreateConfigurationOobeEnableRtpAndSigUpdate(ctx context.Context, value ConfigurationOobeEnableRtpAndSigUpdateValue) error {
+	return s.c.Add(ctx, URIConfigurationOobeEnableRtpAndSigUpdate, client.Int(int64(value)))
 }
 
 // UpdateConfigurationOobeEnableRtpAndSigUpdate updates ./Device/Vendor/MSFT/Defender/Configuration/OobeEnableRtpAndSigUpdate.
@@ -2460,8 +2502,8 @@ func (s *Defender) CreateConfigurationOobeEnableRtpAndSigUpdate(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationOobeEnableRtpAndSigUpdate(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationOobeEnableRtpAndSigUpdate, client.Int(value))
+func (s *Defender) UpdateConfigurationOobeEnableRtpAndSigUpdate(ctx context.Context, value ConfigurationOobeEnableRtpAndSigUpdateValue) error {
+	return s.c.Replace(ctx, URIConfigurationOobeEnableRtpAndSigUpdate, client.Int(int64(value)))
 }
 
 // DeleteConfigurationOobeEnableRtpAndSigUpdate deletes ./Device/Vendor/MSFT/Defender/Configuration/OobeEnableRtpAndSigUpdate.
@@ -2479,12 +2521,13 @@ func (s *Defender) DeleteConfigurationOobeEnableRtpAndSigUpdate(ctx context.Cont
 //
 // Default: 0x0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationPassiveRemediation(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationPassiveRemediation(ctx context.Context) (ConfigurationPassiveRemediationValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationPassiveRemediation)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationPassiveRemediationValue(n), err
 }
 
 // CreateConfigurationPassiveRemediation creates ./Device/Vendor/MSFT/Defender/Configuration/PassiveRemediation.
@@ -2492,8 +2535,8 @@ func (s *Defender) GetConfigurationPassiveRemediation(ctx context.Context) (int6
 //
 // Default: 0x0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationPassiveRemediation(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationPassiveRemediation, client.Int(value))
+func (s *Defender) CreateConfigurationPassiveRemediation(ctx context.Context, value ConfigurationPassiveRemediationValue) error {
+	return s.c.Add(ctx, URIConfigurationPassiveRemediation, client.Int(int64(value)))
 }
 
 // UpdateConfigurationPassiveRemediation updates ./Device/Vendor/MSFT/Defender/Configuration/PassiveRemediation.
@@ -2501,8 +2544,8 @@ func (s *Defender) CreateConfigurationPassiveRemediation(ctx context.Context, va
 //
 // Default: 0x0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationPassiveRemediation(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationPassiveRemediation, client.Int(value))
+func (s *Defender) UpdateConfigurationPassiveRemediation(ctx context.Context, value ConfigurationPassiveRemediationValue) error {
+	return s.c.Replace(ctx, URIConfigurationPassiveRemediation, client.Int(int64(value)))
 }
 
 // DeleteConfigurationPassiveRemediation deletes ./Device/Vendor/MSFT/Defender/Configuration/PassiveRemediation.
@@ -2520,12 +2563,13 @@ func (s *Defender) DeleteConfigurationPassiveRemediation(ctx context.Context) er
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v1.3).
-func (s *Defender) GetConfigurationPerformanceModeStatus(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationPerformanceModeStatus(ctx context.Context) (ConfigurationPerformanceModeStatusValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationPerformanceModeStatus)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationPerformanceModeStatusValue(n), err
 }
 
 // CreateConfigurationPerformanceModeStatus creates ./Device/Vendor/MSFT/Defender/Configuration/PerformanceModeStatus.
@@ -2534,8 +2578,8 @@ func (s *Defender) GetConfigurationPerformanceModeStatus(ctx context.Context) (i
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v1.3).
-func (s *Defender) CreateConfigurationPerformanceModeStatus(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationPerformanceModeStatus, client.Int(value))
+func (s *Defender) CreateConfigurationPerformanceModeStatus(ctx context.Context, value ConfigurationPerformanceModeStatusValue) error {
+	return s.c.Add(ctx, URIConfigurationPerformanceModeStatus, client.Int(int64(value)))
 }
 
 // UpdateConfigurationPerformanceModeStatus updates ./Device/Vendor/MSFT/Defender/Configuration/PerformanceModeStatus.
@@ -2544,8 +2588,8 @@ func (s *Defender) CreateConfigurationPerformanceModeStatus(ctx context.Context,
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v1.3).
-func (s *Defender) UpdateConfigurationPerformanceModeStatus(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationPerformanceModeStatus, client.Int(value))
+func (s *Defender) UpdateConfigurationPerformanceModeStatus(ctx context.Context, value ConfigurationPerformanceModeStatusValue) error {
+	return s.c.Replace(ctx, URIConfigurationPerformanceModeStatus, client.Int(int64(value)))
 }
 
 // DeleteConfigurationPerformanceModeStatus deletes ./Device/Vendor/MSFT/Defender/Configuration/PerformanceModeStatus.
@@ -2564,12 +2608,13 @@ func (s *Defender) DeleteConfigurationPerformanceModeStatus(ctx context.Context)
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationPlatformUpdatesChannel(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationPlatformUpdatesChannel(ctx context.Context) (ConfigurationPlatformUpdatesChannelValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationPlatformUpdatesChannel)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationPlatformUpdatesChannelValue(n), err
 }
 
 // CreateConfigurationPlatformUpdatesChannel creates ./Device/Vendor/MSFT/Defender/Configuration/PlatformUpdatesChannel.
@@ -2578,8 +2623,8 @@ func (s *Defender) GetConfigurationPlatformUpdatesChannel(ctx context.Context) (
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationPlatformUpdatesChannel(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationPlatformUpdatesChannel, client.Int(value))
+func (s *Defender) CreateConfigurationPlatformUpdatesChannel(ctx context.Context, value ConfigurationPlatformUpdatesChannelValue) error {
+	return s.c.Add(ctx, URIConfigurationPlatformUpdatesChannel, client.Int(int64(value)))
 }
 
 // UpdateConfigurationPlatformUpdatesChannel updates ./Device/Vendor/MSFT/Defender/Configuration/PlatformUpdatesChannel.
@@ -2588,8 +2633,8 @@ func (s *Defender) CreateConfigurationPlatformUpdatesChannel(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationPlatformUpdatesChannel(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationPlatformUpdatesChannel, client.Int(value))
+func (s *Defender) UpdateConfigurationPlatformUpdatesChannel(ctx context.Context, value ConfigurationPlatformUpdatesChannelValue) error {
+	return s.c.Replace(ctx, URIConfigurationPlatformUpdatesChannel, client.Int(int64(value)))
 }
 
 // DeleteConfigurationPlatformUpdatesChannel deletes ./Device/Vendor/MSFT/Defender/Configuration/PlatformUpdatesChannel.
@@ -2607,12 +2652,13 @@ func (s *Defender) DeleteConfigurationPlatformUpdatesChannel(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationQuickScanIncludeExclusions(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationQuickScanIncludeExclusions(ctx context.Context) (ConfigurationQuickScanIncludeExclusionsValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationQuickScanIncludeExclusions)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationQuickScanIncludeExclusionsValue(n), err
 }
 
 // CreateConfigurationQuickScanIncludeExclusions creates ./Device/Vendor/MSFT/Defender/Configuration/QuickScanIncludeExclusions.
@@ -2620,8 +2666,8 @@ func (s *Defender) GetConfigurationQuickScanIncludeExclusions(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationQuickScanIncludeExclusions(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationQuickScanIncludeExclusions, client.Int(value))
+func (s *Defender) CreateConfigurationQuickScanIncludeExclusions(ctx context.Context, value ConfigurationQuickScanIncludeExclusionsValue) error {
+	return s.c.Add(ctx, URIConfigurationQuickScanIncludeExclusions, client.Int(int64(value)))
 }
 
 // UpdateConfigurationQuickScanIncludeExclusions updates ./Device/Vendor/MSFT/Defender/Configuration/QuickScanIncludeExclusions.
@@ -2629,8 +2675,8 @@ func (s *Defender) CreateConfigurationQuickScanIncludeExclusions(ctx context.Con
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationQuickScanIncludeExclusions(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationQuickScanIncludeExclusions, client.Int(value))
+func (s *Defender) UpdateConfigurationQuickScanIncludeExclusions(ctx context.Context, value ConfigurationQuickScanIncludeExclusionsValue) error {
+	return s.c.Replace(ctx, URIConfigurationQuickScanIncludeExclusions, client.Int(int64(value)))
 }
 
 // DeleteConfigurationQuickScanIncludeExclusions deletes ./Device/Vendor/MSFT/Defender/Configuration/QuickScanIncludeExclusions.
@@ -2648,12 +2694,13 @@ func (s *Defender) DeleteConfigurationQuickScanIncludeExclusions(ctx context.Con
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationRandomizeScheduleTaskTimes(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationRandomizeScheduleTaskTimes(ctx context.Context) (ConfigurationRandomizeScheduleTaskTimesValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationRandomizeScheduleTaskTimes)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationRandomizeScheduleTaskTimesValue(n), err
 }
 
 // CreateConfigurationRandomizeScheduleTaskTimes creates ./Device/Vendor/MSFT/Defender/Configuration/RandomizeScheduleTaskTimes.
@@ -2662,8 +2709,8 @@ func (s *Defender) GetConfigurationRandomizeScheduleTaskTimes(ctx context.Contex
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationRandomizeScheduleTaskTimes(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationRandomizeScheduleTaskTimes, client.Int(value))
+func (s *Defender) CreateConfigurationRandomizeScheduleTaskTimes(ctx context.Context, value ConfigurationRandomizeScheduleTaskTimesValue) error {
+	return s.c.Add(ctx, URIConfigurationRandomizeScheduleTaskTimes, client.Int(int64(value)))
 }
 
 // UpdateConfigurationRandomizeScheduleTaskTimes updates ./Device/Vendor/MSFT/Defender/Configuration/RandomizeScheduleTaskTimes.
@@ -2672,8 +2719,8 @@ func (s *Defender) CreateConfigurationRandomizeScheduleTaskTimes(ctx context.Con
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationRandomizeScheduleTaskTimes(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationRandomizeScheduleTaskTimes, client.Int(value))
+func (s *Defender) UpdateConfigurationRandomizeScheduleTaskTimes(ctx context.Context, value ConfigurationRandomizeScheduleTaskTimesValue) error {
+	return s.c.Replace(ctx, URIConfigurationRandomizeScheduleTaskTimes, client.Int(int64(value)))
 }
 
 // DeleteConfigurationRandomizeScheduleTaskTimes deletes ./Device/Vendor/MSFT/Defender/Configuration/RandomizeScheduleTaskTimes.
@@ -2692,12 +2739,13 @@ func (s *Defender) DeleteConfigurationRandomizeScheduleTaskTimes(ctx context.Con
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationReportingEnableDynamicSignatureDroppedEventReporting(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationReportingEnableDynamicSignatureDroppedEventReporting(ctx context.Context) (ConfigurationReportingEnableDynamicSignatureDroppedEventReportingValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationReportingEnableDynamicSignatureDroppedEventReporting)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationReportingEnableDynamicSignatureDroppedEventReportingValue(n), err
 }
 
 // CreateConfigurationReportingEnableDynamicSignatureDroppedEventReporting creates ./Device/Vendor/MSFT/Defender/Configuration/Reporting/EnableDynamicSignatureDroppedEventReporting.
@@ -2706,8 +2754,8 @@ func (s *Defender) GetConfigurationReportingEnableDynamicSignatureDroppedEventRe
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationReportingEnableDynamicSignatureDroppedEventReporting(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationReportingEnableDynamicSignatureDroppedEventReporting, client.Int(value))
+func (s *Defender) CreateConfigurationReportingEnableDynamicSignatureDroppedEventReporting(ctx context.Context, value ConfigurationReportingEnableDynamicSignatureDroppedEventReportingValue) error {
+	return s.c.Add(ctx, URIConfigurationReportingEnableDynamicSignatureDroppedEventReporting, client.Int(int64(value)))
 }
 
 // UpdateConfigurationReportingEnableDynamicSignatureDroppedEventReporting updates ./Device/Vendor/MSFT/Defender/Configuration/Reporting/EnableDynamicSignatureDroppedEventReporting.
@@ -2716,8 +2764,8 @@ func (s *Defender) CreateConfigurationReportingEnableDynamicSignatureDroppedEven
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationReportingEnableDynamicSignatureDroppedEventReporting(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationReportingEnableDynamicSignatureDroppedEventReporting, client.Int(value))
+func (s *Defender) UpdateConfigurationReportingEnableDynamicSignatureDroppedEventReporting(ctx context.Context, value ConfigurationReportingEnableDynamicSignatureDroppedEventReportingValue) error {
+	return s.c.Replace(ctx, URIConfigurationReportingEnableDynamicSignatureDroppedEventReporting, client.Int(int64(value)))
 }
 
 // DeleteConfigurationReportingEnableDynamicSignatureDroppedEventReporting deletes ./Device/Vendor/MSFT/Defender/Configuration/Reporting/EnableDynamicSignatureDroppedEventReporting.
@@ -2736,12 +2784,13 @@ func (s *Defender) DeleteConfigurationReportingEnableDynamicSignatureDroppedEven
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationScanOnlyIfIdleEnabled(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationScanOnlyIfIdleEnabled(ctx context.Context) (ConfigurationScanOnlyIfIdleEnabledValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationScanOnlyIfIdleEnabled)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationScanOnlyIfIdleEnabledValue(n), err
 }
 
 // CreateConfigurationScanOnlyIfIdleEnabled creates ./Device/Vendor/MSFT/Defender/Configuration/ScanOnlyIfIdleEnabled.
@@ -2750,8 +2799,8 @@ func (s *Defender) GetConfigurationScanOnlyIfIdleEnabled(ctx context.Context) (i
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationScanOnlyIfIdleEnabled(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationScanOnlyIfIdleEnabled, client.Int(value))
+func (s *Defender) CreateConfigurationScanOnlyIfIdleEnabled(ctx context.Context, value ConfigurationScanOnlyIfIdleEnabledValue) error {
+	return s.c.Add(ctx, URIConfigurationScanOnlyIfIdleEnabled, client.Int(int64(value)))
 }
 
 // UpdateConfigurationScanOnlyIfIdleEnabled updates ./Device/Vendor/MSFT/Defender/Configuration/ScanOnlyIfIdleEnabled.
@@ -2760,8 +2809,8 @@ func (s *Defender) CreateConfigurationScanOnlyIfIdleEnabled(ctx context.Context,
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationScanOnlyIfIdleEnabled(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationScanOnlyIfIdleEnabled, client.Int(value))
+func (s *Defender) UpdateConfigurationScanOnlyIfIdleEnabled(ctx context.Context, value ConfigurationScanOnlyIfIdleEnabledValue) error {
+	return s.c.Replace(ctx, URIConfigurationScanOnlyIfIdleEnabled, client.Int(int64(value)))
 }
 
 // DeleteConfigurationScanOnlyIfIdleEnabled deletes ./Device/Vendor/MSFT/Defender/Configuration/ScanOnlyIfIdleEnabled.
@@ -2781,12 +2830,13 @@ func (s *Defender) DeleteConfigurationScanOnlyIfIdleEnabled(ctx context.Context)
 //
 // Default: 8.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationScheduleSecurityIntelligenceUpdateDay(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationScheduleSecurityIntelligenceUpdateDay(ctx context.Context) (ConfigurationScheduleSecurityIntelligenceUpdateDayValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationScheduleSecurityIntelligenceUpdateDay)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationScheduleSecurityIntelligenceUpdateDayValue(n), err
 }
 
 // CreateConfigurationScheduleSecurityIntelligenceUpdateDay creates ./Device/Vendor/MSFT/Defender/Configuration/ScheduleSecurityIntelligenceUpdateDay.
@@ -2796,8 +2846,8 @@ func (s *Defender) GetConfigurationScheduleSecurityIntelligenceUpdateDay(ctx con
 //
 // Default: 8.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationScheduleSecurityIntelligenceUpdateDay(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationScheduleSecurityIntelligenceUpdateDay, client.Int(value))
+func (s *Defender) CreateConfigurationScheduleSecurityIntelligenceUpdateDay(ctx context.Context, value ConfigurationScheduleSecurityIntelligenceUpdateDayValue) error {
+	return s.c.Add(ctx, URIConfigurationScheduleSecurityIntelligenceUpdateDay, client.Int(int64(value)))
 }
 
 // UpdateConfigurationScheduleSecurityIntelligenceUpdateDay updates ./Device/Vendor/MSFT/Defender/Configuration/ScheduleSecurityIntelligenceUpdateDay.
@@ -2807,8 +2857,8 @@ func (s *Defender) CreateConfigurationScheduleSecurityIntelligenceUpdateDay(ctx 
 //
 // Default: 8.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationScheduleSecurityIntelligenceUpdateDay(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationScheduleSecurityIntelligenceUpdateDay, client.Int(value))
+func (s *Defender) UpdateConfigurationScheduleSecurityIntelligenceUpdateDay(ctx context.Context, value ConfigurationScheduleSecurityIntelligenceUpdateDayValue) error {
+	return s.c.Replace(ctx, URIConfigurationScheduleSecurityIntelligenceUpdateDay, client.Int(int64(value)))
 }
 
 // DeleteConfigurationScheduleSecurityIntelligenceUpdateDay deletes ./Device/Vendor/MSFT/Defender/Configuration/ScheduleSecurityIntelligenceUpdateDay.
@@ -2934,12 +2984,12 @@ func (s *Defender) DeleteConfigurationSchedulerRandomizationTime(ctx context.Con
 // WpdDevices, PrinterDevices.
 //
 // Supported from OS build 10.0.17763 (CSP v1.3).
-func (s *Defender) GetConfigurationSecuredDevicesConfiguration(ctx context.Context) (string, error) {
+func (s *Defender) GetConfigurationSecuredDevicesConfiguration(ctx context.Context) (ConfigurationSecuredDevicesConfigurationValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationSecuredDevicesConfiguration)
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return ConfigurationSecuredDevicesConfigurationValue(v.Str()), nil
 }
 
 // CreateConfigurationSecuredDevicesConfiguration creates ./Device/Vendor/MSFT/Defender/Configuration/SecuredDevicesConfiguration.
@@ -2950,8 +3000,8 @@ func (s *Defender) GetConfigurationSecuredDevicesConfiguration(ctx context.Conte
 // WpdDevices, PrinterDevices.
 //
 // Supported from OS build 10.0.17763 (CSP v1.3).
-func (s *Defender) CreateConfigurationSecuredDevicesConfiguration(ctx context.Context, value string) error {
-	return s.c.Add(ctx, URIConfigurationSecuredDevicesConfiguration, client.Chr(value))
+func (s *Defender) CreateConfigurationSecuredDevicesConfiguration(ctx context.Context, value ConfigurationSecuredDevicesConfigurationValue) error {
+	return s.c.Add(ctx, URIConfigurationSecuredDevicesConfiguration, client.Chr(string(value)))
 }
 
 // UpdateConfigurationSecuredDevicesConfiguration updates ./Device/Vendor/MSFT/Defender/Configuration/SecuredDevicesConfiguration.
@@ -2962,8 +3012,8 @@ func (s *Defender) CreateConfigurationSecuredDevicesConfiguration(ctx context.Co
 // WpdDevices, PrinterDevices.
 //
 // Supported from OS build 10.0.17763 (CSP v1.3).
-func (s *Defender) UpdateConfigurationSecuredDevicesConfiguration(ctx context.Context, value string) error {
-	return s.c.Replace(ctx, URIConfigurationSecuredDevicesConfiguration, client.Chr(value))
+func (s *Defender) UpdateConfigurationSecuredDevicesConfiguration(ctx context.Context, value ConfigurationSecuredDevicesConfigurationValue) error {
+	return s.c.Replace(ctx, URIConfigurationSecuredDevicesConfiguration, client.Chr(string(value)))
 }
 
 // DeleteConfigurationSecuredDevicesConfiguration deletes ./Device/Vendor/MSFT/Defender/Configuration/SecuredDevicesConfiguration.
@@ -2985,12 +3035,13 @@ func (s *Defender) DeleteConfigurationSecuredDevicesConfiguration(ctx context.Co
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v1.3).
-func (s *Defender) GetConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnly(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnly(ctx context.Context) (ConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnlyValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnly)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnlyValue(n), err
 }
 
 // CreateConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnly creates ./Device/Vendor/MSFT/Defender/Configuration/SecurityIntelligenceLocationUpdateAtScheduledTimeOnly.
@@ -3000,8 +3051,8 @@ func (s *Defender) GetConfigurationSecurityIntelligenceLocationUpdateAtScheduled
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v1.3).
-func (s *Defender) CreateConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnly(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnly, client.Int(value))
+func (s *Defender) CreateConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnly(ctx context.Context, value ConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnlyValue) error {
+	return s.c.Add(ctx, URIConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnly, client.Int(int64(value)))
 }
 
 // UpdateConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnly updates ./Device/Vendor/MSFT/Defender/Configuration/SecurityIntelligenceLocationUpdateAtScheduledTimeOnly.
@@ -3011,8 +3062,8 @@ func (s *Defender) CreateConfigurationSecurityIntelligenceLocationUpdateAtSchedu
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v1.3).
-func (s *Defender) UpdateConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnly(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnly, client.Int(value))
+func (s *Defender) UpdateConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnly(ctx context.Context, value ConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnlyValue) error {
+	return s.c.Replace(ctx, URIConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnly, client.Int(int64(value)))
 }
 
 // DeleteConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnly deletes ./Device/Vendor/MSFT/Defender/Configuration/SecurityIntelligenceLocationUpdateAtScheduledTimeOnly.
@@ -3032,12 +3083,13 @@ func (s *Defender) DeleteConfigurationSecurityIntelligenceLocationUpdateAtSchedu
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationSecurityIntelligenceUpdatesChannel(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationSecurityIntelligenceUpdatesChannel(ctx context.Context) (ConfigurationSecurityIntelligenceUpdatesChannelValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationSecurityIntelligenceUpdatesChannel)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationSecurityIntelligenceUpdatesChannelValue(n), err
 }
 
 // CreateConfigurationSecurityIntelligenceUpdatesChannel creates ./Device/Vendor/MSFT/Defender/Configuration/SecurityIntelligenceUpdatesChannel.
@@ -3046,8 +3098,8 @@ func (s *Defender) GetConfigurationSecurityIntelligenceUpdatesChannel(ctx contex
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationSecurityIntelligenceUpdatesChannel(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationSecurityIntelligenceUpdatesChannel, client.Int(value))
+func (s *Defender) CreateConfigurationSecurityIntelligenceUpdatesChannel(ctx context.Context, value ConfigurationSecurityIntelligenceUpdatesChannelValue) error {
+	return s.c.Add(ctx, URIConfigurationSecurityIntelligenceUpdatesChannel, client.Int(int64(value)))
 }
 
 // UpdateConfigurationSecurityIntelligenceUpdatesChannel updates ./Device/Vendor/MSFT/Defender/Configuration/SecurityIntelligenceUpdatesChannel.
@@ -3056,8 +3108,8 @@ func (s *Defender) CreateConfigurationSecurityIntelligenceUpdatesChannel(ctx con
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationSecurityIntelligenceUpdatesChannel(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationSecurityIntelligenceUpdatesChannel, client.Int(value))
+func (s *Defender) UpdateConfigurationSecurityIntelligenceUpdatesChannel(ctx context.Context, value ConfigurationSecurityIntelligenceUpdatesChannelValue) error {
+	return s.c.Replace(ctx, URIConfigurationSecurityIntelligenceUpdatesChannel, client.Int(int64(value)))
 }
 
 // DeleteConfigurationSecurityIntelligenceUpdatesChannel deletes ./Device/Vendor/MSFT/Defender/Configuration/SecurityIntelligenceUpdatesChannel.
@@ -3180,12 +3232,13 @@ func (s *Defender) DeleteConfigurationTamperProtection(ctx context.Context) erro
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) GetConfigurationThrottleForScheduledScanOnly(ctx context.Context) (int64, error) {
+func (s *Defender) GetConfigurationThrottleForScheduledScanOnly(ctx context.Context) (ConfigurationThrottleForScheduledScanOnlyValue, error) {
 	v, err := s.c.Get(ctx, URIConfigurationThrottleForScheduledScanOnly)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigurationThrottleForScheduledScanOnlyValue(n), err
 }
 
 // CreateConfigurationThrottleForScheduledScanOnly creates ./Device/Vendor/MSFT/Defender/Configuration/ThrottleForScheduledScanOnly.
@@ -3194,8 +3247,8 @@ func (s *Defender) GetConfigurationThrottleForScheduledScanOnly(ctx context.Cont
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) CreateConfigurationThrottleForScheduledScanOnly(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigurationThrottleForScheduledScanOnly, client.Int(value))
+func (s *Defender) CreateConfigurationThrottleForScheduledScanOnly(ctx context.Context, value ConfigurationThrottleForScheduledScanOnlyValue) error {
+	return s.c.Add(ctx, URIConfigurationThrottleForScheduledScanOnly, client.Int(int64(value)))
 }
 
 // UpdateConfigurationThrottleForScheduledScanOnly updates ./Device/Vendor/MSFT/Defender/Configuration/ThrottleForScheduledScanOnly.
@@ -3204,8 +3257,8 @@ func (s *Defender) CreateConfigurationThrottleForScheduledScanOnly(ctx context.C
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v1.3).
-func (s *Defender) UpdateConfigurationThrottleForScheduledScanOnly(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigurationThrottleForScheduledScanOnly, client.Int(value))
+func (s *Defender) UpdateConfigurationThrottleForScheduledScanOnly(ctx context.Context, value ConfigurationThrottleForScheduledScanOnlyValue) error {
+	return s.c.Replace(ctx, URIConfigurationThrottleForScheduledScanOnly, client.Int(int64(value)))
 }
 
 // DeleteConfigurationThrottleForScheduledScanOnly deletes ./Device/Vendor/MSFT/Defender/Configuration/ThrottleForScheduledScanOnly.
@@ -3633,18 +3686,18 @@ func (s *Defender) ExecRollbackPlatform(ctx context.Context, value string) error
 
 // GetScan reads ./Device/Vendor/MSFT/Defender/Scan.
 // Node that can be used to start a Windows Defender scan on a device.
-func (s *Defender) GetScan(ctx context.Context) (string, error) {
+func (s *Defender) GetScan(ctx context.Context) (ScanValue, error) {
 	v, err := s.c.Get(ctx, URIScan)
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return ScanValue(v.Str()), nil
 }
 
 // ExecScan executes ./Device/Vendor/MSFT/Defender/Scan.
 // Node that can be used to start a Windows Defender scan on a device.
-func (s *Defender) ExecScan(ctx context.Context, value string) error {
-	return s.c.Exec(ctx, URIScan, client.Chr(value))
+func (s *Defender) ExecScan(ctx context.Context, value ScanValue) error {
+	return s.c.Exec(ctx, URIScan, client.Chr(string(value)))
 }
 
 // GetUpdateSignature reads ./Device/Vendor/MSFT/Defender/UpdateSignature.

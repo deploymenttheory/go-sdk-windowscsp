@@ -2,207 +2,590 @@
 
 package experience
 
-// AllowClipboardHistory allowed values.
-const (
-	// Not allowed.
-	AllowClipboardHistoryNotAllowed int64 = 0
-	// Allowed.
-	AllowClipboardHistoryAllowed int64 = 1
+import (
+	"fmt"
 )
 
-// AllowCopyPaste allowed values.
+// AllowClipboardHistoryValue — allowed values for the AllowClipboardHistory node.
+type AllowClipboardHistoryValue int64
+
 const (
 	// Not allowed.
-	AllowCopyPasteNotAllowed int64 = 0
+	AllowClipboardHistoryNotAllowed AllowClipboardHistoryValue = 0
 	// Allowed.
-	AllowCopyPasteAllowed int64 = 1
+	AllowClipboardHistoryAllowed AllowClipboardHistoryValue = 1
 )
 
-// AllowCortana allowed values.
+// String returns the AllowClipboardHistoryValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowClipboardHistoryValue) String() string {
+	switch e {
+	case AllowClipboardHistoryNotAllowed:
+		return "AllowClipboardHistoryNotAllowed"
+	case AllowClipboardHistoryAllowed:
+		return "AllowClipboardHistoryAllowed"
+	default:
+		return fmt.Sprintf("AllowClipboardHistoryValue(%d)", int64(e))
+	}
+}
+
+// AllowCopyPasteValue — allowed values for the AllowCopyPaste node.
+type AllowCopyPasteValue int64
+
 const (
 	// Not allowed.
-	AllowCortanaNotAllowed int64 = 0
+	AllowCopyPasteNotAllowed AllowCopyPasteValue = 0
 	// Allowed.
-	AllowCortanaAllowed int64 = 1
+	AllowCopyPasteAllowed AllowCopyPasteValue = 1
 )
 
-// AllowDeviceDiscovery allowed values.
+// String returns the AllowCopyPasteValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowCopyPasteValue) String() string {
+	switch e {
+	case AllowCopyPasteNotAllowed:
+		return "AllowCopyPasteNotAllowed"
+	case AllowCopyPasteAllowed:
+		return "AllowCopyPasteAllowed"
+	default:
+		return fmt.Sprintf("AllowCopyPasteValue(%d)", int64(e))
+	}
+}
+
+// AllowCortanaValue — allowed values for the AllowCortana node.
+type AllowCortanaValue int64
+
+const (
+	// Not allowed.
+	AllowCortanaNotAllowed AllowCortanaValue = 0
+	// Allowed.
+	AllowCortanaAllowed AllowCortanaValue = 1
+)
+
+// String returns the AllowCortanaValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowCortanaValue) String() string {
+	switch e {
+	case AllowCortanaNotAllowed:
+		return "AllowCortanaNotAllowed"
+	case AllowCortanaAllowed:
+		return "AllowCortanaAllowed"
+	default:
+		return fmt.Sprintf("AllowCortanaValue(%d)", int64(e))
+	}
+}
+
+// AllowDeviceDiscoveryValue — allowed values for the AllowDeviceDiscovery node.
+type AllowDeviceDiscoveryValue int64
+
 const (
 	// Disabled.
-	AllowDeviceDiscoveryDisabled int64 = 0
+	AllowDeviceDiscoveryDisabled AllowDeviceDiscoveryValue = 0
 	// Enabled.
-	AllowDeviceDiscoveryEnabled int64 = 1
+	AllowDeviceDiscoveryEnabled AllowDeviceDiscoveryValue = 1
 )
 
-// AllowFindMyDevice allowed values.
+// String returns the AllowDeviceDiscoveryValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowDeviceDiscoveryValue) String() string {
+	switch e {
+	case AllowDeviceDiscoveryDisabled:
+		return "AllowDeviceDiscoveryDisabled"
+	case AllowDeviceDiscoveryEnabled:
+		return "AllowDeviceDiscoveryEnabled"
+	default:
+		return fmt.Sprintf("AllowDeviceDiscoveryValue(%d)", int64(e))
+	}
+}
+
+// AllowFindMyDeviceValue — allowed values for the AllowFindMyDevice node.
+type AllowFindMyDeviceValue int64
+
 const (
 	// Not allowed.
-	AllowFindMyDeviceNotAllowed int64 = 0
+	AllowFindMyDeviceNotAllowed AllowFindMyDeviceValue = 0
 	// Allowed.
-	AllowFindMyDeviceAllowed int64 = 1
+	AllowFindMyDeviceAllowed AllowFindMyDeviceValue = 1
 )
 
-// AllowManualMDMUnenrollment allowed values.
+// String returns the AllowFindMyDeviceValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowFindMyDeviceValue) String() string {
+	switch e {
+	case AllowFindMyDeviceNotAllowed:
+		return "AllowFindMyDeviceNotAllowed"
+	case AllowFindMyDeviceAllowed:
+		return "AllowFindMyDeviceAllowed"
+	default:
+		return fmt.Sprintf("AllowFindMyDeviceValue(%d)", int64(e))
+	}
+}
+
+// AllowManualMDMUnenrollmentValue — allowed values for the AllowManualMDMUnenrollment node.
+type AllowManualMDMUnenrollmentValue int64
+
 const (
 	// Not allowed.
-	AllowManualMDMUnenrollmentNotAllowed int64 = 0
+	AllowManualMDMUnenrollmentNotAllowed AllowManualMDMUnenrollmentValue = 0
 	// Allowed.
-	AllowManualMDMUnenrollmentAllowed int64 = 1
+	AllowManualMDMUnenrollmentAllowed AllowManualMDMUnenrollmentValue = 1
 )
 
-// AllowSIMErrorDialogPromptWhenNoSIM allowed values.
+// String returns the AllowManualMDMUnenrollmentValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowManualMDMUnenrollmentValue) String() string {
+	switch e {
+	case AllowManualMDMUnenrollmentNotAllowed:
+		return "AllowManualMDMUnenrollmentNotAllowed"
+	case AllowManualMDMUnenrollmentAllowed:
+		return "AllowManualMDMUnenrollmentAllowed"
+	default:
+		return fmt.Sprintf("AllowManualMDMUnenrollmentValue(%d)", int64(e))
+	}
+}
+
+// AllowSIMErrorDialogPromptWhenNoSIMValue — allowed values for the AllowSIMErrorDialogPromptWhenNoSIM node.
+type AllowSIMErrorDialogPromptWhenNoSIMValue int64
+
 const (
 	// Not allowed.
-	AllowSIMErrorDialogPromptWhenNoSIMNotAllowed int64 = 0
+	AllowSIMErrorDialogPromptWhenNoSIMNotAllowed AllowSIMErrorDialogPromptWhenNoSIMValue = 0
 	// Allowed.
-	AllowSIMErrorDialogPromptWhenNoSIMAllowed int64 = 1
+	AllowSIMErrorDialogPromptWhenNoSIMAllowed AllowSIMErrorDialogPromptWhenNoSIMValue = 1
 )
 
-// AllowSaveAsOfOfficeFiles allowed values.
+// String returns the AllowSIMErrorDialogPromptWhenNoSIMValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowSIMErrorDialogPromptWhenNoSIMValue) String() string {
+	switch e {
+	case AllowSIMErrorDialogPromptWhenNoSIMNotAllowed:
+		return "AllowSIMErrorDialogPromptWhenNoSIMNotAllowed"
+	case AllowSIMErrorDialogPromptWhenNoSIMAllowed:
+		return "AllowSIMErrorDialogPromptWhenNoSIMAllowed"
+	default:
+		return fmt.Sprintf("AllowSIMErrorDialogPromptWhenNoSIMValue(%d)", int64(e))
+	}
+}
+
+// AllowSaveAsOfOfficeFilesValue — allowed values for the AllowSaveAsOfOfficeFiles node.
+type AllowSaveAsOfOfficeFilesValue int64
+
 const (
 	// Not allowed.
-	AllowSaveAsOfOfficeFilesNotAllowed int64 = 0
+	AllowSaveAsOfOfficeFilesNotAllowed AllowSaveAsOfOfficeFilesValue = 0
 	// Allowed.
-	AllowSaveAsOfOfficeFilesAllowed int64 = 1
+	AllowSaveAsOfOfficeFilesAllowed AllowSaveAsOfOfficeFilesValue = 1
 )
 
-// AllowScreenCapture allowed values.
+// String returns the AllowSaveAsOfOfficeFilesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowSaveAsOfOfficeFilesValue) String() string {
+	switch e {
+	case AllowSaveAsOfOfficeFilesNotAllowed:
+		return "AllowSaveAsOfOfficeFilesNotAllowed"
+	case AllowSaveAsOfOfficeFilesAllowed:
+		return "AllowSaveAsOfOfficeFilesAllowed"
+	default:
+		return fmt.Sprintf("AllowSaveAsOfOfficeFilesValue(%d)", int64(e))
+	}
+}
+
+// AllowScreenCaptureValue — allowed values for the AllowScreenCapture node.
+type AllowScreenCaptureValue int64
+
 const (
 	// Not allowed.
-	AllowScreenCaptureNotAllowed int64 = 0
+	AllowScreenCaptureNotAllowed AllowScreenCaptureValue = 0
 	// Allowed.
-	AllowScreenCaptureAllowed int64 = 1
+	AllowScreenCaptureAllowed AllowScreenCaptureValue = 1
 )
 
-// AllowSharingOfOfficeFiles allowed values.
+// String returns the AllowScreenCaptureValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowScreenCaptureValue) String() string {
+	switch e {
+	case AllowScreenCaptureNotAllowed:
+		return "AllowScreenCaptureNotAllowed"
+	case AllowScreenCaptureAllowed:
+		return "AllowScreenCaptureAllowed"
+	default:
+		return fmt.Sprintf("AllowScreenCaptureValue(%d)", int64(e))
+	}
+}
+
+// AllowSharingOfOfficeFilesValue — allowed values for the AllowSharingOfOfficeFiles node.
+type AllowSharingOfOfficeFilesValue int64
+
 const (
 	// Not allowed.
-	AllowSharingOfOfficeFilesNotAllowed int64 = 0
+	AllowSharingOfOfficeFilesNotAllowed AllowSharingOfOfficeFilesValue = 0
 	// Allowed.
-	AllowSharingOfOfficeFilesAllowed int64 = 1
+	AllowSharingOfOfficeFilesAllowed AllowSharingOfOfficeFilesValue = 1
 )
 
-// AllowSyncMySettings allowed values.
+// String returns the AllowSharingOfOfficeFilesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowSharingOfOfficeFilesValue) String() string {
+	switch e {
+	case AllowSharingOfOfficeFilesNotAllowed:
+		return "AllowSharingOfOfficeFilesNotAllowed"
+	case AllowSharingOfOfficeFilesAllowed:
+		return "AllowSharingOfOfficeFilesAllowed"
+	default:
+		return fmt.Sprintf("AllowSharingOfOfficeFilesValue(%d)", int64(e))
+	}
+}
+
+// AllowSyncMySettingsValue — allowed values for the AllowSyncMySettings node.
+type AllowSyncMySettingsValue int64
+
 const (
 	// Sync settings are not allowed.
-	AllowSyncMySettingsSyncSettingsAreNotAllowed int64 = 0
+	AllowSyncMySettingsSyncSettingsAreNotAllowed AllowSyncMySettingsValue = 0
 	// Sync settings allowed.
-	AllowSyncMySettingsSyncSettingsAllowed int64 = 1
+	AllowSyncMySettingsSyncSettingsAllowed AllowSyncMySettingsValue = 1
 )
 
-// AllowTaskSwitcher allowed values.
+// String returns the AllowSyncMySettingsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowSyncMySettingsValue) String() string {
+	switch e {
+	case AllowSyncMySettingsSyncSettingsAreNotAllowed:
+		return "AllowSyncMySettingsSyncSettingsAreNotAllowed"
+	case AllowSyncMySettingsSyncSettingsAllowed:
+		return "AllowSyncMySettingsSyncSettingsAllowed"
+	default:
+		return fmt.Sprintf("AllowSyncMySettingsValue(%d)", int64(e))
+	}
+}
+
+// AllowTaskSwitcherValue — allowed values for the AllowTaskSwitcher node.
+type AllowTaskSwitcherValue int64
+
 const (
 	// Not allowed.
-	AllowTaskSwitcherNotAllowed int64 = 0
+	AllowTaskSwitcherNotAllowed AllowTaskSwitcherValue = 0
 	// Allowed.
-	AllowTaskSwitcherAllowed int64 = 1
+	AllowTaskSwitcherAllowed AllowTaskSwitcherValue = 1
 )
 
-// AllowVoiceRecording allowed values.
+// String returns the AllowTaskSwitcherValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowTaskSwitcherValue) String() string {
+	switch e {
+	case AllowTaskSwitcherNotAllowed:
+		return "AllowTaskSwitcherNotAllowed"
+	case AllowTaskSwitcherAllowed:
+		return "AllowTaskSwitcherAllowed"
+	default:
+		return fmt.Sprintf("AllowTaskSwitcherValue(%d)", int64(e))
+	}
+}
+
+// AllowVoiceRecordingValue — allowed values for the AllowVoiceRecording node.
+type AllowVoiceRecordingValue int64
+
 const (
 	// Not allowed.
-	AllowVoiceRecordingNotAllowed int64 = 0
+	AllowVoiceRecordingNotAllowed AllowVoiceRecordingValue = 0
 	// Allowed.
-	AllowVoiceRecordingAllowed int64 = 1
+	AllowVoiceRecordingAllowed AllowVoiceRecordingValue = 1
 )
 
-// AllowWindowsConsumerFeatures allowed values.
+// String returns the AllowVoiceRecordingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowVoiceRecordingValue) String() string {
+	switch e {
+	case AllowVoiceRecordingNotAllowed:
+		return "AllowVoiceRecordingNotAllowed"
+	case AllowVoiceRecordingAllowed:
+		return "AllowVoiceRecordingAllowed"
+	default:
+		return fmt.Sprintf("AllowVoiceRecordingValue(%d)", int64(e))
+	}
+}
+
+// AllowWindowsConsumerFeaturesValue — allowed values for the AllowWindowsConsumerFeatures node.
+type AllowWindowsConsumerFeaturesValue int64
+
 const (
 	// Not allowed.
-	AllowWindowsConsumerFeaturesNotAllowed int64 = 0
+	AllowWindowsConsumerFeaturesNotAllowed AllowWindowsConsumerFeaturesValue = 0
 	// Allowed.
-	AllowWindowsConsumerFeaturesAllowed int64 = 1
+	AllowWindowsConsumerFeaturesAllowed AllowWindowsConsumerFeaturesValue = 1
 )
 
-// AllowWindowsTips allowed values.
+// String returns the AllowWindowsConsumerFeaturesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowWindowsConsumerFeaturesValue) String() string {
+	switch e {
+	case AllowWindowsConsumerFeaturesNotAllowed:
+		return "AllowWindowsConsumerFeaturesNotAllowed"
+	case AllowWindowsConsumerFeaturesAllowed:
+		return "AllowWindowsConsumerFeaturesAllowed"
+	default:
+		return fmt.Sprintf("AllowWindowsConsumerFeaturesValue(%d)", int64(e))
+	}
+}
+
+// AllowWindowsTipsValue — allowed values for the AllowWindowsTips node.
+type AllowWindowsTipsValue int64
+
 const (
 	// Disabled.
-	AllowWindowsTipsDisabled int64 = 0
+	AllowWindowsTipsDisabled AllowWindowsTipsValue = 0
 	// Enabled.
-	AllowWindowsTipsEnabled int64 = 1
+	AllowWindowsTipsEnabled AllowWindowsTipsValue = 1
 )
 
-// ConfigureChatIcon allowed values.
+// String returns the AllowWindowsTipsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowWindowsTipsValue) String() string {
+	switch e {
+	case AllowWindowsTipsDisabled:
+		return "AllowWindowsTipsDisabled"
+	case AllowWindowsTipsEnabled:
+		return "AllowWindowsTipsEnabled"
+	default:
+		return fmt.Sprintf("AllowWindowsTipsValue(%d)", int64(e))
+	}
+}
+
+// ConfigureChatIconValue — allowed values for the ConfigureChatIcon node.
+type ConfigureChatIconValue int64
+
 const (
 	// Not Configured
-	ConfigureChatIconNotConfigured int64 = 0
+	ConfigureChatIconNotConfigured ConfigureChatIconValue = 0
 	// Show
-	ConfigureChatIconShow int64 = 1
+	ConfigureChatIconShow ConfigureChatIconValue = 1
 	// Hide
-	ConfigureChatIconHide int64 = 2
+	ConfigureChatIconHide ConfigureChatIconValue = 2
 	// Disabled
-	ConfigureChatIconDisabled int64 = 3
+	ConfigureChatIconDisabled ConfigureChatIconValue = 3
 )
 
-// DisableCloudOptimizedContent allowed values.
+// String returns the ConfigureChatIconValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureChatIconValue) String() string {
+	switch e {
+	case ConfigureChatIconNotConfigured:
+		return "ConfigureChatIconNotConfigured"
+	case ConfigureChatIconShow:
+		return "ConfigureChatIconShow"
+	case ConfigureChatIconHide:
+		return "ConfigureChatIconHide"
+	case ConfigureChatIconDisabled:
+		return "ConfigureChatIconDisabled"
+	default:
+		return fmt.Sprintf("ConfigureChatIconValue(%d)", int64(e))
+	}
+}
+
+// DisableCloudOptimizedContentValue — allowed values for the DisableCloudOptimizedContent node.
+type DisableCloudOptimizedContentValue int64
+
 const (
 	// Disabled.
-	DisableCloudOptimizedContentDisabled int64 = 0
+	DisableCloudOptimizedContentDisabled DisableCloudOptimizedContentValue = 0
 	// Enabled.
-	DisableCloudOptimizedContentEnabled int64 = 1
+	DisableCloudOptimizedContentEnabled DisableCloudOptimizedContentValue = 1
 )
 
-// DisableConsumerAccountStateContent allowed values.
+// String returns the DisableCloudOptimizedContentValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableCloudOptimizedContentValue) String() string {
+	switch e {
+	case DisableCloudOptimizedContentDisabled:
+		return "DisableCloudOptimizedContentDisabled"
+	case DisableCloudOptimizedContentEnabled:
+		return "DisableCloudOptimizedContentEnabled"
+	default:
+		return fmt.Sprintf("DisableCloudOptimizedContentValue(%d)", int64(e))
+	}
+}
+
+// DisableConsumerAccountStateContentValue — allowed values for the DisableConsumerAccountStateContent node.
+type DisableConsumerAccountStateContentValue int64
+
 const (
 	// Disabled.
-	DisableConsumerAccountStateContentDisabled int64 = 0
+	DisableConsumerAccountStateContentDisabled DisableConsumerAccountStateContentValue = 0
 	// Enabled.
-	DisableConsumerAccountStateContentEnabled int64 = 1
+	DisableConsumerAccountStateContentEnabled DisableConsumerAccountStateContentValue = 1
 )
 
-// DisableInlineCompose allowed values.
+// String returns the DisableConsumerAccountStateContentValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableConsumerAccountStateContentValue) String() string {
+	switch e {
+	case DisableConsumerAccountStateContentDisabled:
+		return "DisableConsumerAccountStateContentDisabled"
+	case DisableConsumerAccountStateContentEnabled:
+		return "DisableConsumerAccountStateContentEnabled"
+	default:
+		return fmt.Sprintf("DisableConsumerAccountStateContentValue(%d)", int64(e))
+	}
+}
+
+// DisableInlineComposeValue — allowed values for the DisableInlineCompose node.
+type DisableInlineComposeValue int64
+
 const (
 	// Inline Compose on ShareSheet is Enabled.
-	DisableInlineComposeInlineComposeOnShareSheetIsEnabled int64 = 0
+	DisableInlineComposeInlineComposeOnShareSheetIsEnabled DisableInlineComposeValue = 0
 	// Inline Compose on ShareSheet is Disabled.
-	DisableInlineComposeInlineComposeOnShareSheetIsDisabled int64 = 1
+	DisableInlineComposeInlineComposeOnShareSheetIsDisabled DisableInlineComposeValue = 1
 )
 
-// DisableShareAppPromotions allowed values.
+// String returns the DisableInlineComposeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableInlineComposeValue) String() string {
+	switch e {
+	case DisableInlineComposeInlineComposeOnShareSheetIsEnabled:
+		return "DisableInlineComposeInlineComposeOnShareSheetIsEnabled"
+	case DisableInlineComposeInlineComposeOnShareSheetIsDisabled:
+		return "DisableInlineComposeInlineComposeOnShareSheetIsDisabled"
+	default:
+		return fmt.Sprintf("DisableInlineComposeValue(%d)", int64(e))
+	}
+}
+
+// DisableShareAppPromotionsValue — allowed values for the DisableShareAppPromotions node.
+type DisableShareAppPromotionsValue int64
+
 const (
 	// Promotional Apps on ShareSheet are Enabled.
-	DisableShareAppPromotionsPromotionalAppsOnShareSheetAreEnabled int64 = 0
+	DisableShareAppPromotionsPromotionalAppsOnShareSheetAreEnabled DisableShareAppPromotionsValue = 0
 	// Promotional Apps on ShareSheet are Disabled.
-	DisableShareAppPromotionsPromotionalAppsOnShareSheetAreDisabled int64 = 1
+	DisableShareAppPromotionsPromotionalAppsOnShareSheetAreDisabled DisableShareAppPromotionsValue = 1
 )
 
-// DisableTextTranslation allowed values.
+// String returns the DisableShareAppPromotionsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableShareAppPromotionsValue) String() string {
+	switch e {
+	case DisableShareAppPromotionsPromotionalAppsOnShareSheetAreEnabled:
+		return "DisableShareAppPromotionsPromotionalAppsOnShareSheetAreEnabled"
+	case DisableShareAppPromotionsPromotionalAppsOnShareSheetAreDisabled:
+		return "DisableShareAppPromotionsPromotionalAppsOnShareSheetAreDisabled"
+	default:
+		return fmt.Sprintf("DisableShareAppPromotionsValue(%d)", int64(e))
+	}
+}
+
+// DisableTextTranslationValue — allowed values for the DisableTextTranslation node.
+type DisableTextTranslationValue int64
+
 const (
 	// Enable Text Translation
-	DisableTextTranslationEnableTextTranslation int64 = 0
+	DisableTextTranslationEnableTextTranslation DisableTextTranslationValue = 0
 	// Disable Text Translation
-	DisableTextTranslationDisableTextTranslation int64 = 1
+	DisableTextTranslationDisableTextTranslation DisableTextTranslationValue = 1
 )
 
-// DoNotShowFeedbackNotifications allowed values.
+// String returns the DisableTextTranslationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableTextTranslationValue) String() string {
+	switch e {
+	case DisableTextTranslationEnableTextTranslation:
+		return "DisableTextTranslationEnableTextTranslation"
+	case DisableTextTranslationDisableTextTranslation:
+		return "DisableTextTranslationDisableTextTranslation"
+	default:
+		return fmt.Sprintf("DisableTextTranslationValue(%d)", int64(e))
+	}
+}
+
+// DoNotShowFeedbackNotificationsValue — allowed values for the DoNotShowFeedbackNotifications node.
+type DoNotShowFeedbackNotificationsValue int64
+
 const (
 	// Feedback notifications are not disabled. The actual state of feedback notifications on the
 	// device will then depend on what GP has configured or what the user has configured locally.
-	DoNotShowFeedbackNotificationsFeedbackNotificationsAreNotDisabled int64 = 0
+	DoNotShowFeedbackNotificationsFeedbackNotificationsAreNotDisabled DoNotShowFeedbackNotificationsValue = 0
 	// Feedback notifications are disabled.
-	DoNotShowFeedbackNotificationsFeedbackNotificationsAreDisabled int64 = 1
+	DoNotShowFeedbackNotificationsFeedbackNotificationsAreDisabled DoNotShowFeedbackNotificationsValue = 1
 )
 
-// DoNotSyncBrowserSettings allowed values.
+// String returns the DoNotShowFeedbackNotificationsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DoNotShowFeedbackNotificationsValue) String() string {
+	switch e {
+	case DoNotShowFeedbackNotificationsFeedbackNotificationsAreNotDisabled:
+		return "DoNotShowFeedbackNotificationsFeedbackNotificationsAreNotDisabled"
+	case DoNotShowFeedbackNotificationsFeedbackNotificationsAreDisabled:
+		return "DoNotShowFeedbackNotificationsFeedbackNotificationsAreDisabled"
+	default:
+		return fmt.Sprintf("DoNotShowFeedbackNotificationsValue(%d)", int64(e))
+	}
+}
+
+// DoNotSyncBrowserSettingsValue — allowed values for the DoNotSyncBrowserSettings node.
+type DoNotSyncBrowserSettingsValue int64
+
 const (
 	// Disable Syncing
-	DoNotSyncBrowserSettingsDisableSyncing int64 = 2
+	DoNotSyncBrowserSettingsDisableSyncing DoNotSyncBrowserSettingsValue = 2
 	// Allow syncing
-	DoNotSyncBrowserSettingsAllowSyncing int64 = 0
+	DoNotSyncBrowserSettingsAllowSyncing DoNotSyncBrowserSettingsValue = 0
 )
 
-// PreventUsersFromTurningOnBrowserSyncing allowed values.
+// String returns the DoNotSyncBrowserSettingsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DoNotSyncBrowserSettingsValue) String() string {
+	switch e {
+	case DoNotSyncBrowserSettingsDisableSyncing:
+		return "DoNotSyncBrowserSettingsDisableSyncing"
+	case DoNotSyncBrowserSettingsAllowSyncing:
+		return "DoNotSyncBrowserSettingsAllowSyncing"
+	default:
+		return fmt.Sprintf("DoNotSyncBrowserSettingsValue(%d)", int64(e))
+	}
+}
+
+// PreventUsersFromTurningOnBrowserSyncingValue — allowed values for the PreventUsersFromTurningOnBrowserSyncing node.
+type PreventUsersFromTurningOnBrowserSyncingValue int64
+
 const (
 	// Allowed/turned on. Users can sync the browser settings.
-	PreventUsersFromTurningOnBrowserSyncingAllowedTurnedOn int64 = 0
+	PreventUsersFromTurningOnBrowserSyncingAllowedTurnedOn PreventUsersFromTurningOnBrowserSyncingValue = 0
 	// Prevented/turned off.
-	PreventUsersFromTurningOnBrowserSyncingPreventedTurnedOff int64 = 1
+	PreventUsersFromTurningOnBrowserSyncingPreventedTurnedOff PreventUsersFromTurningOnBrowserSyncingValue = 1
 )
 
-// ShowLockOnUserTile allowed values.
+// String returns the PreventUsersFromTurningOnBrowserSyncingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PreventUsersFromTurningOnBrowserSyncingValue) String() string {
+	switch e {
+	case PreventUsersFromTurningOnBrowserSyncingAllowedTurnedOn:
+		return "PreventUsersFromTurningOnBrowserSyncingAllowedTurnedOn"
+	case PreventUsersFromTurningOnBrowserSyncingPreventedTurnedOff:
+		return "PreventUsersFromTurningOnBrowserSyncingPreventedTurnedOff"
+	default:
+		return fmt.Sprintf("PreventUsersFromTurningOnBrowserSyncingValue(%d)", int64(e))
+	}
+}
+
+// ShowLockOnUserTileValue — allowed values for the ShowLockOnUserTile node.
+type ShowLockOnUserTileValue int64
+
 const (
 	// The lock option is not displayed in the User Tile menu.
-	ShowLockOnUserTileTheLockOptionIsNotDisplayed int64 = 0
+	ShowLockOnUserTileTheLockOptionIsNotDisplayed ShowLockOnUserTileValue = 0
 	// The lock option is displayed in the User Tile menu.
-	ShowLockOnUserTileTheLockOptionIsDisplayedIn int64 = 1
+	ShowLockOnUserTileTheLockOptionIsDisplayedIn ShowLockOnUserTileValue = 1
 )
+
+// String returns the ShowLockOnUserTileValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ShowLockOnUserTileValue) String() string {
+	switch e {
+	case ShowLockOnUserTileTheLockOptionIsNotDisplayed:
+		return "ShowLockOnUserTileTheLockOptionIsNotDisplayed"
+	case ShowLockOnUserTileTheLockOptionIsDisplayedIn:
+		return "ShowLockOnUserTileTheLockOptionIsDisplayedIn"
+	default:
+		return fmt.Sprintf("ShowLockOnUserTileValue(%d)", int64(e))
+	}
+}

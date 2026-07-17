@@ -2,261 +2,711 @@
 
 package textinput
 
-// AllowHardwareKeyboardTextSuggestions allowed values.
-const (
-	// Not allowed.
-	AllowHardwareKeyboardTextSuggestionsNotAllowed int64 = 0
-	// Allowed.
-	AllowHardwareKeyboardTextSuggestionsAllowed int64 = 1
+import (
+	"fmt"
 )
 
-// AllowIMELogging allowed values.
+// AllowHardwareKeyboardTextSuggestionsValue — allowed values for the AllowHardwareKeyboardTextSuggestions node.
+type AllowHardwareKeyboardTextSuggestionsValue int64
+
 const (
 	// Not allowed.
-	AllowIMELoggingNotAllowed int64 = 0
+	AllowHardwareKeyboardTextSuggestionsNotAllowed AllowHardwareKeyboardTextSuggestionsValue = 0
 	// Allowed.
-	AllowIMELoggingAllowed int64 = 1
+	AllowHardwareKeyboardTextSuggestionsAllowed AllowHardwareKeyboardTextSuggestionsValue = 1
 )
 
-// AllowIMENetworkAccess allowed values.
+// String returns the AllowHardwareKeyboardTextSuggestionsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowHardwareKeyboardTextSuggestionsValue) String() string {
+	switch e {
+	case AllowHardwareKeyboardTextSuggestionsNotAllowed:
+		return "AllowHardwareKeyboardTextSuggestionsNotAllowed"
+	case AllowHardwareKeyboardTextSuggestionsAllowed:
+		return "AllowHardwareKeyboardTextSuggestionsAllowed"
+	default:
+		return fmt.Sprintf("AllowHardwareKeyboardTextSuggestionsValue(%d)", int64(e))
+	}
+}
+
+// AllowIMELoggingValue — allowed values for the AllowIMELogging node.
+type AllowIMELoggingValue int64
+
 const (
 	// Not allowed.
-	AllowIMENetworkAccessNotAllowed int64 = 0
+	AllowIMELoggingNotAllowed AllowIMELoggingValue = 0
 	// Allowed.
-	AllowIMENetworkAccessAllowed int64 = 1
+	AllowIMELoggingAllowed AllowIMELoggingValue = 1
 )
 
-// AllowInputPanel allowed values.
+// String returns the AllowIMELoggingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowIMELoggingValue) String() string {
+	switch e {
+	case AllowIMELoggingNotAllowed:
+		return "AllowIMELoggingNotAllowed"
+	case AllowIMELoggingAllowed:
+		return "AllowIMELoggingAllowed"
+	default:
+		return fmt.Sprintf("AllowIMELoggingValue(%d)", int64(e))
+	}
+}
+
+// AllowIMENetworkAccessValue — allowed values for the AllowIMENetworkAccess node.
+type AllowIMENetworkAccessValue int64
+
 const (
 	// Not allowed.
-	AllowInputPanelNotAllowed int64 = 0
+	AllowIMENetworkAccessNotAllowed AllowIMENetworkAccessValue = 0
 	// Allowed.
-	AllowInputPanelAllowed int64 = 1
+	AllowIMENetworkAccessAllowed AllowIMENetworkAccessValue = 1
 )
 
-// AllowJapaneseIMESurrogatePairCharacters allowed values.
+// String returns the AllowIMENetworkAccessValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowIMENetworkAccessValue) String() string {
+	switch e {
+	case AllowIMENetworkAccessNotAllowed:
+		return "AllowIMENetworkAccessNotAllowed"
+	case AllowIMENetworkAccessAllowed:
+		return "AllowIMENetworkAccessAllowed"
+	default:
+		return fmt.Sprintf("AllowIMENetworkAccessValue(%d)", int64(e))
+	}
+}
+
+// AllowInputPanelValue — allowed values for the AllowInputPanel node.
+type AllowInputPanelValue int64
+
 const (
 	// Not allowed.
-	AllowJapaneseIMESurrogatePairCharactersNotAllowed int64 = 0
+	AllowInputPanelNotAllowed AllowInputPanelValue = 0
 	// Allowed.
-	AllowJapaneseIMESurrogatePairCharactersAllowed int64 = 1
+	AllowInputPanelAllowed AllowInputPanelValue = 1
 )
 
-// AllowJapaneseIVSCharacters allowed values.
+// String returns the AllowInputPanelValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowInputPanelValue) String() string {
+	switch e {
+	case AllowInputPanelNotAllowed:
+		return "AllowInputPanelNotAllowed"
+	case AllowInputPanelAllowed:
+		return "AllowInputPanelAllowed"
+	default:
+		return fmt.Sprintf("AllowInputPanelValue(%d)", int64(e))
+	}
+}
+
+// AllowJapaneseIMESurrogatePairCharactersValue — allowed values for the AllowJapaneseIMESurrogatePairCharacters node.
+type AllowJapaneseIMESurrogatePairCharactersValue int64
+
 const (
 	// Not allowed.
-	AllowJapaneseIVSCharactersNotAllowed int64 = 0
+	AllowJapaneseIMESurrogatePairCharactersNotAllowed AllowJapaneseIMESurrogatePairCharactersValue = 0
 	// Allowed.
-	AllowJapaneseIVSCharactersAllowed int64 = 1
+	AllowJapaneseIMESurrogatePairCharactersAllowed AllowJapaneseIMESurrogatePairCharactersValue = 1
 )
 
-// AllowJapaneseNonPublishingStandardGlyph allowed values.
+// String returns the AllowJapaneseIMESurrogatePairCharactersValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowJapaneseIMESurrogatePairCharactersValue) String() string {
+	switch e {
+	case AllowJapaneseIMESurrogatePairCharactersNotAllowed:
+		return "AllowJapaneseIMESurrogatePairCharactersNotAllowed"
+	case AllowJapaneseIMESurrogatePairCharactersAllowed:
+		return "AllowJapaneseIMESurrogatePairCharactersAllowed"
+	default:
+		return fmt.Sprintf("AllowJapaneseIMESurrogatePairCharactersValue(%d)", int64(e))
+	}
+}
+
+// AllowJapaneseIVSCharactersValue — allowed values for the AllowJapaneseIVSCharacters node.
+type AllowJapaneseIVSCharactersValue int64
+
 const (
 	// Not allowed.
-	AllowJapaneseNonPublishingStandardGlyphNotAllowed int64 = 0
+	AllowJapaneseIVSCharactersNotAllowed AllowJapaneseIVSCharactersValue = 0
 	// Allowed.
-	AllowJapaneseNonPublishingStandardGlyphAllowed int64 = 1
+	AllowJapaneseIVSCharactersAllowed AllowJapaneseIVSCharactersValue = 1
 )
 
-// AllowJapaneseUserDictionary allowed values.
+// String returns the AllowJapaneseIVSCharactersValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowJapaneseIVSCharactersValue) String() string {
+	switch e {
+	case AllowJapaneseIVSCharactersNotAllowed:
+		return "AllowJapaneseIVSCharactersNotAllowed"
+	case AllowJapaneseIVSCharactersAllowed:
+		return "AllowJapaneseIVSCharactersAllowed"
+	default:
+		return fmt.Sprintf("AllowJapaneseIVSCharactersValue(%d)", int64(e))
+	}
+}
+
+// AllowJapaneseNonPublishingStandardGlyphValue — allowed values for the AllowJapaneseNonPublishingStandardGlyph node.
+type AllowJapaneseNonPublishingStandardGlyphValue int64
+
 const (
 	// Not allowed.
-	AllowJapaneseUserDictionaryNotAllowed int64 = 0
+	AllowJapaneseNonPublishingStandardGlyphNotAllowed AllowJapaneseNonPublishingStandardGlyphValue = 0
 	// Allowed.
-	AllowJapaneseUserDictionaryAllowed int64 = 1
+	AllowJapaneseNonPublishingStandardGlyphAllowed AllowJapaneseNonPublishingStandardGlyphValue = 1
 )
 
-// AllowKeyboardTextSuggestions allowed values.
+// String returns the AllowJapaneseNonPublishingStandardGlyphValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowJapaneseNonPublishingStandardGlyphValue) String() string {
+	switch e {
+	case AllowJapaneseNonPublishingStandardGlyphNotAllowed:
+		return "AllowJapaneseNonPublishingStandardGlyphNotAllowed"
+	case AllowJapaneseNonPublishingStandardGlyphAllowed:
+		return "AllowJapaneseNonPublishingStandardGlyphAllowed"
+	default:
+		return fmt.Sprintf("AllowJapaneseNonPublishingStandardGlyphValue(%d)", int64(e))
+	}
+}
+
+// AllowJapaneseUserDictionaryValue — allowed values for the AllowJapaneseUserDictionary node.
+type AllowJapaneseUserDictionaryValue int64
+
+const (
+	// Not allowed.
+	AllowJapaneseUserDictionaryNotAllowed AllowJapaneseUserDictionaryValue = 0
+	// Allowed.
+	AllowJapaneseUserDictionaryAllowed AllowJapaneseUserDictionaryValue = 1
+)
+
+// String returns the AllowJapaneseUserDictionaryValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowJapaneseUserDictionaryValue) String() string {
+	switch e {
+	case AllowJapaneseUserDictionaryNotAllowed:
+		return "AllowJapaneseUserDictionaryNotAllowed"
+	case AllowJapaneseUserDictionaryAllowed:
+		return "AllowJapaneseUserDictionaryAllowed"
+	default:
+		return fmt.Sprintf("AllowJapaneseUserDictionaryValue(%d)", int64(e))
+	}
+}
+
+// AllowKeyboardTextSuggestionsValue — allowed values for the AllowKeyboardTextSuggestions node.
+type AllowKeyboardTextSuggestionsValue int64
+
 const (
 	// Disabled.
-	AllowKeyboardTextSuggestionsDisabled int64 = 0
+	AllowKeyboardTextSuggestionsDisabled AllowKeyboardTextSuggestionsValue = 0
 	// Enabled.
-	AllowKeyboardTextSuggestionsEnabled int64 = 1
+	AllowKeyboardTextSuggestionsEnabled AllowKeyboardTextSuggestionsValue = 1
 )
 
-// AllowLanguageFeaturesUninstall allowed values.
+// String returns the AllowKeyboardTextSuggestionsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowKeyboardTextSuggestionsValue) String() string {
+	switch e {
+	case AllowKeyboardTextSuggestionsDisabled:
+		return "AllowKeyboardTextSuggestionsDisabled"
+	case AllowKeyboardTextSuggestionsEnabled:
+		return "AllowKeyboardTextSuggestionsEnabled"
+	default:
+		return fmt.Sprintf("AllowKeyboardTextSuggestionsValue(%d)", int64(e))
+	}
+}
+
+// AllowLanguageFeaturesUninstallValue — allowed values for the AllowLanguageFeaturesUninstall node.
+type AllowLanguageFeaturesUninstallValue int64
+
 const (
 	// Not allowed.
-	AllowLanguageFeaturesUninstallNotAllowed int64 = 0
+	AllowLanguageFeaturesUninstallNotAllowed AllowLanguageFeaturesUninstallValue = 0
 	// Allowed.
-	AllowLanguageFeaturesUninstallAllowed int64 = 1
+	AllowLanguageFeaturesUninstallAllowed AllowLanguageFeaturesUninstallValue = 1
 )
 
-// AllowLinguisticDataCollection allowed values.
+// String returns the AllowLanguageFeaturesUninstallValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowLanguageFeaturesUninstallValue) String() string {
+	switch e {
+	case AllowLanguageFeaturesUninstallNotAllowed:
+		return "AllowLanguageFeaturesUninstallNotAllowed"
+	case AllowLanguageFeaturesUninstallAllowed:
+		return "AllowLanguageFeaturesUninstallAllowed"
+	default:
+		return fmt.Sprintf("AllowLanguageFeaturesUninstallValue(%d)", int64(e))
+	}
+}
+
+// AllowLinguisticDataCollectionValue — allowed values for the AllowLinguisticDataCollection node.
+type AllowLinguisticDataCollectionValue int64
+
 const (
 	// Not allowed.
-	AllowLinguisticDataCollectionNotAllowed int64 = 0
+	AllowLinguisticDataCollectionNotAllowed AllowLinguisticDataCollectionValue = 0
 	// Allowed.
-	AllowLinguisticDataCollectionAllowed int64 = 1
+	AllowLinguisticDataCollectionAllowed AllowLinguisticDataCollectionValue = 1
 )
 
-// AllowTextInputSuggestionUpdate allowed values.
+// String returns the AllowLinguisticDataCollectionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowLinguisticDataCollectionValue) String() string {
+	switch e {
+	case AllowLinguisticDataCollectionNotAllowed:
+		return "AllowLinguisticDataCollectionNotAllowed"
+	case AllowLinguisticDataCollectionAllowed:
+		return "AllowLinguisticDataCollectionAllowed"
+	default:
+		return fmt.Sprintf("AllowLinguisticDataCollectionValue(%d)", int64(e))
+	}
+}
+
+// AllowTextInputSuggestionUpdateValue — allowed values for the AllowTextInputSuggestionUpdate node.
+type AllowTextInputSuggestionUpdateValue int64
+
 const (
 	// Not allowed.
-	AllowTextInputSuggestionUpdateNotAllowed int64 = 0
+	AllowTextInputSuggestionUpdateNotAllowed AllowTextInputSuggestionUpdateValue = 0
 	// Allowed.
-	AllowTextInputSuggestionUpdateAllowed int64 = 1
+	AllowTextInputSuggestionUpdateAllowed AllowTextInputSuggestionUpdateValue = 1
 )
 
-// ConfigureJapaneseIMEVersion allowed values.
+// String returns the AllowTextInputSuggestionUpdateValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowTextInputSuggestionUpdateValue) String() string {
+	switch e {
+	case AllowTextInputSuggestionUpdateNotAllowed:
+		return "AllowTextInputSuggestionUpdateNotAllowed"
+	case AllowTextInputSuggestionUpdateAllowed:
+		return "AllowTextInputSuggestionUpdateAllowed"
+	default:
+		return fmt.Sprintf("AllowTextInputSuggestionUpdateValue(%d)", int64(e))
+	}
+}
+
+// ConfigureJapaneseIMEVersionValue — allowed values for the ConfigureJapaneseIMEVersion node.
+type ConfigureJapaneseIMEVersionValue int64
+
 const (
 	// Allows you to configure which Microsoft Japanese IME version to use. The new Microsoft Japanese
 	// IME version is configured by default.
-	ConfigureJapaneseIMEVersionAllowsYouToConfigureWhichMicrosoft int64 = 0
+	ConfigureJapaneseIMEVersionAllowsYouToConfigureWhichMicrosoft ConfigureJapaneseIMEVersionValue = 0
 	// Does not allow you to configure which Microsoft Japanese IME version to use. The previous
 	// version of Microsoft Japanese IME is always selected.
-	ConfigureJapaneseIMEVersionDoesNotAllowYouToConfigure int64 = 1
+	ConfigureJapaneseIMEVersionDoesNotAllowYouToConfigure ConfigureJapaneseIMEVersionValue = 1
 	// Does not allow you to configure which Microsoft Japanese IME version to use. The new Microsoft
 	// Japanese IME version is always selected.
-	ConfigureJapaneseIMEVersionDoesNotAllowYouToConfigure2 int64 = 2
+	ConfigureJapaneseIMEVersionDoesNotAllowYouToConfigure2 ConfigureJapaneseIMEVersionValue = 2
 )
 
-// ConfigureSimplifiedChineseIMEVersion allowed values.
+// String returns the ConfigureJapaneseIMEVersionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureJapaneseIMEVersionValue) String() string {
+	switch e {
+	case ConfigureJapaneseIMEVersionAllowsYouToConfigureWhichMicrosoft:
+		return "ConfigureJapaneseIMEVersionAllowsYouToConfigureWhichMicrosoft"
+	case ConfigureJapaneseIMEVersionDoesNotAllowYouToConfigure:
+		return "ConfigureJapaneseIMEVersionDoesNotAllowYouToConfigure"
+	case ConfigureJapaneseIMEVersionDoesNotAllowYouToConfigure2:
+		return "ConfigureJapaneseIMEVersionDoesNotAllowYouToConfigure2"
+	default:
+		return fmt.Sprintf("ConfigureJapaneseIMEVersionValue(%d)", int64(e))
+	}
+}
+
+// ConfigureSimplifiedChineseIMEVersionValue — allowed values for the ConfigureSimplifiedChineseIMEVersion node.
+type ConfigureSimplifiedChineseIMEVersionValue int64
+
 const (
 	// Allows you to configure which Microsoft Simplified Chinese IME version to use. The new Microsoft
 	// Simplified Chinese IME version is configured by default.
-	ConfigureSimplifiedChineseIMEVersionAllowsYouToConfigureWhichMicrosoft int64 = 0
+	ConfigureSimplifiedChineseIMEVersionAllowsYouToConfigureWhichMicrosoft ConfigureSimplifiedChineseIMEVersionValue = 0
 	// Does not allow you to configure which Microsoft Simplified Chinese IME version to use. The
 	// previous version of Microsoft Simplified Chinese IME is always selected.
-	ConfigureSimplifiedChineseIMEVersionDoesNotAllowYouToConfigure int64 = 1
+	ConfigureSimplifiedChineseIMEVersionDoesNotAllowYouToConfigure ConfigureSimplifiedChineseIMEVersionValue = 1
 	// Does not allow you to configure which Microsoft Simplified Chinese IME version to use. The new
 	// Microsoft Simplified Chinese IME version is always selected.
-	ConfigureSimplifiedChineseIMEVersionDoesNotAllowYouToConfigure2 int64 = 2
+	ConfigureSimplifiedChineseIMEVersionDoesNotAllowYouToConfigure2 ConfigureSimplifiedChineseIMEVersionValue = 2
 )
 
-// ConfigureTraditionalChineseIMEVersion allowed values.
+// String returns the ConfigureSimplifiedChineseIMEVersionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureSimplifiedChineseIMEVersionValue) String() string {
+	switch e {
+	case ConfigureSimplifiedChineseIMEVersionAllowsYouToConfigureWhichMicrosoft:
+		return "ConfigureSimplifiedChineseIMEVersionAllowsYouToConfigureWhichMicrosoft"
+	case ConfigureSimplifiedChineseIMEVersionDoesNotAllowYouToConfigure:
+		return "ConfigureSimplifiedChineseIMEVersionDoesNotAllowYouToConfigure"
+	case ConfigureSimplifiedChineseIMEVersionDoesNotAllowYouToConfigure2:
+		return "ConfigureSimplifiedChineseIMEVersionDoesNotAllowYouToConfigure2"
+	default:
+		return fmt.Sprintf("ConfigureSimplifiedChineseIMEVersionValue(%d)", int64(e))
+	}
+}
+
+// ConfigureTraditionalChineseIMEVersionValue — allowed values for the ConfigureTraditionalChineseIMEVersion node.
+type ConfigureTraditionalChineseIMEVersionValue int64
+
 const (
 	// Allows you to configure which Microsoft Traditional Chinese IME version to use. The new
 	// Microsoft Traditional Chinese IME version is configured by default.
-	ConfigureTraditionalChineseIMEVersionAllowsYouToConfigureWhichMicrosoft int64 = 0
+	ConfigureTraditionalChineseIMEVersionAllowsYouToConfigureWhichMicrosoft ConfigureTraditionalChineseIMEVersionValue = 0
 	// Does not allow you to configure which Microsoft Traditional Chinese IME version to use. The
 	// previous version of Microsoft Traditional Chinese IME is always selected.
-	ConfigureTraditionalChineseIMEVersionDoesNotAllowYouToConfigure int64 = 1
+	ConfigureTraditionalChineseIMEVersionDoesNotAllowYouToConfigure ConfigureTraditionalChineseIMEVersionValue = 1
 	// Does not allow you to configure which Microsoft Traditional Chinese IME version to use. The new
 	// Microsoft Traditional Chinese IME version is always selected.
-	ConfigureTraditionalChineseIMEVersionDoesNotAllowYouToConfigure2 int64 = 2
+	ConfigureTraditionalChineseIMEVersionDoesNotAllowYouToConfigure2 ConfigureTraditionalChineseIMEVersionValue = 2
 )
 
-// EnableTouchKeyboardAutoInvokeInDesktopMode allowed values.
+// String returns the ConfigureTraditionalChineseIMEVersionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureTraditionalChineseIMEVersionValue) String() string {
+	switch e {
+	case ConfigureTraditionalChineseIMEVersionAllowsYouToConfigureWhichMicrosoft:
+		return "ConfigureTraditionalChineseIMEVersionAllowsYouToConfigureWhichMicrosoft"
+	case ConfigureTraditionalChineseIMEVersionDoesNotAllowYouToConfigure:
+		return "ConfigureTraditionalChineseIMEVersionDoesNotAllowYouToConfigure"
+	case ConfigureTraditionalChineseIMEVersionDoesNotAllowYouToConfigure2:
+		return "ConfigureTraditionalChineseIMEVersionDoesNotAllowYouToConfigure2"
+	default:
+		return fmt.Sprintf("ConfigureTraditionalChineseIMEVersionValue(%d)", int64(e))
+	}
+}
+
+// EnableTouchKeyboardAutoInvokeInDesktopModeValue — allowed values for the EnableTouchKeyboardAutoInvokeInDesktopMode node.
+type EnableTouchKeyboardAutoInvokeInDesktopModeValue int64
+
 const (
 	// Never.
-	EnableTouchKeyboardAutoInvokeInDesktopModeNever int64 = 0
+	EnableTouchKeyboardAutoInvokeInDesktopModeNever EnableTouchKeyboardAutoInvokeInDesktopModeValue = 0
 	// When no keyboard attached.
-	EnableTouchKeyboardAutoInvokeInDesktopModeWhenNoKeyboardAttached int64 = 1
+	EnableTouchKeyboardAutoInvokeInDesktopModeWhenNoKeyboardAttached EnableTouchKeyboardAutoInvokeInDesktopModeValue = 1
 	// Always.
-	EnableTouchKeyboardAutoInvokeInDesktopModeAlways int64 = 2
+	EnableTouchKeyboardAutoInvokeInDesktopModeAlways EnableTouchKeyboardAutoInvokeInDesktopModeValue = 2
 )
 
-// ExcludeJapaneseIMEExceptJIS0208 allowed values.
+// String returns the EnableTouchKeyboardAutoInvokeInDesktopModeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableTouchKeyboardAutoInvokeInDesktopModeValue) String() string {
+	switch e {
+	case EnableTouchKeyboardAutoInvokeInDesktopModeNever:
+		return "EnableTouchKeyboardAutoInvokeInDesktopModeNever"
+	case EnableTouchKeyboardAutoInvokeInDesktopModeWhenNoKeyboardAttached:
+		return "EnableTouchKeyboardAutoInvokeInDesktopModeWhenNoKeyboardAttached"
+	case EnableTouchKeyboardAutoInvokeInDesktopModeAlways:
+		return "EnableTouchKeyboardAutoInvokeInDesktopModeAlways"
+	default:
+		return fmt.Sprintf("EnableTouchKeyboardAutoInvokeInDesktopModeValue(%d)", int64(e))
+	}
+}
+
+// ExcludeJapaneseIMEExceptJIS0208Value — allowed values for the ExcludeJapaneseIMEExceptJIS0208 node.
+type ExcludeJapaneseIMEExceptJIS0208Value int64
+
 const (
 	// No characters are filtered.
-	ExcludeJapaneseIMEExceptJIS0208NoCharactersAreFiltered int64 = 0
+	ExcludeJapaneseIMEExceptJIS0208NoCharactersAreFiltered ExcludeJapaneseIMEExceptJIS0208Value = 0
 	// All characters except JIS0208 are filtered.
-	ExcludeJapaneseIMEExceptJIS0208AllCharactersExceptJIS0208AreFiltered int64 = 1
+	ExcludeJapaneseIMEExceptJIS0208AllCharactersExceptJIS0208AreFiltered ExcludeJapaneseIMEExceptJIS0208Value = 1
 )
 
-// ExcludeJapaneseIMEExceptJIS0208andEUDC allowed values.
+// String returns the ExcludeJapaneseIMEExceptJIS0208Value constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ExcludeJapaneseIMEExceptJIS0208Value) String() string {
+	switch e {
+	case ExcludeJapaneseIMEExceptJIS0208NoCharactersAreFiltered:
+		return "ExcludeJapaneseIMEExceptJIS0208NoCharactersAreFiltered"
+	case ExcludeJapaneseIMEExceptJIS0208AllCharactersExceptJIS0208AreFiltered:
+		return "ExcludeJapaneseIMEExceptJIS0208AllCharactersExceptJIS0208AreFiltered"
+	default:
+		return fmt.Sprintf("ExcludeJapaneseIMEExceptJIS0208Value(%d)", int64(e))
+	}
+}
+
+// ExcludeJapaneseIMEExceptJIS0208andEUDCValue — allowed values for the ExcludeJapaneseIMEExceptJIS0208andEUDC node.
+type ExcludeJapaneseIMEExceptJIS0208andEUDCValue int64
+
 const (
 	// No characters are filtered.
-	ExcludeJapaneseIMEExceptJIS0208andEUDCNoCharactersAreFiltered int64 = 0
+	ExcludeJapaneseIMEExceptJIS0208andEUDCNoCharactersAreFiltered ExcludeJapaneseIMEExceptJIS0208andEUDCValue = 0
 	// All characters except JIS0208 and EUDC are filtered.
-	ExcludeJapaneseIMEExceptJIS0208andEUDCAllCharactersExceptJIS0208AndEUDC int64 = 1
+	ExcludeJapaneseIMEExceptJIS0208andEUDCAllCharactersExceptJIS0208AndEUDC ExcludeJapaneseIMEExceptJIS0208andEUDCValue = 1
 )
 
-// ExcludeJapaneseIMEExceptShiftJIS allowed values.
+// String returns the ExcludeJapaneseIMEExceptJIS0208andEUDCValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ExcludeJapaneseIMEExceptJIS0208andEUDCValue) String() string {
+	switch e {
+	case ExcludeJapaneseIMEExceptJIS0208andEUDCNoCharactersAreFiltered:
+		return "ExcludeJapaneseIMEExceptJIS0208andEUDCNoCharactersAreFiltered"
+	case ExcludeJapaneseIMEExceptJIS0208andEUDCAllCharactersExceptJIS0208AndEUDC:
+		return "ExcludeJapaneseIMEExceptJIS0208andEUDCAllCharactersExceptJIS0208AndEUDC"
+	default:
+		return fmt.Sprintf("ExcludeJapaneseIMEExceptJIS0208andEUDCValue(%d)", int64(e))
+	}
+}
+
+// ExcludeJapaneseIMEExceptShiftJISValue — allowed values for the ExcludeJapaneseIMEExceptShiftJIS node.
+type ExcludeJapaneseIMEExceptShiftJISValue int64
+
 const (
 	// No characters are filtered.
-	ExcludeJapaneseIMEExceptShiftJISNoCharactersAreFiltered int64 = 0
+	ExcludeJapaneseIMEExceptShiftJISNoCharactersAreFiltered ExcludeJapaneseIMEExceptShiftJISValue = 0
 	// All characters except ShiftJIS are filtered.
-	ExcludeJapaneseIMEExceptShiftJISAllCharactersExceptShiftJISAreFiltered int64 = 1
+	ExcludeJapaneseIMEExceptShiftJISAllCharactersExceptShiftJISAreFiltered ExcludeJapaneseIMEExceptShiftJISValue = 1
 )
 
-// ForceTouchKeyboardDockedState allowed values.
+// String returns the ExcludeJapaneseIMEExceptShiftJISValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ExcludeJapaneseIMEExceptShiftJISValue) String() string {
+	switch e {
+	case ExcludeJapaneseIMEExceptShiftJISNoCharactersAreFiltered:
+		return "ExcludeJapaneseIMEExceptShiftJISNoCharactersAreFiltered"
+	case ExcludeJapaneseIMEExceptShiftJISAllCharactersExceptShiftJISAreFiltered:
+		return "ExcludeJapaneseIMEExceptShiftJISAllCharactersExceptShiftJISAreFiltered"
+	default:
+		return fmt.Sprintf("ExcludeJapaneseIMEExceptShiftJISValue(%d)", int64(e))
+	}
+}
+
+// ForceTouchKeyboardDockedStateValue — allowed values for the ForceTouchKeyboardDockedState node.
+type ForceTouchKeyboardDockedStateValue int64
+
 const (
 	// The OS determines when it's most appropriate to be available.
-	ForceTouchKeyboardDockedStateTheOSDeterminesWhenItSMost int64 = 0
+	ForceTouchKeyboardDockedStateTheOSDeterminesWhenItSMost ForceTouchKeyboardDockedStateValue = 0
 	// Touch keyboard is always docked.
-	ForceTouchKeyboardDockedStateTouchKeyboardIsAlwaysDocked int64 = 1
+	ForceTouchKeyboardDockedStateTouchKeyboardIsAlwaysDocked ForceTouchKeyboardDockedStateValue = 1
 	// Touch keyboard docking can be changed.
-	ForceTouchKeyboardDockedStateTouchKeyboardDockingCanBeChanged int64 = 2
+	ForceTouchKeyboardDockedStateTouchKeyboardDockingCanBeChanged ForceTouchKeyboardDockedStateValue = 2
 )
 
-// TouchKeyboardControllerModeAvailability allowed values.
+// String returns the ForceTouchKeyboardDockedStateValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ForceTouchKeyboardDockedStateValue) String() string {
+	switch e {
+	case ForceTouchKeyboardDockedStateTheOSDeterminesWhenItSMost:
+		return "ForceTouchKeyboardDockedStateTheOSDeterminesWhenItSMost"
+	case ForceTouchKeyboardDockedStateTouchKeyboardIsAlwaysDocked:
+		return "ForceTouchKeyboardDockedStateTouchKeyboardIsAlwaysDocked"
+	case ForceTouchKeyboardDockedStateTouchKeyboardDockingCanBeChanged:
+		return "ForceTouchKeyboardDockedStateTouchKeyboardDockingCanBeChanged"
+	default:
+		return fmt.Sprintf("ForceTouchKeyboardDockedStateValue(%d)", int64(e))
+	}
+}
+
+// TouchKeyboardControllerModeAvailabilityValue — allowed values for the TouchKeyboardControllerModeAvailability node.
+type TouchKeyboardControllerModeAvailabilityValue int64
+
 const (
 	// The OS determines when it's most appropriate to be available.
-	TouchKeyboardControllerModeAvailabilityTheOSDeterminesWhenItSMost int64 = 0
+	TouchKeyboardControllerModeAvailabilityTheOSDeterminesWhenItSMost TouchKeyboardControllerModeAvailabilityValue = 0
 	// Controller keyboard is always available.
-	TouchKeyboardControllerModeAvailabilityControllerKeyboardIsAlwaysAvailable int64 = 1
+	TouchKeyboardControllerModeAvailabilityControllerKeyboardIsAlwaysAvailable TouchKeyboardControllerModeAvailabilityValue = 1
 	// Controller keyboard is always disabled.
-	TouchKeyboardControllerModeAvailabilityControllerKeyboardIsAlwaysDisabled int64 = 2
+	TouchKeyboardControllerModeAvailabilityControllerKeyboardIsAlwaysDisabled TouchKeyboardControllerModeAvailabilityValue = 2
 )
 
-// TouchKeyboardDictationButtonAvailability allowed values.
+// String returns the TouchKeyboardControllerModeAvailabilityValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e TouchKeyboardControllerModeAvailabilityValue) String() string {
+	switch e {
+	case TouchKeyboardControllerModeAvailabilityTheOSDeterminesWhenItSMost:
+		return "TouchKeyboardControllerModeAvailabilityTheOSDeterminesWhenItSMost"
+	case TouchKeyboardControllerModeAvailabilityControllerKeyboardIsAlwaysAvailable:
+		return "TouchKeyboardControllerModeAvailabilityControllerKeyboardIsAlwaysAvailable"
+	case TouchKeyboardControllerModeAvailabilityControllerKeyboardIsAlwaysDisabled:
+		return "TouchKeyboardControllerModeAvailabilityControllerKeyboardIsAlwaysDisabled"
+	default:
+		return fmt.Sprintf("TouchKeyboardControllerModeAvailabilityValue(%d)", int64(e))
+	}
+}
+
+// TouchKeyboardDictationButtonAvailabilityValue — allowed values for the TouchKeyboardDictationButtonAvailability node.
+type TouchKeyboardDictationButtonAvailabilityValue int64
+
 const (
 	// The OS determines when it's most appropriate to be available.
-	TouchKeyboardDictationButtonAvailabilityTheOSDeterminesWhenItSMost int64 = 0
+	TouchKeyboardDictationButtonAvailabilityTheOSDeterminesWhenItSMost TouchKeyboardDictationButtonAvailabilityValue = 0
 	// Dictation button on the keyboard is always available.
-	TouchKeyboardDictationButtonAvailabilityDictationButtonOnTheKeyboardIs int64 = 1
+	TouchKeyboardDictationButtonAvailabilityDictationButtonOnTheKeyboardIs TouchKeyboardDictationButtonAvailabilityValue = 1
 	// Dictation button on the keyboard is always disabled.
-	TouchKeyboardDictationButtonAvailabilityDictationButtonOnTheKeyboardIs2 int64 = 2
+	TouchKeyboardDictationButtonAvailabilityDictationButtonOnTheKeyboardIs2 TouchKeyboardDictationButtonAvailabilityValue = 2
 )
 
-// TouchKeyboardEmojiButtonAvailability allowed values.
+// String returns the TouchKeyboardDictationButtonAvailabilityValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e TouchKeyboardDictationButtonAvailabilityValue) String() string {
+	switch e {
+	case TouchKeyboardDictationButtonAvailabilityTheOSDeterminesWhenItSMost:
+		return "TouchKeyboardDictationButtonAvailabilityTheOSDeterminesWhenItSMost"
+	case TouchKeyboardDictationButtonAvailabilityDictationButtonOnTheKeyboardIs:
+		return "TouchKeyboardDictationButtonAvailabilityDictationButtonOnTheKeyboardIs"
+	case TouchKeyboardDictationButtonAvailabilityDictationButtonOnTheKeyboardIs2:
+		return "TouchKeyboardDictationButtonAvailabilityDictationButtonOnTheKeyboardIs2"
+	default:
+		return fmt.Sprintf("TouchKeyboardDictationButtonAvailabilityValue(%d)", int64(e))
+	}
+}
+
+// TouchKeyboardEmojiButtonAvailabilityValue — allowed values for the TouchKeyboardEmojiButtonAvailability node.
+type TouchKeyboardEmojiButtonAvailabilityValue int64
+
 const (
 	// The OS determines when it's most appropriate to be available.
-	TouchKeyboardEmojiButtonAvailabilityTheOSDeterminesWhenItSMost int64 = 0
+	TouchKeyboardEmojiButtonAvailabilityTheOSDeterminesWhenItSMost TouchKeyboardEmojiButtonAvailabilityValue = 0
 	// Emoji button on keyboard is always available.
-	TouchKeyboardEmojiButtonAvailabilityEmojiButtonOnKeyboardIsAlways int64 = 1
+	TouchKeyboardEmojiButtonAvailabilityEmojiButtonOnKeyboardIsAlways TouchKeyboardEmojiButtonAvailabilityValue = 1
 	// Emoji button on keyboard is always disabled.
-	TouchKeyboardEmojiButtonAvailabilityEmojiButtonOnKeyboardIsAlways2 int64 = 2
+	TouchKeyboardEmojiButtonAvailabilityEmojiButtonOnKeyboardIsAlways2 TouchKeyboardEmojiButtonAvailabilityValue = 2
 )
 
-// TouchKeyboardFullModeAvailability allowed values.
+// String returns the TouchKeyboardEmojiButtonAvailabilityValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e TouchKeyboardEmojiButtonAvailabilityValue) String() string {
+	switch e {
+	case TouchKeyboardEmojiButtonAvailabilityTheOSDeterminesWhenItSMost:
+		return "TouchKeyboardEmojiButtonAvailabilityTheOSDeterminesWhenItSMost"
+	case TouchKeyboardEmojiButtonAvailabilityEmojiButtonOnKeyboardIsAlways:
+		return "TouchKeyboardEmojiButtonAvailabilityEmojiButtonOnKeyboardIsAlways"
+	case TouchKeyboardEmojiButtonAvailabilityEmojiButtonOnKeyboardIsAlways2:
+		return "TouchKeyboardEmojiButtonAvailabilityEmojiButtonOnKeyboardIsAlways2"
+	default:
+		return fmt.Sprintf("TouchKeyboardEmojiButtonAvailabilityValue(%d)", int64(e))
+	}
+}
+
+// TouchKeyboardFullModeAvailabilityValue — allowed values for the TouchKeyboardFullModeAvailability node.
+type TouchKeyboardFullModeAvailabilityValue int64
+
 const (
 	// The OS determines when it's most appropriate to be available.
-	TouchKeyboardFullModeAvailabilityTheOSDeterminesWhenItSMost int64 = 0
+	TouchKeyboardFullModeAvailabilityTheOSDeterminesWhenItSMost TouchKeyboardFullModeAvailabilityValue = 0
 	// Full keyboard is always available.
-	TouchKeyboardFullModeAvailabilityFullKeyboardIsAlwaysAvailable int64 = 1
+	TouchKeyboardFullModeAvailabilityFullKeyboardIsAlwaysAvailable TouchKeyboardFullModeAvailabilityValue = 1
 	// Full keyboard is always disabled.
-	TouchKeyboardFullModeAvailabilityFullKeyboardIsAlwaysDisabled int64 = 2
+	TouchKeyboardFullModeAvailabilityFullKeyboardIsAlwaysDisabled TouchKeyboardFullModeAvailabilityValue = 2
 )
 
-// TouchKeyboardHandwritingModeAvailability allowed values.
+// String returns the TouchKeyboardFullModeAvailabilityValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e TouchKeyboardFullModeAvailabilityValue) String() string {
+	switch e {
+	case TouchKeyboardFullModeAvailabilityTheOSDeterminesWhenItSMost:
+		return "TouchKeyboardFullModeAvailabilityTheOSDeterminesWhenItSMost"
+	case TouchKeyboardFullModeAvailabilityFullKeyboardIsAlwaysAvailable:
+		return "TouchKeyboardFullModeAvailabilityFullKeyboardIsAlwaysAvailable"
+	case TouchKeyboardFullModeAvailabilityFullKeyboardIsAlwaysDisabled:
+		return "TouchKeyboardFullModeAvailabilityFullKeyboardIsAlwaysDisabled"
+	default:
+		return fmt.Sprintf("TouchKeyboardFullModeAvailabilityValue(%d)", int64(e))
+	}
+}
+
+// TouchKeyboardHandwritingModeAvailabilityValue — allowed values for the TouchKeyboardHandwritingModeAvailability node.
+type TouchKeyboardHandwritingModeAvailabilityValue int64
+
 const (
 	// The OS determines when it's most appropriate to be available.
-	TouchKeyboardHandwritingModeAvailabilityTheOSDeterminesWhenItSMost int64 = 0
+	TouchKeyboardHandwritingModeAvailabilityTheOSDeterminesWhenItSMost TouchKeyboardHandwritingModeAvailabilityValue = 0
 	// Handwriting input panel is always available.
-	TouchKeyboardHandwritingModeAvailabilityHandwritingInputPanelIsAlwaysAvailable int64 = 1
+	TouchKeyboardHandwritingModeAvailabilityHandwritingInputPanelIsAlwaysAvailable TouchKeyboardHandwritingModeAvailabilityValue = 1
 	// Handwriting input panel is always disabled.
-	TouchKeyboardHandwritingModeAvailabilityHandwritingInputPanelIsAlwaysDisabled int64 = 2
+	TouchKeyboardHandwritingModeAvailabilityHandwritingInputPanelIsAlwaysDisabled TouchKeyboardHandwritingModeAvailabilityValue = 2
 )
 
-// TouchKeyboardNarrowModeAvailability allowed values.
+// String returns the TouchKeyboardHandwritingModeAvailabilityValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e TouchKeyboardHandwritingModeAvailabilityValue) String() string {
+	switch e {
+	case TouchKeyboardHandwritingModeAvailabilityTheOSDeterminesWhenItSMost:
+		return "TouchKeyboardHandwritingModeAvailabilityTheOSDeterminesWhenItSMost"
+	case TouchKeyboardHandwritingModeAvailabilityHandwritingInputPanelIsAlwaysAvailable:
+		return "TouchKeyboardHandwritingModeAvailabilityHandwritingInputPanelIsAlwaysAvailable"
+	case TouchKeyboardHandwritingModeAvailabilityHandwritingInputPanelIsAlwaysDisabled:
+		return "TouchKeyboardHandwritingModeAvailabilityHandwritingInputPanelIsAlwaysDisabled"
+	default:
+		return fmt.Sprintf("TouchKeyboardHandwritingModeAvailabilityValue(%d)", int64(e))
+	}
+}
+
+// TouchKeyboardNarrowModeAvailabilityValue — allowed values for the TouchKeyboardNarrowModeAvailability node.
+type TouchKeyboardNarrowModeAvailabilityValue int64
+
 const (
 	// The OS determines when it's most appropriate to be available.
-	TouchKeyboardNarrowModeAvailabilityTheOSDeterminesWhenItSMost int64 = 0
+	TouchKeyboardNarrowModeAvailabilityTheOSDeterminesWhenItSMost TouchKeyboardNarrowModeAvailabilityValue = 0
 	// Narrow keyboard is always available.
-	TouchKeyboardNarrowModeAvailabilityNarrowKeyboardIsAlwaysAvailable int64 = 1
+	TouchKeyboardNarrowModeAvailabilityNarrowKeyboardIsAlwaysAvailable TouchKeyboardNarrowModeAvailabilityValue = 1
 	// Narrow keyboard is always disabled.
-	TouchKeyboardNarrowModeAvailabilityNarrowKeyboardIsAlwaysDisabled int64 = 2
+	TouchKeyboardNarrowModeAvailabilityNarrowKeyboardIsAlwaysDisabled TouchKeyboardNarrowModeAvailabilityValue = 2
 )
 
-// TouchKeyboardSplitModeAvailability allowed values.
+// String returns the TouchKeyboardNarrowModeAvailabilityValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e TouchKeyboardNarrowModeAvailabilityValue) String() string {
+	switch e {
+	case TouchKeyboardNarrowModeAvailabilityTheOSDeterminesWhenItSMost:
+		return "TouchKeyboardNarrowModeAvailabilityTheOSDeterminesWhenItSMost"
+	case TouchKeyboardNarrowModeAvailabilityNarrowKeyboardIsAlwaysAvailable:
+		return "TouchKeyboardNarrowModeAvailabilityNarrowKeyboardIsAlwaysAvailable"
+	case TouchKeyboardNarrowModeAvailabilityNarrowKeyboardIsAlwaysDisabled:
+		return "TouchKeyboardNarrowModeAvailabilityNarrowKeyboardIsAlwaysDisabled"
+	default:
+		return fmt.Sprintf("TouchKeyboardNarrowModeAvailabilityValue(%d)", int64(e))
+	}
+}
+
+// TouchKeyboardSplitModeAvailabilityValue — allowed values for the TouchKeyboardSplitModeAvailability node.
+type TouchKeyboardSplitModeAvailabilityValue int64
+
 const (
 	// The OS determines when it's most appropriate to be available.
-	TouchKeyboardSplitModeAvailabilityTheOSDeterminesWhenItSMost int64 = 0
+	TouchKeyboardSplitModeAvailabilityTheOSDeterminesWhenItSMost TouchKeyboardSplitModeAvailabilityValue = 0
 	// Split keyboard is always available.
-	TouchKeyboardSplitModeAvailabilitySplitKeyboardIsAlwaysAvailable int64 = 1
+	TouchKeyboardSplitModeAvailabilitySplitKeyboardIsAlwaysAvailable TouchKeyboardSplitModeAvailabilityValue = 1
 	// Split keyboard is always disabled.
-	TouchKeyboardSplitModeAvailabilitySplitKeyboardIsAlwaysDisabled int64 = 2
+	TouchKeyboardSplitModeAvailabilitySplitKeyboardIsAlwaysDisabled TouchKeyboardSplitModeAvailabilityValue = 2
 )
 
-// TouchKeyboardWideModeAvailability allowed values.
+// String returns the TouchKeyboardSplitModeAvailabilityValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e TouchKeyboardSplitModeAvailabilityValue) String() string {
+	switch e {
+	case TouchKeyboardSplitModeAvailabilityTheOSDeterminesWhenItSMost:
+		return "TouchKeyboardSplitModeAvailabilityTheOSDeterminesWhenItSMost"
+	case TouchKeyboardSplitModeAvailabilitySplitKeyboardIsAlwaysAvailable:
+		return "TouchKeyboardSplitModeAvailabilitySplitKeyboardIsAlwaysAvailable"
+	case TouchKeyboardSplitModeAvailabilitySplitKeyboardIsAlwaysDisabled:
+		return "TouchKeyboardSplitModeAvailabilitySplitKeyboardIsAlwaysDisabled"
+	default:
+		return fmt.Sprintf("TouchKeyboardSplitModeAvailabilityValue(%d)", int64(e))
+	}
+}
+
+// TouchKeyboardWideModeAvailabilityValue — allowed values for the TouchKeyboardWideModeAvailability node.
+type TouchKeyboardWideModeAvailabilityValue int64
+
 const (
 	// The OS determines when it's most appropriate to be available.
-	TouchKeyboardWideModeAvailabilityTheOSDeterminesWhenItSMost int64 = 0
+	TouchKeyboardWideModeAvailabilityTheOSDeterminesWhenItSMost TouchKeyboardWideModeAvailabilityValue = 0
 	// Wide keyboard is always available.
-	TouchKeyboardWideModeAvailabilityWideKeyboardIsAlwaysAvailable int64 = 1
+	TouchKeyboardWideModeAvailabilityWideKeyboardIsAlwaysAvailable TouchKeyboardWideModeAvailabilityValue = 1
 	// Wide keyboard is always disabled.
-	TouchKeyboardWideModeAvailabilityWideKeyboardIsAlwaysDisabled int64 = 2
+	TouchKeyboardWideModeAvailabilityWideKeyboardIsAlwaysDisabled TouchKeyboardWideModeAvailabilityValue = 2
 )
+
+// String returns the TouchKeyboardWideModeAvailabilityValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e TouchKeyboardWideModeAvailabilityValue) String() string {
+	switch e {
+	case TouchKeyboardWideModeAvailabilityTheOSDeterminesWhenItSMost:
+		return "TouchKeyboardWideModeAvailabilityTheOSDeterminesWhenItSMost"
+	case TouchKeyboardWideModeAvailabilityWideKeyboardIsAlwaysAvailable:
+		return "TouchKeyboardWideModeAvailabilityWideKeyboardIsAlwaysAvailable"
+	case TouchKeyboardWideModeAvailabilityWideKeyboardIsAlwaysDisabled:
+		return "TouchKeyboardWideModeAvailabilityWideKeyboardIsAlwaysDisabled"
+	default:
+		return fmt.Sprintf("TouchKeyboardWideModeAvailabilityValue(%d)", int64(e))
+	}
+}

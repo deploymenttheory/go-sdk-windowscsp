@@ -2,26 +2,75 @@
 
 package messaging
 
-// AllowMMS allowed values.
-const (
-	// Allow
-	AllowMMSAllow int64 = 1
-	// Block
-	AllowMMSBlock int64 = 0
+import (
+	"fmt"
 )
 
-// AllowMessageSync allowed values.
+// AllowMMSValue — allowed values for the AllowMMS node.
+type AllowMMSValue int64
+
+const (
+	// Allow
+	AllowMMSAllow AllowMMSValue = 1
+	// Block
+	AllowMMSBlock AllowMMSValue = 0
+)
+
+// String returns the AllowMMSValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowMMSValue) String() string {
+	switch e {
+	case AllowMMSAllow:
+		return "AllowMMSAllow"
+	case AllowMMSBlock:
+		return "AllowMMSBlock"
+	default:
+		return fmt.Sprintf("AllowMMSValue(%d)", int64(e))
+	}
+}
+
+// AllowMessageSyncValue — allowed values for the AllowMessageSync node.
+type AllowMessageSyncValue int64
+
 const (
 	// message sync is not allowed and cannot be changed by the user.
-	AllowMessageSyncMessageSyncIsNotAllowedAnd int64 = 0
+	AllowMessageSyncMessageSyncIsNotAllowedAnd AllowMessageSyncValue = 0
 	// message sync is allowed. The user can change this setting.
-	AllowMessageSyncMessageSyncIsAllowed int64 = 1
+	AllowMessageSyncMessageSyncIsAllowed AllowMessageSyncValue = 1
 )
 
-// AllowRCS allowed values.
+// String returns the AllowMessageSyncValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowMessageSyncValue) String() string {
+	switch e {
+	case AllowMessageSyncMessageSyncIsNotAllowedAnd:
+		return "AllowMessageSyncMessageSyncIsNotAllowedAnd"
+	case AllowMessageSyncMessageSyncIsAllowed:
+		return "AllowMessageSyncMessageSyncIsAllowed"
+	default:
+		return fmt.Sprintf("AllowMessageSyncValue(%d)", int64(e))
+	}
+}
+
+// AllowRCSValue — allowed values for the AllowRCS node.
+type AllowRCSValue int64
+
 const (
 	// Allow
-	AllowRCSAllow int64 = 1
+	AllowRCSAllow AllowRCSValue = 1
 	// Block
-	AllowRCSBlock int64 = 0
+	AllowRCSBlock AllowRCSValue = 0
 )
+
+// String returns the AllowRCSValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowRCSValue) String() string {
+	switch e {
+	case AllowRCSAllow:
+		return "AllowRCSAllow"
+	case AllowRCSBlock:
+		return "AllowRCSBlock"
+	default:
+		return fmt.Sprintf("AllowRCSValue(%d)", int64(e))
+	}
+}

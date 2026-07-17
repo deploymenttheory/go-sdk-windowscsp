@@ -2,57 +2,118 @@
 
 package firewall
 
-// MdmStoreDomainProfileDefaultInboundAction allowed values.
+import (
+	"fmt"
+)
+
+// MdmStoreDomainProfileDefaultInboundActionValue — allowed values for the DefaultInboundAction node.
+type MdmStoreDomainProfileDefaultInboundActionValue int64
+
 const (
 	// Allow Inbound By Default
-	MdmStoreDomainProfileDefaultInboundActionAllowInboundByDefault int64 = 0
+	MdmStoreDomainProfileDefaultInboundActionAllowInboundByDefault MdmStoreDomainProfileDefaultInboundActionValue = 0
 	// Block Inbound By Default
-	MdmStoreDomainProfileDefaultInboundActionBlockInboundByDefault int64 = 1
+	MdmStoreDomainProfileDefaultInboundActionBlockInboundByDefault MdmStoreDomainProfileDefaultInboundActionValue = 1
 )
 
-// MdmStoreDomainProfileDefaultOutboundAction allowed values.
+// String returns the MdmStoreDomainProfileDefaultInboundActionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MdmStoreDomainProfileDefaultInboundActionValue) String() string {
+	switch e {
+	case MdmStoreDomainProfileDefaultInboundActionAllowInboundByDefault:
+		return "MdmStoreDomainProfileDefaultInboundActionAllowInboundByDefault"
+	case MdmStoreDomainProfileDefaultInboundActionBlockInboundByDefault:
+		return "MdmStoreDomainProfileDefaultInboundActionBlockInboundByDefault"
+	default:
+		return fmt.Sprintf("MdmStoreDomainProfileDefaultInboundActionValue(%d)", int64(e))
+	}
+}
+
+// MdmStoreDomainProfileDefaultOutboundActionValue — allowed values for the DefaultOutboundAction node.
+type MdmStoreDomainProfileDefaultOutboundActionValue int64
+
 const (
 	// Allow Outbound By Default
-	MdmStoreDomainProfileDefaultOutboundActionAllowOutboundByDefault int64 = 0
+	MdmStoreDomainProfileDefaultOutboundActionAllowOutboundByDefault MdmStoreDomainProfileDefaultOutboundActionValue = 0
 	// Block Outbound By Default
-	MdmStoreDomainProfileDefaultOutboundActionBlockOutboundByDefault int64 = 1
+	MdmStoreDomainProfileDefaultOutboundActionBlockOutboundByDefault MdmStoreDomainProfileDefaultOutboundActionValue = 1
 )
 
-// MdmStoreFirewallRulesFirewallRuleNameActionType allowed values.
+// String returns the MdmStoreDomainProfileDefaultOutboundActionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MdmStoreDomainProfileDefaultOutboundActionValue) String() string {
+	switch e {
+	case MdmStoreDomainProfileDefaultOutboundActionAllowOutboundByDefault:
+		return "MdmStoreDomainProfileDefaultOutboundActionAllowOutboundByDefault"
+	case MdmStoreDomainProfileDefaultOutboundActionBlockOutboundByDefault:
+		return "MdmStoreDomainProfileDefaultOutboundActionBlockOutboundByDefault"
+	default:
+		return fmt.Sprintf("MdmStoreDomainProfileDefaultOutboundActionValue(%d)", int64(e))
+	}
+}
+
+// MdmStoreFirewallRulesFirewallRuleNameActionTypeValue — allowed values for the Type node.
+type MdmStoreFirewallRulesFirewallRuleNameActionTypeValue int64
+
 const (
 	// Block
-	MdmStoreFirewallRulesFirewallRuleNameActionTypeBlock int64 = 0
+	MdmStoreFirewallRulesFirewallRuleNameActionTypeBlock MdmStoreFirewallRulesFirewallRuleNameActionTypeValue = 0
 	// Allow
-	MdmStoreFirewallRulesFirewallRuleNameActionTypeAllow int64 = 1
+	MdmStoreFirewallRulesFirewallRuleNameActionTypeAllow MdmStoreFirewallRulesFirewallRuleNameActionTypeValue = 1
 )
 
-// MdmStoreFirewallRulesFirewallRuleNameDirection allowed values.
+// String returns the MdmStoreFirewallRulesFirewallRuleNameActionTypeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MdmStoreFirewallRulesFirewallRuleNameActionTypeValue) String() string {
+	switch e {
+	case MdmStoreFirewallRulesFirewallRuleNameActionTypeBlock:
+		return "MdmStoreFirewallRulesFirewallRuleNameActionTypeBlock"
+	case MdmStoreFirewallRulesFirewallRuleNameActionTypeAllow:
+		return "MdmStoreFirewallRulesFirewallRuleNameActionTypeAllow"
+	default:
+		return fmt.Sprintf("MdmStoreFirewallRulesFirewallRuleNameActionTypeValue(%d)", int64(e))
+	}
+}
+
+// MdmStoreFirewallRulesFirewallRuleNameDirectionValue — allowed values for the Direction node.
+type MdmStoreFirewallRulesFirewallRuleNameDirectionValue string
+
 const (
 	// The rule applies to inbound traffic.
-	MdmStoreFirewallRulesFirewallRuleNameDirectionTheRuleAppliesToInboundTraffic = "IN"
+	MdmStoreFirewallRulesFirewallRuleNameDirectionTheRuleAppliesToInboundTraffic MdmStoreFirewallRulesFirewallRuleNameDirectionValue = "IN"
 	// The rule applies to outbound traffic.
-	MdmStoreFirewallRulesFirewallRuleNameDirectionTheRuleAppliesToOutboundTraffic = "OUT"
+	MdmStoreFirewallRulesFirewallRuleNameDirectionTheRuleAppliesToOutboundTraffic MdmStoreFirewallRulesFirewallRuleNameDirectionValue = "OUT"
 )
 
-// MdmStoreFirewallRulesFirewallRuleNameInterfaceTypes allowed values.
+// String returns the MdmStoreFirewallRulesFirewallRuleNameDirectionValue value as a plain string.
+func (e MdmStoreFirewallRulesFirewallRuleNameDirectionValue) String() string { return string(e) }
+
+// MdmStoreFirewallRulesFirewallRuleNameInterfaceTypesValue — allowed values for the InterfaceTypes node.
+type MdmStoreFirewallRulesFirewallRuleNameInterfaceTypesValue string
+
 const (
 	// RemoteAccess
-	MdmStoreFirewallRulesFirewallRuleNameInterfaceTypesRemoteAccess = "RemoteAccess"
+	MdmStoreFirewallRulesFirewallRuleNameInterfaceTypesRemoteAccess MdmStoreFirewallRulesFirewallRuleNameInterfaceTypesValue = "RemoteAccess"
 	// Wireless
-	MdmStoreFirewallRulesFirewallRuleNameInterfaceTypesWireless = "Wireless"
+	MdmStoreFirewallRulesFirewallRuleNameInterfaceTypesWireless MdmStoreFirewallRulesFirewallRuleNameInterfaceTypesValue = "Wireless"
 	// Lan
-	MdmStoreFirewallRulesFirewallRuleNameInterfaceTypesLan = "Lan"
+	MdmStoreFirewallRulesFirewallRuleNameInterfaceTypesLan MdmStoreFirewallRulesFirewallRuleNameInterfaceTypesValue = "Lan"
 	// MobileBroadband
-	MdmStoreFirewallRulesFirewallRuleNameInterfaceTypesMobileBroadband = "MBB"
+	MdmStoreFirewallRulesFirewallRuleNameInterfaceTypesMobileBroadband MdmStoreFirewallRulesFirewallRuleNameInterfaceTypesValue = "MBB"
 	// All
-	MdmStoreFirewallRulesFirewallRuleNameInterfaceTypesAll = "All"
+	MdmStoreFirewallRulesFirewallRuleNameInterfaceTypesAll MdmStoreFirewallRulesFirewallRuleNameInterfaceTypesValue = "All"
 )
 
-// MdmStoreFirewallRulesFirewallRuleNameProfiles allowed values.
+// String returns the MdmStoreFirewallRulesFirewallRuleNameInterfaceTypesValue value as a plain string.
+func (e MdmStoreFirewallRulesFirewallRuleNameInterfaceTypesValue) String() string { return string(e) }
+
+// MdmStoreFirewallRulesFirewallRuleNameProfilesValue — allowed values for the Profiles node.
+type MdmStoreFirewallRulesFirewallRuleNameProfilesValue int64
+
 const (
 	// FW_PROFILE_TYPE_DOMAIN: This value represents the profile for networks that are connected to
 	// domains.
-	MdmStoreFirewallRulesFirewallRuleNameProfilesFWPROFILETYPEDOMAIN int64 = 1
+	MdmStoreFirewallRulesFirewallRuleNameProfilesFWPROFILETYPEDOMAIN MdmStoreFirewallRulesFirewallRuleNameProfilesValue = 1
 	// FW_PROFILE_TYPE_STANDARD: This value represents the standard profile for networks. These
 	// networks are classified as private by the administrators in the server host. The classification
 	// happens the first time the host connects to the network. Usually these networks are behind
@@ -60,91 +121,202 @@ const (
 	// private location, such as a home or an office. AND FW_PROFILE_TYPE_PRIVATE: This value
 	// represents the profile for private networks, which is represented by the same value as that used
 	// for FW_PROFILE_TYPE_STANDARD.
-	MdmStoreFirewallRulesFirewallRuleNameProfilesFWPROFILETYPESTANDARD int64 = 2
+	MdmStoreFirewallRulesFirewallRuleNameProfilesFWPROFILETYPESTANDARD MdmStoreFirewallRulesFirewallRuleNameProfilesValue = 2
 	// FW_PROFILE_TYPE_PUBLIC: This value represents the profile for public networks. These networks
 	// are classified as public by the administrators in the server host. The classification happens
 	// the first time the host connects to the network. Usually these networks are those at airports,
 	// coffee shops, and other public places where the peers in the network or the network
 	// administrator are not trusted.
-	MdmStoreFirewallRulesFirewallRuleNameProfilesFWPROFILETYPEPUBLIC int64 = 4
+	MdmStoreFirewallRulesFirewallRuleNameProfilesFWPROFILETYPEPUBLIC MdmStoreFirewallRulesFirewallRuleNameProfilesValue = 4
 	// FW_PROFILE_TYPE_ALL: This value represents all these network sets and any future network sets.
-	MdmStoreFirewallRulesFirewallRuleNameProfilesFWPROFILETYPEALL int64 = 2147483647
+	MdmStoreFirewallRulesFirewallRuleNameProfilesFWPROFILETYPEALL MdmStoreFirewallRulesFirewallRuleNameProfilesValue = 2147483647
 	// FW_PROFILE_TYPE_CURRENT: This value represents the current profiles to which the firewall and
 	// advanced security components determine the host is connected at the moment of the call. This
 	// value can be specified only in method calls, and it cannot be combined with other flags.
-	MdmStoreFirewallRulesFirewallRuleNameProfilesFWPROFILETYPECURRENT int64 = 2147483648
+	MdmStoreFirewallRulesFirewallRuleNameProfilesFWPROFILETYPECURRENT MdmStoreFirewallRulesFirewallRuleNameProfilesValue = 2147483648
 )
 
-// MdmStoreGlobalCRLcheck allowed values.
+// String returns the MdmStoreFirewallRulesFirewallRuleNameProfilesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MdmStoreFirewallRulesFirewallRuleNameProfilesValue) String() string {
+	switch e {
+	case MdmStoreFirewallRulesFirewallRuleNameProfilesFWPROFILETYPEDOMAIN:
+		return "MdmStoreFirewallRulesFirewallRuleNameProfilesFWPROFILETYPEDOMAIN"
+	case MdmStoreFirewallRulesFirewallRuleNameProfilesFWPROFILETYPESTANDARD:
+		return "MdmStoreFirewallRulesFirewallRuleNameProfilesFWPROFILETYPESTANDARD"
+	case MdmStoreFirewallRulesFirewallRuleNameProfilesFWPROFILETYPEPUBLIC:
+		return "MdmStoreFirewallRulesFirewallRuleNameProfilesFWPROFILETYPEPUBLIC"
+	case MdmStoreFirewallRulesFirewallRuleNameProfilesFWPROFILETYPEALL:
+		return "MdmStoreFirewallRulesFirewallRuleNameProfilesFWPROFILETYPEALL"
+	case MdmStoreFirewallRulesFirewallRuleNameProfilesFWPROFILETYPECURRENT:
+		return "MdmStoreFirewallRulesFirewallRuleNameProfilesFWPROFILETYPECURRENT"
+	default:
+		return fmt.Sprintf("MdmStoreFirewallRulesFirewallRuleNameProfilesValue(%d)", int64(e))
+	}
+}
+
+// MdmStoreGlobalCRLcheckValue — allowed values for the CRLcheck node.
+type MdmStoreGlobalCRLcheckValue int64
+
 const (
 	// Disables CRL checking
-	MdmStoreGlobalCRLcheckDisablesCRLChecking int64 = 0
+	MdmStoreGlobalCRLcheckDisablesCRLChecking MdmStoreGlobalCRLcheckValue = 0
 	// Specifies that CRL checking is attempted and that certificate validation fails only if the
 	// certificate is revoked. Other failures that are encountered during CRL checking (such as the
 	// revocation URL being unreachable) do not cause certificate validation to fail.
-	MdmStoreGlobalCRLcheckSpecifiesThatCRLCheckingIsAttempted int64 = 1
+	MdmStoreGlobalCRLcheckSpecifiesThatCRLCheckingIsAttempted MdmStoreGlobalCRLcheckValue = 1
 	// Means that checking is required and that certificate validation fails if any error is
 	// encountered during CRL processing
-	MdmStoreGlobalCRLcheckMeansThatCheckingIsRequiredAnd int64 = 2
+	MdmStoreGlobalCRLcheckMeansThatCheckingIsRequiredAnd MdmStoreGlobalCRLcheckValue = 2
 )
 
-// MdmStoreGlobalEnablePacketQueue allowed values.
+// String returns the MdmStoreGlobalCRLcheckValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MdmStoreGlobalCRLcheckValue) String() string {
+	switch e {
+	case MdmStoreGlobalCRLcheckDisablesCRLChecking:
+		return "MdmStoreGlobalCRLcheckDisablesCRLChecking"
+	case MdmStoreGlobalCRLcheckSpecifiesThatCRLCheckingIsAttempted:
+		return "MdmStoreGlobalCRLcheckSpecifiesThatCRLCheckingIsAttempted"
+	case MdmStoreGlobalCRLcheckMeansThatCheckingIsRequiredAnd:
+		return "MdmStoreGlobalCRLcheckMeansThatCheckingIsRequiredAnd"
+	default:
+		return fmt.Sprintf("MdmStoreGlobalCRLcheckValue(%d)", int64(e))
+	}
+}
+
+// MdmStoreGlobalEnablePacketQueueValue — allowed values for the EnablePacketQueue node.
+type MdmStoreGlobalEnablePacketQueueValue int64
+
 const (
 	// Indicates that all queuing is to be disabled
-	MdmStoreGlobalEnablePacketQueueIndicatesThatAllQueuingIsTo int64 = 0
+	MdmStoreGlobalEnablePacketQueueIndicatesThatAllQueuingIsTo MdmStoreGlobalEnablePacketQueueValue = 0
 	// Specifies that inbound encrypted packets are to be queued
-	MdmStoreGlobalEnablePacketQueueSpecifiesThatInboundEncryptedPacketsAre int64 = 1
+	MdmStoreGlobalEnablePacketQueueSpecifiesThatInboundEncryptedPacketsAre MdmStoreGlobalEnablePacketQueueValue = 1
 	// Specifies that packets are to be queued after decryption is performed for forwarding
-	MdmStoreGlobalEnablePacketQueueSpecifiesThatPacketsAreToBe int64 = 2
+	MdmStoreGlobalEnablePacketQueueSpecifiesThatPacketsAreToBe MdmStoreGlobalEnablePacketQueueValue = 2
 )
 
-// MdmStoreGlobalIPsecExempt allowed values.
+// String returns the MdmStoreGlobalEnablePacketQueueValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MdmStoreGlobalEnablePacketQueueValue) String() string {
+	switch e {
+	case MdmStoreGlobalEnablePacketQueueIndicatesThatAllQueuingIsTo:
+		return "MdmStoreGlobalEnablePacketQueueIndicatesThatAllQueuingIsTo"
+	case MdmStoreGlobalEnablePacketQueueSpecifiesThatInboundEncryptedPacketsAre:
+		return "MdmStoreGlobalEnablePacketQueueSpecifiesThatInboundEncryptedPacketsAre"
+	case MdmStoreGlobalEnablePacketQueueSpecifiesThatPacketsAreToBe:
+		return "MdmStoreGlobalEnablePacketQueueSpecifiesThatPacketsAreToBe"
+	default:
+		return fmt.Sprintf("MdmStoreGlobalEnablePacketQueueValue(%d)", int64(e))
+	}
+}
+
+// MdmStoreGlobalIPsecExemptValue — allowed values for the IPsecExempt node.
+type MdmStoreGlobalIPsecExemptValue int64
+
 const (
 	// FW_GLOBAL_CONFIG_IPSEC_EXEMPT_NONE: No IPsec exemptions.
-	MdmStoreGlobalIPsecExemptFWGLOBALCONFIGIPSECEXEMPTNONE int64 = 0
+	MdmStoreGlobalIPsecExemptFWGLOBALCONFIGIPSECEXEMPTNONE MdmStoreGlobalIPsecExemptValue = 0
 	// FW_GLOBAL_CONFIG_IPSEC_EXEMPT_NEIGHBOR_DISC: Exempt neighbor discover IPv6 ICMP type-codes from
 	// IPsec.
-	MdmStoreGlobalIPsecExemptFWGLOBALCONFIGIPSECEXEMPTNEIGHBORDISC int64 = 1
+	MdmStoreGlobalIPsecExemptFWGLOBALCONFIGIPSECEXEMPTNEIGHBORDISC MdmStoreGlobalIPsecExemptValue = 1
 	// FW_GLOBAL_CONFIG_IPSEC_EXEMPT_ICMP: Exempt ICMP from IPsec.
-	MdmStoreGlobalIPsecExemptFWGLOBALCONFIGIPSECEXEMPTICMP int64 = 2
+	MdmStoreGlobalIPsecExemptFWGLOBALCONFIGIPSECEXEMPTICMP MdmStoreGlobalIPsecExemptValue = 2
 	// FW_GLOBAL_CONFIG_IPSEC_EXEMPT_ROUTER_DISC: Exempt router discover IPv6 ICMP type-codes from
 	// IPsec.
-	MdmStoreGlobalIPsecExemptFWGLOBALCONFIGIPSECEXEMPTROUTERDISC int64 = 4
+	MdmStoreGlobalIPsecExemptFWGLOBALCONFIGIPSECEXEMPTROUTERDISC MdmStoreGlobalIPsecExemptValue = 4
 	// FW_GLOBAL_CONFIG_IPSEC_EXEMPT_DHCP: Exempt both IPv4 and IPv6 DHCP traffic from IPsec.
-	MdmStoreGlobalIPsecExemptFWGLOBALCONFIGIPSECEXEMPTDHCP int64 = 8
+	MdmStoreGlobalIPsecExemptFWGLOBALCONFIGIPSECEXEMPTDHCP MdmStoreGlobalIPsecExemptValue = 8
 )
 
-// MdmStoreGlobalPresharedKeyEncoding allowed values.
+// String returns the MdmStoreGlobalIPsecExemptValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MdmStoreGlobalIPsecExemptValue) String() string {
+	switch e {
+	case MdmStoreGlobalIPsecExemptFWGLOBALCONFIGIPSECEXEMPTNONE:
+		return "MdmStoreGlobalIPsecExemptFWGLOBALCONFIGIPSECEXEMPTNONE"
+	case MdmStoreGlobalIPsecExemptFWGLOBALCONFIGIPSECEXEMPTNEIGHBORDISC:
+		return "MdmStoreGlobalIPsecExemptFWGLOBALCONFIGIPSECEXEMPTNEIGHBORDISC"
+	case MdmStoreGlobalIPsecExemptFWGLOBALCONFIGIPSECEXEMPTICMP:
+		return "MdmStoreGlobalIPsecExemptFWGLOBALCONFIGIPSECEXEMPTICMP"
+	case MdmStoreGlobalIPsecExemptFWGLOBALCONFIGIPSECEXEMPTROUTERDISC:
+		return "MdmStoreGlobalIPsecExemptFWGLOBALCONFIGIPSECEXEMPTROUTERDISC"
+	case MdmStoreGlobalIPsecExemptFWGLOBALCONFIGIPSECEXEMPTDHCP:
+		return "MdmStoreGlobalIPsecExemptFWGLOBALCONFIGIPSECEXEMPTDHCP"
+	default:
+		return fmt.Sprintf("MdmStoreGlobalIPsecExemptValue(%d)", int64(e))
+	}
+}
+
+// MdmStoreGlobalPresharedKeyEncodingValue — allowed values for the PresharedKeyEncoding node.
+type MdmStoreGlobalPresharedKeyEncodingValue int64
+
 const (
 	// FW_GLOBAL_CONFIG_PRESHARED_KEY_ENCODING_NONE: Preshared key is not encoded. Instead, it is kept
 	// in its wide-character format. This symbolic constant has a value of 0.
-	MdmStoreGlobalPresharedKeyEncodingFWGLOBALCONFIGPRESHAREDKEYENCODINGNONE int64 = 0
+	MdmStoreGlobalPresharedKeyEncodingFWGLOBALCONFIGPRESHAREDKEYENCODINGNONE MdmStoreGlobalPresharedKeyEncodingValue = 0
 	// FW_GLOBAL_CONFIG_PRESHARED_KEY_ENCODING_UTF_8: Encode the preshared key using UTF-8. This
 	// symbolic constant has a value of 1.
-	MdmStoreGlobalPresharedKeyEncodingFWGLOBALCONFIGPRESHAREDKEYENCODINGUTF8 int64 = 1
+	MdmStoreGlobalPresharedKeyEncodingFWGLOBALCONFIGPRESHAREDKEYENCODINGUTF8 MdmStoreGlobalPresharedKeyEncodingValue = 1
 )
 
-// MdmStoreHyperVFirewallRulesFirewallRuleNameAction allowed values.
+// String returns the MdmStoreGlobalPresharedKeyEncodingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MdmStoreGlobalPresharedKeyEncodingValue) String() string {
+	switch e {
+	case MdmStoreGlobalPresharedKeyEncodingFWGLOBALCONFIGPRESHAREDKEYENCODINGNONE:
+		return "MdmStoreGlobalPresharedKeyEncodingFWGLOBALCONFIGPRESHAREDKEYENCODINGNONE"
+	case MdmStoreGlobalPresharedKeyEncodingFWGLOBALCONFIGPRESHAREDKEYENCODINGUTF8:
+		return "MdmStoreGlobalPresharedKeyEncodingFWGLOBALCONFIGPRESHAREDKEYENCODINGUTF8"
+	default:
+		return fmt.Sprintf("MdmStoreGlobalPresharedKeyEncodingValue(%d)", int64(e))
+	}
+}
+
+// MdmStoreHyperVFirewallRulesFirewallRuleNameActionValue — allowed values for the Action node.
+type MdmStoreHyperVFirewallRulesFirewallRuleNameActionValue int64
+
 const (
 	// Block
-	MdmStoreHyperVFirewallRulesFirewallRuleNameActionBlock int64 = 0
+	MdmStoreHyperVFirewallRulesFirewallRuleNameActionBlock MdmStoreHyperVFirewallRulesFirewallRuleNameActionValue = 0
 	// Allow
-	MdmStoreHyperVFirewallRulesFirewallRuleNameActionAllow int64 = 1
+	MdmStoreHyperVFirewallRulesFirewallRuleNameActionAllow MdmStoreHyperVFirewallRulesFirewallRuleNameActionValue = 1
 )
 
-// MdmStoreHyperVFirewallRulesFirewallRuleNameDirection allowed values.
+// String returns the MdmStoreHyperVFirewallRulesFirewallRuleNameActionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MdmStoreHyperVFirewallRulesFirewallRuleNameActionValue) String() string {
+	switch e {
+	case MdmStoreHyperVFirewallRulesFirewallRuleNameActionBlock:
+		return "MdmStoreHyperVFirewallRulesFirewallRuleNameActionBlock"
+	case MdmStoreHyperVFirewallRulesFirewallRuleNameActionAllow:
+		return "MdmStoreHyperVFirewallRulesFirewallRuleNameActionAllow"
+	default:
+		return fmt.Sprintf("MdmStoreHyperVFirewallRulesFirewallRuleNameActionValue(%d)", int64(e))
+	}
+}
+
+// MdmStoreHyperVFirewallRulesFirewallRuleNameDirectionValue — allowed values for the Direction node.
+type MdmStoreHyperVFirewallRulesFirewallRuleNameDirectionValue string
+
 const (
 	// The rule applies to inbound traffic.
-	MdmStoreHyperVFirewallRulesFirewallRuleNameDirectionTheRuleAppliesToInboundTraffic = "IN"
+	MdmStoreHyperVFirewallRulesFirewallRuleNameDirectionTheRuleAppliesToInboundTraffic MdmStoreHyperVFirewallRulesFirewallRuleNameDirectionValue = "IN"
 	// The rule applies to outbound traffic.
-	MdmStoreHyperVFirewallRulesFirewallRuleNameDirectionTheRuleAppliesToOutboundTraffic = "OUT"
+	MdmStoreHyperVFirewallRulesFirewallRuleNameDirectionTheRuleAppliesToOutboundTraffic MdmStoreHyperVFirewallRulesFirewallRuleNameDirectionValue = "OUT"
 )
 
-// MdmStoreHyperVFirewallRulesFirewallRuleNameProfiles allowed values.
+// String returns the MdmStoreHyperVFirewallRulesFirewallRuleNameDirectionValue value as a plain string.
+func (e MdmStoreHyperVFirewallRulesFirewallRuleNameDirectionValue) String() string { return string(e) }
+
+// MdmStoreHyperVFirewallRulesFirewallRuleNameProfilesValue — allowed values for the Profiles node.
+type MdmStoreHyperVFirewallRulesFirewallRuleNameProfilesValue int64
+
 const (
 	// FW_PROFILE_TYPE_DOMAIN: This value represents the profile for networks that are connected to
 	// domains.
-	MdmStoreHyperVFirewallRulesFirewallRuleNameProfilesFWPROFILETYPEDOMAIN int64 = 1
+	MdmStoreHyperVFirewallRulesFirewallRuleNameProfilesFWPROFILETYPEDOMAIN MdmStoreHyperVFirewallRulesFirewallRuleNameProfilesValue = 1
 	// FW_PROFILE_TYPE_STANDARD: This value represents the standard profile for networks. These
 	// networks are classified as private by the administrators in the server host. The classification
 	// happens the first time the host connects to the network. Usually these networks are behind
@@ -152,109 +324,306 @@ const (
 	// private location, such as a home or an office. AND FW_PROFILE_TYPE_PRIVATE: This value
 	// represents the profile for private networks, which is represented by the same value as that used
 	// for FW_PROFILE_TYPE_STANDARD.
-	MdmStoreHyperVFirewallRulesFirewallRuleNameProfilesFWPROFILETYPESTANDARD int64 = 2
+	MdmStoreHyperVFirewallRulesFirewallRuleNameProfilesFWPROFILETYPESTANDARD MdmStoreHyperVFirewallRulesFirewallRuleNameProfilesValue = 2
 	// FW_PROFILE_TYPE_PUBLIC: This value represents the profile for public networks. These networks
 	// are classified as public by the administrators in the server host. The classification happens
 	// the first time the host connects to the network. Usually these networks are those at airports,
 	// coffee shops, and other public places where the peers in the network or the network
 	// administrator are not trusted.
-	MdmStoreHyperVFirewallRulesFirewallRuleNameProfilesFWPROFILETYPEPUBLIC int64 = 4
+	MdmStoreHyperVFirewallRulesFirewallRuleNameProfilesFWPROFILETYPEPUBLIC MdmStoreHyperVFirewallRulesFirewallRuleNameProfilesValue = 4
 	// FW_PROFILE_TYPE_ALL: This value represents all these network sets and any future network sets.
-	MdmStoreHyperVFirewallRulesFirewallRuleNameProfilesFWPROFILETYPEALL int64 = 2147483647
+	MdmStoreHyperVFirewallRulesFirewallRuleNameProfilesFWPROFILETYPEALL MdmStoreHyperVFirewallRulesFirewallRuleNameProfilesValue = 2147483647
 )
 
-// MdmStoreHyperVVMSettingsVMCreatorIdDefaultInboundAction allowed values.
+// String returns the MdmStoreHyperVFirewallRulesFirewallRuleNameProfilesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MdmStoreHyperVFirewallRulesFirewallRuleNameProfilesValue) String() string {
+	switch e {
+	case MdmStoreHyperVFirewallRulesFirewallRuleNameProfilesFWPROFILETYPEDOMAIN:
+		return "MdmStoreHyperVFirewallRulesFirewallRuleNameProfilesFWPROFILETYPEDOMAIN"
+	case MdmStoreHyperVFirewallRulesFirewallRuleNameProfilesFWPROFILETYPESTANDARD:
+		return "MdmStoreHyperVFirewallRulesFirewallRuleNameProfilesFWPROFILETYPESTANDARD"
+	case MdmStoreHyperVFirewallRulesFirewallRuleNameProfilesFWPROFILETYPEPUBLIC:
+		return "MdmStoreHyperVFirewallRulesFirewallRuleNameProfilesFWPROFILETYPEPUBLIC"
+	case MdmStoreHyperVFirewallRulesFirewallRuleNameProfilesFWPROFILETYPEALL:
+		return "MdmStoreHyperVFirewallRulesFirewallRuleNameProfilesFWPROFILETYPEALL"
+	default:
+		return fmt.Sprintf("MdmStoreHyperVFirewallRulesFirewallRuleNameProfilesValue(%d)", int64(e))
+	}
+}
+
+// MdmStoreHyperVVMSettingsVMCreatorIdDefaultInboundActionValue — allowed values for the DefaultInboundAction node.
+type MdmStoreHyperVVMSettingsVMCreatorIdDefaultInboundActionValue int64
+
 const (
 	// Allow Inbound By Default
-	MdmStoreHyperVVMSettingsVMCreatorIdDefaultInboundActionAllowInboundByDefault int64 = 0
+	MdmStoreHyperVVMSettingsVMCreatorIdDefaultInboundActionAllowInboundByDefault MdmStoreHyperVVMSettingsVMCreatorIdDefaultInboundActionValue = 0
 	// Block Inbound By Default
-	MdmStoreHyperVVMSettingsVMCreatorIdDefaultInboundActionBlockInboundByDefault int64 = 1
+	MdmStoreHyperVVMSettingsVMCreatorIdDefaultInboundActionBlockInboundByDefault MdmStoreHyperVVMSettingsVMCreatorIdDefaultInboundActionValue = 1
 )
 
-// MdmStoreHyperVVMSettingsVMCreatorIdDefaultOutboundAction allowed values.
+// String returns the MdmStoreHyperVVMSettingsVMCreatorIdDefaultInboundActionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MdmStoreHyperVVMSettingsVMCreatorIdDefaultInboundActionValue) String() string {
+	switch e {
+	case MdmStoreHyperVVMSettingsVMCreatorIdDefaultInboundActionAllowInboundByDefault:
+		return "MdmStoreHyperVVMSettingsVMCreatorIdDefaultInboundActionAllowInboundByDefault"
+	case MdmStoreHyperVVMSettingsVMCreatorIdDefaultInboundActionBlockInboundByDefault:
+		return "MdmStoreHyperVVMSettingsVMCreatorIdDefaultInboundActionBlockInboundByDefault"
+	default:
+		return fmt.Sprintf("MdmStoreHyperVVMSettingsVMCreatorIdDefaultInboundActionValue(%d)", int64(e))
+	}
+}
+
+// MdmStoreHyperVVMSettingsVMCreatorIdDefaultOutboundActionValue — allowed values for the DefaultOutboundAction node.
+type MdmStoreHyperVVMSettingsVMCreatorIdDefaultOutboundActionValue int64
+
 const (
 	// Allow Outbound By Default
-	MdmStoreHyperVVMSettingsVMCreatorIdDefaultOutboundActionAllowOutboundByDefault int64 = 0
+	MdmStoreHyperVVMSettingsVMCreatorIdDefaultOutboundActionAllowOutboundByDefault MdmStoreHyperVVMSettingsVMCreatorIdDefaultOutboundActionValue = 0
 	// Block Outbound By Default
-	MdmStoreHyperVVMSettingsVMCreatorIdDefaultOutboundActionBlockOutboundByDefault int64 = 1
+	MdmStoreHyperVVMSettingsVMCreatorIdDefaultOutboundActionBlockOutboundByDefault MdmStoreHyperVVMSettingsVMCreatorIdDefaultOutboundActionValue = 1
 )
 
-// MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultInboundAction allowed values.
+// String returns the MdmStoreHyperVVMSettingsVMCreatorIdDefaultOutboundActionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MdmStoreHyperVVMSettingsVMCreatorIdDefaultOutboundActionValue) String() string {
+	switch e {
+	case MdmStoreHyperVVMSettingsVMCreatorIdDefaultOutboundActionAllowOutboundByDefault:
+		return "MdmStoreHyperVVMSettingsVMCreatorIdDefaultOutboundActionAllowOutboundByDefault"
+	case MdmStoreHyperVVMSettingsVMCreatorIdDefaultOutboundActionBlockOutboundByDefault:
+		return "MdmStoreHyperVVMSettingsVMCreatorIdDefaultOutboundActionBlockOutboundByDefault"
+	default:
+		return fmt.Sprintf("MdmStoreHyperVVMSettingsVMCreatorIdDefaultOutboundActionValue(%d)", int64(e))
+	}
+}
+
+// MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultInboundActionValue — allowed values for the DefaultInboundAction node.
+type MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultInboundActionValue int64
+
 const (
 	// Allow Inbound By Default
-	MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultInboundActionAllowInboundByDefault int64 = 0
+	MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultInboundActionAllowInboundByDefault MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultInboundActionValue = 0
 	// Block Inbound By Default
-	MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultInboundActionBlockInboundByDefault int64 = 1
+	MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultInboundActionBlockInboundByDefault MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultInboundActionValue = 1
 )
 
-// MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultOutboundAction allowed values.
+// String returns the MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultInboundActionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultInboundActionValue) String() string {
+	switch e {
+	case MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultInboundActionAllowInboundByDefault:
+		return "MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultInboundActionAllowInboundByDefault"
+	case MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultInboundActionBlockInboundByDefault:
+		return "MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultInboundActionBlockInboundByDefault"
+	default:
+		return fmt.Sprintf("MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultInboundActionValue(%d)", int64(e))
+	}
+}
+
+// MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultOutboundActionValue — allowed values for the DefaultOutboundAction node.
+type MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultOutboundActionValue int64
+
 const (
 	// Allow Outbound By Default
-	MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultOutboundActionAllowOutboundByDefault int64 = 0
+	MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultOutboundActionAllowOutboundByDefault MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultOutboundActionValue = 0
 	// Block Outbound By Default
-	MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultOutboundActionBlockOutboundByDefault int64 = 1
+	MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultOutboundActionBlockOutboundByDefault MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultOutboundActionValue = 1
 )
 
-// MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultInboundAction allowed values.
+// String returns the MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultOutboundActionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultOutboundActionValue) String() string {
+	switch e {
+	case MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultOutboundActionAllowOutboundByDefault:
+		return "MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultOutboundActionAllowOutboundByDefault"
+	case MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultOutboundActionBlockOutboundByDefault:
+		return "MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultOutboundActionBlockOutboundByDefault"
+	default:
+		return fmt.Sprintf("MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultOutboundActionValue(%d)", int64(e))
+	}
+}
+
+// MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultInboundActionValue — allowed values for the DefaultInboundAction node.
+type MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultInboundActionValue int64
+
 const (
 	// Allow Inbound By Default
-	MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultInboundActionAllowInboundByDefault int64 = 0
+	MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultInboundActionAllowInboundByDefault MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultInboundActionValue = 0
 	// Block Inbound By Default
-	MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultInboundActionBlockInboundByDefault int64 = 1
+	MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultInboundActionBlockInboundByDefault MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultInboundActionValue = 1
 )
 
-// MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultOutboundAction allowed values.
+// String returns the MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultInboundActionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultInboundActionValue) String() string {
+	switch e {
+	case MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultInboundActionAllowInboundByDefault:
+		return "MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultInboundActionAllowInboundByDefault"
+	case MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultInboundActionBlockInboundByDefault:
+		return "MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultInboundActionBlockInboundByDefault"
+	default:
+		return fmt.Sprintf("MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultInboundActionValue(%d)", int64(e))
+	}
+}
+
+// MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultOutboundActionValue — allowed values for the DefaultOutboundAction node.
+type MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultOutboundActionValue int64
+
 const (
 	// Allow Outbound By Default
-	MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultOutboundActionAllowOutboundByDefault int64 = 0
+	MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultOutboundActionAllowOutboundByDefault MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultOutboundActionValue = 0
 	// Block Outbound By Default
-	MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultOutboundActionBlockOutboundByDefault int64 = 1
+	MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultOutboundActionBlockOutboundByDefault MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultOutboundActionValue = 1
 )
 
-// MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultInboundAction allowed values.
+// String returns the MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultOutboundActionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultOutboundActionValue) String() string {
+	switch e {
+	case MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultOutboundActionAllowOutboundByDefault:
+		return "MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultOutboundActionAllowOutboundByDefault"
+	case MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultOutboundActionBlockOutboundByDefault:
+		return "MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultOutboundActionBlockOutboundByDefault"
+	default:
+		return fmt.Sprintf("MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultOutboundActionValue(%d)", int64(e))
+	}
+}
+
+// MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultInboundActionValue — allowed values for the DefaultInboundAction node.
+type MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultInboundActionValue int64
+
 const (
 	// Allow Inbound By Default
-	MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultInboundActionAllowInboundByDefault int64 = 0
+	MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultInboundActionAllowInboundByDefault MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultInboundActionValue = 0
 	// Block Inbound By Default
-	MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultInboundActionBlockInboundByDefault int64 = 1
+	MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultInboundActionBlockInboundByDefault MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultInboundActionValue = 1
 )
 
-// MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultOutboundAction allowed values.
+// String returns the MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultInboundActionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultInboundActionValue) String() string {
+	switch e {
+	case MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultInboundActionAllowInboundByDefault:
+		return "MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultInboundActionAllowInboundByDefault"
+	case MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultInboundActionBlockInboundByDefault:
+		return "MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultInboundActionBlockInboundByDefault"
+	default:
+		return fmt.Sprintf("MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultInboundActionValue(%d)", int64(e))
+	}
+}
+
+// MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultOutboundActionValue — allowed values for the DefaultOutboundAction node.
+type MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultOutboundActionValue int64
+
 const (
 	// Allow Outbound By Default
-	MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultOutboundActionAllowOutboundByDefault int64 = 0
+	MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultOutboundActionAllowOutboundByDefault MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultOutboundActionValue = 0
 	// Block Outbound By Default
-	MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultOutboundActionBlockOutboundByDefault int64 = 1
+	MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultOutboundActionBlockOutboundByDefault MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultOutboundActionValue = 1
 )
 
-// MdmStorePrivateProfileDefaultInboundAction allowed values.
+// String returns the MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultOutboundActionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultOutboundActionValue) String() string {
+	switch e {
+	case MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultOutboundActionAllowOutboundByDefault:
+		return "MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultOutboundActionAllowOutboundByDefault"
+	case MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultOutboundActionBlockOutboundByDefault:
+		return "MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultOutboundActionBlockOutboundByDefault"
+	default:
+		return fmt.Sprintf("MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultOutboundActionValue(%d)", int64(e))
+	}
+}
+
+// MdmStorePrivateProfileDefaultInboundActionValue — allowed values for the DefaultInboundAction node.
+type MdmStorePrivateProfileDefaultInboundActionValue int64
+
 const (
 	// Allow Inbound By Default
-	MdmStorePrivateProfileDefaultInboundActionAllowInboundByDefault int64 = 0
+	MdmStorePrivateProfileDefaultInboundActionAllowInboundByDefault MdmStorePrivateProfileDefaultInboundActionValue = 0
 	// Block Inbound By Default
-	MdmStorePrivateProfileDefaultInboundActionBlockInboundByDefault int64 = 1
+	MdmStorePrivateProfileDefaultInboundActionBlockInboundByDefault MdmStorePrivateProfileDefaultInboundActionValue = 1
 )
 
-// MdmStorePrivateProfileDefaultOutboundAction allowed values.
+// String returns the MdmStorePrivateProfileDefaultInboundActionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MdmStorePrivateProfileDefaultInboundActionValue) String() string {
+	switch e {
+	case MdmStorePrivateProfileDefaultInboundActionAllowInboundByDefault:
+		return "MdmStorePrivateProfileDefaultInboundActionAllowInboundByDefault"
+	case MdmStorePrivateProfileDefaultInboundActionBlockInboundByDefault:
+		return "MdmStorePrivateProfileDefaultInboundActionBlockInboundByDefault"
+	default:
+		return fmt.Sprintf("MdmStorePrivateProfileDefaultInboundActionValue(%d)", int64(e))
+	}
+}
+
+// MdmStorePrivateProfileDefaultOutboundActionValue — allowed values for the DefaultOutboundAction node.
+type MdmStorePrivateProfileDefaultOutboundActionValue int64
+
 const (
 	// Allow Outbound By Default
-	MdmStorePrivateProfileDefaultOutboundActionAllowOutboundByDefault int64 = 0
+	MdmStorePrivateProfileDefaultOutboundActionAllowOutboundByDefault MdmStorePrivateProfileDefaultOutboundActionValue = 0
 	// Block Outbound By Default
-	MdmStorePrivateProfileDefaultOutboundActionBlockOutboundByDefault int64 = 1
+	MdmStorePrivateProfileDefaultOutboundActionBlockOutboundByDefault MdmStorePrivateProfileDefaultOutboundActionValue = 1
 )
 
-// MdmStorePublicProfileDefaultInboundAction allowed values.
+// String returns the MdmStorePrivateProfileDefaultOutboundActionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MdmStorePrivateProfileDefaultOutboundActionValue) String() string {
+	switch e {
+	case MdmStorePrivateProfileDefaultOutboundActionAllowOutboundByDefault:
+		return "MdmStorePrivateProfileDefaultOutboundActionAllowOutboundByDefault"
+	case MdmStorePrivateProfileDefaultOutboundActionBlockOutboundByDefault:
+		return "MdmStorePrivateProfileDefaultOutboundActionBlockOutboundByDefault"
+	default:
+		return fmt.Sprintf("MdmStorePrivateProfileDefaultOutboundActionValue(%d)", int64(e))
+	}
+}
+
+// MdmStorePublicProfileDefaultInboundActionValue — allowed values for the DefaultInboundAction node.
+type MdmStorePublicProfileDefaultInboundActionValue int64
+
 const (
 	// Allow Inbound By Default
-	MdmStorePublicProfileDefaultInboundActionAllowInboundByDefault int64 = 0
+	MdmStorePublicProfileDefaultInboundActionAllowInboundByDefault MdmStorePublicProfileDefaultInboundActionValue = 0
 	// Block Inbound By Default
-	MdmStorePublicProfileDefaultInboundActionBlockInboundByDefault int64 = 1
+	MdmStorePublicProfileDefaultInboundActionBlockInboundByDefault MdmStorePublicProfileDefaultInboundActionValue = 1
 )
 
-// MdmStorePublicProfileDefaultOutboundAction allowed values.
+// String returns the MdmStorePublicProfileDefaultInboundActionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MdmStorePublicProfileDefaultInboundActionValue) String() string {
+	switch e {
+	case MdmStorePublicProfileDefaultInboundActionAllowInboundByDefault:
+		return "MdmStorePublicProfileDefaultInboundActionAllowInboundByDefault"
+	case MdmStorePublicProfileDefaultInboundActionBlockInboundByDefault:
+		return "MdmStorePublicProfileDefaultInboundActionBlockInboundByDefault"
+	default:
+		return fmt.Sprintf("MdmStorePublicProfileDefaultInboundActionValue(%d)", int64(e))
+	}
+}
+
+// MdmStorePublicProfileDefaultOutboundActionValue — allowed values for the DefaultOutboundAction node.
+type MdmStorePublicProfileDefaultOutboundActionValue int64
+
 const (
 	// Allow Outbound By Default
-	MdmStorePublicProfileDefaultOutboundActionAllowOutboundByDefault int64 = 0
+	MdmStorePublicProfileDefaultOutboundActionAllowOutboundByDefault MdmStorePublicProfileDefaultOutboundActionValue = 0
 	// Block Outbound By Default
-	MdmStorePublicProfileDefaultOutboundActionBlockOutboundByDefault int64 = 1
+	MdmStorePublicProfileDefaultOutboundActionBlockOutboundByDefault MdmStorePublicProfileDefaultOutboundActionValue = 1
 )
+
+// String returns the MdmStorePublicProfileDefaultOutboundActionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MdmStorePublicProfileDefaultOutboundActionValue) String() string {
+	switch e {
+	case MdmStorePublicProfileDefaultOutboundActionAllowOutboundByDefault:
+		return "MdmStorePublicProfileDefaultOutboundActionAllowOutboundByDefault"
+	case MdmStorePublicProfileDefaultOutboundActionBlockOutboundByDefault:
+		return "MdmStorePublicProfileDefaultOutboundActionBlockOutboundByDefault"
+	default:
+		return fmt.Sprintf("MdmStorePublicProfileDefaultOutboundActionValue(%d)", int64(e))
+	}
+}

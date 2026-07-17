@@ -2,10 +2,29 @@
 
 package lockdown
 
-// AllowEdgeSwipe allowed values.
+import (
+	"fmt"
+)
+
+// AllowEdgeSwipeValue — allowed values for the AllowEdgeSwipe node.
+type AllowEdgeSwipeValue int64
+
 const (
 	// Disallow edge swipe.
-	AllowEdgeSwipeDisallowEdgeSwipe int64 = 0
+	AllowEdgeSwipeDisallowEdgeSwipe AllowEdgeSwipeValue = 0
 	// Allow edge swipe.
-	AllowEdgeSwipeAllowEdgeSwipe int64 = 1
+	AllowEdgeSwipeAllowEdgeSwipe AllowEdgeSwipeValue = 1
 )
+
+// String returns the AllowEdgeSwipeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowEdgeSwipeValue) String() string {
+	switch e {
+	case AllowEdgeSwipeDisallowEdgeSwipe:
+		return "AllowEdgeSwipeDisallowEdgeSwipe"
+	case AllowEdgeSwipeAllowEdgeSwipe:
+		return "AllowEdgeSwipeAllowEdgeSwipe"
+	default:
+		return fmt.Sprintf("AllowEdgeSwipeValue(%d)", int64(e))
+	}
+}

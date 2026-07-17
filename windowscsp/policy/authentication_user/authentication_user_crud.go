@@ -13,12 +13,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *AuthenticationUser) GetAllowEAPCertSSO(ctx context.Context) (int64, error) {
+func (s *AuthenticationUser) GetAllowEAPCertSSO(ctx context.Context) (AllowEAPCertSSOValue, error) {
 	v, err := s.c.Get(ctx, URIAllowEAPCertSSO)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowEAPCertSSOValue(n), err
 }
 
 // CreateAllowEAPCertSSO creates ./User/Vendor/MSFT/Policy/Config/Authentication/AllowEAPCertSSO.
@@ -26,8 +27,8 @@ func (s *AuthenticationUser) GetAllowEAPCertSSO(ctx context.Context) (int64, err
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *AuthenticationUser) CreateAllowEAPCertSSO(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowEAPCertSSO, client.Int(value))
+func (s *AuthenticationUser) CreateAllowEAPCertSSO(ctx context.Context, value AllowEAPCertSSOValue) error {
+	return s.c.Add(ctx, URIAllowEAPCertSSO, client.Int(int64(value)))
 }
 
 // UpdateAllowEAPCertSSO updates ./User/Vendor/MSFT/Policy/Config/Authentication/AllowEAPCertSSO.
@@ -35,8 +36,8 @@ func (s *AuthenticationUser) CreateAllowEAPCertSSO(ctx context.Context, value in
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *AuthenticationUser) UpdateAllowEAPCertSSO(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowEAPCertSSO, client.Int(value))
+func (s *AuthenticationUser) UpdateAllowEAPCertSSO(ctx context.Context, value AllowEAPCertSSOValue) error {
+	return s.c.Replace(ctx, URIAllowEAPCertSSO, client.Int(int64(value)))
 }
 
 // DeleteAllowEAPCertSSO deletes ./User/Vendor/MSFT/Policy/Config/Authentication/AllowEAPCertSSO.

@@ -2,57 +2,139 @@
 
 package laps
 
-// PoliciesAutomaticAccountManagementTarget allowed values.
+import (
+	"fmt"
+)
+
+// PoliciesAutomaticAccountManagementTargetValue — allowed values for the AutomaticAccountManagementTarget node.
+type PoliciesAutomaticAccountManagementTargetValue int64
+
 const (
 	// Manage the built-in administrator account
-	PoliciesAutomaticAccountManagementTargetManageTheBuiltInAdministratorAccount int64 = 0
+	PoliciesAutomaticAccountManagementTargetManageTheBuiltInAdministratorAccount PoliciesAutomaticAccountManagementTargetValue = 0
 	// Manage a new custom administrator account
-	PoliciesAutomaticAccountManagementTargetManageANewCustomAdministratorAccount int64 = 1
+	PoliciesAutomaticAccountManagementTargetManageANewCustomAdministratorAccount PoliciesAutomaticAccountManagementTargetValue = 1
 )
 
-// PoliciesBackupDirectory allowed values.
+// String returns the PoliciesAutomaticAccountManagementTargetValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PoliciesAutomaticAccountManagementTargetValue) String() string {
+	switch e {
+	case PoliciesAutomaticAccountManagementTargetManageTheBuiltInAdministratorAccount:
+		return "PoliciesAutomaticAccountManagementTargetManageTheBuiltInAdministratorAccount"
+	case PoliciesAutomaticAccountManagementTargetManageANewCustomAdministratorAccount:
+		return "PoliciesAutomaticAccountManagementTargetManageANewCustomAdministratorAccount"
+	default:
+		return fmt.Sprintf("PoliciesAutomaticAccountManagementTargetValue(%d)", int64(e))
+	}
+}
+
+// PoliciesBackupDirectoryValue — allowed values for the BackupDirectory node.
+type PoliciesBackupDirectoryValue int64
+
 const (
 	// Disabled (password will not be backed up)
-	PoliciesBackupDirectoryDisabled int64 = 0
+	PoliciesBackupDirectoryDisabled PoliciesBackupDirectoryValue = 0
 	// Backup the password to Microsoft Entra ID only
-	PoliciesBackupDirectoryBackupThePasswordToMicrosoftEntra int64 = 1
+	PoliciesBackupDirectoryBackupThePasswordToMicrosoftEntra PoliciesBackupDirectoryValue = 1
 	// Backup the password to Active Directory only
-	PoliciesBackupDirectoryBackupThePasswordToActiveDirectory int64 = 2
+	PoliciesBackupDirectoryBackupThePasswordToActiveDirectory PoliciesBackupDirectoryValue = 2
 )
 
-// PoliciesPasswordComplexity allowed values.
+// String returns the PoliciesBackupDirectoryValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PoliciesBackupDirectoryValue) String() string {
+	switch e {
+	case PoliciesBackupDirectoryDisabled:
+		return "PoliciesBackupDirectoryDisabled"
+	case PoliciesBackupDirectoryBackupThePasswordToMicrosoftEntra:
+		return "PoliciesBackupDirectoryBackupThePasswordToMicrosoftEntra"
+	case PoliciesBackupDirectoryBackupThePasswordToActiveDirectory:
+		return "PoliciesBackupDirectoryBackupThePasswordToActiveDirectory"
+	default:
+		return fmt.Sprintf("PoliciesBackupDirectoryValue(%d)", int64(e))
+	}
+}
+
+// PoliciesPasswordComplexityValue — allowed values for the PasswordComplexity node.
+type PoliciesPasswordComplexityValue int64
+
 const (
 	// Large letters
-	PoliciesPasswordComplexityLargeLetters int64 = 1
+	PoliciesPasswordComplexityLargeLetters PoliciesPasswordComplexityValue = 1
 	// Large letters + small letters
-	PoliciesPasswordComplexityLargeLettersSmallLetters int64 = 2
+	PoliciesPasswordComplexityLargeLettersSmallLetters PoliciesPasswordComplexityValue = 2
 	// Large letters + small letters + numbers
-	PoliciesPasswordComplexityLargeLettersSmallLetters2 int64 = 3
+	PoliciesPasswordComplexityLargeLettersSmallLetters2 PoliciesPasswordComplexityValue = 3
 	// Large letters + small letters + numbers + special characters
-	PoliciesPasswordComplexityLargeLettersSmallLetters3 int64 = 4
+	PoliciesPasswordComplexityLargeLettersSmallLetters3 PoliciesPasswordComplexityValue = 4
 	// Large letters + small letters + numbers + special characters (improved readability)
-	PoliciesPasswordComplexityLargeLettersSmallLetters4 int64 = 5
+	PoliciesPasswordComplexityLargeLettersSmallLetters4 PoliciesPasswordComplexityValue = 5
 	// Passphrase (long words)
-	PoliciesPasswordComplexityPassphrase int64 = 6
+	PoliciesPasswordComplexityPassphrase PoliciesPasswordComplexityValue = 6
 	// Passphrase (short words)
-	PoliciesPasswordComplexityPassphrase2 int64 = 7
+	PoliciesPasswordComplexityPassphrase2 PoliciesPasswordComplexityValue = 7
 	// Passphrase (short words with unique prefixes)
-	PoliciesPasswordComplexityPassphrase3 int64 = 8
+	PoliciesPasswordComplexityPassphrase3 PoliciesPasswordComplexityValue = 8
 )
 
-// PoliciesPostAuthenticationActions allowed values.
+// String returns the PoliciesPasswordComplexityValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PoliciesPasswordComplexityValue) String() string {
+	switch e {
+	case PoliciesPasswordComplexityLargeLetters:
+		return "PoliciesPasswordComplexityLargeLetters"
+	case PoliciesPasswordComplexityLargeLettersSmallLetters:
+		return "PoliciesPasswordComplexityLargeLettersSmallLetters"
+	case PoliciesPasswordComplexityLargeLettersSmallLetters2:
+		return "PoliciesPasswordComplexityLargeLettersSmallLetters2"
+	case PoliciesPasswordComplexityLargeLettersSmallLetters3:
+		return "PoliciesPasswordComplexityLargeLettersSmallLetters3"
+	case PoliciesPasswordComplexityLargeLettersSmallLetters4:
+		return "PoliciesPasswordComplexityLargeLettersSmallLetters4"
+	case PoliciesPasswordComplexityPassphrase:
+		return "PoliciesPasswordComplexityPassphrase"
+	case PoliciesPasswordComplexityPassphrase2:
+		return "PoliciesPasswordComplexityPassphrase2"
+	case PoliciesPasswordComplexityPassphrase3:
+		return "PoliciesPasswordComplexityPassphrase3"
+	default:
+		return fmt.Sprintf("PoliciesPasswordComplexityValue(%d)", int64(e))
+	}
+}
+
+// PoliciesPostAuthenticationActionsValue — allowed values for the PostAuthenticationActions node.
+type PoliciesPostAuthenticationActionsValue int64
+
 const (
 	// Reset password: upon expiry of the grace period, the managed account password will be reset.
-	PoliciesPostAuthenticationActionsResetPassword int64 = 1
+	PoliciesPostAuthenticationActionsResetPassword PoliciesPostAuthenticationActionsValue = 1
 	// Reset the password and logoff the managed account: upon expiry of the grace period, the managed
 	// account password will be reset and any interactive logon sessions using the managed account will
 	// terminated.
-	PoliciesPostAuthenticationActionsResetThePasswordAndLogoffThe int64 = 3
+	PoliciesPostAuthenticationActionsResetThePasswordAndLogoffThe PoliciesPostAuthenticationActionsValue = 3
 	// Reset the password and reboot: upon expiry of the grace period, the managed account password
 	// will be reset and the managed device will be immediately rebooted.
-	PoliciesPostAuthenticationActionsResetThePasswordAndReboot int64 = 5
+	PoliciesPostAuthenticationActionsResetThePasswordAndReboot PoliciesPostAuthenticationActionsValue = 5
 	// Reset the password, logoff the managed account, and terminate any remaining processes: upon
 	// expiration of the grace period, the managed account password is reset, any interactive logon
 	// sessions using the managed account are logged off, and any remaining processes are terminated.
-	PoliciesPostAuthenticationActionsResetThePasswordLogoffTheManaged int64 = 11
+	PoliciesPostAuthenticationActionsResetThePasswordLogoffTheManaged PoliciesPostAuthenticationActionsValue = 11
 )
+
+// String returns the PoliciesPostAuthenticationActionsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PoliciesPostAuthenticationActionsValue) String() string {
+	switch e {
+	case PoliciesPostAuthenticationActionsResetPassword:
+		return "PoliciesPostAuthenticationActionsResetPassword"
+	case PoliciesPostAuthenticationActionsResetThePasswordAndLogoffThe:
+		return "PoliciesPostAuthenticationActionsResetThePasswordAndLogoffThe"
+	case PoliciesPostAuthenticationActionsResetThePasswordAndReboot:
+		return "PoliciesPostAuthenticationActionsResetThePasswordAndReboot"
+	case PoliciesPostAuthenticationActionsResetThePasswordLogoffTheManaged:
+		return "PoliciesPostAuthenticationActionsResetThePasswordLogoffTheManaged"
+	default:
+		return fmt.Sprintf("PoliciesPostAuthenticationActionsValue(%d)", int64(e))
+	}
+}

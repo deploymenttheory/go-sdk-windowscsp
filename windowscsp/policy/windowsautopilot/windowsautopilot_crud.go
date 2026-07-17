@@ -14,12 +14,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *WindowsAutopilot) GetEnableAgilityPostEnrollment(ctx context.Context) (int64, error) {
+func (s *WindowsAutopilot) GetEnableAgilityPostEnrollment(ctx context.Context) (EnableAgilityPostEnrollmentValue, error) {
 	v, err := s.c.Get(ctx, URIEnableAgilityPostEnrollment)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableAgilityPostEnrollmentValue(n), err
 }
 
 // CreateEnableAgilityPostEnrollment creates ./Device/Vendor/MSFT/Policy/Config/WindowsAutopilot/EnableAgilityPostEnrollment.
@@ -28,8 +29,8 @@ func (s *WindowsAutopilot) GetEnableAgilityPostEnrollment(ctx context.Context) (
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *WindowsAutopilot) CreateEnableAgilityPostEnrollment(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableAgilityPostEnrollment, client.Int(value))
+func (s *WindowsAutopilot) CreateEnableAgilityPostEnrollment(ctx context.Context, value EnableAgilityPostEnrollmentValue) error {
+	return s.c.Add(ctx, URIEnableAgilityPostEnrollment, client.Int(int64(value)))
 }
 
 // UpdateEnableAgilityPostEnrollment updates ./Device/Vendor/MSFT/Policy/Config/WindowsAutopilot/EnableAgilityPostEnrollment.
@@ -38,8 +39,8 @@ func (s *WindowsAutopilot) CreateEnableAgilityPostEnrollment(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *WindowsAutopilot) UpdateEnableAgilityPostEnrollment(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableAgilityPostEnrollment, client.Int(value))
+func (s *WindowsAutopilot) UpdateEnableAgilityPostEnrollment(ctx context.Context, value EnableAgilityPostEnrollmentValue) error {
+	return s.c.Replace(ctx, URIEnableAgilityPostEnrollment, client.Int(int64(value)))
 }
 
 // DeleteEnableAgilityPostEnrollment deletes ./Device/Vendor/MSFT/Policy/Config/WindowsAutopilot/EnableAgilityPostEnrollment.

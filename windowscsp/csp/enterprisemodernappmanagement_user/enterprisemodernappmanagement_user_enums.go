@@ -2,50 +2,144 @@
 
 package enterprisemodernappmanagement_user
 
-// AppManagementAppStorePackageFamilyNameDoNotUpdate allowed values.
-const (
-	// False
-	AppManagementAppStorePackageFamilyNameDoNotUpdateFalse int64 = 0
-	// True
-	AppManagementAppStorePackageFamilyNameDoNotUpdateTrue int64 = 1
+import (
+	"fmt"
 )
 
-// AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdate allowed values.
+// AppManagementAppStorePackageFamilyNameDoNotUpdateValue — allowed values for the DoNotUpdate node.
+type AppManagementAppStorePackageFamilyNameDoNotUpdateValue int64
+
 const (
 	// False
-	AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateFalse int64 = 0
+	AppManagementAppStorePackageFamilyNameDoNotUpdateFalse AppManagementAppStorePackageFamilyNameDoNotUpdateValue = 0
 	// True
-	AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateTrue int64 = 1
+	AppManagementAppStorePackageFamilyNameDoNotUpdateTrue AppManagementAppStorePackageFamilyNameDoNotUpdateValue = 1
 )
 
-// AppManagementSystemPackageFamilyNameDoNotUpdate allowed values.
+// String returns the AppManagementAppStorePackageFamilyNameDoNotUpdateValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AppManagementAppStorePackageFamilyNameDoNotUpdateValue) String() string {
+	switch e {
+	case AppManagementAppStorePackageFamilyNameDoNotUpdateFalse:
+		return "AppManagementAppStorePackageFamilyNameDoNotUpdateFalse"
+	case AppManagementAppStorePackageFamilyNameDoNotUpdateTrue:
+		return "AppManagementAppStorePackageFamilyNameDoNotUpdateTrue"
+	default:
+		return fmt.Sprintf("AppManagementAppStorePackageFamilyNameDoNotUpdateValue(%d)", int64(e))
+	}
+}
+
+// AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue — allowed values for the MaintainProcessorArchitectureOnUpdate node.
+type AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue int64
+
 const (
 	// False
-	AppManagementSystemPackageFamilyNameDoNotUpdateFalse int64 = 0
+	AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateFalse AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue = 0
 	// True
-	AppManagementSystemPackageFamilyNameDoNotUpdateTrue int64 = 1
+	AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateTrue AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue = 1
 )
 
-// AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdate allowed values.
+// String returns the AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue) String() string {
+	switch e {
+	case AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateFalse:
+		return "AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateFalse"
+	case AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateTrue:
+		return "AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateTrue"
+	default:
+		return fmt.Sprintf("AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue(%d)", int64(e))
+	}
+}
+
+// AppManagementSystemPackageFamilyNameDoNotUpdateValue — allowed values for the DoNotUpdate node.
+type AppManagementSystemPackageFamilyNameDoNotUpdateValue int64
+
 const (
 	// False
-	AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateFalse int64 = 0
+	AppManagementSystemPackageFamilyNameDoNotUpdateFalse AppManagementSystemPackageFamilyNameDoNotUpdateValue = 0
 	// True
-	AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateTrue int64 = 1
+	AppManagementSystemPackageFamilyNameDoNotUpdateTrue AppManagementSystemPackageFamilyNameDoNotUpdateValue = 1
 )
 
-// AppManagementNonStorePackageFamilyNameDoNotUpdate allowed values.
+// String returns the AppManagementSystemPackageFamilyNameDoNotUpdateValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AppManagementSystemPackageFamilyNameDoNotUpdateValue) String() string {
+	switch e {
+	case AppManagementSystemPackageFamilyNameDoNotUpdateFalse:
+		return "AppManagementSystemPackageFamilyNameDoNotUpdateFalse"
+	case AppManagementSystemPackageFamilyNameDoNotUpdateTrue:
+		return "AppManagementSystemPackageFamilyNameDoNotUpdateTrue"
+	default:
+		return fmt.Sprintf("AppManagementSystemPackageFamilyNameDoNotUpdateValue(%d)", int64(e))
+	}
+}
+
+// AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateValue — allowed values for the MaintainProcessorArchitectureOnUpdate node.
+type AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateValue int64
+
 const (
 	// False
-	AppManagementNonStorePackageFamilyNameDoNotUpdateFalse int64 = 0
+	AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateFalse AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateValue = 0
 	// True
-	AppManagementNonStorePackageFamilyNameDoNotUpdateTrue int64 = 1
+	AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateTrue AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateValue = 1
 )
 
-// AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdate allowed values.
+// String returns the AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateValue) String() string {
+	switch e {
+	case AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateFalse:
+		return "AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateFalse"
+	case AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateTrue:
+		return "AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateTrue"
+	default:
+		return fmt.Sprintf("AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateValue(%d)", int64(e))
+	}
+}
+
+// AppManagementNonStorePackageFamilyNameDoNotUpdateValue — allowed values for the DoNotUpdate node.
+type AppManagementNonStorePackageFamilyNameDoNotUpdateValue int64
+
 const (
 	// False
-	AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateFalse int64 = 0
+	AppManagementNonStorePackageFamilyNameDoNotUpdateFalse AppManagementNonStorePackageFamilyNameDoNotUpdateValue = 0
 	// True
-	AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateTrue int64 = 1
+	AppManagementNonStorePackageFamilyNameDoNotUpdateTrue AppManagementNonStorePackageFamilyNameDoNotUpdateValue = 1
 )
+
+// String returns the AppManagementNonStorePackageFamilyNameDoNotUpdateValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AppManagementNonStorePackageFamilyNameDoNotUpdateValue) String() string {
+	switch e {
+	case AppManagementNonStorePackageFamilyNameDoNotUpdateFalse:
+		return "AppManagementNonStorePackageFamilyNameDoNotUpdateFalse"
+	case AppManagementNonStorePackageFamilyNameDoNotUpdateTrue:
+		return "AppManagementNonStorePackageFamilyNameDoNotUpdateTrue"
+	default:
+		return fmt.Sprintf("AppManagementNonStorePackageFamilyNameDoNotUpdateValue(%d)", int64(e))
+	}
+}
+
+// AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue — allowed values for the MaintainProcessorArchitectureOnUpdate node.
+type AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue int64
+
+const (
+	// False
+	AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateFalse AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue = 0
+	// True
+	AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateTrue AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue = 1
+)
+
+// String returns the AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue) String() string {
+	switch e {
+	case AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateFalse:
+		return "AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateFalse"
+	case AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateTrue:
+		return "AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateTrue"
+	default:
+		return fmt.Sprintf("AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue(%d)", int64(e))
+	}
+}

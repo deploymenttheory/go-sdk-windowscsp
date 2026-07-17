@@ -160,12 +160,13 @@ func (s *DevicePreparation) GetPageErrorDetails(ctx context.Context) (string, er
 // GetPageErrorPhase reads ./Device/Vendor/MSFT/DevicePreparation/PageErrorPhase.
 // This node provides the specific phase that failed during the Device Preparation page. Values are
 // an enum: 0 = Unknown; 1 = AgentDownload; 2 = AgentProgress.
-func (s *DevicePreparation) GetPageErrorPhase(ctx context.Context) (int64, error) {
+func (s *DevicePreparation) GetPageErrorPhase(ctx context.Context) (PageErrorPhaseValue, error) {
 	v, err := s.c.Get(ctx, URIPageErrorPhase)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PageErrorPhaseValue(n), err
 }
 
 // GetPageSettings reads ./Device/Vendor/MSFT/DevicePreparation/PageSettings.
@@ -186,16 +187,17 @@ func (s *DevicePreparation) UpdatePageSettings(ctx context.Context, value string
 
 // GetPageStatus reads ./Device/Vendor/MSFT/DevicePreparation/PageStatus.
 // This node provides status of the Device Preparation page.
-func (s *DevicePreparation) GetPageStatus(ctx context.Context) (int64, error) {
+func (s *DevicePreparation) GetPageStatus(ctx context.Context) (PageStatusValue, error) {
 	v, err := s.c.Get(ctx, URIPageStatus)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PageStatusValue(n), err
 }
 
 // UpdatePageStatus updates ./Device/Vendor/MSFT/DevicePreparation/PageStatus.
 // This node provides status of the Device Preparation page.
-func (s *DevicePreparation) UpdatePageStatus(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPageStatus, client.Int(value))
+func (s *DevicePreparation) UpdatePageStatus(ctx context.Context, value PageStatusValue) error {
+	return s.c.Replace(ctx, URIPageStatus, client.Int(int64(value)))
 }

@@ -15,12 +15,13 @@ import (
 // Supported from OS build 10.0.15063 (CSP v5.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *TimeLanguageSettings) GetAllowSet24HourClock(ctx context.Context) (int64, error) {
+func (s *TimeLanguageSettings) GetAllowSet24HourClock(ctx context.Context) (AllowSet24HourClockValue, error) {
 	v, err := s.c.Get(ctx, URIAllowSet24HourClock)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowSet24HourClockValue(n), err
 }
 
 // CreateAllowSet24HourClock creates ./Device/Vendor/MSFT/Policy/Config/TimeLanguageSettings/AllowSet24HourClock.
@@ -30,8 +31,8 @@ func (s *TimeLanguageSettings) GetAllowSet24HourClock(ctx context.Context) (int6
 // Supported from OS build 10.0.15063 (CSP v5.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *TimeLanguageSettings) CreateAllowSet24HourClock(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowSet24HourClock, client.Int(value))
+func (s *TimeLanguageSettings) CreateAllowSet24HourClock(ctx context.Context, value AllowSet24HourClockValue) error {
+	return s.c.Add(ctx, URIAllowSet24HourClock, client.Int(int64(value)))
 }
 
 // UpdateAllowSet24HourClock updates ./Device/Vendor/MSFT/Policy/Config/TimeLanguageSettings/AllowSet24HourClock.
@@ -41,8 +42,8 @@ func (s *TimeLanguageSettings) CreateAllowSet24HourClock(ctx context.Context, va
 // Supported from OS build 10.0.15063 (CSP v5.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *TimeLanguageSettings) UpdateAllowSet24HourClock(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowSet24HourClock, client.Int(value))
+func (s *TimeLanguageSettings) UpdateAllowSet24HourClock(ctx context.Context, value AllowSet24HourClockValue) error {
+	return s.c.Replace(ctx, URIAllowSet24HourClock, client.Int(int64(value)))
 }
 
 // DeleteAllowSet24HourClock deletes ./Device/Vendor/MSFT/Policy/Config/TimeLanguageSettings/AllowSet24HourClock.
@@ -62,12 +63,13 @@ func (s *TimeLanguageSettings) DeleteAllowSet24HourClock(ctx context.Context) er
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *TimeLanguageSettings) GetBlockCleanupOfUnusedPreinstalledLangPacks(ctx context.Context) (int64, error) {
+func (s *TimeLanguageSettings) GetBlockCleanupOfUnusedPreinstalledLangPacks(ctx context.Context) (BlockCleanupOfUnusedPreinstalledLangPacksValue, error) {
 	v, err := s.c.Get(ctx, URIBlockCleanupOfUnusedPreinstalledLangPacks)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return BlockCleanupOfUnusedPreinstalledLangPacksValue(n), err
 }
 
 // CreateBlockCleanupOfUnusedPreinstalledLangPacks creates ./Device/Vendor/MSFT/Policy/Config/TimeLanguageSettings/BlockCleanupOfUnusedPreinstalledLangPacks.
@@ -76,8 +78,8 @@ func (s *TimeLanguageSettings) GetBlockCleanupOfUnusedPreinstalledLangPacks(ctx 
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *TimeLanguageSettings) CreateBlockCleanupOfUnusedPreinstalledLangPacks(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIBlockCleanupOfUnusedPreinstalledLangPacks, client.Int(value))
+func (s *TimeLanguageSettings) CreateBlockCleanupOfUnusedPreinstalledLangPacks(ctx context.Context, value BlockCleanupOfUnusedPreinstalledLangPacksValue) error {
+	return s.c.Add(ctx, URIBlockCleanupOfUnusedPreinstalledLangPacks, client.Int(int64(value)))
 }
 
 // UpdateBlockCleanupOfUnusedPreinstalledLangPacks updates ./Device/Vendor/MSFT/Policy/Config/TimeLanguageSettings/BlockCleanupOfUnusedPreinstalledLangPacks.
@@ -86,8 +88,8 @@ func (s *TimeLanguageSettings) CreateBlockCleanupOfUnusedPreinstalledLangPacks(c
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *TimeLanguageSettings) UpdateBlockCleanupOfUnusedPreinstalledLangPacks(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIBlockCleanupOfUnusedPreinstalledLangPacks, client.Int(value))
+func (s *TimeLanguageSettings) UpdateBlockCleanupOfUnusedPreinstalledLangPacks(ctx context.Context, value BlockCleanupOfUnusedPreinstalledLangPacksValue) error {
+	return s.c.Replace(ctx, URIBlockCleanupOfUnusedPreinstalledLangPacks, client.Int(int64(value)))
 }
 
 // DeleteBlockCleanupOfUnusedPreinstalledLangPacks deletes ./Device/Vendor/MSFT/Policy/Config/TimeLanguageSettings/BlockCleanupOfUnusedPreinstalledLangPacks.
@@ -147,12 +149,13 @@ func (s *TimeLanguageSettings) DeleteConfigureTimeZone(ctx context.Context) erro
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *TimeLanguageSettings) GetMachineUILanguageOverwrite(ctx context.Context) (int64, error) {
+func (s *TimeLanguageSettings) GetMachineUILanguageOverwrite(ctx context.Context) (MachineUILanguageOverwriteValue, error) {
 	v, err := s.c.Get(ctx, URIMachineUILanguageOverwrite)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MachineUILanguageOverwriteValue(n), err
 }
 
 // CreateMachineUILanguageOverwrite creates ./Device/Vendor/MSFT/Policy/Config/TimeLanguageSettings/MachineUILanguageOverwrite.
@@ -162,8 +165,8 @@ func (s *TimeLanguageSettings) GetMachineUILanguageOverwrite(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *TimeLanguageSettings) CreateMachineUILanguageOverwrite(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIMachineUILanguageOverwrite, client.Int(value))
+func (s *TimeLanguageSettings) CreateMachineUILanguageOverwrite(ctx context.Context, value MachineUILanguageOverwriteValue) error {
+	return s.c.Add(ctx, URIMachineUILanguageOverwrite, client.Int(int64(value)))
 }
 
 // UpdateMachineUILanguageOverwrite updates ./Device/Vendor/MSFT/Policy/Config/TimeLanguageSettings/MachineUILanguageOverwrite.
@@ -173,8 +176,8 @@ func (s *TimeLanguageSettings) CreateMachineUILanguageOverwrite(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *TimeLanguageSettings) UpdateMachineUILanguageOverwrite(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIMachineUILanguageOverwrite, client.Int(value))
+func (s *TimeLanguageSettings) UpdateMachineUILanguageOverwrite(ctx context.Context, value MachineUILanguageOverwriteValue) error {
+	return s.c.Replace(ctx, URIMachineUILanguageOverwrite, client.Int(int64(value)))
 }
 
 // DeleteMachineUILanguageOverwrite deletes ./Device/Vendor/MSFT/Policy/Config/TimeLanguageSettings/MachineUILanguageOverwrite.
@@ -194,12 +197,13 @@ func (s *TimeLanguageSettings) DeleteMachineUILanguageOverwrite(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *TimeLanguageSettings) GetRestrictLanguagePacksAndFeaturesInstall(ctx context.Context) (int64, error) {
+func (s *TimeLanguageSettings) GetRestrictLanguagePacksAndFeaturesInstall(ctx context.Context) (RestrictLanguagePacksAndFeaturesInstallValue, error) {
 	v, err := s.c.Get(ctx, URIRestrictLanguagePacksAndFeaturesInstall)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return RestrictLanguagePacksAndFeaturesInstallValue(n), err
 }
 
 // CreateRestrictLanguagePacksAndFeaturesInstall creates ./Device/Vendor/MSFT/Policy/Config/TimeLanguageSettings/RestrictLanguagePacksAndFeaturesInstall.
@@ -208,8 +212,8 @@ func (s *TimeLanguageSettings) GetRestrictLanguagePacksAndFeaturesInstall(ctx co
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *TimeLanguageSettings) CreateRestrictLanguagePacksAndFeaturesInstall(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIRestrictLanguagePacksAndFeaturesInstall, client.Int(value))
+func (s *TimeLanguageSettings) CreateRestrictLanguagePacksAndFeaturesInstall(ctx context.Context, value RestrictLanguagePacksAndFeaturesInstallValue) error {
+	return s.c.Add(ctx, URIRestrictLanguagePacksAndFeaturesInstall, client.Int(int64(value)))
 }
 
 // UpdateRestrictLanguagePacksAndFeaturesInstall updates ./Device/Vendor/MSFT/Policy/Config/TimeLanguageSettings/RestrictLanguagePacksAndFeaturesInstall.
@@ -218,8 +222,8 @@ func (s *TimeLanguageSettings) CreateRestrictLanguagePacksAndFeaturesInstall(ctx
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *TimeLanguageSettings) UpdateRestrictLanguagePacksAndFeaturesInstall(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIRestrictLanguagePacksAndFeaturesInstall, client.Int(value))
+func (s *TimeLanguageSettings) UpdateRestrictLanguagePacksAndFeaturesInstall(ctx context.Context, value RestrictLanguagePacksAndFeaturesInstallValue) error {
+	return s.c.Replace(ctx, URIRestrictLanguagePacksAndFeaturesInstall, client.Int(int64(value)))
 }
 
 // DeleteRestrictLanguagePacksAndFeaturesInstall deletes ./Device/Vendor/MSFT/Policy/Config/TimeLanguageSettings/RestrictLanguagePacksAndFeaturesInstall.

@@ -2,10 +2,29 @@
 
 package camera
 
-// AllowCamera allowed values.
+import (
+	"fmt"
+)
+
+// AllowCameraValue — allowed values for the AllowCamera node.
+type AllowCameraValue int64
+
 const (
 	// Not allowed.
-	AllowCameraNotAllowed int64 = 0
+	AllowCameraNotAllowed AllowCameraValue = 0
 	// Allowed.
-	AllowCameraAllowed int64 = 1
+	AllowCameraAllowed AllowCameraValue = 1
 )
+
+// String returns the AllowCameraValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowCameraValue) String() string {
+	switch e {
+	case AllowCameraNotAllowed:
+		return "AllowCameraNotAllowed"
+	case AllowCameraAllowed:
+		return "AllowCameraAllowed"
+	default:
+		return fmt.Sprintf("AllowCameraValue(%d)", int64(e))
+	}
+}

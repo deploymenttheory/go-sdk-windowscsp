@@ -2,14 +2,35 @@
 
 package security_user
 
-// RecoveryEnvironmentAuthentication allowed values.
+import (
+	"fmt"
+)
+
+// RecoveryEnvironmentAuthenticationValue — allowed values for the RecoveryEnvironmentAuthentication node.
+type RecoveryEnvironmentAuthenticationValue int64
+
 const (
 	// current) behavior
-	RecoveryEnvironmentAuthenticationCurrentBehavior int64 = 0
+	RecoveryEnvironmentAuthenticationCurrentBehavior RecoveryEnvironmentAuthenticationValue = 0
 	// RequireAuthentication: Admin Authentication is always required for components in
 	// RecoveryEnvironment
-	RecoveryEnvironmentAuthenticationRequireAuthentication int64 = 1
+	RecoveryEnvironmentAuthenticationRequireAuthentication RecoveryEnvironmentAuthenticationValue = 1
 	// NoRequireAuthentication: Admin Authentication is not required for components in
 	// RecoveryEnvironment
-	RecoveryEnvironmentAuthenticationNoRequireAuthentication int64 = 2
+	RecoveryEnvironmentAuthenticationNoRequireAuthentication RecoveryEnvironmentAuthenticationValue = 2
 )
+
+// String returns the RecoveryEnvironmentAuthenticationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e RecoveryEnvironmentAuthenticationValue) String() string {
+	switch e {
+	case RecoveryEnvironmentAuthenticationCurrentBehavior:
+		return "RecoveryEnvironmentAuthenticationCurrentBehavior"
+	case RecoveryEnvironmentAuthenticationRequireAuthentication:
+		return "RecoveryEnvironmentAuthenticationRequireAuthentication"
+	case RecoveryEnvironmentAuthenticationNoRequireAuthentication:
+		return "RecoveryEnvironmentAuthenticationNoRequireAuthentication"
+	default:
+		return fmt.Sprintf("RecoveryEnvironmentAuthenticationValue(%d)", int64(e))
+	}
+}

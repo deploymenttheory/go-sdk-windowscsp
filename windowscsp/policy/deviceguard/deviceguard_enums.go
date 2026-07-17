@@ -2,56 +2,154 @@
 
 package deviceguard
 
-// ConfigureSystemGuardLaunch allowed values.
+import (
+	"fmt"
+)
+
+// ConfigureSystemGuardLaunchValue — allowed values for the ConfigureSystemGuardLaunch node.
+type ConfigureSystemGuardLaunchValue int64
+
 const (
 	// Unmanaged Configurable by Administrative user
-	ConfigureSystemGuardLaunchUnmanagedConfigurableByAdministrativeUser int64 = 0
+	ConfigureSystemGuardLaunchUnmanagedConfigurableByAdministrativeUser ConfigureSystemGuardLaunchValue = 0
 	// Unmanaged Enables Secure Launch if supported by hardware
-	ConfigureSystemGuardLaunchUnmanagedEnablesSecureLaunchIfSupported int64 = 1
+	ConfigureSystemGuardLaunchUnmanagedEnablesSecureLaunchIfSupported ConfigureSystemGuardLaunchValue = 1
 	// Unmanaged Disables Secure Launch
-	ConfigureSystemGuardLaunchUnmanagedDisablesSecureLaunch int64 = 2
+	ConfigureSystemGuardLaunchUnmanagedDisablesSecureLaunch ConfigureSystemGuardLaunchValue = 2
 )
 
-// EnableVirtualizationBasedSecurity allowed values.
+// String returns the ConfigureSystemGuardLaunchValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureSystemGuardLaunchValue) String() string {
+	switch e {
+	case ConfigureSystemGuardLaunchUnmanagedConfigurableByAdministrativeUser:
+		return "ConfigureSystemGuardLaunchUnmanagedConfigurableByAdministrativeUser"
+	case ConfigureSystemGuardLaunchUnmanagedEnablesSecureLaunchIfSupported:
+		return "ConfigureSystemGuardLaunchUnmanagedEnablesSecureLaunchIfSupported"
+	case ConfigureSystemGuardLaunchUnmanagedDisablesSecureLaunch:
+		return "ConfigureSystemGuardLaunchUnmanagedDisablesSecureLaunch"
+	default:
+		return fmt.Sprintf("ConfigureSystemGuardLaunchValue(%d)", int64(e))
+	}
+}
+
+// EnableVirtualizationBasedSecurityValue — allowed values for the EnableVirtualizationBasedSecurity node.
+type EnableVirtualizationBasedSecurityValue int64
+
 const (
 	// disable virtualization based security.
-	EnableVirtualizationBasedSecurityDisableVirtualizationBasedSecurity int64 = 0
+	EnableVirtualizationBasedSecurityDisableVirtualizationBasedSecurity EnableVirtualizationBasedSecurityValue = 0
 	// enable virtualization based security.
-	EnableVirtualizationBasedSecurityEnableVirtualizationBasedSecurity int64 = 1
+	EnableVirtualizationBasedSecurityEnableVirtualizationBasedSecurity EnableVirtualizationBasedSecurityValue = 1
 )
 
-// LsaCfgFlags allowed values.
+// String returns the EnableVirtualizationBasedSecurityValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableVirtualizationBasedSecurityValue) String() string {
+	switch e {
+	case EnableVirtualizationBasedSecurityDisableVirtualizationBasedSecurity:
+		return "EnableVirtualizationBasedSecurityDisableVirtualizationBasedSecurity"
+	case EnableVirtualizationBasedSecurityEnableVirtualizationBasedSecurity:
+		return "EnableVirtualizationBasedSecurityEnableVirtualizationBasedSecurity"
+	default:
+		return fmt.Sprintf("EnableVirtualizationBasedSecurityValue(%d)", int64(e))
+	}
+}
+
+// LsaCfgFlagsValue — allowed values for the LsaCfgFlags node.
+type LsaCfgFlagsValue int64
+
 const (
 	// (Disabled) Turns off Credential Guard remotely if configured previously without UEFI Lock.
-	LsaCfgFlagsDisabledTurnsOffCredentialGuardRemotely int64 = 0
+	LsaCfgFlagsDisabledTurnsOffCredentialGuardRemotely LsaCfgFlagsValue = 0
 	// (Enabled with UEFI lock) Turns on Credential Guard with UEFI lock.
-	LsaCfgFlagsEnabledWithUEFILockTurnsOn int64 = 1
+	LsaCfgFlagsEnabledWithUEFILockTurnsOn LsaCfgFlagsValue = 1
 	// (Enabled without lock) Turns on Credential Guard without UEFI lock.
-	LsaCfgFlagsEnabledWithoutLockTurnsOnCredential int64 = 2
+	LsaCfgFlagsEnabledWithoutLockTurnsOnCredential LsaCfgFlagsValue = 2
 )
 
-// MachineIdentityIsolation allowed values.
+// String returns the LsaCfgFlagsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e LsaCfgFlagsValue) String() string {
+	switch e {
+	case LsaCfgFlagsDisabledTurnsOffCredentialGuardRemotely:
+		return "LsaCfgFlagsDisabledTurnsOffCredentialGuardRemotely"
+	case LsaCfgFlagsEnabledWithUEFILockTurnsOn:
+		return "LsaCfgFlagsEnabledWithUEFILockTurnsOn"
+	case LsaCfgFlagsEnabledWithoutLockTurnsOnCredential:
+		return "LsaCfgFlagsEnabledWithoutLockTurnsOnCredential"
+	default:
+		return fmt.Sprintf("LsaCfgFlagsValue(%d)", int64(e))
+	}
+}
+
+// MachineIdentityIsolationValue — allowed values for the MachineIdentityIsolation node.
+type MachineIdentityIsolationValue int64
+
 const (
 	// (Disabled) Machine password is only LSASS-bound and stored in $MACHINE.ACC registry key.
-	MachineIdentityIsolationDisabledMachinePasswordIsOnlyLSASSBound int64 = 0
+	MachineIdentityIsolationDisabledMachinePasswordIsOnlyLSASSBound MachineIdentityIsolationValue = 0
 	// (Enabled in audit mode) Machine password both LSASS-bound and IUM-bound. It is stored in
 	// $MACHINE.ACC and $MACHINE.ACC.IUM registry keys.
-	MachineIdentityIsolationEnabledInAuditModeMachinePassword int64 = 1
+	MachineIdentityIsolationEnabledInAuditModeMachinePassword MachineIdentityIsolationValue = 1
 	// (Enabled in enforcement mode) Machine password is only IUM-bound and stored in $MACHINE.ACC.IUM
 	// registry key.
-	MachineIdentityIsolationEnabledInEnforcementModeMachinePassword int64 = 2
+	MachineIdentityIsolationEnabledInEnforcementModeMachinePassword MachineIdentityIsolationValue = 2
 )
 
-// RequireMicrosoftSignedBootChain allowed values.
+// String returns the MachineIdentityIsolationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MachineIdentityIsolationValue) String() string {
+	switch e {
+	case MachineIdentityIsolationDisabledMachinePasswordIsOnlyLSASSBound:
+		return "MachineIdentityIsolationDisabledMachinePasswordIsOnlyLSASSBound"
+	case MachineIdentityIsolationEnabledInAuditModeMachinePassword:
+		return "MachineIdentityIsolationEnabledInAuditModeMachinePassword"
+	case MachineIdentityIsolationEnabledInEnforcementModeMachinePassword:
+		return "MachineIdentityIsolationEnabledInEnforcementModeMachinePassword"
+	default:
+		return fmt.Sprintf("MachineIdentityIsolationValue(%d)", int64(e))
+	}
+}
+
+// RequireMicrosoftSignedBootChainValue — allowed values for the RequireMicrosoftSignedBootChain node.
+type RequireMicrosoftSignedBootChainValue int64
+
 const (
 	// Require Microsoft Signed Boot Chain.
-	RequireMicrosoftSignedBootChainRequireMicrosoftSignedBootChain int64 = 1
+	RequireMicrosoftSignedBootChainRequireMicrosoftSignedBootChain RequireMicrosoftSignedBootChainValue = 1
 )
 
-// RequirePlatformSecurityFeatures allowed values.
+// String returns the RequireMicrosoftSignedBootChainValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e RequireMicrosoftSignedBootChainValue) String() string {
+	switch e {
+	case RequireMicrosoftSignedBootChainRequireMicrosoftSignedBootChain:
+		return "RequireMicrosoftSignedBootChainRequireMicrosoftSignedBootChain"
+	default:
+		return fmt.Sprintf("RequireMicrosoftSignedBootChainValue(%d)", int64(e))
+	}
+}
+
+// RequirePlatformSecurityFeaturesValue — allowed values for the RequirePlatformSecurityFeatures node.
+type RequirePlatformSecurityFeaturesValue int64
+
 const (
 	// Turns on VBS with Secure Boot.
-	RequirePlatformSecurityFeaturesTurnsOnVBSWithSecureBoot int64 = 1
+	RequirePlatformSecurityFeaturesTurnsOnVBSWithSecureBoot RequirePlatformSecurityFeaturesValue = 1
 	// Turns on VBS with Secure Boot and direct memory access (DMA). DMA requires hardware support.
-	RequirePlatformSecurityFeaturesTurnsOnVBSWithSecureBoot2 int64 = 3
+	RequirePlatformSecurityFeaturesTurnsOnVBSWithSecureBoot2 RequirePlatformSecurityFeaturesValue = 3
 )
+
+// String returns the RequirePlatformSecurityFeaturesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e RequirePlatformSecurityFeaturesValue) String() string {
+	switch e {
+	case RequirePlatformSecurityFeaturesTurnsOnVBSWithSecureBoot:
+		return "RequirePlatformSecurityFeaturesTurnsOnVBSWithSecureBoot"
+	case RequirePlatformSecurityFeaturesTurnsOnVBSWithSecureBoot2:
+		return "RequirePlatformSecurityFeaturesTurnsOnVBSWithSecureBoot2"
+	default:
+		return fmt.Sprintf("RequirePlatformSecurityFeaturesValue(%d)", int64(e))
+	}
+}

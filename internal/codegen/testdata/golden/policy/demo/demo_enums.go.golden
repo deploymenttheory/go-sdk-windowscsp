@@ -2,18 +2,42 @@
 
 package demo
 
-// AllowThing allowed values.
-const (
-	// Not allowed.
-	AllowThingNotAllowed int64 = 0
-	// Allowed.
-	AllowThingAllowed int64 = 1
+import (
+	"fmt"
 )
 
-// Mode allowed values.
+// AllowThingValue — allowed values for the AllowThing node.
+type AllowThingValue int64
+
+const (
+	// Not allowed.
+	AllowThingNotAllowed AllowThingValue = 0
+	// Allowed.
+	AllowThingAllowed AllowThingValue = 1
+)
+
+// String returns the AllowThingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowThingValue) String() string {
+	switch e {
+	case AllowThingNotAllowed:
+		return "AllowThingNotAllowed"
+	case AllowThingAllowed:
+		return "AllowThingAllowed"
+	default:
+		return fmt.Sprintf("AllowThingValue(%d)", int64(e))
+	}
+}
+
+// ModeValue — allowed values for the Mode node.
+type ModeValue string
+
 const (
 	// Automatic.
-	ModeAutomatic = "auto"
+	ModeAutomatic ModeValue = "auto"
 	// Manual.
-	ModeManual = "manual"
+	ModeManual ModeValue = "manual"
 )
+
+// String returns the ModeValue value as a plain string.
+func (e ModeValue) String() string { return string(e) }

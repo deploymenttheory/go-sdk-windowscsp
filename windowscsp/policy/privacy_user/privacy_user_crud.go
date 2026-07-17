@@ -14,12 +14,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *PrivacyUser) GetDisablePrivacyExperience(ctx context.Context) (int64, error) {
+func (s *PrivacyUser) GetDisablePrivacyExperience(ctx context.Context) (DisablePrivacyExperienceValue, error) {
 	v, err := s.c.Get(ctx, URIDisablePrivacyExperience)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisablePrivacyExperienceValue(n), err
 }
 
 // CreateDisablePrivacyExperience creates ./User/Vendor/MSFT/Policy/Config/Privacy/DisablePrivacyExperience.
@@ -28,8 +29,8 @@ func (s *PrivacyUser) GetDisablePrivacyExperience(ctx context.Context) (int64, e
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *PrivacyUser) CreateDisablePrivacyExperience(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisablePrivacyExperience, client.Int(value))
+func (s *PrivacyUser) CreateDisablePrivacyExperience(ctx context.Context, value DisablePrivacyExperienceValue) error {
+	return s.c.Add(ctx, URIDisablePrivacyExperience, client.Int(int64(value)))
 }
 
 // UpdateDisablePrivacyExperience updates ./User/Vendor/MSFT/Policy/Config/Privacy/DisablePrivacyExperience.
@@ -38,8 +39,8 @@ func (s *PrivacyUser) CreateDisablePrivacyExperience(ctx context.Context, value 
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *PrivacyUser) UpdateDisablePrivacyExperience(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisablePrivacyExperience, client.Int(value))
+func (s *PrivacyUser) UpdateDisablePrivacyExperience(ctx context.Context, value DisablePrivacyExperienceValue) error {
+	return s.c.Replace(ctx, URIDisablePrivacyExperience, client.Int(int64(value)))
 }
 
 // DeleteDisablePrivacyExperience deletes ./User/Vendor/MSFT/Policy/Config/Privacy/DisablePrivacyExperience.

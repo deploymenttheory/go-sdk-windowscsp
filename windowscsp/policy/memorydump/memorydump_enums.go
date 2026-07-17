@@ -2,18 +2,52 @@
 
 package memorydump
 
-// AllowCrashDump allowed values.
-const (
-	// Disable crash dump collection.
-	AllowCrashDumpDisableCrashDumpCollection int64 = 0
-	// Allow crash dump collection.
-	AllowCrashDumpAllowCrashDumpCollection int64 = 1
+import (
+	"fmt"
 )
 
-// AllowLiveDump allowed values.
+// AllowCrashDumpValue — allowed values for the AllowCrashDump node.
+type AllowCrashDumpValue int64
+
+const (
+	// Disable crash dump collection.
+	AllowCrashDumpDisableCrashDumpCollection AllowCrashDumpValue = 0
+	// Allow crash dump collection.
+	AllowCrashDumpAllowCrashDumpCollection AllowCrashDumpValue = 1
+)
+
+// String returns the AllowCrashDumpValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowCrashDumpValue) String() string {
+	switch e {
+	case AllowCrashDumpDisableCrashDumpCollection:
+		return "AllowCrashDumpDisableCrashDumpCollection"
+	case AllowCrashDumpAllowCrashDumpCollection:
+		return "AllowCrashDumpAllowCrashDumpCollection"
+	default:
+		return fmt.Sprintf("AllowCrashDumpValue(%d)", int64(e))
+	}
+}
+
+// AllowLiveDumpValue — allowed values for the AllowLiveDump node.
+type AllowLiveDumpValue int64
+
 const (
 	// Disable live dump collection.
-	AllowLiveDumpDisableLiveDumpCollection int64 = 0
+	AllowLiveDumpDisableLiveDumpCollection AllowLiveDumpValue = 0
 	// Allow live dump collection.
-	AllowLiveDumpAllowLiveDumpCollection int64 = 1
+	AllowLiveDumpAllowLiveDumpCollection AllowLiveDumpValue = 1
 )
+
+// String returns the AllowLiveDumpValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowLiveDumpValue) String() string {
+	switch e {
+	case AllowLiveDumpDisableLiveDumpCollection:
+		return "AllowLiveDumpDisableLiveDumpCollection"
+	case AllowLiveDumpAllowLiveDumpCollection:
+		return "AllowLiveDumpAllowLiveDumpCollection"
+	default:
+		return fmt.Sprintf("AllowLiveDumpValue(%d)", int64(e))
+	}
+}

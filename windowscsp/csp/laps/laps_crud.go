@@ -332,12 +332,13 @@ func (s *LAPS) DeletePoliciesAutomaticAccountManagementRandomizeName(ctx context
 //
 // Default: 1.
 // Supported from OS build 10.0.26100 (CSP v1.1).
-func (s *LAPS) GetPoliciesAutomaticAccountManagementTarget(ctx context.Context) (int64, error) {
+func (s *LAPS) GetPoliciesAutomaticAccountManagementTarget(ctx context.Context) (PoliciesAutomaticAccountManagementTargetValue, error) {
 	v, err := s.c.Get(ctx, URIPoliciesAutomaticAccountManagementTarget)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PoliciesAutomaticAccountManagementTargetValue(n), err
 }
 
 // CreatePoliciesAutomaticAccountManagementTarget creates ./Device/Vendor/MSFT/LAPS/Policies/AutomaticAccountManagementTarget.
@@ -345,8 +346,8 @@ func (s *LAPS) GetPoliciesAutomaticAccountManagementTarget(ctx context.Context) 
 //
 // Default: 1.
 // Supported from OS build 10.0.26100 (CSP v1.1).
-func (s *LAPS) CreatePoliciesAutomaticAccountManagementTarget(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPoliciesAutomaticAccountManagementTarget, client.Int(value))
+func (s *LAPS) CreatePoliciesAutomaticAccountManagementTarget(ctx context.Context, value PoliciesAutomaticAccountManagementTargetValue) error {
+	return s.c.Add(ctx, URIPoliciesAutomaticAccountManagementTarget, client.Int(int64(value)))
 }
 
 // UpdatePoliciesAutomaticAccountManagementTarget updates ./Device/Vendor/MSFT/LAPS/Policies/AutomaticAccountManagementTarget.
@@ -354,8 +355,8 @@ func (s *LAPS) CreatePoliciesAutomaticAccountManagementTarget(ctx context.Contex
 //
 // Default: 1.
 // Supported from OS build 10.0.26100 (CSP v1.1).
-func (s *LAPS) UpdatePoliciesAutomaticAccountManagementTarget(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPoliciesAutomaticAccountManagementTarget, client.Int(value))
+func (s *LAPS) UpdatePoliciesAutomaticAccountManagementTarget(ctx context.Context, value PoliciesAutomaticAccountManagementTargetValue) error {
+	return s.c.Replace(ctx, URIPoliciesAutomaticAccountManagementTarget, client.Int(int64(value)))
 }
 
 // DeletePoliciesAutomaticAccountManagementTarget deletes ./Device/Vendor/MSFT/LAPS/Policies/AutomaticAccountManagementTarget.
@@ -371,28 +372,29 @@ func (s *LAPS) DeletePoliciesAutomaticAccountManagementTarget(ctx context.Contex
 // Use this setting to configure which directory the local admin account password is backed up to.
 //
 // Default: 0.
-func (s *LAPS) GetPoliciesBackupDirectory(ctx context.Context) (int64, error) {
+func (s *LAPS) GetPoliciesBackupDirectory(ctx context.Context) (PoliciesBackupDirectoryValue, error) {
 	v, err := s.c.Get(ctx, URIPoliciesBackupDirectory)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PoliciesBackupDirectoryValue(n), err
 }
 
 // CreatePoliciesBackupDirectory creates ./Device/Vendor/MSFT/LAPS/Policies/BackupDirectory.
 // Use this setting to configure which directory the local admin account password is backed up to.
 //
 // Default: 0.
-func (s *LAPS) CreatePoliciesBackupDirectory(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPoliciesBackupDirectory, client.Int(value))
+func (s *LAPS) CreatePoliciesBackupDirectory(ctx context.Context, value PoliciesBackupDirectoryValue) error {
+	return s.c.Add(ctx, URIPoliciesBackupDirectory, client.Int(int64(value)))
 }
 
 // UpdatePoliciesBackupDirectory updates ./Device/Vendor/MSFT/LAPS/Policies/BackupDirectory.
 // Use this setting to configure which directory the local admin account password is backed up to.
 //
 // Default: 0.
-func (s *LAPS) UpdatePoliciesBackupDirectory(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPoliciesBackupDirectory, client.Int(value))
+func (s *LAPS) UpdatePoliciesBackupDirectory(ctx context.Context, value PoliciesBackupDirectoryValue) error {
+	return s.c.Replace(ctx, URIPoliciesBackupDirectory, client.Int(int64(value)))
 }
 
 // DeletePoliciesBackupDirectory deletes ./Device/Vendor/MSFT/LAPS/Policies/BackupDirectory.
@@ -487,28 +489,29 @@ func (s *LAPS) DeletePoliciesPasswordAgeDays(ctx context.Context) error {
 // Use this setting to configure password complexity of the managed local administrator account.
 //
 // Default: 4.
-func (s *LAPS) GetPoliciesPasswordComplexity(ctx context.Context) (int64, error) {
+func (s *LAPS) GetPoliciesPasswordComplexity(ctx context.Context) (PoliciesPasswordComplexityValue, error) {
 	v, err := s.c.Get(ctx, URIPoliciesPasswordComplexity)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PoliciesPasswordComplexityValue(n), err
 }
 
 // CreatePoliciesPasswordComplexity creates ./Device/Vendor/MSFT/LAPS/Policies/PasswordComplexity.
 // Use this setting to configure password complexity of the managed local administrator account.
 //
 // Default: 4.
-func (s *LAPS) CreatePoliciesPasswordComplexity(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPoliciesPasswordComplexity, client.Int(value))
+func (s *LAPS) CreatePoliciesPasswordComplexity(ctx context.Context, value PoliciesPasswordComplexityValue) error {
+	return s.c.Add(ctx, URIPoliciesPasswordComplexity, client.Int(int64(value)))
 }
 
 // UpdatePoliciesPasswordComplexity updates ./Device/Vendor/MSFT/LAPS/Policies/PasswordComplexity.
 // Use this setting to configure password complexity of the managed local administrator account.
 //
 // Default: 4.
-func (s *LAPS) UpdatePoliciesPasswordComplexity(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPoliciesPasswordComplexity, client.Int(value))
+func (s *LAPS) UpdatePoliciesPasswordComplexity(ctx context.Context, value PoliciesPasswordComplexityValue) error {
+	return s.c.Replace(ctx, URIPoliciesPasswordComplexity, client.Int(int64(value)))
 }
 
 // DeletePoliciesPasswordComplexity deletes ./Device/Vendor/MSFT/LAPS/Policies/PasswordComplexity.
@@ -603,28 +606,29 @@ func (s *LAPS) DeletePoliciesPasswordLength(ctx context.Context) error {
 // Use this setting to specify the actions to take upon expiration of the configured grace period.
 //
 // Default: 3.
-func (s *LAPS) GetPoliciesPostAuthenticationActions(ctx context.Context) (int64, error) {
+func (s *LAPS) GetPoliciesPostAuthenticationActions(ctx context.Context) (PoliciesPostAuthenticationActionsValue, error) {
 	v, err := s.c.Get(ctx, URIPoliciesPostAuthenticationActions)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PoliciesPostAuthenticationActionsValue(n), err
 }
 
 // CreatePoliciesPostAuthenticationActions creates ./Device/Vendor/MSFT/LAPS/Policies/PostAuthenticationActions.
 // Use this setting to specify the actions to take upon expiration of the configured grace period.
 //
 // Default: 3.
-func (s *LAPS) CreatePoliciesPostAuthenticationActions(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPoliciesPostAuthenticationActions, client.Int(value))
+func (s *LAPS) CreatePoliciesPostAuthenticationActions(ctx context.Context, value PoliciesPostAuthenticationActionsValue) error {
+	return s.c.Add(ctx, URIPoliciesPostAuthenticationActions, client.Int(int64(value)))
 }
 
 // UpdatePoliciesPostAuthenticationActions updates ./Device/Vendor/MSFT/LAPS/Policies/PostAuthenticationActions.
 // Use this setting to specify the actions to take upon expiration of the configured grace period.
 //
 // Default: 3.
-func (s *LAPS) UpdatePoliciesPostAuthenticationActions(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPoliciesPostAuthenticationActions, client.Int(value))
+func (s *LAPS) UpdatePoliciesPostAuthenticationActions(ctx context.Context, value PoliciesPostAuthenticationActionsValue) error {
+	return s.c.Replace(ctx, URIPoliciesPostAuthenticationActions, client.Int(int64(value)))
 }
 
 // DeletePoliciesPostAuthenticationActions deletes ./Device/Vendor/MSFT/LAPS/Policies/PostAuthenticationActions.

@@ -2,98 +2,282 @@
 
 package settings
 
-// AllowAutoPlay allowed values.
-const (
-	// Not allowed.
-	AllowAutoPlayNotAllowed int64 = 0
-	// Allowed.
-	AllowAutoPlayAllowed int64 = 1
+import (
+	"fmt"
 )
 
-// AllowDataSense allowed values.
+// AllowAutoPlayValue — allowed values for the AllowAutoPlay node.
+type AllowAutoPlayValue int64
+
 const (
 	// Not allowed.
-	AllowDataSenseNotAllowed int64 = 0
+	AllowAutoPlayNotAllowed AllowAutoPlayValue = 0
 	// Allowed.
-	AllowDataSenseAllowed int64 = 1
+	AllowAutoPlayAllowed AllowAutoPlayValue = 1
 )
 
-// AllowDateTime allowed values.
+// String returns the AllowAutoPlayValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowAutoPlayValue) String() string {
+	switch e {
+	case AllowAutoPlayNotAllowed:
+		return "AllowAutoPlayNotAllowed"
+	case AllowAutoPlayAllowed:
+		return "AllowAutoPlayAllowed"
+	default:
+		return fmt.Sprintf("AllowAutoPlayValue(%d)", int64(e))
+	}
+}
+
+// AllowDataSenseValue — allowed values for the AllowDataSense node.
+type AllowDataSenseValue int64
+
 const (
 	// Not allowed.
-	AllowDateTimeNotAllowed int64 = 0
+	AllowDataSenseNotAllowed AllowDataSenseValue = 0
 	// Allowed.
-	AllowDateTimeAllowed int64 = 1
+	AllowDataSenseAllowed AllowDataSenseValue = 1
 )
 
-// AllowEditDeviceName allowed values.
+// String returns the AllowDataSenseValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowDataSenseValue) String() string {
+	switch e {
+	case AllowDataSenseNotAllowed:
+		return "AllowDataSenseNotAllowed"
+	case AllowDataSenseAllowed:
+		return "AllowDataSenseAllowed"
+	default:
+		return fmt.Sprintf("AllowDataSenseValue(%d)", int64(e))
+	}
+}
+
+// AllowDateTimeValue — allowed values for the AllowDateTime node.
+type AllowDateTimeValue int64
+
 const (
 	// Not allowed.
-	AllowEditDeviceNameNotAllowed int64 = 0
+	AllowDateTimeNotAllowed AllowDateTimeValue = 0
 	// Allowed.
-	AllowEditDeviceNameAllowed int64 = 1
+	AllowDateTimeAllowed AllowDateTimeValue = 1
 )
 
-// AllowLanguage allowed values.
+// String returns the AllowDateTimeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowDateTimeValue) String() string {
+	switch e {
+	case AllowDateTimeNotAllowed:
+		return "AllowDateTimeNotAllowed"
+	case AllowDateTimeAllowed:
+		return "AllowDateTimeAllowed"
+	default:
+		return fmt.Sprintf("AllowDateTimeValue(%d)", int64(e))
+	}
+}
+
+// AllowEditDeviceNameValue — allowed values for the AllowEditDeviceName node.
+type AllowEditDeviceNameValue int64
+
 const (
 	// Not allowed.
-	AllowLanguageNotAllowed int64 = 0
+	AllowEditDeviceNameNotAllowed AllowEditDeviceNameValue = 0
 	// Allowed.
-	AllowLanguageAllowed int64 = 1
+	AllowEditDeviceNameAllowed AllowEditDeviceNameValue = 1
 )
 
-// AllowOnlineTips allowed values.
+// String returns the AllowEditDeviceNameValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowEditDeviceNameValue) String() string {
+	switch e {
+	case AllowEditDeviceNameNotAllowed:
+		return "AllowEditDeviceNameNotAllowed"
+	case AllowEditDeviceNameAllowed:
+		return "AllowEditDeviceNameAllowed"
+	default:
+		return fmt.Sprintf("AllowEditDeviceNameValue(%d)", int64(e))
+	}
+}
+
+// AllowLanguageValue — allowed values for the AllowLanguage node.
+type AllowLanguageValue int64
+
 const (
 	// Not allowed.
-	AllowOnlineTipsNotAllowed int64 = 0
+	AllowLanguageNotAllowed AllowLanguageValue = 0
 	// Allowed.
-	AllowOnlineTipsAllowed int64 = 1
+	AllowLanguageAllowed AllowLanguageValue = 1
 )
 
-// AllowPowerSleep allowed values.
+// String returns the AllowLanguageValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowLanguageValue) String() string {
+	switch e {
+	case AllowLanguageNotAllowed:
+		return "AllowLanguageNotAllowed"
+	case AllowLanguageAllowed:
+		return "AllowLanguageAllowed"
+	default:
+		return fmt.Sprintf("AllowLanguageValue(%d)", int64(e))
+	}
+}
+
+// AllowOnlineTipsValue — allowed values for the AllowOnlineTips node.
+type AllowOnlineTipsValue int64
+
 const (
 	// Not allowed.
-	AllowPowerSleepNotAllowed int64 = 0
+	AllowOnlineTipsNotAllowed AllowOnlineTipsValue = 0
 	// Allowed.
-	AllowPowerSleepAllowed int64 = 1
+	AllowOnlineTipsAllowed AllowOnlineTipsValue = 1
 )
 
-// AllowRegion allowed values.
+// String returns the AllowOnlineTipsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowOnlineTipsValue) String() string {
+	switch e {
+	case AllowOnlineTipsNotAllowed:
+		return "AllowOnlineTipsNotAllowed"
+	case AllowOnlineTipsAllowed:
+		return "AllowOnlineTipsAllowed"
+	default:
+		return fmt.Sprintf("AllowOnlineTipsValue(%d)", int64(e))
+	}
+}
+
+// AllowPowerSleepValue — allowed values for the AllowPowerSleep node.
+type AllowPowerSleepValue int64
+
 const (
 	// Not allowed.
-	AllowRegionNotAllowed int64 = 0
+	AllowPowerSleepNotAllowed AllowPowerSleepValue = 0
 	// Allowed.
-	AllowRegionAllowed int64 = 1
+	AllowPowerSleepAllowed AllowPowerSleepValue = 1
 )
 
-// AllowSignInOptions allowed values.
+// String returns the AllowPowerSleepValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowPowerSleepValue) String() string {
+	switch e {
+	case AllowPowerSleepNotAllowed:
+		return "AllowPowerSleepNotAllowed"
+	case AllowPowerSleepAllowed:
+		return "AllowPowerSleepAllowed"
+	default:
+		return fmt.Sprintf("AllowPowerSleepValue(%d)", int64(e))
+	}
+}
+
+// AllowRegionValue — allowed values for the AllowRegion node.
+type AllowRegionValue int64
+
 const (
 	// Not allowed.
-	AllowSignInOptionsNotAllowed int64 = 0
+	AllowRegionNotAllowed AllowRegionValue = 0
 	// Allowed.
-	AllowSignInOptionsAllowed int64 = 1
+	AllowRegionAllowed AllowRegionValue = 1
 )
 
-// AllowVPN allowed values.
+// String returns the AllowRegionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowRegionValue) String() string {
+	switch e {
+	case AllowRegionNotAllowed:
+		return "AllowRegionNotAllowed"
+	case AllowRegionAllowed:
+		return "AllowRegionAllowed"
+	default:
+		return fmt.Sprintf("AllowRegionValue(%d)", int64(e))
+	}
+}
+
+// AllowSignInOptionsValue — allowed values for the AllowSignInOptions node.
+type AllowSignInOptionsValue int64
+
 const (
 	// Not allowed.
-	AllowVPNNotAllowed int64 = 0
+	AllowSignInOptionsNotAllowed AllowSignInOptionsValue = 0
 	// Allowed.
-	AllowVPNAllowed int64 = 1
+	AllowSignInOptionsAllowed AllowSignInOptionsValue = 1
 )
 
-// AllowWorkplace allowed values.
+// String returns the AllowSignInOptionsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowSignInOptionsValue) String() string {
+	switch e {
+	case AllowSignInOptionsNotAllowed:
+		return "AllowSignInOptionsNotAllowed"
+	case AllowSignInOptionsAllowed:
+		return "AllowSignInOptionsAllowed"
+	default:
+		return fmt.Sprintf("AllowSignInOptionsValue(%d)", int64(e))
+	}
+}
+
+// AllowVPNValue — allowed values for the AllowVPN node.
+type AllowVPNValue int64
+
 const (
 	// Not allowed.
-	AllowWorkplaceNotAllowed int64 = 0
+	AllowVPNNotAllowed AllowVPNValue = 0
 	// Allowed.
-	AllowWorkplaceAllowed int64 = 1
+	AllowVPNAllowed AllowVPNValue = 1
 )
 
-// AllowYourAccount allowed values.
+// String returns the AllowVPNValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowVPNValue) String() string {
+	switch e {
+	case AllowVPNNotAllowed:
+		return "AllowVPNNotAllowed"
+	case AllowVPNAllowed:
+		return "AllowVPNAllowed"
+	default:
+		return fmt.Sprintf("AllowVPNValue(%d)", int64(e))
+	}
+}
+
+// AllowWorkplaceValue — allowed values for the AllowWorkplace node.
+type AllowWorkplaceValue int64
+
 const (
 	// Not allowed.
-	AllowYourAccountNotAllowed int64 = 0
+	AllowWorkplaceNotAllowed AllowWorkplaceValue = 0
 	// Allowed.
-	AllowYourAccountAllowed int64 = 1
+	AllowWorkplaceAllowed AllowWorkplaceValue = 1
 )
+
+// String returns the AllowWorkplaceValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowWorkplaceValue) String() string {
+	switch e {
+	case AllowWorkplaceNotAllowed:
+		return "AllowWorkplaceNotAllowed"
+	case AllowWorkplaceAllowed:
+		return "AllowWorkplaceAllowed"
+	default:
+		return fmt.Sprintf("AllowWorkplaceValue(%d)", int64(e))
+	}
+}
+
+// AllowYourAccountValue — allowed values for the AllowYourAccount node.
+type AllowYourAccountValue int64
+
+const (
+	// Not allowed.
+	AllowYourAccountNotAllowed AllowYourAccountValue = 0
+	// Allowed.
+	AllowYourAccountAllowed AllowYourAccountValue = 1
+)
+
+// String returns the AllowYourAccountValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowYourAccountValue) String() string {
+	switch e {
+	case AllowYourAccountNotAllowed:
+		return "AllowYourAccountNotAllowed"
+	case AllowYourAccountAllowed:
+		return "AllowYourAccountAllowed"
+	default:
+		return fmt.Sprintf("AllowYourAccountValue(%d)", int64(e))
+	}
+}

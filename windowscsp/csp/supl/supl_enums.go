@@ -2,44 +2,92 @@
 
 package supl
 
-// SUPL1ExtMicrosoftHighAccPositioningMethod allowed values.
+import (
+	"fmt"
+)
+
+// SUPL1ExtMicrosoftHighAccPositioningMethodValue — allowed values for the HighAccPositioningMethod node.
+type SUPL1ExtMicrosoftHighAccPositioningMethodValue int64
+
 const (
 	// None: The device uses the default positioning method. In this default mode, the GNSS obtains
 	// assistance (time injection, coarse position injection and ephemeris data) from the Microsoft
 	// Positioning Service.
-	SUPL1ExtMicrosoftHighAccPositioningMethodNone int64 = 0
+	SUPL1ExtMicrosoftHighAccPositioningMethodNone SUPL1ExtMicrosoftHighAccPositioningMethodValue = 0
 	// Mobile Station Assisted: The device contacts the H-SLP server to obtain a position. The H-SLP
 	// does the calculation of the position and returns it to the device.
-	SUPL1ExtMicrosoftHighAccPositioningMethodMobileStationAssisted int64 = 1
+	SUPL1ExtMicrosoftHighAccPositioningMethodMobileStationAssisted SUPL1ExtMicrosoftHighAccPositioningMethodValue = 1
 	// Mobile Station Based: The device obtains location-aiding data (almanac, ephemeris data, time and
 	// coarse initial position of the device) from the H-SLP server, and the device uses this
 	// information to help GPS obtain a fix. All position calculations are done in the device.
-	SUPL1ExtMicrosoftHighAccPositioningMethodMobileStationBased int64 = 2
+	SUPL1ExtMicrosoftHighAccPositioningMethodMobileStationBased SUPL1ExtMicrosoftHighAccPositioningMethodValue = 2
 	// Mobile Station Standalone: The device obtains assistance as required from the Microsoft location
 	// services.
-	SUPL1ExtMicrosoftHighAccPositioningMethodMobileStationStandalone int64 = 3
+	SUPL1ExtMicrosoftHighAccPositioningMethodMobileStationStandalone SUPL1ExtMicrosoftHighAccPositioningMethodValue = 3
 	// OTDOA
-	SUPL1ExtMicrosoftHighAccPositioningMethodOTDOA int64 = 4
+	SUPL1ExtMicrosoftHighAccPositioningMethodOTDOA SUPL1ExtMicrosoftHighAccPositioningMethodValue = 4
 	// AFLT
-	SUPL1ExtMicrosoftHighAccPositioningMethodAFLT int64 = 5
+	SUPL1ExtMicrosoftHighAccPositioningMethodAFLT SUPL1ExtMicrosoftHighAccPositioningMethodValue = 5
 )
 
-// V2UPL1PositioningMethodMR allowed values.
+// String returns the SUPL1ExtMicrosoftHighAccPositioningMethodValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SUPL1ExtMicrosoftHighAccPositioningMethodValue) String() string {
+	switch e {
+	case SUPL1ExtMicrosoftHighAccPositioningMethodNone:
+		return "SUPL1ExtMicrosoftHighAccPositioningMethodNone"
+	case SUPL1ExtMicrosoftHighAccPositioningMethodMobileStationAssisted:
+		return "SUPL1ExtMicrosoftHighAccPositioningMethodMobileStationAssisted"
+	case SUPL1ExtMicrosoftHighAccPositioningMethodMobileStationBased:
+		return "SUPL1ExtMicrosoftHighAccPositioningMethodMobileStationBased"
+	case SUPL1ExtMicrosoftHighAccPositioningMethodMobileStationStandalone:
+		return "SUPL1ExtMicrosoftHighAccPositioningMethodMobileStationStandalone"
+	case SUPL1ExtMicrosoftHighAccPositioningMethodOTDOA:
+		return "SUPL1ExtMicrosoftHighAccPositioningMethodOTDOA"
+	case SUPL1ExtMicrosoftHighAccPositioningMethodAFLT:
+		return "SUPL1ExtMicrosoftHighAccPositioningMethodAFLT"
+	default:
+		return fmt.Sprintf("SUPL1ExtMicrosoftHighAccPositioningMethodValue(%d)", int64(e))
+	}
+}
+
+// V2UPL1PositioningMethodMRValue — allowed values for the PositioningMethod_MR node.
+type V2UPL1PositioningMethodMRValue int64
+
 const (
 	// None: The device uses the default positioning method. In this default mode, the GNSS obtains
 	// assistance (time injection, coarse position injection, and ephemeris data) from the Microsoft
 	// Positioning Service.
-	V2UPL1PositioningMethodMRNone int64 = 0
+	V2UPL1PositioningMethodMRNone V2UPL1PositioningMethodMRValue = 0
 	// Mobile Station Assisted: The device contacts the H-SLP server to obtain a position. The H-SLP
 	// does the calculation of the position and returns it to the device.
-	V2UPL1PositioningMethodMRMobileStationAssisted int64 = 1
+	V2UPL1PositioningMethodMRMobileStationAssisted V2UPL1PositioningMethodMRValue = 1
 	// Mobile Station Based: The device obtains location-aiding data (almanac, ephemeris data, time and
 	// coarse initial position of the device) from the H-SLP server, and the device uses this
 	// information to help GPS obtain a fix. All position calculations are done in the device.
-	V2UPL1PositioningMethodMRMobileStationBased int64 = 2
+	V2UPL1PositioningMethodMRMobileStationBased V2UPL1PositioningMethodMRValue = 2
 	// Mobile Station Standalone: The device obtains assistance as required from the Microsoft location
 	// services.
-	V2UPL1PositioningMethodMRMobileStationStandalone int64 = 3
+	V2UPL1PositioningMethodMRMobileStationStandalone V2UPL1PositioningMethodMRValue = 3
 	// AFLT
-	V2UPL1PositioningMethodMRAFLT int64 = 4
+	V2UPL1PositioningMethodMRAFLT V2UPL1PositioningMethodMRValue = 4
 )
+
+// String returns the V2UPL1PositioningMethodMRValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e V2UPL1PositioningMethodMRValue) String() string {
+	switch e {
+	case V2UPL1PositioningMethodMRNone:
+		return "V2UPL1PositioningMethodMRNone"
+	case V2UPL1PositioningMethodMRMobileStationAssisted:
+		return "V2UPL1PositioningMethodMRMobileStationAssisted"
+	case V2UPL1PositioningMethodMRMobileStationBased:
+		return "V2UPL1PositioningMethodMRMobileStationBased"
+	case V2UPL1PositioningMethodMRMobileStationStandalone:
+		return "V2UPL1PositioningMethodMRMobileStationStandalone"
+	case V2UPL1PositioningMethodMRAFLT:
+		return "V2UPL1PositioningMethodMRAFLT"
+	default:
+		return fmt.Sprintf("V2UPL1PositioningMethodMRValue(%d)", int64(e))
+	}
+}

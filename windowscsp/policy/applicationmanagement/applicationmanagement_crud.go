@@ -13,12 +13,13 @@ import (
 //
 // Default: 65535.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *ApplicationManagement) GetAllowAllTrustedApps(ctx context.Context) (int64, error) {
+func (s *ApplicationManagement) GetAllowAllTrustedApps(ctx context.Context) (AllowAllTrustedAppsValue, error) {
 	v, err := s.c.Get(ctx, URIAllowAllTrustedApps)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowAllTrustedAppsValue(n), err
 }
 
 // CreateAllowAllTrustedApps creates ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/AllowAllTrustedApps.
@@ -26,8 +27,8 @@ func (s *ApplicationManagement) GetAllowAllTrustedApps(ctx context.Context) (int
 //
 // Default: 65535.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *ApplicationManagement) CreateAllowAllTrustedApps(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowAllTrustedApps, client.Int(value))
+func (s *ApplicationManagement) CreateAllowAllTrustedApps(ctx context.Context, value AllowAllTrustedAppsValue) error {
+	return s.c.Add(ctx, URIAllowAllTrustedApps, client.Int(int64(value)))
 }
 
 // UpdateAllowAllTrustedApps updates ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/AllowAllTrustedApps.
@@ -35,8 +36,8 @@ func (s *ApplicationManagement) CreateAllowAllTrustedApps(ctx context.Context, v
 //
 // Default: 65535.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *ApplicationManagement) UpdateAllowAllTrustedApps(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowAllTrustedApps, client.Int(value))
+func (s *ApplicationManagement) UpdateAllowAllTrustedApps(ctx context.Context, value AllowAllTrustedAppsValue) error {
+	return s.c.Replace(ctx, URIAllowAllTrustedApps, client.Int(int64(value)))
 }
 
 // DeleteAllowAllTrustedApps deletes ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/AllowAllTrustedApps.
@@ -54,12 +55,13 @@ func (s *ApplicationManagement) DeleteAllowAllTrustedApps(ctx context.Context) e
 //
 // Default: 2.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *ApplicationManagement) GetAllowAppStoreAutoUpdate(ctx context.Context) (int64, error) {
+func (s *ApplicationManagement) GetAllowAppStoreAutoUpdate(ctx context.Context) (AllowAppStoreAutoUpdateValue, error) {
 	v, err := s.c.Get(ctx, URIAllowAppStoreAutoUpdate)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowAppStoreAutoUpdateValue(n), err
 }
 
 // CreateAllowAppStoreAutoUpdate creates ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/AllowAppStoreAutoUpdate.
@@ -68,8 +70,8 @@ func (s *ApplicationManagement) GetAllowAppStoreAutoUpdate(ctx context.Context) 
 //
 // Default: 2.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *ApplicationManagement) CreateAllowAppStoreAutoUpdate(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowAppStoreAutoUpdate, client.Int(value))
+func (s *ApplicationManagement) CreateAllowAppStoreAutoUpdate(ctx context.Context, value AllowAppStoreAutoUpdateValue) error {
+	return s.c.Add(ctx, URIAllowAppStoreAutoUpdate, client.Int(int64(value)))
 }
 
 // UpdateAllowAppStoreAutoUpdate updates ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/AllowAppStoreAutoUpdate.
@@ -78,8 +80,8 @@ func (s *ApplicationManagement) CreateAllowAppStoreAutoUpdate(ctx context.Contex
 //
 // Default: 2.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *ApplicationManagement) UpdateAllowAppStoreAutoUpdate(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowAppStoreAutoUpdate, client.Int(value))
+func (s *ApplicationManagement) UpdateAllowAppStoreAutoUpdate(ctx context.Context, value AllowAppStoreAutoUpdateValue) error {
+	return s.c.Replace(ctx, URIAllowAppStoreAutoUpdate, client.Int(int64(value)))
 }
 
 // DeleteAllowAppStoreAutoUpdate deletes ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/AllowAppStoreAutoUpdate.
@@ -102,12 +104,13 @@ func (s *ApplicationManagement) DeleteAllowAppStoreAutoUpdate(ctx context.Contex
 //
 // Default: 65535.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *ApplicationManagement) GetAllowAutomaticAppArchiving(ctx context.Context) (int64, error) {
+func (s *ApplicationManagement) GetAllowAutomaticAppArchiving(ctx context.Context) (AllowAutomaticAppArchivingValue, error) {
 	v, err := s.c.Get(ctx, URIAllowAutomaticAppArchiving)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowAutomaticAppArchivingValue(n), err
 }
 
 // CreateAllowAutomaticAppArchiving creates ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/AllowAutomaticAppArchiving.
@@ -120,8 +123,8 @@ func (s *ApplicationManagement) GetAllowAutomaticAppArchiving(ctx context.Contex
 //
 // Default: 65535.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *ApplicationManagement) CreateAllowAutomaticAppArchiving(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowAutomaticAppArchiving, client.Int(value))
+func (s *ApplicationManagement) CreateAllowAutomaticAppArchiving(ctx context.Context, value AllowAutomaticAppArchivingValue) error {
+	return s.c.Add(ctx, URIAllowAutomaticAppArchiving, client.Int(int64(value)))
 }
 
 // UpdateAllowAutomaticAppArchiving updates ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/AllowAutomaticAppArchiving.
@@ -134,8 +137,8 @@ func (s *ApplicationManagement) CreateAllowAutomaticAppArchiving(ctx context.Con
 //
 // Default: 65535.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *ApplicationManagement) UpdateAllowAutomaticAppArchiving(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowAutomaticAppArchiving, client.Int(value))
+func (s *ApplicationManagement) UpdateAllowAutomaticAppArchiving(ctx context.Context, value AllowAutomaticAppArchivingValue) error {
+	return s.c.Replace(ctx, URIAllowAutomaticAppArchiving, client.Int(int64(value)))
 }
 
 // DeleteAllowAutomaticAppArchiving deletes ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/AllowAutomaticAppArchiving.
@@ -157,12 +160,13 @@ func (s *ApplicationManagement) DeleteAllowAutomaticAppArchiving(ctx context.Con
 //
 // Default: 65535.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *ApplicationManagement) GetAllowDeveloperUnlock(ctx context.Context) (int64, error) {
+func (s *ApplicationManagement) GetAllowDeveloperUnlock(ctx context.Context) (AllowDeveloperUnlockValue, error) {
 	v, err := s.c.Get(ctx, URIAllowDeveloperUnlock)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowDeveloperUnlockValue(n), err
 }
 
 // CreateAllowDeveloperUnlock creates ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/AllowDeveloperUnlock.
@@ -170,8 +174,8 @@ func (s *ApplicationManagement) GetAllowDeveloperUnlock(ctx context.Context) (in
 //
 // Default: 65535.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *ApplicationManagement) CreateAllowDeveloperUnlock(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowDeveloperUnlock, client.Int(value))
+func (s *ApplicationManagement) CreateAllowDeveloperUnlock(ctx context.Context, value AllowDeveloperUnlockValue) error {
+	return s.c.Add(ctx, URIAllowDeveloperUnlock, client.Int(int64(value)))
 }
 
 // UpdateAllowDeveloperUnlock updates ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/AllowDeveloperUnlock.
@@ -179,8 +183,8 @@ func (s *ApplicationManagement) CreateAllowDeveloperUnlock(ctx context.Context, 
 //
 // Default: 65535.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *ApplicationManagement) UpdateAllowDeveloperUnlock(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowDeveloperUnlock, client.Int(value))
+func (s *ApplicationManagement) UpdateAllowDeveloperUnlock(ctx context.Context, value AllowDeveloperUnlockValue) error {
+	return s.c.Replace(ctx, URIAllowDeveloperUnlock, client.Int(int64(value)))
 }
 
 // DeleteAllowDeveloperUnlock deletes ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/AllowDeveloperUnlock.
@@ -198,12 +202,13 @@ func (s *ApplicationManagement) DeleteAllowDeveloperUnlock(ctx context.Context) 
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *ApplicationManagement) GetAllowGameDVR(ctx context.Context) (int64, error) {
+func (s *ApplicationManagement) GetAllowGameDVR(ctx context.Context) (AllowGameDVRValue, error) {
 	v, err := s.c.Get(ctx, URIAllowGameDVR)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowGameDVRValue(n), err
 }
 
 // CreateAllowGameDVR creates ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/AllowGameDVR.
@@ -212,8 +217,8 @@ func (s *ApplicationManagement) GetAllowGameDVR(ctx context.Context) (int64, err
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *ApplicationManagement) CreateAllowGameDVR(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowGameDVR, client.Int(value))
+func (s *ApplicationManagement) CreateAllowGameDVR(ctx context.Context, value AllowGameDVRValue) error {
+	return s.c.Add(ctx, URIAllowGameDVR, client.Int(int64(value)))
 }
 
 // UpdateAllowGameDVR updates ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/AllowGameDVR.
@@ -222,8 +227,8 @@ func (s *ApplicationManagement) CreateAllowGameDVR(ctx context.Context, value in
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *ApplicationManagement) UpdateAllowGameDVR(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowGameDVR, client.Int(value))
+func (s *ApplicationManagement) UpdateAllowGameDVR(ctx context.Context, value AllowGameDVRValue) error {
+	return s.c.Replace(ctx, URIAllowGameDVR, client.Int(int64(value)))
 }
 
 // DeleteAllowGameDVR deletes ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/AllowGameDVR.
@@ -244,12 +249,13 @@ func (s *ApplicationManagement) DeleteAllowGameDVR(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *ApplicationManagement) GetAllowSharedUserAppData(ctx context.Context) (int64, error) {
+func (s *ApplicationManagement) GetAllowSharedUserAppData(ctx context.Context) (AllowSharedUserAppDataValue, error) {
 	v, err := s.c.Get(ctx, URIAllowSharedUserAppData)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowSharedUserAppDataValue(n), err
 }
 
 // CreateAllowSharedUserAppData creates ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/AllowSharedUserAppData.
@@ -260,8 +266,8 @@ func (s *ApplicationManagement) GetAllowSharedUserAppData(ctx context.Context) (
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *ApplicationManagement) CreateAllowSharedUserAppData(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowSharedUserAppData, client.Int(value))
+func (s *ApplicationManagement) CreateAllowSharedUserAppData(ctx context.Context, value AllowSharedUserAppDataValue) error {
+	return s.c.Add(ctx, URIAllowSharedUserAppData, client.Int(int64(value)))
 }
 
 // UpdateAllowSharedUserAppData updates ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/AllowSharedUserAppData.
@@ -272,8 +278,8 @@ func (s *ApplicationManagement) CreateAllowSharedUserAppData(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *ApplicationManagement) UpdateAllowSharedUserAppData(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowSharedUserAppData, client.Int(value))
+func (s *ApplicationManagement) UpdateAllowSharedUserAppData(ctx context.Context, value AllowSharedUserAppDataValue) error {
+	return s.c.Replace(ctx, URIAllowSharedUserAppData, client.Int(int64(value)))
 }
 
 // DeleteAllowSharedUserAppData deletes ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/AllowSharedUserAppData.
@@ -295,12 +301,13 @@ func (s *ApplicationManagement) DeleteAllowSharedUserAppData(ctx context.Context
 // Supported from OS build 10.0.10240 (CSP v1.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *ApplicationManagement) GetAllowStore(ctx context.Context) (int64, error) {
+func (s *ApplicationManagement) GetAllowStore(ctx context.Context) (AllowStoreValue, error) {
 	v, err := s.c.Get(ctx, URIAllowStore)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowStoreValue(n), err
 }
 
 // CreateAllowStore creates ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/AllowStore.
@@ -310,8 +317,8 @@ func (s *ApplicationManagement) GetAllowStore(ctx context.Context) (int64, error
 // Supported from OS build 10.0.10240 (CSP v1.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *ApplicationManagement) CreateAllowStore(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowStore, client.Int(value))
+func (s *ApplicationManagement) CreateAllowStore(ctx context.Context, value AllowStoreValue) error {
+	return s.c.Add(ctx, URIAllowStore, client.Int(int64(value)))
 }
 
 // UpdateAllowStore updates ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/AllowStore.
@@ -321,8 +328,8 @@ func (s *ApplicationManagement) CreateAllowStore(ctx context.Context, value int6
 // Supported from OS build 10.0.10240 (CSP v1.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *ApplicationManagement) UpdateAllowStore(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowStore, client.Int(value))
+func (s *ApplicationManagement) UpdateAllowStore(ctx context.Context, value AllowStoreValue) error {
+	return s.c.Replace(ctx, URIAllowStore, client.Int(int64(value)))
 }
 
 // DeleteAllowStore deletes ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/AllowStore.
@@ -422,12 +429,13 @@ func (s *ApplicationManagement) DeleteApplicationRestrictions(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *ApplicationManagement) GetBlockNonAdminUserInstall(ctx context.Context) (int64, error) {
+func (s *ApplicationManagement) GetBlockNonAdminUserInstall(ctx context.Context) (BlockNonAdminUserInstallValue, error) {
 	v, err := s.c.Get(ctx, URIBlockNonAdminUserInstall)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return BlockNonAdminUserInstallValue(n), err
 }
 
 // CreateBlockNonAdminUserInstall creates ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/BlockNonAdminUserInstall.
@@ -440,8 +448,8 @@ func (s *ApplicationManagement) GetBlockNonAdminUserInstall(ctx context.Context)
 //
 // Default: 0.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *ApplicationManagement) CreateBlockNonAdminUserInstall(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIBlockNonAdminUserInstall, client.Int(value))
+func (s *ApplicationManagement) CreateBlockNonAdminUserInstall(ctx context.Context, value BlockNonAdminUserInstallValue) error {
+	return s.c.Add(ctx, URIBlockNonAdminUserInstall, client.Int(int64(value)))
 }
 
 // UpdateBlockNonAdminUserInstall updates ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/BlockNonAdminUserInstall.
@@ -454,8 +462,8 @@ func (s *ApplicationManagement) CreateBlockNonAdminUserInstall(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *ApplicationManagement) UpdateBlockNonAdminUserInstall(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIBlockNonAdminUserInstall, client.Int(value))
+func (s *ApplicationManagement) UpdateBlockNonAdminUserInstall(ctx context.Context, value BlockNonAdminUserInstallValue) error {
+	return s.c.Replace(ctx, URIBlockNonAdminUserInstall, client.Int(int64(value)))
 }
 
 // DeleteBlockNonAdminUserInstall deletes ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/BlockNonAdminUserInstall.
@@ -522,12 +530,13 @@ func (s *ApplicationManagement) DeleteConfigureMSIXAuthenticationAuthorizedDomai
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *ApplicationManagement) GetDisableStoreOriginatedApps(ctx context.Context) (int64, error) {
+func (s *ApplicationManagement) GetDisableStoreOriginatedApps(ctx context.Context) (DisableStoreOriginatedAppsValue, error) {
 	v, err := s.c.Get(ctx, URIDisableStoreOriginatedApps)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableStoreOriginatedAppsValue(n), err
 }
 
 // CreateDisableStoreOriginatedApps creates ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/DisableStoreOriginatedApps.
@@ -536,8 +545,8 @@ func (s *ApplicationManagement) GetDisableStoreOriginatedApps(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *ApplicationManagement) CreateDisableStoreOriginatedApps(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableStoreOriginatedApps, client.Int(value))
+func (s *ApplicationManagement) CreateDisableStoreOriginatedApps(ctx context.Context, value DisableStoreOriginatedAppsValue) error {
+	return s.c.Add(ctx, URIDisableStoreOriginatedApps, client.Int(int64(value)))
 }
 
 // UpdateDisableStoreOriginatedApps updates ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/DisableStoreOriginatedApps.
@@ -546,8 +555,8 @@ func (s *ApplicationManagement) CreateDisableStoreOriginatedApps(ctx context.Con
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *ApplicationManagement) UpdateDisableStoreOriginatedApps(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableStoreOriginatedApps, client.Int(value))
+func (s *ApplicationManagement) UpdateDisableStoreOriginatedApps(ctx context.Context, value DisableStoreOriginatedAppsValue) error {
+	return s.c.Replace(ctx, URIDisableStoreOriginatedApps, client.Int(int64(value)))
 }
 
 // DeleteDisableStoreOriginatedApps deletes ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/DisableStoreOriginatedApps.
@@ -566,12 +575,13 @@ func (s *ApplicationManagement) DeleteDisableStoreOriginatedApps(ctx context.Con
 // present. If multiple URIs are involved, all of them are considered.
 //
 // Supported from OS build 10.0.26000 (CSP v10.0).
-func (s *ApplicationManagement) GetEnableMsixAllowedZones(ctx context.Context) (int64, error) {
+func (s *ApplicationManagement) GetEnableMsixAllowedZones(ctx context.Context) (EnableMsixAllowedZonesValue, error) {
 	v, err := s.c.Get(ctx, URIEnableMsixAllowedZones)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableMsixAllowedZonesValue(n), err
 }
 
 // CreateEnableMsixAllowedZones creates ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/EnableMsixAllowedZones.
@@ -580,8 +590,8 @@ func (s *ApplicationManagement) GetEnableMsixAllowedZones(ctx context.Context) (
 // present. If multiple URIs are involved, all of them are considered.
 //
 // Supported from OS build 10.0.26000 (CSP v10.0).
-func (s *ApplicationManagement) CreateEnableMsixAllowedZones(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableMsixAllowedZones, client.Int(value))
+func (s *ApplicationManagement) CreateEnableMsixAllowedZones(ctx context.Context, value EnableMsixAllowedZonesValue) error {
+	return s.c.Add(ctx, URIEnableMsixAllowedZones, client.Int(int64(value)))
 }
 
 // UpdateEnableMsixAllowedZones updates ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/EnableMsixAllowedZones.
@@ -590,8 +600,8 @@ func (s *ApplicationManagement) CreateEnableMsixAllowedZones(ctx context.Context
 // present. If multiple URIs are involved, all of them are considered.
 //
 // Supported from OS build 10.0.26000 (CSP v10.0).
-func (s *ApplicationManagement) UpdateEnableMsixAllowedZones(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableMsixAllowedZones, client.Int(value))
+func (s *ApplicationManagement) UpdateEnableMsixAllowedZones(ctx context.Context, value EnableMsixAllowedZonesValue) error {
+	return s.c.Replace(ctx, URIEnableMsixAllowedZones, client.Int(int64(value)))
 }
 
 // DeleteEnableMsixAllowedZones deletes ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/EnableMsixAllowedZones.
@@ -609,12 +619,13 @@ func (s *ApplicationManagement) DeleteEnableMsixAllowedZones(ctx context.Context
 // packages from specific URL zones.
 //
 // Supported from OS build 10.0.26000 (CSP v10.0).
-func (s *ApplicationManagement) GetEnableMsixSmartScreenCheck(ctx context.Context) (int64, error) {
+func (s *ApplicationManagement) GetEnableMsixSmartScreenCheck(ctx context.Context) (EnableMsixSmartScreenCheckValue, error) {
 	v, err := s.c.Get(ctx, URIEnableMsixSmartScreenCheck)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableMsixSmartScreenCheckValue(n), err
 }
 
 // CreateEnableMsixSmartScreenCheck creates ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/EnableMsixSmartScreenCheck.
@@ -622,8 +633,8 @@ func (s *ApplicationManagement) GetEnableMsixSmartScreenCheck(ctx context.Contex
 // packages from specific URL zones.
 //
 // Supported from OS build 10.0.26000 (CSP v10.0).
-func (s *ApplicationManagement) CreateEnableMsixSmartScreenCheck(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableMsixSmartScreenCheck, client.Int(value))
+func (s *ApplicationManagement) CreateEnableMsixSmartScreenCheck(ctx context.Context, value EnableMsixSmartScreenCheckValue) error {
+	return s.c.Add(ctx, URIEnableMsixSmartScreenCheck, client.Int(int64(value)))
 }
 
 // UpdateEnableMsixSmartScreenCheck updates ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/EnableMsixSmartScreenCheck.
@@ -631,8 +642,8 @@ func (s *ApplicationManagement) CreateEnableMsixSmartScreenCheck(ctx context.Con
 // packages from specific URL zones.
 //
 // Supported from OS build 10.0.26000 (CSP v10.0).
-func (s *ApplicationManagement) UpdateEnableMsixSmartScreenCheck(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableMsixSmartScreenCheck, client.Int(value))
+func (s *ApplicationManagement) UpdateEnableMsixSmartScreenCheck(ctx context.Context, value EnableMsixSmartScreenCheckValue) error {
+	return s.c.Replace(ctx, URIEnableMsixSmartScreenCheck, client.Int(int64(value)))
 }
 
 // DeleteEnableMsixSmartScreenCheck deletes ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/EnableMsixSmartScreenCheck.
@@ -700,12 +711,13 @@ func (s *ApplicationManagement) DeleteLaunchAppAfterLogOn(ctx context.Context) e
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *ApplicationManagement) GetMSIAllowUserControlOverInstall(ctx context.Context) (int64, error) {
+func (s *ApplicationManagement) GetMSIAllowUserControlOverInstall(ctx context.Context) (MSIAllowUserControlOverInstallValue, error) {
 	v, err := s.c.Get(ctx, URIMSIAllowUserControlOverInstall)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MSIAllowUserControlOverInstallValue(n), err
 }
 
 // CreateMSIAllowUserControlOverInstall creates ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/MSIAllowUserControlOverInstall.
@@ -724,8 +736,8 @@ func (s *ApplicationManagement) GetMSIAllowUserControlOverInstall(ctx context.Co
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *ApplicationManagement) CreateMSIAllowUserControlOverInstall(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIMSIAllowUserControlOverInstall, client.Int(value))
+func (s *ApplicationManagement) CreateMSIAllowUserControlOverInstall(ctx context.Context, value MSIAllowUserControlOverInstallValue) error {
+	return s.c.Add(ctx, URIMSIAllowUserControlOverInstall, client.Int(int64(value)))
 }
 
 // UpdateMSIAllowUserControlOverInstall updates ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/MSIAllowUserControlOverInstall.
@@ -744,8 +756,8 @@ func (s *ApplicationManagement) CreateMSIAllowUserControlOverInstall(ctx context
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *ApplicationManagement) UpdateMSIAllowUserControlOverInstall(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIMSIAllowUserControlOverInstall, client.Int(value))
+func (s *ApplicationManagement) UpdateMSIAllowUserControlOverInstall(ctx context.Context, value MSIAllowUserControlOverInstallValue) error {
+	return s.c.Replace(ctx, URIMSIAllowUserControlOverInstall, client.Int(int64(value)))
 }
 
 // DeleteMSIAllowUserControlOverInstall deletes ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/MSIAllowUserControlOverInstall.
@@ -786,12 +798,13 @@ func (s *ApplicationManagement) DeleteMSIAllowUserControlOverInstall(ctx context
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *ApplicationManagement) GetMSIAlwaysInstallWithElevatedPrivileges(ctx context.Context) (int64, error) {
+func (s *ApplicationManagement) GetMSIAlwaysInstallWithElevatedPrivileges(ctx context.Context) (MSIAlwaysInstallWithElevatedPrivilegesValue, error) {
 	v, err := s.c.Get(ctx, URIMSIAlwaysInstallWithElevatedPrivileges)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MSIAlwaysInstallWithElevatedPrivilegesValue(n), err
 }
 
 // CreateMSIAlwaysInstallWithElevatedPrivileges creates ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/MSIAlwaysInstallWithElevatedPrivileges.
@@ -812,8 +825,8 @@ func (s *ApplicationManagement) GetMSIAlwaysInstallWithElevatedPrivileges(ctx co
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *ApplicationManagement) CreateMSIAlwaysInstallWithElevatedPrivileges(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIMSIAlwaysInstallWithElevatedPrivileges, client.Int(value))
+func (s *ApplicationManagement) CreateMSIAlwaysInstallWithElevatedPrivileges(ctx context.Context, value MSIAlwaysInstallWithElevatedPrivilegesValue) error {
+	return s.c.Add(ctx, URIMSIAlwaysInstallWithElevatedPrivileges, client.Int(int64(value)))
 }
 
 // UpdateMSIAlwaysInstallWithElevatedPrivileges updates ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/MSIAlwaysInstallWithElevatedPrivileges.
@@ -834,8 +847,8 @@ func (s *ApplicationManagement) CreateMSIAlwaysInstallWithElevatedPrivileges(ctx
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *ApplicationManagement) UpdateMSIAlwaysInstallWithElevatedPrivileges(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIMSIAlwaysInstallWithElevatedPrivileges, client.Int(value))
+func (s *ApplicationManagement) UpdateMSIAlwaysInstallWithElevatedPrivileges(ctx context.Context, value MSIAlwaysInstallWithElevatedPrivilegesValue) error {
+	return s.c.Replace(ctx, URIMSIAlwaysInstallWithElevatedPrivileges, client.Int(int64(value)))
 }
 
 // DeleteMSIAlwaysInstallWithElevatedPrivileges deletes ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/MSIAlwaysInstallWithElevatedPrivileges.
@@ -898,12 +911,13 @@ func (s *ApplicationManagement) DeleteRemoveDefaultMicrosoftStorePackages(ctx co
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *ApplicationManagement) GetRequirePrivateStoreOnly(ctx context.Context) (int64, error) {
+func (s *ApplicationManagement) GetRequirePrivateStoreOnly(ctx context.Context) (RequirePrivateStoreOnlyValue, error) {
 	v, err := s.c.Get(ctx, URIRequirePrivateStoreOnly)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return RequirePrivateStoreOnlyValue(n), err
 }
 
 // CreateRequirePrivateStoreOnly creates ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/RequirePrivateStoreOnly.
@@ -912,8 +926,8 @@ func (s *ApplicationManagement) GetRequirePrivateStoreOnly(ctx context.Context) 
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *ApplicationManagement) CreateRequirePrivateStoreOnly(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIRequirePrivateStoreOnly, client.Int(value))
+func (s *ApplicationManagement) CreateRequirePrivateStoreOnly(ctx context.Context, value RequirePrivateStoreOnlyValue) error {
+	return s.c.Add(ctx, URIRequirePrivateStoreOnly, client.Int(int64(value)))
 }
 
 // UpdateRequirePrivateStoreOnly updates ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/RequirePrivateStoreOnly.
@@ -922,8 +936,8 @@ func (s *ApplicationManagement) CreateRequirePrivateStoreOnly(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *ApplicationManagement) UpdateRequirePrivateStoreOnly(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIRequirePrivateStoreOnly, client.Int(value))
+func (s *ApplicationManagement) UpdateRequirePrivateStoreOnly(ctx context.Context, value RequirePrivateStoreOnlyValue) error {
+	return s.c.Replace(ctx, URIRequirePrivateStoreOnly, client.Int(int64(value)))
 }
 
 // DeleteRequirePrivateStoreOnly deletes ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/RequirePrivateStoreOnly.
@@ -942,12 +956,13 @@ func (s *ApplicationManagement) DeleteRequirePrivateStoreOnly(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *ApplicationManagement) GetRestrictAppDataToSystemVolume(ctx context.Context) (int64, error) {
+func (s *ApplicationManagement) GetRestrictAppDataToSystemVolume(ctx context.Context) (RestrictAppDataToSystemVolumeValue, error) {
 	v, err := s.c.Get(ctx, URIRestrictAppDataToSystemVolume)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return RestrictAppDataToSystemVolumeValue(n), err
 }
 
 // CreateRestrictAppDataToSystemVolume creates ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/RestrictAppDataToSystemVolume.
@@ -956,8 +971,8 @@ func (s *ApplicationManagement) GetRestrictAppDataToSystemVolume(ctx context.Con
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *ApplicationManagement) CreateRestrictAppDataToSystemVolume(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIRestrictAppDataToSystemVolume, client.Int(value))
+func (s *ApplicationManagement) CreateRestrictAppDataToSystemVolume(ctx context.Context, value RestrictAppDataToSystemVolumeValue) error {
+	return s.c.Add(ctx, URIRestrictAppDataToSystemVolume, client.Int(int64(value)))
 }
 
 // UpdateRestrictAppDataToSystemVolume updates ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/RestrictAppDataToSystemVolume.
@@ -966,8 +981,8 @@ func (s *ApplicationManagement) CreateRestrictAppDataToSystemVolume(ctx context.
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *ApplicationManagement) UpdateRestrictAppDataToSystemVolume(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIRestrictAppDataToSystemVolume, client.Int(value))
+func (s *ApplicationManagement) UpdateRestrictAppDataToSystemVolume(ctx context.Context, value RestrictAppDataToSystemVolumeValue) error {
+	return s.c.Replace(ctx, URIRestrictAppDataToSystemVolume, client.Int(int64(value)))
 }
 
 // DeleteRestrictAppDataToSystemVolume deletes ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/RestrictAppDataToSystemVolume.
@@ -986,12 +1001,13 @@ func (s *ApplicationManagement) DeleteRestrictAppDataToSystemVolume(ctx context.
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *ApplicationManagement) GetRestrictAppToSystemVolume(ctx context.Context) (int64, error) {
+func (s *ApplicationManagement) GetRestrictAppToSystemVolume(ctx context.Context) (RestrictAppToSystemVolumeValue, error) {
 	v, err := s.c.Get(ctx, URIRestrictAppToSystemVolume)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return RestrictAppToSystemVolumeValue(n), err
 }
 
 // CreateRestrictAppToSystemVolume creates ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/RestrictAppToSystemVolume.
@@ -1000,8 +1016,8 @@ func (s *ApplicationManagement) GetRestrictAppToSystemVolume(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *ApplicationManagement) CreateRestrictAppToSystemVolume(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIRestrictAppToSystemVolume, client.Int(value))
+func (s *ApplicationManagement) CreateRestrictAppToSystemVolume(ctx context.Context, value RestrictAppToSystemVolumeValue) error {
+	return s.c.Add(ctx, URIRestrictAppToSystemVolume, client.Int(int64(value)))
 }
 
 // UpdateRestrictAppToSystemVolume updates ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/RestrictAppToSystemVolume.
@@ -1010,8 +1026,8 @@ func (s *ApplicationManagement) CreateRestrictAppToSystemVolume(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *ApplicationManagement) UpdateRestrictAppToSystemVolume(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIRestrictAppToSystemVolume, client.Int(value))
+func (s *ApplicationManagement) UpdateRestrictAppToSystemVolume(ctx context.Context, value RestrictAppToSystemVolumeValue) error {
+	return s.c.Replace(ctx, URIRestrictAppToSystemVolume, client.Int(int64(value)))
 }
 
 // DeleteRestrictAppToSystemVolume deletes ./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/RestrictAppToSystemVolume.

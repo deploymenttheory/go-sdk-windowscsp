@@ -54,26 +54,27 @@ func (s *ClientCertificateInstall) UpdatePFXCertInstallUniqueIDContainerName(ctx
 // GetPFXCertInstallUniqueIDKeyLocation reads ./Device/Vendor/MSFT/ClientCertificateInstall/PFXCertInstall/{uniqueID}/KeyLocation.
 // Required for PFX certificate installation. Indicates the KeyStorage provider to target the
 // private key installation to.
-func (s *ClientCertificateInstall) GetPFXCertInstallUniqueIDKeyLocation(ctx context.Context, uniqueID string) (int64, error) {
+func (s *ClientCertificateInstall) GetPFXCertInstallUniqueIDKeyLocation(ctx context.Context, uniqueID string) (PFXCertInstallUniqueIDKeyLocationValue, error) {
 	v, err := s.c.Get(ctx, URIPFXCertInstallUniqueIDKeyLocation(uniqueID))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PFXCertInstallUniqueIDKeyLocationValue(n), err
 }
 
 // CreatePFXCertInstallUniqueIDKeyLocation creates ./Device/Vendor/MSFT/ClientCertificateInstall/PFXCertInstall/{uniqueID}/KeyLocation.
 // Required for PFX certificate installation. Indicates the KeyStorage provider to target the
 // private key installation to.
-func (s *ClientCertificateInstall) CreatePFXCertInstallUniqueIDKeyLocation(ctx context.Context, uniqueID string, value int64) error {
-	return s.c.Add(ctx, URIPFXCertInstallUniqueIDKeyLocation(uniqueID), client.Int(value))
+func (s *ClientCertificateInstall) CreatePFXCertInstallUniqueIDKeyLocation(ctx context.Context, uniqueID string, value PFXCertInstallUniqueIDKeyLocationValue) error {
+	return s.c.Add(ctx, URIPFXCertInstallUniqueIDKeyLocation(uniqueID), client.Int(int64(value)))
 }
 
 // UpdatePFXCertInstallUniqueIDKeyLocation updates ./Device/Vendor/MSFT/ClientCertificateInstall/PFXCertInstall/{uniqueID}/KeyLocation.
 // Required for PFX certificate installation. Indicates the KeyStorage provider to target the
 // private key installation to.
-func (s *ClientCertificateInstall) UpdatePFXCertInstallUniqueIDKeyLocation(ctx context.Context, uniqueID string, value int64) error {
-	return s.c.Replace(ctx, URIPFXCertInstallUniqueIDKeyLocation(uniqueID), client.Int(value))
+func (s *ClientCertificateInstall) UpdatePFXCertInstallUniqueIDKeyLocation(ctx context.Context, uniqueID string, value PFXCertInstallUniqueIDKeyLocationValue) error {
+	return s.c.Replace(ctx, URIPFXCertInstallUniqueIDKeyLocation(uniqueID), client.Int(int64(value)))
 }
 
 // GetPFXCertInstallUniqueIDPFXCertBlob reads ./Device/Vendor/MSFT/ClientCertificateInstall/PFXCertInstall/{uniqueID}/PFXCertBlob.
@@ -146,28 +147,29 @@ func (s *ClientCertificateInstall) UpdatePFXCertInstallUniqueIDPFXCertPasswordEn
 // Optional. Used to specify if the PFX certificate password is encrypted with a certificate.
 //
 // Default: 0.
-func (s *ClientCertificateInstall) GetPFXCertInstallUniqueIDPFXCertPasswordEncryptionType(ctx context.Context, uniqueID string) (int64, error) {
+func (s *ClientCertificateInstall) GetPFXCertInstallUniqueIDPFXCertPasswordEncryptionType(ctx context.Context, uniqueID string) (PFXCertInstallUniqueIDPFXCertPasswordEncryptionTypeValue, error) {
 	v, err := s.c.Get(ctx, URIPFXCertInstallUniqueIDPFXCertPasswordEncryptionType(uniqueID))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PFXCertInstallUniqueIDPFXCertPasswordEncryptionTypeValue(n), err
 }
 
 // CreatePFXCertInstallUniqueIDPFXCertPasswordEncryptionType creates ./Device/Vendor/MSFT/ClientCertificateInstall/PFXCertInstall/{uniqueID}/PFXCertPasswordEncryptionType.
 // Optional. Used to specify if the PFX certificate password is encrypted with a certificate.
 //
 // Default: 0.
-func (s *ClientCertificateInstall) CreatePFXCertInstallUniqueIDPFXCertPasswordEncryptionType(ctx context.Context, uniqueID string, value int64) error {
-	return s.c.Add(ctx, URIPFXCertInstallUniqueIDPFXCertPasswordEncryptionType(uniqueID), client.Int(value))
+func (s *ClientCertificateInstall) CreatePFXCertInstallUniqueIDPFXCertPasswordEncryptionType(ctx context.Context, uniqueID string, value PFXCertInstallUniqueIDPFXCertPasswordEncryptionTypeValue) error {
+	return s.c.Add(ctx, URIPFXCertInstallUniqueIDPFXCertPasswordEncryptionType(uniqueID), client.Int(int64(value)))
 }
 
 // UpdatePFXCertInstallUniqueIDPFXCertPasswordEncryptionType updates ./Device/Vendor/MSFT/ClientCertificateInstall/PFXCertInstall/{uniqueID}/PFXCertPasswordEncryptionType.
 // Optional. Used to specify if the PFX certificate password is encrypted with a certificate.
 //
 // Default: 0.
-func (s *ClientCertificateInstall) UpdatePFXCertInstallUniqueIDPFXCertPasswordEncryptionType(ctx context.Context, uniqueID string, value int64) error {
-	return s.c.Replace(ctx, URIPFXCertInstallUniqueIDPFXCertPasswordEncryptionType(uniqueID), client.Int(value))
+func (s *ClientCertificateInstall) UpdatePFXCertInstallUniqueIDPFXCertPasswordEncryptionType(ctx context.Context, uniqueID string, value PFXCertInstallUniqueIDPFXCertPasswordEncryptionTypeValue) error {
+	return s.c.Replace(ctx, URIPFXCertInstallUniqueIDPFXCertPasswordEncryptionType(uniqueID), client.Int(int64(value)))
 }
 
 // GetPFXCertInstallUniqueIDPFXKeyExportable reads ./Device/Vendor/MSFT/ClientCertificateInstall/PFXCertInstall/{uniqueID}/PFXKeyExportable.
@@ -532,24 +534,25 @@ func (s *ClientCertificateInstall) DeleteSCEPUniqueIDInstallHashAlgorithm(ctx co
 
 // GetSCEPUniqueIDInstallKeyLength reads ./Device/Vendor/MSFT/ClientCertificateInstall/SCEP/{uniqueID}/Install/KeyLength.
 // Required for enrollment. Specify private key length (RSA).
-func (s *ClientCertificateInstall) GetSCEPUniqueIDInstallKeyLength(ctx context.Context, uniqueID string) (int64, error) {
+func (s *ClientCertificateInstall) GetSCEPUniqueIDInstallKeyLength(ctx context.Context, uniqueID string) (SCEPUniqueIDInstallKeyLengthValue, error) {
 	v, err := s.c.Get(ctx, URISCEPUniqueIDInstallKeyLength(uniqueID))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SCEPUniqueIDInstallKeyLengthValue(n), err
 }
 
 // CreateSCEPUniqueIDInstallKeyLength creates ./Device/Vendor/MSFT/ClientCertificateInstall/SCEP/{uniqueID}/Install/KeyLength.
 // Required for enrollment. Specify private key length (RSA).
-func (s *ClientCertificateInstall) CreateSCEPUniqueIDInstallKeyLength(ctx context.Context, uniqueID string, value int64) error {
-	return s.c.Add(ctx, URISCEPUniqueIDInstallKeyLength(uniqueID), client.Int(value))
+func (s *ClientCertificateInstall) CreateSCEPUniqueIDInstallKeyLength(ctx context.Context, uniqueID string, value SCEPUniqueIDInstallKeyLengthValue) error {
+	return s.c.Add(ctx, URISCEPUniqueIDInstallKeyLength(uniqueID), client.Int(int64(value)))
 }
 
 // UpdateSCEPUniqueIDInstallKeyLength updates ./Device/Vendor/MSFT/ClientCertificateInstall/SCEP/{uniqueID}/Install/KeyLength.
 // Required for enrollment. Specify private key length (RSA).
-func (s *ClientCertificateInstall) UpdateSCEPUniqueIDInstallKeyLength(ctx context.Context, uniqueID string, value int64) error {
-	return s.c.Replace(ctx, URISCEPUniqueIDInstallKeyLength(uniqueID), client.Int(value))
+func (s *ClientCertificateInstall) UpdateSCEPUniqueIDInstallKeyLength(ctx context.Context, uniqueID string, value SCEPUniqueIDInstallKeyLengthValue) error {
+	return s.c.Replace(ctx, URISCEPUniqueIDInstallKeyLength(uniqueID), client.Int(int64(value)))
 }
 
 // DeleteSCEPUniqueIDInstallKeyLength deletes ./Device/Vendor/MSFT/ClientCertificateInstall/SCEP/{uniqueID}/Install/KeyLength.
@@ -563,12 +566,13 @@ func (s *ClientCertificateInstall) DeleteSCEPUniqueIDInstallKeyLength(ctx contex
 // not guarded with TPM PIN.
 //
 // Default: 3.
-func (s *ClientCertificateInstall) GetSCEPUniqueIDInstallKeyProtection(ctx context.Context, uniqueID string) (int64, error) {
+func (s *ClientCertificateInstall) GetSCEPUniqueIDInstallKeyProtection(ctx context.Context, uniqueID string) (SCEPUniqueIDInstallKeyProtectionValue, error) {
 	v, err := s.c.Get(ctx, URISCEPUniqueIDInstallKeyProtection(uniqueID))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SCEPUniqueIDInstallKeyProtectionValue(n), err
 }
 
 // CreateSCEPUniqueIDInstallKeyProtection creates ./Device/Vendor/MSFT/ClientCertificateInstall/SCEP/{uniqueID}/Install/KeyProtection.
@@ -576,8 +580,8 @@ func (s *ClientCertificateInstall) GetSCEPUniqueIDInstallKeyProtection(ctx conte
 // not guarded with TPM PIN.
 //
 // Default: 3.
-func (s *ClientCertificateInstall) CreateSCEPUniqueIDInstallKeyProtection(ctx context.Context, uniqueID string, value int64) error {
-	return s.c.Add(ctx, URISCEPUniqueIDInstallKeyProtection(uniqueID), client.Int(value))
+func (s *ClientCertificateInstall) CreateSCEPUniqueIDInstallKeyProtection(ctx context.Context, uniqueID string, value SCEPUniqueIDInstallKeyProtectionValue) error {
+	return s.c.Add(ctx, URISCEPUniqueIDInstallKeyProtection(uniqueID), client.Int(int64(value)))
 }
 
 // UpdateSCEPUniqueIDInstallKeyProtection updates ./Device/Vendor/MSFT/ClientCertificateInstall/SCEP/{uniqueID}/Install/KeyProtection.
@@ -585,8 +589,8 @@ func (s *ClientCertificateInstall) CreateSCEPUniqueIDInstallKeyProtection(ctx co
 // not guarded with TPM PIN.
 //
 // Default: 3.
-func (s *ClientCertificateInstall) UpdateSCEPUniqueIDInstallKeyProtection(ctx context.Context, uniqueID string, value int64) error {
-	return s.c.Replace(ctx, URISCEPUniqueIDInstallKeyProtection(uniqueID), client.Int(value))
+func (s *ClientCertificateInstall) UpdateSCEPUniqueIDInstallKeyProtection(ctx context.Context, uniqueID string, value SCEPUniqueIDInstallKeyProtectionValue) error {
+	return s.c.Replace(ctx, URISCEPUniqueIDInstallKeyProtection(uniqueID), client.Int(int64(value)))
 }
 
 // DeleteSCEPUniqueIDInstallKeyProtection deletes ./Device/Vendor/MSFT/ClientCertificateInstall/SCEP/{uniqueID}/Install/KeyProtection.
@@ -858,28 +862,28 @@ func (s *ClientCertificateInstall) DeleteSCEPUniqueIDInstallTemplateName(ctx con
 // Optional. Specify the units for valid period. Valid values are: Days(Default), Months, Years.
 //
 // Default: Days.
-func (s *ClientCertificateInstall) GetSCEPUniqueIDInstallValidPeriod(ctx context.Context, uniqueID string) (string, error) {
+func (s *ClientCertificateInstall) GetSCEPUniqueIDInstallValidPeriod(ctx context.Context, uniqueID string) (SCEPUniqueIDInstallValidPeriodValue, error) {
 	v, err := s.c.Get(ctx, URISCEPUniqueIDInstallValidPeriod(uniqueID))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return SCEPUniqueIDInstallValidPeriodValue(v.Str()), nil
 }
 
 // CreateSCEPUniqueIDInstallValidPeriod creates ./Device/Vendor/MSFT/ClientCertificateInstall/SCEP/{uniqueID}/Install/ValidPeriod.
 // Optional. Specify the units for valid period. Valid values are: Days(Default), Months, Years.
 //
 // Default: Days.
-func (s *ClientCertificateInstall) CreateSCEPUniqueIDInstallValidPeriod(ctx context.Context, uniqueID string, value string) error {
-	return s.c.Add(ctx, URISCEPUniqueIDInstallValidPeriod(uniqueID), client.Chr(value))
+func (s *ClientCertificateInstall) CreateSCEPUniqueIDInstallValidPeriod(ctx context.Context, uniqueID string, value SCEPUniqueIDInstallValidPeriodValue) error {
+	return s.c.Add(ctx, URISCEPUniqueIDInstallValidPeriod(uniqueID), client.Chr(string(value)))
 }
 
 // UpdateSCEPUniqueIDInstallValidPeriod updates ./Device/Vendor/MSFT/ClientCertificateInstall/SCEP/{uniqueID}/Install/ValidPeriod.
 // Optional. Specify the units for valid period. Valid values are: Days(Default), Months, Years.
 //
 // Default: Days.
-func (s *ClientCertificateInstall) UpdateSCEPUniqueIDInstallValidPeriod(ctx context.Context, uniqueID string, value string) error {
-	return s.c.Replace(ctx, URISCEPUniqueIDInstallValidPeriod(uniqueID), client.Chr(value))
+func (s *ClientCertificateInstall) UpdateSCEPUniqueIDInstallValidPeriod(ctx context.Context, uniqueID string, value SCEPUniqueIDInstallValidPeriodValue) error {
+	return s.c.Replace(ctx, URISCEPUniqueIDInstallValidPeriod(uniqueID), client.Chr(string(value)))
 }
 
 // DeleteSCEPUniqueIDInstallValidPeriod deletes ./Device/Vendor/MSFT/ClientCertificateInstall/SCEP/{uniqueID}/Install/ValidPeriod.

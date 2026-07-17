@@ -2,66 +2,181 @@
 
 package devicelock
 
-// AllowIdleReturnWithoutPassword allowed values.
-const (
-	// Not allowed.
-	AllowIdleReturnWithoutPasswordNotAllowed int64 = 0
-	// Allowed.
-	AllowIdleReturnWithoutPasswordAllowed int64 = 1
+import (
+	"fmt"
 )
 
-// AllowScreenTimeoutWhileLockedUserConfig allowed values.
+// AllowIdleReturnWithoutPasswordValue — allowed values for the AllowIdleReturnWithoutPassword node.
+type AllowIdleReturnWithoutPasswordValue int64
+
+const (
+	// Not allowed.
+	AllowIdleReturnWithoutPasswordNotAllowed AllowIdleReturnWithoutPasswordValue = 0
+	// Allowed.
+	AllowIdleReturnWithoutPasswordAllowed AllowIdleReturnWithoutPasswordValue = 1
+)
+
+// String returns the AllowIdleReturnWithoutPasswordValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowIdleReturnWithoutPasswordValue) String() string {
+	switch e {
+	case AllowIdleReturnWithoutPasswordNotAllowed:
+		return "AllowIdleReturnWithoutPasswordNotAllowed"
+	case AllowIdleReturnWithoutPasswordAllowed:
+		return "AllowIdleReturnWithoutPasswordAllowed"
+	default:
+		return fmt.Sprintf("AllowIdleReturnWithoutPasswordValue(%d)", int64(e))
+	}
+}
+
+// AllowScreenTimeoutWhileLockedUserConfigValue — allowed values for the AllowScreenTimeoutWhileLockedUserConfig node.
+type AllowScreenTimeoutWhileLockedUserConfigValue int64
+
 const (
 	// Allow
-	AllowScreenTimeoutWhileLockedUserConfigAllow int64 = 1
+	AllowScreenTimeoutWhileLockedUserConfigAllow AllowScreenTimeoutWhileLockedUserConfigValue = 1
 	// Block
-	AllowScreenTimeoutWhileLockedUserConfigBlock int64 = 0
+	AllowScreenTimeoutWhileLockedUserConfigBlock AllowScreenTimeoutWhileLockedUserConfigValue = 0
 )
 
-// AllowSimpleDevicePassword allowed values.
+// String returns the AllowScreenTimeoutWhileLockedUserConfigValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowScreenTimeoutWhileLockedUserConfigValue) String() string {
+	switch e {
+	case AllowScreenTimeoutWhileLockedUserConfigAllow:
+		return "AllowScreenTimeoutWhileLockedUserConfigAllow"
+	case AllowScreenTimeoutWhileLockedUserConfigBlock:
+		return "AllowScreenTimeoutWhileLockedUserConfigBlock"
+	default:
+		return fmt.Sprintf("AllowScreenTimeoutWhileLockedUserConfigValue(%d)", int64(e))
+	}
+}
+
+// AllowSimpleDevicePasswordValue — allowed values for the AllowSimpleDevicePassword node.
+type AllowSimpleDevicePasswordValue int64
+
 const (
 	// Not allowed.
-	AllowSimpleDevicePasswordNotAllowed int64 = 0
+	AllowSimpleDevicePasswordNotAllowed AllowSimpleDevicePasswordValue = 0
 	// Allowed.
-	AllowSimpleDevicePasswordAllowed int64 = 1
+	AllowSimpleDevicePasswordAllowed AllowSimpleDevicePasswordValue = 1
 )
 
-// AlphanumericDevicePasswordRequired allowed values.
+// String returns the AllowSimpleDevicePasswordValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowSimpleDevicePasswordValue) String() string {
+	switch e {
+	case AllowSimpleDevicePasswordNotAllowed:
+		return "AllowSimpleDevicePasswordNotAllowed"
+	case AllowSimpleDevicePasswordAllowed:
+		return "AllowSimpleDevicePasswordAllowed"
+	default:
+		return fmt.Sprintf("AllowSimpleDevicePasswordValue(%d)", int64(e))
+	}
+}
+
+// AlphanumericDevicePasswordRequiredValue — allowed values for the AlphanumericDevicePasswordRequired node.
+type AlphanumericDevicePasswordRequiredValue int64
+
 const (
 	// Password or Alphanumeric PIN required.
-	AlphanumericDevicePasswordRequiredPasswordOrAlphanumericPINRequired int64 = 0
+	AlphanumericDevicePasswordRequiredPasswordOrAlphanumericPINRequired AlphanumericDevicePasswordRequiredValue = 0
 	// Password or Numeric PIN required.
-	AlphanumericDevicePasswordRequiredPasswordOrNumericPINRequired int64 = 1
+	AlphanumericDevicePasswordRequiredPasswordOrNumericPINRequired AlphanumericDevicePasswordRequiredValue = 1
 	// Password, Numeric PIN, or Alphanumeric PIN required.
-	AlphanumericDevicePasswordRequiredPasswordNumericPINOrAlphanumericPIN int64 = 2
+	AlphanumericDevicePasswordRequiredPasswordNumericPINOrAlphanumericPIN AlphanumericDevicePasswordRequiredValue = 2
 )
 
-// DevicePasswordEnabled allowed values.
+// String returns the AlphanumericDevicePasswordRequiredValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AlphanumericDevicePasswordRequiredValue) String() string {
+	switch e {
+	case AlphanumericDevicePasswordRequiredPasswordOrAlphanumericPINRequired:
+		return "AlphanumericDevicePasswordRequiredPasswordOrAlphanumericPINRequired"
+	case AlphanumericDevicePasswordRequiredPasswordOrNumericPINRequired:
+		return "AlphanumericDevicePasswordRequiredPasswordOrNumericPINRequired"
+	case AlphanumericDevicePasswordRequiredPasswordNumericPINOrAlphanumericPIN:
+		return "AlphanumericDevicePasswordRequiredPasswordNumericPINOrAlphanumericPIN"
+	default:
+		return fmt.Sprintf("AlphanumericDevicePasswordRequiredValue(%d)", int64(e))
+	}
+}
+
+// DevicePasswordEnabledValue — allowed values for the DevicePasswordEnabled node.
+type DevicePasswordEnabledValue int64
+
 const (
 	// Enabled
-	DevicePasswordEnabledEnabled int64 = 0
+	DevicePasswordEnabledEnabled DevicePasswordEnabledValue = 0
 	// Disabled
-	DevicePasswordEnabledDisabled int64 = 1
+	DevicePasswordEnabledDisabled DevicePasswordEnabledValue = 1
 )
 
-// MinDevicePasswordComplexCharacters allowed values.
+// String returns the DevicePasswordEnabledValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DevicePasswordEnabledValue) String() string {
+	switch e {
+	case DevicePasswordEnabledEnabled:
+		return "DevicePasswordEnabledEnabled"
+	case DevicePasswordEnabledDisabled:
+		return "DevicePasswordEnabledDisabled"
+	default:
+		return fmt.Sprintf("DevicePasswordEnabledValue(%d)", int64(e))
+	}
+}
+
+// MinDevicePasswordComplexCharactersValue — allowed values for the MinDevicePasswordComplexCharacters node.
+type MinDevicePasswordComplexCharactersValue int64
+
 const (
 	// Digits only
-	MinDevicePasswordComplexCharactersDigitsOnly int64 = 1
+	MinDevicePasswordComplexCharactersDigitsOnly MinDevicePasswordComplexCharactersValue = 1
 	// Digits and lowercase letters are required
-	MinDevicePasswordComplexCharactersDigitsAndLowercaseLettersAreRequired int64 = 2
+	MinDevicePasswordComplexCharactersDigitsAndLowercaseLettersAreRequired MinDevicePasswordComplexCharactersValue = 2
 	// Digits lowercase letters and uppercase letters are required. Not supported in desktop Microsoft
 	// accounts and domain accounts
-	MinDevicePasswordComplexCharactersDigitsLowercaseLettersAndUppercaseLetters int64 = 3
+	MinDevicePasswordComplexCharactersDigitsLowercaseLettersAndUppercaseLetters MinDevicePasswordComplexCharactersValue = 3
 	// Digits lowercase letters uppercase letters and special characters are required. Not supported in
 	// desktop
-	MinDevicePasswordComplexCharactersDigitsLowercaseLettersUppercaseLettersAnd int64 = 4
+	MinDevicePasswordComplexCharactersDigitsLowercaseLettersUppercaseLettersAnd MinDevicePasswordComplexCharactersValue = 4
 )
 
-// RelaxMinimumPasswordLengthLimits allowed values.
+// String returns the MinDevicePasswordComplexCharactersValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MinDevicePasswordComplexCharactersValue) String() string {
+	switch e {
+	case MinDevicePasswordComplexCharactersDigitsOnly:
+		return "MinDevicePasswordComplexCharactersDigitsOnly"
+	case MinDevicePasswordComplexCharactersDigitsAndLowercaseLettersAreRequired:
+		return "MinDevicePasswordComplexCharactersDigitsAndLowercaseLettersAreRequired"
+	case MinDevicePasswordComplexCharactersDigitsLowercaseLettersAndUppercaseLetters:
+		return "MinDevicePasswordComplexCharactersDigitsLowercaseLettersAndUppercaseLetters"
+	case MinDevicePasswordComplexCharactersDigitsLowercaseLettersUppercaseLettersAnd:
+		return "MinDevicePasswordComplexCharactersDigitsLowercaseLettersUppercaseLettersAnd"
+	default:
+		return fmt.Sprintf("MinDevicePasswordComplexCharactersValue(%d)", int64(e))
+	}
+}
+
+// RelaxMinimumPasswordLengthLimitsValue — allowed values for the RelaxMinimumPasswordLengthLimits node.
+type RelaxMinimumPasswordLengthLimitsValue int64
+
 const (
 	// Disabled
-	RelaxMinimumPasswordLengthLimitsDisabled int64 = 0
+	RelaxMinimumPasswordLengthLimitsDisabled RelaxMinimumPasswordLengthLimitsValue = 0
 	// Enabled
-	RelaxMinimumPasswordLengthLimitsEnabled int64 = 1
+	RelaxMinimumPasswordLengthLimitsEnabled RelaxMinimumPasswordLengthLimitsValue = 1
 )
+
+// String returns the RelaxMinimumPasswordLengthLimitsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e RelaxMinimumPasswordLengthLimitsValue) String() string {
+	switch e {
+	case RelaxMinimumPasswordLengthLimitsDisabled:
+		return "RelaxMinimumPasswordLengthLimitsDisabled"
+	case RelaxMinimumPasswordLengthLimitsEnabled:
+		return "RelaxMinimumPasswordLengthLimitsEnabled"
+	default:
+		return fmt.Sprintf("RelaxMinimumPasswordLengthLimitsValue(%d)", int64(e))
+	}
+}

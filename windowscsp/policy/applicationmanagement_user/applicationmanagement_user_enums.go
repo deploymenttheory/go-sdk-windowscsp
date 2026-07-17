@@ -2,18 +2,52 @@
 
 package applicationmanagement_user
 
-// MSIAlwaysInstallWithElevatedPrivileges allowed values.
-const (
-	// Disabled
-	MSIAlwaysInstallWithElevatedPrivilegesDisabled int64 = 0
-	// Enabled
-	MSIAlwaysInstallWithElevatedPrivilegesEnabled int64 = 1
+import (
+	"fmt"
 )
 
-// RequirePrivateStoreOnly allowed values.
+// MSIAlwaysInstallWithElevatedPrivilegesValue — allowed values for the MSIAlwaysInstallWithElevatedPrivileges node.
+type MSIAlwaysInstallWithElevatedPrivilegesValue int64
+
+const (
+	// Disabled
+	MSIAlwaysInstallWithElevatedPrivilegesDisabled MSIAlwaysInstallWithElevatedPrivilegesValue = 0
+	// Enabled
+	MSIAlwaysInstallWithElevatedPrivilegesEnabled MSIAlwaysInstallWithElevatedPrivilegesValue = 1
+)
+
+// String returns the MSIAlwaysInstallWithElevatedPrivilegesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MSIAlwaysInstallWithElevatedPrivilegesValue) String() string {
+	switch e {
+	case MSIAlwaysInstallWithElevatedPrivilegesDisabled:
+		return "MSIAlwaysInstallWithElevatedPrivilegesDisabled"
+	case MSIAlwaysInstallWithElevatedPrivilegesEnabled:
+		return "MSIAlwaysInstallWithElevatedPrivilegesEnabled"
+	default:
+		return fmt.Sprintf("MSIAlwaysInstallWithElevatedPrivilegesValue(%d)", int64(e))
+	}
+}
+
+// RequirePrivateStoreOnlyValue — allowed values for the RequirePrivateStoreOnly node.
+type RequirePrivateStoreOnlyValue int64
+
 const (
 	// Allow both public and Private store.
-	RequirePrivateStoreOnlyAllowBothPublicAndPrivateStore int64 = 0
+	RequirePrivateStoreOnlyAllowBothPublicAndPrivateStore RequirePrivateStoreOnlyValue = 0
 	// Only Private store is enabled.
-	RequirePrivateStoreOnlyOnlyPrivateStoreIsEnabled int64 = 1
+	RequirePrivateStoreOnlyOnlyPrivateStoreIsEnabled RequirePrivateStoreOnlyValue = 1
 )
+
+// String returns the RequirePrivateStoreOnlyValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e RequirePrivateStoreOnlyValue) String() string {
+	switch e {
+	case RequirePrivateStoreOnlyAllowBothPublicAndPrivateStore:
+		return "RequirePrivateStoreOnlyAllowBothPublicAndPrivateStore"
+	case RequirePrivateStoreOnlyOnlyPrivateStoreIsEnabled:
+		return "RequirePrivateStoreOnlyOnlyPrivateStoreIsEnabled"
+	default:
+		return fmt.Sprintf("RequirePrivateStoreOnlyValue(%d)", int64(e))
+	}
+}

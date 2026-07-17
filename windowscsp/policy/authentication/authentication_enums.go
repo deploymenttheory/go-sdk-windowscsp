@@ -2,56 +2,156 @@
 
 package authentication
 
-// AllowAadPasswordReset allowed values.
-const (
-	// Not allowed.
-	AllowAadPasswordResetNotAllowed int64 = 0
-	// Allowed.
-	AllowAadPasswordResetAllowed int64 = 1
+import (
+	"fmt"
 )
 
-// AllowFastReconnect allowed values.
+// AllowAadPasswordResetValue — allowed values for the AllowAadPasswordReset node.
+type AllowAadPasswordResetValue int64
+
 const (
 	// Not allowed.
-	AllowFastReconnectNotAllowed int64 = 0
+	AllowAadPasswordResetNotAllowed AllowAadPasswordResetValue = 0
 	// Allowed.
-	AllowFastReconnectAllowed int64 = 1
+	AllowAadPasswordResetAllowed AllowAadPasswordResetValue = 1
 )
 
-// AllowSecondaryAuthenticationDevice allowed values.
+// String returns the AllowAadPasswordResetValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowAadPasswordResetValue) String() string {
+	switch e {
+	case AllowAadPasswordResetNotAllowed:
+		return "AllowAadPasswordResetNotAllowed"
+	case AllowAadPasswordResetAllowed:
+		return "AllowAadPasswordResetAllowed"
+	default:
+		return fmt.Sprintf("AllowAadPasswordResetValue(%d)", int64(e))
+	}
+}
+
+// AllowFastReconnectValue — allowed values for the AllowFastReconnect node.
+type AllowFastReconnectValue int64
+
 const (
 	// Not allowed.
-	AllowSecondaryAuthenticationDeviceNotAllowed int64 = 0
+	AllowFastReconnectNotAllowed AllowFastReconnectValue = 0
 	// Allowed.
-	AllowSecondaryAuthenticationDeviceAllowed int64 = 1
+	AllowFastReconnectAllowed AllowFastReconnectValue = 1
 )
 
-// EnableFastFirstSignIn allowed values.
+// String returns the AllowFastReconnectValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowFastReconnectValue) String() string {
+	switch e {
+	case AllowFastReconnectNotAllowed:
+		return "AllowFastReconnectNotAllowed"
+	case AllowFastReconnectAllowed:
+		return "AllowFastReconnectAllowed"
+	default:
+		return fmt.Sprintf("AllowFastReconnectValue(%d)", int64(e))
+	}
+}
+
+// AllowSecondaryAuthenticationDeviceValue — allowed values for the AllowSecondaryAuthenticationDevice node.
+type AllowSecondaryAuthenticationDeviceValue int64
+
+const (
+	// Not allowed.
+	AllowSecondaryAuthenticationDeviceNotAllowed AllowSecondaryAuthenticationDeviceValue = 0
+	// Allowed.
+	AllowSecondaryAuthenticationDeviceAllowed AllowSecondaryAuthenticationDeviceValue = 1
+)
+
+// String returns the AllowSecondaryAuthenticationDeviceValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowSecondaryAuthenticationDeviceValue) String() string {
+	switch e {
+	case AllowSecondaryAuthenticationDeviceNotAllowed:
+		return "AllowSecondaryAuthenticationDeviceNotAllowed"
+	case AllowSecondaryAuthenticationDeviceAllowed:
+		return "AllowSecondaryAuthenticationDeviceAllowed"
+	default:
+		return fmt.Sprintf("AllowSecondaryAuthenticationDeviceValue(%d)", int64(e))
+	}
+}
+
+// EnableFastFirstSignInValue — allowed values for the EnableFastFirstSignIn node.
+type EnableFastFirstSignInValue int64
+
 const (
 	// The feature defaults to the existing SKU and device capabilities.
-	EnableFastFirstSignInTheFeatureDefaultsToTheExisting int64 = 0
+	EnableFastFirstSignInTheFeatureDefaultsToTheExisting EnableFastFirstSignInValue = 0
 	// Enabled. Auto-connect new non-admin Azure AD accounts to pre-configured candidate local accounts
-	EnableFastFirstSignInEnabled int64 = 1
+	EnableFastFirstSignInEnabled EnableFastFirstSignInValue = 1
 	// Disabled. Do not auto-connect new non-admin Azure AD accounts to pre-configured local accounts
-	EnableFastFirstSignInDisabled int64 = 2
+	EnableFastFirstSignInDisabled EnableFastFirstSignInValue = 2
 )
 
-// EnablePasswordlessExperience allowed values.
+// String returns the EnableFastFirstSignInValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableFastFirstSignInValue) String() string {
+	switch e {
+	case EnableFastFirstSignInTheFeatureDefaultsToTheExisting:
+		return "EnableFastFirstSignInTheFeatureDefaultsToTheExisting"
+	case EnableFastFirstSignInEnabled:
+		return "EnableFastFirstSignInEnabled"
+	case EnableFastFirstSignInDisabled:
+		return "EnableFastFirstSignInDisabled"
+	default:
+		return fmt.Sprintf("EnableFastFirstSignInValue(%d)", int64(e))
+	}
+}
+
+// EnablePasswordlessExperienceValue — allowed values for the EnablePasswordlessExperience node.
+type EnablePasswordlessExperienceValue int64
+
 const (
 	// The feature defaults to the existing edition and device capabilities.
-	EnablePasswordlessExperienceTheFeatureDefaultsToTheExisting int64 = 0
+	EnablePasswordlessExperienceTheFeatureDefaultsToTheExisting EnablePasswordlessExperienceValue = 0
 	// Enabled. The Passwordless experience will be enabled on Windows
-	EnablePasswordlessExperienceEnabled int64 = 1
+	EnablePasswordlessExperienceEnabled EnablePasswordlessExperienceValue = 1
 	// Disabled. The Passwordless experience will not be enabled on Windows
-	EnablePasswordlessExperienceDisabled int64 = 2
+	EnablePasswordlessExperienceDisabled EnablePasswordlessExperienceValue = 2
 )
 
-// EnableWebSignIn allowed values.
+// String returns the EnablePasswordlessExperienceValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnablePasswordlessExperienceValue) String() string {
+	switch e {
+	case EnablePasswordlessExperienceTheFeatureDefaultsToTheExisting:
+		return "EnablePasswordlessExperienceTheFeatureDefaultsToTheExisting"
+	case EnablePasswordlessExperienceEnabled:
+		return "EnablePasswordlessExperienceEnabled"
+	case EnablePasswordlessExperienceDisabled:
+		return "EnablePasswordlessExperienceDisabled"
+	default:
+		return fmt.Sprintf("EnablePasswordlessExperienceValue(%d)", int64(e))
+	}
+}
+
+// EnableWebSignInValue — allowed values for the EnableWebSignIn node.
+type EnableWebSignInValue int64
+
 const (
 	// The feature defaults to the existing SKU and device capabilities.
-	EnableWebSignInTheFeatureDefaultsToTheExisting int64 = 0
+	EnableWebSignInTheFeatureDefaultsToTheExisting EnableWebSignInValue = 0
 	// Enabled. Web Sign-in will be enabled for signing in to Windows
-	EnableWebSignInEnabled int64 = 1
+	EnableWebSignInEnabled EnableWebSignInValue = 1
 	// Disabled. Web Sign-in will not be enabled for signing in to Windows
-	EnableWebSignInDisabled int64 = 2
+	EnableWebSignInDisabled EnableWebSignInValue = 2
 )
+
+// String returns the EnableWebSignInValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableWebSignInValue) String() string {
+	switch e {
+	case EnableWebSignInTheFeatureDefaultsToTheExisting:
+		return "EnableWebSignInTheFeatureDefaultsToTheExisting"
+	case EnableWebSignInEnabled:
+		return "EnableWebSignInEnabled"
+	case EnableWebSignInDisabled:
+		return "EnableWebSignInDisabled"
+	default:
+		return fmt.Sprintf("EnableWebSignInValue(%d)", int64(e))
+	}
+}

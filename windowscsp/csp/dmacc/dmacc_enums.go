@@ -2,70 +2,128 @@
 
 package dmacc
 
-// AccountUIDAAuthPref allowed values.
+import (
+	"fmt"
+)
+
+// AccountUIDAAuthPrefValue — allowed values for the AAuthPref node.
+type AccountUIDAAuthPrefValue string
+
 const (
 	// The client attempts BASIC authentication.
-	AccountUIDAAuthPrefTheClientAttemptsBASICAuthentication = "BASIC"
+	AccountUIDAAuthPrefTheClientAttemptsBASICAuthentication AccountUIDAAuthPrefValue = "BASIC"
 	// The client attempts MD5 authentication.
-	AccountUIDAAuthPrefTheClientAttemptsMD5Authentication = "DIGEST"
+	AccountUIDAAuthPrefTheClientAttemptsMD5Authentication AccountUIDAAuthPrefValue = "DIGEST"
 )
 
-// AccountUIDAppAddrObjectNameAddrType allowed values.
+// String returns the AccountUIDAAuthPrefValue value as a plain string.
+func (e AccountUIDAAuthPrefValue) String() string { return string(e) }
+
+// AccountUIDAppAddrObjectNameAddrTypeValue — allowed values for the AddrType node.
+type AccountUIDAppAddrObjectNameAddrTypeValue string
+
 const (
 	// The OMA DM account address in Addr is a URI address.
-	AccountUIDAppAddrObjectNameAddrTypeTheOMADMAccountAddressIn = "URI"
+	AccountUIDAppAddrObjectNameAddrTypeTheOMADMAccountAddressIn AccountUIDAppAddrObjectNameAddrTypeValue = "URI"
 	// The OMA DM account address in Addr is an IP address.
-	AccountUIDAppAddrObjectNameAddrTypeTheOMADMAccountAddressIn2 = "IPv4"
+	AccountUIDAppAddrObjectNameAddrTypeTheOMADMAccountAddressIn2 AccountUIDAppAddrObjectNameAddrTypeValue = "IPv4"
 )
 
-// AccountUIDAppAuthObjectNameAAuthLevel allowed values.
+// String returns the AccountUIDAppAddrObjectNameAddrTypeValue value as a plain string.
+func (e AccountUIDAppAddrObjectNameAddrTypeValue) String() string { return string(e) }
+
+// AccountUIDAppAuthObjectNameAAuthLevelValue — allowed values for the AAuthLevel node.
+type AccountUIDAppAuthObjectNameAAuthLevelValue string
+
 const (
 	// The credentials client will authenticate itself to the OMA DM server at the OMA DM protocol
 	// level.
-	AccountUIDAppAuthObjectNameAAuthLevelTheCredentialsClientWillAuthenticateItself = "CLCRED"
+	AccountUIDAppAuthObjectNameAAuthLevelTheCredentialsClientWillAuthenticateItself AccountUIDAppAuthObjectNameAAuthLevelValue = "CLCRED"
 	// The credentials server will authenticate itself to the OMA DM Client at the OMA DM protocol
 	// level.
-	AccountUIDAppAuthObjectNameAAuthLevelTheCredentialsServerWillAuthenticateItself = "SRVCRED"
+	AccountUIDAppAuthObjectNameAAuthLevelTheCredentialsServerWillAuthenticateItself AccountUIDAppAuthObjectNameAAuthLevelValue = "SRVCRED"
 )
 
-// AccountUIDAppAuthObjectNameAAuthType allowed values.
+// String returns the AccountUIDAppAuthObjectNameAAuthLevelValue value as a plain string.
+func (e AccountUIDAppAuthObjectNameAAuthLevelValue) String() string { return string(e) }
+
+// AccountUIDAppAuthObjectNameAAuthTypeValue — allowed values for the AAuthType node.
+type AccountUIDAppAuthObjectNameAAuthTypeValue string
+
 const (
 	// BASIC
-	AccountUIDAppAuthObjectNameAAuthTypeBASIC = "BASIC"
+	AccountUIDAppAuthObjectNameAAuthTypeBASIC AccountUIDAppAuthObjectNameAAuthTypeValue = "BASIC"
 	// DIGEST
-	AccountUIDAppAuthObjectNameAAuthTypeDIGEST = "DIGEST"
+	AccountUIDAppAuthObjectNameAAuthTypeDIGEST AccountUIDAppAuthObjectNameAAuthTypeValue = "DIGEST"
 )
 
-// AccountUIDAppID allowed values.
+// String returns the AccountUIDAppAuthObjectNameAAuthTypeValue value as a plain string.
+func (e AccountUIDAppAuthObjectNameAAuthTypeValue) String() string { return string(e) }
+
+// AccountUIDAppIDValue — allowed values for the AppID node.
+type AccountUIDAppIDValue string
+
 const (
 	// The only supported value.
-	AccountUIDAppIDTheOnlySupportedValue = "w7"
+	AccountUIDAppIDTheOnlySupportedValue AccountUIDAppIDValue = "w7"
 )
 
-// AccountUIDExtMicrosoftDefaultEncoding allowed values.
+// String returns the AccountUIDAppIDValue value as a plain string.
+func (e AccountUIDAppIDValue) String() string { return string(e) }
+
+// AccountUIDExtMicrosoftDefaultEncodingValue — allowed values for the DefaultEncoding node.
+type AccountUIDExtMicrosoftDefaultEncodingValue string
+
 const (
 	// XML is used
-	AccountUIDExtMicrosoftDefaultEncodingXMLIsUsed = "application/vnd.syncml.dm+xml"
+	AccountUIDExtMicrosoftDefaultEncodingXMLIsUsed AccountUIDExtMicrosoftDefaultEncodingValue = "application/vnd.syncml.dm+xml"
 	// WBXML is used
-	AccountUIDExtMicrosoftDefaultEncodingWBXMLIsUsed = "application/vnd.syncml.dm+wbxml"
+	AccountUIDExtMicrosoftDefaultEncodingWBXMLIsUsed AccountUIDExtMicrosoftDefaultEncodingValue = "application/vnd.syncml.dm+wbxml"
 )
 
-// AccountUIDExtMicrosoftProtoVer allowed values.
+// String returns the AccountUIDExtMicrosoftDefaultEncodingValue value as a plain string.
+func (e AccountUIDExtMicrosoftDefaultEncodingValue) String() string { return string(e) }
+
+// AccountUIDExtMicrosoftProtoVerValue — allowed values for the ProtoVer node.
+type AccountUIDExtMicrosoftProtoVerValue string
+
 const (
 	// 1.1
-	AccountUIDExtMicrosoftProtoVerN1 = "1.1"
+	AccountUIDExtMicrosoftProtoVerN1 AccountUIDExtMicrosoftProtoVerValue = "1.1"
 	// 1.2
-	AccountUIDExtMicrosoftProtoVerN12 = "1.2"
+	AccountUIDExtMicrosoftProtoVerN12 AccountUIDExtMicrosoftProtoVerValue = "1.2"
 )
 
-// AccountUIDExtMicrosoftRole allowed values.
+// String returns the AccountUIDExtMicrosoftProtoVerValue value as a plain string.
+func (e AccountUIDExtMicrosoftProtoVerValue) String() string { return string(e) }
+
+// AccountUIDExtMicrosoftRoleValue — allowed values for the Role node.
+type AccountUIDExtMicrosoftRoleValue int64
+
 const (
 	// SECROLE_OPERATOR
-	AccountUIDExtMicrosoftRoleSECROLEOPERATOR int64 = 4
+	AccountUIDExtMicrosoftRoleSECROLEOPERATOR AccountUIDExtMicrosoftRoleValue = 4
 	// SECROLE_MANAGER
-	AccountUIDExtMicrosoftRoleSECROLEMANAGER int64 = 8
+	AccountUIDExtMicrosoftRoleSECROLEMANAGER AccountUIDExtMicrosoftRoleValue = 8
 	// SECROLE_USER_AUTH
-	AccountUIDExtMicrosoftRoleSECROLEUSERAUTH int64 = 16
+	AccountUIDExtMicrosoftRoleSECROLEUSERAUTH AccountUIDExtMicrosoftRoleValue = 16
 	// SECROLE_OPERATOR_TPS
-	AccountUIDExtMicrosoftRoleSECROLEOPERATORTPS int64 = 128
+	AccountUIDExtMicrosoftRoleSECROLEOPERATORTPS AccountUIDExtMicrosoftRoleValue = 128
 )
+
+// String returns the AccountUIDExtMicrosoftRoleValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AccountUIDExtMicrosoftRoleValue) String() string {
+	switch e {
+	case AccountUIDExtMicrosoftRoleSECROLEOPERATOR:
+		return "AccountUIDExtMicrosoftRoleSECROLEOPERATOR"
+	case AccountUIDExtMicrosoftRoleSECROLEMANAGER:
+		return "AccountUIDExtMicrosoftRoleSECROLEMANAGER"
+	case AccountUIDExtMicrosoftRoleSECROLEUSERAUTH:
+		return "AccountUIDExtMicrosoftRoleSECROLEUSERAUTH"
+	case AccountUIDExtMicrosoftRoleSECROLEOPERATORTPS:
+		return "AccountUIDExtMicrosoftRoleSECROLEOPERATORTPS"
+	default:
+		return fmt.Sprintf("AccountUIDExtMicrosoftRoleValue(%d)", int64(e))
+	}
+}

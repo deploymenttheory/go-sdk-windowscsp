@@ -14,12 +14,13 @@ import (
 // action on the EnableSharedPCMode node is taken.
 //
 // Default: 0.
-func (s *SharedPC) GetAccountModel(ctx context.Context) (int64, error) {
+func (s *SharedPC) GetAccountModel(ctx context.Context) (AccountModelValue, error) {
 	v, err := s.c.Get(ctx, URIAccountModel)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AccountModelValue(n), err
 }
 
 // CreateAccountModel creates ./Vendor/MSFT/SharedPC/AccountModel.
@@ -28,8 +29,8 @@ func (s *SharedPC) GetAccountModel(ctx context.Context) (int64, error) {
 // action on the EnableSharedPCMode node is taken.
 //
 // Default: 0.
-func (s *SharedPC) CreateAccountModel(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAccountModel, client.Int(value))
+func (s *SharedPC) CreateAccountModel(ctx context.Context, value AccountModelValue) error {
+	return s.c.Add(ctx, URIAccountModel, client.Int(int64(value)))
 }
 
 // UpdateAccountModel updates ./Vendor/MSFT/SharedPC/AccountModel.
@@ -38,8 +39,8 @@ func (s *SharedPC) CreateAccountModel(ctx context.Context, value int64) error {
 // action on the EnableSharedPCMode node is taken.
 //
 // Default: 0.
-func (s *SharedPC) UpdateAccountModel(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAccountModel, client.Int(value))
+func (s *SharedPC) UpdateAccountModel(ctx context.Context, value AccountModelValue) error {
+	return s.c.Replace(ctx, URIAccountModel, client.Int(int64(value)))
 }
 
 // DeleteAccountModel deletes ./Vendor/MSFT/SharedPC/AccountModel.
@@ -58,12 +59,13 @@ func (s *SharedPC) DeleteAccountModel(ctx context.Context) error {
 // value must be set before the action on the EnableSharedPCMode node is taken.
 //
 // Default: 1.
-func (s *SharedPC) GetDeletionPolicy(ctx context.Context) (int64, error) {
+func (s *SharedPC) GetDeletionPolicy(ctx context.Context) (DeletionPolicyValue, error) {
 	v, err := s.c.Get(ctx, URIDeletionPolicy)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DeletionPolicyValue(n), err
 }
 
 // CreateDeletionPolicy creates ./Vendor/MSFT/SharedPC/DeletionPolicy.
@@ -72,8 +74,8 @@ func (s *SharedPC) GetDeletionPolicy(ctx context.Context) (int64, error) {
 // value must be set before the action on the EnableSharedPCMode node is taken.
 //
 // Default: 1.
-func (s *SharedPC) CreateDeletionPolicy(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDeletionPolicy, client.Int(value))
+func (s *SharedPC) CreateDeletionPolicy(ctx context.Context, value DeletionPolicyValue) error {
+	return s.c.Add(ctx, URIDeletionPolicy, client.Int(int64(value)))
 }
 
 // UpdateDeletionPolicy updates ./Vendor/MSFT/SharedPC/DeletionPolicy.
@@ -82,8 +84,8 @@ func (s *SharedPC) CreateDeletionPolicy(ctx context.Context, value int64) error 
 // value must be set before the action on the EnableSharedPCMode node is taken.
 //
 // Default: 1.
-func (s *SharedPC) UpdateDeletionPolicy(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDeletionPolicy, client.Int(value))
+func (s *SharedPC) UpdateDeletionPolicy(ctx context.Context, value DeletionPolicyValue) error {
+	return s.c.Replace(ctx, URIDeletionPolicy, client.Int(int64(value)))
 }
 
 // DeleteDeletionPolicy deletes ./Vendor/MSFT/SharedPC/DeletionPolicy.

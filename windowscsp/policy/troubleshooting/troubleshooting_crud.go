@@ -25,12 +25,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Troubleshooting) GetAllowRecommendations(ctx context.Context) (int64, error) {
+func (s *Troubleshooting) GetAllowRecommendations(ctx context.Context) (AllowRecommendationsValue, error) {
 	v, err := s.c.Get(ctx, URIAllowRecommendations)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowRecommendationsValue(n), err
 }
 
 // CreateAllowRecommendations creates ./Device/Vendor/MSFT/Policy/Config/Troubleshooting/AllowRecommendations.
@@ -50,8 +51,8 @@ func (s *Troubleshooting) GetAllowRecommendations(ctx context.Context) (int64, e
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Troubleshooting) CreateAllowRecommendations(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowRecommendations, client.Int(value))
+func (s *Troubleshooting) CreateAllowRecommendations(ctx context.Context, value AllowRecommendationsValue) error {
+	return s.c.Add(ctx, URIAllowRecommendations, client.Int(int64(value)))
 }
 
 // UpdateAllowRecommendations updates ./Device/Vendor/MSFT/Policy/Config/Troubleshooting/AllowRecommendations.
@@ -71,8 +72,8 @@ func (s *Troubleshooting) CreateAllowRecommendations(ctx context.Context, value 
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Troubleshooting) UpdateAllowRecommendations(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowRecommendations, client.Int(value))
+func (s *Troubleshooting) UpdateAllowRecommendations(ctx context.Context, value AllowRecommendationsValue) error {
+	return s.c.Replace(ctx, URIAllowRecommendations, client.Int(int64(value)))
 }
 
 // DeleteAllowRecommendations deletes ./Device/Vendor/MSFT/Policy/Config/Troubleshooting/AllowRecommendations.

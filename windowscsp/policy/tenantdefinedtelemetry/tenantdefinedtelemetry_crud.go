@@ -13,12 +13,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *TenantDefinedTelemetry) GetCustomTelemetryId(ctx context.Context) (int64, error) {
+func (s *TenantDefinedTelemetry) GetCustomTelemetryId(ctx context.Context) (CustomTelemetryIdValue, error) {
 	v, err := s.c.Get(ctx, URICustomTelemetryId)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return CustomTelemetryIdValue(n), err
 }
 
 // CreateCustomTelemetryId creates ./Device/Vendor/MSFT/Policy/Config/TenantDefinedTelemetry/CustomTelemetryId.
@@ -26,8 +27,8 @@ func (s *TenantDefinedTelemetry) GetCustomTelemetryId(ctx context.Context) (int6
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *TenantDefinedTelemetry) CreateCustomTelemetryId(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URICustomTelemetryId, client.Int(value))
+func (s *TenantDefinedTelemetry) CreateCustomTelemetryId(ctx context.Context, value CustomTelemetryIdValue) error {
+	return s.c.Add(ctx, URICustomTelemetryId, client.Int(int64(value)))
 }
 
 // UpdateCustomTelemetryId updates ./Device/Vendor/MSFT/Policy/Config/TenantDefinedTelemetry/CustomTelemetryId.
@@ -35,8 +36,8 @@ func (s *TenantDefinedTelemetry) CreateCustomTelemetryId(ctx context.Context, va
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *TenantDefinedTelemetry) UpdateCustomTelemetryId(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URICustomTelemetryId, client.Int(value))
+func (s *TenantDefinedTelemetry) UpdateCustomTelemetryId(ctx context.Context, value CustomTelemetryIdValue) error {
+	return s.c.Replace(ctx, URICustomTelemetryId, client.Int(int64(value)))
 }
 
 // DeleteCustomTelemetryId deletes ./Device/Vendor/MSFT/Policy/Config/TenantDefinedTelemetry/CustomTelemetryId.

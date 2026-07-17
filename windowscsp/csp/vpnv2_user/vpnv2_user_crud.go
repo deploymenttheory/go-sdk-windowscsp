@@ -373,12 +373,12 @@ func (s *VPNv2User) DeleteProfileNameByPassForLocal(ctx context.Context, profile
 //
 // Default: Require.
 // Supported from OS build 10.0.22000 (CSP v1.6).
-func (s *VPNv2User) GetProfileNameDataEncryption(ctx context.Context, profileName string) (string, error) {
+func (s *VPNv2User) GetProfileNameDataEncryption(ctx context.Context, profileName string) (ProfileNameDataEncryptionValue, error) {
 	v, err := s.c.Get(ctx, URIProfileNameDataEncryption(profileName))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return ProfileNameDataEncryptionValue(v.Str()), nil
 }
 
 // CreateProfileNameDataEncryption creates ./User/Vendor/MSFT/VPNv2/{profileName}/DataEncryption.
@@ -386,8 +386,8 @@ func (s *VPNv2User) GetProfileNameDataEncryption(ctx context.Context, profileNam
 //
 // Default: Require.
 // Supported from OS build 10.0.22000 (CSP v1.6).
-func (s *VPNv2User) CreateProfileNameDataEncryption(ctx context.Context, profileName string, value string) error {
-	return s.c.Add(ctx, URIProfileNameDataEncryption(profileName), client.Chr(value))
+func (s *VPNv2User) CreateProfileNameDataEncryption(ctx context.Context, profileName string, value ProfileNameDataEncryptionValue) error {
+	return s.c.Add(ctx, URIProfileNameDataEncryption(profileName), client.Chr(string(value)))
 }
 
 // UpdateProfileNameDataEncryption updates ./User/Vendor/MSFT/VPNv2/{profileName}/DataEncryption.
@@ -395,8 +395,8 @@ func (s *VPNv2User) CreateProfileNameDataEncryption(ctx context.Context, profile
 //
 // Default: Require.
 // Supported from OS build 10.0.22000 (CSP v1.6).
-func (s *VPNv2User) UpdateProfileNameDataEncryption(ctx context.Context, profileName string, value string) error {
-	return s.c.Replace(ctx, URIProfileNameDataEncryption(profileName), client.Chr(value))
+func (s *VPNv2User) UpdateProfileNameDataEncryption(ctx context.Context, profileName string, value ProfileNameDataEncryptionValue) error {
+	return s.c.Replace(ctx, URIProfileNameDataEncryption(profileName), client.Chr(string(value)))
 }
 
 // DeleteProfileNameDataEncryption deletes ./User/Vendor/MSFT/VPNv2/{profileName}/DataEncryption.
@@ -1145,24 +1145,24 @@ func (s *VPNv2User) DeleteProfileNameNativeProfileAuthenticationEapType(ctx cont
 
 // GetProfileNameNativeProfileAuthenticationMachineMethod reads ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/Authentication/MachineMethod.
 // This is only supported in IKEv2.
-func (s *VPNv2User) GetProfileNameNativeProfileAuthenticationMachineMethod(ctx context.Context, profileName string) (string, error) {
+func (s *VPNv2User) GetProfileNameNativeProfileAuthenticationMachineMethod(ctx context.Context, profileName string) (ProfileNameNativeProfileAuthenticationMachineMethodValue, error) {
 	v, err := s.c.Get(ctx, URIProfileNameNativeProfileAuthenticationMachineMethod(profileName))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return ProfileNameNativeProfileAuthenticationMachineMethodValue(v.Str()), nil
 }
 
 // CreateProfileNameNativeProfileAuthenticationMachineMethod creates ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/Authentication/MachineMethod.
 // This is only supported in IKEv2.
-func (s *VPNv2User) CreateProfileNameNativeProfileAuthenticationMachineMethod(ctx context.Context, profileName string, value string) error {
-	return s.c.Add(ctx, URIProfileNameNativeProfileAuthenticationMachineMethod(profileName), client.Chr(value))
+func (s *VPNv2User) CreateProfileNameNativeProfileAuthenticationMachineMethod(ctx context.Context, profileName string, value ProfileNameNativeProfileAuthenticationMachineMethodValue) error {
+	return s.c.Add(ctx, URIProfileNameNativeProfileAuthenticationMachineMethod(profileName), client.Chr(string(value)))
 }
 
 // UpdateProfileNameNativeProfileAuthenticationMachineMethod updates ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/Authentication/MachineMethod.
 // This is only supported in IKEv2.
-func (s *VPNv2User) UpdateProfileNameNativeProfileAuthenticationMachineMethod(ctx context.Context, profileName string, value string) error {
-	return s.c.Replace(ctx, URIProfileNameNativeProfileAuthenticationMachineMethod(profileName), client.Chr(value))
+func (s *VPNv2User) UpdateProfileNameNativeProfileAuthenticationMachineMethod(ctx context.Context, profileName string, value ProfileNameNativeProfileAuthenticationMachineMethodValue) error {
+	return s.c.Replace(ctx, URIProfileNameNativeProfileAuthenticationMachineMethod(profileName), client.Chr(string(value)))
 }
 
 // DeleteProfileNameNativeProfileAuthenticationMachineMethod deletes ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/Authentication/MachineMethod.
@@ -1173,24 +1173,24 @@ func (s *VPNv2User) DeleteProfileNameNativeProfileAuthenticationMachineMethod(ct
 
 // GetProfileNameNativeProfileAuthenticationUserMethod reads ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/Authentication/UserMethod.
 // This value can be one of the following: EAP or MSChapv2 (This is not supported for IKEv2).
-func (s *VPNv2User) GetProfileNameNativeProfileAuthenticationUserMethod(ctx context.Context, profileName string) (string, error) {
+func (s *VPNv2User) GetProfileNameNativeProfileAuthenticationUserMethod(ctx context.Context, profileName string) (ProfileNameNativeProfileAuthenticationUserMethodValue, error) {
 	v, err := s.c.Get(ctx, URIProfileNameNativeProfileAuthenticationUserMethod(profileName))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return ProfileNameNativeProfileAuthenticationUserMethodValue(v.Str()), nil
 }
 
 // CreateProfileNameNativeProfileAuthenticationUserMethod creates ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/Authentication/UserMethod.
 // This value can be one of the following: EAP or MSChapv2 (This is not supported for IKEv2).
-func (s *VPNv2User) CreateProfileNameNativeProfileAuthenticationUserMethod(ctx context.Context, profileName string, value string) error {
-	return s.c.Add(ctx, URIProfileNameNativeProfileAuthenticationUserMethod(profileName), client.Chr(value))
+func (s *VPNv2User) CreateProfileNameNativeProfileAuthenticationUserMethod(ctx context.Context, profileName string, value ProfileNameNativeProfileAuthenticationUserMethodValue) error {
+	return s.c.Add(ctx, URIProfileNameNativeProfileAuthenticationUserMethod(profileName), client.Chr(string(value)))
 }
 
 // UpdateProfileNameNativeProfileAuthenticationUserMethod updates ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/Authentication/UserMethod.
 // This value can be one of the following: EAP or MSChapv2 (This is not supported for IKEv2).
-func (s *VPNv2User) UpdateProfileNameNativeProfileAuthenticationUserMethod(ctx context.Context, profileName string, value string) error {
-	return s.c.Replace(ctx, URIProfileNameNativeProfileAuthenticationUserMethod(profileName), client.Chr(value))
+func (s *VPNv2User) UpdateProfileNameNativeProfileAuthenticationUserMethod(ctx context.Context, profileName string, value ProfileNameNativeProfileAuthenticationUserMethodValue) error {
+	return s.c.Replace(ctx, URIProfileNameNativeProfileAuthenticationUserMethod(profileName), client.Chr(string(value)))
 }
 
 // DeleteProfileNameNativeProfileAuthenticationUserMethod deletes ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/Authentication/UserMethod.
@@ -1201,24 +1201,24 @@ func (s *VPNv2User) DeleteProfileNameNativeProfileAuthenticationUserMethod(ctx c
 
 // GetProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstants reads ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/CryptographySuite/AuthenticationTransformConstants.
 // Type of authentication transform constant.
-func (s *VPNv2User) GetProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstants(ctx context.Context, profileName string) (string, error) {
+func (s *VPNv2User) GetProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstants(ctx context.Context, profileName string) (ProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstantsValue, error) {
 	v, err := s.c.Get(ctx, URIProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstants(profileName))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return ProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstantsValue(v.Str()), nil
 }
 
 // CreateProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstants creates ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/CryptographySuite/AuthenticationTransformConstants.
 // Type of authentication transform constant.
-func (s *VPNv2User) CreateProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstants(ctx context.Context, profileName string, value string) error {
-	return s.c.Add(ctx, URIProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstants(profileName), client.Chr(value))
+func (s *VPNv2User) CreateProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstants(ctx context.Context, profileName string, value ProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstantsValue) error {
+	return s.c.Add(ctx, URIProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstants(profileName), client.Chr(string(value)))
 }
 
 // UpdateProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstants updates ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/CryptographySuite/AuthenticationTransformConstants.
 // Type of authentication transform constant.
-func (s *VPNv2User) UpdateProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstants(ctx context.Context, profileName string, value string) error {
-	return s.c.Replace(ctx, URIProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstants(profileName), client.Chr(value))
+func (s *VPNv2User) UpdateProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstants(ctx context.Context, profileName string, value ProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstantsValue) error {
+	return s.c.Replace(ctx, URIProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstants(profileName), client.Chr(string(value)))
 }
 
 // DeleteProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstants deletes ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/CryptographySuite/AuthenticationTransformConstants.
@@ -1229,24 +1229,24 @@ func (s *VPNv2User) DeleteProfileNameNativeProfileCryptographySuiteAuthenticatio
 
 // GetProfileNameNativeProfileCryptographySuiteCipherTransformConstants reads ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/CryptographySuite/CipherTransformConstants.
 // Type of Cipher transform constant.
-func (s *VPNv2User) GetProfileNameNativeProfileCryptographySuiteCipherTransformConstants(ctx context.Context, profileName string) (string, error) {
+func (s *VPNv2User) GetProfileNameNativeProfileCryptographySuiteCipherTransformConstants(ctx context.Context, profileName string) (ProfileNameNativeProfileCryptographySuiteCipherTransformConstantsValue, error) {
 	v, err := s.c.Get(ctx, URIProfileNameNativeProfileCryptographySuiteCipherTransformConstants(profileName))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return ProfileNameNativeProfileCryptographySuiteCipherTransformConstantsValue(v.Str()), nil
 }
 
 // CreateProfileNameNativeProfileCryptographySuiteCipherTransformConstants creates ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/CryptographySuite/CipherTransformConstants.
 // Type of Cipher transform constant.
-func (s *VPNv2User) CreateProfileNameNativeProfileCryptographySuiteCipherTransformConstants(ctx context.Context, profileName string, value string) error {
-	return s.c.Add(ctx, URIProfileNameNativeProfileCryptographySuiteCipherTransformConstants(profileName), client.Chr(value))
+func (s *VPNv2User) CreateProfileNameNativeProfileCryptographySuiteCipherTransformConstants(ctx context.Context, profileName string, value ProfileNameNativeProfileCryptographySuiteCipherTransformConstantsValue) error {
+	return s.c.Add(ctx, URIProfileNameNativeProfileCryptographySuiteCipherTransformConstants(profileName), client.Chr(string(value)))
 }
 
 // UpdateProfileNameNativeProfileCryptographySuiteCipherTransformConstants updates ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/CryptographySuite/CipherTransformConstants.
 // Type of Cipher transform constant.
-func (s *VPNv2User) UpdateProfileNameNativeProfileCryptographySuiteCipherTransformConstants(ctx context.Context, profileName string, value string) error {
-	return s.c.Replace(ctx, URIProfileNameNativeProfileCryptographySuiteCipherTransformConstants(profileName), client.Chr(value))
+func (s *VPNv2User) UpdateProfileNameNativeProfileCryptographySuiteCipherTransformConstants(ctx context.Context, profileName string, value ProfileNameNativeProfileCryptographySuiteCipherTransformConstantsValue) error {
+	return s.c.Replace(ctx, URIProfileNameNativeProfileCryptographySuiteCipherTransformConstants(profileName), client.Chr(string(value)))
 }
 
 // DeleteProfileNameNativeProfileCryptographySuiteCipherTransformConstants deletes ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/CryptographySuite/CipherTransformConstants.
@@ -1257,24 +1257,24 @@ func (s *VPNv2User) DeleteProfileNameNativeProfileCryptographySuiteCipherTransfo
 
 // GetProfileNameNativeProfileCryptographySuiteDHGroup reads ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/CryptographySuite/DHGroup.
 // Group used for DH (Diffie-Hellman).
-func (s *VPNv2User) GetProfileNameNativeProfileCryptographySuiteDHGroup(ctx context.Context, profileName string) (string, error) {
+func (s *VPNv2User) GetProfileNameNativeProfileCryptographySuiteDHGroup(ctx context.Context, profileName string) (ProfileNameNativeProfileCryptographySuiteDHGroupValue, error) {
 	v, err := s.c.Get(ctx, URIProfileNameNativeProfileCryptographySuiteDHGroup(profileName))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return ProfileNameNativeProfileCryptographySuiteDHGroupValue(v.Str()), nil
 }
 
 // CreateProfileNameNativeProfileCryptographySuiteDHGroup creates ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/CryptographySuite/DHGroup.
 // Group used for DH (Diffie-Hellman).
-func (s *VPNv2User) CreateProfileNameNativeProfileCryptographySuiteDHGroup(ctx context.Context, profileName string, value string) error {
-	return s.c.Add(ctx, URIProfileNameNativeProfileCryptographySuiteDHGroup(profileName), client.Chr(value))
+func (s *VPNv2User) CreateProfileNameNativeProfileCryptographySuiteDHGroup(ctx context.Context, profileName string, value ProfileNameNativeProfileCryptographySuiteDHGroupValue) error {
+	return s.c.Add(ctx, URIProfileNameNativeProfileCryptographySuiteDHGroup(profileName), client.Chr(string(value)))
 }
 
 // UpdateProfileNameNativeProfileCryptographySuiteDHGroup updates ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/CryptographySuite/DHGroup.
 // Group used for DH (Diffie-Hellman).
-func (s *VPNv2User) UpdateProfileNameNativeProfileCryptographySuiteDHGroup(ctx context.Context, profileName string, value string) error {
-	return s.c.Replace(ctx, URIProfileNameNativeProfileCryptographySuiteDHGroup(profileName), client.Chr(value))
+func (s *VPNv2User) UpdateProfileNameNativeProfileCryptographySuiteDHGroup(ctx context.Context, profileName string, value ProfileNameNativeProfileCryptographySuiteDHGroupValue) error {
+	return s.c.Replace(ctx, URIProfileNameNativeProfileCryptographySuiteDHGroup(profileName), client.Chr(string(value)))
 }
 
 // DeleteProfileNameNativeProfileCryptographySuiteDHGroup deletes ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/CryptographySuite/DHGroup.
@@ -1285,24 +1285,24 @@ func (s *VPNv2User) DeleteProfileNameNativeProfileCryptographySuiteDHGroup(ctx c
 
 // GetProfileNameNativeProfileCryptographySuiteEncryptionMethod reads ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/CryptographySuite/EncryptionMethod.
 // Type of encryption method.
-func (s *VPNv2User) GetProfileNameNativeProfileCryptographySuiteEncryptionMethod(ctx context.Context, profileName string) (string, error) {
+func (s *VPNv2User) GetProfileNameNativeProfileCryptographySuiteEncryptionMethod(ctx context.Context, profileName string) (ProfileNameNativeProfileCryptographySuiteEncryptionMethodValue, error) {
 	v, err := s.c.Get(ctx, URIProfileNameNativeProfileCryptographySuiteEncryptionMethod(profileName))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return ProfileNameNativeProfileCryptographySuiteEncryptionMethodValue(v.Str()), nil
 }
 
 // CreateProfileNameNativeProfileCryptographySuiteEncryptionMethod creates ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/CryptographySuite/EncryptionMethod.
 // Type of encryption method.
-func (s *VPNv2User) CreateProfileNameNativeProfileCryptographySuiteEncryptionMethod(ctx context.Context, profileName string, value string) error {
-	return s.c.Add(ctx, URIProfileNameNativeProfileCryptographySuiteEncryptionMethod(profileName), client.Chr(value))
+func (s *VPNv2User) CreateProfileNameNativeProfileCryptographySuiteEncryptionMethod(ctx context.Context, profileName string, value ProfileNameNativeProfileCryptographySuiteEncryptionMethodValue) error {
+	return s.c.Add(ctx, URIProfileNameNativeProfileCryptographySuiteEncryptionMethod(profileName), client.Chr(string(value)))
 }
 
 // UpdateProfileNameNativeProfileCryptographySuiteEncryptionMethod updates ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/CryptographySuite/EncryptionMethod.
 // Type of encryption method.
-func (s *VPNv2User) UpdateProfileNameNativeProfileCryptographySuiteEncryptionMethod(ctx context.Context, profileName string, value string) error {
-	return s.c.Replace(ctx, URIProfileNameNativeProfileCryptographySuiteEncryptionMethod(profileName), client.Chr(value))
+func (s *VPNv2User) UpdateProfileNameNativeProfileCryptographySuiteEncryptionMethod(ctx context.Context, profileName string, value ProfileNameNativeProfileCryptographySuiteEncryptionMethodValue) error {
+	return s.c.Replace(ctx, URIProfileNameNativeProfileCryptographySuiteEncryptionMethod(profileName), client.Chr(string(value)))
 }
 
 // DeleteProfileNameNativeProfileCryptographySuiteEncryptionMethod deletes ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/CryptographySuite/EncryptionMethod.
@@ -1313,24 +1313,24 @@ func (s *VPNv2User) DeleteProfileNameNativeProfileCryptographySuiteEncryptionMet
 
 // GetProfileNameNativeProfileCryptographySuiteIntegrityCheckMethod reads ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/CryptographySuite/IntegrityCheckMethod.
 // Type of integrity check.
-func (s *VPNv2User) GetProfileNameNativeProfileCryptographySuiteIntegrityCheckMethod(ctx context.Context, profileName string) (string, error) {
+func (s *VPNv2User) GetProfileNameNativeProfileCryptographySuiteIntegrityCheckMethod(ctx context.Context, profileName string) (ProfileNameNativeProfileCryptographySuiteIntegrityCheckMethodValue, error) {
 	v, err := s.c.Get(ctx, URIProfileNameNativeProfileCryptographySuiteIntegrityCheckMethod(profileName))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return ProfileNameNativeProfileCryptographySuiteIntegrityCheckMethodValue(v.Str()), nil
 }
 
 // CreateProfileNameNativeProfileCryptographySuiteIntegrityCheckMethod creates ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/CryptographySuite/IntegrityCheckMethod.
 // Type of integrity check.
-func (s *VPNv2User) CreateProfileNameNativeProfileCryptographySuiteIntegrityCheckMethod(ctx context.Context, profileName string, value string) error {
-	return s.c.Add(ctx, URIProfileNameNativeProfileCryptographySuiteIntegrityCheckMethod(profileName), client.Chr(value))
+func (s *VPNv2User) CreateProfileNameNativeProfileCryptographySuiteIntegrityCheckMethod(ctx context.Context, profileName string, value ProfileNameNativeProfileCryptographySuiteIntegrityCheckMethodValue) error {
+	return s.c.Add(ctx, URIProfileNameNativeProfileCryptographySuiteIntegrityCheckMethod(profileName), client.Chr(string(value)))
 }
 
 // UpdateProfileNameNativeProfileCryptographySuiteIntegrityCheckMethod updates ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/CryptographySuite/IntegrityCheckMethod.
 // Type of integrity check.
-func (s *VPNv2User) UpdateProfileNameNativeProfileCryptographySuiteIntegrityCheckMethod(ctx context.Context, profileName string, value string) error {
-	return s.c.Replace(ctx, URIProfileNameNativeProfileCryptographySuiteIntegrityCheckMethod(profileName), client.Chr(value))
+func (s *VPNv2User) UpdateProfileNameNativeProfileCryptographySuiteIntegrityCheckMethod(ctx context.Context, profileName string, value ProfileNameNativeProfileCryptographySuiteIntegrityCheckMethodValue) error {
+	return s.c.Replace(ctx, URIProfileNameNativeProfileCryptographySuiteIntegrityCheckMethod(profileName), client.Chr(string(value)))
 }
 
 // DeleteProfileNameNativeProfileCryptographySuiteIntegrityCheckMethod deletes ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/CryptographySuite/IntegrityCheckMethod.
@@ -1341,24 +1341,24 @@ func (s *VPNv2User) DeleteProfileNameNativeProfileCryptographySuiteIntegrityChec
 
 // GetProfileNameNativeProfileCryptographySuitePfsGroup reads ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/CryptographySuite/PfsGroup.
 // Group used for PFS (Perfect Forward Secrecy).
-func (s *VPNv2User) GetProfileNameNativeProfileCryptographySuitePfsGroup(ctx context.Context, profileName string) (string, error) {
+func (s *VPNv2User) GetProfileNameNativeProfileCryptographySuitePfsGroup(ctx context.Context, profileName string) (ProfileNameNativeProfileCryptographySuitePfsGroupValue, error) {
 	v, err := s.c.Get(ctx, URIProfileNameNativeProfileCryptographySuitePfsGroup(profileName))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return ProfileNameNativeProfileCryptographySuitePfsGroupValue(v.Str()), nil
 }
 
 // CreateProfileNameNativeProfileCryptographySuitePfsGroup creates ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/CryptographySuite/PfsGroup.
 // Group used for PFS (Perfect Forward Secrecy).
-func (s *VPNv2User) CreateProfileNameNativeProfileCryptographySuitePfsGroup(ctx context.Context, profileName string, value string) error {
-	return s.c.Add(ctx, URIProfileNameNativeProfileCryptographySuitePfsGroup(profileName), client.Chr(value))
+func (s *VPNv2User) CreateProfileNameNativeProfileCryptographySuitePfsGroup(ctx context.Context, profileName string, value ProfileNameNativeProfileCryptographySuitePfsGroupValue) error {
+	return s.c.Add(ctx, URIProfileNameNativeProfileCryptographySuitePfsGroup(profileName), client.Chr(string(value)))
 }
 
 // UpdateProfileNameNativeProfileCryptographySuitePfsGroup updates ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/CryptographySuite/PfsGroup.
 // Group used for PFS (Perfect Forward Secrecy).
-func (s *VPNv2User) UpdateProfileNameNativeProfileCryptographySuitePfsGroup(ctx context.Context, profileName string, value string) error {
-	return s.c.Replace(ctx, URIProfileNameNativeProfileCryptographySuitePfsGroup(profileName), client.Chr(value))
+func (s *VPNv2User) UpdateProfileNameNativeProfileCryptographySuitePfsGroup(ctx context.Context, profileName string, value ProfileNameNativeProfileCryptographySuitePfsGroupValue) error {
+	return s.c.Replace(ctx, URIProfileNameNativeProfileCryptographySuitePfsGroup(profileName), client.Chr(string(value)))
 }
 
 // DeleteProfileNameNativeProfileCryptographySuitePfsGroup deletes ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/CryptographySuite/PfsGroup.
@@ -1445,24 +1445,24 @@ func (s *VPNv2User) DeleteProfileNameNativeProfileL2tpPsk(ctx context.Context, p
 
 // GetProfileNameNativeProfileNativeProtocolType reads ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/NativeProtocolType.
 // Required for native profiles. Type of tunneling protocol used.
-func (s *VPNv2User) GetProfileNameNativeProfileNativeProtocolType(ctx context.Context, profileName string) (string, error) {
+func (s *VPNv2User) GetProfileNameNativeProfileNativeProtocolType(ctx context.Context, profileName string) (ProfileNameNativeProfileNativeProtocolTypeValue, error) {
 	v, err := s.c.Get(ctx, URIProfileNameNativeProfileNativeProtocolType(profileName))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return ProfileNameNativeProfileNativeProtocolTypeValue(v.Str()), nil
 }
 
 // CreateProfileNameNativeProfileNativeProtocolType creates ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/NativeProtocolType.
 // Required for native profiles. Type of tunneling protocol used.
-func (s *VPNv2User) CreateProfileNameNativeProfileNativeProtocolType(ctx context.Context, profileName string, value string) error {
-	return s.c.Add(ctx, URIProfileNameNativeProfileNativeProtocolType(profileName), client.Chr(value))
+func (s *VPNv2User) CreateProfileNameNativeProfileNativeProtocolType(ctx context.Context, profileName string, value ProfileNameNativeProfileNativeProtocolTypeValue) error {
+	return s.c.Add(ctx, URIProfileNameNativeProfileNativeProtocolType(profileName), client.Chr(string(value)))
 }
 
 // UpdateProfileNameNativeProfileNativeProtocolType updates ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/NativeProtocolType.
 // Required for native profiles. Type of tunneling protocol used.
-func (s *VPNv2User) UpdateProfileNameNativeProfileNativeProtocolType(ctx context.Context, profileName string, value string) error {
-	return s.c.Replace(ctx, URIProfileNameNativeProfileNativeProtocolType(profileName), client.Chr(value))
+func (s *VPNv2User) UpdateProfileNameNativeProfileNativeProtocolType(ctx context.Context, profileName string, value ProfileNameNativeProfileNativeProtocolTypeValue) error {
+	return s.c.Replace(ctx, URIProfileNameNativeProfileNativeProtocolType(profileName), client.Chr(string(value)))
 }
 
 // DeleteProfileNameNativeProfileNativeProtocolType deletes ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/NativeProtocolType.
@@ -1529,24 +1529,24 @@ func (s *VPNv2User) DeleteProfileNameNativeProfileProtocolListNativeProtocolList
 
 // GetProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdType reads ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/ProtocolList/NativeProtocolList/{nativeProtocolRowId}/Type.
 // Inbox VPN protocols type.
-func (s *VPNv2User) GetProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdType(ctx context.Context, profileName string, nativeProtocolRowId string) (string, error) {
+func (s *VPNv2User) GetProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdType(ctx context.Context, profileName string, nativeProtocolRowId string) (ProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdTypeValue, error) {
 	v, err := s.c.Get(ctx, URIProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdType(profileName, nativeProtocolRowId))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return ProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdTypeValue(v.Str()), nil
 }
 
 // CreateProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdType creates ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/ProtocolList/NativeProtocolList/{nativeProtocolRowId}/Type.
 // Inbox VPN protocols type.
-func (s *VPNv2User) CreateProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdType(ctx context.Context, profileName string, nativeProtocolRowId string, value string) error {
-	return s.c.Add(ctx, URIProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdType(profileName, nativeProtocolRowId), client.Chr(value))
+func (s *VPNv2User) CreateProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdType(ctx context.Context, profileName string, nativeProtocolRowId string, value ProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdTypeValue) error {
+	return s.c.Add(ctx, URIProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdType(profileName, nativeProtocolRowId), client.Chr(string(value)))
 }
 
 // UpdateProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdType updates ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/ProtocolList/NativeProtocolList/{nativeProtocolRowId}/Type.
 // Inbox VPN protocols type.
-func (s *VPNv2User) UpdateProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdType(ctx context.Context, profileName string, nativeProtocolRowId string, value string) error {
-	return s.c.Replace(ctx, URIProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdType(profileName, nativeProtocolRowId), client.Chr(value))
+func (s *VPNv2User) UpdateProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdType(ctx context.Context, profileName string, nativeProtocolRowId string, value ProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdTypeValue) error {
+	return s.c.Replace(ctx, URIProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdType(profileName, nativeProtocolRowId), client.Chr(string(value)))
 }
 
 // DeleteProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdType deletes ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/ProtocolList/NativeProtocolList/{nativeProtocolRowId}/Type.
@@ -1585,24 +1585,24 @@ func (s *VPNv2User) DeleteProfileNameNativeProfileProtocolListRetryTimeInHours(c
 
 // GetProfileNameNativeProfileRoutingPolicyType reads ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/RoutingPolicyType.
 // Type of routing policy.
-func (s *VPNv2User) GetProfileNameNativeProfileRoutingPolicyType(ctx context.Context, profileName string) (string, error) {
+func (s *VPNv2User) GetProfileNameNativeProfileRoutingPolicyType(ctx context.Context, profileName string) (ProfileNameNativeProfileRoutingPolicyTypeValue, error) {
 	v, err := s.c.Get(ctx, URIProfileNameNativeProfileRoutingPolicyType(profileName))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return ProfileNameNativeProfileRoutingPolicyTypeValue(v.Str()), nil
 }
 
 // CreateProfileNameNativeProfileRoutingPolicyType creates ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/RoutingPolicyType.
 // Type of routing policy.
-func (s *VPNv2User) CreateProfileNameNativeProfileRoutingPolicyType(ctx context.Context, profileName string, value string) error {
-	return s.c.Add(ctx, URIProfileNameNativeProfileRoutingPolicyType(profileName), client.Chr(value))
+func (s *VPNv2User) CreateProfileNameNativeProfileRoutingPolicyType(ctx context.Context, profileName string, value ProfileNameNativeProfileRoutingPolicyTypeValue) error {
+	return s.c.Add(ctx, URIProfileNameNativeProfileRoutingPolicyType(profileName), client.Chr(string(value)))
 }
 
 // UpdateProfileNameNativeProfileRoutingPolicyType updates ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/RoutingPolicyType.
 // Type of routing policy.
-func (s *VPNv2User) UpdateProfileNameNativeProfileRoutingPolicyType(ctx context.Context, profileName string, value string) error {
-	return s.c.Replace(ctx, URIProfileNameNativeProfileRoutingPolicyType(profileName), client.Chr(value))
+func (s *VPNv2User) UpdateProfileNameNativeProfileRoutingPolicyType(ctx context.Context, profileName string, value ProfileNameNativeProfileRoutingPolicyTypeValue) error {
+	return s.c.Replace(ctx, URIProfileNameNativeProfileRoutingPolicyType(profileName), client.Chr(string(value)))
 }
 
 // DeleteProfileNameNativeProfileRoutingPolicyType deletes ./User/Vendor/MSFT/VPNv2/{profileName}/NativeProfile/RoutingPolicyType.
@@ -2545,26 +2545,26 @@ func (s *VPNv2User) DeleteProfileNameTrafficFilterListTrafficFilterIdRemotePortR
 // GetProfileNameTrafficFilterListTrafficFilterIdRoutingPolicyType reads ./User/Vendor/MSFT/VPNv2/{profileName}/TrafficFilterList/{trafficFilterId}/RoutingPolicyType.
 // Specifies the routing policy if an App or Claims type is used in the traffic filter. The scope
 // of this property is for this traffic filter rule alone.
-func (s *VPNv2User) GetProfileNameTrafficFilterListTrafficFilterIdRoutingPolicyType(ctx context.Context, profileName string, trafficFilterId string) (string, error) {
+func (s *VPNv2User) GetProfileNameTrafficFilterListTrafficFilterIdRoutingPolicyType(ctx context.Context, profileName string, trafficFilterId string) (ProfileNameTrafficFilterListTrafficFilterIdRoutingPolicyTypeValue, error) {
 	v, err := s.c.Get(ctx, URIProfileNameTrafficFilterListTrafficFilterIdRoutingPolicyType(profileName, trafficFilterId))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return ProfileNameTrafficFilterListTrafficFilterIdRoutingPolicyTypeValue(v.Str()), nil
 }
 
 // CreateProfileNameTrafficFilterListTrafficFilterIdRoutingPolicyType creates ./User/Vendor/MSFT/VPNv2/{profileName}/TrafficFilterList/{trafficFilterId}/RoutingPolicyType.
 // Specifies the routing policy if an App or Claims type is used in the traffic filter. The scope
 // of this property is for this traffic filter rule alone.
-func (s *VPNv2User) CreateProfileNameTrafficFilterListTrafficFilterIdRoutingPolicyType(ctx context.Context, profileName string, trafficFilterId string, value string) error {
-	return s.c.Add(ctx, URIProfileNameTrafficFilterListTrafficFilterIdRoutingPolicyType(profileName, trafficFilterId), client.Chr(value))
+func (s *VPNv2User) CreateProfileNameTrafficFilterListTrafficFilterIdRoutingPolicyType(ctx context.Context, profileName string, trafficFilterId string, value ProfileNameTrafficFilterListTrafficFilterIdRoutingPolicyTypeValue) error {
+	return s.c.Add(ctx, URIProfileNameTrafficFilterListTrafficFilterIdRoutingPolicyType(profileName, trafficFilterId), client.Chr(string(value)))
 }
 
 // UpdateProfileNameTrafficFilterListTrafficFilterIdRoutingPolicyType updates ./User/Vendor/MSFT/VPNv2/{profileName}/TrafficFilterList/{trafficFilterId}/RoutingPolicyType.
 // Specifies the routing policy if an App or Claims type is used in the traffic filter. The scope
 // of this property is for this traffic filter rule alone.
-func (s *VPNv2User) UpdateProfileNameTrafficFilterListTrafficFilterIdRoutingPolicyType(ctx context.Context, profileName string, trafficFilterId string, value string) error {
-	return s.c.Replace(ctx, URIProfileNameTrafficFilterListTrafficFilterIdRoutingPolicyType(profileName, trafficFilterId), client.Chr(value))
+func (s *VPNv2User) UpdateProfileNameTrafficFilterListTrafficFilterIdRoutingPolicyType(ctx context.Context, profileName string, trafficFilterId string, value ProfileNameTrafficFilterListTrafficFilterIdRoutingPolicyTypeValue) error {
+	return s.c.Replace(ctx, URIProfileNameTrafficFilterListTrafficFilterIdRoutingPolicyType(profileName, trafficFilterId), client.Chr(string(value)))
 }
 
 // DeleteProfileNameTrafficFilterListTrafficFilterIdRoutingPolicyType deletes ./User/Vendor/MSFT/VPNv2/{profileName}/TrafficFilterList/{trafficFilterId}/RoutingPolicyType.

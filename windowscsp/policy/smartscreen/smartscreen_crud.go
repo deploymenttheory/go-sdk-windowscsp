@@ -18,12 +18,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *SmartScreen) GetEnableAppInstallControl(ctx context.Context) (int64, error) {
+func (s *SmartScreen) GetEnableAppInstallControl(ctx context.Context) (EnableAppInstallControlValue, error) {
 	v, err := s.c.Get(ctx, URIEnableAppInstallControl)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableAppInstallControlValue(n), err
 }
 
 // CreateEnableAppInstallControl creates ./Device/Vendor/MSFT/Policy/Config/SmartScreen/EnableAppInstallControl.
@@ -36,8 +37,8 @@ func (s *SmartScreen) GetEnableAppInstallControl(ctx context.Context) (int64, er
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *SmartScreen) CreateEnableAppInstallControl(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableAppInstallControl, client.Int(value))
+func (s *SmartScreen) CreateEnableAppInstallControl(ctx context.Context, value EnableAppInstallControlValue) error {
+	return s.c.Add(ctx, URIEnableAppInstallControl, client.Int(int64(value)))
 }
 
 // UpdateEnableAppInstallControl updates ./Device/Vendor/MSFT/Policy/Config/SmartScreen/EnableAppInstallControl.
@@ -50,8 +51,8 @@ func (s *SmartScreen) CreateEnableAppInstallControl(ctx context.Context, value i
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *SmartScreen) UpdateEnableAppInstallControl(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableAppInstallControl, client.Int(value))
+func (s *SmartScreen) UpdateEnableAppInstallControl(ctx context.Context, value EnableAppInstallControlValue) error {
+	return s.c.Replace(ctx, URIEnableAppInstallControl, client.Int(int64(value)))
 }
 
 // DeleteEnableAppInstallControl deletes ./Device/Vendor/MSFT/Policy/Config/SmartScreen/EnableAppInstallControl.
@@ -73,12 +74,13 @@ func (s *SmartScreen) DeleteEnableAppInstallControl(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *SmartScreen) GetEnableSmartScreenInShell(ctx context.Context) (int64, error) {
+func (s *SmartScreen) GetEnableSmartScreenInShell(ctx context.Context) (EnableSmartScreenInShellValue, error) {
 	v, err := s.c.Get(ctx, URIEnableSmartScreenInShell)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableSmartScreenInShellValue(n), err
 }
 
 // CreateEnableSmartScreenInShell creates ./Device/Vendor/MSFT/Policy/Config/SmartScreen/EnableSmartScreenInShell.
@@ -86,8 +88,8 @@ func (s *SmartScreen) GetEnableSmartScreenInShell(ctx context.Context) (int64, e
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *SmartScreen) CreateEnableSmartScreenInShell(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableSmartScreenInShell, client.Int(value))
+func (s *SmartScreen) CreateEnableSmartScreenInShell(ctx context.Context, value EnableSmartScreenInShellValue) error {
+	return s.c.Add(ctx, URIEnableSmartScreenInShell, client.Int(int64(value)))
 }
 
 // UpdateEnableSmartScreenInShell updates ./Device/Vendor/MSFT/Policy/Config/SmartScreen/EnableSmartScreenInShell.
@@ -95,8 +97,8 @@ func (s *SmartScreen) CreateEnableSmartScreenInShell(ctx context.Context, value 
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *SmartScreen) UpdateEnableSmartScreenInShell(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableSmartScreenInShell, client.Int(value))
+func (s *SmartScreen) UpdateEnableSmartScreenInShell(ctx context.Context, value EnableSmartScreenInShellValue) error {
+	return s.c.Replace(ctx, URIEnableSmartScreenInShell, client.Int(int64(value)))
 }
 
 // DeleteEnableSmartScreenInShell deletes ./Device/Vendor/MSFT/Policy/Config/SmartScreen/EnableSmartScreenInShell.
@@ -114,12 +116,13 @@ func (s *SmartScreen) DeleteEnableSmartScreenInShell(ctx context.Context) error 
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *SmartScreen) GetPreventOverrideForFilesInShell(ctx context.Context) (int64, error) {
+func (s *SmartScreen) GetPreventOverrideForFilesInShell(ctx context.Context) (PreventOverrideForFilesInShellValue, error) {
 	v, err := s.c.Get(ctx, URIPreventOverrideForFilesInShell)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PreventOverrideForFilesInShellValue(n), err
 }
 
 // CreatePreventOverrideForFilesInShell creates ./Device/Vendor/MSFT/Policy/Config/SmartScreen/PreventOverrideForFilesInShell.
@@ -128,8 +131,8 @@ func (s *SmartScreen) GetPreventOverrideForFilesInShell(ctx context.Context) (in
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *SmartScreen) CreatePreventOverrideForFilesInShell(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPreventOverrideForFilesInShell, client.Int(value))
+func (s *SmartScreen) CreatePreventOverrideForFilesInShell(ctx context.Context, value PreventOverrideForFilesInShellValue) error {
+	return s.c.Add(ctx, URIPreventOverrideForFilesInShell, client.Int(int64(value)))
 }
 
 // UpdatePreventOverrideForFilesInShell updates ./Device/Vendor/MSFT/Policy/Config/SmartScreen/PreventOverrideForFilesInShell.
@@ -138,8 +141,8 @@ func (s *SmartScreen) CreatePreventOverrideForFilesInShell(ctx context.Context, 
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *SmartScreen) UpdatePreventOverrideForFilesInShell(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPreventOverrideForFilesInShell, client.Int(value))
+func (s *SmartScreen) UpdatePreventOverrideForFilesInShell(ctx context.Context, value PreventOverrideForFilesInShellValue) error {
+	return s.c.Replace(ctx, URIPreventOverrideForFilesInShell, client.Int(int64(value)))
 }
 
 // DeletePreventOverrideForFilesInShell deletes ./Device/Vendor/MSFT/Policy/Config/SmartScreen/PreventOverrideForFilesInShell.

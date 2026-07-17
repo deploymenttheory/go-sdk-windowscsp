@@ -16,12 +16,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Search) GetAllowCloudSearch(ctx context.Context) (int64, error) {
+func (s *Search) GetAllowCloudSearch(ctx context.Context) (AllowCloudSearchValue, error) {
 	v, err := s.c.Get(ctx, URIAllowCloudSearch)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowCloudSearchValue(n), err
 }
 
 // CreateAllowCloudSearch creates ./Device/Vendor/MSFT/Policy/Config/Search/AllowCloudSearch.
@@ -32,8 +33,8 @@ func (s *Search) GetAllowCloudSearch(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Search) CreateAllowCloudSearch(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowCloudSearch, client.Int(value))
+func (s *Search) CreateAllowCloudSearch(ctx context.Context, value AllowCloudSearchValue) error {
+	return s.c.Add(ctx, URIAllowCloudSearch, client.Int(int64(value)))
 }
 
 // UpdateAllowCloudSearch updates ./Device/Vendor/MSFT/Policy/Config/Search/AllowCloudSearch.
@@ -44,8 +45,8 @@ func (s *Search) CreateAllowCloudSearch(ctx context.Context, value int64) error 
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Search) UpdateAllowCloudSearch(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowCloudSearch, client.Int(value))
+func (s *Search) UpdateAllowCloudSearch(ctx context.Context, value AllowCloudSearchValue) error {
+	return s.c.Replace(ctx, URIAllowCloudSearch, client.Int(int64(value)))
 }
 
 // DeleteAllowCloudSearch deletes ./Device/Vendor/MSFT/Policy/Config/Search/AllowCloudSearch.
@@ -65,12 +66,13 @@ func (s *Search) DeleteAllowCloudSearch(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Search) GetAllowCortanaInAAD(ctx context.Context) (int64, error) {
+func (s *Search) GetAllowCortanaInAAD(ctx context.Context) (AllowCortanaInAADValue, error) {
 	v, err := s.c.Get(ctx, URIAllowCortanaInAAD)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowCortanaInAADValue(n), err
 }
 
 // CreateAllowCortanaInAAD creates ./Device/Vendor/MSFT/Policy/Config/Search/AllowCortanaInAAD.
@@ -78,8 +80,8 @@ func (s *Search) GetAllowCortanaInAAD(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Search) CreateAllowCortanaInAAD(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowCortanaInAAD, client.Int(value))
+func (s *Search) CreateAllowCortanaInAAD(ctx context.Context, value AllowCortanaInAADValue) error {
+	return s.c.Add(ctx, URIAllowCortanaInAAD, client.Int(int64(value)))
 }
 
 // UpdateAllowCortanaInAAD updates ./Device/Vendor/MSFT/Policy/Config/Search/AllowCortanaInAAD.
@@ -87,8 +89,8 @@ func (s *Search) CreateAllowCortanaInAAD(ctx context.Context, value int64) error
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Search) UpdateAllowCortanaInAAD(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowCortanaInAAD, client.Int(value))
+func (s *Search) UpdateAllowCortanaInAAD(ctx context.Context, value AllowCortanaInAADValue) error {
+	return s.c.Replace(ctx, URIAllowCortanaInAAD, client.Int(int64(value)))
 }
 
 // DeleteAllowCortanaInAAD deletes ./Device/Vendor/MSFT/Policy/Config/Search/AllowCortanaInAAD.
@@ -105,12 +107,13 @@ func (s *Search) DeleteAllowCortanaInAAD(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Search) GetAllowFindMyFiles(ctx context.Context) (int64, error) {
+func (s *Search) GetAllowFindMyFiles(ctx context.Context) (AllowFindMyFilesValue, error) {
 	v, err := s.c.Get(ctx, URIAllowFindMyFiles)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowFindMyFilesValue(n), err
 }
 
 // CreateAllowFindMyFiles creates ./Device/Vendor/MSFT/Policy/Config/Search/AllowFindMyFiles.
@@ -118,8 +121,8 @@ func (s *Search) GetAllowFindMyFiles(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Search) CreateAllowFindMyFiles(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowFindMyFiles, client.Int(value))
+func (s *Search) CreateAllowFindMyFiles(ctx context.Context, value AllowFindMyFilesValue) error {
+	return s.c.Add(ctx, URIAllowFindMyFiles, client.Int(int64(value)))
 }
 
 // UpdateAllowFindMyFiles updates ./Device/Vendor/MSFT/Policy/Config/Search/AllowFindMyFiles.
@@ -127,8 +130,8 @@ func (s *Search) CreateAllowFindMyFiles(ctx context.Context, value int64) error 
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Search) UpdateAllowFindMyFiles(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowFindMyFiles, client.Int(value))
+func (s *Search) UpdateAllowFindMyFiles(ctx context.Context, value AllowFindMyFilesValue) error {
+	return s.c.Replace(ctx, URIAllowFindMyFiles, client.Int(int64(value)))
 }
 
 // DeleteAllowFindMyFiles deletes ./Device/Vendor/MSFT/Policy/Config/Search/AllowFindMyFiles.
@@ -152,12 +155,13 @@ func (s *Search) DeleteAllowFindMyFiles(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Search) GetAllowIndexingEncryptedStoresOrItems(ctx context.Context) (int64, error) {
+func (s *Search) GetAllowIndexingEncryptedStoresOrItems(ctx context.Context) (AllowIndexingEncryptedStoresOrItemsValue, error) {
 	v, err := s.c.Get(ctx, URIAllowIndexingEncryptedStoresOrItems)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowIndexingEncryptedStoresOrItemsValue(n), err
 }
 
 // CreateAllowIndexingEncryptedStoresOrItems creates ./Device/Vendor/MSFT/Policy/Config/Search/AllowIndexingEncryptedStoresOrItems.
@@ -172,8 +176,8 @@ func (s *Search) GetAllowIndexingEncryptedStoresOrItems(ctx context.Context) (in
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Search) CreateAllowIndexingEncryptedStoresOrItems(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowIndexingEncryptedStoresOrItems, client.Int(value))
+func (s *Search) CreateAllowIndexingEncryptedStoresOrItems(ctx context.Context, value AllowIndexingEncryptedStoresOrItemsValue) error {
+	return s.c.Add(ctx, URIAllowIndexingEncryptedStoresOrItems, client.Int(int64(value)))
 }
 
 // UpdateAllowIndexingEncryptedStoresOrItems updates ./Device/Vendor/MSFT/Policy/Config/Search/AllowIndexingEncryptedStoresOrItems.
@@ -188,8 +192,8 @@ func (s *Search) CreateAllowIndexingEncryptedStoresOrItems(ctx context.Context, 
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Search) UpdateAllowIndexingEncryptedStoresOrItems(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowIndexingEncryptedStoresOrItems, client.Int(value))
+func (s *Search) UpdateAllowIndexingEncryptedStoresOrItems(ctx context.Context, value AllowIndexingEncryptedStoresOrItemsValue) error {
+	return s.c.Replace(ctx, URIAllowIndexingEncryptedStoresOrItems, client.Int(int64(value)))
 }
 
 // DeleteAllowIndexingEncryptedStoresOrItems deletes ./Device/Vendor/MSFT/Policy/Config/Search/AllowIndexingEncryptedStoresOrItems.
@@ -249,12 +253,13 @@ func (s *Search) DeleteAllowSearchHighlights(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Search) GetAllowSearchToUseLocation(ctx context.Context) (int64, error) {
+func (s *Search) GetAllowSearchToUseLocation(ctx context.Context) (AllowSearchToUseLocationValue, error) {
 	v, err := s.c.Get(ctx, URIAllowSearchToUseLocation)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowSearchToUseLocationValue(n), err
 }
 
 // CreateAllowSearchToUseLocation creates ./Device/Vendor/MSFT/Policy/Config/Search/AllowSearchToUseLocation.
@@ -262,8 +267,8 @@ func (s *Search) GetAllowSearchToUseLocation(ctx context.Context) (int64, error)
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Search) CreateAllowSearchToUseLocation(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowSearchToUseLocation, client.Int(value))
+func (s *Search) CreateAllowSearchToUseLocation(ctx context.Context, value AllowSearchToUseLocationValue) error {
+	return s.c.Add(ctx, URIAllowSearchToUseLocation, client.Int(int64(value)))
 }
 
 // UpdateAllowSearchToUseLocation updates ./Device/Vendor/MSFT/Policy/Config/Search/AllowSearchToUseLocation.
@@ -271,8 +276,8 @@ func (s *Search) CreateAllowSearchToUseLocation(ctx context.Context, value int64
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Search) UpdateAllowSearchToUseLocation(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowSearchToUseLocation, client.Int(value))
+func (s *Search) UpdateAllowSearchToUseLocation(ctx context.Context, value AllowSearchToUseLocationValue) error {
+	return s.c.Replace(ctx, URIAllowSearchToUseLocation, client.Int(int64(value)))
 }
 
 // DeleteAllowSearchToUseLocation deletes ./Device/Vendor/MSFT/Policy/Config/Search/AllowSearchToUseLocation.
@@ -289,12 +294,13 @@ func (s *Search) DeleteAllowSearchToUseLocation(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Search) GetAllowStoringImagesFromVisionSearch(ctx context.Context) (int64, error) {
+func (s *Search) GetAllowStoringImagesFromVisionSearch(ctx context.Context) (AllowStoringImagesFromVisionSearchValue, error) {
 	v, err := s.c.Get(ctx, URIAllowStoringImagesFromVisionSearch)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowStoringImagesFromVisionSearchValue(n), err
 }
 
 // CreateAllowStoringImagesFromVisionSearch creates ./Device/Vendor/MSFT/Policy/Config/Search/AllowStoringImagesFromVisionSearch.
@@ -302,8 +308,8 @@ func (s *Search) GetAllowStoringImagesFromVisionSearch(ctx context.Context) (int
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Search) CreateAllowStoringImagesFromVisionSearch(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowStoringImagesFromVisionSearch, client.Int(value))
+func (s *Search) CreateAllowStoringImagesFromVisionSearch(ctx context.Context, value AllowStoringImagesFromVisionSearchValue) error {
+	return s.c.Add(ctx, URIAllowStoringImagesFromVisionSearch, client.Int(int64(value)))
 }
 
 // UpdateAllowStoringImagesFromVisionSearch updates ./Device/Vendor/MSFT/Policy/Config/Search/AllowStoringImagesFromVisionSearch.
@@ -311,8 +317,8 @@ func (s *Search) CreateAllowStoringImagesFromVisionSearch(ctx context.Context, v
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Search) UpdateAllowStoringImagesFromVisionSearch(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowStoringImagesFromVisionSearch, client.Int(value))
+func (s *Search) UpdateAllowStoringImagesFromVisionSearch(ctx context.Context, value AllowStoringImagesFromVisionSearchValue) error {
+	return s.c.Replace(ctx, URIAllowStoringImagesFromVisionSearch, client.Int(int64(value)))
 }
 
 // DeleteAllowStoringImagesFromVisionSearch deletes ./Device/Vendor/MSFT/Policy/Config/Search/AllowStoringImagesFromVisionSearch.
@@ -329,12 +335,13 @@ func (s *Search) DeleteAllowStoringImagesFromVisionSearch(ctx context.Context) e
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Search) GetAllowUsingDiacritics(ctx context.Context) (int64, error) {
+func (s *Search) GetAllowUsingDiacritics(ctx context.Context) (AllowUsingDiacriticsValue, error) {
 	v, err := s.c.Get(ctx, URIAllowUsingDiacritics)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowUsingDiacriticsValue(n), err
 }
 
 // CreateAllowUsingDiacritics creates ./Device/Vendor/MSFT/Policy/Config/Search/AllowUsingDiacritics.
@@ -342,8 +349,8 @@ func (s *Search) GetAllowUsingDiacritics(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Search) CreateAllowUsingDiacritics(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowUsingDiacritics, client.Int(value))
+func (s *Search) CreateAllowUsingDiacritics(ctx context.Context, value AllowUsingDiacriticsValue) error {
+	return s.c.Add(ctx, URIAllowUsingDiacritics, client.Int(int64(value)))
 }
 
 // UpdateAllowUsingDiacritics updates ./Device/Vendor/MSFT/Policy/Config/Search/AllowUsingDiacritics.
@@ -351,8 +358,8 @@ func (s *Search) CreateAllowUsingDiacritics(ctx context.Context, value int64) er
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Search) UpdateAllowUsingDiacritics(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowUsingDiacritics, client.Int(value))
+func (s *Search) UpdateAllowUsingDiacritics(ctx context.Context, value AllowUsingDiacriticsValue) error {
+	return s.c.Replace(ctx, URIAllowUsingDiacritics, client.Int(int64(value)))
 }
 
 // DeleteAllowUsingDiacritics deletes ./Device/Vendor/MSFT/Policy/Config/Search/AllowUsingDiacritics.
@@ -410,12 +417,13 @@ func (s *Search) DeleteAllowWindowsIndexer(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Search) GetAlwaysUseAutoLangDetection(ctx context.Context) (int64, error) {
+func (s *Search) GetAlwaysUseAutoLangDetection(ctx context.Context) (AlwaysUseAutoLangDetectionValue, error) {
 	v, err := s.c.Get(ctx, URIAlwaysUseAutoLangDetection)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AlwaysUseAutoLangDetectionValue(n), err
 }
 
 // CreateAlwaysUseAutoLangDetection creates ./Device/Vendor/MSFT/Policy/Config/Search/AlwaysUseAutoLangDetection.
@@ -424,8 +432,8 @@ func (s *Search) GetAlwaysUseAutoLangDetection(ctx context.Context) (int64, erro
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Search) CreateAlwaysUseAutoLangDetection(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAlwaysUseAutoLangDetection, client.Int(value))
+func (s *Search) CreateAlwaysUseAutoLangDetection(ctx context.Context, value AlwaysUseAutoLangDetectionValue) error {
+	return s.c.Add(ctx, URIAlwaysUseAutoLangDetection, client.Int(int64(value)))
 }
 
 // UpdateAlwaysUseAutoLangDetection updates ./Device/Vendor/MSFT/Policy/Config/Search/AlwaysUseAutoLangDetection.
@@ -434,8 +442,8 @@ func (s *Search) CreateAlwaysUseAutoLangDetection(ctx context.Context, value int
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Search) UpdateAlwaysUseAutoLangDetection(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAlwaysUseAutoLangDetection, client.Int(value))
+func (s *Search) UpdateAlwaysUseAutoLangDetection(ctx context.Context, value AlwaysUseAutoLangDetectionValue) error {
+	return s.c.Replace(ctx, URIAlwaysUseAutoLangDetection, client.Int(int64(value)))
 }
 
 // DeleteAlwaysUseAutoLangDetection deletes ./Device/Vendor/MSFT/Policy/Config/Search/AlwaysUseAutoLangDetection.
@@ -454,12 +462,13 @@ func (s *Search) DeleteAlwaysUseAutoLangDetection(ctx context.Context) error {
 //
 // Default: 3.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *Search) GetConfigureSearchOnTaskbarMode(ctx context.Context) (int64, error) {
+func (s *Search) GetConfigureSearchOnTaskbarMode(ctx context.Context) (ConfigureSearchOnTaskbarModeValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureSearchOnTaskbarMode)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureSearchOnTaskbarModeValue(n), err
 }
 
 // CreateConfigureSearchOnTaskbarMode creates ./Device/Vendor/MSFT/Policy/Config/Search/ConfigureSearchOnTaskbarMode.
@@ -468,8 +477,8 @@ func (s *Search) GetConfigureSearchOnTaskbarMode(ctx context.Context) (int64, er
 //
 // Default: 3.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *Search) CreateConfigureSearchOnTaskbarMode(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureSearchOnTaskbarMode, client.Int(value))
+func (s *Search) CreateConfigureSearchOnTaskbarMode(ctx context.Context, value ConfigureSearchOnTaskbarModeValue) error {
+	return s.c.Add(ctx, URIConfigureSearchOnTaskbarMode, client.Int(int64(value)))
 }
 
 // UpdateConfigureSearchOnTaskbarMode updates ./Device/Vendor/MSFT/Policy/Config/Search/ConfigureSearchOnTaskbarMode.
@@ -478,8 +487,8 @@ func (s *Search) CreateConfigureSearchOnTaskbarMode(ctx context.Context, value i
 //
 // Default: 3.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *Search) UpdateConfigureSearchOnTaskbarMode(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureSearchOnTaskbarMode, client.Int(value))
+func (s *Search) UpdateConfigureSearchOnTaskbarMode(ctx context.Context, value ConfigureSearchOnTaskbarModeValue) error {
+	return s.c.Replace(ctx, URIConfigureSearchOnTaskbarMode, client.Int(int64(value)))
 }
 
 // DeleteConfigureSearchOnTaskbarMode deletes ./Device/Vendor/MSFT/Policy/Config/Search/ConfigureSearchOnTaskbarMode.
@@ -499,12 +508,13 @@ func (s *Search) DeleteConfigureSearchOnTaskbarMode(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Search) GetDisableBackoff(ctx context.Context) (int64, error) {
+func (s *Search) GetDisableBackoff(ctx context.Context) (DisableBackoffValue, error) {
 	v, err := s.c.Get(ctx, URIDisableBackoff)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableBackoffValue(n), err
 }
 
 // CreateDisableBackoff creates ./Device/Vendor/MSFT/Policy/Config/Search/DisableBackoff.
@@ -514,8 +524,8 @@ func (s *Search) GetDisableBackoff(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Search) CreateDisableBackoff(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableBackoff, client.Int(value))
+func (s *Search) CreateDisableBackoff(ctx context.Context, value DisableBackoffValue) error {
+	return s.c.Add(ctx, URIDisableBackoff, client.Int(int64(value)))
 }
 
 // UpdateDisableBackoff updates ./Device/Vendor/MSFT/Policy/Config/Search/DisableBackoff.
@@ -525,8 +535,8 @@ func (s *Search) CreateDisableBackoff(ctx context.Context, value int64) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Search) UpdateDisableBackoff(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableBackoff, client.Int(value))
+func (s *Search) UpdateDisableBackoff(ctx context.Context, value DisableBackoffValue) error {
+	return s.c.Replace(ctx, URIDisableBackoff, client.Int(int64(value)))
 }
 
 // DeleteDisableBackoff deletes ./Device/Vendor/MSFT/Policy/Config/Search/DisableBackoff.
@@ -549,12 +559,13 @@ func (s *Search) DeleteDisableBackoff(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Search) GetDisableRemovableDriveIndexing(ctx context.Context) (int64, error) {
+func (s *Search) GetDisableRemovableDriveIndexing(ctx context.Context) (DisableRemovableDriveIndexingValue, error) {
 	v, err := s.c.Get(ctx, URIDisableRemovableDriveIndexing)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableRemovableDriveIndexingValue(n), err
 }
 
 // CreateDisableRemovableDriveIndexing creates ./Device/Vendor/MSFT/Policy/Config/Search/DisableRemovableDriveIndexing.
@@ -566,8 +577,8 @@ func (s *Search) GetDisableRemovableDriveIndexing(ctx context.Context) (int64, e
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Search) CreateDisableRemovableDriveIndexing(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableRemovableDriveIndexing, client.Int(value))
+func (s *Search) CreateDisableRemovableDriveIndexing(ctx context.Context, value DisableRemovableDriveIndexingValue) error {
+	return s.c.Add(ctx, URIDisableRemovableDriveIndexing, client.Int(int64(value)))
 }
 
 // UpdateDisableRemovableDriveIndexing updates ./Device/Vendor/MSFT/Policy/Config/Search/DisableRemovableDriveIndexing.
@@ -579,8 +590,8 @@ func (s *Search) CreateDisableRemovableDriveIndexing(ctx context.Context, value 
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Search) UpdateDisableRemovableDriveIndexing(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableRemovableDriveIndexing, client.Int(value))
+func (s *Search) UpdateDisableRemovableDriveIndexing(ctx context.Context, value DisableRemovableDriveIndexingValue) error {
+	return s.c.Replace(ctx, URIDisableRemovableDriveIndexing, client.Int(int64(value)))
 }
 
 // DeleteDisableRemovableDriveIndexing deletes ./Device/Vendor/MSFT/Policy/Config/Search/DisableRemovableDriveIndexing.
@@ -604,12 +615,13 @@ func (s *Search) DeleteDisableRemovableDriveIndexing(ctx context.Context) error 
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Search) GetDisableSearch(ctx context.Context) (int64, error) {
+func (s *Search) GetDisableSearch(ctx context.Context) (DisableSearchValue, error) {
 	v, err := s.c.Get(ctx, URIDisableSearch)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableSearchValue(n), err
 }
 
 // CreateDisableSearch creates ./Device/Vendor/MSFT/Policy/Config/Search/DisableSearch.
@@ -620,8 +632,8 @@ func (s *Search) GetDisableSearch(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Search) CreateDisableSearch(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableSearch, client.Int(value))
+func (s *Search) CreateDisableSearch(ctx context.Context, value DisableSearchValue) error {
+	return s.c.Add(ctx, URIDisableSearch, client.Int(int64(value)))
 }
 
 // UpdateDisableSearch updates ./Device/Vendor/MSFT/Policy/Config/Search/DisableSearch.
@@ -632,8 +644,8 @@ func (s *Search) CreateDisableSearch(ctx context.Context, value int64) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Search) UpdateDisableSearch(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableSearch, client.Int(value))
+func (s *Search) UpdateDisableSearch(ctx context.Context, value DisableSearchValue) error {
+	return s.c.Replace(ctx, URIDisableSearch, client.Int(int64(value)))
 }
 
 // DeleteDisableSearch deletes ./Device/Vendor/MSFT/Policy/Config/Search/DisableSearch.
@@ -658,12 +670,13 @@ func (s *Search) DeleteDisableSearch(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Search) GetDoNotUseWebResults(ctx context.Context) (int64, error) {
+func (s *Search) GetDoNotUseWebResults(ctx context.Context) (DoNotUseWebResultsValue, error) {
 	v, err := s.c.Get(ctx, URIDoNotUseWebResults)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DoNotUseWebResultsValue(n), err
 }
 
 // CreateDoNotUseWebResults creates ./Device/Vendor/MSFT/Policy/Config/Search/DoNotUseWebResults.
@@ -676,8 +689,8 @@ func (s *Search) GetDoNotUseWebResults(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Search) CreateDoNotUseWebResults(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDoNotUseWebResults, client.Int(value))
+func (s *Search) CreateDoNotUseWebResults(ctx context.Context, value DoNotUseWebResultsValue) error {
+	return s.c.Add(ctx, URIDoNotUseWebResults, client.Int(int64(value)))
 }
 
 // UpdateDoNotUseWebResults updates ./Device/Vendor/MSFT/Policy/Config/Search/DoNotUseWebResults.
@@ -690,8 +703,8 @@ func (s *Search) CreateDoNotUseWebResults(ctx context.Context, value int64) erro
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Search) UpdateDoNotUseWebResults(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDoNotUseWebResults, client.Int(value))
+func (s *Search) UpdateDoNotUseWebResults(ctx context.Context, value DoNotUseWebResultsValue) error {
+	return s.c.Replace(ctx, URIDoNotUseWebResults, client.Int(int64(value)))
 }
 
 // DeleteDoNotUseWebResults deletes ./Device/Vendor/MSFT/Policy/Config/Search/DoNotUseWebResults.
@@ -717,12 +730,13 @@ func (s *Search) DeleteDoNotUseWebResults(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Search) GetPreventIndexingLowDiskSpaceMB(ctx context.Context) (int64, error) {
+func (s *Search) GetPreventIndexingLowDiskSpaceMB(ctx context.Context) (PreventIndexingLowDiskSpaceMBValue, error) {
 	v, err := s.c.Get(ctx, URIPreventIndexingLowDiskSpaceMB)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PreventIndexingLowDiskSpaceMBValue(n), err
 }
 
 // CreatePreventIndexingLowDiskSpaceMB creates ./Device/Vendor/MSFT/Policy/Config/Search/PreventIndexingLowDiskSpaceMB.
@@ -734,8 +748,8 @@ func (s *Search) GetPreventIndexingLowDiskSpaceMB(ctx context.Context) (int64, e
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Search) CreatePreventIndexingLowDiskSpaceMB(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPreventIndexingLowDiskSpaceMB, client.Int(value))
+func (s *Search) CreatePreventIndexingLowDiskSpaceMB(ctx context.Context, value PreventIndexingLowDiskSpaceMBValue) error {
+	return s.c.Add(ctx, URIPreventIndexingLowDiskSpaceMB, client.Int(int64(value)))
 }
 
 // UpdatePreventIndexingLowDiskSpaceMB updates ./Device/Vendor/MSFT/Policy/Config/Search/PreventIndexingLowDiskSpaceMB.
@@ -747,8 +761,8 @@ func (s *Search) CreatePreventIndexingLowDiskSpaceMB(ctx context.Context, value 
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Search) UpdatePreventIndexingLowDiskSpaceMB(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPreventIndexingLowDiskSpaceMB, client.Int(value))
+func (s *Search) UpdatePreventIndexingLowDiskSpaceMB(ctx context.Context, value PreventIndexingLowDiskSpaceMBValue) error {
+	return s.c.Replace(ctx, URIPreventIndexingLowDiskSpaceMB, client.Int(int64(value)))
 }
 
 // DeletePreventIndexingLowDiskSpaceMB deletes ./Device/Vendor/MSFT/Policy/Config/Search/PreventIndexingLowDiskSpaceMB.
@@ -771,12 +785,13 @@ func (s *Search) DeletePreventIndexingLowDiskSpaceMB(ctx context.Context) error 
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Search) GetPreventRemoteQueries(ctx context.Context) (int64, error) {
+func (s *Search) GetPreventRemoteQueries(ctx context.Context) (PreventRemoteQueriesValue, error) {
 	v, err := s.c.Get(ctx, URIPreventRemoteQueries)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PreventRemoteQueriesValue(n), err
 }
 
 // CreatePreventRemoteQueries creates ./Device/Vendor/MSFT/Policy/Config/Search/PreventRemoteQueries.
@@ -786,8 +801,8 @@ func (s *Search) GetPreventRemoteQueries(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Search) CreatePreventRemoteQueries(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPreventRemoteQueries, client.Int(value))
+func (s *Search) CreatePreventRemoteQueries(ctx context.Context, value PreventRemoteQueriesValue) error {
+	return s.c.Add(ctx, URIPreventRemoteQueries, client.Int(int64(value)))
 }
 
 // UpdatePreventRemoteQueries updates ./Device/Vendor/MSFT/Policy/Config/Search/PreventRemoteQueries.
@@ -797,8 +812,8 @@ func (s *Search) CreatePreventRemoteQueries(ctx context.Context, value int64) er
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Search) UpdatePreventRemoteQueries(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPreventRemoteQueries, client.Int(value))
+func (s *Search) UpdatePreventRemoteQueries(ctx context.Context, value PreventRemoteQueriesValue) error {
+	return s.c.Replace(ctx, URIPreventRemoteQueries, client.Int(int64(value)))
 }
 
 // DeletePreventRemoteQueries deletes ./Device/Vendor/MSFT/Policy/Config/Search/PreventRemoteQueries.
@@ -819,12 +834,13 @@ func (s *Search) DeletePreventRemoteQueries(ctx context.Context) error {
 // Supported from OS build 10.0.14393 (CSP v4.1).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Search) GetSafeSearchPermissions(ctx context.Context) (int64, error) {
+func (s *Search) GetSafeSearchPermissions(ctx context.Context) (SafeSearchPermissionsValue, error) {
 	v, err := s.c.Get(ctx, URISafeSearchPermissions)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SafeSearchPermissionsValue(n), err
 }
 
 // CreateSafeSearchPermissions creates ./Device/Vendor/MSFT/Policy/Config/Search/SafeSearchPermissions.
@@ -834,8 +850,8 @@ func (s *Search) GetSafeSearchPermissions(ctx context.Context) (int64, error) {
 // Supported from OS build 10.0.14393 (CSP v4.1).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Search) CreateSafeSearchPermissions(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISafeSearchPermissions, client.Int(value))
+func (s *Search) CreateSafeSearchPermissions(ctx context.Context, value SafeSearchPermissionsValue) error {
+	return s.c.Add(ctx, URISafeSearchPermissions, client.Int(int64(value)))
 }
 
 // UpdateSafeSearchPermissions updates ./Device/Vendor/MSFT/Policy/Config/Search/SafeSearchPermissions.
@@ -845,8 +861,8 @@ func (s *Search) CreateSafeSearchPermissions(ctx context.Context, value int64) e
 // Supported from OS build 10.0.14393 (CSP v4.1).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Search) UpdateSafeSearchPermissions(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISafeSearchPermissions, client.Int(value))
+func (s *Search) UpdateSafeSearchPermissions(ctx context.Context, value SafeSearchPermissionsValue) error {
+	return s.c.Replace(ctx, URISafeSearchPermissions, client.Int(int64(value)))
 }
 
 // DeleteSafeSearchPermissions deletes ./Device/Vendor/MSFT/Policy/Config/Search/SafeSearchPermissions.

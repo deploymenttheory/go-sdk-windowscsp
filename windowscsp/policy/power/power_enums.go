@@ -2,104 +2,282 @@
 
 package power
 
-// AllowHibernate allowed values.
+import (
+	"fmt"
+)
+
+// AllowHibernateValue — allowed values for the AllowHibernate node.
+type AllowHibernateValue int64
+
 const (
 	// Disable hibernate.
-	AllowHibernateDisableHibernate int64 = 0
+	AllowHibernateDisableHibernate AllowHibernateValue = 0
 	// Allow hibernate.
-	AllowHibernateAllowHibernate int64 = 1
+	AllowHibernateAllowHibernate AllowHibernateValue = 1
 )
 
-// EnableEnergySaver allowed values.
+// String returns the AllowHibernateValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowHibernateValue) String() string {
+	switch e {
+	case AllowHibernateDisableHibernate:
+		return "AllowHibernateDisableHibernate"
+	case AllowHibernateAllowHibernate:
+		return "AllowHibernateAllowHibernate"
+	default:
+		return fmt.Sprintf("AllowHibernateValue(%d)", int64(e))
+	}
+}
+
+// EnableEnergySaverValue — allowed values for the EnableEnergySaver node.
+type EnableEnergySaverValue int64
+
 const (
 	// Disable energy saver policy
-	EnableEnergySaverDisableEnergySaverPolicy int64 = 0
+	EnableEnergySaverDisableEnergySaverPolicy EnableEnergySaverValue = 0
 	// Enable energy saver always-on mode.
-	EnableEnergySaverEnableEnergySaverAlwaysOnMode int64 = 1
+	EnableEnergySaverEnableEnergySaverAlwaysOnMode EnableEnergySaverValue = 1
 )
 
-// SelectLidCloseActionOnBattery allowed values.
+// String returns the EnableEnergySaverValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableEnergySaverValue) String() string {
+	switch e {
+	case EnableEnergySaverDisableEnergySaverPolicy:
+		return "EnableEnergySaverDisableEnergySaverPolicy"
+	case EnableEnergySaverEnableEnergySaverAlwaysOnMode:
+		return "EnableEnergySaverEnableEnergySaverAlwaysOnMode"
+	default:
+		return fmt.Sprintf("EnableEnergySaverValue(%d)", int64(e))
+	}
+}
+
+// SelectLidCloseActionOnBatteryValue — allowed values for the SelectLidCloseActionOnBattery node.
+type SelectLidCloseActionOnBatteryValue int64
+
 const (
 	// Take no action
-	SelectLidCloseActionOnBatteryTakeNoAction int64 = 0
+	SelectLidCloseActionOnBatteryTakeNoAction SelectLidCloseActionOnBatteryValue = 0
 	// Sleep
-	SelectLidCloseActionOnBatterySleep int64 = 1
+	SelectLidCloseActionOnBatterySleep SelectLidCloseActionOnBatteryValue = 1
 	// System hibernate sleep state
-	SelectLidCloseActionOnBatterySystemHibernateSleepState int64 = 2
+	SelectLidCloseActionOnBatterySystemHibernateSleepState SelectLidCloseActionOnBatteryValue = 2
 	// System shutdown
-	SelectLidCloseActionOnBatterySystemShutdown int64 = 3
+	SelectLidCloseActionOnBatterySystemShutdown SelectLidCloseActionOnBatteryValue = 3
 )
 
-// SelectLidCloseActionPluggedIn allowed values.
+// String returns the SelectLidCloseActionOnBatteryValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SelectLidCloseActionOnBatteryValue) String() string {
+	switch e {
+	case SelectLidCloseActionOnBatteryTakeNoAction:
+		return "SelectLidCloseActionOnBatteryTakeNoAction"
+	case SelectLidCloseActionOnBatterySleep:
+		return "SelectLidCloseActionOnBatterySleep"
+	case SelectLidCloseActionOnBatterySystemHibernateSleepState:
+		return "SelectLidCloseActionOnBatterySystemHibernateSleepState"
+	case SelectLidCloseActionOnBatterySystemShutdown:
+		return "SelectLidCloseActionOnBatterySystemShutdown"
+	default:
+		return fmt.Sprintf("SelectLidCloseActionOnBatteryValue(%d)", int64(e))
+	}
+}
+
+// SelectLidCloseActionPluggedInValue — allowed values for the SelectLidCloseActionPluggedIn node.
+type SelectLidCloseActionPluggedInValue int64
+
 const (
 	// Take no action
-	SelectLidCloseActionPluggedInTakeNoAction int64 = 0
+	SelectLidCloseActionPluggedInTakeNoAction SelectLidCloseActionPluggedInValue = 0
 	// Sleep
-	SelectLidCloseActionPluggedInSleep int64 = 1
+	SelectLidCloseActionPluggedInSleep SelectLidCloseActionPluggedInValue = 1
 	// System hibernate sleep state
-	SelectLidCloseActionPluggedInSystemHibernateSleepState int64 = 2
+	SelectLidCloseActionPluggedInSystemHibernateSleepState SelectLidCloseActionPluggedInValue = 2
 	// System shutdown
-	SelectLidCloseActionPluggedInSystemShutdown int64 = 3
+	SelectLidCloseActionPluggedInSystemShutdown SelectLidCloseActionPluggedInValue = 3
 )
 
-// SelectPowerButtonActionOnBattery allowed values.
+// String returns the SelectLidCloseActionPluggedInValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SelectLidCloseActionPluggedInValue) String() string {
+	switch e {
+	case SelectLidCloseActionPluggedInTakeNoAction:
+		return "SelectLidCloseActionPluggedInTakeNoAction"
+	case SelectLidCloseActionPluggedInSleep:
+		return "SelectLidCloseActionPluggedInSleep"
+	case SelectLidCloseActionPluggedInSystemHibernateSleepState:
+		return "SelectLidCloseActionPluggedInSystemHibernateSleepState"
+	case SelectLidCloseActionPluggedInSystemShutdown:
+		return "SelectLidCloseActionPluggedInSystemShutdown"
+	default:
+		return fmt.Sprintf("SelectLidCloseActionPluggedInValue(%d)", int64(e))
+	}
+}
+
+// SelectPowerButtonActionOnBatteryValue — allowed values for the SelectPowerButtonActionOnBattery node.
+type SelectPowerButtonActionOnBatteryValue int64
+
 const (
 	// Take no action
-	SelectPowerButtonActionOnBatteryTakeNoAction int64 = 0
+	SelectPowerButtonActionOnBatteryTakeNoAction SelectPowerButtonActionOnBatteryValue = 0
 	// Sleep
-	SelectPowerButtonActionOnBatterySleep int64 = 1
+	SelectPowerButtonActionOnBatterySleep SelectPowerButtonActionOnBatteryValue = 1
 	// System hibernate sleep state
-	SelectPowerButtonActionOnBatterySystemHibernateSleepState int64 = 2
+	SelectPowerButtonActionOnBatterySystemHibernateSleepState SelectPowerButtonActionOnBatteryValue = 2
 	// System shutdown
-	SelectPowerButtonActionOnBatterySystemShutdown int64 = 3
+	SelectPowerButtonActionOnBatterySystemShutdown SelectPowerButtonActionOnBatteryValue = 3
 )
 
-// SelectPowerButtonActionPluggedIn allowed values.
+// String returns the SelectPowerButtonActionOnBatteryValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SelectPowerButtonActionOnBatteryValue) String() string {
+	switch e {
+	case SelectPowerButtonActionOnBatteryTakeNoAction:
+		return "SelectPowerButtonActionOnBatteryTakeNoAction"
+	case SelectPowerButtonActionOnBatterySleep:
+		return "SelectPowerButtonActionOnBatterySleep"
+	case SelectPowerButtonActionOnBatterySystemHibernateSleepState:
+		return "SelectPowerButtonActionOnBatterySystemHibernateSleepState"
+	case SelectPowerButtonActionOnBatterySystemShutdown:
+		return "SelectPowerButtonActionOnBatterySystemShutdown"
+	default:
+		return fmt.Sprintf("SelectPowerButtonActionOnBatteryValue(%d)", int64(e))
+	}
+}
+
+// SelectPowerButtonActionPluggedInValue — allowed values for the SelectPowerButtonActionPluggedIn node.
+type SelectPowerButtonActionPluggedInValue int64
+
 const (
 	// Take no action
-	SelectPowerButtonActionPluggedInTakeNoAction int64 = 0
+	SelectPowerButtonActionPluggedInTakeNoAction SelectPowerButtonActionPluggedInValue = 0
 	// Sleep
-	SelectPowerButtonActionPluggedInSleep int64 = 1
+	SelectPowerButtonActionPluggedInSleep SelectPowerButtonActionPluggedInValue = 1
 	// System hibernate sleep state
-	SelectPowerButtonActionPluggedInSystemHibernateSleepState int64 = 2
+	SelectPowerButtonActionPluggedInSystemHibernateSleepState SelectPowerButtonActionPluggedInValue = 2
 	// System shutdown
-	SelectPowerButtonActionPluggedInSystemShutdown int64 = 3
+	SelectPowerButtonActionPluggedInSystemShutdown SelectPowerButtonActionPluggedInValue = 3
 )
 
-// SelectSleepButtonActionOnBattery allowed values.
+// String returns the SelectPowerButtonActionPluggedInValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SelectPowerButtonActionPluggedInValue) String() string {
+	switch e {
+	case SelectPowerButtonActionPluggedInTakeNoAction:
+		return "SelectPowerButtonActionPluggedInTakeNoAction"
+	case SelectPowerButtonActionPluggedInSleep:
+		return "SelectPowerButtonActionPluggedInSleep"
+	case SelectPowerButtonActionPluggedInSystemHibernateSleepState:
+		return "SelectPowerButtonActionPluggedInSystemHibernateSleepState"
+	case SelectPowerButtonActionPluggedInSystemShutdown:
+		return "SelectPowerButtonActionPluggedInSystemShutdown"
+	default:
+		return fmt.Sprintf("SelectPowerButtonActionPluggedInValue(%d)", int64(e))
+	}
+}
+
+// SelectSleepButtonActionOnBatteryValue — allowed values for the SelectSleepButtonActionOnBattery node.
+type SelectSleepButtonActionOnBatteryValue int64
+
 const (
 	// Take no action
-	SelectSleepButtonActionOnBatteryTakeNoAction int64 = 0
+	SelectSleepButtonActionOnBatteryTakeNoAction SelectSleepButtonActionOnBatteryValue = 0
 	// Sleep
-	SelectSleepButtonActionOnBatterySleep int64 = 1
+	SelectSleepButtonActionOnBatterySleep SelectSleepButtonActionOnBatteryValue = 1
 	// System hibernate sleep state
-	SelectSleepButtonActionOnBatterySystemHibernateSleepState int64 = 2
+	SelectSleepButtonActionOnBatterySystemHibernateSleepState SelectSleepButtonActionOnBatteryValue = 2
 	// System shutdown
-	SelectSleepButtonActionOnBatterySystemShutdown int64 = 3
+	SelectSleepButtonActionOnBatterySystemShutdown SelectSleepButtonActionOnBatteryValue = 3
 )
 
-// SelectSleepButtonActionPluggedIn allowed values.
+// String returns the SelectSleepButtonActionOnBatteryValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SelectSleepButtonActionOnBatteryValue) String() string {
+	switch e {
+	case SelectSleepButtonActionOnBatteryTakeNoAction:
+		return "SelectSleepButtonActionOnBatteryTakeNoAction"
+	case SelectSleepButtonActionOnBatterySleep:
+		return "SelectSleepButtonActionOnBatterySleep"
+	case SelectSleepButtonActionOnBatterySystemHibernateSleepState:
+		return "SelectSleepButtonActionOnBatterySystemHibernateSleepState"
+	case SelectSleepButtonActionOnBatterySystemShutdown:
+		return "SelectSleepButtonActionOnBatterySystemShutdown"
+	default:
+		return fmt.Sprintf("SelectSleepButtonActionOnBatteryValue(%d)", int64(e))
+	}
+}
+
+// SelectSleepButtonActionPluggedInValue — allowed values for the SelectSleepButtonActionPluggedIn node.
+type SelectSleepButtonActionPluggedInValue int64
+
 const (
 	// Take no action
-	SelectSleepButtonActionPluggedInTakeNoAction int64 = 0
+	SelectSleepButtonActionPluggedInTakeNoAction SelectSleepButtonActionPluggedInValue = 0
 	// Sleep
-	SelectSleepButtonActionPluggedInSleep int64 = 1
+	SelectSleepButtonActionPluggedInSleep SelectSleepButtonActionPluggedInValue = 1
 	// System hibernate sleep state
-	SelectSleepButtonActionPluggedInSystemHibernateSleepState int64 = 2
+	SelectSleepButtonActionPluggedInSystemHibernateSleepState SelectSleepButtonActionPluggedInValue = 2
 	// System shutdown
-	SelectSleepButtonActionPluggedInSystemShutdown int64 = 3
+	SelectSleepButtonActionPluggedInSystemShutdown SelectSleepButtonActionPluggedInValue = 3
 )
 
-// TurnOffHybridSleepOnBattery allowed values.
+// String returns the SelectSleepButtonActionPluggedInValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SelectSleepButtonActionPluggedInValue) String() string {
+	switch e {
+	case SelectSleepButtonActionPluggedInTakeNoAction:
+		return "SelectSleepButtonActionPluggedInTakeNoAction"
+	case SelectSleepButtonActionPluggedInSleep:
+		return "SelectSleepButtonActionPluggedInSleep"
+	case SelectSleepButtonActionPluggedInSystemHibernateSleepState:
+		return "SelectSleepButtonActionPluggedInSystemHibernateSleepState"
+	case SelectSleepButtonActionPluggedInSystemShutdown:
+		return "SelectSleepButtonActionPluggedInSystemShutdown"
+	default:
+		return fmt.Sprintf("SelectSleepButtonActionPluggedInValue(%d)", int64(e))
+	}
+}
+
+// TurnOffHybridSleepOnBatteryValue — allowed values for the TurnOffHybridSleepOnBattery node.
+type TurnOffHybridSleepOnBatteryValue int64
+
 const (
-	TurnOffHybridSleepOnBatteryValue0 int64 = 0
+	TurnOffHybridSleepOnBatteryValue0 TurnOffHybridSleepOnBatteryValue = 0
 	// hybrid sleep
-	TurnOffHybridSleepOnBatteryHybridSleep int64 = 1
+	TurnOffHybridSleepOnBatteryHybridSleep TurnOffHybridSleepOnBatteryValue = 1
 )
 
-// TurnOffHybridSleepPluggedIn allowed values.
+// String returns the TurnOffHybridSleepOnBatteryValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e TurnOffHybridSleepOnBatteryValue) String() string {
+	switch e {
+	case TurnOffHybridSleepOnBatteryValue0:
+		return "TurnOffHybridSleepOnBatteryValue0"
+	case TurnOffHybridSleepOnBatteryHybridSleep:
+		return "TurnOffHybridSleepOnBatteryHybridSleep"
+	default:
+		return fmt.Sprintf("TurnOffHybridSleepOnBatteryValue(%d)", int64(e))
+	}
+}
+
+// TurnOffHybridSleepPluggedInValue — allowed values for the TurnOffHybridSleepPluggedIn node.
+type TurnOffHybridSleepPluggedInValue int64
+
 const (
-	TurnOffHybridSleepPluggedInValue0 int64 = 0
+	TurnOffHybridSleepPluggedInValue0 TurnOffHybridSleepPluggedInValue = 0
 	// hybrid sleep
-	TurnOffHybridSleepPluggedInHybridSleep int64 = 1
+	TurnOffHybridSleepPluggedInHybridSleep TurnOffHybridSleepPluggedInValue = 1
 )
+
+// String returns the TurnOffHybridSleepPluggedInValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e TurnOffHybridSleepPluggedInValue) String() string {
+	switch e {
+	case TurnOffHybridSleepPluggedInValue0:
+		return "TurnOffHybridSleepPluggedInValue0"
+	case TurnOffHybridSleepPluggedInHybridSleep:
+		return "TurnOffHybridSleepPluggedInHybridSleep"
+	default:
+		return fmt.Sprintf("TurnOffHybridSleepPluggedInValue(%d)", int64(e))
+	}
+}

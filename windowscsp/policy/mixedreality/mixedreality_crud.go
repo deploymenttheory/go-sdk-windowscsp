@@ -72,12 +72,13 @@ func (s *MixedReality) DeleteAADGroupMembershipCacheValidityInDays(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.20348 (CSP v11.0).
-func (s *MixedReality) GetAllowCaptivePortalBeforeLogon(ctx context.Context) (int64, error) {
+func (s *MixedReality) GetAllowCaptivePortalBeforeLogon(ctx context.Context) (AllowCaptivePortalBeforeLogonValue, error) {
 	v, err := s.c.Get(ctx, URIAllowCaptivePortalBeforeLogon)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowCaptivePortalBeforeLogonValue(n), err
 }
 
 // CreateAllowCaptivePortalBeforeLogon creates ./Device/Vendor/MSFT/Policy/Config/MixedReality/AllowCaptivePortalBeforeLogon.
@@ -88,8 +89,8 @@ func (s *MixedReality) GetAllowCaptivePortalBeforeLogon(ctx context.Context) (in
 //
 // Default: 0.
 // Supported from OS build 10.0.20348 (CSP v11.0).
-func (s *MixedReality) CreateAllowCaptivePortalBeforeLogon(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowCaptivePortalBeforeLogon, client.Int(value))
+func (s *MixedReality) CreateAllowCaptivePortalBeforeLogon(ctx context.Context, value AllowCaptivePortalBeforeLogonValue) error {
+	return s.c.Add(ctx, URIAllowCaptivePortalBeforeLogon, client.Int(int64(value)))
 }
 
 // UpdateAllowCaptivePortalBeforeLogon updates ./Device/Vendor/MSFT/Policy/Config/MixedReality/AllowCaptivePortalBeforeLogon.
@@ -100,8 +101,8 @@ func (s *MixedReality) CreateAllowCaptivePortalBeforeLogon(ctx context.Context, 
 //
 // Default: 0.
 // Supported from OS build 10.0.20348 (CSP v11.0).
-func (s *MixedReality) UpdateAllowCaptivePortalBeforeLogon(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowCaptivePortalBeforeLogon, client.Int(value))
+func (s *MixedReality) UpdateAllowCaptivePortalBeforeLogon(ctx context.Context, value AllowCaptivePortalBeforeLogonValue) error {
+	return s.c.Replace(ctx, URIAllowCaptivePortalBeforeLogon, client.Int(int64(value)))
 }
 
 // DeleteAllowCaptivePortalBeforeLogon deletes ./Device/Vendor/MSFT/Policy/Config/MixedReality/AllowCaptivePortalBeforeLogon.
@@ -123,12 +124,13 @@ func (s *MixedReality) DeleteAllowCaptivePortalBeforeLogon(ctx context.Context) 
 //
 // Default: 0.
 // Supported from OS build 10.0.20348 (CSP v11.0).
-func (s *MixedReality) GetAllowLaunchUriInSingleAppKiosk(ctx context.Context) (int64, error) {
+func (s *MixedReality) GetAllowLaunchUriInSingleAppKiosk(ctx context.Context) (AllowLaunchUriInSingleAppKioskValue, error) {
 	v, err := s.c.Get(ctx, URIAllowLaunchUriInSingleAppKiosk)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowLaunchUriInSingleAppKioskValue(n), err
 }
 
 // CreateAllowLaunchUriInSingleAppKiosk creates ./Device/Vendor/MSFT/Policy/Config/MixedReality/AllowLaunchUriInSingleAppKiosk.
@@ -138,8 +140,8 @@ func (s *MixedReality) GetAllowLaunchUriInSingleAppKiosk(ctx context.Context) (i
 //
 // Default: 0.
 // Supported from OS build 10.0.20348 (CSP v11.0).
-func (s *MixedReality) CreateAllowLaunchUriInSingleAppKiosk(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowLaunchUriInSingleAppKiosk, client.Int(value))
+func (s *MixedReality) CreateAllowLaunchUriInSingleAppKiosk(ctx context.Context, value AllowLaunchUriInSingleAppKioskValue) error {
+	return s.c.Add(ctx, URIAllowLaunchUriInSingleAppKiosk, client.Int(int64(value)))
 }
 
 // UpdateAllowLaunchUriInSingleAppKiosk updates ./Device/Vendor/MSFT/Policy/Config/MixedReality/AllowLaunchUriInSingleAppKiosk.
@@ -149,8 +151,8 @@ func (s *MixedReality) CreateAllowLaunchUriInSingleAppKiosk(ctx context.Context,
 //
 // Default: 0.
 // Supported from OS build 10.0.20348 (CSP v11.0).
-func (s *MixedReality) UpdateAllowLaunchUriInSingleAppKiosk(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowLaunchUriInSingleAppKiosk, client.Int(value))
+func (s *MixedReality) UpdateAllowLaunchUriInSingleAppKiosk(ctx context.Context, value AllowLaunchUriInSingleAppKioskValue) error {
+	return s.c.Replace(ctx, URIAllowLaunchUriInSingleAppKiosk, client.Int(int64(value)))
 }
 
 // DeleteAllowLaunchUriInSingleAppKiosk deletes ./Device/Vendor/MSFT/Policy/Config/MixedReality/AllowLaunchUriInSingleAppKiosk.
@@ -217,12 +219,13 @@ func (s *MixedReality) DeleteAutoLogonUser(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v11.0).
-func (s *MixedReality) GetAutoUnlock(ctx context.Context) (int64, error) {
+func (s *MixedReality) GetAutoUnlock(ctx context.Context) (AutoUnlockValue, error) {
 	v, err := s.c.Get(ctx, URIAutoUnlock)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AutoUnlockValue(n), err
 }
 
 // CreateAutoUnlock creates ./Device/Vendor/MSFT/Policy/Config/MixedReality/AutoUnlock.
@@ -234,8 +237,8 @@ func (s *MixedReality) GetAutoUnlock(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v11.0).
-func (s *MixedReality) CreateAutoUnlock(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAutoUnlock, client.Int(value))
+func (s *MixedReality) CreateAutoUnlock(ctx context.Context, value AutoUnlockValue) error {
+	return s.c.Add(ctx, URIAutoUnlock, client.Int(int64(value)))
 }
 
 // UpdateAutoUnlock updates ./Device/Vendor/MSFT/Policy/Config/MixedReality/AutoUnlock.
@@ -247,8 +250,8 @@ func (s *MixedReality) CreateAutoUnlock(ctx context.Context, value int64) error 
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v11.0).
-func (s *MixedReality) UpdateAutoUnlock(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAutoUnlock, client.Int(value))
+func (s *MixedReality) UpdateAutoUnlock(ctx context.Context, value AutoUnlockValue) error {
+	return s.c.Replace(ctx, URIAutoUnlock, client.Int(int64(value)))
 }
 
 // DeleteAutoUnlock deletes ./Device/Vendor/MSFT/Policy/Config/MixedReality/AutoUnlock.
@@ -273,12 +276,13 @@ func (s *MixedReality) DeleteAutoUnlock(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *MixedReality) GetAutomaticDisplayAdjustment(ctx context.Context) (int64, error) {
+func (s *MixedReality) GetAutomaticDisplayAdjustment(ctx context.Context) (AutomaticDisplayAdjustmentValue, error) {
 	v, err := s.c.Get(ctx, URIAutomaticDisplayAdjustment)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AutomaticDisplayAdjustmentValue(n), err
 }
 
 // CreateAutomaticDisplayAdjustment creates ./Device/Vendor/MSFT/Policy/Config/MixedReality/AutomaticDisplayAdjustment.
@@ -290,8 +294,8 @@ func (s *MixedReality) GetAutomaticDisplayAdjustment(ctx context.Context) (int64
 //
 // Default: 1.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *MixedReality) CreateAutomaticDisplayAdjustment(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAutomaticDisplayAdjustment, client.Int(value))
+func (s *MixedReality) CreateAutomaticDisplayAdjustment(ctx context.Context, value AutomaticDisplayAdjustmentValue) error {
+	return s.c.Add(ctx, URIAutomaticDisplayAdjustment, client.Int(int64(value)))
 }
 
 // UpdateAutomaticDisplayAdjustment updates ./Device/Vendor/MSFT/Policy/Config/MixedReality/AutomaticDisplayAdjustment.
@@ -303,8 +307,8 @@ func (s *MixedReality) CreateAutomaticDisplayAdjustment(ctx context.Context, val
 //
 // Default: 1.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *MixedReality) UpdateAutomaticDisplayAdjustment(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAutomaticDisplayAdjustment, client.Int(value))
+func (s *MixedReality) UpdateAutomaticDisplayAdjustment(ctx context.Context, value AutomaticDisplayAdjustmentValue) error {
+	return s.c.Replace(ctx, URIAutomaticDisplayAdjustment, client.Int(int64(value)))
 }
 
 // DeleteAutomaticDisplayAdjustment deletes ./Device/Vendor/MSFT/Policy/Config/MixedReality/AutomaticDisplayAdjustment.
@@ -327,12 +331,13 @@ func (s *MixedReality) DeleteAutomaticDisplayAdjustment(ctx context.Context) err
 //
 // Default: 0.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *MixedReality) GetBrightnessButtonDisabled(ctx context.Context) (int64, error) {
+func (s *MixedReality) GetBrightnessButtonDisabled(ctx context.Context) (BrightnessButtonDisabledValue, error) {
 	v, err := s.c.Get(ctx, URIBrightnessButtonDisabled)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return BrightnessButtonDisabledValue(n), err
 }
 
 // CreateBrightnessButtonDisabled creates ./Device/Vendor/MSFT/Policy/Config/MixedReality/BrightnessButtonDisabled.
@@ -342,8 +347,8 @@ func (s *MixedReality) GetBrightnessButtonDisabled(ctx context.Context) (int64, 
 //
 // Default: 0.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *MixedReality) CreateBrightnessButtonDisabled(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIBrightnessButtonDisabled, client.Int(value))
+func (s *MixedReality) CreateBrightnessButtonDisabled(ctx context.Context, value BrightnessButtonDisabledValue) error {
+	return s.c.Add(ctx, URIBrightnessButtonDisabled, client.Int(int64(value)))
 }
 
 // UpdateBrightnessButtonDisabled updates ./Device/Vendor/MSFT/Policy/Config/MixedReality/BrightnessButtonDisabled.
@@ -353,8 +358,8 @@ func (s *MixedReality) CreateBrightnessButtonDisabled(ctx context.Context, value
 //
 // Default: 0.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *MixedReality) UpdateBrightnessButtonDisabled(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIBrightnessButtonDisabled, client.Int(value))
+func (s *MixedReality) UpdateBrightnessButtonDisabled(ctx context.Context, value BrightnessButtonDisabledValue) error {
+	return s.c.Replace(ctx, URIBrightnessButtonDisabled, client.Int(int64(value)))
 }
 
 // DeleteBrightnessButtonDisabled deletes ./Device/Vendor/MSFT/Policy/Config/MixedReality/BrightnessButtonDisabled.
@@ -373,12 +378,13 @@ func (s *MixedReality) DeleteBrightnessButtonDisabled(ctx context.Context) error
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *MixedReality) GetConfigureDeviceStandbyAction(ctx context.Context) (int64, error) {
+func (s *MixedReality) GetConfigureDeviceStandbyAction(ctx context.Context) (ConfigureDeviceStandbyActionValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureDeviceStandbyAction)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureDeviceStandbyActionValue(n), err
 }
 
 // CreateConfigureDeviceStandbyAction creates ./Device/Vendor/MSFT/Policy/Config/MixedReality/ConfigureDeviceStandbyAction.
@@ -386,8 +392,8 @@ func (s *MixedReality) GetConfigureDeviceStandbyAction(ctx context.Context) (int
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *MixedReality) CreateConfigureDeviceStandbyAction(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureDeviceStandbyAction, client.Int(value))
+func (s *MixedReality) CreateConfigureDeviceStandbyAction(ctx context.Context, value ConfigureDeviceStandbyActionValue) error {
+	return s.c.Add(ctx, URIConfigureDeviceStandbyAction, client.Int(int64(value)))
 }
 
 // UpdateConfigureDeviceStandbyAction updates ./Device/Vendor/MSFT/Policy/Config/MixedReality/ConfigureDeviceStandbyAction.
@@ -395,8 +401,8 @@ func (s *MixedReality) CreateConfigureDeviceStandbyAction(ctx context.Context, v
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *MixedReality) UpdateConfigureDeviceStandbyAction(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureDeviceStandbyAction, client.Int(value))
+func (s *MixedReality) UpdateConfigureDeviceStandbyAction(ctx context.Context, value ConfigureDeviceStandbyActionValue) error {
+	return s.c.Replace(ctx, URIConfigureDeviceStandbyAction, client.Int(int64(value)))
 }
 
 // DeleteConfigureDeviceStandbyAction deletes ./Device/Vendor/MSFT/Policy/Config/MixedReality/ConfigureDeviceStandbyAction.
@@ -460,12 +466,13 @@ func (s *MixedReality) DeleteConfigureDeviceStandbyActionTimeout(ctx context.Con
 //
 // Default: 0.
 // Supported from OS build 10.0.20348 (CSP v11.0).
-func (s *MixedReality) GetConfigureMovingPlatform(ctx context.Context) (int64, error) {
+func (s *MixedReality) GetConfigureMovingPlatform(ctx context.Context) (ConfigureMovingPlatformValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureMovingPlatform)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureMovingPlatformValue(n), err
 }
 
 // CreateConfigureMovingPlatform creates ./Device/Vendor/MSFT/Policy/Config/MixedReality/ConfigureMovingPlatform.
@@ -476,8 +483,8 @@ func (s *MixedReality) GetConfigureMovingPlatform(ctx context.Context) (int64, e
 //
 // Default: 0.
 // Supported from OS build 10.0.20348 (CSP v11.0).
-func (s *MixedReality) CreateConfigureMovingPlatform(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureMovingPlatform, client.Int(value))
+func (s *MixedReality) CreateConfigureMovingPlatform(ctx context.Context, value ConfigureMovingPlatformValue) error {
+	return s.c.Add(ctx, URIConfigureMovingPlatform, client.Int(int64(value)))
 }
 
 // UpdateConfigureMovingPlatform updates ./Device/Vendor/MSFT/Policy/Config/MixedReality/ConfigureMovingPlatform.
@@ -488,8 +495,8 @@ func (s *MixedReality) CreateConfigureMovingPlatform(ctx context.Context, value 
 //
 // Default: 0.
 // Supported from OS build 10.0.20348 (CSP v11.0).
-func (s *MixedReality) UpdateConfigureMovingPlatform(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureMovingPlatform, client.Int(value))
+func (s *MixedReality) UpdateConfigureMovingPlatform(ctx context.Context, value ConfigureMovingPlatformValue) error {
+	return s.c.Replace(ctx, URIConfigureMovingPlatform, client.Int(int64(value)))
 }
 
 // DeleteConfigureMovingPlatform deletes ./Device/Vendor/MSFT/Policy/Config/MixedReality/ConfigureMovingPlatform.
@@ -631,12 +638,13 @@ func (s *MixedReality) DeleteConfigureSharedAccount(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.20348 (CSP v11.0).
-func (s *MixedReality) GetDisallowNetworkConnectivityPassivePolling(ctx context.Context) (int64, error) {
+func (s *MixedReality) GetDisallowNetworkConnectivityPassivePolling(ctx context.Context) (DisallowNetworkConnectivityPassivePollingValue, error) {
 	v, err := s.c.Get(ctx, URIDisallowNetworkConnectivityPassivePolling)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisallowNetworkConnectivityPassivePollingValue(n), err
 }
 
 // CreateDisallowNetworkConnectivityPassivePolling creates ./Device/Vendor/MSFT/Policy/Config/MixedReality/DisallowNetworkConnectivityPassivePolling.
@@ -646,8 +654,8 @@ func (s *MixedReality) GetDisallowNetworkConnectivityPassivePolling(ctx context.
 //
 // Default: 0.
 // Supported from OS build 10.0.20348 (CSP v11.0).
-func (s *MixedReality) CreateDisallowNetworkConnectivityPassivePolling(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisallowNetworkConnectivityPassivePolling, client.Int(value))
+func (s *MixedReality) CreateDisallowNetworkConnectivityPassivePolling(ctx context.Context, value DisallowNetworkConnectivityPassivePollingValue) error {
+	return s.c.Add(ctx, URIDisallowNetworkConnectivityPassivePolling, client.Int(int64(value)))
 }
 
 // UpdateDisallowNetworkConnectivityPassivePolling updates ./Device/Vendor/MSFT/Policy/Config/MixedReality/DisallowNetworkConnectivityPassivePolling.
@@ -657,8 +665,8 @@ func (s *MixedReality) CreateDisallowNetworkConnectivityPassivePolling(ctx conte
 //
 // Default: 0.
 // Supported from OS build 10.0.20348 (CSP v11.0).
-func (s *MixedReality) UpdateDisallowNetworkConnectivityPassivePolling(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisallowNetworkConnectivityPassivePolling, client.Int(value))
+func (s *MixedReality) UpdateDisallowNetworkConnectivityPassivePolling(ctx context.Context, value DisallowNetworkConnectivityPassivePollingValue) error {
+	return s.c.Replace(ctx, URIDisallowNetworkConnectivityPassivePolling, client.Int(int64(value)))
 }
 
 // DeleteDisallowNetworkConnectivityPassivePolling deletes ./Device/Vendor/MSFT/Policy/Config/MixedReality/DisallowNetworkConnectivityPassivePolling.
@@ -678,12 +686,13 @@ func (s *MixedReality) DeleteDisallowNetworkConnectivityPassivePolling(ctx conte
 //
 // Default: 1.
 // Supported from OS build 10.0.22621 (CSP v9.9).
-func (s *MixedReality) GetEnableStartMenuSingleHandGesture(ctx context.Context) (int64, error) {
+func (s *MixedReality) GetEnableStartMenuSingleHandGesture(ctx context.Context) (EnableStartMenuSingleHandGestureValue, error) {
 	v, err := s.c.Get(ctx, URIEnableStartMenuSingleHandGesture)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableStartMenuSingleHandGestureValue(n), err
 }
 
 // CreateEnableStartMenuSingleHandGesture creates ./Device/Vendor/MSFT/Policy/Config/MixedReality/EnableStartMenuSingleHandGesture.
@@ -692,8 +701,8 @@ func (s *MixedReality) GetEnableStartMenuSingleHandGesture(ctx context.Context) 
 //
 // Default: 1.
 // Supported from OS build 10.0.22621 (CSP v9.9).
-func (s *MixedReality) CreateEnableStartMenuSingleHandGesture(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableStartMenuSingleHandGesture, client.Int(value))
+func (s *MixedReality) CreateEnableStartMenuSingleHandGesture(ctx context.Context, value EnableStartMenuSingleHandGestureValue) error {
+	return s.c.Add(ctx, URIEnableStartMenuSingleHandGesture, client.Int(int64(value)))
 }
 
 // UpdateEnableStartMenuSingleHandGesture updates ./Device/Vendor/MSFT/Policy/Config/MixedReality/EnableStartMenuSingleHandGesture.
@@ -702,8 +711,8 @@ func (s *MixedReality) CreateEnableStartMenuSingleHandGesture(ctx context.Contex
 //
 // Default: 1.
 // Supported from OS build 10.0.22621 (CSP v9.9).
-func (s *MixedReality) UpdateEnableStartMenuSingleHandGesture(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableStartMenuSingleHandGesture, client.Int(value))
+func (s *MixedReality) UpdateEnableStartMenuSingleHandGesture(ctx context.Context, value EnableStartMenuSingleHandGestureValue) error {
+	return s.c.Replace(ctx, URIEnableStartMenuSingleHandGesture, client.Int(int64(value)))
 }
 
 // DeleteEnableStartMenuSingleHandGesture deletes ./Device/Vendor/MSFT/Policy/Config/MixedReality/EnableStartMenuSingleHandGesture.
@@ -721,12 +730,13 @@ func (s *MixedReality) DeleteEnableStartMenuSingleHandGesture(ctx context.Contex
 //
 // Default: 1.
 // Supported from OS build 10.0.22621 (CSP v9.9).
-func (s *MixedReality) GetEnableStartMenuVoiceCommand(ctx context.Context) (int64, error) {
+func (s *MixedReality) GetEnableStartMenuVoiceCommand(ctx context.Context) (EnableStartMenuVoiceCommandValue, error) {
 	v, err := s.c.Get(ctx, URIEnableStartMenuVoiceCommand)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableStartMenuVoiceCommandValue(n), err
 }
 
 // CreateEnableStartMenuVoiceCommand creates ./Device/Vendor/MSFT/Policy/Config/MixedReality/EnableStartMenuVoiceCommand.
@@ -734,8 +744,8 @@ func (s *MixedReality) GetEnableStartMenuVoiceCommand(ctx context.Context) (int6
 //
 // Default: 1.
 // Supported from OS build 10.0.22621 (CSP v9.9).
-func (s *MixedReality) CreateEnableStartMenuVoiceCommand(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableStartMenuVoiceCommand, client.Int(value))
+func (s *MixedReality) CreateEnableStartMenuVoiceCommand(ctx context.Context, value EnableStartMenuVoiceCommandValue) error {
+	return s.c.Add(ctx, URIEnableStartMenuVoiceCommand, client.Int(int64(value)))
 }
 
 // UpdateEnableStartMenuVoiceCommand updates ./Device/Vendor/MSFT/Policy/Config/MixedReality/EnableStartMenuVoiceCommand.
@@ -743,8 +753,8 @@ func (s *MixedReality) CreateEnableStartMenuVoiceCommand(ctx context.Context, va
 //
 // Default: 1.
 // Supported from OS build 10.0.22621 (CSP v9.9).
-func (s *MixedReality) UpdateEnableStartMenuVoiceCommand(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableStartMenuVoiceCommand, client.Int(value))
+func (s *MixedReality) UpdateEnableStartMenuVoiceCommand(ctx context.Context, value EnableStartMenuVoiceCommandValue) error {
+	return s.c.Replace(ctx, URIEnableStartMenuVoiceCommand, client.Int(int64(value)))
 }
 
 // DeleteEnableStartMenuVoiceCommand deletes ./Device/Vendor/MSFT/Policy/Config/MixedReality/EnableStartMenuVoiceCommand.
@@ -762,12 +772,13 @@ func (s *MixedReality) DeleteEnableStartMenuVoiceCommand(ctx context.Context) er
 //
 // Default: 1.
 // Supported from OS build 10.0.22621 (CSP v9.9).
-func (s *MixedReality) GetEnableStartMenuWristTap(ctx context.Context) (int64, error) {
+func (s *MixedReality) GetEnableStartMenuWristTap(ctx context.Context) (EnableStartMenuWristTapValue, error) {
 	v, err := s.c.Get(ctx, URIEnableStartMenuWristTap)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableStartMenuWristTapValue(n), err
 }
 
 // CreateEnableStartMenuWristTap creates ./Device/Vendor/MSFT/Policy/Config/MixedReality/EnableStartMenuWristTap.
@@ -776,8 +787,8 @@ func (s *MixedReality) GetEnableStartMenuWristTap(ctx context.Context) (int64, e
 //
 // Default: 1.
 // Supported from OS build 10.0.22621 (CSP v9.9).
-func (s *MixedReality) CreateEnableStartMenuWristTap(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableStartMenuWristTap, client.Int(value))
+func (s *MixedReality) CreateEnableStartMenuWristTap(ctx context.Context, value EnableStartMenuWristTapValue) error {
+	return s.c.Add(ctx, URIEnableStartMenuWristTap, client.Int(int64(value)))
 }
 
 // UpdateEnableStartMenuWristTap updates ./Device/Vendor/MSFT/Policy/Config/MixedReality/EnableStartMenuWristTap.
@@ -786,8 +797,8 @@ func (s *MixedReality) CreateEnableStartMenuWristTap(ctx context.Context, value 
 //
 // Default: 1.
 // Supported from OS build 10.0.22621 (CSP v9.9).
-func (s *MixedReality) UpdateEnableStartMenuWristTap(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableStartMenuWristTap, client.Int(value))
+func (s *MixedReality) UpdateEnableStartMenuWristTap(ctx context.Context, value EnableStartMenuWristTapValue) error {
+	return s.c.Replace(ctx, URIEnableStartMenuWristTap, client.Int(int64(value)))
 }
 
 // DeleteEnableStartMenuWristTap deletes ./Device/Vendor/MSFT/Policy/Config/MixedReality/EnableStartMenuWristTap.
@@ -806,12 +817,13 @@ func (s *MixedReality) DeleteEnableStartMenuWristTap(ctx context.Context) error 
 //
 // Default: 1.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *MixedReality) GetEyeTrackingCalibrationPrompt(ctx context.Context) (int64, error) {
+func (s *MixedReality) GetEyeTrackingCalibrationPrompt(ctx context.Context) (EyeTrackingCalibrationPromptValue, error) {
 	v, err := s.c.Get(ctx, URIEyeTrackingCalibrationPrompt)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EyeTrackingCalibrationPromptValue(n), err
 }
 
 // CreateEyeTrackingCalibrationPrompt creates ./Device/Vendor/MSFT/Policy/Config/MixedReality/EyeTrackingCalibrationPrompt.
@@ -820,8 +832,8 @@ func (s *MixedReality) GetEyeTrackingCalibrationPrompt(ctx context.Context) (int
 //
 // Default: 1.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *MixedReality) CreateEyeTrackingCalibrationPrompt(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEyeTrackingCalibrationPrompt, client.Int(value))
+func (s *MixedReality) CreateEyeTrackingCalibrationPrompt(ctx context.Context, value EyeTrackingCalibrationPromptValue) error {
+	return s.c.Add(ctx, URIEyeTrackingCalibrationPrompt, client.Int(int64(value)))
 }
 
 // UpdateEyeTrackingCalibrationPrompt updates ./Device/Vendor/MSFT/Policy/Config/MixedReality/EyeTrackingCalibrationPrompt.
@@ -830,8 +842,8 @@ func (s *MixedReality) CreateEyeTrackingCalibrationPrompt(ctx context.Context, v
 //
 // Default: 1.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *MixedReality) UpdateEyeTrackingCalibrationPrompt(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEyeTrackingCalibrationPrompt, client.Int(value))
+func (s *MixedReality) UpdateEyeTrackingCalibrationPrompt(ctx context.Context, value EyeTrackingCalibrationPromptValue) error {
+	return s.c.Replace(ctx, URIEyeTrackingCalibrationPrompt, client.Int(int64(value)))
 }
 
 // DeleteEyeTrackingCalibrationPrompt deletes ./Device/Vendor/MSFT/Policy/Config/MixedReality/EyeTrackingCalibrationPrompt.
@@ -850,12 +862,13 @@ func (s *MixedReality) DeleteEyeTrackingCalibrationPrompt(ctx context.Context) e
 //
 // Default: 2.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *MixedReality) GetFallbackDiagnostics(ctx context.Context) (int64, error) {
+func (s *MixedReality) GetFallbackDiagnostics(ctx context.Context) (FallbackDiagnosticsValue, error) {
 	v, err := s.c.Get(ctx, URIFallbackDiagnostics)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return FallbackDiagnosticsValue(n), err
 }
 
 // CreateFallbackDiagnostics creates ./Device/Vendor/MSFT/Policy/Config/MixedReality/FallbackDiagnostics.
@@ -864,8 +877,8 @@ func (s *MixedReality) GetFallbackDiagnostics(ctx context.Context) (int64, error
 //
 // Default: 2.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *MixedReality) CreateFallbackDiagnostics(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIFallbackDiagnostics, client.Int(value))
+func (s *MixedReality) CreateFallbackDiagnostics(ctx context.Context, value FallbackDiagnosticsValue) error {
+	return s.c.Add(ctx, URIFallbackDiagnostics, client.Int(int64(value)))
 }
 
 // UpdateFallbackDiagnostics updates ./Device/Vendor/MSFT/Policy/Config/MixedReality/FallbackDiagnostics.
@@ -874,8 +887,8 @@ func (s *MixedReality) CreateFallbackDiagnostics(ctx context.Context, value int6
 //
 // Default: 2.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *MixedReality) UpdateFallbackDiagnostics(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIFallbackDiagnostics, client.Int(value))
+func (s *MixedReality) UpdateFallbackDiagnostics(ctx context.Context, value FallbackDiagnosticsValue) error {
+	return s.c.Replace(ctx, URIFallbackDiagnostics, client.Int(int64(value)))
 }
 
 // DeleteFallbackDiagnostics deletes ./Device/Vendor/MSFT/Policy/Config/MixedReality/FallbackDiagnostics.
@@ -940,12 +953,13 @@ func (s *MixedReality) DeleteHeadTrackingMode(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.20348 (CSP v11.0).
-func (s *MixedReality) GetManualDownDirectionDisabled(ctx context.Context) (int64, error) {
+func (s *MixedReality) GetManualDownDirectionDisabled(ctx context.Context) (ManualDownDirectionDisabledValue, error) {
 	v, err := s.c.Get(ctx, URIManualDownDirectionDisabled)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ManualDownDirectionDisabledValue(n), err
 }
 
 // CreateManualDownDirectionDisabled creates ./Device/Vendor/MSFT/Policy/Config/MixedReality/ManualDownDirectionDisabled.
@@ -956,8 +970,8 @@ func (s *MixedReality) GetManualDownDirectionDisabled(ctx context.Context) (int6
 //
 // Default: 0.
 // Supported from OS build 10.0.20348 (CSP v11.0).
-func (s *MixedReality) CreateManualDownDirectionDisabled(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIManualDownDirectionDisabled, client.Int(value))
+func (s *MixedReality) CreateManualDownDirectionDisabled(ctx context.Context, value ManualDownDirectionDisabledValue) error {
+	return s.c.Add(ctx, URIManualDownDirectionDisabled, client.Int(int64(value)))
 }
 
 // UpdateManualDownDirectionDisabled updates ./Device/Vendor/MSFT/Policy/Config/MixedReality/ManualDownDirectionDisabled.
@@ -968,8 +982,8 @@ func (s *MixedReality) CreateManualDownDirectionDisabled(ctx context.Context, va
 //
 // Default: 0.
 // Supported from OS build 10.0.20348 (CSP v11.0).
-func (s *MixedReality) UpdateManualDownDirectionDisabled(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIManualDownDirectionDisabled, client.Int(value))
+func (s *MixedReality) UpdateManualDownDirectionDisabled(ctx context.Context, value ManualDownDirectionDisabledValue) error {
+	return s.c.Replace(ctx, URIManualDownDirectionDisabled, client.Int(int64(value)))
 }
 
 // DeleteManualDownDirectionDisabled deletes ./Device/Vendor/MSFT/Policy/Config/MixedReality/ManualDownDirectionDisabled.
@@ -989,12 +1003,13 @@ func (s *MixedReality) DeleteManualDownDirectionDisabled(ctx context.Context) er
 //
 // Default: 0.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *MixedReality) GetMicrophoneDisabled(ctx context.Context) (int64, error) {
+func (s *MixedReality) GetMicrophoneDisabled(ctx context.Context) (MicrophoneDisabledValue, error) {
 	v, err := s.c.Get(ctx, URIMicrophoneDisabled)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MicrophoneDisabledValue(n), err
 }
 
 // CreateMicrophoneDisabled creates ./Device/Vendor/MSFT/Policy/Config/MixedReality/MicrophoneDisabled.
@@ -1002,8 +1017,8 @@ func (s *MixedReality) GetMicrophoneDisabled(ctx context.Context) (int64, error)
 //
 // Default: 0.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *MixedReality) CreateMicrophoneDisabled(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIMicrophoneDisabled, client.Int(value))
+func (s *MixedReality) CreateMicrophoneDisabled(ctx context.Context, value MicrophoneDisabledValue) error {
+	return s.c.Add(ctx, URIMicrophoneDisabled, client.Int(int64(value)))
 }
 
 // UpdateMicrophoneDisabled updates ./Device/Vendor/MSFT/Policy/Config/MixedReality/MicrophoneDisabled.
@@ -1011,8 +1026,8 @@ func (s *MixedReality) CreateMicrophoneDisabled(ctx context.Context, value int64
 //
 // Default: 0.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *MixedReality) UpdateMicrophoneDisabled(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIMicrophoneDisabled, client.Int(value))
+func (s *MixedReality) UpdateMicrophoneDisabled(ctx context.Context, value MicrophoneDisabledValue) error {
+	return s.c.Replace(ctx, URIMicrophoneDisabled, client.Int(int64(value)))
 }
 
 // DeleteMicrophoneDisabled deletes ./Device/Vendor/MSFT/Policy/Config/MixedReality/MicrophoneDisabled.
@@ -1073,12 +1088,13 @@ func (s *MixedReality) DeleteNtpClientEnabled(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v9.9).
-func (s *MixedReality) GetPreferLogonAsOtherUser(ctx context.Context) (int64, error) {
+func (s *MixedReality) GetPreferLogonAsOtherUser(ctx context.Context) (PreferLogonAsOtherUserValue, error) {
 	v, err := s.c.Get(ctx, URIPreferLogonAsOtherUser)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PreferLogonAsOtherUserValue(n), err
 }
 
 // CreatePreferLogonAsOtherUser creates ./Device/Vendor/MSFT/Policy/Config/MixedReality/PreferLogonAsOtherUser.
@@ -1086,8 +1102,8 @@ func (s *MixedReality) GetPreferLogonAsOtherUser(ctx context.Context) (int64, er
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v9.9).
-func (s *MixedReality) CreatePreferLogonAsOtherUser(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPreferLogonAsOtherUser, client.Int(value))
+func (s *MixedReality) CreatePreferLogonAsOtherUser(ctx context.Context, value PreferLogonAsOtherUserValue) error {
+	return s.c.Add(ctx, URIPreferLogonAsOtherUser, client.Int(int64(value)))
 }
 
 // UpdatePreferLogonAsOtherUser updates ./Device/Vendor/MSFT/Policy/Config/MixedReality/PreferLogonAsOtherUser.
@@ -1095,8 +1111,8 @@ func (s *MixedReality) CreatePreferLogonAsOtherUser(ctx context.Context, value i
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v9.9).
-func (s *MixedReality) UpdatePreferLogonAsOtherUser(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPreferLogonAsOtherUser, client.Int(value))
+func (s *MixedReality) UpdatePreferLogonAsOtherUser(ctx context.Context, value PreferLogonAsOtherUserValue) error {
+	return s.c.Replace(ctx, URIPreferLogonAsOtherUser, client.Int(int64(value)))
 }
 
 // DeletePreferLogonAsOtherUser deletes ./Device/Vendor/MSFT/Policy/Config/MixedReality/PreferLogonAsOtherUser.
@@ -1114,12 +1130,13 @@ func (s *MixedReality) DeletePreferLogonAsOtherUser(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v9.9).
-func (s *MixedReality) GetRequireStartIconHold(ctx context.Context) (int64, error) {
+func (s *MixedReality) GetRequireStartIconHold(ctx context.Context) (RequireStartIconHoldValue, error) {
 	v, err := s.c.Get(ctx, URIRequireStartIconHold)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return RequireStartIconHoldValue(n), err
 }
 
 // CreateRequireStartIconHold creates ./Device/Vendor/MSFT/Policy/Config/MixedReality/RequireStartIconHold.
@@ -1128,8 +1145,8 @@ func (s *MixedReality) GetRequireStartIconHold(ctx context.Context) (int64, erro
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v9.9).
-func (s *MixedReality) CreateRequireStartIconHold(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIRequireStartIconHold, client.Int(value))
+func (s *MixedReality) CreateRequireStartIconHold(ctx context.Context, value RequireStartIconHoldValue) error {
+	return s.c.Add(ctx, URIRequireStartIconHold, client.Int(int64(value)))
 }
 
 // UpdateRequireStartIconHold updates ./Device/Vendor/MSFT/Policy/Config/MixedReality/RequireStartIconHold.
@@ -1138,8 +1155,8 @@ func (s *MixedReality) CreateRequireStartIconHold(ctx context.Context, value int
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v9.9).
-func (s *MixedReality) UpdateRequireStartIconHold(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIRequireStartIconHold, client.Int(value))
+func (s *MixedReality) UpdateRequireStartIconHold(ctx context.Context, value RequireStartIconHoldValue) error {
+	return s.c.Replace(ctx, URIRequireStartIconHold, client.Int(int64(value)))
 }
 
 // DeleteRequireStartIconHold deletes ./Device/Vendor/MSFT/Policy/Config/MixedReality/RequireStartIconHold.
@@ -1158,12 +1175,13 @@ func (s *MixedReality) DeleteRequireStartIconHold(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v9.9).
-func (s *MixedReality) GetRequireStartIconVisible(ctx context.Context) (int64, error) {
+func (s *MixedReality) GetRequireStartIconVisible(ctx context.Context) (RequireStartIconVisibleValue, error) {
 	v, err := s.c.Get(ctx, URIRequireStartIconVisible)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return RequireStartIconVisibleValue(n), err
 }
 
 // CreateRequireStartIconVisible creates ./Device/Vendor/MSFT/Policy/Config/MixedReality/RequireStartIconVisible.
@@ -1172,8 +1190,8 @@ func (s *MixedReality) GetRequireStartIconVisible(ctx context.Context) (int64, e
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v9.9).
-func (s *MixedReality) CreateRequireStartIconVisible(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIRequireStartIconVisible, client.Int(value))
+func (s *MixedReality) CreateRequireStartIconVisible(ctx context.Context, value RequireStartIconVisibleValue) error {
+	return s.c.Add(ctx, URIRequireStartIconVisible, client.Int(int64(value)))
 }
 
 // UpdateRequireStartIconVisible updates ./Device/Vendor/MSFT/Policy/Config/MixedReality/RequireStartIconVisible.
@@ -1182,8 +1200,8 @@ func (s *MixedReality) CreateRequireStartIconVisible(ctx context.Context, value 
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v9.9).
-func (s *MixedReality) UpdateRequireStartIconVisible(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIRequireStartIconVisible, client.Int(value))
+func (s *MixedReality) UpdateRequireStartIconVisible(ctx context.Context, value RequireStartIconVisibleValue) error {
+	return s.c.Replace(ctx, URIRequireStartIconVisible, client.Int(int64(value)))
 }
 
 // DeleteRequireStartIconVisible deletes ./Device/Vendor/MSFT/Policy/Config/MixedReality/RequireStartIconVisible.
@@ -1206,12 +1224,13 @@ func (s *MixedReality) DeleteRequireStartIconVisible(ctx context.Context) error 
 //
 // Default: 0.
 // Supported from OS build 10.0.20348 (CSP v11.0).
-func (s *MixedReality) GetSkipCalibrationDuringSetup(ctx context.Context) (int64, error) {
+func (s *MixedReality) GetSkipCalibrationDuringSetup(ctx context.Context) (SkipCalibrationDuringSetupValue, error) {
 	v, err := s.c.Get(ctx, URISkipCalibrationDuringSetup)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SkipCalibrationDuringSetupValue(n), err
 }
 
 // CreateSkipCalibrationDuringSetup creates ./Device/Vendor/MSFT/Policy/Config/MixedReality/SkipCalibrationDuringSetup.
@@ -1224,8 +1243,8 @@ func (s *MixedReality) GetSkipCalibrationDuringSetup(ctx context.Context) (int64
 //
 // Default: 0.
 // Supported from OS build 10.0.20348 (CSP v11.0).
-func (s *MixedReality) CreateSkipCalibrationDuringSetup(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISkipCalibrationDuringSetup, client.Int(value))
+func (s *MixedReality) CreateSkipCalibrationDuringSetup(ctx context.Context, value SkipCalibrationDuringSetupValue) error {
+	return s.c.Add(ctx, URISkipCalibrationDuringSetup, client.Int(int64(value)))
 }
 
 // UpdateSkipCalibrationDuringSetup updates ./Device/Vendor/MSFT/Policy/Config/MixedReality/SkipCalibrationDuringSetup.
@@ -1238,8 +1257,8 @@ func (s *MixedReality) CreateSkipCalibrationDuringSetup(ctx context.Context, val
 //
 // Default: 0.
 // Supported from OS build 10.0.20348 (CSP v11.0).
-func (s *MixedReality) UpdateSkipCalibrationDuringSetup(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISkipCalibrationDuringSetup, client.Int(value))
+func (s *MixedReality) UpdateSkipCalibrationDuringSetup(ctx context.Context, value SkipCalibrationDuringSetupValue) error {
+	return s.c.Replace(ctx, URISkipCalibrationDuringSetup, client.Int(int64(value)))
 }
 
 // DeleteSkipCalibrationDuringSetup deletes ./Device/Vendor/MSFT/Policy/Config/MixedReality/SkipCalibrationDuringSetup.
@@ -1264,12 +1283,13 @@ func (s *MixedReality) DeleteSkipCalibrationDuringSetup(ctx context.Context) err
 //
 // Default: 0.
 // Supported from OS build 10.0.20348 (CSP v11.0).
-func (s *MixedReality) GetSkipTrainingDuringSetup(ctx context.Context) (int64, error) {
+func (s *MixedReality) GetSkipTrainingDuringSetup(ctx context.Context) (SkipTrainingDuringSetupValue, error) {
 	v, err := s.c.Get(ctx, URISkipTrainingDuringSetup)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SkipTrainingDuringSetupValue(n), err
 }
 
 // CreateSkipTrainingDuringSetup creates ./Device/Vendor/MSFT/Policy/Config/MixedReality/SkipTrainingDuringSetup.
@@ -1280,8 +1300,8 @@ func (s *MixedReality) GetSkipTrainingDuringSetup(ctx context.Context) (int64, e
 //
 // Default: 0.
 // Supported from OS build 10.0.20348 (CSP v11.0).
-func (s *MixedReality) CreateSkipTrainingDuringSetup(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISkipTrainingDuringSetup, client.Int(value))
+func (s *MixedReality) CreateSkipTrainingDuringSetup(ctx context.Context, value SkipTrainingDuringSetupValue) error {
+	return s.c.Add(ctx, URISkipTrainingDuringSetup, client.Int(int64(value)))
 }
 
 // UpdateSkipTrainingDuringSetup updates ./Device/Vendor/MSFT/Policy/Config/MixedReality/SkipTrainingDuringSetup.
@@ -1292,8 +1312,8 @@ func (s *MixedReality) CreateSkipTrainingDuringSetup(ctx context.Context, value 
 //
 // Default: 0.
 // Supported from OS build 10.0.20348 (CSP v11.0).
-func (s *MixedReality) UpdateSkipTrainingDuringSetup(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISkipTrainingDuringSetup, client.Int(value))
+func (s *MixedReality) UpdateSkipTrainingDuringSetup(ctx context.Context, value SkipTrainingDuringSetupValue) error {
+	return s.c.Replace(ctx, URISkipTrainingDuringSetup, client.Int(int64(value)))
 }
 
 // DeleteSkipTrainingDuringSetup deletes ./Device/Vendor/MSFT/Policy/Config/MixedReality/SkipTrainingDuringSetup.
@@ -1316,12 +1336,13 @@ func (s *MixedReality) DeleteSkipTrainingDuringSetup(ctx context.Context) error 
 //
 // Default: 0.
 // Supported from OS build 10.0.20348 (CSP v11.0).
-func (s *MixedReality) GetVisitorAutoLogon(ctx context.Context) (int64, error) {
+func (s *MixedReality) GetVisitorAutoLogon(ctx context.Context) (VisitorAutoLogonValue, error) {
 	v, err := s.c.Get(ctx, URIVisitorAutoLogon)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return VisitorAutoLogonValue(n), err
 }
 
 // CreateVisitorAutoLogon creates ./Device/Vendor/MSFT/Policy/Config/MixedReality/VisitorAutoLogon.
@@ -1332,8 +1353,8 @@ func (s *MixedReality) GetVisitorAutoLogon(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.20348 (CSP v11.0).
-func (s *MixedReality) CreateVisitorAutoLogon(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIVisitorAutoLogon, client.Int(value))
+func (s *MixedReality) CreateVisitorAutoLogon(ctx context.Context, value VisitorAutoLogonValue) error {
+	return s.c.Add(ctx, URIVisitorAutoLogon, client.Int(int64(value)))
 }
 
 // UpdateVisitorAutoLogon updates ./Device/Vendor/MSFT/Policy/Config/MixedReality/VisitorAutoLogon.
@@ -1344,8 +1365,8 @@ func (s *MixedReality) CreateVisitorAutoLogon(ctx context.Context, value int64) 
 //
 // Default: 0.
 // Supported from OS build 10.0.20348 (CSP v11.0).
-func (s *MixedReality) UpdateVisitorAutoLogon(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIVisitorAutoLogon, client.Int(value))
+func (s *MixedReality) UpdateVisitorAutoLogon(ctx context.Context, value VisitorAutoLogonValue) error {
+	return s.c.Replace(ctx, URIVisitorAutoLogon, client.Int(int64(value)))
 }
 
 // DeleteVisitorAutoLogon deletes ./Device/Vendor/MSFT/Policy/Config/MixedReality/VisitorAutoLogon.
@@ -1367,12 +1388,13 @@ func (s *MixedReality) DeleteVisitorAutoLogon(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *MixedReality) GetVolumeButtonDisabled(ctx context.Context) (int64, error) {
+func (s *MixedReality) GetVolumeButtonDisabled(ctx context.Context) (VolumeButtonDisabledValue, error) {
 	v, err := s.c.Get(ctx, URIVolumeButtonDisabled)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return VolumeButtonDisabledValue(n), err
 }
 
 // CreateVolumeButtonDisabled creates ./Device/Vendor/MSFT/Policy/Config/MixedReality/VolumeButtonDisabled.
@@ -1382,8 +1404,8 @@ func (s *MixedReality) GetVolumeButtonDisabled(ctx context.Context) (int64, erro
 //
 // Default: 0.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *MixedReality) CreateVolumeButtonDisabled(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIVolumeButtonDisabled, client.Int(value))
+func (s *MixedReality) CreateVolumeButtonDisabled(ctx context.Context, value VolumeButtonDisabledValue) error {
+	return s.c.Add(ctx, URIVolumeButtonDisabled, client.Int(int64(value)))
 }
 
 // UpdateVolumeButtonDisabled updates ./Device/Vendor/MSFT/Policy/Config/MixedReality/VolumeButtonDisabled.
@@ -1393,8 +1415,8 @@ func (s *MixedReality) CreateVolumeButtonDisabled(ctx context.Context, value int
 //
 // Default: 0.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *MixedReality) UpdateVolumeButtonDisabled(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIVolumeButtonDisabled, client.Int(value))
+func (s *MixedReality) UpdateVolumeButtonDisabled(ctx context.Context, value VolumeButtonDisabledValue) error {
+	return s.c.Replace(ctx, URIVolumeButtonDisabled, client.Int(int64(value)))
 }
 
 // DeleteVolumeButtonDisabled deletes ./Device/Vendor/MSFT/Policy/Config/MixedReality/VolumeButtonDisabled.

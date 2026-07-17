@@ -20,12 +20,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.22621.2338 (CSP v11.0).
-func (s *CloudDesktop) GetBootToCloudMode(ctx context.Context) (int64, error) {
+func (s *CloudDesktop) GetBootToCloudMode(ctx context.Context) (BootToCloudModeValue, error) {
 	v, err := s.c.Get(ctx, URIBootToCloudMode)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return BootToCloudModeValue(n), err
 }
 
 // CreateBootToCloudMode creates ./Device/Vendor/MSFT/Policy/Config/CloudDesktop/BootToCloudMode.
@@ -40,8 +41,8 @@ func (s *CloudDesktop) GetBootToCloudMode(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.22621.2338 (CSP v11.0).
-func (s *CloudDesktop) CreateBootToCloudMode(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIBootToCloudMode, client.Int(value))
+func (s *CloudDesktop) CreateBootToCloudMode(ctx context.Context, value BootToCloudModeValue) error {
+	return s.c.Add(ctx, URIBootToCloudMode, client.Int(int64(value)))
 }
 
 // UpdateBootToCloudMode updates ./Device/Vendor/MSFT/Policy/Config/CloudDesktop/BootToCloudMode.
@@ -56,8 +57,8 @@ func (s *CloudDesktop) CreateBootToCloudMode(ctx context.Context, value int64) e
 //
 // Default: 0.
 // Supported from OS build 10.0.22621.2338 (CSP v11.0).
-func (s *CloudDesktop) UpdateBootToCloudMode(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIBootToCloudMode, client.Int(value))
+func (s *CloudDesktop) UpdateBootToCloudMode(ctx context.Context, value BootToCloudModeValue) error {
+	return s.c.Replace(ctx, URIBootToCloudMode, client.Int(int64(value)))
 }
 
 // DeleteBootToCloudMode deletes ./Device/Vendor/MSFT/Policy/Config/CloudDesktop/BootToCloudMode.
@@ -84,12 +85,13 @@ func (s *CloudDesktop) DeleteBootToCloudMode(ctx context.Context) error {
 //
 // Default: 5.
 // Supported from OS build 10.0.22621.2338 (CSP v11.0).
-func (s *CloudDesktop) GetSetMaxConnectionTimeout(ctx context.Context) (int64, error) {
+func (s *CloudDesktop) GetSetMaxConnectionTimeout(ctx context.Context) (SetMaxConnectionTimeoutValue, error) {
 	v, err := s.c.Get(ctx, URISetMaxConnectionTimeout)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SetMaxConnectionTimeoutValue(n), err
 }
 
 // CreateSetMaxConnectionTimeout creates ./Device/Vendor/MSFT/Policy/Config/CloudDesktop/SetMaxConnectionTimeout.
@@ -100,8 +102,8 @@ func (s *CloudDesktop) GetSetMaxConnectionTimeout(ctx context.Context) (int64, e
 //
 // Default: 5.
 // Supported from OS build 10.0.22621.2338 (CSP v11.0).
-func (s *CloudDesktop) CreateSetMaxConnectionTimeout(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISetMaxConnectionTimeout, client.Int(value))
+func (s *CloudDesktop) CreateSetMaxConnectionTimeout(ctx context.Context, value SetMaxConnectionTimeoutValue) error {
+	return s.c.Add(ctx, URISetMaxConnectionTimeout, client.Int(int64(value)))
 }
 
 // UpdateSetMaxConnectionTimeout updates ./Device/Vendor/MSFT/Policy/Config/CloudDesktop/SetMaxConnectionTimeout.
@@ -112,8 +114,8 @@ func (s *CloudDesktop) CreateSetMaxConnectionTimeout(ctx context.Context, value 
 //
 // Default: 5.
 // Supported from OS build 10.0.22621.2338 (CSP v11.0).
-func (s *CloudDesktop) UpdateSetMaxConnectionTimeout(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISetMaxConnectionTimeout, client.Int(value))
+func (s *CloudDesktop) UpdateSetMaxConnectionTimeout(ctx context.Context, value SetMaxConnectionTimeoutValue) error {
+	return s.c.Replace(ctx, URISetMaxConnectionTimeout, client.Int(int64(value)))
 }
 
 // DeleteSetMaxConnectionTimeout deletes ./Device/Vendor/MSFT/Policy/Config/CloudDesktop/SetMaxConnectionTimeout.

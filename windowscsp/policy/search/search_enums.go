@@ -2,136 +2,384 @@
 
 package search
 
-// AllowCloudSearch allowed values.
-const (
-	// Not allowed.
-	AllowCloudSearchNotAllowed int64 = 0
-	// Allowed.
-	AllowCloudSearchAllowed int64 = 1
+import (
+	"fmt"
 )
 
-// AllowCortanaInAAD allowed values.
+// AllowCloudSearchValue — allowed values for the AllowCloudSearch node.
+type AllowCloudSearchValue int64
+
+const (
+	// Not allowed.
+	AllowCloudSearchNotAllowed AllowCloudSearchValue = 0
+	// Allowed.
+	AllowCloudSearchAllowed AllowCloudSearchValue = 1
+)
+
+// String returns the AllowCloudSearchValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowCloudSearchValue) String() string {
+	switch e {
+	case AllowCloudSearchNotAllowed:
+		return "AllowCloudSearchNotAllowed"
+	case AllowCloudSearchAllowed:
+		return "AllowCloudSearchAllowed"
+	default:
+		return fmt.Sprintf("AllowCloudSearchValue(%d)", int64(e))
+	}
+}
+
+// AllowCortanaInAADValue — allowed values for the AllowCortanaInAAD node.
+type AllowCortanaInAADValue int64
+
 const (
 	// Not allowed. The Cortana consent page will not appear in AAD OOBE during setup.
-	AllowCortanaInAADNotAllowed int64 = 0
+	AllowCortanaInAADNotAllowed AllowCortanaInAADValue = 0
 	// Allowed. The Cortana consent page will appear in Azure AAD OOBE during setup.
-	AllowCortanaInAADAllowed int64 = 1
+	AllowCortanaInAADAllowed AllowCortanaInAADValue = 1
 )
 
-// AllowFindMyFiles allowed values.
+// String returns the AllowCortanaInAADValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowCortanaInAADValue) String() string {
+	switch e {
+	case AllowCortanaInAADNotAllowed:
+		return "AllowCortanaInAADNotAllowed"
+	case AllowCortanaInAADAllowed:
+		return "AllowCortanaInAADAllowed"
+	default:
+		return fmt.Sprintf("AllowCortanaInAADValue(%d)", int64(e))
+	}
+}
+
+// AllowFindMyFilesValue — allowed values for the AllowFindMyFiles node.
+type AllowFindMyFilesValue int64
+
 const (
 	// Find My Files feature can be toggled (still off by default), and the settings UI is present.
-	AllowFindMyFilesFindMyFilesFeatureCanBe int64 = 1
+	AllowFindMyFilesFindMyFilesFeatureCanBe AllowFindMyFilesValue = 1
 	// Find My Files feature is turned off completely, and the settings UI is disabled.
-	AllowFindMyFilesFindMyFilesFeatureIsTurned int64 = 0
+	AllowFindMyFilesFindMyFilesFeatureIsTurned AllowFindMyFilesValue = 0
 )
 
-// AllowIndexingEncryptedStoresOrItems allowed values.
+// String returns the AllowFindMyFilesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowFindMyFilesValue) String() string {
+	switch e {
+	case AllowFindMyFilesFindMyFilesFeatureCanBe:
+		return "AllowFindMyFilesFindMyFilesFeatureCanBe"
+	case AllowFindMyFilesFindMyFilesFeatureIsTurned:
+		return "AllowFindMyFilesFindMyFilesFeatureIsTurned"
+	default:
+		return fmt.Sprintf("AllowFindMyFilesValue(%d)", int64(e))
+	}
+}
+
+// AllowIndexingEncryptedStoresOrItemsValue — allowed values for the AllowIndexingEncryptedStoresOrItems node.
+type AllowIndexingEncryptedStoresOrItemsValue int64
+
 const (
 	// Not allowed.
-	AllowIndexingEncryptedStoresOrItemsNotAllowed int64 = 0
+	AllowIndexingEncryptedStoresOrItemsNotAllowed AllowIndexingEncryptedStoresOrItemsValue = 0
 	// Allowed.
-	AllowIndexingEncryptedStoresOrItemsAllowed int64 = 1
+	AllowIndexingEncryptedStoresOrItemsAllowed AllowIndexingEncryptedStoresOrItemsValue = 1
 )
 
-// AllowSearchToUseLocation allowed values.
+// String returns the AllowIndexingEncryptedStoresOrItemsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowIndexingEncryptedStoresOrItemsValue) String() string {
+	switch e {
+	case AllowIndexingEncryptedStoresOrItemsNotAllowed:
+		return "AllowIndexingEncryptedStoresOrItemsNotAllowed"
+	case AllowIndexingEncryptedStoresOrItemsAllowed:
+		return "AllowIndexingEncryptedStoresOrItemsAllowed"
+	default:
+		return fmt.Sprintf("AllowIndexingEncryptedStoresOrItemsValue(%d)", int64(e))
+	}
+}
+
+// AllowSearchToUseLocationValue — allowed values for the AllowSearchToUseLocation node.
+type AllowSearchToUseLocationValue int64
+
 const (
 	// Not allowed.
-	AllowSearchToUseLocationNotAllowed int64 = 0
+	AllowSearchToUseLocationNotAllowed AllowSearchToUseLocationValue = 0
 	// Allowed.
-	AllowSearchToUseLocationAllowed int64 = 1
+	AllowSearchToUseLocationAllowed AllowSearchToUseLocationValue = 1
 )
 
-// AllowStoringImagesFromVisionSearch allowed values.
+// String returns the AllowSearchToUseLocationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowSearchToUseLocationValue) String() string {
+	switch e {
+	case AllowSearchToUseLocationNotAllowed:
+		return "AllowSearchToUseLocationNotAllowed"
+	case AllowSearchToUseLocationAllowed:
+		return "AllowSearchToUseLocationAllowed"
+	default:
+		return fmt.Sprintf("AllowSearchToUseLocationValue(%d)", int64(e))
+	}
+}
+
+// AllowStoringImagesFromVisionSearchValue — allowed values for the AllowStoringImagesFromVisionSearch node.
+type AllowStoringImagesFromVisionSearchValue int64
+
 const (
 	// Not allowed.
-	AllowStoringImagesFromVisionSearchNotAllowed int64 = 0
+	AllowStoringImagesFromVisionSearchNotAllowed AllowStoringImagesFromVisionSearchValue = 0
 	// Allowed.
-	AllowStoringImagesFromVisionSearchAllowed int64 = 1
+	AllowStoringImagesFromVisionSearchAllowed AllowStoringImagesFromVisionSearchValue = 1
 )
 
-// AllowUsingDiacritics allowed values.
+// String returns the AllowStoringImagesFromVisionSearchValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowStoringImagesFromVisionSearchValue) String() string {
+	switch e {
+	case AllowStoringImagesFromVisionSearchNotAllowed:
+		return "AllowStoringImagesFromVisionSearchNotAllowed"
+	case AllowStoringImagesFromVisionSearchAllowed:
+		return "AllowStoringImagesFromVisionSearchAllowed"
+	default:
+		return fmt.Sprintf("AllowStoringImagesFromVisionSearchValue(%d)", int64(e))
+	}
+}
+
+// AllowUsingDiacriticsValue — allowed values for the AllowUsingDiacritics node.
+type AllowUsingDiacriticsValue int64
+
 const (
 	// Not allowed.
-	AllowUsingDiacriticsNotAllowed int64 = 0
+	AllowUsingDiacriticsNotAllowed AllowUsingDiacriticsValue = 0
 	// Allowed.
-	AllowUsingDiacriticsAllowed int64 = 1
+	AllowUsingDiacriticsAllowed AllowUsingDiacriticsValue = 1
 )
 
-// AlwaysUseAutoLangDetection allowed values.
+// String returns the AllowUsingDiacriticsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowUsingDiacriticsValue) String() string {
+	switch e {
+	case AllowUsingDiacriticsNotAllowed:
+		return "AllowUsingDiacriticsNotAllowed"
+	case AllowUsingDiacriticsAllowed:
+		return "AllowUsingDiacriticsAllowed"
+	default:
+		return fmt.Sprintf("AllowUsingDiacriticsValue(%d)", int64(e))
+	}
+}
+
+// AlwaysUseAutoLangDetectionValue — allowed values for the AlwaysUseAutoLangDetection node.
+type AlwaysUseAutoLangDetectionValue int64
+
 const (
 	// Not allowed.
-	AlwaysUseAutoLangDetectionNotAllowed int64 = 0
+	AlwaysUseAutoLangDetectionNotAllowed AlwaysUseAutoLangDetectionValue = 0
 	// Allowed.
-	AlwaysUseAutoLangDetectionAllowed int64 = 1
+	AlwaysUseAutoLangDetectionAllowed AlwaysUseAutoLangDetectionValue = 1
 )
 
-// ConfigureSearchOnTaskbarMode allowed values.
+// String returns the AlwaysUseAutoLangDetectionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AlwaysUseAutoLangDetectionValue) String() string {
+	switch e {
+	case AlwaysUseAutoLangDetectionNotAllowed:
+		return "AlwaysUseAutoLangDetectionNotAllowed"
+	case AlwaysUseAutoLangDetectionAllowed:
+		return "AlwaysUseAutoLangDetectionAllowed"
+	default:
+		return fmt.Sprintf("AlwaysUseAutoLangDetectionValue(%d)", int64(e))
+	}
+}
+
+// ConfigureSearchOnTaskbarModeValue — allowed values for the ConfigureSearchOnTaskbarMode node.
+type ConfigureSearchOnTaskbarModeValue int64
+
 const (
 	// Hide
-	ConfigureSearchOnTaskbarModeHide int64 = 0
+	ConfigureSearchOnTaskbarModeHide ConfigureSearchOnTaskbarModeValue = 0
 	// Search icon only
-	ConfigureSearchOnTaskbarModeSearchIconOnly int64 = 1
+	ConfigureSearchOnTaskbarModeSearchIconOnly ConfigureSearchOnTaskbarModeValue = 1
 	// Search icon and label
-	ConfigureSearchOnTaskbarModeSearchIconAndLabel int64 = 2
+	ConfigureSearchOnTaskbarModeSearchIconAndLabel ConfigureSearchOnTaskbarModeValue = 2
 	// Search box
-	ConfigureSearchOnTaskbarModeSearchBox int64 = 3
+	ConfigureSearchOnTaskbarModeSearchBox ConfigureSearchOnTaskbarModeValue = 3
 )
 
-// DisableBackoff allowed values.
+// String returns the ConfigureSearchOnTaskbarModeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureSearchOnTaskbarModeValue) String() string {
+	switch e {
+	case ConfigureSearchOnTaskbarModeHide:
+		return "ConfigureSearchOnTaskbarModeHide"
+	case ConfigureSearchOnTaskbarModeSearchIconOnly:
+		return "ConfigureSearchOnTaskbarModeSearchIconOnly"
+	case ConfigureSearchOnTaskbarModeSearchIconAndLabel:
+		return "ConfigureSearchOnTaskbarModeSearchIconAndLabel"
+	case ConfigureSearchOnTaskbarModeSearchBox:
+		return "ConfigureSearchOnTaskbarModeSearchBox"
+	default:
+		return fmt.Sprintf("ConfigureSearchOnTaskbarModeValue(%d)", int64(e))
+	}
+}
+
+// DisableBackoffValue — allowed values for the DisableBackoff node.
+type DisableBackoffValue int64
+
 const (
 	// Disable.
-	DisableBackoffDisable int64 = 0
+	DisableBackoffDisable DisableBackoffValue = 0
 	// Enable.
-	DisableBackoffEnable int64 = 1
+	DisableBackoffEnable DisableBackoffValue = 1
 )
 
-// DisableRemovableDriveIndexing allowed values.
+// String returns the DisableBackoffValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableBackoffValue) String() string {
+	switch e {
+	case DisableBackoffDisable:
+		return "DisableBackoffDisable"
+	case DisableBackoffEnable:
+		return "DisableBackoffEnable"
+	default:
+		return fmt.Sprintf("DisableBackoffValue(%d)", int64(e))
+	}
+}
+
+// DisableRemovableDriveIndexingValue — allowed values for the DisableRemovableDriveIndexing node.
+type DisableRemovableDriveIndexingValue int64
+
 const (
 	// Disable.
-	DisableRemovableDriveIndexingDisable int64 = 0
+	DisableRemovableDriveIndexingDisable DisableRemovableDriveIndexingValue = 0
 	// Enable.
-	DisableRemovableDriveIndexingEnable int64 = 1
+	DisableRemovableDriveIndexingEnable DisableRemovableDriveIndexingValue = 1
 )
 
-// DisableSearch allowed values.
+// String returns the DisableRemovableDriveIndexingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableRemovableDriveIndexingValue) String() string {
+	switch e {
+	case DisableRemovableDriveIndexingDisable:
+		return "DisableRemovableDriveIndexingDisable"
+	case DisableRemovableDriveIndexingEnable:
+		return "DisableRemovableDriveIndexingEnable"
+	default:
+		return fmt.Sprintf("DisableRemovableDriveIndexingValue(%d)", int64(e))
+	}
+}
+
+// DisableSearchValue — allowed values for the DisableSearch node.
+type DisableSearchValue int64
+
 const (
 	// Do not disable.
-	DisableSearchDoNotDisable int64 = 0
+	DisableSearchDoNotDisable DisableSearchValue = 0
 	// Disable.
-	DisableSearchDisable int64 = 1
+	DisableSearchDisable DisableSearchValue = 1
 )
 
-// DoNotUseWebResults allowed values.
+// String returns the DisableSearchValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableSearchValue) String() string {
+	switch e {
+	case DisableSearchDoNotDisable:
+		return "DisableSearchDoNotDisable"
+	case DisableSearchDisable:
+		return "DisableSearchDisable"
+	default:
+		return fmt.Sprintf("DisableSearchValue(%d)", int64(e))
+	}
+}
+
+// DoNotUseWebResultsValue — allowed values for the DoNotUseWebResults node.
+type DoNotUseWebResultsValue int64
+
 const (
 	// Not allowed. Queries won't be performed on the web and web results won't be displayed when a
 	// user performs a query in Search.
-	DoNotUseWebResultsNotAllowed int64 = 0
+	DoNotUseWebResultsNotAllowed DoNotUseWebResultsValue = 0
 	// Allowed. Queries will be performed on the web and web results will be displayed when a user
 	// performs a query in Search.
-	DoNotUseWebResultsAllowed int64 = 1
+	DoNotUseWebResultsAllowed DoNotUseWebResultsValue = 1
 )
 
-// PreventIndexingLowDiskSpaceMB allowed values.
+// String returns the DoNotUseWebResultsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DoNotUseWebResultsValue) String() string {
+	switch e {
+	case DoNotUseWebResultsNotAllowed:
+		return "DoNotUseWebResultsNotAllowed"
+	case DoNotUseWebResultsAllowed:
+		return "DoNotUseWebResultsAllowed"
+	default:
+		return fmt.Sprintf("DoNotUseWebResultsValue(%d)", int64(e))
+	}
+}
+
+// PreventIndexingLowDiskSpaceMBValue — allowed values for the PreventIndexingLowDiskSpaceMB node.
+type PreventIndexingLowDiskSpaceMBValue int64
+
 const (
 	// Disable.
-	PreventIndexingLowDiskSpaceMBDisable int64 = 0
+	PreventIndexingLowDiskSpaceMBDisable PreventIndexingLowDiskSpaceMBValue = 0
 	// Enable.
-	PreventIndexingLowDiskSpaceMBEnable int64 = 1
+	PreventIndexingLowDiskSpaceMBEnable PreventIndexingLowDiskSpaceMBValue = 1
 )
 
-// PreventRemoteQueries allowed values.
+// String returns the PreventIndexingLowDiskSpaceMBValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PreventIndexingLowDiskSpaceMBValue) String() string {
+	switch e {
+	case PreventIndexingLowDiskSpaceMBDisable:
+		return "PreventIndexingLowDiskSpaceMBDisable"
+	case PreventIndexingLowDiskSpaceMBEnable:
+		return "PreventIndexingLowDiskSpaceMBEnable"
+	default:
+		return fmt.Sprintf("PreventIndexingLowDiskSpaceMBValue(%d)", int64(e))
+	}
+}
+
+// PreventRemoteQueriesValue — allowed values for the PreventRemoteQueries node.
+type PreventRemoteQueriesValue int64
+
 const (
 	// Disable.
-	PreventRemoteQueriesDisable int64 = 0
+	PreventRemoteQueriesDisable PreventRemoteQueriesValue = 0
 	// Enable.
-	PreventRemoteQueriesEnable int64 = 1
+	PreventRemoteQueriesEnable PreventRemoteQueriesValue = 1
 )
 
-// SafeSearchPermissions allowed values.
+// String returns the PreventRemoteQueriesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PreventRemoteQueriesValue) String() string {
+	switch e {
+	case PreventRemoteQueriesDisable:
+		return "PreventRemoteQueriesDisable"
+	case PreventRemoteQueriesEnable:
+		return "PreventRemoteQueriesEnable"
+	default:
+		return fmt.Sprintf("PreventRemoteQueriesValue(%d)", int64(e))
+	}
+}
+
+// SafeSearchPermissionsValue — allowed values for the SafeSearchPermissions node.
+type SafeSearchPermissionsValue int64
+
 const (
 	// Enable
-	SafeSearchPermissionsEnable int64 = 1
+	SafeSearchPermissionsEnable SafeSearchPermissionsValue = 1
 	// Disable
-	SafeSearchPermissionsDisable int64 = 0
+	SafeSearchPermissionsDisable SafeSearchPermissionsValue = 0
 )
+
+// String returns the SafeSearchPermissionsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SafeSearchPermissionsValue) String() string {
+	switch e {
+	case SafeSearchPermissionsEnable:
+		return "SafeSearchPermissionsEnable"
+	case SafeSearchPermissionsDisable:
+		return "SafeSearchPermissionsDisable"
+	default:
+		return fmt.Sprintf("SafeSearchPermissionsValue(%d)", int64(e))
+	}
+}

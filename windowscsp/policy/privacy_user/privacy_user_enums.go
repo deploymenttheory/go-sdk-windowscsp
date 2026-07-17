@@ -2,12 +2,31 @@
 
 package privacy_user
 
-// DisablePrivacyExperience allowed values.
+import (
+	"fmt"
+)
+
+// DisablePrivacyExperienceValue — allowed values for the DisablePrivacyExperience node.
+type DisablePrivacyExperienceValue int64
+
 const (
 	// Allow the 'choose privacy settings for your device' screen for a new user during their first
 	// logon or when an existing user logs in for the first time after an upgrade.
-	DisablePrivacyExperienceAllowTheChoosePrivacySettingsFor int64 = 0
+	DisablePrivacyExperienceAllowTheChoosePrivacySettingsFor DisablePrivacyExperienceValue = 0
 	// Do not allow the 'choose privacy settings for your device' screen when a new user logs in or an
 	// existing user logs in for the first time after an upgrade.
-	DisablePrivacyExperienceDoNotAllowTheChoosePrivacy int64 = 1
+	DisablePrivacyExperienceDoNotAllowTheChoosePrivacy DisablePrivacyExperienceValue = 1
 )
+
+// String returns the DisablePrivacyExperienceValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisablePrivacyExperienceValue) String() string {
+	switch e {
+	case DisablePrivacyExperienceAllowTheChoosePrivacySettingsFor:
+		return "DisablePrivacyExperienceAllowTheChoosePrivacySettingsFor"
+	case DisablePrivacyExperienceDoNotAllowTheChoosePrivacy:
+		return "DisablePrivacyExperienceDoNotAllowTheChoosePrivacy"
+	default:
+		return fmt.Sprintf("DisablePrivacyExperienceValue(%d)", int64(e))
+	}
+}

@@ -2,35 +2,99 @@
 
 package windowslicensing
 
-// DeviceLicensingServiceLicenseType allowed values.
-const (
-	// User Based Subscription
-	DeviceLicensingServiceLicenseTypeUserBasedSubscription int64 = 0
-	// Device Based Subscription
-	DeviceLicensingServiceLicenseTypeDeviceBasedSubscription int64 = 1
+import (
+	"fmt"
 )
 
-// SModeSwitchingPolicy allowed values.
+// DeviceLicensingServiceLicenseTypeValue — allowed values for the LicenseType node.
+type DeviceLicensingServiceLicenseTypeValue int64
+
+const (
+	// User Based Subscription
+	DeviceLicensingServiceLicenseTypeUserBasedSubscription DeviceLicensingServiceLicenseTypeValue = 0
+	// Device Based Subscription
+	DeviceLicensingServiceLicenseTypeDeviceBasedSubscription DeviceLicensingServiceLicenseTypeValue = 1
+)
+
+// String returns the DeviceLicensingServiceLicenseTypeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DeviceLicensingServiceLicenseTypeValue) String() string {
+	switch e {
+	case DeviceLicensingServiceLicenseTypeUserBasedSubscription:
+		return "DeviceLicensingServiceLicenseTypeUserBasedSubscription"
+	case DeviceLicensingServiceLicenseTypeDeviceBasedSubscription:
+		return "DeviceLicensingServiceLicenseTypeDeviceBasedSubscription"
+	default:
+		return fmt.Sprintf("DeviceLicensingServiceLicenseTypeValue(%d)", int64(e))
+	}
+}
+
+// SModeSwitchingPolicyValue — allowed values for the SwitchingPolicy node.
+type SModeSwitchingPolicyValue int64
+
 const (
 	// No Restriction: The user is allowed to switch the device out of S mode.
-	SModeSwitchingPolicyNoRestriction int64 = 0
+	SModeSwitchingPolicyNoRestriction SModeSwitchingPolicyValue = 0
 	// User Blocked: The admin has blocked the user from switching their device out of S mode. Only the
 	// admin can switch the device out of S mode through the SMode/SwitchFromSMode node.
-	SModeSwitchingPolicyUserBlocked int64 = 1
+	SModeSwitchingPolicyUserBlocked SModeSwitchingPolicyValue = 1
 )
 
-// SubscriptionsDisableSubscription allowed values.
+// String returns the SModeSwitchingPolicyValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SModeSwitchingPolicyValue) String() string {
+	switch e {
+	case SModeSwitchingPolicyNoRestriction:
+		return "SModeSwitchingPolicyNoRestriction"
+	case SModeSwitchingPolicyUserBlocked:
+		return "SModeSwitchingPolicyUserBlocked"
+	default:
+		return fmt.Sprintf("SModeSwitchingPolicyValue(%d)", int64(e))
+	}
+}
+
+// SubscriptionsDisableSubscriptionValue — allowed values for the DisableSubscription node.
+type SubscriptionsDisableSubscriptionValue int64
+
 const (
 	// Enable Subscription
-	SubscriptionsDisableSubscriptionEnableSubscription int64 = 0
+	SubscriptionsDisableSubscriptionEnableSubscription SubscriptionsDisableSubscriptionValue = 0
 	// Disable Subscription. It also removes any existing subscription on the device.
-	SubscriptionsDisableSubscriptionDisableSubscription int64 = 1
+	SubscriptionsDisableSubscriptionDisableSubscription SubscriptionsDisableSubscriptionValue = 1
 )
 
-// SubscriptionsSubscriptionType allowed values.
+// String returns the SubscriptionsDisableSubscriptionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SubscriptionsDisableSubscriptionValue) String() string {
+	switch e {
+	case SubscriptionsDisableSubscriptionEnableSubscription:
+		return "SubscriptionsDisableSubscriptionEnableSubscription"
+	case SubscriptionsDisableSubscriptionDisableSubscription:
+		return "SubscriptionsDisableSubscriptionDisableSubscription"
+	default:
+		return fmt.Sprintf("SubscriptionsDisableSubscriptionValue(%d)", int64(e))
+	}
+}
+
+// SubscriptionsSubscriptionTypeValue — allowed values for the SubscriptionType node.
+type SubscriptionsSubscriptionTypeValue int64
+
 const (
 	// User Based Subscription
-	SubscriptionsSubscriptionTypeUserBasedSubscription int64 = 0
+	SubscriptionsSubscriptionTypeUserBasedSubscription SubscriptionsSubscriptionTypeValue = 0
 	// Device Based Subscription
-	SubscriptionsSubscriptionTypeDeviceBasedSubscription int64 = 1
+	SubscriptionsSubscriptionTypeDeviceBasedSubscription SubscriptionsSubscriptionTypeValue = 1
 )
+
+// String returns the SubscriptionsSubscriptionTypeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SubscriptionsSubscriptionTypeValue) String() string {
+	switch e {
+	case SubscriptionsSubscriptionTypeUserBasedSubscription:
+		return "SubscriptionsSubscriptionTypeUserBasedSubscription"
+	case SubscriptionsSubscriptionTypeDeviceBasedSubscription:
+		return "SubscriptionsSubscriptionTypeDeviceBasedSubscription"
+	default:
+		return fmt.Sprintf("SubscriptionsSubscriptionTypeValue(%d)", int64(e))
+	}
+}

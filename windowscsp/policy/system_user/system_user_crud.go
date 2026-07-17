@@ -32,12 +32,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *SystemUser) GetAllowTelemetry(ctx context.Context) (int64, error) {
+func (s *SystemUser) GetAllowTelemetry(ctx context.Context) (AllowTelemetryValue, error) {
 	v, err := s.c.Get(ctx, URIAllowTelemetry)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowTelemetryValue(n), err
 }
 
 // CreateAllowTelemetry creates ./User/Vendor/MSFT/Policy/Config/System/AllowTelemetry.
@@ -64,8 +65,8 @@ func (s *SystemUser) GetAllowTelemetry(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *SystemUser) CreateAllowTelemetry(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowTelemetry, client.Int(value))
+func (s *SystemUser) CreateAllowTelemetry(ctx context.Context, value AllowTelemetryValue) error {
+	return s.c.Add(ctx, URIAllowTelemetry, client.Int(int64(value)))
 }
 
 // UpdateAllowTelemetry updates ./User/Vendor/MSFT/Policy/Config/System/AllowTelemetry.
@@ -92,8 +93,8 @@ func (s *SystemUser) CreateAllowTelemetry(ctx context.Context, value int64) erro
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *SystemUser) UpdateAllowTelemetry(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowTelemetry, client.Int(value))
+func (s *SystemUser) UpdateAllowTelemetry(ctx context.Context, value AllowTelemetryValue) error {
+	return s.c.Replace(ctx, URIAllowTelemetry, client.Int(int64(value)))
 }
 
 // DeleteAllowTelemetry deletes ./User/Vendor/MSFT/Policy/Config/System/AllowTelemetry.

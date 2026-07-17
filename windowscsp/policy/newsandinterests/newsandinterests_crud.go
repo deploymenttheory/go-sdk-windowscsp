@@ -13,12 +13,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *NewsAndInterests) GetAllowNewsAndInterests(ctx context.Context) (int64, error) {
+func (s *NewsAndInterests) GetAllowNewsAndInterests(ctx context.Context) (AllowNewsAndInterestsValue, error) {
 	v, err := s.c.Get(ctx, URIAllowNewsAndInterests)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowNewsAndInterestsValue(n), err
 }
 
 // CreateAllowNewsAndInterests creates ./Device/Vendor/MSFT/Policy/Config/NewsAndInterests/AllowNewsAndInterests.
@@ -26,8 +27,8 @@ func (s *NewsAndInterests) GetAllowNewsAndInterests(ctx context.Context) (int64,
 //
 // Default: 1.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *NewsAndInterests) CreateAllowNewsAndInterests(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowNewsAndInterests, client.Int(value))
+func (s *NewsAndInterests) CreateAllowNewsAndInterests(ctx context.Context, value AllowNewsAndInterestsValue) error {
+	return s.c.Add(ctx, URIAllowNewsAndInterests, client.Int(int64(value)))
 }
 
 // UpdateAllowNewsAndInterests updates ./Device/Vendor/MSFT/Policy/Config/NewsAndInterests/AllowNewsAndInterests.
@@ -35,8 +36,8 @@ func (s *NewsAndInterests) CreateAllowNewsAndInterests(ctx context.Context, valu
 //
 // Default: 1.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *NewsAndInterests) UpdateAllowNewsAndInterests(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowNewsAndInterests, client.Int(value))
+func (s *NewsAndInterests) UpdateAllowNewsAndInterests(ctx context.Context, value AllowNewsAndInterestsValue) error {
+	return s.c.Replace(ctx, URIAllowNewsAndInterests, client.Int(int64(value)))
 }
 
 // DeleteAllowNewsAndInterests deletes ./Device/Vendor/MSFT/Policy/Config/NewsAndInterests/AllowNewsAndInterests.
@@ -53,12 +54,13 @@ func (s *NewsAndInterests) DeleteAllowNewsAndInterests(ctx context.Context) erro
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *NewsAndInterests) GetDisableWidgetsBoard(ctx context.Context) (int64, error) {
+func (s *NewsAndInterests) GetDisableWidgetsBoard(ctx context.Context) (DisableWidgetsBoardValue, error) {
 	v, err := s.c.Get(ctx, URIDisableWidgetsBoard)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableWidgetsBoardValue(n), err
 }
 
 // CreateDisableWidgetsBoard creates ./Device/Vendor/MSFT/Policy/Config/NewsAndInterests/DisableWidgetsBoard.
@@ -66,8 +68,8 @@ func (s *NewsAndInterests) GetDisableWidgetsBoard(ctx context.Context) (int64, e
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *NewsAndInterests) CreateDisableWidgetsBoard(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableWidgetsBoard, client.Int(value))
+func (s *NewsAndInterests) CreateDisableWidgetsBoard(ctx context.Context, value DisableWidgetsBoardValue) error {
+	return s.c.Add(ctx, URIDisableWidgetsBoard, client.Int(int64(value)))
 }
 
 // UpdateDisableWidgetsBoard updates ./Device/Vendor/MSFT/Policy/Config/NewsAndInterests/DisableWidgetsBoard.
@@ -75,8 +77,8 @@ func (s *NewsAndInterests) CreateDisableWidgetsBoard(ctx context.Context, value 
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *NewsAndInterests) UpdateDisableWidgetsBoard(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableWidgetsBoard, client.Int(value))
+func (s *NewsAndInterests) UpdateDisableWidgetsBoard(ctx context.Context, value DisableWidgetsBoardValue) error {
+	return s.c.Replace(ctx, URIDisableWidgetsBoard, client.Int(int64(value)))
 }
 
 // DeleteDisableWidgetsBoard deletes ./Device/Vendor/MSFT/Policy/Config/NewsAndInterests/DisableWidgetsBoard.
@@ -93,12 +95,13 @@ func (s *NewsAndInterests) DeleteDisableWidgetsBoard(ctx context.Context) error 
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *NewsAndInterests) GetDisableWidgetsOnLockScreen(ctx context.Context) (int64, error) {
+func (s *NewsAndInterests) GetDisableWidgetsOnLockScreen(ctx context.Context) (DisableWidgetsOnLockScreenValue, error) {
 	v, err := s.c.Get(ctx, URIDisableWidgetsOnLockScreen)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableWidgetsOnLockScreenValue(n), err
 }
 
 // CreateDisableWidgetsOnLockScreen creates ./Device/Vendor/MSFT/Policy/Config/NewsAndInterests/DisableWidgetsOnLockScreen.
@@ -106,8 +109,8 @@ func (s *NewsAndInterests) GetDisableWidgetsOnLockScreen(ctx context.Context) (i
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *NewsAndInterests) CreateDisableWidgetsOnLockScreen(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableWidgetsOnLockScreen, client.Int(value))
+func (s *NewsAndInterests) CreateDisableWidgetsOnLockScreen(ctx context.Context, value DisableWidgetsOnLockScreenValue) error {
+	return s.c.Add(ctx, URIDisableWidgetsOnLockScreen, client.Int(int64(value)))
 }
 
 // UpdateDisableWidgetsOnLockScreen updates ./Device/Vendor/MSFT/Policy/Config/NewsAndInterests/DisableWidgetsOnLockScreen.
@@ -115,8 +118,8 @@ func (s *NewsAndInterests) CreateDisableWidgetsOnLockScreen(ctx context.Context,
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *NewsAndInterests) UpdateDisableWidgetsOnLockScreen(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableWidgetsOnLockScreen, client.Int(value))
+func (s *NewsAndInterests) UpdateDisableWidgetsOnLockScreen(ctx context.Context, value DisableWidgetsOnLockScreenValue) error {
+	return s.c.Replace(ctx, URIDisableWidgetsOnLockScreen, client.Int(int64(value)))
 }
 
 // DeleteDisableWidgetsOnLockScreen deletes ./Device/Vendor/MSFT/Policy/Config/NewsAndInterests/DisableWidgetsOnLockScreen.

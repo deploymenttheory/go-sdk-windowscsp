@@ -2,78 +2,214 @@
 
 package lanmanworkstation
 
-// AuditInsecureGuestLogon allowed values.
-const (
-	// Disabled
-	AuditInsecureGuestLogonDisabled int64 = 0
-	// Enabled
-	AuditInsecureGuestLogonEnabled int64 = 1
+import (
+	"fmt"
 )
 
-// AuditServerDoesNotSupportEncryption allowed values.
+// AuditInsecureGuestLogonValue — allowed values for the AuditInsecureGuestLogon node.
+type AuditInsecureGuestLogonValue int64
+
 const (
 	// Disabled
-	AuditServerDoesNotSupportEncryptionDisabled int64 = 0
+	AuditInsecureGuestLogonDisabled AuditInsecureGuestLogonValue = 0
 	// Enabled
-	AuditServerDoesNotSupportEncryptionEnabled int64 = 1
+	AuditInsecureGuestLogonEnabled AuditInsecureGuestLogonValue = 1
 )
 
-// AuditServerDoesNotSupportSigning allowed values.
+// String returns the AuditInsecureGuestLogonValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AuditInsecureGuestLogonValue) String() string {
+	switch e {
+	case AuditInsecureGuestLogonDisabled:
+		return "AuditInsecureGuestLogonDisabled"
+	case AuditInsecureGuestLogonEnabled:
+		return "AuditInsecureGuestLogonEnabled"
+	default:
+		return fmt.Sprintf("AuditInsecureGuestLogonValue(%d)", int64(e))
+	}
+}
+
+// AuditServerDoesNotSupportEncryptionValue — allowed values for the AuditServerDoesNotSupportEncryption node.
+type AuditServerDoesNotSupportEncryptionValue int64
+
 const (
 	// Disabled
-	AuditServerDoesNotSupportSigningDisabled int64 = 0
+	AuditServerDoesNotSupportEncryptionDisabled AuditServerDoesNotSupportEncryptionValue = 0
 	// Enabled
-	AuditServerDoesNotSupportSigningEnabled int64 = 1
+	AuditServerDoesNotSupportEncryptionEnabled AuditServerDoesNotSupportEncryptionValue = 1
 )
 
-// EnableInsecureGuestLogons allowed values.
+// String returns the AuditServerDoesNotSupportEncryptionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AuditServerDoesNotSupportEncryptionValue) String() string {
+	switch e {
+	case AuditServerDoesNotSupportEncryptionDisabled:
+		return "AuditServerDoesNotSupportEncryptionDisabled"
+	case AuditServerDoesNotSupportEncryptionEnabled:
+		return "AuditServerDoesNotSupportEncryptionEnabled"
+	default:
+		return fmt.Sprintf("AuditServerDoesNotSupportEncryptionValue(%d)", int64(e))
+	}
+}
+
+// AuditServerDoesNotSupportSigningValue — allowed values for the AuditServerDoesNotSupportSigning node.
+type AuditServerDoesNotSupportSigningValue int64
+
 const (
 	// Disabled
-	EnableInsecureGuestLogonsDisabled int64 = 0
+	AuditServerDoesNotSupportSigningDisabled AuditServerDoesNotSupportSigningValue = 0
 	// Enabled
-	EnableInsecureGuestLogonsEnabled int64 = 1
+	AuditServerDoesNotSupportSigningEnabled AuditServerDoesNotSupportSigningValue = 1
 )
 
-// EnableMailslots allowed values.
+// String returns the AuditServerDoesNotSupportSigningValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AuditServerDoesNotSupportSigningValue) String() string {
+	switch e {
+	case AuditServerDoesNotSupportSigningDisabled:
+		return "AuditServerDoesNotSupportSigningDisabled"
+	case AuditServerDoesNotSupportSigningEnabled:
+		return "AuditServerDoesNotSupportSigningEnabled"
+	default:
+		return fmt.Sprintf("AuditServerDoesNotSupportSigningValue(%d)", int64(e))
+	}
+}
+
+// EnableInsecureGuestLogonsValue — allowed values for the EnableInsecureGuestLogons node.
+type EnableInsecureGuestLogonsValue int64
+
 const (
 	// Disabled
-	EnableMailslotsDisabled int64 = 0
+	EnableInsecureGuestLogonsDisabled EnableInsecureGuestLogonsValue = 0
 	// Enabled
-	EnableMailslotsEnabled int64 = 1
+	EnableInsecureGuestLogonsEnabled EnableInsecureGuestLogonsValue = 1
 )
 
-// MaxSmb2Dialect allowed values.
+// String returns the EnableInsecureGuestLogonsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableInsecureGuestLogonsValue) String() string {
+	switch e {
+	case EnableInsecureGuestLogonsDisabled:
+		return "EnableInsecureGuestLogonsDisabled"
+	case EnableInsecureGuestLogonsEnabled:
+		return "EnableInsecureGuestLogonsEnabled"
+	default:
+		return fmt.Sprintf("EnableInsecureGuestLogonsValue(%d)", int64(e))
+	}
+}
+
+// EnableMailslotsValue — allowed values for the EnableMailslots node.
+type EnableMailslotsValue int64
+
+const (
+	// Disabled
+	EnableMailslotsDisabled EnableMailslotsValue = 0
+	// Enabled
+	EnableMailslotsEnabled EnableMailslotsValue = 1
+)
+
+// String returns the EnableMailslotsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableMailslotsValue) String() string {
+	switch e {
+	case EnableMailslotsDisabled:
+		return "EnableMailslotsDisabled"
+	case EnableMailslotsEnabled:
+		return "EnableMailslotsEnabled"
+	default:
+		return fmt.Sprintf("EnableMailslotsValue(%d)", int64(e))
+	}
+}
+
+// MaxSmb2DialectValue — allowed values for the MaxSmb2Dialect node.
+type MaxSmb2DialectValue int64
+
 const (
 	// SMB 2.0.2
-	MaxSmb2DialectSMB2 int64 = 514
+	MaxSmb2DialectSMB2 MaxSmb2DialectValue = 514
 	// SMB 2.1.0
-	MaxSmb2DialectSMB22 int64 = 528
+	MaxSmb2DialectSMB22 MaxSmb2DialectValue = 528
 	// SMB 3.0.0
-	MaxSmb2DialectSMB3 int64 = 768
+	MaxSmb2DialectSMB3 MaxSmb2DialectValue = 768
 	// SMB 3.0.2
-	MaxSmb2DialectSMB32 int64 = 770
+	MaxSmb2DialectSMB32 MaxSmb2DialectValue = 770
 	// SMB 3.1.1
-	MaxSmb2DialectSMB33 int64 = 785
+	MaxSmb2DialectSMB33 MaxSmb2DialectValue = 785
 )
 
-// MinSmb2Dialect allowed values.
+// String returns the MaxSmb2DialectValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MaxSmb2DialectValue) String() string {
+	switch e {
+	case MaxSmb2DialectSMB2:
+		return "MaxSmb2DialectSMB2"
+	case MaxSmb2DialectSMB22:
+		return "MaxSmb2DialectSMB22"
+	case MaxSmb2DialectSMB3:
+		return "MaxSmb2DialectSMB3"
+	case MaxSmb2DialectSMB32:
+		return "MaxSmb2DialectSMB32"
+	case MaxSmb2DialectSMB33:
+		return "MaxSmb2DialectSMB33"
+	default:
+		return fmt.Sprintf("MaxSmb2DialectValue(%d)", int64(e))
+	}
+}
+
+// MinSmb2DialectValue — allowed values for the MinSmb2Dialect node.
+type MinSmb2DialectValue int64
+
 const (
 	// SMB 2.0.2
-	MinSmb2DialectSMB2 int64 = 514
+	MinSmb2DialectSMB2 MinSmb2DialectValue = 514
 	// SMB 2.1.0
-	MinSmb2DialectSMB22 int64 = 528
+	MinSmb2DialectSMB22 MinSmb2DialectValue = 528
 	// SMB 3.0.0
-	MinSmb2DialectSMB3 int64 = 768
+	MinSmb2DialectSMB3 MinSmb2DialectValue = 768
 	// SMB 3.0.2
-	MinSmb2DialectSMB32 int64 = 770
+	MinSmb2DialectSMB32 MinSmb2DialectValue = 770
 	// SMB 3.1.1
-	MinSmb2DialectSMB33 int64 = 785
+	MinSmb2DialectSMB33 MinSmb2DialectValue = 785
 )
 
-// RequireEncryption allowed values.
+// String returns the MinSmb2DialectValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MinSmb2DialectValue) String() string {
+	switch e {
+	case MinSmb2DialectSMB2:
+		return "MinSmb2DialectSMB2"
+	case MinSmb2DialectSMB22:
+		return "MinSmb2DialectSMB22"
+	case MinSmb2DialectSMB3:
+		return "MinSmb2DialectSMB3"
+	case MinSmb2DialectSMB32:
+		return "MinSmb2DialectSMB32"
+	case MinSmb2DialectSMB33:
+		return "MinSmb2DialectSMB33"
+	default:
+		return fmt.Sprintf("MinSmb2DialectValue(%d)", int64(e))
+	}
+}
+
+// RequireEncryptionValue — allowed values for the RequireEncryption node.
+type RequireEncryptionValue int64
+
 const (
 	// Disabled
-	RequireEncryptionDisabled int64 = 0
+	RequireEncryptionDisabled RequireEncryptionValue = 0
 	// Enabled
-	RequireEncryptionEnabled int64 = 1
+	RequireEncryptionEnabled RequireEncryptionValue = 1
 )
+
+// String returns the RequireEncryptionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e RequireEncryptionValue) String() string {
+	switch e {
+	case RequireEncryptionDisabled:
+		return "RequireEncryptionDisabled"
+	case RequireEncryptionEnabled:
+		return "RequireEncryptionEnabled"
+	default:
+		return fmt.Sprintf("RequireEncryptionValue(%d)", int64(e))
+	}
+}

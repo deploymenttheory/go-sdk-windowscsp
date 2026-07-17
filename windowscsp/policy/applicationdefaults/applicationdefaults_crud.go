@@ -73,12 +73,13 @@ func (s *ApplicationDefaults) DeleteDefaultAssociationsConfiguration(ctx context
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *ApplicationDefaults) GetEnableAppUriHandlers(ctx context.Context) (int64, error) {
+func (s *ApplicationDefaults) GetEnableAppUriHandlers(ctx context.Context) (EnableAppUriHandlersValue, error) {
 	v, err := s.c.Get(ctx, URIEnableAppUriHandlers)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableAppUriHandlersValue(n), err
 }
 
 // CreateEnableAppUriHandlers creates ./Device/Vendor/MSFT/Policy/Config/ApplicationDefaults/EnableAppUriHandlers.
@@ -86,8 +87,8 @@ func (s *ApplicationDefaults) GetEnableAppUriHandlers(ctx context.Context) (int6
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *ApplicationDefaults) CreateEnableAppUriHandlers(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableAppUriHandlers, client.Int(value))
+func (s *ApplicationDefaults) CreateEnableAppUriHandlers(ctx context.Context, value EnableAppUriHandlersValue) error {
+	return s.c.Add(ctx, URIEnableAppUriHandlers, client.Int(int64(value)))
 }
 
 // UpdateEnableAppUriHandlers updates ./Device/Vendor/MSFT/Policy/Config/ApplicationDefaults/EnableAppUriHandlers.
@@ -95,8 +96,8 @@ func (s *ApplicationDefaults) CreateEnableAppUriHandlers(ctx context.Context, va
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *ApplicationDefaults) UpdateEnableAppUriHandlers(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableAppUriHandlers, client.Int(value))
+func (s *ApplicationDefaults) UpdateEnableAppUriHandlers(ctx context.Context, value EnableAppUriHandlersValue) error {
+	return s.c.Replace(ctx, URIEnableAppUriHandlers, client.Int(int64(value)))
 }
 
 // DeleteEnableAppUriHandlers deletes ./Device/Vendor/MSFT/Policy/Config/ApplicationDefaults/EnableAppUriHandlers.

@@ -13,12 +13,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *TextInput) GetAllowHardwareKeyboardTextSuggestions(ctx context.Context) (int64, error) {
+func (s *TextInput) GetAllowHardwareKeyboardTextSuggestions(ctx context.Context) (AllowHardwareKeyboardTextSuggestionsValue, error) {
 	v, err := s.c.Get(ctx, URIAllowHardwareKeyboardTextSuggestions)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowHardwareKeyboardTextSuggestionsValue(n), err
 }
 
 // CreateAllowHardwareKeyboardTextSuggestions creates ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowHardwareKeyboardTextSuggestions.
@@ -26,8 +27,8 @@ func (s *TextInput) GetAllowHardwareKeyboardTextSuggestions(ctx context.Context)
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *TextInput) CreateAllowHardwareKeyboardTextSuggestions(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowHardwareKeyboardTextSuggestions, client.Int(value))
+func (s *TextInput) CreateAllowHardwareKeyboardTextSuggestions(ctx context.Context, value AllowHardwareKeyboardTextSuggestionsValue) error {
+	return s.c.Add(ctx, URIAllowHardwareKeyboardTextSuggestions, client.Int(int64(value)))
 }
 
 // UpdateAllowHardwareKeyboardTextSuggestions updates ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowHardwareKeyboardTextSuggestions.
@@ -35,8 +36,8 @@ func (s *TextInput) CreateAllowHardwareKeyboardTextSuggestions(ctx context.Conte
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *TextInput) UpdateAllowHardwareKeyboardTextSuggestions(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowHardwareKeyboardTextSuggestions, client.Int(value))
+func (s *TextInput) UpdateAllowHardwareKeyboardTextSuggestions(ctx context.Context, value AllowHardwareKeyboardTextSuggestionsValue) error {
+	return s.c.Replace(ctx, URIAllowHardwareKeyboardTextSuggestions, client.Int(int64(value)))
 }
 
 // DeleteAllowHardwareKeyboardTextSuggestions deletes ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowHardwareKeyboardTextSuggestions.
@@ -55,12 +56,13 @@ func (s *TextInput) DeleteAllowHardwareKeyboardTextSuggestions(ctx context.Conte
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *TextInput) GetAllowIMELogging(ctx context.Context) (int64, error) {
+func (s *TextInput) GetAllowIMELogging(ctx context.Context) (AllowIMELoggingValue, error) {
 	v, err := s.c.Get(ctx, URIAllowIMELogging)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowIMELoggingValue(n), err
 }
 
 // CreateAllowIMELogging creates ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowIMELogging.
@@ -70,8 +72,8 @@ func (s *TextInput) GetAllowIMELogging(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *TextInput) CreateAllowIMELogging(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowIMELogging, client.Int(value))
+func (s *TextInput) CreateAllowIMELogging(ctx context.Context, value AllowIMELoggingValue) error {
+	return s.c.Add(ctx, URIAllowIMELogging, client.Int(int64(value)))
 }
 
 // UpdateAllowIMELogging updates ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowIMELogging.
@@ -81,8 +83,8 @@ func (s *TextInput) CreateAllowIMELogging(ctx context.Context, value int64) erro
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *TextInput) UpdateAllowIMELogging(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowIMELogging, client.Int(value))
+func (s *TextInput) UpdateAllowIMELogging(ctx context.Context, value AllowIMELoggingValue) error {
+	return s.c.Replace(ctx, URIAllowIMELogging, client.Int(int64(value)))
 }
 
 // DeleteAllowIMELogging deletes ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowIMELogging.
@@ -105,12 +107,13 @@ func (s *TextInput) DeleteAllowIMELogging(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *TextInput) GetAllowIMENetworkAccess(ctx context.Context) (int64, error) {
+func (s *TextInput) GetAllowIMENetworkAccess(ctx context.Context) (AllowIMENetworkAccessValue, error) {
 	v, err := s.c.Get(ctx, URIAllowIMENetworkAccess)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowIMENetworkAccessValue(n), err
 }
 
 // CreateAllowIMENetworkAccess creates ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowIMENetworkAccess.
@@ -122,8 +125,8 @@ func (s *TextInput) GetAllowIMENetworkAccess(ctx context.Context) (int64, error)
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *TextInput) CreateAllowIMENetworkAccess(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowIMENetworkAccess, client.Int(value))
+func (s *TextInput) CreateAllowIMENetworkAccess(ctx context.Context, value AllowIMENetworkAccessValue) error {
+	return s.c.Add(ctx, URIAllowIMENetworkAccess, client.Int(int64(value)))
 }
 
 // UpdateAllowIMENetworkAccess updates ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowIMENetworkAccess.
@@ -135,8 +138,8 @@ func (s *TextInput) CreateAllowIMENetworkAccess(ctx context.Context, value int64
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *TextInput) UpdateAllowIMENetworkAccess(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowIMENetworkAccess, client.Int(value))
+func (s *TextInput) UpdateAllowIMENetworkAccess(ctx context.Context, value AllowIMENetworkAccessValue) error {
+	return s.c.Replace(ctx, URIAllowIMENetworkAccess, client.Int(int64(value)))
 }
 
 // DeleteAllowIMENetworkAccess deletes ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowIMENetworkAccess.
@@ -158,12 +161,13 @@ func (s *TextInput) DeleteAllowIMENetworkAccess(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *TextInput) GetAllowInputPanel(ctx context.Context) (int64, error) {
+func (s *TextInput) GetAllowInputPanel(ctx context.Context) (AllowInputPanelValue, error) {
 	v, err := s.c.Get(ctx, URIAllowInputPanel)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowInputPanelValue(n), err
 }
 
 // CreateAllowInputPanel creates ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowInputPanel.
@@ -172,8 +176,8 @@ func (s *TextInput) GetAllowInputPanel(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *TextInput) CreateAllowInputPanel(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowInputPanel, client.Int(value))
+func (s *TextInput) CreateAllowInputPanel(ctx context.Context, value AllowInputPanelValue) error {
+	return s.c.Add(ctx, URIAllowInputPanel, client.Int(int64(value)))
 }
 
 // UpdateAllowInputPanel updates ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowInputPanel.
@@ -182,8 +186,8 @@ func (s *TextInput) CreateAllowInputPanel(ctx context.Context, value int64) erro
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *TextInput) UpdateAllowInputPanel(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowInputPanel, client.Int(value))
+func (s *TextInput) UpdateAllowInputPanel(ctx context.Context, value AllowInputPanelValue) error {
+	return s.c.Replace(ctx, URIAllowInputPanel, client.Int(int64(value)))
 }
 
 // DeleteAllowInputPanel deletes ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowInputPanel.
@@ -202,12 +206,13 @@ func (s *TextInput) DeleteAllowInputPanel(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *TextInput) GetAllowJapaneseIMESurrogatePairCharacters(ctx context.Context) (int64, error) {
+func (s *TextInput) GetAllowJapaneseIMESurrogatePairCharacters(ctx context.Context) (AllowJapaneseIMESurrogatePairCharactersValue, error) {
 	v, err := s.c.Get(ctx, URIAllowJapaneseIMESurrogatePairCharacters)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowJapaneseIMESurrogatePairCharactersValue(n), err
 }
 
 // CreateAllowJapaneseIMESurrogatePairCharacters creates ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowJapaneseIMESurrogatePairCharacters.
@@ -216,8 +221,8 @@ func (s *TextInput) GetAllowJapaneseIMESurrogatePairCharacters(ctx context.Conte
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *TextInput) CreateAllowJapaneseIMESurrogatePairCharacters(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowJapaneseIMESurrogatePairCharacters, client.Int(value))
+func (s *TextInput) CreateAllowJapaneseIMESurrogatePairCharacters(ctx context.Context, value AllowJapaneseIMESurrogatePairCharactersValue) error {
+	return s.c.Add(ctx, URIAllowJapaneseIMESurrogatePairCharacters, client.Int(int64(value)))
 }
 
 // UpdateAllowJapaneseIMESurrogatePairCharacters updates ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowJapaneseIMESurrogatePairCharacters.
@@ -226,8 +231,8 @@ func (s *TextInput) CreateAllowJapaneseIMESurrogatePairCharacters(ctx context.Co
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *TextInput) UpdateAllowJapaneseIMESurrogatePairCharacters(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowJapaneseIMESurrogatePairCharacters, client.Int(value))
+func (s *TextInput) UpdateAllowJapaneseIMESurrogatePairCharacters(ctx context.Context, value AllowJapaneseIMESurrogatePairCharactersValue) error {
+	return s.c.Replace(ctx, URIAllowJapaneseIMESurrogatePairCharacters, client.Int(int64(value)))
 }
 
 // DeleteAllowJapaneseIMESurrogatePairCharacters deletes ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowJapaneseIMESurrogatePairCharacters.
@@ -246,12 +251,13 @@ func (s *TextInput) DeleteAllowJapaneseIMESurrogatePairCharacters(ctx context.Co
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *TextInput) GetAllowJapaneseIVSCharacters(ctx context.Context) (int64, error) {
+func (s *TextInput) GetAllowJapaneseIVSCharacters(ctx context.Context) (AllowJapaneseIVSCharactersValue, error) {
 	v, err := s.c.Get(ctx, URIAllowJapaneseIVSCharacters)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowJapaneseIVSCharactersValue(n), err
 }
 
 // CreateAllowJapaneseIVSCharacters creates ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowJapaneseIVSCharacters.
@@ -260,8 +266,8 @@ func (s *TextInput) GetAllowJapaneseIVSCharacters(ctx context.Context) (int64, e
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *TextInput) CreateAllowJapaneseIVSCharacters(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowJapaneseIVSCharacters, client.Int(value))
+func (s *TextInput) CreateAllowJapaneseIVSCharacters(ctx context.Context, value AllowJapaneseIVSCharactersValue) error {
+	return s.c.Add(ctx, URIAllowJapaneseIVSCharacters, client.Int(int64(value)))
 }
 
 // UpdateAllowJapaneseIVSCharacters updates ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowJapaneseIVSCharacters.
@@ -270,8 +276,8 @@ func (s *TextInput) CreateAllowJapaneseIVSCharacters(ctx context.Context, value 
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *TextInput) UpdateAllowJapaneseIVSCharacters(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowJapaneseIVSCharacters, client.Int(value))
+func (s *TextInput) UpdateAllowJapaneseIVSCharacters(ctx context.Context, value AllowJapaneseIVSCharactersValue) error {
+	return s.c.Replace(ctx, URIAllowJapaneseIVSCharacters, client.Int(int64(value)))
 }
 
 // DeleteAllowJapaneseIVSCharacters deletes ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowJapaneseIVSCharacters.
@@ -290,12 +296,13 @@ func (s *TextInput) DeleteAllowJapaneseIVSCharacters(ctx context.Context) error 
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *TextInput) GetAllowJapaneseNonPublishingStandardGlyph(ctx context.Context) (int64, error) {
+func (s *TextInput) GetAllowJapaneseNonPublishingStandardGlyph(ctx context.Context) (AllowJapaneseNonPublishingStandardGlyphValue, error) {
 	v, err := s.c.Get(ctx, URIAllowJapaneseNonPublishingStandardGlyph)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowJapaneseNonPublishingStandardGlyphValue(n), err
 }
 
 // CreateAllowJapaneseNonPublishingStandardGlyph creates ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowJapaneseNonPublishingStandardGlyph.
@@ -304,8 +311,8 @@ func (s *TextInput) GetAllowJapaneseNonPublishingStandardGlyph(ctx context.Conte
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *TextInput) CreateAllowJapaneseNonPublishingStandardGlyph(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowJapaneseNonPublishingStandardGlyph, client.Int(value))
+func (s *TextInput) CreateAllowJapaneseNonPublishingStandardGlyph(ctx context.Context, value AllowJapaneseNonPublishingStandardGlyphValue) error {
+	return s.c.Add(ctx, URIAllowJapaneseNonPublishingStandardGlyph, client.Int(int64(value)))
 }
 
 // UpdateAllowJapaneseNonPublishingStandardGlyph updates ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowJapaneseNonPublishingStandardGlyph.
@@ -314,8 +321,8 @@ func (s *TextInput) CreateAllowJapaneseNonPublishingStandardGlyph(ctx context.Co
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *TextInput) UpdateAllowJapaneseNonPublishingStandardGlyph(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowJapaneseNonPublishingStandardGlyph, client.Int(value))
+func (s *TextInput) UpdateAllowJapaneseNonPublishingStandardGlyph(ctx context.Context, value AllowJapaneseNonPublishingStandardGlyphValue) error {
+	return s.c.Replace(ctx, URIAllowJapaneseNonPublishingStandardGlyph, client.Int(int64(value)))
 }
 
 // DeleteAllowJapaneseNonPublishingStandardGlyph deletes ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowJapaneseNonPublishingStandardGlyph.
@@ -334,12 +341,13 @@ func (s *TextInput) DeleteAllowJapaneseNonPublishingStandardGlyph(ctx context.Co
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *TextInput) GetAllowJapaneseUserDictionary(ctx context.Context) (int64, error) {
+func (s *TextInput) GetAllowJapaneseUserDictionary(ctx context.Context) (AllowJapaneseUserDictionaryValue, error) {
 	v, err := s.c.Get(ctx, URIAllowJapaneseUserDictionary)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowJapaneseUserDictionaryValue(n), err
 }
 
 // CreateAllowJapaneseUserDictionary creates ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowJapaneseUserDictionary.
@@ -348,8 +356,8 @@ func (s *TextInput) GetAllowJapaneseUserDictionary(ctx context.Context) (int64, 
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *TextInput) CreateAllowJapaneseUserDictionary(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowJapaneseUserDictionary, client.Int(value))
+func (s *TextInput) CreateAllowJapaneseUserDictionary(ctx context.Context, value AllowJapaneseUserDictionaryValue) error {
+	return s.c.Add(ctx, URIAllowJapaneseUserDictionary, client.Int(int64(value)))
 }
 
 // UpdateAllowJapaneseUserDictionary updates ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowJapaneseUserDictionary.
@@ -358,8 +366,8 @@ func (s *TextInput) CreateAllowJapaneseUserDictionary(ctx context.Context, value
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *TextInput) UpdateAllowJapaneseUserDictionary(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowJapaneseUserDictionary, client.Int(value))
+func (s *TextInput) UpdateAllowJapaneseUserDictionary(ctx context.Context, value AllowJapaneseUserDictionaryValue) error {
+	return s.c.Replace(ctx, URIAllowJapaneseUserDictionary, client.Int(int64(value)))
 }
 
 // DeleteAllowJapaneseUserDictionary deletes ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowJapaneseUserDictionary.
@@ -380,12 +388,13 @@ func (s *TextInput) DeleteAllowJapaneseUserDictionary(ctx context.Context) error
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *TextInput) GetAllowKeyboardTextSuggestions(ctx context.Context) (int64, error) {
+func (s *TextInput) GetAllowKeyboardTextSuggestions(ctx context.Context) (AllowKeyboardTextSuggestionsValue, error) {
 	v, err := s.c.Get(ctx, URIAllowKeyboardTextSuggestions)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowKeyboardTextSuggestionsValue(n), err
 }
 
 // CreateAllowKeyboardTextSuggestions creates ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowKeyboardTextSuggestions.
@@ -396,8 +405,8 @@ func (s *TextInput) GetAllowKeyboardTextSuggestions(ctx context.Context) (int64,
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *TextInput) CreateAllowKeyboardTextSuggestions(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowKeyboardTextSuggestions, client.Int(value))
+func (s *TextInput) CreateAllowKeyboardTextSuggestions(ctx context.Context, value AllowKeyboardTextSuggestionsValue) error {
+	return s.c.Add(ctx, URIAllowKeyboardTextSuggestions, client.Int(int64(value)))
 }
 
 // UpdateAllowKeyboardTextSuggestions updates ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowKeyboardTextSuggestions.
@@ -408,8 +417,8 @@ func (s *TextInput) CreateAllowKeyboardTextSuggestions(ctx context.Context, valu
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *TextInput) UpdateAllowKeyboardTextSuggestions(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowKeyboardTextSuggestions, client.Int(value))
+func (s *TextInput) UpdateAllowKeyboardTextSuggestions(ctx context.Context, value AllowKeyboardTextSuggestionsValue) error {
+	return s.c.Replace(ctx, URIAllowKeyboardTextSuggestions, client.Int(int64(value)))
 }
 
 // DeleteAllowKeyboardTextSuggestions deletes ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowKeyboardTextSuggestions.
@@ -430,12 +439,13 @@ func (s *TextInput) DeleteAllowKeyboardTextSuggestions(ctx context.Context) erro
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *TextInput) GetAllowLanguageFeaturesUninstall(ctx context.Context) (int64, error) {
+func (s *TextInput) GetAllowLanguageFeaturesUninstall(ctx context.Context) (AllowLanguageFeaturesUninstallValue, error) {
 	v, err := s.c.Get(ctx, URIAllowLanguageFeaturesUninstall)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowLanguageFeaturesUninstallValue(n), err
 }
 
 // CreateAllowLanguageFeaturesUninstall creates ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowLanguageFeaturesUninstall.
@@ -444,8 +454,8 @@ func (s *TextInput) GetAllowLanguageFeaturesUninstall(ctx context.Context) (int6
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *TextInput) CreateAllowLanguageFeaturesUninstall(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowLanguageFeaturesUninstall, client.Int(value))
+func (s *TextInput) CreateAllowLanguageFeaturesUninstall(ctx context.Context, value AllowLanguageFeaturesUninstallValue) error {
+	return s.c.Add(ctx, URIAllowLanguageFeaturesUninstall, client.Int(int64(value)))
 }
 
 // UpdateAllowLanguageFeaturesUninstall updates ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowLanguageFeaturesUninstall.
@@ -454,8 +464,8 @@ func (s *TextInput) CreateAllowLanguageFeaturesUninstall(ctx context.Context, va
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *TextInput) UpdateAllowLanguageFeaturesUninstall(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowLanguageFeaturesUninstall, client.Int(value))
+func (s *TextInput) UpdateAllowLanguageFeaturesUninstall(ctx context.Context, value AllowLanguageFeaturesUninstallValue) error {
+	return s.c.Replace(ctx, URIAllowLanguageFeaturesUninstall, client.Int(int64(value)))
 }
 
 // DeleteAllowLanguageFeaturesUninstall deletes ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowLanguageFeaturesUninstall.
@@ -474,12 +484,13 @@ func (s *TextInput) DeleteAllowLanguageFeaturesUninstall(ctx context.Context) er
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *TextInput) GetAllowLinguisticDataCollection(ctx context.Context) (int64, error) {
+func (s *TextInput) GetAllowLinguisticDataCollection(ctx context.Context) (AllowLinguisticDataCollectionValue, error) {
 	v, err := s.c.Get(ctx, URIAllowLinguisticDataCollection)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowLinguisticDataCollectionValue(n), err
 }
 
 // CreateAllowLinguisticDataCollection creates ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowLinguisticDataCollection.
@@ -488,8 +499,8 @@ func (s *TextInput) GetAllowLinguisticDataCollection(ctx context.Context) (int64
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *TextInput) CreateAllowLinguisticDataCollection(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowLinguisticDataCollection, client.Int(value))
+func (s *TextInput) CreateAllowLinguisticDataCollection(ctx context.Context, value AllowLinguisticDataCollectionValue) error {
+	return s.c.Add(ctx, URIAllowLinguisticDataCollection, client.Int(int64(value)))
 }
 
 // UpdateAllowLinguisticDataCollection updates ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowLinguisticDataCollection.
@@ -498,8 +509,8 @@ func (s *TextInput) CreateAllowLinguisticDataCollection(ctx context.Context, val
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *TextInput) UpdateAllowLinguisticDataCollection(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowLinguisticDataCollection, client.Int(value))
+func (s *TextInput) UpdateAllowLinguisticDataCollection(ctx context.Context, value AllowLinguisticDataCollectionValue) error {
+	return s.c.Replace(ctx, URIAllowLinguisticDataCollection, client.Int(int64(value)))
 }
 
 // DeleteAllowLinguisticDataCollection deletes ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowLinguisticDataCollection.
@@ -520,12 +531,13 @@ func (s *TextInput) DeleteAllowLinguisticDataCollection(ctx context.Context) err
 //
 // Default: 1.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *TextInput) GetAllowTextInputSuggestionUpdate(ctx context.Context) (int64, error) {
+func (s *TextInput) GetAllowTextInputSuggestionUpdate(ctx context.Context) (AllowTextInputSuggestionUpdateValue, error) {
 	v, err := s.c.Get(ctx, URIAllowTextInputSuggestionUpdate)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowTextInputSuggestionUpdateValue(n), err
 }
 
 // CreateAllowTextInputSuggestionUpdate creates ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowTextInputSuggestionUpdate.
@@ -536,8 +548,8 @@ func (s *TextInput) GetAllowTextInputSuggestionUpdate(ctx context.Context) (int6
 //
 // Default: 1.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *TextInput) CreateAllowTextInputSuggestionUpdate(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowTextInputSuggestionUpdate, client.Int(value))
+func (s *TextInput) CreateAllowTextInputSuggestionUpdate(ctx context.Context, value AllowTextInputSuggestionUpdateValue) error {
+	return s.c.Add(ctx, URIAllowTextInputSuggestionUpdate, client.Int(int64(value)))
 }
 
 // UpdateAllowTextInputSuggestionUpdate updates ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowTextInputSuggestionUpdate.
@@ -548,8 +560,8 @@ func (s *TextInput) CreateAllowTextInputSuggestionUpdate(ctx context.Context, va
 //
 // Default: 1.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *TextInput) UpdateAllowTextInputSuggestionUpdate(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowTextInputSuggestionUpdate, client.Int(value))
+func (s *TextInput) UpdateAllowTextInputSuggestionUpdate(ctx context.Context, value AllowTextInputSuggestionUpdateValue) error {
+	return s.c.Replace(ctx, URIAllowTextInputSuggestionUpdate, client.Int(int64(value)))
 }
 
 // DeleteAllowTextInputSuggestionUpdate deletes ./Device/Vendor/MSFT/Policy/Config/TextInput/AllowTextInputSuggestionUpdate.
@@ -574,12 +586,13 @@ func (s *TextInput) DeleteAllowTextInputSuggestionUpdate(ctx context.Context) er
 //
 // Default: 0.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *TextInput) GetConfigureJapaneseIMEVersion(ctx context.Context) (int64, error) {
+func (s *TextInput) GetConfigureJapaneseIMEVersion(ctx context.Context) (ConfigureJapaneseIMEVersionValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureJapaneseIMEVersion)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureJapaneseIMEVersionValue(n), err
 }
 
 // CreateConfigureJapaneseIMEVersion creates ./Device/Vendor/MSFT/Policy/Config/TextInput/ConfigureJapaneseIMEVersion.
@@ -592,8 +605,8 @@ func (s *TextInput) GetConfigureJapaneseIMEVersion(ctx context.Context) (int64, 
 //
 // Default: 0.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *TextInput) CreateConfigureJapaneseIMEVersion(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureJapaneseIMEVersion, client.Int(value))
+func (s *TextInput) CreateConfigureJapaneseIMEVersion(ctx context.Context, value ConfigureJapaneseIMEVersionValue) error {
+	return s.c.Add(ctx, URIConfigureJapaneseIMEVersion, client.Int(int64(value)))
 }
 
 // UpdateConfigureJapaneseIMEVersion updates ./Device/Vendor/MSFT/Policy/Config/TextInput/ConfigureJapaneseIMEVersion.
@@ -606,8 +619,8 @@ func (s *TextInput) CreateConfigureJapaneseIMEVersion(ctx context.Context, value
 //
 // Default: 0.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *TextInput) UpdateConfigureJapaneseIMEVersion(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureJapaneseIMEVersion, client.Int(value))
+func (s *TextInput) UpdateConfigureJapaneseIMEVersion(ctx context.Context, value ConfigureJapaneseIMEVersionValue) error {
+	return s.c.Replace(ctx, URIConfigureJapaneseIMEVersion, client.Int(int64(value)))
 }
 
 // DeleteConfigureJapaneseIMEVersion deletes ./Device/Vendor/MSFT/Policy/Config/TextInput/ConfigureJapaneseIMEVersion.
@@ -695,12 +708,13 @@ func (s *TextInput) DeleteConfigureKoreanIMEVersion(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *TextInput) GetConfigureSimplifiedChineseIMEVersion(ctx context.Context) (int64, error) {
+func (s *TextInput) GetConfigureSimplifiedChineseIMEVersion(ctx context.Context) (ConfigureSimplifiedChineseIMEVersionValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureSimplifiedChineseIMEVersion)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureSimplifiedChineseIMEVersionValue(n), err
 }
 
 // CreateConfigureSimplifiedChineseIMEVersion creates ./Device/Vendor/MSFT/Policy/Config/TextInput/ConfigureSimplifiedChineseIMEVersion.
@@ -714,8 +728,8 @@ func (s *TextInput) GetConfigureSimplifiedChineseIMEVersion(ctx context.Context)
 //
 // Default: 0.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *TextInput) CreateConfigureSimplifiedChineseIMEVersion(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureSimplifiedChineseIMEVersion, client.Int(value))
+func (s *TextInput) CreateConfigureSimplifiedChineseIMEVersion(ctx context.Context, value ConfigureSimplifiedChineseIMEVersionValue) error {
+	return s.c.Add(ctx, URIConfigureSimplifiedChineseIMEVersion, client.Int(int64(value)))
 }
 
 // UpdateConfigureSimplifiedChineseIMEVersion updates ./Device/Vendor/MSFT/Policy/Config/TextInput/ConfigureSimplifiedChineseIMEVersion.
@@ -729,8 +743,8 @@ func (s *TextInput) CreateConfigureSimplifiedChineseIMEVersion(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *TextInput) UpdateConfigureSimplifiedChineseIMEVersion(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureSimplifiedChineseIMEVersion, client.Int(value))
+func (s *TextInput) UpdateConfigureSimplifiedChineseIMEVersion(ctx context.Context, value ConfigureSimplifiedChineseIMEVersionValue) error {
+	return s.c.Replace(ctx, URIConfigureSimplifiedChineseIMEVersion, client.Int(int64(value)))
 }
 
 // DeleteConfigureSimplifiedChineseIMEVersion deletes ./Device/Vendor/MSFT/Policy/Config/TextInput/ConfigureSimplifiedChineseIMEVersion.
@@ -759,12 +773,13 @@ func (s *TextInput) DeleteConfigureSimplifiedChineseIMEVersion(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *TextInput) GetConfigureTraditionalChineseIMEVersion(ctx context.Context) (int64, error) {
+func (s *TextInput) GetConfigureTraditionalChineseIMEVersion(ctx context.Context) (ConfigureTraditionalChineseIMEVersionValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureTraditionalChineseIMEVersion)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureTraditionalChineseIMEVersionValue(n), err
 }
 
 // CreateConfigureTraditionalChineseIMEVersion creates ./Device/Vendor/MSFT/Policy/Config/TextInput/ConfigureTraditionalChineseIMEVersion.
@@ -778,8 +793,8 @@ func (s *TextInput) GetConfigureTraditionalChineseIMEVersion(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *TextInput) CreateConfigureTraditionalChineseIMEVersion(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureTraditionalChineseIMEVersion, client.Int(value))
+func (s *TextInput) CreateConfigureTraditionalChineseIMEVersion(ctx context.Context, value ConfigureTraditionalChineseIMEVersionValue) error {
+	return s.c.Add(ctx, URIConfigureTraditionalChineseIMEVersion, client.Int(int64(value)))
 }
 
 // UpdateConfigureTraditionalChineseIMEVersion updates ./Device/Vendor/MSFT/Policy/Config/TextInput/ConfigureTraditionalChineseIMEVersion.
@@ -793,8 +808,8 @@ func (s *TextInput) CreateConfigureTraditionalChineseIMEVersion(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *TextInput) UpdateConfigureTraditionalChineseIMEVersion(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureTraditionalChineseIMEVersion, client.Int(value))
+func (s *TextInput) UpdateConfigureTraditionalChineseIMEVersion(ctx context.Context, value ConfigureTraditionalChineseIMEVersionValue) error {
+	return s.c.Replace(ctx, URIConfigureTraditionalChineseIMEVersion, client.Int(int64(value)))
 }
 
 // DeleteConfigureTraditionalChineseIMEVersion deletes ./Device/Vendor/MSFT/Policy/Config/TextInput/ConfigureTraditionalChineseIMEVersion.
@@ -821,12 +836,13 @@ func (s *TextInput) DeleteConfigureTraditionalChineseIMEVersion(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *TextInput) GetEnableTouchKeyboardAutoInvokeInDesktopMode(ctx context.Context) (int64, error) {
+func (s *TextInput) GetEnableTouchKeyboardAutoInvokeInDesktopMode(ctx context.Context) (EnableTouchKeyboardAutoInvokeInDesktopModeValue, error) {
 	v, err := s.c.Get(ctx, URIEnableTouchKeyboardAutoInvokeInDesktopMode)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableTouchKeyboardAutoInvokeInDesktopModeValue(n), err
 }
 
 // CreateEnableTouchKeyboardAutoInvokeInDesktopMode creates ./Device/Vendor/MSFT/Policy/Config/TextInput/EnableTouchKeyboardAutoInvokeInDesktopMode.
@@ -838,8 +854,8 @@ func (s *TextInput) GetEnableTouchKeyboardAutoInvokeInDesktopMode(ctx context.Co
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *TextInput) CreateEnableTouchKeyboardAutoInvokeInDesktopMode(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableTouchKeyboardAutoInvokeInDesktopMode, client.Int(value))
+func (s *TextInput) CreateEnableTouchKeyboardAutoInvokeInDesktopMode(ctx context.Context, value EnableTouchKeyboardAutoInvokeInDesktopModeValue) error {
+	return s.c.Add(ctx, URIEnableTouchKeyboardAutoInvokeInDesktopMode, client.Int(int64(value)))
 }
 
 // UpdateEnableTouchKeyboardAutoInvokeInDesktopMode updates ./Device/Vendor/MSFT/Policy/Config/TextInput/EnableTouchKeyboardAutoInvokeInDesktopMode.
@@ -851,8 +867,8 @@ func (s *TextInput) CreateEnableTouchKeyboardAutoInvokeInDesktopMode(ctx context
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *TextInput) UpdateEnableTouchKeyboardAutoInvokeInDesktopMode(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableTouchKeyboardAutoInvokeInDesktopMode, client.Int(value))
+func (s *TextInput) UpdateEnableTouchKeyboardAutoInvokeInDesktopMode(ctx context.Context, value EnableTouchKeyboardAutoInvokeInDesktopModeValue) error {
+	return s.c.Replace(ctx, URIEnableTouchKeyboardAutoInvokeInDesktopMode, client.Int(int64(value)))
 }
 
 // DeleteEnableTouchKeyboardAutoInvokeInDesktopMode deletes ./Device/Vendor/MSFT/Policy/Config/TextInput/EnableTouchKeyboardAutoInvokeInDesktopMode.
@@ -874,12 +890,13 @@ func (s *TextInput) DeleteEnableTouchKeyboardAutoInvokeInDesktopMode(ctx context
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *TextInput) GetExcludeJapaneseIMEExceptJIS0208(ctx context.Context) (int64, error) {
+func (s *TextInput) GetExcludeJapaneseIMEExceptJIS0208(ctx context.Context) (ExcludeJapaneseIMEExceptJIS0208Value, error) {
 	v, err := s.c.Get(ctx, URIExcludeJapaneseIMEExceptJIS0208)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ExcludeJapaneseIMEExceptJIS0208Value(n), err
 }
 
 // CreateExcludeJapaneseIMEExceptJIS0208 creates ./Device/Vendor/MSFT/Policy/Config/TextInput/ExcludeJapaneseIMEExceptJIS0208.
@@ -888,8 +905,8 @@ func (s *TextInput) GetExcludeJapaneseIMEExceptJIS0208(ctx context.Context) (int
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *TextInput) CreateExcludeJapaneseIMEExceptJIS0208(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIExcludeJapaneseIMEExceptJIS0208, client.Int(value))
+func (s *TextInput) CreateExcludeJapaneseIMEExceptJIS0208(ctx context.Context, value ExcludeJapaneseIMEExceptJIS0208Value) error {
+	return s.c.Add(ctx, URIExcludeJapaneseIMEExceptJIS0208, client.Int(int64(value)))
 }
 
 // UpdateExcludeJapaneseIMEExceptJIS0208 updates ./Device/Vendor/MSFT/Policy/Config/TextInput/ExcludeJapaneseIMEExceptJIS0208.
@@ -898,8 +915,8 @@ func (s *TextInput) CreateExcludeJapaneseIMEExceptJIS0208(ctx context.Context, v
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *TextInput) UpdateExcludeJapaneseIMEExceptJIS0208(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIExcludeJapaneseIMEExceptJIS0208, client.Int(value))
+func (s *TextInput) UpdateExcludeJapaneseIMEExceptJIS0208(ctx context.Context, value ExcludeJapaneseIMEExceptJIS0208Value) error {
+	return s.c.Replace(ctx, URIExcludeJapaneseIMEExceptJIS0208, client.Int(int64(value)))
 }
 
 // DeleteExcludeJapaneseIMEExceptJIS0208 deletes ./Device/Vendor/MSFT/Policy/Config/TextInput/ExcludeJapaneseIMEExceptJIS0208.
@@ -918,12 +935,13 @@ func (s *TextInput) DeleteExcludeJapaneseIMEExceptJIS0208(ctx context.Context) e
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *TextInput) GetExcludeJapaneseIMEExceptJIS0208andEUDC(ctx context.Context) (int64, error) {
+func (s *TextInput) GetExcludeJapaneseIMEExceptJIS0208andEUDC(ctx context.Context) (ExcludeJapaneseIMEExceptJIS0208andEUDCValue, error) {
 	v, err := s.c.Get(ctx, URIExcludeJapaneseIMEExceptJIS0208andEUDC)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ExcludeJapaneseIMEExceptJIS0208andEUDCValue(n), err
 }
 
 // CreateExcludeJapaneseIMEExceptJIS0208andEUDC creates ./Device/Vendor/MSFT/Policy/Config/TextInput/ExcludeJapaneseIMEExceptJIS0208andEUDC.
@@ -932,8 +950,8 @@ func (s *TextInput) GetExcludeJapaneseIMEExceptJIS0208andEUDC(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *TextInput) CreateExcludeJapaneseIMEExceptJIS0208andEUDC(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIExcludeJapaneseIMEExceptJIS0208andEUDC, client.Int(value))
+func (s *TextInput) CreateExcludeJapaneseIMEExceptJIS0208andEUDC(ctx context.Context, value ExcludeJapaneseIMEExceptJIS0208andEUDCValue) error {
+	return s.c.Add(ctx, URIExcludeJapaneseIMEExceptJIS0208andEUDC, client.Int(int64(value)))
 }
 
 // UpdateExcludeJapaneseIMEExceptJIS0208andEUDC updates ./Device/Vendor/MSFT/Policy/Config/TextInput/ExcludeJapaneseIMEExceptJIS0208andEUDC.
@@ -942,8 +960,8 @@ func (s *TextInput) CreateExcludeJapaneseIMEExceptJIS0208andEUDC(ctx context.Con
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *TextInput) UpdateExcludeJapaneseIMEExceptJIS0208andEUDC(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIExcludeJapaneseIMEExceptJIS0208andEUDC, client.Int(value))
+func (s *TextInput) UpdateExcludeJapaneseIMEExceptJIS0208andEUDC(ctx context.Context, value ExcludeJapaneseIMEExceptJIS0208andEUDCValue) error {
+	return s.c.Replace(ctx, URIExcludeJapaneseIMEExceptJIS0208andEUDC, client.Int(int64(value)))
 }
 
 // DeleteExcludeJapaneseIMEExceptJIS0208andEUDC deletes ./Device/Vendor/MSFT/Policy/Config/TextInput/ExcludeJapaneseIMEExceptJIS0208andEUDC.
@@ -962,12 +980,13 @@ func (s *TextInput) DeleteExcludeJapaneseIMEExceptJIS0208andEUDC(ctx context.Con
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *TextInput) GetExcludeJapaneseIMEExceptShiftJIS(ctx context.Context) (int64, error) {
+func (s *TextInput) GetExcludeJapaneseIMEExceptShiftJIS(ctx context.Context) (ExcludeJapaneseIMEExceptShiftJISValue, error) {
 	v, err := s.c.Get(ctx, URIExcludeJapaneseIMEExceptShiftJIS)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ExcludeJapaneseIMEExceptShiftJISValue(n), err
 }
 
 // CreateExcludeJapaneseIMEExceptShiftJIS creates ./Device/Vendor/MSFT/Policy/Config/TextInput/ExcludeJapaneseIMEExceptShiftJIS.
@@ -976,8 +995,8 @@ func (s *TextInput) GetExcludeJapaneseIMEExceptShiftJIS(ctx context.Context) (in
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *TextInput) CreateExcludeJapaneseIMEExceptShiftJIS(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIExcludeJapaneseIMEExceptShiftJIS, client.Int(value))
+func (s *TextInput) CreateExcludeJapaneseIMEExceptShiftJIS(ctx context.Context, value ExcludeJapaneseIMEExceptShiftJISValue) error {
+	return s.c.Add(ctx, URIExcludeJapaneseIMEExceptShiftJIS, client.Int(int64(value)))
 }
 
 // UpdateExcludeJapaneseIMEExceptShiftJIS updates ./Device/Vendor/MSFT/Policy/Config/TextInput/ExcludeJapaneseIMEExceptShiftJIS.
@@ -986,8 +1005,8 @@ func (s *TextInput) CreateExcludeJapaneseIMEExceptShiftJIS(ctx context.Context, 
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *TextInput) UpdateExcludeJapaneseIMEExceptShiftJIS(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIExcludeJapaneseIMEExceptShiftJIS, client.Int(value))
+func (s *TextInput) UpdateExcludeJapaneseIMEExceptShiftJIS(ctx context.Context, value ExcludeJapaneseIMEExceptShiftJISValue) error {
+	return s.c.Replace(ctx, URIExcludeJapaneseIMEExceptShiftJIS, client.Int(int64(value)))
 }
 
 // DeleteExcludeJapaneseIMEExceptShiftJIS deletes ./Device/Vendor/MSFT/Policy/Config/TextInput/ExcludeJapaneseIMEExceptShiftJIS.
@@ -1006,12 +1025,13 @@ func (s *TextInput) DeleteExcludeJapaneseIMEExceptShiftJIS(ctx context.Context) 
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *TextInput) GetForceTouchKeyboardDockedState(ctx context.Context) (int64, error) {
+func (s *TextInput) GetForceTouchKeyboardDockedState(ctx context.Context) (ForceTouchKeyboardDockedStateValue, error) {
 	v, err := s.c.Get(ctx, URIForceTouchKeyboardDockedState)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ForceTouchKeyboardDockedStateValue(n), err
 }
 
 // CreateForceTouchKeyboardDockedState creates ./Device/Vendor/MSFT/Policy/Config/TextInput/ForceTouchKeyboardDockedState.
@@ -1020,8 +1040,8 @@ func (s *TextInput) GetForceTouchKeyboardDockedState(ctx context.Context) (int64
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *TextInput) CreateForceTouchKeyboardDockedState(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIForceTouchKeyboardDockedState, client.Int(value))
+func (s *TextInput) CreateForceTouchKeyboardDockedState(ctx context.Context, value ForceTouchKeyboardDockedStateValue) error {
+	return s.c.Add(ctx, URIForceTouchKeyboardDockedState, client.Int(int64(value)))
 }
 
 // UpdateForceTouchKeyboardDockedState updates ./Device/Vendor/MSFT/Policy/Config/TextInput/ForceTouchKeyboardDockedState.
@@ -1030,8 +1050,8 @@ func (s *TextInput) CreateForceTouchKeyboardDockedState(ctx context.Context, val
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *TextInput) UpdateForceTouchKeyboardDockedState(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIForceTouchKeyboardDockedState, client.Int(value))
+func (s *TextInput) UpdateForceTouchKeyboardDockedState(ctx context.Context, value ForceTouchKeyboardDockedStateValue) error {
+	return s.c.Replace(ctx, URIForceTouchKeyboardDockedState, client.Int(int64(value)))
 }
 
 // DeleteForceTouchKeyboardDockedState deletes ./Device/Vendor/MSFT/Policy/Config/TextInput/ForceTouchKeyboardDockedState.
@@ -1051,12 +1071,13 @@ func (s *TextInput) DeleteForceTouchKeyboardDockedState(ctx context.Context) err
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *TextInput) GetTouchKeyboardControllerModeAvailability(ctx context.Context) (int64, error) {
+func (s *TextInput) GetTouchKeyboardControllerModeAvailability(ctx context.Context) (TouchKeyboardControllerModeAvailabilityValue, error) {
 	v, err := s.c.Get(ctx, URITouchKeyboardControllerModeAvailability)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return TouchKeyboardControllerModeAvailabilityValue(n), err
 }
 
 // CreateTouchKeyboardControllerModeAvailability creates ./Device/Vendor/MSFT/Policy/Config/TextInput/TouchKeyboardControllerModeAvailability.
@@ -1066,8 +1087,8 @@ func (s *TextInput) GetTouchKeyboardControllerModeAvailability(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *TextInput) CreateTouchKeyboardControllerModeAvailability(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URITouchKeyboardControllerModeAvailability, client.Int(value))
+func (s *TextInput) CreateTouchKeyboardControllerModeAvailability(ctx context.Context, value TouchKeyboardControllerModeAvailabilityValue) error {
+	return s.c.Add(ctx, URITouchKeyboardControllerModeAvailability, client.Int(int64(value)))
 }
 
 // UpdateTouchKeyboardControllerModeAvailability updates ./Device/Vendor/MSFT/Policy/Config/TextInput/TouchKeyboardControllerModeAvailability.
@@ -1077,8 +1098,8 @@ func (s *TextInput) CreateTouchKeyboardControllerModeAvailability(ctx context.Co
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *TextInput) UpdateTouchKeyboardControllerModeAvailability(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URITouchKeyboardControllerModeAvailability, client.Int(value))
+func (s *TextInput) UpdateTouchKeyboardControllerModeAvailability(ctx context.Context, value TouchKeyboardControllerModeAvailabilityValue) error {
+	return s.c.Replace(ctx, URITouchKeyboardControllerModeAvailability, client.Int(int64(value)))
 }
 
 // DeleteTouchKeyboardControllerModeAvailability deletes ./Device/Vendor/MSFT/Policy/Config/TextInput/TouchKeyboardControllerModeAvailability.
@@ -1098,12 +1119,13 @@ func (s *TextInput) DeleteTouchKeyboardControllerModeAvailability(ctx context.Co
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *TextInput) GetTouchKeyboardDictationButtonAvailability(ctx context.Context) (int64, error) {
+func (s *TextInput) GetTouchKeyboardDictationButtonAvailability(ctx context.Context) (TouchKeyboardDictationButtonAvailabilityValue, error) {
 	v, err := s.c.Get(ctx, URITouchKeyboardDictationButtonAvailability)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return TouchKeyboardDictationButtonAvailabilityValue(n), err
 }
 
 // CreateTouchKeyboardDictationButtonAvailability creates ./Device/Vendor/MSFT/Policy/Config/TextInput/TouchKeyboardDictationButtonAvailability.
@@ -1112,8 +1134,8 @@ func (s *TextInput) GetTouchKeyboardDictationButtonAvailability(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *TextInput) CreateTouchKeyboardDictationButtonAvailability(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URITouchKeyboardDictationButtonAvailability, client.Int(value))
+func (s *TextInput) CreateTouchKeyboardDictationButtonAvailability(ctx context.Context, value TouchKeyboardDictationButtonAvailabilityValue) error {
+	return s.c.Add(ctx, URITouchKeyboardDictationButtonAvailability, client.Int(int64(value)))
 }
 
 // UpdateTouchKeyboardDictationButtonAvailability updates ./Device/Vendor/MSFT/Policy/Config/TextInput/TouchKeyboardDictationButtonAvailability.
@@ -1122,8 +1144,8 @@ func (s *TextInput) CreateTouchKeyboardDictationButtonAvailability(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *TextInput) UpdateTouchKeyboardDictationButtonAvailability(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URITouchKeyboardDictationButtonAvailability, client.Int(value))
+func (s *TextInput) UpdateTouchKeyboardDictationButtonAvailability(ctx context.Context, value TouchKeyboardDictationButtonAvailabilityValue) error {
+	return s.c.Replace(ctx, URITouchKeyboardDictationButtonAvailability, client.Int(int64(value)))
 }
 
 // DeleteTouchKeyboardDictationButtonAvailability deletes ./Device/Vendor/MSFT/Policy/Config/TextInput/TouchKeyboardDictationButtonAvailability.
@@ -1142,12 +1164,13 @@ func (s *TextInput) DeleteTouchKeyboardDictationButtonAvailability(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *TextInput) GetTouchKeyboardEmojiButtonAvailability(ctx context.Context) (int64, error) {
+func (s *TextInput) GetTouchKeyboardEmojiButtonAvailability(ctx context.Context) (TouchKeyboardEmojiButtonAvailabilityValue, error) {
 	v, err := s.c.Get(ctx, URITouchKeyboardEmojiButtonAvailability)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return TouchKeyboardEmojiButtonAvailabilityValue(n), err
 }
 
 // CreateTouchKeyboardEmojiButtonAvailability creates ./Device/Vendor/MSFT/Policy/Config/TextInput/TouchKeyboardEmojiButtonAvailability.
@@ -1156,8 +1179,8 @@ func (s *TextInput) GetTouchKeyboardEmojiButtonAvailability(ctx context.Context)
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *TextInput) CreateTouchKeyboardEmojiButtonAvailability(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URITouchKeyboardEmojiButtonAvailability, client.Int(value))
+func (s *TextInput) CreateTouchKeyboardEmojiButtonAvailability(ctx context.Context, value TouchKeyboardEmojiButtonAvailabilityValue) error {
+	return s.c.Add(ctx, URITouchKeyboardEmojiButtonAvailability, client.Int(int64(value)))
 }
 
 // UpdateTouchKeyboardEmojiButtonAvailability updates ./Device/Vendor/MSFT/Policy/Config/TextInput/TouchKeyboardEmojiButtonAvailability.
@@ -1166,8 +1189,8 @@ func (s *TextInput) CreateTouchKeyboardEmojiButtonAvailability(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *TextInput) UpdateTouchKeyboardEmojiButtonAvailability(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URITouchKeyboardEmojiButtonAvailability, client.Int(value))
+func (s *TextInput) UpdateTouchKeyboardEmojiButtonAvailability(ctx context.Context, value TouchKeyboardEmojiButtonAvailabilityValue) error {
+	return s.c.Replace(ctx, URITouchKeyboardEmojiButtonAvailability, client.Int(int64(value)))
 }
 
 // DeleteTouchKeyboardEmojiButtonAvailability deletes ./Device/Vendor/MSFT/Policy/Config/TextInput/TouchKeyboardEmojiButtonAvailability.
@@ -1186,12 +1209,13 @@ func (s *TextInput) DeleteTouchKeyboardEmojiButtonAvailability(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *TextInput) GetTouchKeyboardFullModeAvailability(ctx context.Context) (int64, error) {
+func (s *TextInput) GetTouchKeyboardFullModeAvailability(ctx context.Context) (TouchKeyboardFullModeAvailabilityValue, error) {
 	v, err := s.c.Get(ctx, URITouchKeyboardFullModeAvailability)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return TouchKeyboardFullModeAvailabilityValue(n), err
 }
 
 // CreateTouchKeyboardFullModeAvailability creates ./Device/Vendor/MSFT/Policy/Config/TextInput/TouchKeyboardFullModeAvailability.
@@ -1200,8 +1224,8 @@ func (s *TextInput) GetTouchKeyboardFullModeAvailability(ctx context.Context) (i
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *TextInput) CreateTouchKeyboardFullModeAvailability(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URITouchKeyboardFullModeAvailability, client.Int(value))
+func (s *TextInput) CreateTouchKeyboardFullModeAvailability(ctx context.Context, value TouchKeyboardFullModeAvailabilityValue) error {
+	return s.c.Add(ctx, URITouchKeyboardFullModeAvailability, client.Int(int64(value)))
 }
 
 // UpdateTouchKeyboardFullModeAvailability updates ./Device/Vendor/MSFT/Policy/Config/TextInput/TouchKeyboardFullModeAvailability.
@@ -1210,8 +1234,8 @@ func (s *TextInput) CreateTouchKeyboardFullModeAvailability(ctx context.Context,
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *TextInput) UpdateTouchKeyboardFullModeAvailability(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URITouchKeyboardFullModeAvailability, client.Int(value))
+func (s *TextInput) UpdateTouchKeyboardFullModeAvailability(ctx context.Context, value TouchKeyboardFullModeAvailabilityValue) error {
+	return s.c.Replace(ctx, URITouchKeyboardFullModeAvailability, client.Int(int64(value)))
 }
 
 // DeleteTouchKeyboardFullModeAvailability deletes ./Device/Vendor/MSFT/Policy/Config/TextInput/TouchKeyboardFullModeAvailability.
@@ -1230,12 +1254,13 @@ func (s *TextInput) DeleteTouchKeyboardFullModeAvailability(ctx context.Context)
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *TextInput) GetTouchKeyboardHandwritingModeAvailability(ctx context.Context) (int64, error) {
+func (s *TextInput) GetTouchKeyboardHandwritingModeAvailability(ctx context.Context) (TouchKeyboardHandwritingModeAvailabilityValue, error) {
 	v, err := s.c.Get(ctx, URITouchKeyboardHandwritingModeAvailability)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return TouchKeyboardHandwritingModeAvailabilityValue(n), err
 }
 
 // CreateTouchKeyboardHandwritingModeAvailability creates ./Device/Vendor/MSFT/Policy/Config/TextInput/TouchKeyboardHandwritingModeAvailability.
@@ -1244,8 +1269,8 @@ func (s *TextInput) GetTouchKeyboardHandwritingModeAvailability(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *TextInput) CreateTouchKeyboardHandwritingModeAvailability(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URITouchKeyboardHandwritingModeAvailability, client.Int(value))
+func (s *TextInput) CreateTouchKeyboardHandwritingModeAvailability(ctx context.Context, value TouchKeyboardHandwritingModeAvailabilityValue) error {
+	return s.c.Add(ctx, URITouchKeyboardHandwritingModeAvailability, client.Int(int64(value)))
 }
 
 // UpdateTouchKeyboardHandwritingModeAvailability updates ./Device/Vendor/MSFT/Policy/Config/TextInput/TouchKeyboardHandwritingModeAvailability.
@@ -1254,8 +1279,8 @@ func (s *TextInput) CreateTouchKeyboardHandwritingModeAvailability(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *TextInput) UpdateTouchKeyboardHandwritingModeAvailability(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URITouchKeyboardHandwritingModeAvailability, client.Int(value))
+func (s *TextInput) UpdateTouchKeyboardHandwritingModeAvailability(ctx context.Context, value TouchKeyboardHandwritingModeAvailabilityValue) error {
+	return s.c.Replace(ctx, URITouchKeyboardHandwritingModeAvailability, client.Int(int64(value)))
 }
 
 // DeleteTouchKeyboardHandwritingModeAvailability deletes ./Device/Vendor/MSFT/Policy/Config/TextInput/TouchKeyboardHandwritingModeAvailability.
@@ -1274,12 +1299,13 @@ func (s *TextInput) DeleteTouchKeyboardHandwritingModeAvailability(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *TextInput) GetTouchKeyboardNarrowModeAvailability(ctx context.Context) (int64, error) {
+func (s *TextInput) GetTouchKeyboardNarrowModeAvailability(ctx context.Context) (TouchKeyboardNarrowModeAvailabilityValue, error) {
 	v, err := s.c.Get(ctx, URITouchKeyboardNarrowModeAvailability)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return TouchKeyboardNarrowModeAvailabilityValue(n), err
 }
 
 // CreateTouchKeyboardNarrowModeAvailability creates ./Device/Vendor/MSFT/Policy/Config/TextInput/TouchKeyboardNarrowModeAvailability.
@@ -1288,8 +1314,8 @@ func (s *TextInput) GetTouchKeyboardNarrowModeAvailability(ctx context.Context) 
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *TextInput) CreateTouchKeyboardNarrowModeAvailability(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URITouchKeyboardNarrowModeAvailability, client.Int(value))
+func (s *TextInput) CreateTouchKeyboardNarrowModeAvailability(ctx context.Context, value TouchKeyboardNarrowModeAvailabilityValue) error {
+	return s.c.Add(ctx, URITouchKeyboardNarrowModeAvailability, client.Int(int64(value)))
 }
 
 // UpdateTouchKeyboardNarrowModeAvailability updates ./Device/Vendor/MSFT/Policy/Config/TextInput/TouchKeyboardNarrowModeAvailability.
@@ -1298,8 +1324,8 @@ func (s *TextInput) CreateTouchKeyboardNarrowModeAvailability(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *TextInput) UpdateTouchKeyboardNarrowModeAvailability(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URITouchKeyboardNarrowModeAvailability, client.Int(value))
+func (s *TextInput) UpdateTouchKeyboardNarrowModeAvailability(ctx context.Context, value TouchKeyboardNarrowModeAvailabilityValue) error {
+	return s.c.Replace(ctx, URITouchKeyboardNarrowModeAvailability, client.Int(int64(value)))
 }
 
 // DeleteTouchKeyboardNarrowModeAvailability deletes ./Device/Vendor/MSFT/Policy/Config/TextInput/TouchKeyboardNarrowModeAvailability.
@@ -1318,12 +1344,13 @@ func (s *TextInput) DeleteTouchKeyboardNarrowModeAvailability(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *TextInput) GetTouchKeyboardSplitModeAvailability(ctx context.Context) (int64, error) {
+func (s *TextInput) GetTouchKeyboardSplitModeAvailability(ctx context.Context) (TouchKeyboardSplitModeAvailabilityValue, error) {
 	v, err := s.c.Get(ctx, URITouchKeyboardSplitModeAvailability)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return TouchKeyboardSplitModeAvailabilityValue(n), err
 }
 
 // CreateTouchKeyboardSplitModeAvailability creates ./Device/Vendor/MSFT/Policy/Config/TextInput/TouchKeyboardSplitModeAvailability.
@@ -1332,8 +1359,8 @@ func (s *TextInput) GetTouchKeyboardSplitModeAvailability(ctx context.Context) (
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *TextInput) CreateTouchKeyboardSplitModeAvailability(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URITouchKeyboardSplitModeAvailability, client.Int(value))
+func (s *TextInput) CreateTouchKeyboardSplitModeAvailability(ctx context.Context, value TouchKeyboardSplitModeAvailabilityValue) error {
+	return s.c.Add(ctx, URITouchKeyboardSplitModeAvailability, client.Int(int64(value)))
 }
 
 // UpdateTouchKeyboardSplitModeAvailability updates ./Device/Vendor/MSFT/Policy/Config/TextInput/TouchKeyboardSplitModeAvailability.
@@ -1342,8 +1369,8 @@ func (s *TextInput) CreateTouchKeyboardSplitModeAvailability(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *TextInput) UpdateTouchKeyboardSplitModeAvailability(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URITouchKeyboardSplitModeAvailability, client.Int(value))
+func (s *TextInput) UpdateTouchKeyboardSplitModeAvailability(ctx context.Context, value TouchKeyboardSplitModeAvailabilityValue) error {
+	return s.c.Replace(ctx, URITouchKeyboardSplitModeAvailability, client.Int(int64(value)))
 }
 
 // DeleteTouchKeyboardSplitModeAvailability deletes ./Device/Vendor/MSFT/Policy/Config/TextInput/TouchKeyboardSplitModeAvailability.
@@ -1362,12 +1389,13 @@ func (s *TextInput) DeleteTouchKeyboardSplitModeAvailability(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *TextInput) GetTouchKeyboardWideModeAvailability(ctx context.Context) (int64, error) {
+func (s *TextInput) GetTouchKeyboardWideModeAvailability(ctx context.Context) (TouchKeyboardWideModeAvailabilityValue, error) {
 	v, err := s.c.Get(ctx, URITouchKeyboardWideModeAvailability)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return TouchKeyboardWideModeAvailabilityValue(n), err
 }
 
 // CreateTouchKeyboardWideModeAvailability creates ./Device/Vendor/MSFT/Policy/Config/TextInput/TouchKeyboardWideModeAvailability.
@@ -1376,8 +1404,8 @@ func (s *TextInput) GetTouchKeyboardWideModeAvailability(ctx context.Context) (i
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *TextInput) CreateTouchKeyboardWideModeAvailability(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URITouchKeyboardWideModeAvailability, client.Int(value))
+func (s *TextInput) CreateTouchKeyboardWideModeAvailability(ctx context.Context, value TouchKeyboardWideModeAvailabilityValue) error {
+	return s.c.Add(ctx, URITouchKeyboardWideModeAvailability, client.Int(int64(value)))
 }
 
 // UpdateTouchKeyboardWideModeAvailability updates ./Device/Vendor/MSFT/Policy/Config/TextInput/TouchKeyboardWideModeAvailability.
@@ -1386,8 +1414,8 @@ func (s *TextInput) CreateTouchKeyboardWideModeAvailability(ctx context.Context,
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *TextInput) UpdateTouchKeyboardWideModeAvailability(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URITouchKeyboardWideModeAvailability, client.Int(value))
+func (s *TextInput) UpdateTouchKeyboardWideModeAvailability(ctx context.Context, value TouchKeyboardWideModeAvailabilityValue) error {
+	return s.c.Replace(ctx, URITouchKeyboardWideModeAvailability, client.Int(int64(value)))
 }
 
 // DeleteTouchKeyboardWideModeAvailability deletes ./Device/Vendor/MSFT/Policy/Config/TextInput/TouchKeyboardWideModeAvailability.

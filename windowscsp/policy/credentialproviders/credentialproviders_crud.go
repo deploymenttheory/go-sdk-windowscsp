@@ -82,12 +82,13 @@ func (s *CredentialProviders) DeleteBlockPicturePassword(ctx context.Context) er
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *CredentialProviders) GetDisableAutomaticReDeploymentCredentials(ctx context.Context) (int64, error) {
+func (s *CredentialProviders) GetDisableAutomaticReDeploymentCredentials(ctx context.Context) (DisableAutomaticReDeploymentCredentialsValue, error) {
 	v, err := s.c.Get(ctx, URIDisableAutomaticReDeploymentCredentials)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableAutomaticReDeploymentCredentialsValue(n), err
 }
 
 // CreateDisableAutomaticReDeploymentCredentials creates ./Device/Vendor/MSFT/Policy/Config/CredentialProviders/DisableAutomaticReDeploymentCredentials.
@@ -100,8 +101,8 @@ func (s *CredentialProviders) GetDisableAutomaticReDeploymentCredentials(ctx con
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *CredentialProviders) CreateDisableAutomaticReDeploymentCredentials(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableAutomaticReDeploymentCredentials, client.Int(value))
+func (s *CredentialProviders) CreateDisableAutomaticReDeploymentCredentials(ctx context.Context, value DisableAutomaticReDeploymentCredentialsValue) error {
+	return s.c.Add(ctx, URIDisableAutomaticReDeploymentCredentials, client.Int(int64(value)))
 }
 
 // UpdateDisableAutomaticReDeploymentCredentials updates ./Device/Vendor/MSFT/Policy/Config/CredentialProviders/DisableAutomaticReDeploymentCredentials.
@@ -114,8 +115,8 @@ func (s *CredentialProviders) CreateDisableAutomaticReDeploymentCredentials(ctx 
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *CredentialProviders) UpdateDisableAutomaticReDeploymentCredentials(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableAutomaticReDeploymentCredentials, client.Int(value))
+func (s *CredentialProviders) UpdateDisableAutomaticReDeploymentCredentials(ctx context.Context, value DisableAutomaticReDeploymentCredentialsValue) error {
+	return s.c.Replace(ctx, URIDisableAutomaticReDeploymentCredentials, client.Int(int64(value)))
 }
 
 // DeleteDisableAutomaticReDeploymentCredentials deletes ./Device/Vendor/MSFT/Policy/Config/CredentialProviders/DisableAutomaticReDeploymentCredentials.

@@ -2,18 +2,52 @@
 
 package declaredconfiguration
 
-// HostCompleteDocumentsDocIDPropertiesAbandoned allowed values.
-const (
-	// The document is no longer managed.
-	HostCompleteDocumentsDocIDPropertiesAbandonedTheDocumentIsNoLongerManaged int64 = 0
-	// The document is managed.
-	HostCompleteDocumentsDocIDPropertiesAbandonedTheDocumentIsManaged int64 = 1
+import (
+	"fmt"
 )
 
-// ManagementServiceConfigurationConflictResolution allowed values.
+// HostCompleteDocumentsDocIDPropertiesAbandonedValue — allowed values for the Abandoned node.
+type HostCompleteDocumentsDocIDPropertiesAbandonedValue int64
+
+const (
+	// The document is no longer managed.
+	HostCompleteDocumentsDocIDPropertiesAbandonedTheDocumentIsNoLongerManaged HostCompleteDocumentsDocIDPropertiesAbandonedValue = 0
+	// The document is managed.
+	HostCompleteDocumentsDocIDPropertiesAbandonedTheDocumentIsManaged HostCompleteDocumentsDocIDPropertiesAbandonedValue = 1
+)
+
+// String returns the HostCompleteDocumentsDocIDPropertiesAbandonedValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HostCompleteDocumentsDocIDPropertiesAbandonedValue) String() string {
+	switch e {
+	case HostCompleteDocumentsDocIDPropertiesAbandonedTheDocumentIsNoLongerManaged:
+		return "HostCompleteDocumentsDocIDPropertiesAbandonedTheDocumentIsNoLongerManaged"
+	case HostCompleteDocumentsDocIDPropertiesAbandonedTheDocumentIsManaged:
+		return "HostCompleteDocumentsDocIDPropertiesAbandonedTheDocumentIsManaged"
+	default:
+		return fmt.Sprintf("HostCompleteDocumentsDocIDPropertiesAbandonedValue(%d)", int64(e))
+	}
+}
+
+// ManagementServiceConfigurationConflictResolutionValue — allowed values for the ConflictResolution node.
+type ManagementServiceConfigurationConflictResolutionValue int64
+
 const (
 	// The conflict resolution is OFF.
-	ManagementServiceConfigurationConflictResolutionTheConflictResolutionIsOFF int64 = 0
+	ManagementServiceConfigurationConflictResolutionTheConflictResolutionIsOFF ManagementServiceConfigurationConflictResolutionValue = 0
 	// The conflict resolution is ON.
-	ManagementServiceConfigurationConflictResolutionTheConflictResolutionIsON int64 = 1
+	ManagementServiceConfigurationConflictResolutionTheConflictResolutionIsON ManagementServiceConfigurationConflictResolutionValue = 1
 )
+
+// String returns the ManagementServiceConfigurationConflictResolutionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ManagementServiceConfigurationConflictResolutionValue) String() string {
+	switch e {
+	case ManagementServiceConfigurationConflictResolutionTheConflictResolutionIsOFF:
+		return "ManagementServiceConfigurationConflictResolutionTheConflictResolutionIsOFF"
+	case ManagementServiceConfigurationConflictResolutionTheConflictResolutionIsON:
+		return "ManagementServiceConfigurationConflictResolutionTheConflictResolutionIsON"
+	default:
+		return fmt.Sprintf("ManagementServiceConfigurationConflictResolutionValue(%d)", int64(e))
+	}
+}

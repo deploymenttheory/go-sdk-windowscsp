@@ -2,10 +2,29 @@
 
 package credentialproviders
 
-// DisableAutomaticReDeploymentCredentials allowed values.
+import (
+	"fmt"
+)
+
+// DisableAutomaticReDeploymentCredentialsValue — allowed values for the DisableAutomaticReDeploymentCredentials node.
+type DisableAutomaticReDeploymentCredentialsValue int64
+
 const (
 	// Enable the visibility of the credentials for Autopilot Reset.
-	DisableAutomaticReDeploymentCredentialsEnableTheVisibilityOfTheCredentials int64 = 0
+	DisableAutomaticReDeploymentCredentialsEnableTheVisibilityOfTheCredentials DisableAutomaticReDeploymentCredentialsValue = 0
 	// Disable visibility of the credentials for Autopilot Reset.
-	DisableAutomaticReDeploymentCredentialsDisableVisibilityOfTheCredentialsFor int64 = 1
+	DisableAutomaticReDeploymentCredentialsDisableVisibilityOfTheCredentialsFor DisableAutomaticReDeploymentCredentialsValue = 1
 )
+
+// String returns the DisableAutomaticReDeploymentCredentialsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableAutomaticReDeploymentCredentialsValue) String() string {
+	switch e {
+	case DisableAutomaticReDeploymentCredentialsEnableTheVisibilityOfTheCredentials:
+		return "DisableAutomaticReDeploymentCredentialsEnableTheVisibilityOfTheCredentials"
+	case DisableAutomaticReDeploymentCredentialsDisableVisibilityOfTheCredentialsFor:
+		return "DisableAutomaticReDeploymentCredentialsDisableVisibilityOfTheCredentialsFor"
+	default:
+		return fmt.Sprintf("DisableAutomaticReDeploymentCredentialsValue(%d)", int64(e))
+	}
+}

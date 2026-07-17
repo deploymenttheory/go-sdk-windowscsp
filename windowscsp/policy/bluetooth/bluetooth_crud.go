@@ -14,12 +14,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Bluetooth) GetAllowAdvertising(ctx context.Context) (int64, error) {
+func (s *Bluetooth) GetAllowAdvertising(ctx context.Context) (AllowAdvertisingValue, error) {
 	v, err := s.c.Get(ctx, URIAllowAdvertising)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowAdvertisingValue(n), err
 }
 
 // CreateAllowAdvertising creates ./Device/Vendor/MSFT/Policy/Config/Bluetooth/AllowAdvertising.
@@ -28,8 +29,8 @@ func (s *Bluetooth) GetAllowAdvertising(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Bluetooth) CreateAllowAdvertising(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowAdvertising, client.Int(value))
+func (s *Bluetooth) CreateAllowAdvertising(ctx context.Context, value AllowAdvertisingValue) error {
+	return s.c.Add(ctx, URIAllowAdvertising, client.Int(int64(value)))
 }
 
 // UpdateAllowAdvertising updates ./Device/Vendor/MSFT/Policy/Config/Bluetooth/AllowAdvertising.
@@ -38,8 +39,8 @@ func (s *Bluetooth) CreateAllowAdvertising(ctx context.Context, value int64) err
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Bluetooth) UpdateAllowAdvertising(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowAdvertising, client.Int(value))
+func (s *Bluetooth) UpdateAllowAdvertising(ctx context.Context, value AllowAdvertisingValue) error {
+	return s.c.Replace(ctx, URIAllowAdvertising, client.Int(int64(value)))
 }
 
 // DeleteAllowAdvertising deletes ./Device/Vendor/MSFT/Policy/Config/Bluetooth/AllowAdvertising.
@@ -58,12 +59,13 @@ func (s *Bluetooth) DeleteAllowAdvertising(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Bluetooth) GetAllowDiscoverableMode(ctx context.Context) (int64, error) {
+func (s *Bluetooth) GetAllowDiscoverableMode(ctx context.Context) (AllowDiscoverableModeValue, error) {
 	v, err := s.c.Get(ctx, URIAllowDiscoverableMode)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowDiscoverableModeValue(n), err
 }
 
 // CreateAllowDiscoverableMode creates ./Device/Vendor/MSFT/Policy/Config/Bluetooth/AllowDiscoverableMode.
@@ -72,8 +74,8 @@ func (s *Bluetooth) GetAllowDiscoverableMode(ctx context.Context) (int64, error)
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Bluetooth) CreateAllowDiscoverableMode(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowDiscoverableMode, client.Int(value))
+func (s *Bluetooth) CreateAllowDiscoverableMode(ctx context.Context, value AllowDiscoverableModeValue) error {
+	return s.c.Add(ctx, URIAllowDiscoverableMode, client.Int(int64(value)))
 }
 
 // UpdateAllowDiscoverableMode updates ./Device/Vendor/MSFT/Policy/Config/Bluetooth/AllowDiscoverableMode.
@@ -82,8 +84,8 @@ func (s *Bluetooth) CreateAllowDiscoverableMode(ctx context.Context, value int64
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Bluetooth) UpdateAllowDiscoverableMode(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowDiscoverableMode, client.Int(value))
+func (s *Bluetooth) UpdateAllowDiscoverableMode(ctx context.Context, value AllowDiscoverableModeValue) error {
+	return s.c.Replace(ctx, URIAllowDiscoverableMode, client.Int(int64(value)))
 }
 
 // DeleteAllowDiscoverableMode deletes ./Device/Vendor/MSFT/Policy/Config/Bluetooth/AllowDiscoverableMode.
@@ -102,12 +104,13 @@ func (s *Bluetooth) DeleteAllowDiscoverableMode(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Bluetooth) GetAllowPrepairing(ctx context.Context) (int64, error) {
+func (s *Bluetooth) GetAllowPrepairing(ctx context.Context) (AllowPrepairingValue, error) {
 	v, err := s.c.Get(ctx, URIAllowPrepairing)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowPrepairingValue(n), err
 }
 
 // CreateAllowPrepairing creates ./Device/Vendor/MSFT/Policy/Config/Bluetooth/AllowPrepairing.
@@ -116,8 +119,8 @@ func (s *Bluetooth) GetAllowPrepairing(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Bluetooth) CreateAllowPrepairing(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowPrepairing, client.Int(value))
+func (s *Bluetooth) CreateAllowPrepairing(ctx context.Context, value AllowPrepairingValue) error {
+	return s.c.Add(ctx, URIAllowPrepairing, client.Int(int64(value)))
 }
 
 // UpdateAllowPrepairing updates ./Device/Vendor/MSFT/Policy/Config/Bluetooth/AllowPrepairing.
@@ -126,8 +129,8 @@ func (s *Bluetooth) CreateAllowPrepairing(ctx context.Context, value int64) erro
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Bluetooth) UpdateAllowPrepairing(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowPrepairing, client.Int(value))
+func (s *Bluetooth) UpdateAllowPrepairing(ctx context.Context, value AllowPrepairingValue) error {
+	return s.c.Replace(ctx, URIAllowPrepairing, client.Int(int64(value)))
 }
 
 // DeleteAllowPrepairing deletes ./Device/Vendor/MSFT/Policy/Config/Bluetooth/AllowPrepairing.
@@ -146,12 +149,13 @@ func (s *Bluetooth) DeleteAllowPrepairing(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Bluetooth) GetAllowPromptedProximalConnections(ctx context.Context) (int64, error) {
+func (s *Bluetooth) GetAllowPromptedProximalConnections(ctx context.Context) (AllowPromptedProximalConnectionsValue, error) {
 	v, err := s.c.Get(ctx, URIAllowPromptedProximalConnections)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowPromptedProximalConnectionsValue(n), err
 }
 
 // CreateAllowPromptedProximalConnections creates ./Device/Vendor/MSFT/Policy/Config/Bluetooth/AllowPromptedProximalConnections.
@@ -160,8 +164,8 @@ func (s *Bluetooth) GetAllowPromptedProximalConnections(ctx context.Context) (in
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Bluetooth) CreateAllowPromptedProximalConnections(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowPromptedProximalConnections, client.Int(value))
+func (s *Bluetooth) CreateAllowPromptedProximalConnections(ctx context.Context, value AllowPromptedProximalConnectionsValue) error {
+	return s.c.Add(ctx, URIAllowPromptedProximalConnections, client.Int(int64(value)))
 }
 
 // UpdateAllowPromptedProximalConnections updates ./Device/Vendor/MSFT/Policy/Config/Bluetooth/AllowPromptedProximalConnections.
@@ -170,8 +174,8 @@ func (s *Bluetooth) CreateAllowPromptedProximalConnections(ctx context.Context, 
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Bluetooth) UpdateAllowPromptedProximalConnections(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowPromptedProximalConnections, client.Int(value))
+func (s *Bluetooth) UpdateAllowPromptedProximalConnections(ctx context.Context, value AllowPromptedProximalConnectionsValue) error {
+	return s.c.Replace(ctx, URIAllowPromptedProximalConnections, client.Int(int64(value)))
 }
 
 // DeleteAllowPromptedProximalConnections deletes ./Device/Vendor/MSFT/Policy/Config/Bluetooth/AllowPromptedProximalConnections.

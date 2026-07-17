@@ -15,12 +15,13 @@ import (
 //
 // Default: 2.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Connectivity) GetAllowBluetooth(ctx context.Context) (int64, error) {
+func (s *Connectivity) GetAllowBluetooth(ctx context.Context) (AllowBluetoothValue, error) {
 	v, err := s.c.Get(ctx, URIAllowBluetooth)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowBluetoothValue(n), err
 }
 
 // CreateAllowBluetooth creates ./Device/Vendor/MSFT/Policy/Config/Connectivity/AllowBluetooth.
@@ -30,8 +31,8 @@ func (s *Connectivity) GetAllowBluetooth(ctx context.Context) (int64, error) {
 //
 // Default: 2.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Connectivity) CreateAllowBluetooth(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowBluetooth, client.Int(value))
+func (s *Connectivity) CreateAllowBluetooth(ctx context.Context, value AllowBluetoothValue) error {
+	return s.c.Add(ctx, URIAllowBluetooth, client.Int(int64(value)))
 }
 
 // UpdateAllowBluetooth updates ./Device/Vendor/MSFT/Policy/Config/Connectivity/AllowBluetooth.
@@ -41,8 +42,8 @@ func (s *Connectivity) CreateAllowBluetooth(ctx context.Context, value int64) er
 //
 // Default: 2.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Connectivity) UpdateAllowBluetooth(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowBluetooth, client.Int(value))
+func (s *Connectivity) UpdateAllowBluetooth(ctx context.Context, value AllowBluetoothValue) error {
+	return s.c.Replace(ctx, URIAllowBluetooth, client.Int(int64(value)))
 }
 
 // DeleteAllowBluetooth deletes ./Device/Vendor/MSFT/Policy/Config/Connectivity/AllowBluetooth.
@@ -62,12 +63,13 @@ func (s *Connectivity) DeleteAllowBluetooth(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Connectivity) GetAllowCellularData(ctx context.Context) (int64, error) {
+func (s *Connectivity) GetAllowCellularData(ctx context.Context) (AllowCellularDataValue, error) {
 	v, err := s.c.Get(ctx, URIAllowCellularData)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowCellularDataValue(n), err
 }
 
 // CreateAllowCellularData creates ./Device/Vendor/MSFT/Policy/Config/Connectivity/AllowCellularData.
@@ -76,8 +78,8 @@ func (s *Connectivity) GetAllowCellularData(ctx context.Context) (int64, error) 
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Connectivity) CreateAllowCellularData(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowCellularData, client.Int(value))
+func (s *Connectivity) CreateAllowCellularData(ctx context.Context, value AllowCellularDataValue) error {
+	return s.c.Add(ctx, URIAllowCellularData, client.Int(int64(value)))
 }
 
 // UpdateAllowCellularData updates ./Device/Vendor/MSFT/Policy/Config/Connectivity/AllowCellularData.
@@ -86,8 +88,8 @@ func (s *Connectivity) CreateAllowCellularData(ctx context.Context, value int64)
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Connectivity) UpdateAllowCellularData(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowCellularData, client.Int(value))
+func (s *Connectivity) UpdateAllowCellularData(ctx context.Context, value AllowCellularDataValue) error {
+	return s.c.Replace(ctx, URIAllowCellularData, client.Int(int64(value)))
 }
 
 // DeleteAllowCellularData deletes ./Device/Vendor/MSFT/Policy/Config/Connectivity/AllowCellularData.
@@ -106,12 +108,13 @@ func (s *Connectivity) DeleteAllowCellularData(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Connectivity) GetAllowCellularDataRoaming(ctx context.Context) (int64, error) {
+func (s *Connectivity) GetAllowCellularDataRoaming(ctx context.Context) (AllowCellularDataRoamingValue, error) {
 	v, err := s.c.Get(ctx, URIAllowCellularDataRoaming)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowCellularDataRoamingValue(n), err
 }
 
 // CreateAllowCellularDataRoaming creates ./Device/Vendor/MSFT/Policy/Config/Connectivity/AllowCellularDataRoaming.
@@ -120,8 +123,8 @@ func (s *Connectivity) GetAllowCellularDataRoaming(ctx context.Context) (int64, 
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Connectivity) CreateAllowCellularDataRoaming(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowCellularDataRoaming, client.Int(value))
+func (s *Connectivity) CreateAllowCellularDataRoaming(ctx context.Context, value AllowCellularDataRoamingValue) error {
+	return s.c.Add(ctx, URIAllowCellularDataRoaming, client.Int(int64(value)))
 }
 
 // UpdateAllowCellularDataRoaming updates ./Device/Vendor/MSFT/Policy/Config/Connectivity/AllowCellularDataRoaming.
@@ -130,8 +133,8 @@ func (s *Connectivity) CreateAllowCellularDataRoaming(ctx context.Context, value
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Connectivity) UpdateAllowCellularDataRoaming(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowCellularDataRoaming, client.Int(value))
+func (s *Connectivity) UpdateAllowCellularDataRoaming(ctx context.Context, value AllowCellularDataRoamingValue) error {
+	return s.c.Replace(ctx, URIAllowCellularDataRoaming, client.Int(int64(value)))
 }
 
 // DeleteAllowCellularDataRoaming deletes ./Device/Vendor/MSFT/Policy/Config/Connectivity/AllowCellularDataRoaming.
@@ -152,12 +155,13 @@ func (s *Connectivity) DeleteAllowCellularDataRoaming(ctx context.Context) error
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Connectivity) GetAllowConnectedDevices(ctx context.Context) (int64, error) {
+func (s *Connectivity) GetAllowConnectedDevices(ctx context.Context) (AllowConnectedDevicesValue, error) {
 	v, err := s.c.Get(ctx, URIAllowConnectedDevices)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowConnectedDevicesValue(n), err
 }
 
 // CreateAllowConnectedDevices creates ./Device/Vendor/MSFT/Policy/Config/Connectivity/AllowConnectedDevices.
@@ -168,8 +172,8 @@ func (s *Connectivity) GetAllowConnectedDevices(ctx context.Context) (int64, err
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Connectivity) CreateAllowConnectedDevices(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowConnectedDevices, client.Int(value))
+func (s *Connectivity) CreateAllowConnectedDevices(ctx context.Context, value AllowConnectedDevicesValue) error {
+	return s.c.Add(ctx, URIAllowConnectedDevices, client.Int(int64(value)))
 }
 
 // UpdateAllowConnectedDevices updates ./Device/Vendor/MSFT/Policy/Config/Connectivity/AllowConnectedDevices.
@@ -180,8 +184,8 @@ func (s *Connectivity) CreateAllowConnectedDevices(ctx context.Context, value in
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Connectivity) UpdateAllowConnectedDevices(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowConnectedDevices, client.Int(value))
+func (s *Connectivity) UpdateAllowConnectedDevices(ctx context.Context, value AllowConnectedDevicesValue) error {
+	return s.c.Replace(ctx, URIAllowConnectedDevices, client.Int(int64(value)))
 }
 
 // DeleteAllowConnectedDevices deletes ./Device/Vendor/MSFT/Policy/Config/Connectivity/AllowConnectedDevices.
@@ -203,12 +207,13 @@ func (s *Connectivity) DeleteAllowConnectedDevices(ctx context.Context) error {
 // Supported from OS build 10.0.10240 (CSP v1.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Connectivity) GetAllowNFC(ctx context.Context) (int64, error) {
+func (s *Connectivity) GetAllowNFC(ctx context.Context) (AllowNFCValue, error) {
 	v, err := s.c.Get(ctx, URIAllowNFC)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowNFCValue(n), err
 }
 
 // CreateAllowNFC creates ./Device/Vendor/MSFT/Policy/Config/Connectivity/AllowNFC.
@@ -218,8 +223,8 @@ func (s *Connectivity) GetAllowNFC(ctx context.Context) (int64, error) {
 // Supported from OS build 10.0.10240 (CSP v1.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Connectivity) CreateAllowNFC(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowNFC, client.Int(value))
+func (s *Connectivity) CreateAllowNFC(ctx context.Context, value AllowNFCValue) error {
+	return s.c.Add(ctx, URIAllowNFC, client.Int(int64(value)))
 }
 
 // UpdateAllowNFC updates ./Device/Vendor/MSFT/Policy/Config/Connectivity/AllowNFC.
@@ -229,8 +234,8 @@ func (s *Connectivity) CreateAllowNFC(ctx context.Context, value int64) error {
 // Supported from OS build 10.0.10240 (CSP v1.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Connectivity) UpdateAllowNFC(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowNFC, client.Int(value))
+func (s *Connectivity) UpdateAllowNFC(ctx context.Context, value AllowNFCValue) error {
+	return s.c.Replace(ctx, URIAllowNFC, client.Int(int64(value)))
 }
 
 // DeleteAllowNFC deletes ./Device/Vendor/MSFT/Policy/Config/Connectivity/AllowNFC.
@@ -256,12 +261,13 @@ func (s *Connectivity) DeleteAllowNFC(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Connectivity) GetAllowPhonePCLinking(ctx context.Context) (int64, error) {
+func (s *Connectivity) GetAllowPhonePCLinking(ctx context.Context) (AllowPhonePCLinkingValue, error) {
 	v, err := s.c.Get(ctx, URIAllowPhonePCLinking)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowPhonePCLinkingValue(n), err
 }
 
 // CreateAllowPhonePCLinking creates ./Device/Vendor/MSFT/Policy/Config/Connectivity/AllowPhonePCLinking.
@@ -276,8 +282,8 @@ func (s *Connectivity) GetAllowPhonePCLinking(ctx context.Context) (int64, error
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Connectivity) CreateAllowPhonePCLinking(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowPhonePCLinking, client.Int(value))
+func (s *Connectivity) CreateAllowPhonePCLinking(ctx context.Context, value AllowPhonePCLinkingValue) error {
+	return s.c.Add(ctx, URIAllowPhonePCLinking, client.Int(int64(value)))
 }
 
 // UpdateAllowPhonePCLinking updates ./Device/Vendor/MSFT/Policy/Config/Connectivity/AllowPhonePCLinking.
@@ -292,8 +298,8 @@ func (s *Connectivity) CreateAllowPhonePCLinking(ctx context.Context, value int6
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Connectivity) UpdateAllowPhonePCLinking(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowPhonePCLinking, client.Int(value))
+func (s *Connectivity) UpdateAllowPhonePCLinking(ctx context.Context, value AllowPhonePCLinkingValue) error {
+	return s.c.Replace(ctx, URIAllowPhonePCLinking, client.Int(int64(value)))
 }
 
 // DeleteAllowPhonePCLinking deletes ./Device/Vendor/MSFT/Policy/Config/Connectivity/AllowPhonePCLinking.
@@ -321,12 +327,13 @@ func (s *Connectivity) DeleteAllowPhonePCLinking(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Connectivity) GetAllowUSBConnection(ctx context.Context) (int64, error) {
+func (s *Connectivity) GetAllowUSBConnection(ctx context.Context) (AllowUSBConnectionValue, error) {
 	v, err := s.c.Get(ctx, URIAllowUSBConnection)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowUSBConnectionValue(n), err
 }
 
 // CreateAllowUSBConnection creates ./Device/Vendor/MSFT/Policy/Config/Connectivity/AllowUSBConnection.
@@ -338,8 +345,8 @@ func (s *Connectivity) GetAllowUSBConnection(ctx context.Context) (int64, error)
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Connectivity) CreateAllowUSBConnection(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowUSBConnection, client.Int(value))
+func (s *Connectivity) CreateAllowUSBConnection(ctx context.Context, value AllowUSBConnectionValue) error {
+	return s.c.Add(ctx, URIAllowUSBConnection, client.Int(int64(value)))
 }
 
 // UpdateAllowUSBConnection updates ./Device/Vendor/MSFT/Policy/Config/Connectivity/AllowUSBConnection.
@@ -351,8 +358,8 @@ func (s *Connectivity) CreateAllowUSBConnection(ctx context.Context, value int64
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Connectivity) UpdateAllowUSBConnection(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowUSBConnection, client.Int(value))
+func (s *Connectivity) UpdateAllowUSBConnection(ctx context.Context, value AllowUSBConnectionValue) error {
+	return s.c.Replace(ctx, URIAllowUSBConnection, client.Int(int64(value)))
 }
 
 // DeleteAllowUSBConnection deletes ./Device/Vendor/MSFT/Policy/Config/Connectivity/AllowUSBConnection.
@@ -373,12 +380,13 @@ func (s *Connectivity) DeleteAllowUSBConnection(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Connectivity) GetAllowVPNOverCellular(ctx context.Context) (int64, error) {
+func (s *Connectivity) GetAllowVPNOverCellular(ctx context.Context) (AllowVPNOverCellularValue, error) {
 	v, err := s.c.Get(ctx, URIAllowVPNOverCellular)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowVPNOverCellularValue(n), err
 }
 
 // CreateAllowVPNOverCellular creates ./Device/Vendor/MSFT/Policy/Config/Connectivity/AllowVPNOverCellular.
@@ -386,8 +394,8 @@ func (s *Connectivity) GetAllowVPNOverCellular(ctx context.Context) (int64, erro
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Connectivity) CreateAllowVPNOverCellular(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowVPNOverCellular, client.Int(value))
+func (s *Connectivity) CreateAllowVPNOverCellular(ctx context.Context, value AllowVPNOverCellularValue) error {
+	return s.c.Add(ctx, URIAllowVPNOverCellular, client.Int(int64(value)))
 }
 
 // UpdateAllowVPNOverCellular updates ./Device/Vendor/MSFT/Policy/Config/Connectivity/AllowVPNOverCellular.
@@ -395,8 +403,8 @@ func (s *Connectivity) CreateAllowVPNOverCellular(ctx context.Context, value int
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Connectivity) UpdateAllowVPNOverCellular(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowVPNOverCellular, client.Int(value))
+func (s *Connectivity) UpdateAllowVPNOverCellular(ctx context.Context, value AllowVPNOverCellularValue) error {
+	return s.c.Replace(ctx, URIAllowVPNOverCellular, client.Int(int64(value)))
 }
 
 // DeleteAllowVPNOverCellular deletes ./Device/Vendor/MSFT/Policy/Config/Connectivity/AllowVPNOverCellular.
@@ -414,12 +422,13 @@ func (s *Connectivity) DeleteAllowVPNOverCellular(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Connectivity) GetAllowVPNRoamingOverCellular(ctx context.Context) (int64, error) {
+func (s *Connectivity) GetAllowVPNRoamingOverCellular(ctx context.Context) (AllowVPNRoamingOverCellularValue, error) {
 	v, err := s.c.Get(ctx, URIAllowVPNRoamingOverCellular)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowVPNRoamingOverCellularValue(n), err
 }
 
 // CreateAllowVPNRoamingOverCellular creates ./Device/Vendor/MSFT/Policy/Config/Connectivity/AllowVPNRoamingOverCellular.
@@ -428,8 +437,8 @@ func (s *Connectivity) GetAllowVPNRoamingOverCellular(ctx context.Context) (int6
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Connectivity) CreateAllowVPNRoamingOverCellular(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowVPNRoamingOverCellular, client.Int(value))
+func (s *Connectivity) CreateAllowVPNRoamingOverCellular(ctx context.Context, value AllowVPNRoamingOverCellularValue) error {
+	return s.c.Add(ctx, URIAllowVPNRoamingOverCellular, client.Int(int64(value)))
 }
 
 // UpdateAllowVPNRoamingOverCellular updates ./Device/Vendor/MSFT/Policy/Config/Connectivity/AllowVPNRoamingOverCellular.
@@ -438,8 +447,8 @@ func (s *Connectivity) CreateAllowVPNRoamingOverCellular(ctx context.Context, va
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Connectivity) UpdateAllowVPNRoamingOverCellular(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowVPNRoamingOverCellular, client.Int(value))
+func (s *Connectivity) UpdateAllowVPNRoamingOverCellular(ctx context.Context, value AllowVPNRoamingOverCellularValue) error {
+	return s.c.Replace(ctx, URIAllowVPNRoamingOverCellular, client.Int(int64(value)))
 }
 
 // DeleteAllowVPNRoamingOverCellular deletes ./Device/Vendor/MSFT/Policy/Config/Connectivity/AllowVPNRoamingOverCellular.
@@ -490,12 +499,13 @@ func (s *Connectivity) DeleteDiablePrintingOverHTTP(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Connectivity) GetDisableCellularOperatorSettingsPage(ctx context.Context) (int64, error) {
+func (s *Connectivity) GetDisableCellularOperatorSettingsPage(ctx context.Context) (DisableCellularOperatorSettingsPageValue, error) {
 	v, err := s.c.Get(ctx, URIDisableCellularOperatorSettingsPage)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableCellularOperatorSettingsPageValue(n), err
 }
 
 // CreateDisableCellularOperatorSettingsPage creates ./Device/Vendor/MSFT/Policy/Config/Connectivity/DisableCellularOperatorSettingsPage.
@@ -504,8 +514,8 @@ func (s *Connectivity) GetDisableCellularOperatorSettingsPage(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Connectivity) CreateDisableCellularOperatorSettingsPage(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableCellularOperatorSettingsPage, client.Int(value))
+func (s *Connectivity) CreateDisableCellularOperatorSettingsPage(ctx context.Context, value DisableCellularOperatorSettingsPageValue) error {
+	return s.c.Add(ctx, URIDisableCellularOperatorSettingsPage, client.Int(int64(value)))
 }
 
 // UpdateDisableCellularOperatorSettingsPage updates ./Device/Vendor/MSFT/Policy/Config/Connectivity/DisableCellularOperatorSettingsPage.
@@ -514,8 +524,8 @@ func (s *Connectivity) CreateDisableCellularOperatorSettingsPage(ctx context.Con
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Connectivity) UpdateDisableCellularOperatorSettingsPage(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableCellularOperatorSettingsPage, client.Int(value))
+func (s *Connectivity) UpdateDisableCellularOperatorSettingsPage(ctx context.Context, value DisableCellularOperatorSettingsPageValue) error {
+	return s.c.Replace(ctx, URIDisableCellularOperatorSettingsPage, client.Int(int64(value)))
 }
 
 // DeleteDisableCellularOperatorSettingsPage deletes ./Device/Vendor/MSFT/Policy/Config/Connectivity/DisableCellularOperatorSettingsPage.
@@ -533,12 +543,13 @@ func (s *Connectivity) DeleteDisableCellularOperatorSettingsPage(ctx context.Con
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Connectivity) GetDisableCellularSettingsPage(ctx context.Context) (int64, error) {
+func (s *Connectivity) GetDisableCellularSettingsPage(ctx context.Context) (DisableCellularSettingsPageValue, error) {
 	v, err := s.c.Get(ctx, URIDisableCellularSettingsPage)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableCellularSettingsPageValue(n), err
 }
 
 // CreateDisableCellularSettingsPage creates ./Device/Vendor/MSFT/Policy/Config/Connectivity/DisableCellularSettingsPage.
@@ -546,8 +557,8 @@ func (s *Connectivity) GetDisableCellularSettingsPage(ctx context.Context) (int6
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Connectivity) CreateDisableCellularSettingsPage(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableCellularSettingsPage, client.Int(value))
+func (s *Connectivity) CreateDisableCellularSettingsPage(ctx context.Context, value DisableCellularSettingsPageValue) error {
+	return s.c.Add(ctx, URIDisableCellularSettingsPage, client.Int(int64(value)))
 }
 
 // UpdateDisableCellularSettingsPage updates ./Device/Vendor/MSFT/Policy/Config/Connectivity/DisableCellularSettingsPage.
@@ -555,8 +566,8 @@ func (s *Connectivity) CreateDisableCellularSettingsPage(ctx context.Context, va
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Connectivity) UpdateDisableCellularSettingsPage(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableCellularSettingsPage, client.Int(value))
+func (s *Connectivity) UpdateDisableCellularSettingsPage(ctx context.Context, value DisableCellularSettingsPageValue) error {
+	return s.c.Replace(ctx, URIDisableCellularSettingsPage, client.Int(int64(value)))
 }
 
 // DeleteDisableCellularSettingsPage deletes ./Device/Vendor/MSFT/Policy/Config/Connectivity/DisableCellularSettingsPage.
@@ -641,12 +652,13 @@ func (s *Connectivity) DeleteDisableInternetDownloadForWebPublishingAndOnlineOrd
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Connectivity) GetDisallowNetworkConnectivityActiveTests(ctx context.Context) (int64, error) {
+func (s *Connectivity) GetDisallowNetworkConnectivityActiveTests(ctx context.Context) (DisallowNetworkConnectivityActiveTestsValue, error) {
 	v, err := s.c.Get(ctx, URIDisallowNetworkConnectivityActiveTests)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisallowNetworkConnectivityActiveTestsValue(n), err
 }
 
 // CreateDisallowNetworkConnectivityActiveTests creates ./Device/Vendor/MSFT/Policy/Config/Connectivity/DisallowNetworkConnectivityActiveTests.
@@ -658,8 +670,8 @@ func (s *Connectivity) GetDisallowNetworkConnectivityActiveTests(ctx context.Con
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Connectivity) CreateDisallowNetworkConnectivityActiveTests(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisallowNetworkConnectivityActiveTests, client.Int(value))
+func (s *Connectivity) CreateDisallowNetworkConnectivityActiveTests(ctx context.Context, value DisallowNetworkConnectivityActiveTestsValue) error {
+	return s.c.Add(ctx, URIDisallowNetworkConnectivityActiveTests, client.Int(int64(value)))
 }
 
 // UpdateDisallowNetworkConnectivityActiveTests updates ./Device/Vendor/MSFT/Policy/Config/Connectivity/DisallowNetworkConnectivityActiveTests.
@@ -671,8 +683,8 @@ func (s *Connectivity) CreateDisallowNetworkConnectivityActiveTests(ctx context.
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Connectivity) UpdateDisallowNetworkConnectivityActiveTests(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisallowNetworkConnectivityActiveTests, client.Int(value))
+func (s *Connectivity) UpdateDisallowNetworkConnectivityActiveTests(ctx context.Context, value DisallowNetworkConnectivityActiveTestsValue) error {
+	return s.c.Replace(ctx, URIDisallowNetworkConnectivityActiveTests, client.Int(int64(value)))
 }
 
 // DeleteDisallowNetworkConnectivityActiveTests deletes ./Device/Vendor/MSFT/Policy/Config/Connectivity/DisallowNetworkConnectivityActiveTests.
@@ -757,12 +769,13 @@ func (s *Connectivity) DeleteProhibitInstallationAndConfigurationOfNetworkBridge
 //
 // Default: 1.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Connectivity) GetUseCellularWhenWiFiPoor(ctx context.Context) (int64, error) {
+func (s *Connectivity) GetUseCellularWhenWiFiPoor(ctx context.Context) (UseCellularWhenWiFiPoorValue, error) {
 	v, err := s.c.Get(ctx, URIUseCellularWhenWiFiPoor)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return UseCellularWhenWiFiPoorValue(n), err
 }
 
 // CreateUseCellularWhenWiFiPoor creates ./Device/Vendor/MSFT/Policy/Config/Connectivity/UseCellularWhenWiFiPoor.
@@ -770,8 +783,8 @@ func (s *Connectivity) GetUseCellularWhenWiFiPoor(ctx context.Context) (int64, e
 //
 // Default: 1.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Connectivity) CreateUseCellularWhenWiFiPoor(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIUseCellularWhenWiFiPoor, client.Int(value))
+func (s *Connectivity) CreateUseCellularWhenWiFiPoor(ctx context.Context, value UseCellularWhenWiFiPoorValue) error {
+	return s.c.Add(ctx, URIUseCellularWhenWiFiPoor, client.Int(int64(value)))
 }
 
 // UpdateUseCellularWhenWiFiPoor updates ./Device/Vendor/MSFT/Policy/Config/Connectivity/UseCellularWhenWiFiPoor.
@@ -779,8 +792,8 @@ func (s *Connectivity) CreateUseCellularWhenWiFiPoor(ctx context.Context, value 
 //
 // Default: 1.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Connectivity) UpdateUseCellularWhenWiFiPoor(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIUseCellularWhenWiFiPoor, client.Int(value))
+func (s *Connectivity) UpdateUseCellularWhenWiFiPoor(ctx context.Context, value UseCellularWhenWiFiPoorValue) error {
+	return s.c.Replace(ctx, URIUseCellularWhenWiFiPoor, client.Int(int64(value)))
 }
 
 // DeleteUseCellularWhenWiFiPoor deletes ./Device/Vendor/MSFT/Policy/Config/Connectivity/UseCellularWhenWiFiPoor.

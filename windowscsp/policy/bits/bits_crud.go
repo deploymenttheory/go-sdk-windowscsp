@@ -347,12 +347,13 @@ func (s *BITS) DeleteBandwidthThrottlingTransferRate(ctx context.Context) error 
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *BITS) GetCostedNetworkBehaviorBackgroundPriority(ctx context.Context) (int64, error) {
+func (s *BITS) GetCostedNetworkBehaviorBackgroundPriority(ctx context.Context) (CostedNetworkBehaviorBackgroundPriorityValue, error) {
 	v, err := s.c.Get(ctx, URICostedNetworkBehaviorBackgroundPriority)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return CostedNetworkBehaviorBackgroundPriorityValue(n), err
 }
 
 // CreateCostedNetworkBehaviorBackgroundPriority creates ./Device/Vendor/MSFT/Policy/Config/BITS/CostedNetworkBehaviorBackgroundPriority.
@@ -370,8 +371,8 @@ func (s *BITS) GetCostedNetworkBehaviorBackgroundPriority(ctx context.Context) (
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *BITS) CreateCostedNetworkBehaviorBackgroundPriority(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URICostedNetworkBehaviorBackgroundPriority, client.Int(value))
+func (s *BITS) CreateCostedNetworkBehaviorBackgroundPriority(ctx context.Context, value CostedNetworkBehaviorBackgroundPriorityValue) error {
+	return s.c.Add(ctx, URICostedNetworkBehaviorBackgroundPriority, client.Int(int64(value)))
 }
 
 // UpdateCostedNetworkBehaviorBackgroundPriority updates ./Device/Vendor/MSFT/Policy/Config/BITS/CostedNetworkBehaviorBackgroundPriority.
@@ -389,8 +390,8 @@ func (s *BITS) CreateCostedNetworkBehaviorBackgroundPriority(ctx context.Context
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *BITS) UpdateCostedNetworkBehaviorBackgroundPriority(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URICostedNetworkBehaviorBackgroundPriority, client.Int(value))
+func (s *BITS) UpdateCostedNetworkBehaviorBackgroundPriority(ctx context.Context, value CostedNetworkBehaviorBackgroundPriorityValue) error {
+	return s.c.Replace(ctx, URICostedNetworkBehaviorBackgroundPriority, client.Int(int64(value)))
 }
 
 // DeleteCostedNetworkBehaviorBackgroundPriority deletes ./Device/Vendor/MSFT/Policy/Config/BITS/CostedNetworkBehaviorBackgroundPriority.
@@ -427,12 +428,13 @@ func (s *BITS) DeleteCostedNetworkBehaviorBackgroundPriority(ctx context.Context
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *BITS) GetCostedNetworkBehaviorForegroundPriority(ctx context.Context) (int64, error) {
+func (s *BITS) GetCostedNetworkBehaviorForegroundPriority(ctx context.Context) (CostedNetworkBehaviorForegroundPriorityValue, error) {
 	v, err := s.c.Get(ctx, URICostedNetworkBehaviorForegroundPriority)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return CostedNetworkBehaviorForegroundPriorityValue(n), err
 }
 
 // CreateCostedNetworkBehaviorForegroundPriority creates ./Device/Vendor/MSFT/Policy/Config/BITS/CostedNetworkBehaviorForegroundPriority.
@@ -450,8 +452,8 @@ func (s *BITS) GetCostedNetworkBehaviorForegroundPriority(ctx context.Context) (
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *BITS) CreateCostedNetworkBehaviorForegroundPriority(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URICostedNetworkBehaviorForegroundPriority, client.Int(value))
+func (s *BITS) CreateCostedNetworkBehaviorForegroundPriority(ctx context.Context, value CostedNetworkBehaviorForegroundPriorityValue) error {
+	return s.c.Add(ctx, URICostedNetworkBehaviorForegroundPriority, client.Int(int64(value)))
 }
 
 // UpdateCostedNetworkBehaviorForegroundPriority updates ./Device/Vendor/MSFT/Policy/Config/BITS/CostedNetworkBehaviorForegroundPriority.
@@ -469,8 +471,8 @@ func (s *BITS) CreateCostedNetworkBehaviorForegroundPriority(ctx context.Context
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *BITS) UpdateCostedNetworkBehaviorForegroundPriority(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URICostedNetworkBehaviorForegroundPriority, client.Int(value))
+func (s *BITS) UpdateCostedNetworkBehaviorForegroundPriority(ctx context.Context, value CostedNetworkBehaviorForegroundPriorityValue) error {
+	return s.c.Replace(ctx, URICostedNetworkBehaviorForegroundPriority, client.Int(int64(value)))
 }
 
 // DeleteCostedNetworkBehaviorForegroundPriority deletes ./Device/Vendor/MSFT/Policy/Config/BITS/CostedNetworkBehaviorForegroundPriority.

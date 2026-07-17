@@ -2,12 +2,33 @@
 
 package dmaguard
 
-// DeviceEnumerationPolicy allowed values.
+import (
+	"fmt"
+)
+
+// DeviceEnumerationPolicyValue — allowed values for the DeviceEnumerationPolicy node.
+type DeviceEnumerationPolicyValue int64
+
 const (
 	// Block all (Most restrictive)
-	DeviceEnumerationPolicyBlockAll int64 = 0
+	DeviceEnumerationPolicyBlockAll DeviceEnumerationPolicyValue = 0
 	// Only after log in/screen unlock
-	DeviceEnumerationPolicyOnlyAfterLogInScreenUnlock int64 = 1
+	DeviceEnumerationPolicyOnlyAfterLogInScreenUnlock DeviceEnumerationPolicyValue = 1
 	// Allow all (Least restrictive)
-	DeviceEnumerationPolicyAllowAll int64 = 2
+	DeviceEnumerationPolicyAllowAll DeviceEnumerationPolicyValue = 2
 )
+
+// String returns the DeviceEnumerationPolicyValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DeviceEnumerationPolicyValue) String() string {
+	switch e {
+	case DeviceEnumerationPolicyBlockAll:
+		return "DeviceEnumerationPolicyBlockAll"
+	case DeviceEnumerationPolicyOnlyAfterLogInScreenUnlock:
+		return "DeviceEnumerationPolicyOnlyAfterLogInScreenUnlock"
+	case DeviceEnumerationPolicyAllowAll:
+		return "DeviceEnumerationPolicyAllowAll"
+	default:
+		return fmt.Sprintf("DeviceEnumerationPolicyValue(%d)", int64(e))
+	}
+}

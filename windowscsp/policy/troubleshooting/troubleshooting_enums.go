@@ -2,23 +2,50 @@
 
 package troubleshooting
 
-// AllowRecommendations allowed values.
+import (
+	"fmt"
+)
+
+// AllowRecommendationsValue — allowed values for the AllowRecommendations node.
+type AllowRecommendationsValue int64
+
 const (
 	// Off - Do not allow users, system features, or Microsoft to apply troubleshooting.
-	AllowRecommendationsOffDoNotAllowUsers int64 = 0
+	AllowRecommendationsOffDoNotAllowUsers AllowRecommendationsValue = 0
 	// Critical - Automatically apply troubleshooting for critical problems detected by system features
 	// and Microsoft. Do not notify users when troubleshooting has solved a problem.
-	AllowRecommendationsCriticalAutomaticallyApplyTroubleshootingFor int64 = 1
+	AllowRecommendationsCriticalAutomaticallyApplyTroubleshootingFor AllowRecommendationsValue = 1
 	// Prompt - Automatically apply troubleshooting for critical problems detected by system features
 	// and Microsoft. Prompt users when troubleshooting for other problems is available and allow the
 	// user to choose to apply or ignore.
-	AllowRecommendationsPromptAutomaticallyApplyTroubleshootingFor int64 = 2
+	AllowRecommendationsPromptAutomaticallyApplyTroubleshootingFor AllowRecommendationsValue = 2
 	// Notify - Automatically apply troubleshooting for critical and other problems detected by system
 	// features and Microsoft. Notify users when troubleshooting has solved a problem.
-	AllowRecommendationsNotifyAutomaticallyApplyTroubleshootingFor int64 = 3
+	AllowRecommendationsNotifyAutomaticallyApplyTroubleshootingFor AllowRecommendationsValue = 3
 	// Silent - Automatically apply troubleshooting for critical and other problems detected by system
 	// features and Microsoft. Do not notify users when troubleshooting has solved a problem.
-	AllowRecommendationsSilentAutomaticallyApplyTroubleshootingFor int64 = 4
+	AllowRecommendationsSilentAutomaticallyApplyTroubleshootingFor AllowRecommendationsValue = 4
 	// Configurable - Allow the user to choose their own troubleshooting settings.
-	AllowRecommendationsConfigurableAllowTheUserTo int64 = 5
+	AllowRecommendationsConfigurableAllowTheUserTo AllowRecommendationsValue = 5
 )
+
+// String returns the AllowRecommendationsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowRecommendationsValue) String() string {
+	switch e {
+	case AllowRecommendationsOffDoNotAllowUsers:
+		return "AllowRecommendationsOffDoNotAllowUsers"
+	case AllowRecommendationsCriticalAutomaticallyApplyTroubleshootingFor:
+		return "AllowRecommendationsCriticalAutomaticallyApplyTroubleshootingFor"
+	case AllowRecommendationsPromptAutomaticallyApplyTroubleshootingFor:
+		return "AllowRecommendationsPromptAutomaticallyApplyTroubleshootingFor"
+	case AllowRecommendationsNotifyAutomaticallyApplyTroubleshootingFor:
+		return "AllowRecommendationsNotifyAutomaticallyApplyTroubleshootingFor"
+	case AllowRecommendationsSilentAutomaticallyApplyTroubleshootingFor:
+		return "AllowRecommendationsSilentAutomaticallyApplyTroubleshootingFor"
+	case AllowRecommendationsConfigurableAllowTheUserTo:
+		return "AllowRecommendationsConfigurableAllowTheUserTo"
+	default:
+		return fmt.Sprintf("AllowRecommendationsValue(%d)", int64(e))
+	}
+}

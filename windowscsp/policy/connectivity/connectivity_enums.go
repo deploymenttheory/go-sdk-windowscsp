@@ -2,114 +2,317 @@
 
 package connectivity
 
-// AllowBluetooth allowed values.
+import (
+	"fmt"
+)
+
+// AllowBluetoothValue — allowed values for the AllowBluetooth node.
+type AllowBluetoothValue int64
+
 const (
 	// Disallow Bluetooth. If this is set to 0, the radio in the Bluetooth control panel will be grayed
 	// out and the user will not be able to turn Bluetooth on.
-	AllowBluetoothDisallowBluetooth int64 = 0
+	AllowBluetoothDisallowBluetooth AllowBluetoothValue = 0
 	// Allow Bluetooth. If this is set to 2, the radio in the Bluetooth control panel will be
 	// functional and the user will be able to turn Bluetooth on.
-	AllowBluetoothAllowBluetooth int64 = 2
+	AllowBluetoothAllowBluetooth AllowBluetoothValue = 2
 )
 
-// AllowCellularData allowed values.
+// String returns the AllowBluetoothValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowBluetoothValue) String() string {
+	switch e {
+	case AllowBluetoothDisallowBluetooth:
+		return "AllowBluetoothDisallowBluetooth"
+	case AllowBluetoothAllowBluetooth:
+		return "AllowBluetoothAllowBluetooth"
+	default:
+		return fmt.Sprintf("AllowBluetoothValue(%d)", int64(e))
+	}
+}
+
+// AllowCellularDataValue — allowed values for the AllowCellularData node.
+type AllowCellularDataValue int64
+
 const (
 	// Do not allow the cellular data channel. The user cannot turn it on. This value is not supported
 	// in Windows 10, version 1511.
-	AllowCellularDataDoNotAllowTheCellularData int64 = 0
+	AllowCellularDataDoNotAllowTheCellularData AllowCellularDataValue = 0
 	// Allow the cellular data channel. The user can turn it off.
-	AllowCellularDataAllowTheCellularDataChannel int64 = 1
+	AllowCellularDataAllowTheCellularDataChannel AllowCellularDataValue = 1
 	// Allow the cellular data channel. The user cannot turn it off.
-	AllowCellularDataAllowTheCellularDataChannel2 int64 = 2
+	AllowCellularDataAllowTheCellularDataChannel2 AllowCellularDataValue = 2
 )
 
-// AllowCellularDataRoaming allowed values.
+// String returns the AllowCellularDataValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowCellularDataValue) String() string {
+	switch e {
+	case AllowCellularDataDoNotAllowTheCellularData:
+		return "AllowCellularDataDoNotAllowTheCellularData"
+	case AllowCellularDataAllowTheCellularDataChannel:
+		return "AllowCellularDataAllowTheCellularDataChannel"
+	case AllowCellularDataAllowTheCellularDataChannel2:
+		return "AllowCellularDataAllowTheCellularDataChannel2"
+	default:
+		return fmt.Sprintf("AllowCellularDataValue(%d)", int64(e))
+	}
+}
+
+// AllowCellularDataRoamingValue — allowed values for the AllowCellularDataRoaming node.
+type AllowCellularDataRoamingValue int64
+
 const (
 	// Do not allow cellular data roaming. The user cannot turn it on. This value is not supported in
 	// Windows 10, version 1511.
-	AllowCellularDataRoamingDoNotAllowCellularDataRoaming int64 = 0
+	AllowCellularDataRoamingDoNotAllowCellularDataRoaming AllowCellularDataRoamingValue = 0
 	// Allow cellular data roaming.
-	AllowCellularDataRoamingAllowCellularDataRoaming int64 = 1
+	AllowCellularDataRoamingAllowCellularDataRoaming AllowCellularDataRoamingValue = 1
 	// Allow cellular data roaming on. The user cannot turn it off.
-	AllowCellularDataRoamingAllowCellularDataRoamingOn int64 = 2
+	AllowCellularDataRoamingAllowCellularDataRoamingOn AllowCellularDataRoamingValue = 2
 )
 
-// AllowConnectedDevices allowed values.
+// String returns the AllowCellularDataRoamingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowCellularDataRoamingValue) String() string {
+	switch e {
+	case AllowCellularDataRoamingDoNotAllowCellularDataRoaming:
+		return "AllowCellularDataRoamingDoNotAllowCellularDataRoaming"
+	case AllowCellularDataRoamingAllowCellularDataRoaming:
+		return "AllowCellularDataRoamingAllowCellularDataRoaming"
+	case AllowCellularDataRoamingAllowCellularDataRoamingOn:
+		return "AllowCellularDataRoamingAllowCellularDataRoamingOn"
+	default:
+		return fmt.Sprintf("AllowCellularDataRoamingValue(%d)", int64(e))
+	}
+}
+
+// AllowConnectedDevicesValue — allowed values for the AllowConnectedDevices node.
+type AllowConnectedDevicesValue int64
+
 const (
 	// Disable (CDP service not available).
-	AllowConnectedDevicesDisable int64 = 0
+	AllowConnectedDevicesDisable AllowConnectedDevicesValue = 0
 	// Allow (CDP service available).
-	AllowConnectedDevicesAllow int64 = 1
+	AllowConnectedDevicesAllow AllowConnectedDevicesValue = 1
 )
 
-// AllowNFC allowed values.
+// String returns the AllowConnectedDevicesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowConnectedDevicesValue) String() string {
+	switch e {
+	case AllowConnectedDevicesDisable:
+		return "AllowConnectedDevicesDisable"
+	case AllowConnectedDevicesAllow:
+		return "AllowConnectedDevicesAllow"
+	default:
+		return fmt.Sprintf("AllowConnectedDevicesValue(%d)", int64(e))
+	}
+}
+
+// AllowNFCValue — allowed values for the AllowNFC node.
+type AllowNFCValue int64
+
 const (
 	// Disabled.
-	AllowNFCDisabled int64 = 0
+	AllowNFCDisabled AllowNFCValue = 0
 	// Enabled.
-	AllowNFCEnabled int64 = 1
+	AllowNFCEnabled AllowNFCValue = 1
 )
 
-// AllowPhonePCLinking allowed values.
+// String returns the AllowNFCValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowNFCValue) String() string {
+	switch e {
+	case AllowNFCDisabled:
+		return "AllowNFCDisabled"
+	case AllowNFCEnabled:
+		return "AllowNFCEnabled"
+	default:
+		return fmt.Sprintf("AllowNFCValue(%d)", int64(e))
+	}
+}
+
+// AllowPhonePCLinkingValue — allowed values for the AllowPhonePCLinking node.
+type AllowPhonePCLinkingValue int64
+
 const (
 	// Do not link.
-	AllowPhonePCLinkingDoNotLink int64 = 0
+	AllowPhonePCLinkingDoNotLink AllowPhonePCLinkingValue = 0
 	// Allow phone-PC linking.
-	AllowPhonePCLinkingAllowPhonePCLinking int64 = 1
+	AllowPhonePCLinkingAllowPhonePCLinking AllowPhonePCLinkingValue = 1
 )
 
-// AllowUSBConnection allowed values.
+// String returns the AllowPhonePCLinkingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowPhonePCLinkingValue) String() string {
+	switch e {
+	case AllowPhonePCLinkingDoNotLink:
+		return "AllowPhonePCLinkingDoNotLink"
+	case AllowPhonePCLinkingAllowPhonePCLinking:
+		return "AllowPhonePCLinkingAllowPhonePCLinking"
+	default:
+		return fmt.Sprintf("AllowPhonePCLinkingValue(%d)", int64(e))
+	}
+}
+
+// AllowUSBConnectionValue — allowed values for the AllowUSBConnection node.
+type AllowUSBConnectionValue int64
+
 const (
 	// Not allowed.
-	AllowUSBConnectionNotAllowed int64 = 0
+	AllowUSBConnectionNotAllowed AllowUSBConnectionValue = 0
 	// Allowed.
-	AllowUSBConnectionAllowed int64 = 1
+	AllowUSBConnectionAllowed AllowUSBConnectionValue = 1
 )
 
-// AllowVPNOverCellular allowed values.
+// String returns the AllowUSBConnectionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowUSBConnectionValue) String() string {
+	switch e {
+	case AllowUSBConnectionNotAllowed:
+		return "AllowUSBConnectionNotAllowed"
+	case AllowUSBConnectionAllowed:
+		return "AllowUSBConnectionAllowed"
+	default:
+		return fmt.Sprintf("AllowUSBConnectionValue(%d)", int64(e))
+	}
+}
+
+// AllowVPNOverCellularValue — allowed values for the AllowVPNOverCellular node.
+type AllowVPNOverCellularValue int64
+
 const (
 	// VPN is not allowed over cellular.
-	AllowVPNOverCellularVPNIsNotAllowedOverCellular int64 = 0
+	AllowVPNOverCellularVPNIsNotAllowedOverCellular AllowVPNOverCellularValue = 0
 	// VPN can use any connection, including cellular.
-	AllowVPNOverCellularVPNCanUseAnyConnectionIncluding int64 = 1
+	AllowVPNOverCellularVPNCanUseAnyConnectionIncluding AllowVPNOverCellularValue = 1
 )
 
-// AllowVPNRoamingOverCellular allowed values.
+// String returns the AllowVPNOverCellularValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowVPNOverCellularValue) String() string {
+	switch e {
+	case AllowVPNOverCellularVPNIsNotAllowedOverCellular:
+		return "AllowVPNOverCellularVPNIsNotAllowedOverCellular"
+	case AllowVPNOverCellularVPNCanUseAnyConnectionIncluding:
+		return "AllowVPNOverCellularVPNCanUseAnyConnectionIncluding"
+	default:
+		return fmt.Sprintf("AllowVPNOverCellularValue(%d)", int64(e))
+	}
+}
+
+// AllowVPNRoamingOverCellularValue — allowed values for the AllowVPNRoamingOverCellular node.
+type AllowVPNRoamingOverCellularValue int64
+
 const (
 	// Not allowed.
-	AllowVPNRoamingOverCellularNotAllowed int64 = 0
+	AllowVPNRoamingOverCellularNotAllowed AllowVPNRoamingOverCellularValue = 0
 	// Allowed.
-	AllowVPNRoamingOverCellularAllowed int64 = 1
+	AllowVPNRoamingOverCellularAllowed AllowVPNRoamingOverCellularValue = 1
 )
 
-// DisableCellularOperatorSettingsPage allowed values.
+// String returns the AllowVPNRoamingOverCellularValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowVPNRoamingOverCellularValue) String() string {
+	switch e {
+	case AllowVPNRoamingOverCellularNotAllowed:
+		return "AllowVPNRoamingOverCellularNotAllowed"
+	case AllowVPNRoamingOverCellularAllowed:
+		return "AllowVPNRoamingOverCellularAllowed"
+	default:
+		return fmt.Sprintf("AllowVPNRoamingOverCellularValue(%d)", int64(e))
+	}
+}
+
+// DisableCellularOperatorSettingsPageValue — allowed values for the DisableCellularOperatorSettingsPage node.
+type DisableCellularOperatorSettingsPageValue int64
+
 const (
 	// Disabled
-	DisableCellularOperatorSettingsPageDisabled int64 = 0
+	DisableCellularOperatorSettingsPageDisabled DisableCellularOperatorSettingsPageValue = 0
 	// Enabled
-	DisableCellularOperatorSettingsPageEnabled int64 = 1
+	DisableCellularOperatorSettingsPageEnabled DisableCellularOperatorSettingsPageValue = 1
 )
 
-// DisableCellularSettingsPage allowed values.
+// String returns the DisableCellularOperatorSettingsPageValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableCellularOperatorSettingsPageValue) String() string {
+	switch e {
+	case DisableCellularOperatorSettingsPageDisabled:
+		return "DisableCellularOperatorSettingsPageDisabled"
+	case DisableCellularOperatorSettingsPageEnabled:
+		return "DisableCellularOperatorSettingsPageEnabled"
+	default:
+		return fmt.Sprintf("DisableCellularOperatorSettingsPageValue(%d)", int64(e))
+	}
+}
+
+// DisableCellularSettingsPageValue — allowed values for the DisableCellularSettingsPage node.
+type DisableCellularSettingsPageValue int64
+
 const (
 	// Disabled
-	DisableCellularSettingsPageDisabled int64 = 0
+	DisableCellularSettingsPageDisabled DisableCellularSettingsPageValue = 0
 	// Enabled
-	DisableCellularSettingsPageEnabled int64 = 1
+	DisableCellularSettingsPageEnabled DisableCellularSettingsPageValue = 1
 )
 
-// DisallowNetworkConnectivityActiveTests allowed values.
+// String returns the DisableCellularSettingsPageValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableCellularSettingsPageValue) String() string {
+	switch e {
+	case DisableCellularSettingsPageDisabled:
+		return "DisableCellularSettingsPageDisabled"
+	case DisableCellularSettingsPageEnabled:
+		return "DisableCellularSettingsPageEnabled"
+	default:
+		return fmt.Sprintf("DisableCellularSettingsPageValue(%d)", int64(e))
+	}
+}
+
+// DisallowNetworkConnectivityActiveTestsValue — allowed values for the DisallowNetworkConnectivityActiveTests node.
+type DisallowNetworkConnectivityActiveTestsValue int64
+
 const (
 	// Allow
-	DisallowNetworkConnectivityActiveTestsAllow int64 = 1
+	DisallowNetworkConnectivityActiveTestsAllow DisallowNetworkConnectivityActiveTestsValue = 1
 	// Block
-	DisallowNetworkConnectivityActiveTestsBlock int64 = 0
+	DisallowNetworkConnectivityActiveTestsBlock DisallowNetworkConnectivityActiveTestsValue = 0
 )
 
-// UseCellularWhenWiFiPoor allowed values.
+// String returns the DisallowNetworkConnectivityActiveTestsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisallowNetworkConnectivityActiveTestsValue) String() string {
+	switch e {
+	case DisallowNetworkConnectivityActiveTestsAllow:
+		return "DisallowNetworkConnectivityActiveTestsAllow"
+	case DisallowNetworkConnectivityActiveTestsBlock:
+		return "DisallowNetworkConnectivityActiveTestsBlock"
+	default:
+		return fmt.Sprintf("DisallowNetworkConnectivityActiveTestsValue(%d)", int64(e))
+	}
+}
+
+// UseCellularWhenWiFiPoorValue — allowed values for the UseCellularWhenWiFiPoor node.
+type UseCellularWhenWiFiPoorValue int64
+
 const (
 	// Disabled
-	UseCellularWhenWiFiPoorDisabled int64 = 0
+	UseCellularWhenWiFiPoorDisabled UseCellularWhenWiFiPoorValue = 0
 	// Enabled
-	UseCellularWhenWiFiPoorEnabled int64 = 1
+	UseCellularWhenWiFiPoorEnabled UseCellularWhenWiFiPoorValue = 1
 )
+
+// String returns the UseCellularWhenWiFiPoorValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e UseCellularWhenWiFiPoorValue) String() string {
+	switch e {
+	case UseCellularWhenWiFiPoorDisabled:
+		return "UseCellularWhenWiFiPoorDisabled"
+	case UseCellularWhenWiFiPoorEnabled:
+		return "UseCellularWhenWiFiPoorEnabled"
+	default:
+		return fmt.Sprintf("UseCellularWhenWiFiPoorValue(%d)", int64(e))
+	}
+}

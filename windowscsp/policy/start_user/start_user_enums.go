@@ -2,150 +2,396 @@
 
 package start_user
 
-// AlwaysShowNotificationIcon allowed values.
-const (
-	// Auto-hide notification bell icon
-	AlwaysShowNotificationIconAutoHideNotificationBellIcon int64 = 0
-	// Show notification bell icon
-	AlwaysShowNotificationIconShowNotificationBellIcon int64 = 1
+import (
+	"fmt"
 )
 
-// ConfigureTaskbarSmallButtonBehavior allowed values.
+// AlwaysShowNotificationIconValue — allowed values for the AlwaysShowNotificationIcon node.
+type AlwaysShowNotificationIconValue int64
+
+const (
+	// Auto-hide notification bell icon
+	AlwaysShowNotificationIconAutoHideNotificationBellIcon AlwaysShowNotificationIconValue = 0
+	// Show notification bell icon
+	AlwaysShowNotificationIconShowNotificationBellIcon AlwaysShowNotificationIconValue = 1
+)
+
+// String returns the AlwaysShowNotificationIconValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AlwaysShowNotificationIconValue) String() string {
+	switch e {
+	case AlwaysShowNotificationIconAutoHideNotificationBellIcon:
+		return "AlwaysShowNotificationIconAutoHideNotificationBellIcon"
+	case AlwaysShowNotificationIconShowNotificationBellIcon:
+		return "AlwaysShowNotificationIconShowNotificationBellIcon"
+	default:
+		return fmt.Sprintf("AlwaysShowNotificationIconValue(%d)", int64(e))
+	}
+}
+
+// ConfigureTaskbarSmallButtonBehaviorValue — allowed values for the ConfigureTaskbarSmallButtonBehavior node.
+type ConfigureTaskbarSmallButtonBehaviorValue int64
+
 const (
 	// Always: The taskbar always uses small buttons. The setting will be grayed out in the Settings UI
 	// and the user can not change the setting value.
-	ConfigureTaskbarSmallButtonBehaviorAlways int64 = 0
+	ConfigureTaskbarSmallButtonBehaviorAlways ConfigureTaskbarSmallButtonBehaviorValue = 0
 	// When taskbar is full: The taskbar dynamically switches between small buttons and standard sized
 	// buttons based on available space. The setting will be grayed out in the Settings UI and the user
 	// can not change the setting value.
-	ConfigureTaskbarSmallButtonBehaviorWhenTaskbarIsFull int64 = 1
+	ConfigureTaskbarSmallButtonBehaviorWhenTaskbarIsFull ConfigureTaskbarSmallButtonBehaviorValue = 1
 	// Never: The taskbar never uses small buttons. Only standard sized buttons will be used. The
 	// setting will be grayed out in the Settings UI and the user can not change the setting value.
-	ConfigureTaskbarSmallButtonBehaviorNever int64 = 2
+	ConfigureTaskbarSmallButtonBehaviorNever ConfigureTaskbarSmallButtonBehaviorValue = 2
 	// There is no enforced configuration and the setting can be changed by the user.
-	ConfigureTaskbarSmallButtonBehaviorThereIsNoEnforcedConfigurationAnd int64 = 65535
+	ConfigureTaskbarSmallButtonBehaviorThereIsNoEnforcedConfigurationAnd ConfigureTaskbarSmallButtonBehaviorValue = 65535
 )
 
-// DisableContextMenus allowed values.
+// String returns the ConfigureTaskbarSmallButtonBehaviorValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureTaskbarSmallButtonBehaviorValue) String() string {
+	switch e {
+	case ConfigureTaskbarSmallButtonBehaviorAlways:
+		return "ConfigureTaskbarSmallButtonBehaviorAlways"
+	case ConfigureTaskbarSmallButtonBehaviorWhenTaskbarIsFull:
+		return "ConfigureTaskbarSmallButtonBehaviorWhenTaskbarIsFull"
+	case ConfigureTaskbarSmallButtonBehaviorNever:
+		return "ConfigureTaskbarSmallButtonBehaviorNever"
+	case ConfigureTaskbarSmallButtonBehaviorThereIsNoEnforcedConfigurationAnd:
+		return "ConfigureTaskbarSmallButtonBehaviorThereIsNoEnforcedConfigurationAnd"
+	default:
+		return fmt.Sprintf("ConfigureTaskbarSmallButtonBehaviorValue(%d)", int64(e))
+	}
+}
+
+// DisableContextMenusValue — allowed values for the DisableContextMenus node.
+type DisableContextMenusValue int64
+
 const (
 	// Do not disable.
-	DisableContextMenusDoNotDisable int64 = 0
+	DisableContextMenusDoNotDisable DisableContextMenusValue = 0
 	// Disable.
-	DisableContextMenusDisable int64 = 1
+	DisableContextMenusDisable DisableContextMenusValue = 1
 )
 
-// DisableControlCenter allowed values.
+// String returns the DisableContextMenusValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableContextMenusValue) String() string {
+	switch e {
+	case DisableContextMenusDoNotDisable:
+		return "DisableContextMenusDoNotDisable"
+	case DisableContextMenusDisable:
+		return "DisableContextMenusDisable"
+	default:
+		return fmt.Sprintf("DisableContextMenusValue(%d)", int64(e))
+	}
+}
+
+// DisableControlCenterValue — allowed values for the DisableControlCenter node.
+type DisableControlCenterValue string
+
 const (
 	// Enable Quick Settings.
-	DisableControlCenterEnableQuickSettings = "0"
+	DisableControlCenterEnableQuickSettings DisableControlCenterValue = "0"
 	// Disable Quick Settings.
-	DisableControlCenterDisableQuickSettings = "1"
+	DisableControlCenterDisableQuickSettings DisableControlCenterValue = "1"
 )
 
-// ForceStartSize allowed values.
+// String returns the DisableControlCenterValue value as a plain string.
+func (e DisableControlCenterValue) String() string { return string(e) }
+
+// ForceStartSizeValue — allowed values for the ForceStartSize node.
+type ForceStartSizeValue int64
+
 const (
 	// Do not force size of Start.
-	ForceStartSizeDoNotForceSizeOfStart int64 = 0
+	ForceStartSizeDoNotForceSizeOfStart ForceStartSizeValue = 0
 	// Force non-fullscreen size of Start.
-	ForceStartSizeForceNonFullscreenSizeOfStart int64 = 1
+	ForceStartSizeForceNonFullscreenSizeOfStart ForceStartSizeValue = 1
 	// Force a fullscreen size of Start.
-	ForceStartSizeForceAFullscreenSizeOfStart int64 = 2
+	ForceStartSizeForceAFullscreenSizeOfStart ForceStartSizeValue = 2
 )
 
-// HideAppList allowed values.
+// String returns the ForceStartSizeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ForceStartSizeValue) String() string {
+	switch e {
+	case ForceStartSizeDoNotForceSizeOfStart:
+		return "ForceStartSizeDoNotForceSizeOfStart"
+	case ForceStartSizeForceNonFullscreenSizeOfStart:
+		return "ForceStartSizeForceNonFullscreenSizeOfStart"
+	case ForceStartSizeForceAFullscreenSizeOfStart:
+		return "ForceStartSizeForceAFullscreenSizeOfStart"
+	default:
+		return fmt.Sprintf("ForceStartSizeValue(%d)", int64(e))
+	}
+}
+
+// HideAppListValue — allowed values for the HideAppList node.
+type HideAppListValue int64
+
 const (
 	// None.
-	HideAppListNone int64 = 0
+	HideAppListNone HideAppListValue = 0
 	// Hide all apps list.
-	HideAppListHideAllAppsList int64 = 1
+	HideAppListHideAllAppsList HideAppListValue = 1
 	// Hide all apps list, and Disable "Show app list in Start menu" in Settings app.
-	HideAppListHideAllAppsListAndDisable int64 = 2
+	HideAppListHideAllAppsListAndDisable HideAppListValue = 2
 	// Hide all apps list, remove all apps button, and Disable "Show app list in Start menu" in
 	// Settings app.
-	HideAppListHideAllAppsListRemoveAll int64 = 3
+	HideAppListHideAllAppsListRemoveAll HideAppListValue = 3
 )
 
-// HideCategoryView allowed values.
+// String returns the HideAppListValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HideAppListValue) String() string {
+	switch e {
+	case HideAppListNone:
+		return "HideAppListNone"
+	case HideAppListHideAllAppsList:
+		return "HideAppListHideAllAppsList"
+	case HideAppListHideAllAppsListAndDisable:
+		return "HideAppListHideAllAppsListAndDisable"
+	case HideAppListHideAllAppsListRemoveAll:
+		return "HideAppListHideAllAppsListRemoveAll"
+	default:
+		return fmt.Sprintf("HideAppListValue(%d)", int64(e))
+	}
+}
+
+// HideCategoryViewValue — allowed values for the HideCategoryView node.
+type HideCategoryViewValue int64
+
 const (
 	// Category view shown.
-	HideCategoryViewCategoryViewShown int64 = 0
+	HideCategoryViewCategoryViewShown HideCategoryViewValue = 0
 	// Category view hidden.
-	HideCategoryViewCategoryViewHidden int64 = 1
+	HideCategoryViewCategoryViewHidden HideCategoryViewValue = 1
 )
 
-// HideFrequentlyUsedApps allowed values.
+// String returns the HideCategoryViewValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HideCategoryViewValue) String() string {
+	switch e {
+	case HideCategoryViewCategoryViewShown:
+		return "HideCategoryViewCategoryViewShown"
+	case HideCategoryViewCategoryViewHidden:
+		return "HideCategoryViewCategoryViewHidden"
+	default:
+		return fmt.Sprintf("HideCategoryViewValue(%d)", int64(e))
+	}
+}
+
+// HideFrequentlyUsedAppsValue — allowed values for the HideFrequentlyUsedApps node.
+type HideFrequentlyUsedAppsValue int64
+
 const (
 	// Do not hide.
-	HideFrequentlyUsedAppsDoNotHide int64 = 0
+	HideFrequentlyUsedAppsDoNotHide HideFrequentlyUsedAppsValue = 0
 	// Hide.
-	HideFrequentlyUsedAppsHide int64 = 1
+	HideFrequentlyUsedAppsHide HideFrequentlyUsedAppsValue = 1
 )
 
-// HidePeopleBar allowed values.
+// String returns the HideFrequentlyUsedAppsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HideFrequentlyUsedAppsValue) String() string {
+	switch e {
+	case HideFrequentlyUsedAppsDoNotHide:
+		return "HideFrequentlyUsedAppsDoNotHide"
+	case HideFrequentlyUsedAppsHide:
+		return "HideFrequentlyUsedAppsHide"
+	default:
+		return fmt.Sprintf("HideFrequentlyUsedAppsValue(%d)", int64(e))
+	}
+}
+
+// HidePeopleBarValue — allowed values for the HidePeopleBar node.
+type HidePeopleBarValue int64
+
 const (
 	// Do not hide.
-	HidePeopleBarDoNotHide int64 = 0
+	HidePeopleBarDoNotHide HidePeopleBarValue = 0
 	// Hide.
-	HidePeopleBarHide int64 = 1
+	HidePeopleBarHide HidePeopleBarValue = 1
 )
 
-// HideRecentJumplists allowed values.
+// String returns the HidePeopleBarValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HidePeopleBarValue) String() string {
+	switch e {
+	case HidePeopleBarDoNotHide:
+		return "HidePeopleBarDoNotHide"
+	case HidePeopleBarHide:
+		return "HidePeopleBarHide"
+	default:
+		return fmt.Sprintf("HidePeopleBarValue(%d)", int64(e))
+	}
+}
+
+// HideRecentJumplistsValue — allowed values for the HideRecentJumplists node.
+type HideRecentJumplistsValue int64
+
 const (
 	// Do not hide.
-	HideRecentJumplistsDoNotHide int64 = 0
+	HideRecentJumplistsDoNotHide HideRecentJumplistsValue = 0
 	// Hide.
-	HideRecentJumplistsHide int64 = 1
+	HideRecentJumplistsHide HideRecentJumplistsValue = 1
 )
 
-// HideRecentlyAddedApps allowed values.
+// String returns the HideRecentJumplistsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HideRecentJumplistsValue) String() string {
+	switch e {
+	case HideRecentJumplistsDoNotHide:
+		return "HideRecentJumplistsDoNotHide"
+	case HideRecentJumplistsHide:
+		return "HideRecentJumplistsHide"
+	default:
+		return fmt.Sprintf("HideRecentJumplistsValue(%d)", int64(e))
+	}
+}
+
+// HideRecentlyAddedAppsValue — allowed values for the HideRecentlyAddedApps node.
+type HideRecentlyAddedAppsValue int64
+
 const (
 	// Do not hide.
-	HideRecentlyAddedAppsDoNotHide int64 = 0
+	HideRecentlyAddedAppsDoNotHide HideRecentlyAddedAppsValue = 0
 	// Hide.
-	HideRecentlyAddedAppsHide int64 = 1
+	HideRecentlyAddedAppsHide HideRecentlyAddedAppsValue = 1
 )
 
-// HideRecommendedPersonalizedSites allowed values.
+// String returns the HideRecentlyAddedAppsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HideRecentlyAddedAppsValue) String() string {
+	switch e {
+	case HideRecentlyAddedAppsDoNotHide:
+		return "HideRecentlyAddedAppsDoNotHide"
+	case HideRecentlyAddedAppsHide:
+		return "HideRecentlyAddedAppsHide"
+	default:
+		return fmt.Sprintf("HideRecentlyAddedAppsValue(%d)", int64(e))
+	}
+}
+
+// HideRecommendedPersonalizedSitesValue — allowed values for the HideRecommendedPersonalizedSites node.
+type HideRecommendedPersonalizedSitesValue int64
+
 const (
 	// Personalized Website Recommendations shown.
-	HideRecommendedPersonalizedSitesPersonalizedWebsiteRecommendationsShown int64 = 0
+	HideRecommendedPersonalizedSitesPersonalizedWebsiteRecommendationsShown HideRecommendedPersonalizedSitesValue = 0
 	// Personalized Website Recommendations hidden.
-	HideRecommendedPersonalizedSitesPersonalizedWebsiteRecommendationsHidden int64 = 1
+	HideRecommendedPersonalizedSitesPersonalizedWebsiteRecommendationsHidden HideRecommendedPersonalizedSitesValue = 1
 )
 
-// HideRecommendedSection allowed values.
+// String returns the HideRecommendedPersonalizedSitesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HideRecommendedPersonalizedSitesValue) String() string {
+	switch e {
+	case HideRecommendedPersonalizedSitesPersonalizedWebsiteRecommendationsShown:
+		return "HideRecommendedPersonalizedSitesPersonalizedWebsiteRecommendationsShown"
+	case HideRecommendedPersonalizedSitesPersonalizedWebsiteRecommendationsHidden:
+		return "HideRecommendedPersonalizedSitesPersonalizedWebsiteRecommendationsHidden"
+	default:
+		return fmt.Sprintf("HideRecommendedPersonalizedSitesValue(%d)", int64(e))
+	}
+}
+
+// HideRecommendedSectionValue — allowed values for the HideRecommendedSection node.
+type HideRecommendedSectionValue int64
+
 const (
 	// Recommended section shown.
-	HideRecommendedSectionRecommendedSectionShown int64 = 0
+	HideRecommendedSectionRecommendedSectionShown HideRecommendedSectionValue = 0
 	// Recommended section hidden.
-	HideRecommendedSectionRecommendedSectionHidden int64 = 1
+	HideRecommendedSectionRecommendedSectionHidden HideRecommendedSectionValue = 1
 )
 
-// HideTaskViewButton allowed values.
+// String returns the HideRecommendedSectionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HideRecommendedSectionValue) String() string {
+	switch e {
+	case HideRecommendedSectionRecommendedSectionShown:
+		return "HideRecommendedSectionRecommendedSectionShown"
+	case HideRecommendedSectionRecommendedSectionHidden:
+		return "HideRecommendedSectionRecommendedSectionHidden"
+	default:
+		return fmt.Sprintf("HideRecommendedSectionValue(%d)", int64(e))
+	}
+}
+
+// HideTaskViewButtonValue — allowed values for the HideTaskViewButton node.
+type HideTaskViewButtonValue int64
+
 const (
 	// TaskView button shown.
-	HideTaskViewButtonTaskViewButtonShown int64 = 0
+	HideTaskViewButtonTaskViewButtonShown HideTaskViewButtonValue = 0
 	// TaskView button hidden.
-	HideTaskViewButtonTaskViewButtonHidden int64 = 1
+	HideTaskViewButtonTaskViewButtonHidden HideTaskViewButtonValue = 1
 )
 
-// ShowOrHideMostUsedApps allowed values.
+// String returns the HideTaskViewButtonValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HideTaskViewButtonValue) String() string {
+	switch e {
+	case HideTaskViewButtonTaskViewButtonShown:
+		return "HideTaskViewButtonTaskViewButtonShown"
+	case HideTaskViewButtonTaskViewButtonHidden:
+		return "HideTaskViewButtonTaskViewButtonHidden"
+	default:
+		return fmt.Sprintf("HideTaskViewButtonValue(%d)", int64(e))
+	}
+}
+
+// ShowOrHideMostUsedAppsValue — allowed values for the ShowOrHideMostUsedApps node.
+type ShowOrHideMostUsedAppsValue int64
+
 const (
 	// Do not enforce visibility of list of most used apps in Start; user can control via Settings app
 	// (default behavior equivalent to not configuring this policy).
-	ShowOrHideMostUsedAppsDoNotEnforceVisibilityOfList int64 = 0
+	ShowOrHideMostUsedAppsDoNotEnforceVisibilityOfList ShowOrHideMostUsedAppsValue = 0
 	// Force showing of list of most used apps in Start; corresponding toggle in Setting app is
 	// disabled.
-	ShowOrHideMostUsedAppsForceShowingOfListOfMost int64 = 1
+	ShowOrHideMostUsedAppsForceShowingOfListOfMost ShowOrHideMostUsedAppsValue = 1
 	// Force hiding of list of most used apps in Start; corresponding toggle in Setting app is
 	// disabled.
-	ShowOrHideMostUsedAppsForceHidingOfListOfMost int64 = 2
+	ShowOrHideMostUsedAppsForceHidingOfListOfMost ShowOrHideMostUsedAppsValue = 2
 )
 
-// TurnOffAbbreviatedDateTimeFormat allowed values.
+// String returns the ShowOrHideMostUsedAppsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ShowOrHideMostUsedAppsValue) String() string {
+	switch e {
+	case ShowOrHideMostUsedAppsDoNotEnforceVisibilityOfList:
+		return "ShowOrHideMostUsedAppsDoNotEnforceVisibilityOfList"
+	case ShowOrHideMostUsedAppsForceShowingOfListOfMost:
+		return "ShowOrHideMostUsedAppsForceShowingOfListOfMost"
+	case ShowOrHideMostUsedAppsForceHidingOfListOfMost:
+		return "ShowOrHideMostUsedAppsForceHidingOfListOfMost"
+	default:
+		return fmt.Sprintf("ShowOrHideMostUsedAppsValue(%d)", int64(e))
+	}
+}
+
+// TurnOffAbbreviatedDateTimeFormatValue — allowed values for the TurnOffAbbreviatedDateTimeFormat node.
+type TurnOffAbbreviatedDateTimeFormatValue int64
+
 const (
 	// Show abbreviated time and date format
-	TurnOffAbbreviatedDateTimeFormatShowAbbreviatedTimeAndDateFormat int64 = 0
+	TurnOffAbbreviatedDateTimeFormatShowAbbreviatedTimeAndDateFormat TurnOffAbbreviatedDateTimeFormatValue = 0
 	// Show classic time and date format
-	TurnOffAbbreviatedDateTimeFormatShowClassicTimeAndDateFormat int64 = 1
+	TurnOffAbbreviatedDateTimeFormatShowClassicTimeAndDateFormat TurnOffAbbreviatedDateTimeFormatValue = 1
 )
+
+// String returns the TurnOffAbbreviatedDateTimeFormatValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e TurnOffAbbreviatedDateTimeFormatValue) String() string {
+	switch e {
+	case TurnOffAbbreviatedDateTimeFormatShowAbbreviatedTimeAndDateFormat:
+		return "TurnOffAbbreviatedDateTimeFormatShowAbbreviatedTimeAndDateFormat"
+	case TurnOffAbbreviatedDateTimeFormatShowClassicTimeAndDateFormat:
+		return "TurnOffAbbreviatedDateTimeFormatShowClassicTimeAndDateFormat"
+	default:
+		return fmt.Sprintf("TurnOffAbbreviatedDateTimeFormatValue(%d)", int64(e))
+	}
+}

@@ -2,18 +2,52 @@
 
 package education_user
 
-// AllowGraphingCalculator allowed values.
-const (
-	// Disabled.
-	AllowGraphingCalculatorDisabled int64 = 0
-	// Enabled.
-	AllowGraphingCalculatorEnabled int64 = 1
+import (
+	"fmt"
 )
 
-// PreventAddingNewPrinters allowed values.
+// AllowGraphingCalculatorValue — allowed values for the AllowGraphingCalculator node.
+type AllowGraphingCalculatorValue int64
+
+const (
+	// Disabled.
+	AllowGraphingCalculatorDisabled AllowGraphingCalculatorValue = 0
+	// Enabled.
+	AllowGraphingCalculatorEnabled AllowGraphingCalculatorValue = 1
+)
+
+// String returns the AllowGraphingCalculatorValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowGraphingCalculatorValue) String() string {
+	switch e {
+	case AllowGraphingCalculatorDisabled:
+		return "AllowGraphingCalculatorDisabled"
+	case AllowGraphingCalculatorEnabled:
+		return "AllowGraphingCalculatorEnabled"
+	default:
+		return fmt.Sprintf("AllowGraphingCalculatorValue(%d)", int64(e))
+	}
+}
+
+// PreventAddingNewPrintersValue — allowed values for the PreventAddingNewPrinters node.
+type PreventAddingNewPrintersValue int64
+
 const (
 	// Allow user installation.
-	PreventAddingNewPrintersAllowUserInstallation int64 = 0
+	PreventAddingNewPrintersAllowUserInstallation PreventAddingNewPrintersValue = 0
 	// Prevent user installation.
-	PreventAddingNewPrintersPreventUserInstallation int64 = 1
+	PreventAddingNewPrintersPreventUserInstallation PreventAddingNewPrintersValue = 1
 )
+
+// String returns the PreventAddingNewPrintersValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PreventAddingNewPrintersValue) String() string {
+	switch e {
+	case PreventAddingNewPrintersAllowUserInstallation:
+		return "PreventAddingNewPrintersAllowUserInstallation"
+	case PreventAddingNewPrintersPreventUserInstallation:
+		return "PreventAddingNewPrintersPreventUserInstallation"
+	default:
+		return fmt.Sprintf("PreventAddingNewPrintersValue(%d)", int64(e))
+	}
+}

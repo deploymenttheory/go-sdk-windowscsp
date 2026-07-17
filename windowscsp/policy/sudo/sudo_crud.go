@@ -12,28 +12,29 @@ import (
 //
 // Default: 3.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *Sudo) GetEnableSudo(ctx context.Context) (int64, error) {
+func (s *Sudo) GetEnableSudo(ctx context.Context) (EnableSudoValue, error) {
 	v, err := s.c.Get(ctx, URIEnableSudo)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableSudoValue(n), err
 }
 
 // CreateEnableSudo creates ./Device/Vendor/MSFT/Policy/Config/Sudo/EnableSudo.
 //
 // Default: 3.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *Sudo) CreateEnableSudo(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableSudo, client.Int(value))
+func (s *Sudo) CreateEnableSudo(ctx context.Context, value EnableSudoValue) error {
+	return s.c.Add(ctx, URIEnableSudo, client.Int(int64(value)))
 }
 
 // UpdateEnableSudo updates ./Device/Vendor/MSFT/Policy/Config/Sudo/EnableSudo.
 //
 // Default: 3.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *Sudo) UpdateEnableSudo(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableSudo, client.Int(value))
+func (s *Sudo) UpdateEnableSudo(ctx context.Context, value EnableSudoValue) error {
+	return s.c.Replace(ctx, URIEnableSudo, client.Int(int64(value)))
 }
 
 // DeleteEnableSudo deletes ./Device/Vendor/MSFT/Policy/Config/Sudo/EnableSudo.

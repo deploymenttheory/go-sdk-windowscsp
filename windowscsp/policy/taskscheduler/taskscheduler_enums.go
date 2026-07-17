@@ -2,10 +2,29 @@
 
 package taskscheduler
 
-// EnableXboxGameSaveTask allowed values.
+import (
+	"fmt"
+)
+
+// EnableXboxGameSaveTaskValue — allowed values for the EnableXboxGameSaveTask node.
+type EnableXboxGameSaveTaskValue int64
+
 const (
 	// Disabled
-	EnableXboxGameSaveTaskDisabled int64 = 0
+	EnableXboxGameSaveTaskDisabled EnableXboxGameSaveTaskValue = 0
 	// Enabled
-	EnableXboxGameSaveTaskEnabled int64 = 1
+	EnableXboxGameSaveTaskEnabled EnableXboxGameSaveTaskValue = 1
 )
+
+// String returns the EnableXboxGameSaveTaskValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableXboxGameSaveTaskValue) String() string {
+	switch e {
+	case EnableXboxGameSaveTaskDisabled:
+		return "EnableXboxGameSaveTaskDisabled"
+	case EnableXboxGameSaveTaskEnabled:
+		return "EnableXboxGameSaveTaskEnabled"
+	default:
+		return fmt.Sprintf("EnableXboxGameSaveTaskValue(%d)", int64(e))
+	}
+}

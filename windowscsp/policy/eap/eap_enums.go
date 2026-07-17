@@ -2,10 +2,29 @@
 
 package eap
 
-// AllowTLS13 allowed values.
+import (
+	"fmt"
+)
+
+// AllowTLS13Value — allowed values for the AllowTLS1_3 node.
+type AllowTLS13Value int64
+
 const (
 	// Use of TLS version 1.3 is not allowed for authentication.
-	AllowTLS13UseOfTLSVersion1 int64 = 0
+	AllowTLS13UseOfTLSVersion1 AllowTLS13Value = 0
 	// Use of TLS version 1.3 is allowed for authentication.
-	AllowTLS13UseOfTLSVersion12 int64 = 1
+	AllowTLS13UseOfTLSVersion12 AllowTLS13Value = 1
 )
+
+// String returns the AllowTLS13Value constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowTLS13Value) String() string {
+	switch e {
+	case AllowTLS13UseOfTLSVersion1:
+		return "AllowTLS13UseOfTLSVersion1"
+	case AllowTLS13UseOfTLSVersion12:
+		return "AllowTLS13UseOfTLSVersion12"
+	default:
+		return fmt.Sprintf("AllowTLS13Value(%d)", int64(e))
+	}
+}

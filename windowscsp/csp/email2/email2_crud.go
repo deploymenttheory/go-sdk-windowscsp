@@ -81,24 +81,24 @@ func (s *EMAIL2) DeleteAccountGUIDACCOUNTICON(ctx context.Context, accountGUID s
 
 // GetAccountGUIDACCOUNTTYPE reads ./User/Vendor/MSFT/EMAIL2/{accountGUID}/ACCOUNTTYPE.
 // Specifies the type of account. Valid values are: Email - normal email, VVM - visual voice mail
-func (s *EMAIL2) GetAccountGUIDACCOUNTTYPE(ctx context.Context, accountGUID string) (string, error) {
+func (s *EMAIL2) GetAccountGUIDACCOUNTTYPE(ctx context.Context, accountGUID string) (AccountGUIDACCOUNTTYPEValue, error) {
 	v, err := s.c.Get(ctx, URIAccountGUIDACCOUNTTYPE(accountGUID))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return AccountGUIDACCOUNTTYPEValue(v.Str()), nil
 }
 
 // CreateAccountGUIDACCOUNTTYPE creates ./User/Vendor/MSFT/EMAIL2/{accountGUID}/ACCOUNTTYPE.
 // Specifies the type of account. Valid values are: Email - normal email, VVM - visual voice mail
-func (s *EMAIL2) CreateAccountGUIDACCOUNTTYPE(ctx context.Context, accountGUID string, value string) error {
-	return s.c.Add(ctx, URIAccountGUIDACCOUNTTYPE(accountGUID), client.Chr(value))
+func (s *EMAIL2) CreateAccountGUIDACCOUNTTYPE(ctx context.Context, accountGUID string, value AccountGUIDACCOUNTTYPEValue) error {
+	return s.c.Add(ctx, URIAccountGUIDACCOUNTTYPE(accountGUID), client.Chr(string(value)))
 }
 
 // UpdateAccountGUIDACCOUNTTYPE updates ./User/Vendor/MSFT/EMAIL2/{accountGUID}/ACCOUNTTYPE.
 // Specifies the type of account. Valid values are: Email - normal email, VVM - visual voice mail
-func (s *EMAIL2) UpdateAccountGUIDACCOUNTTYPE(ctx context.Context, accountGUID string, value string) error {
-	return s.c.Replace(ctx, URIAccountGUIDACCOUNTTYPE(accountGUID), client.Chr(value))
+func (s *EMAIL2) UpdateAccountGUIDACCOUNTTYPE(ctx context.Context, accountGUID string, value AccountGUIDACCOUNTTYPEValue) error {
+	return s.c.Replace(ctx, URIAccountGUIDACCOUNTTYPE(accountGUID), client.Chr(string(value)))
 }
 
 // DeleteAccountGUIDACCOUNTTYPE deletes ./User/Vendor/MSFT/EMAIL2/{accountGUID}/ACCOUNTTYPE.
@@ -141,24 +141,24 @@ func (s *EMAIL2) DeleteAccountGUIDAUTHNAME(ctx context.Context, accountGUID stri
 
 // GetAccountGUIDAUTHREQUIRED reads ./User/Vendor/MSFT/EMAIL2/{accountGUID}/AUTHREQUIRED.
 // Character string that specifies whether the outgoing server requires authentication.
-func (s *EMAIL2) GetAccountGUIDAUTHREQUIRED(ctx context.Context, accountGUID string) (string, error) {
+func (s *EMAIL2) GetAccountGUIDAUTHREQUIRED(ctx context.Context, accountGUID string) (AccountGUIDAUTHREQUIREDValue, error) {
 	v, err := s.c.Get(ctx, URIAccountGUIDAUTHREQUIRED(accountGUID))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return AccountGUIDAUTHREQUIREDValue(v.Str()), nil
 }
 
 // CreateAccountGUIDAUTHREQUIRED creates ./User/Vendor/MSFT/EMAIL2/{accountGUID}/AUTHREQUIRED.
 // Character string that specifies whether the outgoing server requires authentication.
-func (s *EMAIL2) CreateAccountGUIDAUTHREQUIRED(ctx context.Context, accountGUID string, value string) error {
-	return s.c.Add(ctx, URIAccountGUIDAUTHREQUIRED(accountGUID), client.Chr(value))
+func (s *EMAIL2) CreateAccountGUIDAUTHREQUIRED(ctx context.Context, accountGUID string, value AccountGUIDAUTHREQUIREDValue) error {
+	return s.c.Add(ctx, URIAccountGUIDAUTHREQUIRED(accountGUID), client.Chr(string(value)))
 }
 
 // UpdateAccountGUIDAUTHREQUIRED updates ./User/Vendor/MSFT/EMAIL2/{accountGUID}/AUTHREQUIRED.
 // Character string that specifies whether the outgoing server requires authentication.
-func (s *EMAIL2) UpdateAccountGUIDAUTHREQUIRED(ctx context.Context, accountGUID string, value string) error {
-	return s.c.Replace(ctx, URIAccountGUIDAUTHREQUIRED(accountGUID), client.Chr(value))
+func (s *EMAIL2) UpdateAccountGUIDAUTHREQUIRED(ctx context.Context, accountGUID string, value AccountGUIDAUTHREQUIREDValue) error {
+	return s.c.Replace(ctx, URIAccountGUIDAUTHREQUIRED(accountGUID), client.Chr(string(value)))
 }
 
 // DeleteAccountGUIDAUTHREQUIRED deletes ./User/Vendor/MSFT/EMAIL2/{accountGUID}/AUTHREQUIRED.
@@ -430,26 +430,26 @@ func (s *EMAIL2) DeleteAccountGUIDDOMAIN(ctx context.Context, accountGUID string
 // GetAccountGUIDDWNDAY reads ./User/Vendor/MSFT/EMAIL2/{accountGUID}/DWNDAY.
 // Character string that specifies how many days' worth of email should be downloaded from the
 // server.
-func (s *EMAIL2) GetAccountGUIDDWNDAY(ctx context.Context, accountGUID string) (string, error) {
+func (s *EMAIL2) GetAccountGUIDDWNDAY(ctx context.Context, accountGUID string) (AccountGUIDDWNDAYValue, error) {
 	v, err := s.c.Get(ctx, URIAccountGUIDDWNDAY(accountGUID))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return AccountGUIDDWNDAYValue(v.Str()), nil
 }
 
 // CreateAccountGUIDDWNDAY creates ./User/Vendor/MSFT/EMAIL2/{accountGUID}/DWNDAY.
 // Character string that specifies how many days' worth of email should be downloaded from the
 // server.
-func (s *EMAIL2) CreateAccountGUIDDWNDAY(ctx context.Context, accountGUID string, value string) error {
-	return s.c.Add(ctx, URIAccountGUIDDWNDAY(accountGUID), client.Chr(value))
+func (s *EMAIL2) CreateAccountGUIDDWNDAY(ctx context.Context, accountGUID string, value AccountGUIDDWNDAYValue) error {
+	return s.c.Add(ctx, URIAccountGUIDDWNDAY(accountGUID), client.Chr(string(value)))
 }
 
 // UpdateAccountGUIDDWNDAY updates ./User/Vendor/MSFT/EMAIL2/{accountGUID}/DWNDAY.
 // Character string that specifies how many days' worth of email should be downloaded from the
 // server.
-func (s *EMAIL2) UpdateAccountGUIDDWNDAY(ctx context.Context, accountGUID string, value string) error {
-	return s.c.Replace(ctx, URIAccountGUIDDWNDAY(accountGUID), client.Chr(value))
+func (s *EMAIL2) UpdateAccountGUIDDWNDAY(ctx context.Context, accountGUID string, value AccountGUIDDWNDAYValue) error {
+	return s.c.Replace(ctx, URIAccountGUIDDWNDAY(accountGUID), client.Chr(string(value)))
 }
 
 // DeleteAccountGUIDDWNDAY deletes ./User/Vendor/MSFT/EMAIL2/{accountGUID}/DWNDAY.
@@ -495,28 +495,28 @@ func (s *EMAIL2) DeleteAccountGUIDINSERVER(ctx context.Context, accountGUID stri
 // Specifies the maximum size for a message attachment. Attachments beyond this size will not be
 // downloaded but it will remain on the server. The message itself will be downloaded. This value
 // can be set only for IMAP4 accounts. The limit is specified in KB.
-func (s *EMAIL2) GetAccountGUIDKEEPMAX(ctx context.Context, accountGUID string) (string, error) {
+func (s *EMAIL2) GetAccountGUIDKEEPMAX(ctx context.Context, accountGUID string) (AccountGUIDKEEPMAXValue, error) {
 	v, err := s.c.Get(ctx, URIAccountGUIDKEEPMAX(accountGUID))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return AccountGUIDKEEPMAXValue(v.Str()), nil
 }
 
 // CreateAccountGUIDKEEPMAX creates ./User/Vendor/MSFT/EMAIL2/{accountGUID}/KEEPMAX.
 // Specifies the maximum size for a message attachment. Attachments beyond this size will not be
 // downloaded but it will remain on the server. The message itself will be downloaded. This value
 // can be set only for IMAP4 accounts. The limit is specified in KB.
-func (s *EMAIL2) CreateAccountGUIDKEEPMAX(ctx context.Context, accountGUID string, value string) error {
-	return s.c.Add(ctx, URIAccountGUIDKEEPMAX(accountGUID), client.Chr(value))
+func (s *EMAIL2) CreateAccountGUIDKEEPMAX(ctx context.Context, accountGUID string, value AccountGUIDKEEPMAXValue) error {
+	return s.c.Add(ctx, URIAccountGUIDKEEPMAX(accountGUID), client.Chr(string(value)))
 }
 
 // UpdateAccountGUIDKEEPMAX updates ./User/Vendor/MSFT/EMAIL2/{accountGUID}/KEEPMAX.
 // Specifies the maximum size for a message attachment. Attachments beyond this size will not be
 // downloaded but it will remain on the server. The message itself will be downloaded. This value
 // can be set only for IMAP4 accounts. The limit is specified in KB.
-func (s *EMAIL2) UpdateAccountGUIDKEEPMAX(ctx context.Context, accountGUID string, value string) error {
-	return s.c.Replace(ctx, URIAccountGUIDKEEPMAX(accountGUID), client.Chr(value))
+func (s *EMAIL2) UpdateAccountGUIDKEEPMAX(ctx context.Context, accountGUID string, value AccountGUIDKEEPMAXValue) error {
+	return s.c.Replace(ctx, URIAccountGUIDKEEPMAX(accountGUID), client.Chr(string(value)))
 }
 
 // DeleteAccountGUIDKEEPMAX deletes ./User/Vendor/MSFT/EMAIL2/{accountGUID}/KEEPMAX.
@@ -698,26 +698,26 @@ func (s *EMAIL2) DeleteAccountGUIDRETRIEVE(ctx context.Context, accountGUID stri
 // GetAccountGUIDSERVERDELETEACTION reads ./User/Vendor/MSFT/EMAIL2/{accountGUID}/SERVERDELETEACTION.
 // Character string that specifies how message is deleted on server. The default action depends on
 // the transport.
-func (s *EMAIL2) GetAccountGUIDSERVERDELETEACTION(ctx context.Context, accountGUID string) (string, error) {
+func (s *EMAIL2) GetAccountGUIDSERVERDELETEACTION(ctx context.Context, accountGUID string) (AccountGUIDSERVERDELETEACTIONValue, error) {
 	v, err := s.c.Get(ctx, URIAccountGUIDSERVERDELETEACTION(accountGUID))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return AccountGUIDSERVERDELETEACTIONValue(v.Str()), nil
 }
 
 // CreateAccountGUIDSERVERDELETEACTION creates ./User/Vendor/MSFT/EMAIL2/{accountGUID}/SERVERDELETEACTION.
 // Character string that specifies how message is deleted on server. The default action depends on
 // the transport.
-func (s *EMAIL2) CreateAccountGUIDSERVERDELETEACTION(ctx context.Context, accountGUID string, value string) error {
-	return s.c.Add(ctx, URIAccountGUIDSERVERDELETEACTION(accountGUID), client.Chr(value))
+func (s *EMAIL2) CreateAccountGUIDSERVERDELETEACTION(ctx context.Context, accountGUID string, value AccountGUIDSERVERDELETEACTIONValue) error {
+	return s.c.Add(ctx, URIAccountGUIDSERVERDELETEACTION(accountGUID), client.Chr(string(value)))
 }
 
 // UpdateAccountGUIDSERVERDELETEACTION updates ./User/Vendor/MSFT/EMAIL2/{accountGUID}/SERVERDELETEACTION.
 // Character string that specifies how message is deleted on server. The default action depends on
 // the transport.
-func (s *EMAIL2) UpdateAccountGUIDSERVERDELETEACTION(ctx context.Context, accountGUID string, value string) error {
-	return s.c.Replace(ctx, URIAccountGUIDSERVERDELETEACTION(accountGUID), client.Chr(value))
+func (s *EMAIL2) UpdateAccountGUIDSERVERDELETEACTION(ctx context.Context, accountGUID string, value AccountGUIDSERVERDELETEACTIONValue) error {
+	return s.c.Replace(ctx, URIAccountGUIDSERVERDELETEACTION(accountGUID), client.Chr(string(value)))
 }
 
 // DeleteAccountGUIDSERVERDELETEACTION deletes ./User/Vendor/MSFT/EMAIL2/{accountGUID}/SERVERDELETEACTION.
@@ -853,24 +853,24 @@ func (s *EMAIL2) DeleteAccountGUIDSMTPALTDOMAIN(ctx context.Context, accountGUID
 
 // GetAccountGUIDSMTPALTENABLED reads ./User/Vendor/MSFT/EMAIL2/{accountGUID}/SMTPALTENABLED.
 // Character string that specifies if the user's alternate SMTP account is enabled.
-func (s *EMAIL2) GetAccountGUIDSMTPALTENABLED(ctx context.Context, accountGUID string) (string, error) {
+func (s *EMAIL2) GetAccountGUIDSMTPALTENABLED(ctx context.Context, accountGUID string) (AccountGUIDSMTPALTENABLEDValue, error) {
 	v, err := s.c.Get(ctx, URIAccountGUIDSMTPALTENABLED(accountGUID))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return AccountGUIDSMTPALTENABLEDValue(v.Str()), nil
 }
 
 // CreateAccountGUIDSMTPALTENABLED creates ./User/Vendor/MSFT/EMAIL2/{accountGUID}/SMTPALTENABLED.
 // Character string that specifies if the user's alternate SMTP account is enabled.
-func (s *EMAIL2) CreateAccountGUIDSMTPALTENABLED(ctx context.Context, accountGUID string, value string) error {
-	return s.c.Add(ctx, URIAccountGUIDSMTPALTENABLED(accountGUID), client.Chr(value))
+func (s *EMAIL2) CreateAccountGUIDSMTPALTENABLED(ctx context.Context, accountGUID string, value AccountGUIDSMTPALTENABLEDValue) error {
+	return s.c.Add(ctx, URIAccountGUIDSMTPALTENABLED(accountGUID), client.Chr(string(value)))
 }
 
 // UpdateAccountGUIDSMTPALTENABLED updates ./User/Vendor/MSFT/EMAIL2/{accountGUID}/SMTPALTENABLED.
 // Character string that specifies if the user's alternate SMTP account is enabled.
-func (s *EMAIL2) UpdateAccountGUIDSMTPALTENABLED(ctx context.Context, accountGUID string, value string) error {
-	return s.c.Replace(ctx, URIAccountGUIDSMTPALTENABLED(accountGUID), client.Chr(value))
+func (s *EMAIL2) UpdateAccountGUIDSMTPALTENABLED(ctx context.Context, accountGUID string, value AccountGUIDSMTPALTENABLEDValue) error {
+	return s.c.Replace(ctx, URIAccountGUIDSMTPALTENABLED(accountGUID), client.Chr(string(value)))
 }
 
 // DeleteAccountGUIDSMTPALTENABLED deletes ./User/Vendor/MSFT/EMAIL2/{accountGUID}/SMTPALTENABLED.
@@ -910,26 +910,26 @@ func (s *EMAIL2) DeleteAccountGUIDSMTPALTPASSWORD(ctx context.Context, accountGU
 // GetAccountGUIDSYNCINGCONTENTTYPES reads ./User/Vendor/MSFT/EMAIL2/{accountGUID}/SYNCINGCONTENTTYPES.
 // Specifies a bitmask for which content types are supported for syncing (eg: Mail, Contacts,
 // Calendar).
-func (s *EMAIL2) GetAccountGUIDSYNCINGCONTENTTYPES(ctx context.Context, accountGUID string) (string, error) {
+func (s *EMAIL2) GetAccountGUIDSYNCINGCONTENTTYPES(ctx context.Context, accountGUID string) (AccountGUIDSYNCINGCONTENTTYPESValue, error) {
 	v, err := s.c.Get(ctx, URIAccountGUIDSYNCINGCONTENTTYPES(accountGUID))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return AccountGUIDSYNCINGCONTENTTYPESValue(v.Str()), nil
 }
 
 // CreateAccountGUIDSYNCINGCONTENTTYPES creates ./User/Vendor/MSFT/EMAIL2/{accountGUID}/SYNCINGCONTENTTYPES.
 // Specifies a bitmask for which content types are supported for syncing (eg: Mail, Contacts,
 // Calendar).
-func (s *EMAIL2) CreateAccountGUIDSYNCINGCONTENTTYPES(ctx context.Context, accountGUID string, value string) error {
-	return s.c.Add(ctx, URIAccountGUIDSYNCINGCONTENTTYPES(accountGUID), client.Chr(value))
+func (s *EMAIL2) CreateAccountGUIDSYNCINGCONTENTTYPES(ctx context.Context, accountGUID string, value AccountGUIDSYNCINGCONTENTTYPESValue) error {
+	return s.c.Add(ctx, URIAccountGUIDSYNCINGCONTENTTYPES(accountGUID), client.Chr(string(value)))
 }
 
 // UpdateAccountGUIDSYNCINGCONTENTTYPES updates ./User/Vendor/MSFT/EMAIL2/{accountGUID}/SYNCINGCONTENTTYPES.
 // Specifies a bitmask for which content types are supported for syncing (eg: Mail, Contacts,
 // Calendar).
-func (s *EMAIL2) UpdateAccountGUIDSYNCINGCONTENTTYPES(ctx context.Context, accountGUID string, value string) error {
-	return s.c.Replace(ctx, URIAccountGUIDSYNCINGCONTENTTYPES(accountGUID), client.Chr(value))
+func (s *EMAIL2) UpdateAccountGUIDSYNCINGCONTENTTYPES(ctx context.Context, accountGUID string, value AccountGUIDSYNCINGCONTENTTYPESValue) error {
+	return s.c.Replace(ctx, URIAccountGUIDSYNCINGCONTENTTYPES(accountGUID), client.Chr(string(value)))
 }
 
 // DeleteAccountGUIDSYNCINGCONTENTTYPES deletes ./User/Vendor/MSFT/EMAIL2/{accountGUID}/SYNCINGCONTENTTYPES.
@@ -941,24 +941,24 @@ func (s *EMAIL2) DeleteAccountGUIDSYNCINGCONTENTTYPES(ctx context.Context, accou
 
 // GetAccountGUIDTAGPROPSN8128000B reads ./User/Vendor/MSFT/EMAIL2/{accountGUID}/TAGPROPS/8128000B.
 // Character string that specifies if the incoming email server requires SSL.
-func (s *EMAIL2) GetAccountGUIDTAGPROPSN8128000B(ctx context.Context, accountGUID string) (string, error) {
+func (s *EMAIL2) GetAccountGUIDTAGPROPSN8128000B(ctx context.Context, accountGUID string) (AccountGUIDTAGPROPSN8128000BValue, error) {
 	v, err := s.c.Get(ctx, URIAccountGUIDTAGPROPSN8128000B(accountGUID))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return AccountGUIDTAGPROPSN8128000BValue(v.Str()), nil
 }
 
 // CreateAccountGUIDTAGPROPSN8128000B creates ./User/Vendor/MSFT/EMAIL2/{accountGUID}/TAGPROPS/8128000B.
 // Character string that specifies if the incoming email server requires SSL.
-func (s *EMAIL2) CreateAccountGUIDTAGPROPSN8128000B(ctx context.Context, accountGUID string, value string) error {
-	return s.c.Add(ctx, URIAccountGUIDTAGPROPSN8128000B(accountGUID), client.Chr(value))
+func (s *EMAIL2) CreateAccountGUIDTAGPROPSN8128000B(ctx context.Context, accountGUID string, value AccountGUIDTAGPROPSN8128000BValue) error {
+	return s.c.Add(ctx, URIAccountGUIDTAGPROPSN8128000B(accountGUID), client.Chr(string(value)))
 }
 
 // UpdateAccountGUIDTAGPROPSN8128000B updates ./User/Vendor/MSFT/EMAIL2/{accountGUID}/TAGPROPS/8128000B.
 // Character string that specifies if the incoming email server requires SSL.
-func (s *EMAIL2) UpdateAccountGUIDTAGPROPSN8128000B(ctx context.Context, accountGUID string, value string) error {
-	return s.c.Replace(ctx, URIAccountGUIDTAGPROPSN8128000B(accountGUID), client.Chr(value))
+func (s *EMAIL2) UpdateAccountGUIDTAGPROPSN8128000B(ctx context.Context, accountGUID string, value AccountGUIDTAGPROPSN8128000BValue) error {
+	return s.c.Replace(ctx, URIAccountGUIDTAGPROPSN8128000B(accountGUID), client.Chr(string(value)))
 }
 
 // DeleteAccountGUIDTAGPROPSN8128000B deletes ./User/Vendor/MSFT/EMAIL2/{accountGUID}/TAGPROPS/8128000B.
@@ -969,24 +969,24 @@ func (s *EMAIL2) DeleteAccountGUIDTAGPROPSN8128000B(ctx context.Context, account
 
 // GetAccountGUIDTAGPROPSN812C000B reads ./User/Vendor/MSFT/EMAIL2/{accountGUID}/TAGPROPS/812C000B.
 // Character string that specifies if the outgoing email server requires SSL.
-func (s *EMAIL2) GetAccountGUIDTAGPROPSN812C000B(ctx context.Context, accountGUID string) (string, error) {
+func (s *EMAIL2) GetAccountGUIDTAGPROPSN812C000B(ctx context.Context, accountGUID string) (AccountGUIDTAGPROPSN812C000BValue, error) {
 	v, err := s.c.Get(ctx, URIAccountGUIDTAGPROPSN812C000B(accountGUID))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return AccountGUIDTAGPROPSN812C000BValue(v.Str()), nil
 }
 
 // CreateAccountGUIDTAGPROPSN812C000B creates ./User/Vendor/MSFT/EMAIL2/{accountGUID}/TAGPROPS/812C000B.
 // Character string that specifies if the outgoing email server requires SSL.
-func (s *EMAIL2) CreateAccountGUIDTAGPROPSN812C000B(ctx context.Context, accountGUID string, value string) error {
-	return s.c.Add(ctx, URIAccountGUIDTAGPROPSN812C000B(accountGUID), client.Chr(value))
+func (s *EMAIL2) CreateAccountGUIDTAGPROPSN812C000B(ctx context.Context, accountGUID string, value AccountGUIDTAGPROPSN812C000BValue) error {
+	return s.c.Add(ctx, URIAccountGUIDTAGPROPSN812C000B(accountGUID), client.Chr(string(value)))
 }
 
 // UpdateAccountGUIDTAGPROPSN812C000B updates ./User/Vendor/MSFT/EMAIL2/{accountGUID}/TAGPROPS/812C000B.
 // Character string that specifies if the outgoing email server requires SSL.
-func (s *EMAIL2) UpdateAccountGUIDTAGPROPSN812C000B(ctx context.Context, accountGUID string, value string) error {
-	return s.c.Replace(ctx, URIAccountGUIDTAGPROPSN812C000B(accountGUID), client.Chr(value))
+func (s *EMAIL2) UpdateAccountGUIDTAGPROPSN812C000B(ctx context.Context, accountGUID string, value AccountGUIDTAGPROPSN812C000BValue) error {
+	return s.c.Replace(ctx, URIAccountGUIDTAGPROPSN812C000B(accountGUID), client.Chr(string(value)))
 }
 
 // DeleteAccountGUIDTAGPROPSN812C000B deletes ./User/Vendor/MSFT/EMAIL2/{accountGUID}/TAGPROPS/812C000B.

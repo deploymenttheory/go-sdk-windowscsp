@@ -2,10 +2,29 @@
 
 package devicehealthmonitoring
 
-// AllowDeviceHealthMonitoring allowed values.
+import (
+	"fmt"
+)
+
+// AllowDeviceHealthMonitoringValue — allowed values for the AllowDeviceHealthMonitoring node.
+type AllowDeviceHealthMonitoringValue int64
+
 const (
 	// The DeviceHealthMonitoring connection is enabled.
-	AllowDeviceHealthMonitoringTheDeviceHealthMonitoringConnectionIsEnabled int64 = 1
+	AllowDeviceHealthMonitoringTheDeviceHealthMonitoringConnectionIsEnabled AllowDeviceHealthMonitoringValue = 1
 	// The DeviceHealthMonitoring connection is disabled.
-	AllowDeviceHealthMonitoringTheDeviceHealthMonitoringConnectionIsDisabled int64 = 0
+	AllowDeviceHealthMonitoringTheDeviceHealthMonitoringConnectionIsDisabled AllowDeviceHealthMonitoringValue = 0
 )
+
+// String returns the AllowDeviceHealthMonitoringValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowDeviceHealthMonitoringValue) String() string {
+	switch e {
+	case AllowDeviceHealthMonitoringTheDeviceHealthMonitoringConnectionIsEnabled:
+		return "AllowDeviceHealthMonitoringTheDeviceHealthMonitoringConnectionIsEnabled"
+	case AllowDeviceHealthMonitoringTheDeviceHealthMonitoringConnectionIsDisabled:
+		return "AllowDeviceHealthMonitoringTheDeviceHealthMonitoringConnectionIsDisabled"
+	default:
+		return fmt.Sprintf("AllowDeviceHealthMonitoringValue(%d)", int64(e))
+	}
+}

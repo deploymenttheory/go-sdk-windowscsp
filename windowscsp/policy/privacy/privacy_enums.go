@@ -2,285 +2,768 @@
 
 package privacy
 
-// AllowAutoAcceptPairingAndPrivacyConsentPrompts allowed values.
-const (
-	// Not allowed.
-	AllowAutoAcceptPairingAndPrivacyConsentPromptsNotAllowed int64 = 0
-	// Allowed.
-	AllowAutoAcceptPairingAndPrivacyConsentPromptsAllowed int64 = 1
+import (
+	"fmt"
 )
 
-// AllowCrossDeviceClipboard allowed values.
+// AllowAutoAcceptPairingAndPrivacyConsentPromptsValue — allowed values for the AllowAutoAcceptPairingAndPrivacyConsentPrompts node.
+type AllowAutoAcceptPairingAndPrivacyConsentPromptsValue int64
+
 const (
 	// Not allowed.
-	AllowCrossDeviceClipboardNotAllowed int64 = 0
+	AllowAutoAcceptPairingAndPrivacyConsentPromptsNotAllowed AllowAutoAcceptPairingAndPrivacyConsentPromptsValue = 0
 	// Allowed.
-	AllowCrossDeviceClipboardAllowed int64 = 1
+	AllowAutoAcceptPairingAndPrivacyConsentPromptsAllowed AllowAutoAcceptPairingAndPrivacyConsentPromptsValue = 1
 )
 
-// AllowInputPersonalization allowed values.
+// String returns the AllowAutoAcceptPairingAndPrivacyConsentPromptsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowAutoAcceptPairingAndPrivacyConsentPromptsValue) String() string {
+	switch e {
+	case AllowAutoAcceptPairingAndPrivacyConsentPromptsNotAllowed:
+		return "AllowAutoAcceptPairingAndPrivacyConsentPromptsNotAllowed"
+	case AllowAutoAcceptPairingAndPrivacyConsentPromptsAllowed:
+		return "AllowAutoAcceptPairingAndPrivacyConsentPromptsAllowed"
+	default:
+		return fmt.Sprintf("AllowAutoAcceptPairingAndPrivacyConsentPromptsValue(%d)", int64(e))
+	}
+}
+
+// AllowCrossDeviceClipboardValue — allowed values for the AllowCrossDeviceClipboard node.
+type AllowCrossDeviceClipboardValue int64
+
 const (
 	// Not allowed.
-	AllowInputPersonalizationNotAllowed int64 = 0
+	AllowCrossDeviceClipboardNotAllowed AllowCrossDeviceClipboardValue = 0
+	// Allowed.
+	AllowCrossDeviceClipboardAllowed AllowCrossDeviceClipboardValue = 1
+)
+
+// String returns the AllowCrossDeviceClipboardValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowCrossDeviceClipboardValue) String() string {
+	switch e {
+	case AllowCrossDeviceClipboardNotAllowed:
+		return "AllowCrossDeviceClipboardNotAllowed"
+	case AllowCrossDeviceClipboardAllowed:
+		return "AllowCrossDeviceClipboardAllowed"
+	default:
+		return fmt.Sprintf("AllowCrossDeviceClipboardValue(%d)", int64(e))
+	}
+}
+
+// AllowInputPersonalizationValue — allowed values for the AllowInputPersonalization node.
+type AllowInputPersonalizationValue int64
+
+const (
+	// Not allowed.
+	AllowInputPersonalizationNotAllowed AllowInputPersonalizationValue = 0
 	// Choice deferred to user's preference.
-	AllowInputPersonalizationChoiceDeferredToUserSPreference int64 = 1
+	AllowInputPersonalizationChoiceDeferredToUserSPreference AllowInputPersonalizationValue = 1
 )
 
-// DisableAdvertisingId allowed values.
+// String returns the AllowInputPersonalizationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowInputPersonalizationValue) String() string {
+	switch e {
+	case AllowInputPersonalizationNotAllowed:
+		return "AllowInputPersonalizationNotAllowed"
+	case AllowInputPersonalizationChoiceDeferredToUserSPreference:
+		return "AllowInputPersonalizationChoiceDeferredToUserSPreference"
+	default:
+		return fmt.Sprintf("AllowInputPersonalizationValue(%d)", int64(e))
+	}
+}
+
+// DisableAdvertisingIdValue — allowed values for the DisableAdvertisingId node.
+type DisableAdvertisingIdValue int64
+
 const (
 	// Disabled.
-	DisableAdvertisingIdDisabled int64 = 0
+	DisableAdvertisingIdDisabled DisableAdvertisingIdValue = 0
 	// Enabled.
-	DisableAdvertisingIdEnabled int64 = 1
+	DisableAdvertisingIdEnabled DisableAdvertisingIdValue = 1
 	// Not configured.
-	DisableAdvertisingIdNotConfigured int64 = 65535
+	DisableAdvertisingIdNotConfigured DisableAdvertisingIdValue = 65535
 )
 
-// DisablePrivacyExperience allowed values.
+// String returns the DisableAdvertisingIdValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableAdvertisingIdValue) String() string {
+	switch e {
+	case DisableAdvertisingIdDisabled:
+		return "DisableAdvertisingIdDisabled"
+	case DisableAdvertisingIdEnabled:
+		return "DisableAdvertisingIdEnabled"
+	case DisableAdvertisingIdNotConfigured:
+		return "DisableAdvertisingIdNotConfigured"
+	default:
+		return fmt.Sprintf("DisableAdvertisingIdValue(%d)", int64(e))
+	}
+}
+
+// DisablePrivacyExperienceValue — allowed values for the DisablePrivacyExperience node.
+type DisablePrivacyExperienceValue int64
+
 const (
 	// Allow the 'choose privacy settings for your device' screen for a new user during their first
 	// logon or when an existing user logs in for the first time after an upgrade.
-	DisablePrivacyExperienceAllowTheChoosePrivacySettingsFor int64 = 0
+	DisablePrivacyExperienceAllowTheChoosePrivacySettingsFor DisablePrivacyExperienceValue = 0
 	// Do not allow the 'choose privacy settings for your device' screen when a new user logs in or an
 	// existing user logs in for the first time after an upgrade.
-	DisablePrivacyExperienceDoNotAllowTheChoosePrivacy int64 = 1
+	DisablePrivacyExperienceDoNotAllowTheChoosePrivacy DisablePrivacyExperienceValue = 1
 )
 
-// EnableActivityFeed allowed values.
+// String returns the DisablePrivacyExperienceValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisablePrivacyExperienceValue) String() string {
+	switch e {
+	case DisablePrivacyExperienceAllowTheChoosePrivacySettingsFor:
+		return "DisablePrivacyExperienceAllowTheChoosePrivacySettingsFor"
+	case DisablePrivacyExperienceDoNotAllowTheChoosePrivacy:
+		return "DisablePrivacyExperienceDoNotAllowTheChoosePrivacy"
+	default:
+		return fmt.Sprintf("DisablePrivacyExperienceValue(%d)", int64(e))
+	}
+}
+
+// EnableActivityFeedValue — allowed values for the EnableActivityFeed node.
+type EnableActivityFeedValue int64
+
 const (
 	// Disabled. Apps/OS can't publish the activities and roaming is disabled. (not published to the
 	// cloud).
-	EnableActivityFeedDisabled int64 = 0
+	EnableActivityFeedDisabled EnableActivityFeedValue = 0
 	// Enabled. Apps/OS can publish the activities and will be roamed across device graph.
-	EnableActivityFeedEnabled int64 = 1
+	EnableActivityFeedEnabled EnableActivityFeedValue = 1
 )
 
-// LetAppsAccessAccountInfo allowed values.
+// String returns the EnableActivityFeedValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableActivityFeedValue) String() string {
+	switch e {
+	case EnableActivityFeedDisabled:
+		return "EnableActivityFeedDisabled"
+	case EnableActivityFeedEnabled:
+		return "EnableActivityFeedEnabled"
+	default:
+		return fmt.Sprintf("EnableActivityFeedValue(%d)", int64(e))
+	}
+}
+
+// LetAppsAccessAccountInfoValue — allowed values for the LetAppsAccessAccountInfo node.
+type LetAppsAccessAccountInfoValue int64
+
 const (
 	// User in control.
-	LetAppsAccessAccountInfoUserInControl int64 = 0
+	LetAppsAccessAccountInfoUserInControl LetAppsAccessAccountInfoValue = 0
 	// Force allow.
-	LetAppsAccessAccountInfoForceAllow int64 = 1
+	LetAppsAccessAccountInfoForceAllow LetAppsAccessAccountInfoValue = 1
 	// Force deny.
-	LetAppsAccessAccountInfoForceDeny int64 = 2
+	LetAppsAccessAccountInfoForceDeny LetAppsAccessAccountInfoValue = 2
 )
 
-// LetAppsAccessBackgroundSpatialPerception allowed values.
+// String returns the LetAppsAccessAccountInfoValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e LetAppsAccessAccountInfoValue) String() string {
+	switch e {
+	case LetAppsAccessAccountInfoUserInControl:
+		return "LetAppsAccessAccountInfoUserInControl"
+	case LetAppsAccessAccountInfoForceAllow:
+		return "LetAppsAccessAccountInfoForceAllow"
+	case LetAppsAccessAccountInfoForceDeny:
+		return "LetAppsAccessAccountInfoForceDeny"
+	default:
+		return fmt.Sprintf("LetAppsAccessAccountInfoValue(%d)", int64(e))
+	}
+}
+
+// LetAppsAccessBackgroundSpatialPerceptionValue — allowed values for the LetAppsAccessBackgroundSpatialPerception node.
+type LetAppsAccessBackgroundSpatialPerceptionValue int64
+
 const (
 	// User in control.
-	LetAppsAccessBackgroundSpatialPerceptionUserInControl int64 = 0
+	LetAppsAccessBackgroundSpatialPerceptionUserInControl LetAppsAccessBackgroundSpatialPerceptionValue = 0
 	// Force allow.
-	LetAppsAccessBackgroundSpatialPerceptionForceAllow int64 = 1
+	LetAppsAccessBackgroundSpatialPerceptionForceAllow LetAppsAccessBackgroundSpatialPerceptionValue = 1
 	// Force deny.
-	LetAppsAccessBackgroundSpatialPerceptionForceDeny int64 = 2
+	LetAppsAccessBackgroundSpatialPerceptionForceDeny LetAppsAccessBackgroundSpatialPerceptionValue = 2
 )
 
-// LetAppsAccessCalendar allowed values.
+// String returns the LetAppsAccessBackgroundSpatialPerceptionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e LetAppsAccessBackgroundSpatialPerceptionValue) String() string {
+	switch e {
+	case LetAppsAccessBackgroundSpatialPerceptionUserInControl:
+		return "LetAppsAccessBackgroundSpatialPerceptionUserInControl"
+	case LetAppsAccessBackgroundSpatialPerceptionForceAllow:
+		return "LetAppsAccessBackgroundSpatialPerceptionForceAllow"
+	case LetAppsAccessBackgroundSpatialPerceptionForceDeny:
+		return "LetAppsAccessBackgroundSpatialPerceptionForceDeny"
+	default:
+		return fmt.Sprintf("LetAppsAccessBackgroundSpatialPerceptionValue(%d)", int64(e))
+	}
+}
+
+// LetAppsAccessCalendarValue — allowed values for the LetAppsAccessCalendar node.
+type LetAppsAccessCalendarValue int64
+
 const (
 	// User in control.
-	LetAppsAccessCalendarUserInControl int64 = 0
+	LetAppsAccessCalendarUserInControl LetAppsAccessCalendarValue = 0
 	// Force allow.
-	LetAppsAccessCalendarForceAllow int64 = 1
+	LetAppsAccessCalendarForceAllow LetAppsAccessCalendarValue = 1
 	// Force deny.
-	LetAppsAccessCalendarForceDeny int64 = 2
+	LetAppsAccessCalendarForceDeny LetAppsAccessCalendarValue = 2
 )
 
-// LetAppsAccessCallHistory allowed values.
+// String returns the LetAppsAccessCalendarValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e LetAppsAccessCalendarValue) String() string {
+	switch e {
+	case LetAppsAccessCalendarUserInControl:
+		return "LetAppsAccessCalendarUserInControl"
+	case LetAppsAccessCalendarForceAllow:
+		return "LetAppsAccessCalendarForceAllow"
+	case LetAppsAccessCalendarForceDeny:
+		return "LetAppsAccessCalendarForceDeny"
+	default:
+		return fmt.Sprintf("LetAppsAccessCalendarValue(%d)", int64(e))
+	}
+}
+
+// LetAppsAccessCallHistoryValue — allowed values for the LetAppsAccessCallHistory node.
+type LetAppsAccessCallHistoryValue int64
+
 const (
 	// User in control.
-	LetAppsAccessCallHistoryUserInControl int64 = 0
+	LetAppsAccessCallHistoryUserInControl LetAppsAccessCallHistoryValue = 0
 	// Force allow.
-	LetAppsAccessCallHistoryForceAllow int64 = 1
+	LetAppsAccessCallHistoryForceAllow LetAppsAccessCallHistoryValue = 1
 	// Force deny.
-	LetAppsAccessCallHistoryForceDeny int64 = 2
+	LetAppsAccessCallHistoryForceDeny LetAppsAccessCallHistoryValue = 2
 )
 
-// LetAppsAccessCamera allowed values.
+// String returns the LetAppsAccessCallHistoryValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e LetAppsAccessCallHistoryValue) String() string {
+	switch e {
+	case LetAppsAccessCallHistoryUserInControl:
+		return "LetAppsAccessCallHistoryUserInControl"
+	case LetAppsAccessCallHistoryForceAllow:
+		return "LetAppsAccessCallHistoryForceAllow"
+	case LetAppsAccessCallHistoryForceDeny:
+		return "LetAppsAccessCallHistoryForceDeny"
+	default:
+		return fmt.Sprintf("LetAppsAccessCallHistoryValue(%d)", int64(e))
+	}
+}
+
+// LetAppsAccessCameraValue — allowed values for the LetAppsAccessCamera node.
+type LetAppsAccessCameraValue int64
+
 const (
 	// User in control.
-	LetAppsAccessCameraUserInControl int64 = 0
+	LetAppsAccessCameraUserInControl LetAppsAccessCameraValue = 0
 	// Force allow.
-	LetAppsAccessCameraForceAllow int64 = 1
+	LetAppsAccessCameraForceAllow LetAppsAccessCameraValue = 1
 	// Force deny.
-	LetAppsAccessCameraForceDeny int64 = 2
+	LetAppsAccessCameraForceDeny LetAppsAccessCameraValue = 2
 )
 
-// LetAppsAccessContacts allowed values.
+// String returns the LetAppsAccessCameraValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e LetAppsAccessCameraValue) String() string {
+	switch e {
+	case LetAppsAccessCameraUserInControl:
+		return "LetAppsAccessCameraUserInControl"
+	case LetAppsAccessCameraForceAllow:
+		return "LetAppsAccessCameraForceAllow"
+	case LetAppsAccessCameraForceDeny:
+		return "LetAppsAccessCameraForceDeny"
+	default:
+		return fmt.Sprintf("LetAppsAccessCameraValue(%d)", int64(e))
+	}
+}
+
+// LetAppsAccessContactsValue — allowed values for the LetAppsAccessContacts node.
+type LetAppsAccessContactsValue int64
+
 const (
 	// User in control.
-	LetAppsAccessContactsUserInControl int64 = 0
+	LetAppsAccessContactsUserInControl LetAppsAccessContactsValue = 0
 	// Force allow.
-	LetAppsAccessContactsForceAllow int64 = 1
+	LetAppsAccessContactsForceAllow LetAppsAccessContactsValue = 1
 	// Force deny.
-	LetAppsAccessContactsForceDeny int64 = 2
+	LetAppsAccessContactsForceDeny LetAppsAccessContactsValue = 2
 )
 
-// LetAppsAccessEmail allowed values.
+// String returns the LetAppsAccessContactsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e LetAppsAccessContactsValue) String() string {
+	switch e {
+	case LetAppsAccessContactsUserInControl:
+		return "LetAppsAccessContactsUserInControl"
+	case LetAppsAccessContactsForceAllow:
+		return "LetAppsAccessContactsForceAllow"
+	case LetAppsAccessContactsForceDeny:
+		return "LetAppsAccessContactsForceDeny"
+	default:
+		return fmt.Sprintf("LetAppsAccessContactsValue(%d)", int64(e))
+	}
+}
+
+// LetAppsAccessEmailValue — allowed values for the LetAppsAccessEmail node.
+type LetAppsAccessEmailValue int64
+
 const (
 	// User in control.
-	LetAppsAccessEmailUserInControl int64 = 0
+	LetAppsAccessEmailUserInControl LetAppsAccessEmailValue = 0
 	// Force allow.
-	LetAppsAccessEmailForceAllow int64 = 1
+	LetAppsAccessEmailForceAllow LetAppsAccessEmailValue = 1
 	// Force deny.
-	LetAppsAccessEmailForceDeny int64 = 2
+	LetAppsAccessEmailForceDeny LetAppsAccessEmailValue = 2
 )
 
-// LetAppsAccessHumanPresence allowed values.
+// String returns the LetAppsAccessEmailValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e LetAppsAccessEmailValue) String() string {
+	switch e {
+	case LetAppsAccessEmailUserInControl:
+		return "LetAppsAccessEmailUserInControl"
+	case LetAppsAccessEmailForceAllow:
+		return "LetAppsAccessEmailForceAllow"
+	case LetAppsAccessEmailForceDeny:
+		return "LetAppsAccessEmailForceDeny"
+	default:
+		return fmt.Sprintf("LetAppsAccessEmailValue(%d)", int64(e))
+	}
+}
+
+// LetAppsAccessHumanPresenceValue — allowed values for the LetAppsAccessHumanPresence node.
+type LetAppsAccessHumanPresenceValue int64
+
 const (
 	// User in control.
-	LetAppsAccessHumanPresenceUserInControl int64 = 0
+	LetAppsAccessHumanPresenceUserInControl LetAppsAccessHumanPresenceValue = 0
 	// Force allow.
-	LetAppsAccessHumanPresenceForceAllow int64 = 1
+	LetAppsAccessHumanPresenceForceAllow LetAppsAccessHumanPresenceValue = 1
 	// Force deny.
-	LetAppsAccessHumanPresenceForceDeny int64 = 2
+	LetAppsAccessHumanPresenceForceDeny LetAppsAccessHumanPresenceValue = 2
 )
 
-// LetAppsAccessLocation allowed values.
+// String returns the LetAppsAccessHumanPresenceValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e LetAppsAccessHumanPresenceValue) String() string {
+	switch e {
+	case LetAppsAccessHumanPresenceUserInControl:
+		return "LetAppsAccessHumanPresenceUserInControl"
+	case LetAppsAccessHumanPresenceForceAllow:
+		return "LetAppsAccessHumanPresenceForceAllow"
+	case LetAppsAccessHumanPresenceForceDeny:
+		return "LetAppsAccessHumanPresenceForceDeny"
+	default:
+		return fmt.Sprintf("LetAppsAccessHumanPresenceValue(%d)", int64(e))
+	}
+}
+
+// LetAppsAccessLocationValue — allowed values for the LetAppsAccessLocation node.
+type LetAppsAccessLocationValue int64
+
 const (
 	// User in control.
-	LetAppsAccessLocationUserInControl int64 = 0
+	LetAppsAccessLocationUserInControl LetAppsAccessLocationValue = 0
 	// Force allow.
-	LetAppsAccessLocationForceAllow int64 = 1
+	LetAppsAccessLocationForceAllow LetAppsAccessLocationValue = 1
 	// Force deny.
-	LetAppsAccessLocationForceDeny int64 = 2
+	LetAppsAccessLocationForceDeny LetAppsAccessLocationValue = 2
 )
 
-// LetAppsAccessMessaging allowed values.
+// String returns the LetAppsAccessLocationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e LetAppsAccessLocationValue) String() string {
+	switch e {
+	case LetAppsAccessLocationUserInControl:
+		return "LetAppsAccessLocationUserInControl"
+	case LetAppsAccessLocationForceAllow:
+		return "LetAppsAccessLocationForceAllow"
+	case LetAppsAccessLocationForceDeny:
+		return "LetAppsAccessLocationForceDeny"
+	default:
+		return fmt.Sprintf("LetAppsAccessLocationValue(%d)", int64(e))
+	}
+}
+
+// LetAppsAccessMessagingValue — allowed values for the LetAppsAccessMessaging node.
+type LetAppsAccessMessagingValue int64
+
 const (
 	// User in control.
-	LetAppsAccessMessagingUserInControl int64 = 0
+	LetAppsAccessMessagingUserInControl LetAppsAccessMessagingValue = 0
 	// Force allow.
-	LetAppsAccessMessagingForceAllow int64 = 1
+	LetAppsAccessMessagingForceAllow LetAppsAccessMessagingValue = 1
 	// Force deny.
-	LetAppsAccessMessagingForceDeny int64 = 2
+	LetAppsAccessMessagingForceDeny LetAppsAccessMessagingValue = 2
 )
 
-// LetAppsAccessMicrophone allowed values.
+// String returns the LetAppsAccessMessagingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e LetAppsAccessMessagingValue) String() string {
+	switch e {
+	case LetAppsAccessMessagingUserInControl:
+		return "LetAppsAccessMessagingUserInControl"
+	case LetAppsAccessMessagingForceAllow:
+		return "LetAppsAccessMessagingForceAllow"
+	case LetAppsAccessMessagingForceDeny:
+		return "LetAppsAccessMessagingForceDeny"
+	default:
+		return fmt.Sprintf("LetAppsAccessMessagingValue(%d)", int64(e))
+	}
+}
+
+// LetAppsAccessMicrophoneValue — allowed values for the LetAppsAccessMicrophone node.
+type LetAppsAccessMicrophoneValue int64
+
 const (
 	// User in control.
-	LetAppsAccessMicrophoneUserInControl int64 = 0
+	LetAppsAccessMicrophoneUserInControl LetAppsAccessMicrophoneValue = 0
 	// Force allow.
-	LetAppsAccessMicrophoneForceAllow int64 = 1
+	LetAppsAccessMicrophoneForceAllow LetAppsAccessMicrophoneValue = 1
 	// Force deny.
-	LetAppsAccessMicrophoneForceDeny int64 = 2
+	LetAppsAccessMicrophoneForceDeny LetAppsAccessMicrophoneValue = 2
 )
 
-// LetAppsAccessMotion allowed values.
+// String returns the LetAppsAccessMicrophoneValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e LetAppsAccessMicrophoneValue) String() string {
+	switch e {
+	case LetAppsAccessMicrophoneUserInControl:
+		return "LetAppsAccessMicrophoneUserInControl"
+	case LetAppsAccessMicrophoneForceAllow:
+		return "LetAppsAccessMicrophoneForceAllow"
+	case LetAppsAccessMicrophoneForceDeny:
+		return "LetAppsAccessMicrophoneForceDeny"
+	default:
+		return fmt.Sprintf("LetAppsAccessMicrophoneValue(%d)", int64(e))
+	}
+}
+
+// LetAppsAccessMotionValue — allowed values for the LetAppsAccessMotion node.
+type LetAppsAccessMotionValue int64
+
 const (
 	// User in control.
-	LetAppsAccessMotionUserInControl int64 = 0
+	LetAppsAccessMotionUserInControl LetAppsAccessMotionValue = 0
 	// Force allow.
-	LetAppsAccessMotionForceAllow int64 = 1
+	LetAppsAccessMotionForceAllow LetAppsAccessMotionValue = 1
 	// Force deny.
-	LetAppsAccessMotionForceDeny int64 = 2
+	LetAppsAccessMotionForceDeny LetAppsAccessMotionValue = 2
 )
 
-// LetAppsAccessNotifications allowed values.
+// String returns the LetAppsAccessMotionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e LetAppsAccessMotionValue) String() string {
+	switch e {
+	case LetAppsAccessMotionUserInControl:
+		return "LetAppsAccessMotionUserInControl"
+	case LetAppsAccessMotionForceAllow:
+		return "LetAppsAccessMotionForceAllow"
+	case LetAppsAccessMotionForceDeny:
+		return "LetAppsAccessMotionForceDeny"
+	default:
+		return fmt.Sprintf("LetAppsAccessMotionValue(%d)", int64(e))
+	}
+}
+
+// LetAppsAccessNotificationsValue — allowed values for the LetAppsAccessNotifications node.
+type LetAppsAccessNotificationsValue int64
+
 const (
 	// User in control.
-	LetAppsAccessNotificationsUserInControl int64 = 0
+	LetAppsAccessNotificationsUserInControl LetAppsAccessNotificationsValue = 0
 	// Force allow.
-	LetAppsAccessNotificationsForceAllow int64 = 1
+	LetAppsAccessNotificationsForceAllow LetAppsAccessNotificationsValue = 1
 	// Force deny.
-	LetAppsAccessNotificationsForceDeny int64 = 2
+	LetAppsAccessNotificationsForceDeny LetAppsAccessNotificationsValue = 2
 )
 
-// LetAppsAccessPhone allowed values.
+// String returns the LetAppsAccessNotificationsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e LetAppsAccessNotificationsValue) String() string {
+	switch e {
+	case LetAppsAccessNotificationsUserInControl:
+		return "LetAppsAccessNotificationsUserInControl"
+	case LetAppsAccessNotificationsForceAllow:
+		return "LetAppsAccessNotificationsForceAllow"
+	case LetAppsAccessNotificationsForceDeny:
+		return "LetAppsAccessNotificationsForceDeny"
+	default:
+		return fmt.Sprintf("LetAppsAccessNotificationsValue(%d)", int64(e))
+	}
+}
+
+// LetAppsAccessPhoneValue — allowed values for the LetAppsAccessPhone node.
+type LetAppsAccessPhoneValue int64
+
 const (
 	// User in control.
-	LetAppsAccessPhoneUserInControl int64 = 0
+	LetAppsAccessPhoneUserInControl LetAppsAccessPhoneValue = 0
 	// Force allow.
-	LetAppsAccessPhoneForceAllow int64 = 1
+	LetAppsAccessPhoneForceAllow LetAppsAccessPhoneValue = 1
 	// Force deny.
-	LetAppsAccessPhoneForceDeny int64 = 2
+	LetAppsAccessPhoneForceDeny LetAppsAccessPhoneValue = 2
 )
 
-// LetAppsAccessRadios allowed values.
+// String returns the LetAppsAccessPhoneValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e LetAppsAccessPhoneValue) String() string {
+	switch e {
+	case LetAppsAccessPhoneUserInControl:
+		return "LetAppsAccessPhoneUserInControl"
+	case LetAppsAccessPhoneForceAllow:
+		return "LetAppsAccessPhoneForceAllow"
+	case LetAppsAccessPhoneForceDeny:
+		return "LetAppsAccessPhoneForceDeny"
+	default:
+		return fmt.Sprintf("LetAppsAccessPhoneValue(%d)", int64(e))
+	}
+}
+
+// LetAppsAccessRadiosValue — allowed values for the LetAppsAccessRadios node.
+type LetAppsAccessRadiosValue int64
+
 const (
 	// User in control.
-	LetAppsAccessRadiosUserInControl int64 = 0
+	LetAppsAccessRadiosUserInControl LetAppsAccessRadiosValue = 0
 	// Force allow.
-	LetAppsAccessRadiosForceAllow int64 = 1
+	LetAppsAccessRadiosForceAllow LetAppsAccessRadiosValue = 1
 	// Force deny.
-	LetAppsAccessRadiosForceDeny int64 = 2
+	LetAppsAccessRadiosForceDeny LetAppsAccessRadiosValue = 2
 )
 
-// LetAppsAccessTrustedDevices allowed values.
+// String returns the LetAppsAccessRadiosValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e LetAppsAccessRadiosValue) String() string {
+	switch e {
+	case LetAppsAccessRadiosUserInControl:
+		return "LetAppsAccessRadiosUserInControl"
+	case LetAppsAccessRadiosForceAllow:
+		return "LetAppsAccessRadiosForceAllow"
+	case LetAppsAccessRadiosForceDeny:
+		return "LetAppsAccessRadiosForceDeny"
+	default:
+		return fmt.Sprintf("LetAppsAccessRadiosValue(%d)", int64(e))
+	}
+}
+
+// LetAppsAccessTrustedDevicesValue — allowed values for the LetAppsAccessTrustedDevices node.
+type LetAppsAccessTrustedDevicesValue int64
+
 const (
 	// User in control.
-	LetAppsAccessTrustedDevicesUserInControl int64 = 0
+	LetAppsAccessTrustedDevicesUserInControl LetAppsAccessTrustedDevicesValue = 0
 	// Force allow.
-	LetAppsAccessTrustedDevicesForceAllow int64 = 1
+	LetAppsAccessTrustedDevicesForceAllow LetAppsAccessTrustedDevicesValue = 1
 	// Force deny.
-	LetAppsAccessTrustedDevicesForceDeny int64 = 2
+	LetAppsAccessTrustedDevicesForceDeny LetAppsAccessTrustedDevicesValue = 2
 )
 
-// LetAppsActivateWithVoice allowed values.
+// String returns the LetAppsAccessTrustedDevicesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e LetAppsAccessTrustedDevicesValue) String() string {
+	switch e {
+	case LetAppsAccessTrustedDevicesUserInControl:
+		return "LetAppsAccessTrustedDevicesUserInControl"
+	case LetAppsAccessTrustedDevicesForceAllow:
+		return "LetAppsAccessTrustedDevicesForceAllow"
+	case LetAppsAccessTrustedDevicesForceDeny:
+		return "LetAppsAccessTrustedDevicesForceDeny"
+	default:
+		return fmt.Sprintf("LetAppsAccessTrustedDevicesValue(%d)", int64(e))
+	}
+}
+
+// LetAppsActivateWithVoiceValue — allowed values for the LetAppsActivateWithVoice node.
+type LetAppsActivateWithVoiceValue int64
+
 const (
 	// User in control. Users can decide if Windows apps can be activated by voice using Settings >
 	// Privacy options on the device.
-	LetAppsActivateWithVoiceUserInControl int64 = 0
+	LetAppsActivateWithVoiceUserInControl LetAppsActivateWithVoiceValue = 0
 	// Force allow. Windows apps can be activated by voice and users cannot change it.
-	LetAppsActivateWithVoiceForceAllow int64 = 1
+	LetAppsActivateWithVoiceForceAllow LetAppsActivateWithVoiceValue = 1
 	// Force deny. Windows apps cannot be activated by voice and users cannot change it.
-	LetAppsActivateWithVoiceForceDeny int64 = 2
+	LetAppsActivateWithVoiceForceDeny LetAppsActivateWithVoiceValue = 2
 )
 
-// LetAppsActivateWithVoiceAboveLock allowed values.
+// String returns the LetAppsActivateWithVoiceValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e LetAppsActivateWithVoiceValue) String() string {
+	switch e {
+	case LetAppsActivateWithVoiceUserInControl:
+		return "LetAppsActivateWithVoiceUserInControl"
+	case LetAppsActivateWithVoiceForceAllow:
+		return "LetAppsActivateWithVoiceForceAllow"
+	case LetAppsActivateWithVoiceForceDeny:
+		return "LetAppsActivateWithVoiceForceDeny"
+	default:
+		return fmt.Sprintf("LetAppsActivateWithVoiceValue(%d)", int64(e))
+	}
+}
+
+// LetAppsActivateWithVoiceAboveLockValue — allowed values for the LetAppsActivateWithVoiceAboveLock node.
+type LetAppsActivateWithVoiceAboveLockValue int64
+
 const (
 	// User in control. Users can decide if Windows apps can be activated by voice while the screen is
 	// locked using Settings > Privacy options on the device.
-	LetAppsActivateWithVoiceAboveLockUserInControl int64 = 0
+	LetAppsActivateWithVoiceAboveLockUserInControl LetAppsActivateWithVoiceAboveLockValue = 0
 	// Force allow. Windows apps can be activated by voice while the screen is locked, and users cannot
 	// change it.
-	LetAppsActivateWithVoiceAboveLockForceAllow int64 = 1
+	LetAppsActivateWithVoiceAboveLockForceAllow LetAppsActivateWithVoiceAboveLockValue = 1
 	// Force deny. Windows apps cannot be activated by voice while the screen is locked, and users
 	// cannot change it.
-	LetAppsActivateWithVoiceAboveLockForceDeny int64 = 2
+	LetAppsActivateWithVoiceAboveLockForceDeny LetAppsActivateWithVoiceAboveLockValue = 2
 )
 
-// LetAppsGetDiagnosticInfo allowed values.
+// String returns the LetAppsActivateWithVoiceAboveLockValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e LetAppsActivateWithVoiceAboveLockValue) String() string {
+	switch e {
+	case LetAppsActivateWithVoiceAboveLockUserInControl:
+		return "LetAppsActivateWithVoiceAboveLockUserInControl"
+	case LetAppsActivateWithVoiceAboveLockForceAllow:
+		return "LetAppsActivateWithVoiceAboveLockForceAllow"
+	case LetAppsActivateWithVoiceAboveLockForceDeny:
+		return "LetAppsActivateWithVoiceAboveLockForceDeny"
+	default:
+		return fmt.Sprintf("LetAppsActivateWithVoiceAboveLockValue(%d)", int64(e))
+	}
+}
+
+// LetAppsGetDiagnosticInfoValue — allowed values for the LetAppsGetDiagnosticInfo node.
+type LetAppsGetDiagnosticInfoValue int64
+
 const (
 	// User in control.
-	LetAppsGetDiagnosticInfoUserInControl int64 = 0
+	LetAppsGetDiagnosticInfoUserInControl LetAppsGetDiagnosticInfoValue = 0
 	// Force allow.
-	LetAppsGetDiagnosticInfoForceAllow int64 = 1
+	LetAppsGetDiagnosticInfoForceAllow LetAppsGetDiagnosticInfoValue = 1
 	// Force deny.
-	LetAppsGetDiagnosticInfoForceDeny int64 = 2
+	LetAppsGetDiagnosticInfoForceDeny LetAppsGetDiagnosticInfoValue = 2
 )
 
-// LetAppsRunInBackground allowed values.
+// String returns the LetAppsGetDiagnosticInfoValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e LetAppsGetDiagnosticInfoValue) String() string {
+	switch e {
+	case LetAppsGetDiagnosticInfoUserInControl:
+		return "LetAppsGetDiagnosticInfoUserInControl"
+	case LetAppsGetDiagnosticInfoForceAllow:
+		return "LetAppsGetDiagnosticInfoForceAllow"
+	case LetAppsGetDiagnosticInfoForceDeny:
+		return "LetAppsGetDiagnosticInfoForceDeny"
+	default:
+		return fmt.Sprintf("LetAppsGetDiagnosticInfoValue(%d)", int64(e))
+	}
+}
+
+// LetAppsRunInBackgroundValue — allowed values for the LetAppsRunInBackground node.
+type LetAppsRunInBackgroundValue int64
+
 const (
 	// .
-	LetAppsRunInBackgroundValue0 int64 = 0
+	LetAppsRunInBackgroundValue0 LetAppsRunInBackgroundValue = 0
 	// Force allow.
-	LetAppsRunInBackgroundForceAllow int64 = 1
+	LetAppsRunInBackgroundForceAllow LetAppsRunInBackgroundValue = 1
 	// Force deny.
-	LetAppsRunInBackgroundForceDeny int64 = 2
+	LetAppsRunInBackgroundForceDeny LetAppsRunInBackgroundValue = 2
 )
 
-// LetAppsSyncWithDevices allowed values.
+// String returns the LetAppsRunInBackgroundValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e LetAppsRunInBackgroundValue) String() string {
+	switch e {
+	case LetAppsRunInBackgroundValue0:
+		return "LetAppsRunInBackgroundValue0"
+	case LetAppsRunInBackgroundForceAllow:
+		return "LetAppsRunInBackgroundForceAllow"
+	case LetAppsRunInBackgroundForceDeny:
+		return "LetAppsRunInBackgroundForceDeny"
+	default:
+		return fmt.Sprintf("LetAppsRunInBackgroundValue(%d)", int64(e))
+	}
+}
+
+// LetAppsSyncWithDevicesValue — allowed values for the LetAppsSyncWithDevices node.
+type LetAppsSyncWithDevicesValue int64
+
 const (
 	// User in control.
-	LetAppsSyncWithDevicesUserInControl int64 = 0
+	LetAppsSyncWithDevicesUserInControl LetAppsSyncWithDevicesValue = 0
 	// Force allow.
-	LetAppsSyncWithDevicesForceAllow int64 = 1
+	LetAppsSyncWithDevicesForceAllow LetAppsSyncWithDevicesValue = 1
 	// Force deny.
-	LetAppsSyncWithDevicesForceDeny int64 = 2
+	LetAppsSyncWithDevicesForceDeny LetAppsSyncWithDevicesValue = 2
 )
 
-// PublishUserActivities allowed values.
+// String returns the LetAppsSyncWithDevicesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e LetAppsSyncWithDevicesValue) String() string {
+	switch e {
+	case LetAppsSyncWithDevicesUserInControl:
+		return "LetAppsSyncWithDevicesUserInControl"
+	case LetAppsSyncWithDevicesForceAllow:
+		return "LetAppsSyncWithDevicesForceAllow"
+	case LetAppsSyncWithDevicesForceDeny:
+		return "LetAppsSyncWithDevicesForceDeny"
+	default:
+		return fmt.Sprintf("LetAppsSyncWithDevicesValue(%d)", int64(e))
+	}
+}
+
+// PublishUserActivitiesValue — allowed values for the PublishUserActivities node.
+type PublishUserActivitiesValue int64
+
 const (
 	// Disabled. Apps/OS can't publish the user activities.
-	PublishUserActivitiesDisabled int64 = 0
+	PublishUserActivitiesDisabled PublishUserActivitiesValue = 0
 	// Enabled. Apps/OS can publish the user activities.
-	PublishUserActivitiesEnabled int64 = 1
+	PublishUserActivitiesEnabled PublishUserActivitiesValue = 1
 )
 
-// UploadUserActivities allowed values.
+// String returns the PublishUserActivitiesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PublishUserActivitiesValue) String() string {
+	switch e {
+	case PublishUserActivitiesDisabled:
+		return "PublishUserActivitiesDisabled"
+	case PublishUserActivitiesEnabled:
+		return "PublishUserActivitiesEnabled"
+	default:
+		return fmt.Sprintf("PublishUserActivitiesValue(%d)", int64(e))
+	}
+}
+
+// UploadUserActivitiesValue — allowed values for the UploadUserActivities node.
+type UploadUserActivitiesValue int64
+
 const (
 	// Not allowed.
-	UploadUserActivitiesNotAllowed int64 = 0
+	UploadUserActivitiesNotAllowed UploadUserActivitiesValue = 0
 	// Allowed.
-	UploadUserActivitiesAllowed int64 = 1
+	UploadUserActivitiesAllowed UploadUserActivitiesValue = 1
 )
+
+// String returns the UploadUserActivitiesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e UploadUserActivitiesValue) String() string {
+	switch e {
+	case UploadUserActivitiesNotAllowed:
+		return "UploadUserActivitiesNotAllowed"
+	case UploadUserActivitiesAllowed:
+		return "UploadUserActivitiesAllowed"
+	default:
+		return fmt.Sprintf("UploadUserActivitiesValue(%d)", int64(e))
+	}
+}

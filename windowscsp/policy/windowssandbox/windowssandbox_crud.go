@@ -13,12 +13,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.22000, 10.0.19043.4950, 10.0.19042.4950, 10.0.19041.4950 (CSP v11.0).
-func (s *WindowsSandbox) GetAllowAudioInput(ctx context.Context) (int64, error) {
+func (s *WindowsSandbox) GetAllowAudioInput(ctx context.Context) (AllowAudioInputValue, error) {
 	v, err := s.c.Get(ctx, URIAllowAudioInput)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowAudioInputValue(n), err
 }
 
 // CreateAllowAudioInput creates ./Device/Vendor/MSFT/Policy/Config/WindowsSandbox/AllowAudioInput.
@@ -26,8 +27,8 @@ func (s *WindowsSandbox) GetAllowAudioInput(ctx context.Context) (int64, error) 
 //
 // Default: 1.
 // Supported from OS build 10.0.22000, 10.0.19043.4950, 10.0.19042.4950, 10.0.19041.4950 (CSP v11.0).
-func (s *WindowsSandbox) CreateAllowAudioInput(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowAudioInput, client.Int(value))
+func (s *WindowsSandbox) CreateAllowAudioInput(ctx context.Context, value AllowAudioInputValue) error {
+	return s.c.Add(ctx, URIAllowAudioInput, client.Int(int64(value)))
 }
 
 // UpdateAllowAudioInput updates ./Device/Vendor/MSFT/Policy/Config/WindowsSandbox/AllowAudioInput.
@@ -35,8 +36,8 @@ func (s *WindowsSandbox) CreateAllowAudioInput(ctx context.Context, value int64)
 //
 // Default: 1.
 // Supported from OS build 10.0.22000, 10.0.19043.4950, 10.0.19042.4950, 10.0.19041.4950 (CSP v11.0).
-func (s *WindowsSandbox) UpdateAllowAudioInput(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowAudioInput, client.Int(value))
+func (s *WindowsSandbox) UpdateAllowAudioInput(ctx context.Context, value AllowAudioInputValue) error {
+	return s.c.Replace(ctx, URIAllowAudioInput, client.Int(int64(value)))
 }
 
 // DeleteAllowAudioInput deletes ./Device/Vendor/MSFT/Policy/Config/WindowsSandbox/AllowAudioInput.
@@ -53,12 +54,13 @@ func (s *WindowsSandbox) DeleteAllowAudioInput(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.22000, 10.0.19043.4950, 10.0.19042.4950, 10.0.19041.4950 (CSP v11.0).
-func (s *WindowsSandbox) GetAllowClipboardRedirection(ctx context.Context) (int64, error) {
+func (s *WindowsSandbox) GetAllowClipboardRedirection(ctx context.Context) (AllowClipboardRedirectionValue, error) {
 	v, err := s.c.Get(ctx, URIAllowClipboardRedirection)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowClipboardRedirectionValue(n), err
 }
 
 // CreateAllowClipboardRedirection creates ./Device/Vendor/MSFT/Policy/Config/WindowsSandbox/AllowClipboardRedirection.
@@ -66,8 +68,8 @@ func (s *WindowsSandbox) GetAllowClipboardRedirection(ctx context.Context) (int6
 //
 // Default: 1.
 // Supported from OS build 10.0.22000, 10.0.19043.4950, 10.0.19042.4950, 10.0.19041.4950 (CSP v11.0).
-func (s *WindowsSandbox) CreateAllowClipboardRedirection(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowClipboardRedirection, client.Int(value))
+func (s *WindowsSandbox) CreateAllowClipboardRedirection(ctx context.Context, value AllowClipboardRedirectionValue) error {
+	return s.c.Add(ctx, URIAllowClipboardRedirection, client.Int(int64(value)))
 }
 
 // UpdateAllowClipboardRedirection updates ./Device/Vendor/MSFT/Policy/Config/WindowsSandbox/AllowClipboardRedirection.
@@ -75,8 +77,8 @@ func (s *WindowsSandbox) CreateAllowClipboardRedirection(ctx context.Context, va
 //
 // Default: 1.
 // Supported from OS build 10.0.22000, 10.0.19043.4950, 10.0.19042.4950, 10.0.19041.4950 (CSP v11.0).
-func (s *WindowsSandbox) UpdateAllowClipboardRedirection(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowClipboardRedirection, client.Int(value))
+func (s *WindowsSandbox) UpdateAllowClipboardRedirection(ctx context.Context, value AllowClipboardRedirectionValue) error {
+	return s.c.Replace(ctx, URIAllowClipboardRedirection, client.Int(int64(value)))
 }
 
 // DeleteAllowClipboardRedirection deletes ./Device/Vendor/MSFT/Policy/Config/WindowsSandbox/AllowClipboardRedirection.
@@ -93,12 +95,13 @@ func (s *WindowsSandbox) DeleteAllowClipboardRedirection(ctx context.Context) er
 //
 // Default: 1.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *WindowsSandbox) GetAllowMappedFolders(ctx context.Context) (int64, error) {
+func (s *WindowsSandbox) GetAllowMappedFolders(ctx context.Context) (AllowMappedFoldersValue, error) {
 	v, err := s.c.Get(ctx, URIAllowMappedFolders)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowMappedFoldersValue(n), err
 }
 
 // CreateAllowMappedFolders creates ./Device/Vendor/MSFT/Policy/Config/WindowsSandbox/AllowMappedFolders.
@@ -106,8 +109,8 @@ func (s *WindowsSandbox) GetAllowMappedFolders(ctx context.Context) (int64, erro
 //
 // Default: 1.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *WindowsSandbox) CreateAllowMappedFolders(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowMappedFolders, client.Int(value))
+func (s *WindowsSandbox) CreateAllowMappedFolders(ctx context.Context, value AllowMappedFoldersValue) error {
+	return s.c.Add(ctx, URIAllowMappedFolders, client.Int(int64(value)))
 }
 
 // UpdateAllowMappedFolders updates ./Device/Vendor/MSFT/Policy/Config/WindowsSandbox/AllowMappedFolders.
@@ -115,8 +118,8 @@ func (s *WindowsSandbox) CreateAllowMappedFolders(ctx context.Context, value int
 //
 // Default: 1.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *WindowsSandbox) UpdateAllowMappedFolders(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowMappedFolders, client.Int(value))
+func (s *WindowsSandbox) UpdateAllowMappedFolders(ctx context.Context, value AllowMappedFoldersValue) error {
+	return s.c.Replace(ctx, URIAllowMappedFolders, client.Int(int64(value)))
 }
 
 // DeleteAllowMappedFolders deletes ./Device/Vendor/MSFT/Policy/Config/WindowsSandbox/AllowMappedFolders.
@@ -133,12 +136,13 @@ func (s *WindowsSandbox) DeleteAllowMappedFolders(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.22000, 10.0.19043.4950, 10.0.19042.4950, 10.0.19041.4950 (CSP v11.0).
-func (s *WindowsSandbox) GetAllowNetworking(ctx context.Context) (int64, error) {
+func (s *WindowsSandbox) GetAllowNetworking(ctx context.Context) (AllowNetworkingValue, error) {
 	v, err := s.c.Get(ctx, URIAllowNetworking)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowNetworkingValue(n), err
 }
 
 // CreateAllowNetworking creates ./Device/Vendor/MSFT/Policy/Config/WindowsSandbox/AllowNetworking.
@@ -146,8 +150,8 @@ func (s *WindowsSandbox) GetAllowNetworking(ctx context.Context) (int64, error) 
 //
 // Default: 1.
 // Supported from OS build 10.0.22000, 10.0.19043.4950, 10.0.19042.4950, 10.0.19041.4950 (CSP v11.0).
-func (s *WindowsSandbox) CreateAllowNetworking(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowNetworking, client.Int(value))
+func (s *WindowsSandbox) CreateAllowNetworking(ctx context.Context, value AllowNetworkingValue) error {
+	return s.c.Add(ctx, URIAllowNetworking, client.Int(int64(value)))
 }
 
 // UpdateAllowNetworking updates ./Device/Vendor/MSFT/Policy/Config/WindowsSandbox/AllowNetworking.
@@ -155,8 +159,8 @@ func (s *WindowsSandbox) CreateAllowNetworking(ctx context.Context, value int64)
 //
 // Default: 1.
 // Supported from OS build 10.0.22000, 10.0.19043.4950, 10.0.19042.4950, 10.0.19041.4950 (CSP v11.0).
-func (s *WindowsSandbox) UpdateAllowNetworking(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowNetworking, client.Int(value))
+func (s *WindowsSandbox) UpdateAllowNetworking(ctx context.Context, value AllowNetworkingValue) error {
+	return s.c.Replace(ctx, URIAllowNetworking, client.Int(int64(value)))
 }
 
 // DeleteAllowNetworking deletes ./Device/Vendor/MSFT/Policy/Config/WindowsSandbox/AllowNetworking.
@@ -173,12 +177,13 @@ func (s *WindowsSandbox) DeleteAllowNetworking(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.22000, 10.0.19043.4950, 10.0.19042.4950, 10.0.19041.4950 (CSP v11.0).
-func (s *WindowsSandbox) GetAllowPrinterRedirection(ctx context.Context) (int64, error) {
+func (s *WindowsSandbox) GetAllowPrinterRedirection(ctx context.Context) (AllowPrinterRedirectionValue, error) {
 	v, err := s.c.Get(ctx, URIAllowPrinterRedirection)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowPrinterRedirectionValue(n), err
 }
 
 // CreateAllowPrinterRedirection creates ./Device/Vendor/MSFT/Policy/Config/WindowsSandbox/AllowPrinterRedirection.
@@ -186,8 +191,8 @@ func (s *WindowsSandbox) GetAllowPrinterRedirection(ctx context.Context) (int64,
 //
 // Default: 1.
 // Supported from OS build 10.0.22000, 10.0.19043.4950, 10.0.19042.4950, 10.0.19041.4950 (CSP v11.0).
-func (s *WindowsSandbox) CreateAllowPrinterRedirection(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowPrinterRedirection, client.Int(value))
+func (s *WindowsSandbox) CreateAllowPrinterRedirection(ctx context.Context, value AllowPrinterRedirectionValue) error {
+	return s.c.Add(ctx, URIAllowPrinterRedirection, client.Int(int64(value)))
 }
 
 // UpdateAllowPrinterRedirection updates ./Device/Vendor/MSFT/Policy/Config/WindowsSandbox/AllowPrinterRedirection.
@@ -195,8 +200,8 @@ func (s *WindowsSandbox) CreateAllowPrinterRedirection(ctx context.Context, valu
 //
 // Default: 1.
 // Supported from OS build 10.0.22000, 10.0.19043.4950, 10.0.19042.4950, 10.0.19041.4950 (CSP v11.0).
-func (s *WindowsSandbox) UpdateAllowPrinterRedirection(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowPrinterRedirection, client.Int(value))
+func (s *WindowsSandbox) UpdateAllowPrinterRedirection(ctx context.Context, value AllowPrinterRedirectionValue) error {
+	return s.c.Replace(ctx, URIAllowPrinterRedirection, client.Int(int64(value)))
 }
 
 // DeleteAllowPrinterRedirection deletes ./Device/Vendor/MSFT/Policy/Config/WindowsSandbox/AllowPrinterRedirection.
@@ -213,12 +218,13 @@ func (s *WindowsSandbox) DeleteAllowPrinterRedirection(ctx context.Context) erro
 //
 // Default: 1.
 // Supported from OS build 10.0.22000, 10.0.19043.4950, 10.0.19042.4950, 10.0.19041.4950 (CSP v11.0).
-func (s *WindowsSandbox) GetAllowVGPU(ctx context.Context) (int64, error) {
+func (s *WindowsSandbox) GetAllowVGPU(ctx context.Context) (AllowVGPUValue, error) {
 	v, err := s.c.Get(ctx, URIAllowVGPU)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowVGPUValue(n), err
 }
 
 // CreateAllowVGPU creates ./Device/Vendor/MSFT/Policy/Config/WindowsSandbox/AllowVGPU.
@@ -226,8 +232,8 @@ func (s *WindowsSandbox) GetAllowVGPU(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.22000, 10.0.19043.4950, 10.0.19042.4950, 10.0.19041.4950 (CSP v11.0).
-func (s *WindowsSandbox) CreateAllowVGPU(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowVGPU, client.Int(value))
+func (s *WindowsSandbox) CreateAllowVGPU(ctx context.Context, value AllowVGPUValue) error {
+	return s.c.Add(ctx, URIAllowVGPU, client.Int(int64(value)))
 }
 
 // UpdateAllowVGPU updates ./Device/Vendor/MSFT/Policy/Config/WindowsSandbox/AllowVGPU.
@@ -235,8 +241,8 @@ func (s *WindowsSandbox) CreateAllowVGPU(ctx context.Context, value int64) error
 //
 // Default: 1.
 // Supported from OS build 10.0.22000, 10.0.19043.4950, 10.0.19042.4950, 10.0.19041.4950 (CSP v11.0).
-func (s *WindowsSandbox) UpdateAllowVGPU(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowVGPU, client.Int(value))
+func (s *WindowsSandbox) UpdateAllowVGPU(ctx context.Context, value AllowVGPUValue) error {
+	return s.c.Replace(ctx, URIAllowVGPU, client.Int(int64(value)))
 }
 
 // DeleteAllowVGPU deletes ./Device/Vendor/MSFT/Policy/Config/WindowsSandbox/AllowVGPU.
@@ -253,12 +259,13 @@ func (s *WindowsSandbox) DeleteAllowVGPU(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.22000, 10.0.19043.4950, 10.0.19042.4950, 10.0.19041.4950 (CSP v11.0).
-func (s *WindowsSandbox) GetAllowVideoInput(ctx context.Context) (int64, error) {
+func (s *WindowsSandbox) GetAllowVideoInput(ctx context.Context) (AllowVideoInputValue, error) {
 	v, err := s.c.Get(ctx, URIAllowVideoInput)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowVideoInputValue(n), err
 }
 
 // CreateAllowVideoInput creates ./Device/Vendor/MSFT/Policy/Config/WindowsSandbox/AllowVideoInput.
@@ -266,8 +273,8 @@ func (s *WindowsSandbox) GetAllowVideoInput(ctx context.Context) (int64, error) 
 //
 // Default: 1.
 // Supported from OS build 10.0.22000, 10.0.19043.4950, 10.0.19042.4950, 10.0.19041.4950 (CSP v11.0).
-func (s *WindowsSandbox) CreateAllowVideoInput(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowVideoInput, client.Int(value))
+func (s *WindowsSandbox) CreateAllowVideoInput(ctx context.Context, value AllowVideoInputValue) error {
+	return s.c.Add(ctx, URIAllowVideoInput, client.Int(int64(value)))
 }
 
 // UpdateAllowVideoInput updates ./Device/Vendor/MSFT/Policy/Config/WindowsSandbox/AllowVideoInput.
@@ -275,8 +282,8 @@ func (s *WindowsSandbox) CreateAllowVideoInput(ctx context.Context, value int64)
 //
 // Default: 1.
 // Supported from OS build 10.0.22000, 10.0.19043.4950, 10.0.19042.4950, 10.0.19041.4950 (CSP v11.0).
-func (s *WindowsSandbox) UpdateAllowVideoInput(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowVideoInput, client.Int(value))
+func (s *WindowsSandbox) UpdateAllowVideoInput(ctx context.Context, value AllowVideoInputValue) error {
+	return s.c.Replace(ctx, URIAllowVideoInput, client.Int(int64(value)))
 }
 
 // DeleteAllowVideoInput deletes ./Device/Vendor/MSFT/Policy/Config/WindowsSandbox/AllowVideoInput.
@@ -293,12 +300,13 @@ func (s *WindowsSandbox) DeleteAllowVideoInput(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *WindowsSandbox) GetAllowWriteToMappedFolders(ctx context.Context) (int64, error) {
+func (s *WindowsSandbox) GetAllowWriteToMappedFolders(ctx context.Context) (AllowWriteToMappedFoldersValue, error) {
 	v, err := s.c.Get(ctx, URIAllowWriteToMappedFolders)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowWriteToMappedFoldersValue(n), err
 }
 
 // CreateAllowWriteToMappedFolders creates ./Device/Vendor/MSFT/Policy/Config/WindowsSandbox/AllowWriteToMappedFolders.
@@ -306,8 +314,8 @@ func (s *WindowsSandbox) GetAllowWriteToMappedFolders(ctx context.Context) (int6
 //
 // Default: 1.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *WindowsSandbox) CreateAllowWriteToMappedFolders(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowWriteToMappedFolders, client.Int(value))
+func (s *WindowsSandbox) CreateAllowWriteToMappedFolders(ctx context.Context, value AllowWriteToMappedFoldersValue) error {
+	return s.c.Add(ctx, URIAllowWriteToMappedFolders, client.Int(int64(value)))
 }
 
 // UpdateAllowWriteToMappedFolders updates ./Device/Vendor/MSFT/Policy/Config/WindowsSandbox/AllowWriteToMappedFolders.
@@ -315,8 +323,8 @@ func (s *WindowsSandbox) CreateAllowWriteToMappedFolders(ctx context.Context, va
 //
 // Default: 1.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *WindowsSandbox) UpdateAllowWriteToMappedFolders(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowWriteToMappedFolders, client.Int(value))
+func (s *WindowsSandbox) UpdateAllowWriteToMappedFolders(ctx context.Context, value AllowWriteToMappedFoldersValue) error {
+	return s.c.Replace(ctx, URIAllowWriteToMappedFolders, client.Int(int64(value)))
 }
 
 // DeleteAllowWriteToMappedFolders deletes ./Device/Vendor/MSFT/Policy/Config/WindowsSandbox/AllowWriteToMappedFolders.

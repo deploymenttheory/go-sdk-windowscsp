@@ -2,16 +2,37 @@
 
 package system_user
 
-// AllowTelemetry allowed values.
+import (
+	"fmt"
+)
+
+// AllowTelemetryValue — allowed values for the AllowTelemetry node.
+type AllowTelemetryValue int64
+
 const (
 	// Security. Information that is required to help keep Windows more secure, including data about
 	// the Connected User Experience and Telemetry component settings, the Malicious Software Removal
 	// Tool, and Windows Defender.
-	AllowTelemetrySecurity int64 = 0
+	AllowTelemetrySecurity AllowTelemetryValue = 0
 	// Basic. Basic device info, including: quality-related data, app compatibility, app usage data,
 	// and data from the Security level.
-	AllowTelemetryBasic int64 = 1
+	AllowTelemetryBasic AllowTelemetryValue = 1
 	// Full. All data necessary to identify and help to fix problems, plus data from the Security,
 	// Basic, and Enhanced levels.
-	AllowTelemetryFull int64 = 3
+	AllowTelemetryFull AllowTelemetryValue = 3
 )
+
+// String returns the AllowTelemetryValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowTelemetryValue) String() string {
+	switch e {
+	case AllowTelemetrySecurity:
+		return "AllowTelemetrySecurity"
+	case AllowTelemetryBasic:
+		return "AllowTelemetryBasic"
+	case AllowTelemetryFull:
+		return "AllowTelemetryFull"
+	default:
+		return fmt.Sprintf("AllowTelemetryValue(%d)", int64(e))
+	}
+}

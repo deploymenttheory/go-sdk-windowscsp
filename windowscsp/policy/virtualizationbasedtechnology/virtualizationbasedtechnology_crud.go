@@ -15,12 +15,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *VirtualizationBasedTechnology) GetHypervisorEnforcedCodeIntegrity(ctx context.Context) (int64, error) {
+func (s *VirtualizationBasedTechnology) GetHypervisorEnforcedCodeIntegrity(ctx context.Context) (HypervisorEnforcedCodeIntegrityValue, error) {
 	v, err := s.c.Get(ctx, URIHypervisorEnforcedCodeIntegrity)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HypervisorEnforcedCodeIntegrityValue(n), err
 }
 
 // CreateHypervisorEnforcedCodeIntegrity creates ./Device/Vendor/MSFT/Policy/Config/VirtualizationBasedTechnology/HypervisorEnforcedCodeIntegrity.
@@ -30,8 +31,8 @@ func (s *VirtualizationBasedTechnology) GetHypervisorEnforcedCodeIntegrity(ctx c
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *VirtualizationBasedTechnology) CreateHypervisorEnforcedCodeIntegrity(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHypervisorEnforcedCodeIntegrity, client.Int(value))
+func (s *VirtualizationBasedTechnology) CreateHypervisorEnforcedCodeIntegrity(ctx context.Context, value HypervisorEnforcedCodeIntegrityValue) error {
+	return s.c.Add(ctx, URIHypervisorEnforcedCodeIntegrity, client.Int(int64(value)))
 }
 
 // UpdateHypervisorEnforcedCodeIntegrity updates ./Device/Vendor/MSFT/Policy/Config/VirtualizationBasedTechnology/HypervisorEnforcedCodeIntegrity.
@@ -41,8 +42,8 @@ func (s *VirtualizationBasedTechnology) CreateHypervisorEnforcedCodeIntegrity(ct
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *VirtualizationBasedTechnology) UpdateHypervisorEnforcedCodeIntegrity(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHypervisorEnforcedCodeIntegrity, client.Int(value))
+func (s *VirtualizationBasedTechnology) UpdateHypervisorEnforcedCodeIntegrity(ctx context.Context, value HypervisorEnforcedCodeIntegrityValue) error {
+	return s.c.Replace(ctx, URIHypervisorEnforcedCodeIntegrity, client.Int(int64(value)))
 }
 
 // DeleteHypervisorEnforcedCodeIntegrity deletes ./Device/Vendor/MSFT/Policy/Config/VirtualizationBasedTechnology/HypervisorEnforcedCodeIntegrity.
@@ -61,12 +62,13 @@ func (s *VirtualizationBasedTechnology) DeleteHypervisorEnforcedCodeIntegrity(ct
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *VirtualizationBasedTechnology) GetRequireUEFIMemoryAttributesTable(ctx context.Context) (int64, error) {
+func (s *VirtualizationBasedTechnology) GetRequireUEFIMemoryAttributesTable(ctx context.Context) (RequireUEFIMemoryAttributesTableValue, error) {
 	v, err := s.c.Get(ctx, URIRequireUEFIMemoryAttributesTable)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return RequireUEFIMemoryAttributesTableValue(n), err
 }
 
 // CreateRequireUEFIMemoryAttributesTable creates ./Device/Vendor/MSFT/Policy/Config/VirtualizationBasedTechnology/RequireUEFIMemoryAttributesTable.
@@ -74,8 +76,8 @@ func (s *VirtualizationBasedTechnology) GetRequireUEFIMemoryAttributesTable(ctx 
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *VirtualizationBasedTechnology) CreateRequireUEFIMemoryAttributesTable(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIRequireUEFIMemoryAttributesTable, client.Int(value))
+func (s *VirtualizationBasedTechnology) CreateRequireUEFIMemoryAttributesTable(ctx context.Context, value RequireUEFIMemoryAttributesTableValue) error {
+	return s.c.Add(ctx, URIRequireUEFIMemoryAttributesTable, client.Int(int64(value)))
 }
 
 // UpdateRequireUEFIMemoryAttributesTable updates ./Device/Vendor/MSFT/Policy/Config/VirtualizationBasedTechnology/RequireUEFIMemoryAttributesTable.
@@ -83,8 +85,8 @@ func (s *VirtualizationBasedTechnology) CreateRequireUEFIMemoryAttributesTable(c
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *VirtualizationBasedTechnology) UpdateRequireUEFIMemoryAttributesTable(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIRequireUEFIMemoryAttributesTable, client.Int(value))
+func (s *VirtualizationBasedTechnology) UpdateRequireUEFIMemoryAttributesTable(ctx context.Context, value RequireUEFIMemoryAttributesTableValue) error {
+	return s.c.Replace(ctx, URIRequireUEFIMemoryAttributesTable, client.Int(int64(value)))
 }
 
 // DeleteRequireUEFIMemoryAttributesTable deletes ./Device/Vendor/MSFT/Policy/Config/VirtualizationBasedTechnology/RequireUEFIMemoryAttributesTable.

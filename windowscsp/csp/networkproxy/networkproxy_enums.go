@@ -2,26 +2,75 @@
 
 package networkproxy
 
-// AutoDetect allowed values.
+import (
+	"fmt"
+)
+
+// AutoDetectValue — allowed values for the AutoDetect node.
+type AutoDetectValue int64
+
 const (
 	// Disabled
-	AutoDetectDisabled int64 = 0
+	AutoDetectDisabled AutoDetectValue = 0
 	// Enabled
-	AutoDetectEnabled int64 = 1
+	AutoDetectEnabled AutoDetectValue = 1
 )
 
-// ProxyServerUseProxyForLocalAddresses allowed values.
+// String returns the AutoDetectValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AutoDetectValue) String() string {
+	switch e {
+	case AutoDetectDisabled:
+		return "AutoDetectDisabled"
+	case AutoDetectEnabled:
+		return "AutoDetectEnabled"
+	default:
+		return fmt.Sprintf("AutoDetectValue(%d)", int64(e))
+	}
+}
+
+// ProxyServerUseProxyForLocalAddressesValue — allowed values for the UseProxyForLocalAddresses node.
+type ProxyServerUseProxyForLocalAddressesValue int64
+
 const (
 	// Use proxy server for local addresses
-	ProxyServerUseProxyForLocalAddressesUseProxyServerForLocalAddresses int64 = 0
+	ProxyServerUseProxyForLocalAddressesUseProxyServerForLocalAddresses ProxyServerUseProxyForLocalAddressesValue = 0
 	// Do not use proxy server for local addresses
-	ProxyServerUseProxyForLocalAddressesDoNotUseProxyServerFor int64 = 1
+	ProxyServerUseProxyForLocalAddressesDoNotUseProxyServerFor ProxyServerUseProxyForLocalAddressesValue = 1
 )
 
-// ProxySettingsPerUser allowed values.
+// String returns the ProxyServerUseProxyForLocalAddressesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ProxyServerUseProxyForLocalAddressesValue) String() string {
+	switch e {
+	case ProxyServerUseProxyForLocalAddressesUseProxyServerForLocalAddresses:
+		return "ProxyServerUseProxyForLocalAddressesUseProxyServerForLocalAddresses"
+	case ProxyServerUseProxyForLocalAddressesDoNotUseProxyServerFor:
+		return "ProxyServerUseProxyForLocalAddressesDoNotUseProxyServerFor"
+	default:
+		return fmt.Sprintf("ProxyServerUseProxyForLocalAddressesValue(%d)", int64(e))
+	}
+}
+
+// ProxySettingsPerUserValue — allowed values for the ProxySettingsPerUser node.
+type ProxySettingsPerUserValue int64
+
 const (
 	// Proxy configuration is global, machine wide.
-	ProxySettingsPerUserProxyConfigurationIsGlobalMachineWide int64 = 0
+	ProxySettingsPerUserProxyConfigurationIsGlobalMachineWide ProxySettingsPerUserValue = 0
 	// Proxy configuration is per user.
-	ProxySettingsPerUserProxyConfigurationIsPerUser int64 = 1
+	ProxySettingsPerUserProxyConfigurationIsPerUser ProxySettingsPerUserValue = 1
 )
+
+// String returns the ProxySettingsPerUserValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ProxySettingsPerUserValue) String() string {
+	switch e {
+	case ProxySettingsPerUserProxyConfigurationIsGlobalMachineWide:
+		return "ProxySettingsPerUserProxyConfigurationIsGlobalMachineWide"
+	case ProxySettingsPerUserProxyConfigurationIsPerUser:
+		return "ProxySettingsPerUserProxyConfigurationIsPerUser"
+	default:
+		return fmt.Sprintf("ProxySettingsPerUserValue(%d)", int64(e))
+	}
+}

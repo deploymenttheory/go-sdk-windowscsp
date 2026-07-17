@@ -2,22 +2,60 @@
 
 package maps
 
-// AllowOfflineMapsDownloadOverMeteredConnection allowed values.
-const (
-	// Disabled. Force disable auto-update over metered connection.
-	AllowOfflineMapsDownloadOverMeteredConnectionDisabled int64 = 0
-	// Enabled. Force enable auto-update over metered connection.
-	AllowOfflineMapsDownloadOverMeteredConnectionEnabled int64 = 1
-	// Not configured. User's choice.
-	AllowOfflineMapsDownloadOverMeteredConnectionNotConfigured int64 = 65535
+import (
+	"fmt"
 )
 
-// EnableOfflineMapsAutoUpdate allowed values.
+// AllowOfflineMapsDownloadOverMeteredConnectionValue — allowed values for the AllowOfflineMapsDownloadOverMeteredConnection node.
+type AllowOfflineMapsDownloadOverMeteredConnectionValue int64
+
+const (
+	// Disabled. Force disable auto-update over metered connection.
+	AllowOfflineMapsDownloadOverMeteredConnectionDisabled AllowOfflineMapsDownloadOverMeteredConnectionValue = 0
+	// Enabled. Force enable auto-update over metered connection.
+	AllowOfflineMapsDownloadOverMeteredConnectionEnabled AllowOfflineMapsDownloadOverMeteredConnectionValue = 1
+	// Not configured. User's choice.
+	AllowOfflineMapsDownloadOverMeteredConnectionNotConfigured AllowOfflineMapsDownloadOverMeteredConnectionValue = 65535
+)
+
+// String returns the AllowOfflineMapsDownloadOverMeteredConnectionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowOfflineMapsDownloadOverMeteredConnectionValue) String() string {
+	switch e {
+	case AllowOfflineMapsDownloadOverMeteredConnectionDisabled:
+		return "AllowOfflineMapsDownloadOverMeteredConnectionDisabled"
+	case AllowOfflineMapsDownloadOverMeteredConnectionEnabled:
+		return "AllowOfflineMapsDownloadOverMeteredConnectionEnabled"
+	case AllowOfflineMapsDownloadOverMeteredConnectionNotConfigured:
+		return "AllowOfflineMapsDownloadOverMeteredConnectionNotConfigured"
+	default:
+		return fmt.Sprintf("AllowOfflineMapsDownloadOverMeteredConnectionValue(%d)", int64(e))
+	}
+}
+
+// EnableOfflineMapsAutoUpdateValue — allowed values for the EnableOfflineMapsAutoUpdate node.
+type EnableOfflineMapsAutoUpdateValue int64
+
 const (
 	// Disabled. Force off auto-update.
-	EnableOfflineMapsAutoUpdateDisabled int64 = 0
+	EnableOfflineMapsAutoUpdateDisabled EnableOfflineMapsAutoUpdateValue = 0
 	// Enabled. Force on auto-update.
-	EnableOfflineMapsAutoUpdateEnabled int64 = 1
+	EnableOfflineMapsAutoUpdateEnabled EnableOfflineMapsAutoUpdateValue = 1
 	// Not configured. User's choice.
-	EnableOfflineMapsAutoUpdateNotConfigured int64 = 65535
+	EnableOfflineMapsAutoUpdateNotConfigured EnableOfflineMapsAutoUpdateValue = 65535
 )
+
+// String returns the EnableOfflineMapsAutoUpdateValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableOfflineMapsAutoUpdateValue) String() string {
+	switch e {
+	case EnableOfflineMapsAutoUpdateDisabled:
+		return "EnableOfflineMapsAutoUpdateDisabled"
+	case EnableOfflineMapsAutoUpdateEnabled:
+		return "EnableOfflineMapsAutoUpdateEnabled"
+	case EnableOfflineMapsAutoUpdateNotConfigured:
+		return "EnableOfflineMapsAutoUpdateNotConfigured"
+	default:
+		return fmt.Sprintf("EnableOfflineMapsAutoUpdateValue(%d)", int64(e))
+	}
+}

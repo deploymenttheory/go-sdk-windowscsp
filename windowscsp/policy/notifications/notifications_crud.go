@@ -28,12 +28,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Notifications) GetDisallowCloudNotification(ctx context.Context) (int64, error) {
+func (s *Notifications) GetDisallowCloudNotification(ctx context.Context) (DisallowCloudNotificationValue, error) {
 	v, err := s.c.Get(ctx, URIDisallowCloudNotification)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisallowCloudNotificationValue(n), err
 }
 
 // CreateDisallowCloudNotification creates ./Device/Vendor/MSFT/Policy/Config/Notifications/DisallowCloudNotification.
@@ -56,8 +57,8 @@ func (s *Notifications) GetDisallowCloudNotification(ctx context.Context) (int64
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Notifications) CreateDisallowCloudNotification(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisallowCloudNotification, client.Int(value))
+func (s *Notifications) CreateDisallowCloudNotification(ctx context.Context, value DisallowCloudNotificationValue) error {
+	return s.c.Add(ctx, URIDisallowCloudNotification, client.Int(int64(value)))
 }
 
 // UpdateDisallowCloudNotification updates ./Device/Vendor/MSFT/Policy/Config/Notifications/DisallowCloudNotification.
@@ -80,8 +81,8 @@ func (s *Notifications) CreateDisallowCloudNotification(ctx context.Context, val
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Notifications) UpdateDisallowCloudNotification(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisallowCloudNotification, client.Int(value))
+func (s *Notifications) UpdateDisallowCloudNotification(ctx context.Context, value DisallowCloudNotificationValue) error {
+	return s.c.Replace(ctx, URIDisallowCloudNotification, client.Int(int64(value)))
 }
 
 // DeleteDisallowCloudNotification deletes ./Device/Vendor/MSFT/Policy/Config/Notifications/DisallowCloudNotification.

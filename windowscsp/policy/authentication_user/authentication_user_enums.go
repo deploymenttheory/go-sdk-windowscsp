@@ -2,10 +2,29 @@
 
 package authentication_user
 
-// AllowEAPCertSSO allowed values.
+import (
+	"fmt"
+)
+
+// AllowEAPCertSSOValue — allowed values for the AllowEAPCertSSO node.
+type AllowEAPCertSSOValue int64
+
 const (
 	// Not allowed.
-	AllowEAPCertSSONotAllowed int64 = 0
+	AllowEAPCertSSONotAllowed AllowEAPCertSSOValue = 0
 	// Allowed.
-	AllowEAPCertSSOAllowed int64 = 1
+	AllowEAPCertSSOAllowed AllowEAPCertSSOValue = 1
 )
+
+// String returns the AllowEAPCertSSOValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowEAPCertSSOValue) String() string {
+	switch e {
+	case AllowEAPCertSSONotAllowed:
+		return "AllowEAPCertSSONotAllowed"
+	case AllowEAPCertSSOAllowed:
+		return "AllowEAPCertSSOAllowed"
+	default:
+		return fmt.Sprintf("AllowEAPCertSSOValue(%d)", int64(e))
+	}
+}

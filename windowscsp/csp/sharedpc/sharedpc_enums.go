@@ -2,22 +2,60 @@
 
 package sharedpc
 
-// AccountModel allowed values.
-const (
-	// Only guest accounts are allowed.
-	AccountModelOnlyGuestAccountsAreAllowed int64 = 0
-	// Only domain-joined accounts are allowed.
-	AccountModelOnlyDomainJoinedAccountsAreAllowed int64 = 1
-	// Domain-joined and guest accounts are allowed.
-	AccountModelDomainJoinedAndGuestAccountsAreAllowed int64 = 2
+import (
+	"fmt"
 )
 
-// DeletionPolicy allowed values.
+// AccountModelValue — allowed values for the AccountModel node.
+type AccountModelValue int64
+
+const (
+	// Only guest accounts are allowed.
+	AccountModelOnlyGuestAccountsAreAllowed AccountModelValue = 0
+	// Only domain-joined accounts are allowed.
+	AccountModelOnlyDomainJoinedAccountsAreAllowed AccountModelValue = 1
+	// Domain-joined and guest accounts are allowed.
+	AccountModelDomainJoinedAndGuestAccountsAreAllowed AccountModelValue = 2
+)
+
+// String returns the AccountModelValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AccountModelValue) String() string {
+	switch e {
+	case AccountModelOnlyGuestAccountsAreAllowed:
+		return "AccountModelOnlyGuestAccountsAreAllowed"
+	case AccountModelOnlyDomainJoinedAccountsAreAllowed:
+		return "AccountModelOnlyDomainJoinedAccountsAreAllowed"
+	case AccountModelDomainJoinedAndGuestAccountsAreAllowed:
+		return "AccountModelDomainJoinedAndGuestAccountsAreAllowed"
+	default:
+		return fmt.Sprintf("AccountModelValue(%d)", int64(e))
+	}
+}
+
+// DeletionPolicyValue — allowed values for the DeletionPolicy node.
+type DeletionPolicyValue int64
+
 const (
 	// Delete immediately.
-	DeletionPolicyDeleteImmediately int64 = 0
+	DeletionPolicyDeleteImmediately DeletionPolicyValue = 0
 	// Delete at disk space threshold
-	DeletionPolicyDeleteAtDiskSpaceThreshold int64 = 1
+	DeletionPolicyDeleteAtDiskSpaceThreshold DeletionPolicyValue = 1
 	// Delete at disk space threshold and inactive threshold
-	DeletionPolicyDeleteAtDiskSpaceThresholdAnd int64 = 2
+	DeletionPolicyDeleteAtDiskSpaceThresholdAnd DeletionPolicyValue = 2
 )
+
+// String returns the DeletionPolicyValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DeletionPolicyValue) String() string {
+	switch e {
+	case DeletionPolicyDeleteImmediately:
+		return "DeletionPolicyDeleteImmediately"
+	case DeletionPolicyDeleteAtDiskSpaceThreshold:
+		return "DeletionPolicyDeleteAtDiskSpaceThreshold"
+	case DeletionPolicyDeleteAtDiskSpaceThresholdAnd:
+		return "DeletionPolicyDeleteAtDiskSpaceThresholdAnd"
+	default:
+		return fmt.Sprintf("DeletionPolicyValue(%d)", int64(e))
+	}
+}

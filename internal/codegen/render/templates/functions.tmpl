@@ -7,7 +7,12 @@ func (s *{{.Recv}}) {{.Name}}({{.ParamStr}}) {{.ReturnSig}} {
 	if err != nil {
 		return {{.Zero}}, err
 	}
-{{- if .AccessorErr}}
+{{- if and .Cast .AccessorErr}}
+	n, err := v.{{.Accessor}}()
+	return {{.Cast}}(n), err
+{{- else if .Cast}}
+	return {{.Cast}}(v.{{.Accessor}}()), nil
+{{- else if .AccessorErr}}
 	return v.{{.Accessor}}()
 {{- else}}
 	return v.{{.Accessor}}(), nil

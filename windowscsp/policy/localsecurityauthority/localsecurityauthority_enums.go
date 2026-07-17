@@ -2,13 +2,34 @@
 
 package localsecurityauthority
 
-// ConfigureLsaProtectedProcess allowed values.
+import (
+	"fmt"
+)
+
+// ConfigureLsaProtectedProcessValue — allowed values for the ConfigureLsaProtectedProcess node.
+type ConfigureLsaProtectedProcessValue int64
+
 const (
 	// Disabled. Default value. LSA will not run as protected process.
-	ConfigureLsaProtectedProcessDisabled int64 = 0
+	ConfigureLsaProtectedProcessDisabled ConfigureLsaProtectedProcessValue = 0
 	// Enabled with UEFI lock. LSA will run as protected process and this configuration is UEFI locked.
-	ConfigureLsaProtectedProcessEnabledWithUEFILock int64 = 1
+	ConfigureLsaProtectedProcessEnabledWithUEFILock ConfigureLsaProtectedProcessValue = 1
 	// Enabled without UEFI lock. LSA will run as protected process and this configuration is not UEFI
 	// locked.
-	ConfigureLsaProtectedProcessEnabledWithoutUEFILock int64 = 2
+	ConfigureLsaProtectedProcessEnabledWithoutUEFILock ConfigureLsaProtectedProcessValue = 2
 )
+
+// String returns the ConfigureLsaProtectedProcessValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureLsaProtectedProcessValue) String() string {
+	switch e {
+	case ConfigureLsaProtectedProcessDisabled:
+		return "ConfigureLsaProtectedProcessDisabled"
+	case ConfigureLsaProtectedProcessEnabledWithUEFILock:
+		return "ConfigureLsaProtectedProcessEnabledWithUEFILock"
+	case ConfigureLsaProtectedProcessEnabledWithoutUEFILock:
+		return "ConfigureLsaProtectedProcessEnabledWithoutUEFILock"
+	default:
+		return fmt.Sprintf("ConfigureLsaProtectedProcessValue(%d)", int64(e))
+	}
+}

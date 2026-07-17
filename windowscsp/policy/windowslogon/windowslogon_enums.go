@@ -2,26 +2,75 @@
 
 package windowslogon
 
-// EnableFirstLogonAnimation allowed values.
+import (
+	"fmt"
+)
+
+// EnableFirstLogonAnimationValue — allowed values for the EnableFirstLogonAnimation node.
+type EnableFirstLogonAnimationValue int64
+
 const (
 	// Disabled.
-	EnableFirstLogonAnimationDisabled int64 = 0
+	EnableFirstLogonAnimationDisabled EnableFirstLogonAnimationValue = 0
 	// Enabled.
-	EnableFirstLogonAnimationEnabled int64 = 1
+	EnableFirstLogonAnimationEnabled EnableFirstLogonAnimationValue = 1
 )
 
-// HideFastUserSwitching allowed values.
+// String returns the EnableFirstLogonAnimationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableFirstLogonAnimationValue) String() string {
+	switch e {
+	case EnableFirstLogonAnimationDisabled:
+		return "EnableFirstLogonAnimationDisabled"
+	case EnableFirstLogonAnimationEnabled:
+		return "EnableFirstLogonAnimationEnabled"
+	default:
+		return fmt.Sprintf("EnableFirstLogonAnimationValue(%d)", int64(e))
+	}
+}
+
+// HideFastUserSwitchingValue — allowed values for the HideFastUserSwitching node.
+type HideFastUserSwitchingValue int64
+
 const (
 	// Disabled (visible).
-	HideFastUserSwitchingDisabled int64 = 0
+	HideFastUserSwitchingDisabled HideFastUserSwitchingValue = 0
 	// Enabled (hidden).
-	HideFastUserSwitchingEnabled int64 = 1
+	HideFastUserSwitchingEnabled HideFastUserSwitchingValue = 1
 )
 
-// OverrideShellProgram allowed values.
+// String returns the HideFastUserSwitchingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HideFastUserSwitchingValue) String() string {
+	switch e {
+	case HideFastUserSwitchingDisabled:
+		return "HideFastUserSwitchingDisabled"
+	case HideFastUserSwitchingEnabled:
+		return "HideFastUserSwitchingEnabled"
+	default:
+		return fmt.Sprintf("HideFastUserSwitchingValue(%d)", int64(e))
+	}
+}
+
+// OverrideShellProgramValue — allowed values for the OverrideShellProgram node.
+type OverrideShellProgramValue int64
+
 const (
 	// Not Configured
-	OverrideShellProgramNotConfigured int64 = 0
+	OverrideShellProgramNotConfigured OverrideShellProgramValue = 0
 	// Apply Lightweight shell
-	OverrideShellProgramApplyLightweightShell int64 = 1
+	OverrideShellProgramApplyLightweightShell OverrideShellProgramValue = 1
 )
+
+// String returns the OverrideShellProgramValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e OverrideShellProgramValue) String() string {
+	switch e {
+	case OverrideShellProgramNotConfigured:
+		return "OverrideShellProgramNotConfigured"
+	case OverrideShellProgramApplyLightweightShell:
+		return "OverrideShellProgramApplyLightweightShell"
+	default:
+		return fmt.Sprintf("OverrideShellProgramValue(%d)", int64(e))
+	}
+}

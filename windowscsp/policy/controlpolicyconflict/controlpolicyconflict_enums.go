@@ -2,9 +2,28 @@
 
 package controlpolicyconflict
 
-// MDMWinsOverGP allowed values.
-const (
-	MDMWinsOverGPValue0 int64 = 0
-	// The MDM policy is used and the GP policy is blocked.
-	MDMWinsOverGPTheMDMPolicyIsUsedAnd int64 = 1
+import (
+	"fmt"
 )
+
+// MDMWinsOverGPValue — allowed values for the MDMWinsOverGP node.
+type MDMWinsOverGPValue int64
+
+const (
+	MDMWinsOverGPValue0 MDMWinsOverGPValue = 0
+	// The MDM policy is used and the GP policy is blocked.
+	MDMWinsOverGPTheMDMPolicyIsUsedAnd MDMWinsOverGPValue = 1
+)
+
+// String returns the MDMWinsOverGPValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MDMWinsOverGPValue) String() string {
+	switch e {
+	case MDMWinsOverGPValue0:
+		return "MDMWinsOverGPValue0"
+	case MDMWinsOverGPTheMDMPolicyIsUsedAnd:
+		return "MDMWinsOverGPTheMDMPolicyIsUsedAnd"
+	default:
+		return fmt.Sprintf("MDMWinsOverGPValue(%d)", int64(e))
+	}
+}

@@ -2,322 +2,883 @@
 
 package start
 
-// AllowPinnedFolderDocuments allowed values.
-const (
-	// The shortcut is hidden and disables the setting in the Settings app.
-	AllowPinnedFolderDocumentsTheShortcutIsHiddenAndDisables int64 = 0
-	// The shortcut is visible and disables the setting in the Settings app.
-	AllowPinnedFolderDocumentsTheShortcutIsVisibleAndDisables int64 = 1
-	// There is no enforced configuration and the setting can be changed by the user.
-	AllowPinnedFolderDocumentsThereIsNoEnforcedConfigurationAnd int64 = 65535
+import (
+	"fmt"
 )
 
-// AllowPinnedFolderDownloads allowed values.
+// AllowPinnedFolderDocumentsValue — allowed values for the AllowPinnedFolderDocuments node.
+type AllowPinnedFolderDocumentsValue int64
+
 const (
 	// The shortcut is hidden and disables the setting in the Settings app.
-	AllowPinnedFolderDownloadsTheShortcutIsHiddenAndDisables int64 = 0
+	AllowPinnedFolderDocumentsTheShortcutIsHiddenAndDisables AllowPinnedFolderDocumentsValue = 0
 	// The shortcut is visible and disables the setting in the Settings app.
-	AllowPinnedFolderDownloadsTheShortcutIsVisibleAndDisables int64 = 1
+	AllowPinnedFolderDocumentsTheShortcutIsVisibleAndDisables AllowPinnedFolderDocumentsValue = 1
 	// There is no enforced configuration and the setting can be changed by the user.
-	AllowPinnedFolderDownloadsThereIsNoEnforcedConfigurationAnd int64 = 65535
+	AllowPinnedFolderDocumentsThereIsNoEnforcedConfigurationAnd AllowPinnedFolderDocumentsValue = 65535
 )
 
-// AllowPinnedFolderFileExplorer allowed values.
+// String returns the AllowPinnedFolderDocumentsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowPinnedFolderDocumentsValue) String() string {
+	switch e {
+	case AllowPinnedFolderDocumentsTheShortcutIsHiddenAndDisables:
+		return "AllowPinnedFolderDocumentsTheShortcutIsHiddenAndDisables"
+	case AllowPinnedFolderDocumentsTheShortcutIsVisibleAndDisables:
+		return "AllowPinnedFolderDocumentsTheShortcutIsVisibleAndDisables"
+	case AllowPinnedFolderDocumentsThereIsNoEnforcedConfigurationAnd:
+		return "AllowPinnedFolderDocumentsThereIsNoEnforcedConfigurationAnd"
+	default:
+		return fmt.Sprintf("AllowPinnedFolderDocumentsValue(%d)", int64(e))
+	}
+}
+
+// AllowPinnedFolderDownloadsValue — allowed values for the AllowPinnedFolderDownloads node.
+type AllowPinnedFolderDownloadsValue int64
+
 const (
 	// The shortcut is hidden and disables the setting in the Settings app.
-	AllowPinnedFolderFileExplorerTheShortcutIsHiddenAndDisables int64 = 0
+	AllowPinnedFolderDownloadsTheShortcutIsHiddenAndDisables AllowPinnedFolderDownloadsValue = 0
 	// The shortcut is visible and disables the setting in the Settings app.
-	AllowPinnedFolderFileExplorerTheShortcutIsVisibleAndDisables int64 = 1
+	AllowPinnedFolderDownloadsTheShortcutIsVisibleAndDisables AllowPinnedFolderDownloadsValue = 1
 	// There is no enforced configuration and the setting can be changed by the user.
-	AllowPinnedFolderFileExplorerThereIsNoEnforcedConfigurationAnd int64 = 65535
+	AllowPinnedFolderDownloadsThereIsNoEnforcedConfigurationAnd AllowPinnedFolderDownloadsValue = 65535
 )
 
-// AllowPinnedFolderHomeGroup allowed values.
+// String returns the AllowPinnedFolderDownloadsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowPinnedFolderDownloadsValue) String() string {
+	switch e {
+	case AllowPinnedFolderDownloadsTheShortcutIsHiddenAndDisables:
+		return "AllowPinnedFolderDownloadsTheShortcutIsHiddenAndDisables"
+	case AllowPinnedFolderDownloadsTheShortcutIsVisibleAndDisables:
+		return "AllowPinnedFolderDownloadsTheShortcutIsVisibleAndDisables"
+	case AllowPinnedFolderDownloadsThereIsNoEnforcedConfigurationAnd:
+		return "AllowPinnedFolderDownloadsThereIsNoEnforcedConfigurationAnd"
+	default:
+		return fmt.Sprintf("AllowPinnedFolderDownloadsValue(%d)", int64(e))
+	}
+}
+
+// AllowPinnedFolderFileExplorerValue — allowed values for the AllowPinnedFolderFileExplorer node.
+type AllowPinnedFolderFileExplorerValue int64
+
 const (
 	// The shortcut is hidden and disables the setting in the Settings app.
-	AllowPinnedFolderHomeGroupTheShortcutIsHiddenAndDisables int64 = 0
+	AllowPinnedFolderFileExplorerTheShortcutIsHiddenAndDisables AllowPinnedFolderFileExplorerValue = 0
 	// The shortcut is visible and disables the setting in the Settings app.
-	AllowPinnedFolderHomeGroupTheShortcutIsVisibleAndDisables int64 = 1
+	AllowPinnedFolderFileExplorerTheShortcutIsVisibleAndDisables AllowPinnedFolderFileExplorerValue = 1
 	// There is no enforced configuration and the setting can be changed by the user.
-	AllowPinnedFolderHomeGroupThereIsNoEnforcedConfigurationAnd int64 = 65535
+	AllowPinnedFolderFileExplorerThereIsNoEnforcedConfigurationAnd AllowPinnedFolderFileExplorerValue = 65535
 )
 
-// AllowPinnedFolderMusic allowed values.
+// String returns the AllowPinnedFolderFileExplorerValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowPinnedFolderFileExplorerValue) String() string {
+	switch e {
+	case AllowPinnedFolderFileExplorerTheShortcutIsHiddenAndDisables:
+		return "AllowPinnedFolderFileExplorerTheShortcutIsHiddenAndDisables"
+	case AllowPinnedFolderFileExplorerTheShortcutIsVisibleAndDisables:
+		return "AllowPinnedFolderFileExplorerTheShortcutIsVisibleAndDisables"
+	case AllowPinnedFolderFileExplorerThereIsNoEnforcedConfigurationAnd:
+		return "AllowPinnedFolderFileExplorerThereIsNoEnforcedConfigurationAnd"
+	default:
+		return fmt.Sprintf("AllowPinnedFolderFileExplorerValue(%d)", int64(e))
+	}
+}
+
+// AllowPinnedFolderHomeGroupValue — allowed values for the AllowPinnedFolderHomeGroup node.
+type AllowPinnedFolderHomeGroupValue int64
+
 const (
 	// The shortcut is hidden and disables the setting in the Settings app.
-	AllowPinnedFolderMusicTheShortcutIsHiddenAndDisables int64 = 0
+	AllowPinnedFolderHomeGroupTheShortcutIsHiddenAndDisables AllowPinnedFolderHomeGroupValue = 0
 	// The shortcut is visible and disables the setting in the Settings app.
-	AllowPinnedFolderMusicTheShortcutIsVisibleAndDisables int64 = 1
+	AllowPinnedFolderHomeGroupTheShortcutIsVisibleAndDisables AllowPinnedFolderHomeGroupValue = 1
 	// There is no enforced configuration and the setting can be changed by the user.
-	AllowPinnedFolderMusicThereIsNoEnforcedConfigurationAnd int64 = 65535
+	AllowPinnedFolderHomeGroupThereIsNoEnforcedConfigurationAnd AllowPinnedFolderHomeGroupValue = 65535
 )
 
-// AllowPinnedFolderNetwork allowed values.
+// String returns the AllowPinnedFolderHomeGroupValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowPinnedFolderHomeGroupValue) String() string {
+	switch e {
+	case AllowPinnedFolderHomeGroupTheShortcutIsHiddenAndDisables:
+		return "AllowPinnedFolderHomeGroupTheShortcutIsHiddenAndDisables"
+	case AllowPinnedFolderHomeGroupTheShortcutIsVisibleAndDisables:
+		return "AllowPinnedFolderHomeGroupTheShortcutIsVisibleAndDisables"
+	case AllowPinnedFolderHomeGroupThereIsNoEnforcedConfigurationAnd:
+		return "AllowPinnedFolderHomeGroupThereIsNoEnforcedConfigurationAnd"
+	default:
+		return fmt.Sprintf("AllowPinnedFolderHomeGroupValue(%d)", int64(e))
+	}
+}
+
+// AllowPinnedFolderMusicValue — allowed values for the AllowPinnedFolderMusic node.
+type AllowPinnedFolderMusicValue int64
+
 const (
 	// The shortcut is hidden and disables the setting in the Settings app.
-	AllowPinnedFolderNetworkTheShortcutIsHiddenAndDisables int64 = 0
+	AllowPinnedFolderMusicTheShortcutIsHiddenAndDisables AllowPinnedFolderMusicValue = 0
 	// The shortcut is visible and disables the setting in the Settings app.
-	AllowPinnedFolderNetworkTheShortcutIsVisibleAndDisables int64 = 1
+	AllowPinnedFolderMusicTheShortcutIsVisibleAndDisables AllowPinnedFolderMusicValue = 1
 	// There is no enforced configuration and the setting can be changed by the user.
-	AllowPinnedFolderNetworkThereIsNoEnforcedConfigurationAnd int64 = 65535
+	AllowPinnedFolderMusicThereIsNoEnforcedConfigurationAnd AllowPinnedFolderMusicValue = 65535
 )
 
-// AllowPinnedFolderPersonalFolder allowed values.
+// String returns the AllowPinnedFolderMusicValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowPinnedFolderMusicValue) String() string {
+	switch e {
+	case AllowPinnedFolderMusicTheShortcutIsHiddenAndDisables:
+		return "AllowPinnedFolderMusicTheShortcutIsHiddenAndDisables"
+	case AllowPinnedFolderMusicTheShortcutIsVisibleAndDisables:
+		return "AllowPinnedFolderMusicTheShortcutIsVisibleAndDisables"
+	case AllowPinnedFolderMusicThereIsNoEnforcedConfigurationAnd:
+		return "AllowPinnedFolderMusicThereIsNoEnforcedConfigurationAnd"
+	default:
+		return fmt.Sprintf("AllowPinnedFolderMusicValue(%d)", int64(e))
+	}
+}
+
+// AllowPinnedFolderNetworkValue — allowed values for the AllowPinnedFolderNetwork node.
+type AllowPinnedFolderNetworkValue int64
+
 const (
 	// The shortcut is hidden and disables the setting in the Settings app.
-	AllowPinnedFolderPersonalFolderTheShortcutIsHiddenAndDisables int64 = 0
+	AllowPinnedFolderNetworkTheShortcutIsHiddenAndDisables AllowPinnedFolderNetworkValue = 0
 	// The shortcut is visible and disables the setting in the Settings app.
-	AllowPinnedFolderPersonalFolderTheShortcutIsVisibleAndDisables int64 = 1
+	AllowPinnedFolderNetworkTheShortcutIsVisibleAndDisables AllowPinnedFolderNetworkValue = 1
 	// There is no enforced configuration and the setting can be changed by the user.
-	AllowPinnedFolderPersonalFolderThereIsNoEnforcedConfigurationAnd int64 = 65535
+	AllowPinnedFolderNetworkThereIsNoEnforcedConfigurationAnd AllowPinnedFolderNetworkValue = 65535
 )
 
-// AllowPinnedFolderPictures allowed values.
+// String returns the AllowPinnedFolderNetworkValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowPinnedFolderNetworkValue) String() string {
+	switch e {
+	case AllowPinnedFolderNetworkTheShortcutIsHiddenAndDisables:
+		return "AllowPinnedFolderNetworkTheShortcutIsHiddenAndDisables"
+	case AllowPinnedFolderNetworkTheShortcutIsVisibleAndDisables:
+		return "AllowPinnedFolderNetworkTheShortcutIsVisibleAndDisables"
+	case AllowPinnedFolderNetworkThereIsNoEnforcedConfigurationAnd:
+		return "AllowPinnedFolderNetworkThereIsNoEnforcedConfigurationAnd"
+	default:
+		return fmt.Sprintf("AllowPinnedFolderNetworkValue(%d)", int64(e))
+	}
+}
+
+// AllowPinnedFolderPersonalFolderValue — allowed values for the AllowPinnedFolderPersonalFolder node.
+type AllowPinnedFolderPersonalFolderValue int64
+
 const (
 	// The shortcut is hidden and disables the setting in the Settings app.
-	AllowPinnedFolderPicturesTheShortcutIsHiddenAndDisables int64 = 0
+	AllowPinnedFolderPersonalFolderTheShortcutIsHiddenAndDisables AllowPinnedFolderPersonalFolderValue = 0
 	// The shortcut is visible and disables the setting in the Settings app.
-	AllowPinnedFolderPicturesTheShortcutIsVisibleAndDisables int64 = 1
+	AllowPinnedFolderPersonalFolderTheShortcutIsVisibleAndDisables AllowPinnedFolderPersonalFolderValue = 1
 	// There is no enforced configuration and the setting can be changed by the user.
-	AllowPinnedFolderPicturesThereIsNoEnforcedConfigurationAnd int64 = 65535
+	AllowPinnedFolderPersonalFolderThereIsNoEnforcedConfigurationAnd AllowPinnedFolderPersonalFolderValue = 65535
 )
 
-// AllowPinnedFolderSettings allowed values.
+// String returns the AllowPinnedFolderPersonalFolderValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowPinnedFolderPersonalFolderValue) String() string {
+	switch e {
+	case AllowPinnedFolderPersonalFolderTheShortcutIsHiddenAndDisables:
+		return "AllowPinnedFolderPersonalFolderTheShortcutIsHiddenAndDisables"
+	case AllowPinnedFolderPersonalFolderTheShortcutIsVisibleAndDisables:
+		return "AllowPinnedFolderPersonalFolderTheShortcutIsVisibleAndDisables"
+	case AllowPinnedFolderPersonalFolderThereIsNoEnforcedConfigurationAnd:
+		return "AllowPinnedFolderPersonalFolderThereIsNoEnforcedConfigurationAnd"
+	default:
+		return fmt.Sprintf("AllowPinnedFolderPersonalFolderValue(%d)", int64(e))
+	}
+}
+
+// AllowPinnedFolderPicturesValue — allowed values for the AllowPinnedFolderPictures node.
+type AllowPinnedFolderPicturesValue int64
+
 const (
 	// The shortcut is hidden and disables the setting in the Settings app.
-	AllowPinnedFolderSettingsTheShortcutIsHiddenAndDisables int64 = 0
+	AllowPinnedFolderPicturesTheShortcutIsHiddenAndDisables AllowPinnedFolderPicturesValue = 0
 	// The shortcut is visible and disables the setting in the Settings app.
-	AllowPinnedFolderSettingsTheShortcutIsVisibleAndDisables int64 = 1
+	AllowPinnedFolderPicturesTheShortcutIsVisibleAndDisables AllowPinnedFolderPicturesValue = 1
 	// There is no enforced configuration and the setting can be changed by the user.
-	AllowPinnedFolderSettingsThereIsNoEnforcedConfigurationAnd int64 = 65535
+	AllowPinnedFolderPicturesThereIsNoEnforcedConfigurationAnd AllowPinnedFolderPicturesValue = 65535
 )
 
-// AllowPinnedFolderVideos allowed values.
+// String returns the AllowPinnedFolderPicturesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowPinnedFolderPicturesValue) String() string {
+	switch e {
+	case AllowPinnedFolderPicturesTheShortcutIsHiddenAndDisables:
+		return "AllowPinnedFolderPicturesTheShortcutIsHiddenAndDisables"
+	case AllowPinnedFolderPicturesTheShortcutIsVisibleAndDisables:
+		return "AllowPinnedFolderPicturesTheShortcutIsVisibleAndDisables"
+	case AllowPinnedFolderPicturesThereIsNoEnforcedConfigurationAnd:
+		return "AllowPinnedFolderPicturesThereIsNoEnforcedConfigurationAnd"
+	default:
+		return fmt.Sprintf("AllowPinnedFolderPicturesValue(%d)", int64(e))
+	}
+}
+
+// AllowPinnedFolderSettingsValue — allowed values for the AllowPinnedFolderSettings node.
+type AllowPinnedFolderSettingsValue int64
+
 const (
 	// The shortcut is hidden and disables the setting in the Settings app.
-	AllowPinnedFolderVideosTheShortcutIsHiddenAndDisables int64 = 0
+	AllowPinnedFolderSettingsTheShortcutIsHiddenAndDisables AllowPinnedFolderSettingsValue = 0
 	// The shortcut is visible and disables the setting in the Settings app.
-	AllowPinnedFolderVideosTheShortcutIsVisibleAndDisables int64 = 1
+	AllowPinnedFolderSettingsTheShortcutIsVisibleAndDisables AllowPinnedFolderSettingsValue = 1
 	// There is no enforced configuration and the setting can be changed by the user.
-	AllowPinnedFolderVideosThereIsNoEnforcedConfigurationAnd int64 = 65535
+	AllowPinnedFolderSettingsThereIsNoEnforcedConfigurationAnd AllowPinnedFolderSettingsValue = 65535
 )
 
-// ConfigureTaskbarSmallButtonBehavior allowed values.
+// String returns the AllowPinnedFolderSettingsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowPinnedFolderSettingsValue) String() string {
+	switch e {
+	case AllowPinnedFolderSettingsTheShortcutIsHiddenAndDisables:
+		return "AllowPinnedFolderSettingsTheShortcutIsHiddenAndDisables"
+	case AllowPinnedFolderSettingsTheShortcutIsVisibleAndDisables:
+		return "AllowPinnedFolderSettingsTheShortcutIsVisibleAndDisables"
+	case AllowPinnedFolderSettingsThereIsNoEnforcedConfigurationAnd:
+		return "AllowPinnedFolderSettingsThereIsNoEnforcedConfigurationAnd"
+	default:
+		return fmt.Sprintf("AllowPinnedFolderSettingsValue(%d)", int64(e))
+	}
+}
+
+// AllowPinnedFolderVideosValue — allowed values for the AllowPinnedFolderVideos node.
+type AllowPinnedFolderVideosValue int64
+
+const (
+	// The shortcut is hidden and disables the setting in the Settings app.
+	AllowPinnedFolderVideosTheShortcutIsHiddenAndDisables AllowPinnedFolderVideosValue = 0
+	// The shortcut is visible and disables the setting in the Settings app.
+	AllowPinnedFolderVideosTheShortcutIsVisibleAndDisables AllowPinnedFolderVideosValue = 1
+	// There is no enforced configuration and the setting can be changed by the user.
+	AllowPinnedFolderVideosThereIsNoEnforcedConfigurationAnd AllowPinnedFolderVideosValue = 65535
+)
+
+// String returns the AllowPinnedFolderVideosValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowPinnedFolderVideosValue) String() string {
+	switch e {
+	case AllowPinnedFolderVideosTheShortcutIsHiddenAndDisables:
+		return "AllowPinnedFolderVideosTheShortcutIsHiddenAndDisables"
+	case AllowPinnedFolderVideosTheShortcutIsVisibleAndDisables:
+		return "AllowPinnedFolderVideosTheShortcutIsVisibleAndDisables"
+	case AllowPinnedFolderVideosThereIsNoEnforcedConfigurationAnd:
+		return "AllowPinnedFolderVideosThereIsNoEnforcedConfigurationAnd"
+	default:
+		return fmt.Sprintf("AllowPinnedFolderVideosValue(%d)", int64(e))
+	}
+}
+
+// ConfigureTaskbarSmallButtonBehaviorValue — allowed values for the ConfigureTaskbarSmallButtonBehavior node.
+type ConfigureTaskbarSmallButtonBehaviorValue int64
+
 const (
 	// Always: The taskbar always uses small buttons. The setting will be grayed out in the Settings UI
 	// and the user can not change the setting value.
-	ConfigureTaskbarSmallButtonBehaviorAlways int64 = 0
+	ConfigureTaskbarSmallButtonBehaviorAlways ConfigureTaskbarSmallButtonBehaviorValue = 0
 	// When taskbar is full: The taskbar dynamically switches between small buttons and standard sized
 	// buttons based on available space. The setting will be grayed out in the Settings UI and the user
 	// can not change the setting value.
-	ConfigureTaskbarSmallButtonBehaviorWhenTaskbarIsFull int64 = 1
+	ConfigureTaskbarSmallButtonBehaviorWhenTaskbarIsFull ConfigureTaskbarSmallButtonBehaviorValue = 1
 	// Never: The taskbar never uses small buttons. Only standard sized buttons will be used. The
 	// setting will be grayed out in the Settings UI and the user can not change the setting value.
-	ConfigureTaskbarSmallButtonBehaviorNever int64 = 2
+	ConfigureTaskbarSmallButtonBehaviorNever ConfigureTaskbarSmallButtonBehaviorValue = 2
 	// There is no enforced configuration and the setting can be changed by the user.
-	ConfigureTaskbarSmallButtonBehaviorThereIsNoEnforcedConfigurationAnd int64 = 65535
+	ConfigureTaskbarSmallButtonBehaviorThereIsNoEnforcedConfigurationAnd ConfigureTaskbarSmallButtonBehaviorValue = 65535
 )
 
-// DisableContextMenus allowed values.
+// String returns the ConfigureTaskbarSmallButtonBehaviorValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureTaskbarSmallButtonBehaviorValue) String() string {
+	switch e {
+	case ConfigureTaskbarSmallButtonBehaviorAlways:
+		return "ConfigureTaskbarSmallButtonBehaviorAlways"
+	case ConfigureTaskbarSmallButtonBehaviorWhenTaskbarIsFull:
+		return "ConfigureTaskbarSmallButtonBehaviorWhenTaskbarIsFull"
+	case ConfigureTaskbarSmallButtonBehaviorNever:
+		return "ConfigureTaskbarSmallButtonBehaviorNever"
+	case ConfigureTaskbarSmallButtonBehaviorThereIsNoEnforcedConfigurationAnd:
+		return "ConfigureTaskbarSmallButtonBehaviorThereIsNoEnforcedConfigurationAnd"
+	default:
+		return fmt.Sprintf("ConfigureTaskbarSmallButtonBehaviorValue(%d)", int64(e))
+	}
+}
+
+// DisableContextMenusValue — allowed values for the DisableContextMenus node.
+type DisableContextMenusValue int64
+
 const (
 	// Do not disable.
-	DisableContextMenusDoNotDisable int64 = 0
+	DisableContextMenusDoNotDisable DisableContextMenusValue = 0
 	// Disable.
-	DisableContextMenusDisable int64 = 1
+	DisableContextMenusDisable DisableContextMenusValue = 1
 )
 
-// DisableEditingQuickSettings allowed values.
+// String returns the DisableContextMenusValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableContextMenusValue) String() string {
+	switch e {
+	case DisableContextMenusDoNotDisable:
+		return "DisableContextMenusDoNotDisable"
+	case DisableContextMenusDisable:
+		return "DisableContextMenusDisable"
+	default:
+		return fmt.Sprintf("DisableContextMenusValue(%d)", int64(e))
+	}
+}
+
+// DisableEditingQuickSettingsValue — allowed values for the DisableEditingQuickSettings node.
+type DisableEditingQuickSettingsValue int64
+
 const (
 	// Enable editing Quick Settings.
-	DisableEditingQuickSettingsEnableEditingQuickSettings int64 = 0
+	DisableEditingQuickSettingsEnableEditingQuickSettings DisableEditingQuickSettingsValue = 0
 	// Disable editing Quick Settings.
-	DisableEditingQuickSettingsDisableEditingQuickSettings int64 = 1
+	DisableEditingQuickSettingsDisableEditingQuickSettings DisableEditingQuickSettingsValue = 1
 )
 
-// ForceStartSize allowed values.
+// String returns the DisableEditingQuickSettingsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableEditingQuickSettingsValue) String() string {
+	switch e {
+	case DisableEditingQuickSettingsEnableEditingQuickSettings:
+		return "DisableEditingQuickSettingsEnableEditingQuickSettings"
+	case DisableEditingQuickSettingsDisableEditingQuickSettings:
+		return "DisableEditingQuickSettingsDisableEditingQuickSettings"
+	default:
+		return fmt.Sprintf("DisableEditingQuickSettingsValue(%d)", int64(e))
+	}
+}
+
+// ForceStartSizeValue — allowed values for the ForceStartSize node.
+type ForceStartSizeValue int64
+
 const (
 	// Do not force size of Start.
-	ForceStartSizeDoNotForceSizeOfStart int64 = 0
+	ForceStartSizeDoNotForceSizeOfStart ForceStartSizeValue = 0
 	// Force non-fullscreen size of Start.
-	ForceStartSizeForceNonFullscreenSizeOfStart int64 = 1
+	ForceStartSizeForceNonFullscreenSizeOfStart ForceStartSizeValue = 1
 	// Force a fullscreen size of Start.
-	ForceStartSizeForceAFullscreenSizeOfStart int64 = 2
+	ForceStartSizeForceAFullscreenSizeOfStart ForceStartSizeValue = 2
 )
 
-// HideAppList allowed values.
+// String returns the ForceStartSizeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ForceStartSizeValue) String() string {
+	switch e {
+	case ForceStartSizeDoNotForceSizeOfStart:
+		return "ForceStartSizeDoNotForceSizeOfStart"
+	case ForceStartSizeForceNonFullscreenSizeOfStart:
+		return "ForceStartSizeForceNonFullscreenSizeOfStart"
+	case ForceStartSizeForceAFullscreenSizeOfStart:
+		return "ForceStartSizeForceAFullscreenSizeOfStart"
+	default:
+		return fmt.Sprintf("ForceStartSizeValue(%d)", int64(e))
+	}
+}
+
+// HideAppListValue — allowed values for the HideAppList node.
+type HideAppListValue int64
+
 const (
 	// None.
-	HideAppListNone int64 = 0
+	HideAppListNone HideAppListValue = 0
 	// Hide all apps list.
-	HideAppListHideAllAppsList int64 = 1
+	HideAppListHideAllAppsList HideAppListValue = 1
 	// Hide all apps list, and Disable "Show app list in Start menu" in Settings app.
-	HideAppListHideAllAppsListAndDisable int64 = 2
+	HideAppListHideAllAppsListAndDisable HideAppListValue = 2
 	// Hide all apps list, remove all apps button, and Disable "Show app list in Start menu" in
 	// Settings app.
-	HideAppListHideAllAppsListRemoveAll int64 = 3
+	HideAppListHideAllAppsListRemoveAll HideAppListValue = 3
 )
 
-// HideCategoryView allowed values.
+// String returns the HideAppListValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HideAppListValue) String() string {
+	switch e {
+	case HideAppListNone:
+		return "HideAppListNone"
+	case HideAppListHideAllAppsList:
+		return "HideAppListHideAllAppsList"
+	case HideAppListHideAllAppsListAndDisable:
+		return "HideAppListHideAllAppsListAndDisable"
+	case HideAppListHideAllAppsListRemoveAll:
+		return "HideAppListHideAllAppsListRemoveAll"
+	default:
+		return fmt.Sprintf("HideAppListValue(%d)", int64(e))
+	}
+}
+
+// HideCategoryViewValue — allowed values for the HideCategoryView node.
+type HideCategoryViewValue int64
+
 const (
 	// Category view shown.
-	HideCategoryViewCategoryViewShown int64 = 0
+	HideCategoryViewCategoryViewShown HideCategoryViewValue = 0
 	// Category view hidden.
-	HideCategoryViewCategoryViewHidden int64 = 1
+	HideCategoryViewCategoryViewHidden HideCategoryViewValue = 1
 )
 
-// HideChangeAccountSettings allowed values.
+// String returns the HideCategoryViewValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HideCategoryViewValue) String() string {
+	switch e {
+	case HideCategoryViewCategoryViewShown:
+		return "HideCategoryViewCategoryViewShown"
+	case HideCategoryViewCategoryViewHidden:
+		return "HideCategoryViewCategoryViewHidden"
+	default:
+		return fmt.Sprintf("HideCategoryViewValue(%d)", int64(e))
+	}
+}
+
+// HideChangeAccountSettingsValue — allowed values for the HideChangeAccountSettings node.
+type HideChangeAccountSettingsValue int64
+
 const (
 	// Do not hide.
-	HideChangeAccountSettingsDoNotHide int64 = 0
+	HideChangeAccountSettingsDoNotHide HideChangeAccountSettingsValue = 0
 	// Hide.
-	HideChangeAccountSettingsHide int64 = 1
+	HideChangeAccountSettingsHide HideChangeAccountSettingsValue = 1
 )
 
-// HideFrequentlyUsedApps allowed values.
+// String returns the HideChangeAccountSettingsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HideChangeAccountSettingsValue) String() string {
+	switch e {
+	case HideChangeAccountSettingsDoNotHide:
+		return "HideChangeAccountSettingsDoNotHide"
+	case HideChangeAccountSettingsHide:
+		return "HideChangeAccountSettingsHide"
+	default:
+		return fmt.Sprintf("HideChangeAccountSettingsValue(%d)", int64(e))
+	}
+}
+
+// HideFrequentlyUsedAppsValue — allowed values for the HideFrequentlyUsedApps node.
+type HideFrequentlyUsedAppsValue int64
+
 const (
 	// Do not hide.
-	HideFrequentlyUsedAppsDoNotHide int64 = 0
+	HideFrequentlyUsedAppsDoNotHide HideFrequentlyUsedAppsValue = 0
 	// Hide.
-	HideFrequentlyUsedAppsHide int64 = 1
+	HideFrequentlyUsedAppsHide HideFrequentlyUsedAppsValue = 1
 )
 
-// HideHibernate allowed values.
+// String returns the HideFrequentlyUsedAppsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HideFrequentlyUsedAppsValue) String() string {
+	switch e {
+	case HideFrequentlyUsedAppsDoNotHide:
+		return "HideFrequentlyUsedAppsDoNotHide"
+	case HideFrequentlyUsedAppsHide:
+		return "HideFrequentlyUsedAppsHide"
+	default:
+		return fmt.Sprintf("HideFrequentlyUsedAppsValue(%d)", int64(e))
+	}
+}
+
+// HideHibernateValue — allowed values for the HideHibernate node.
+type HideHibernateValue int64
+
 const (
 	// Do not hide.
-	HideHibernateDoNotHide int64 = 0
+	HideHibernateDoNotHide HideHibernateValue = 0
 	// Hide.
-	HideHibernateHide int64 = 1
+	HideHibernateHide HideHibernateValue = 1
 )
 
-// HideLock allowed values.
+// String returns the HideHibernateValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HideHibernateValue) String() string {
+	switch e {
+	case HideHibernateDoNotHide:
+		return "HideHibernateDoNotHide"
+	case HideHibernateHide:
+		return "HideHibernateHide"
+	default:
+		return fmt.Sprintf("HideHibernateValue(%d)", int64(e))
+	}
+}
+
+// HideLockValue — allowed values for the HideLock node.
+type HideLockValue int64
+
 const (
 	// Do not hide.
-	HideLockDoNotHide int64 = 0
+	HideLockDoNotHide HideLockValue = 0
 	// Hide.
-	HideLockHide int64 = 1
+	HideLockHide HideLockValue = 1
 )
 
-// HidePowerButton allowed values.
+// String returns the HideLockValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HideLockValue) String() string {
+	switch e {
+	case HideLockDoNotHide:
+		return "HideLockDoNotHide"
+	case HideLockHide:
+		return "HideLockHide"
+	default:
+		return fmt.Sprintf("HideLockValue(%d)", int64(e))
+	}
+}
+
+// HidePowerButtonValue — allowed values for the HidePowerButton node.
+type HidePowerButtonValue int64
+
 const (
 	// Do not hide.
-	HidePowerButtonDoNotHide int64 = 0
+	HidePowerButtonDoNotHide HidePowerButtonValue = 0
 	// Hide.
-	HidePowerButtonHide int64 = 1
+	HidePowerButtonHide HidePowerButtonValue = 1
 )
 
-// HideRecentJumplists allowed values.
+// String returns the HidePowerButtonValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HidePowerButtonValue) String() string {
+	switch e {
+	case HidePowerButtonDoNotHide:
+		return "HidePowerButtonDoNotHide"
+	case HidePowerButtonHide:
+		return "HidePowerButtonHide"
+	default:
+		return fmt.Sprintf("HidePowerButtonValue(%d)", int64(e))
+	}
+}
+
+// HideRecentJumplistsValue — allowed values for the HideRecentJumplists node.
+type HideRecentJumplistsValue int64
+
 const (
 	// Do not hide.
-	HideRecentJumplistsDoNotHide int64 = 0
+	HideRecentJumplistsDoNotHide HideRecentJumplistsValue = 0
 	// Hide.
-	HideRecentJumplistsHide int64 = 1
+	HideRecentJumplistsHide HideRecentJumplistsValue = 1
 )
 
-// HideRecentlyAddedApps allowed values.
+// String returns the HideRecentJumplistsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HideRecentJumplistsValue) String() string {
+	switch e {
+	case HideRecentJumplistsDoNotHide:
+		return "HideRecentJumplistsDoNotHide"
+	case HideRecentJumplistsHide:
+		return "HideRecentJumplistsHide"
+	default:
+		return fmt.Sprintf("HideRecentJumplistsValue(%d)", int64(e))
+	}
+}
+
+// HideRecentlyAddedAppsValue — allowed values for the HideRecentlyAddedApps node.
+type HideRecentlyAddedAppsValue int64
+
 const (
 	// Do not hide.
-	HideRecentlyAddedAppsDoNotHide int64 = 0
+	HideRecentlyAddedAppsDoNotHide HideRecentlyAddedAppsValue = 0
 	// Hide.
-	HideRecentlyAddedAppsHide int64 = 1
+	HideRecentlyAddedAppsHide HideRecentlyAddedAppsValue = 1
 )
 
-// HideRecommendedPersonalizedSites allowed values.
+// String returns the HideRecentlyAddedAppsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HideRecentlyAddedAppsValue) String() string {
+	switch e {
+	case HideRecentlyAddedAppsDoNotHide:
+		return "HideRecentlyAddedAppsDoNotHide"
+	case HideRecentlyAddedAppsHide:
+		return "HideRecentlyAddedAppsHide"
+	default:
+		return fmt.Sprintf("HideRecentlyAddedAppsValue(%d)", int64(e))
+	}
+}
+
+// HideRecommendedPersonalizedSitesValue — allowed values for the HideRecommendedPersonalizedSites node.
+type HideRecommendedPersonalizedSitesValue int64
+
 const (
 	// Personalized Website Recommendations shown.
-	HideRecommendedPersonalizedSitesPersonalizedWebsiteRecommendationsShown int64 = 0
+	HideRecommendedPersonalizedSitesPersonalizedWebsiteRecommendationsShown HideRecommendedPersonalizedSitesValue = 0
 	// Personalized Website Recommendations hidden.
-	HideRecommendedPersonalizedSitesPersonalizedWebsiteRecommendationsHidden int64 = 1
+	HideRecommendedPersonalizedSitesPersonalizedWebsiteRecommendationsHidden HideRecommendedPersonalizedSitesValue = 1
 )
 
-// HideRecommendedSection allowed values.
+// String returns the HideRecommendedPersonalizedSitesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HideRecommendedPersonalizedSitesValue) String() string {
+	switch e {
+	case HideRecommendedPersonalizedSitesPersonalizedWebsiteRecommendationsShown:
+		return "HideRecommendedPersonalizedSitesPersonalizedWebsiteRecommendationsShown"
+	case HideRecommendedPersonalizedSitesPersonalizedWebsiteRecommendationsHidden:
+		return "HideRecommendedPersonalizedSitesPersonalizedWebsiteRecommendationsHidden"
+	default:
+		return fmt.Sprintf("HideRecommendedPersonalizedSitesValue(%d)", int64(e))
+	}
+}
+
+// HideRecommendedSectionValue — allowed values for the HideRecommendedSection node.
+type HideRecommendedSectionValue int64
+
 const (
 	// Recommended section shown.
-	HideRecommendedSectionRecommendedSectionShown int64 = 0
+	HideRecommendedSectionRecommendedSectionShown HideRecommendedSectionValue = 0
 	// Recommended section hidden.
-	HideRecommendedSectionRecommendedSectionHidden int64 = 1
+	HideRecommendedSectionRecommendedSectionHidden HideRecommendedSectionValue = 1
 )
 
-// HideRestart allowed values.
+// String returns the HideRecommendedSectionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HideRecommendedSectionValue) String() string {
+	switch e {
+	case HideRecommendedSectionRecommendedSectionShown:
+		return "HideRecommendedSectionRecommendedSectionShown"
+	case HideRecommendedSectionRecommendedSectionHidden:
+		return "HideRecommendedSectionRecommendedSectionHidden"
+	default:
+		return fmt.Sprintf("HideRecommendedSectionValue(%d)", int64(e))
+	}
+}
+
+// HideRestartValue — allowed values for the HideRestart node.
+type HideRestartValue int64
+
 const (
 	// Do not hide.
-	HideRestartDoNotHide int64 = 0
+	HideRestartDoNotHide HideRestartValue = 0
 	// Hide.
-	HideRestartHide int64 = 1
+	HideRestartHide HideRestartValue = 1
 )
 
-// HideShutDown allowed values.
+// String returns the HideRestartValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HideRestartValue) String() string {
+	switch e {
+	case HideRestartDoNotHide:
+		return "HideRestartDoNotHide"
+	case HideRestartHide:
+		return "HideRestartHide"
+	default:
+		return fmt.Sprintf("HideRestartValue(%d)", int64(e))
+	}
+}
+
+// HideShutDownValue — allowed values for the HideShutDown node.
+type HideShutDownValue int64
+
 const (
 	// Do not hide.
-	HideShutDownDoNotHide int64 = 0
+	HideShutDownDoNotHide HideShutDownValue = 0
 	// Hide.
-	HideShutDownHide int64 = 1
+	HideShutDownHide HideShutDownValue = 1
 )
 
-// HideSignOut allowed values.
+// String returns the HideShutDownValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HideShutDownValue) String() string {
+	switch e {
+	case HideShutDownDoNotHide:
+		return "HideShutDownDoNotHide"
+	case HideShutDownHide:
+		return "HideShutDownHide"
+	default:
+		return fmt.Sprintf("HideShutDownValue(%d)", int64(e))
+	}
+}
+
+// HideSignOutValue — allowed values for the HideSignOut node.
+type HideSignOutValue int64
+
 const (
 	// Do not hide.
-	HideSignOutDoNotHide int64 = 0
+	HideSignOutDoNotHide HideSignOutValue = 0
 	// Hide.
-	HideSignOutHide int64 = 1
+	HideSignOutHide HideSignOutValue = 1
 )
 
-// HideSleep allowed values.
+// String returns the HideSignOutValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HideSignOutValue) String() string {
+	switch e {
+	case HideSignOutDoNotHide:
+		return "HideSignOutDoNotHide"
+	case HideSignOutHide:
+		return "HideSignOutHide"
+	default:
+		return fmt.Sprintf("HideSignOutValue(%d)", int64(e))
+	}
+}
+
+// HideSleepValue — allowed values for the HideSleep node.
+type HideSleepValue int64
+
 const (
 	// Do not hide.
-	HideSleepDoNotHide int64 = 0
+	HideSleepDoNotHide HideSleepValue = 0
 	// Hide.
-	HideSleepHide int64 = 1
+	HideSleepHide HideSleepValue = 1
 )
 
-// HideSwitchAccount allowed values.
+// String returns the HideSleepValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HideSleepValue) String() string {
+	switch e {
+	case HideSleepDoNotHide:
+		return "HideSleepDoNotHide"
+	case HideSleepHide:
+		return "HideSleepHide"
+	default:
+		return fmt.Sprintf("HideSleepValue(%d)", int64(e))
+	}
+}
+
+// HideSwitchAccountValue — allowed values for the HideSwitchAccount node.
+type HideSwitchAccountValue int64
+
 const (
 	// Do not hide.
-	HideSwitchAccountDoNotHide int64 = 0
+	HideSwitchAccountDoNotHide HideSwitchAccountValue = 0
 	// Hide.
-	HideSwitchAccountHide int64 = 1
+	HideSwitchAccountHide HideSwitchAccountValue = 1
 )
 
-// HideTaskViewButton allowed values.
+// String returns the HideSwitchAccountValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HideSwitchAccountValue) String() string {
+	switch e {
+	case HideSwitchAccountDoNotHide:
+		return "HideSwitchAccountDoNotHide"
+	case HideSwitchAccountHide:
+		return "HideSwitchAccountHide"
+	default:
+		return fmt.Sprintf("HideSwitchAccountValue(%d)", int64(e))
+	}
+}
+
+// HideTaskViewButtonValue — allowed values for the HideTaskViewButton node.
+type HideTaskViewButtonValue int64
+
 const (
 	// TaskView button shown.
-	HideTaskViewButtonTaskViewButtonShown int64 = 0
+	HideTaskViewButtonTaskViewButtonShown HideTaskViewButtonValue = 0
 	// TaskView button hidden.
-	HideTaskViewButtonTaskViewButtonHidden int64 = 1
+	HideTaskViewButtonTaskViewButtonHidden HideTaskViewButtonValue = 1
 )
 
-// HideUserTile allowed values.
+// String returns the HideTaskViewButtonValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HideTaskViewButtonValue) String() string {
+	switch e {
+	case HideTaskViewButtonTaskViewButtonShown:
+		return "HideTaskViewButtonTaskViewButtonShown"
+	case HideTaskViewButtonTaskViewButtonHidden:
+		return "HideTaskViewButtonTaskViewButtonHidden"
+	default:
+		return fmt.Sprintf("HideTaskViewButtonValue(%d)", int64(e))
+	}
+}
+
+// HideUserTileValue — allowed values for the HideUserTile node.
+type HideUserTileValue int64
+
 const (
 	// Do not hide.
-	HideUserTileDoNotHide int64 = 0
+	HideUserTileDoNotHide HideUserTileValue = 0
 	// Hide.
-	HideUserTileHide int64 = 1
+	HideUserTileHide HideUserTileValue = 1
 )
 
-// NoPinningToTaskbar allowed values.
+// String returns the HideUserTileValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HideUserTileValue) String() string {
+	switch e {
+	case HideUserTileDoNotHide:
+		return "HideUserTileDoNotHide"
+	case HideUserTileHide:
+		return "HideUserTileHide"
+	default:
+		return fmt.Sprintf("HideUserTileValue(%d)", int64(e))
+	}
+}
+
+// NoPinningToTaskbarValue — allowed values for the NoPinningToTaskbar node.
+type NoPinningToTaskbarValue int64
+
 const (
 	// Pinning enabled.
-	NoPinningToTaskbarPinningEnabled int64 = 0
+	NoPinningToTaskbarPinningEnabled NoPinningToTaskbarValue = 0
 	// Pinning disabled.
-	NoPinningToTaskbarPinningDisabled int64 = 1
+	NoPinningToTaskbarPinningDisabled NoPinningToTaskbarValue = 1
 )
 
-// ShowOrHideMostUsedApps allowed values.
+// String returns the NoPinningToTaskbarValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e NoPinningToTaskbarValue) String() string {
+	switch e {
+	case NoPinningToTaskbarPinningEnabled:
+		return "NoPinningToTaskbarPinningEnabled"
+	case NoPinningToTaskbarPinningDisabled:
+		return "NoPinningToTaskbarPinningDisabled"
+	default:
+		return fmt.Sprintf("NoPinningToTaskbarValue(%d)", int64(e))
+	}
+}
+
+// ShowOrHideMostUsedAppsValue — allowed values for the ShowOrHideMostUsedApps node.
+type ShowOrHideMostUsedAppsValue int64
+
 const (
 	// Do not enforce visibility of list of most used apps in Start; user can control via Settings app
 	// (default behavior equivalent to not configuring this policy).
-	ShowOrHideMostUsedAppsDoNotEnforceVisibilityOfList int64 = 0
+	ShowOrHideMostUsedAppsDoNotEnforceVisibilityOfList ShowOrHideMostUsedAppsValue = 0
 	// Force showing of list of most used apps in Start; corresponding toggle in Setting app is
 	// disabled.
-	ShowOrHideMostUsedAppsForceShowingOfListOfMost int64 = 1
+	ShowOrHideMostUsedAppsForceShowingOfListOfMost ShowOrHideMostUsedAppsValue = 1
 	// Force hiding of list of most used apps in Start; corresponding toggle in Setting app is
 	// disabled.
-	ShowOrHideMostUsedAppsForceHidingOfListOfMost int64 = 2
+	ShowOrHideMostUsedAppsForceHidingOfListOfMost ShowOrHideMostUsedAppsValue = 2
 )
 
-// SimplifyQuickSettings allowed values.
+// String returns the ShowOrHideMostUsedAppsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ShowOrHideMostUsedAppsValue) String() string {
+	switch e {
+	case ShowOrHideMostUsedAppsDoNotEnforceVisibilityOfList:
+		return "ShowOrHideMostUsedAppsDoNotEnforceVisibilityOfList"
+	case ShowOrHideMostUsedAppsForceShowingOfListOfMost:
+		return "ShowOrHideMostUsedAppsForceShowingOfListOfMost"
+	case ShowOrHideMostUsedAppsForceHidingOfListOfMost:
+		return "ShowOrHideMostUsedAppsForceHidingOfListOfMost"
+	default:
+		return fmt.Sprintf("ShowOrHideMostUsedAppsValue(%d)", int64(e))
+	}
+}
+
+// SimplifyQuickSettingsValue — allowed values for the SimplifyQuickSettings node.
+type SimplifyQuickSettingsValue int64
+
 const (
 	// Load regular Quick Settings layout.
-	SimplifyQuickSettingsLoadRegularQuickSettingsLayout int64 = 0
+	SimplifyQuickSettingsLoadRegularQuickSettingsLayout SimplifyQuickSettingsValue = 0
 	// Load simplified Quick Settings layout.
-	SimplifyQuickSettingsLoadSimplifiedQuickSettingsLayout int64 = 1
+	SimplifyQuickSettingsLoadSimplifiedQuickSettingsLayout SimplifyQuickSettingsValue = 1
 )
+
+// String returns the SimplifyQuickSettingsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SimplifyQuickSettingsValue) String() string {
+	switch e {
+	case SimplifyQuickSettingsLoadRegularQuickSettingsLayout:
+		return "SimplifyQuickSettingsLoadRegularQuickSettingsLayout"
+	case SimplifyQuickSettingsLoadSimplifiedQuickSettingsLayout:
+		return "SimplifyQuickSettingsLoadSimplifiedQuickSettingsLayout"
+	default:
+		return fmt.Sprintf("SimplifyQuickSettingsValue(%d)", int64(e))
+	}
+}

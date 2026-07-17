@@ -14,12 +14,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WirelessDisplay) GetAllowMdnsAdvertisement(ctx context.Context) (int64, error) {
+func (s *WirelessDisplay) GetAllowMdnsAdvertisement(ctx context.Context) (AllowMdnsAdvertisementValue, error) {
 	v, err := s.c.Get(ctx, URIAllowMdnsAdvertisement)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowMdnsAdvertisementValue(n), err
 }
 
 // CreateAllowMdnsAdvertisement creates ./Device/Vendor/MSFT/Policy/Config/WirelessDisplay/AllowMdnsAdvertisement.
@@ -28,8 +29,8 @@ func (s *WirelessDisplay) GetAllowMdnsAdvertisement(ctx context.Context) (int64,
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WirelessDisplay) CreateAllowMdnsAdvertisement(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowMdnsAdvertisement, client.Int(value))
+func (s *WirelessDisplay) CreateAllowMdnsAdvertisement(ctx context.Context, value AllowMdnsAdvertisementValue) error {
+	return s.c.Add(ctx, URIAllowMdnsAdvertisement, client.Int(int64(value)))
 }
 
 // UpdateAllowMdnsAdvertisement updates ./Device/Vendor/MSFT/Policy/Config/WirelessDisplay/AllowMdnsAdvertisement.
@@ -38,8 +39,8 @@ func (s *WirelessDisplay) CreateAllowMdnsAdvertisement(ctx context.Context, valu
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WirelessDisplay) UpdateAllowMdnsAdvertisement(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowMdnsAdvertisement, client.Int(value))
+func (s *WirelessDisplay) UpdateAllowMdnsAdvertisement(ctx context.Context, value AllowMdnsAdvertisementValue) error {
+	return s.c.Replace(ctx, URIAllowMdnsAdvertisement, client.Int(int64(value)))
 }
 
 // DeleteAllowMdnsAdvertisement deletes ./Device/Vendor/MSFT/Policy/Config/WirelessDisplay/AllowMdnsAdvertisement.
@@ -58,12 +59,13 @@ func (s *WirelessDisplay) DeleteAllowMdnsAdvertisement(ctx context.Context) erro
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WirelessDisplay) GetAllowMdnsDiscovery(ctx context.Context) (int64, error) {
+func (s *WirelessDisplay) GetAllowMdnsDiscovery(ctx context.Context) (AllowMdnsDiscoveryValue, error) {
 	v, err := s.c.Get(ctx, URIAllowMdnsDiscovery)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowMdnsDiscoveryValue(n), err
 }
 
 // CreateAllowMdnsDiscovery creates ./Device/Vendor/MSFT/Policy/Config/WirelessDisplay/AllowMdnsDiscovery.
@@ -72,8 +74,8 @@ func (s *WirelessDisplay) GetAllowMdnsDiscovery(ctx context.Context) (int64, err
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WirelessDisplay) CreateAllowMdnsDiscovery(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowMdnsDiscovery, client.Int(value))
+func (s *WirelessDisplay) CreateAllowMdnsDiscovery(ctx context.Context, value AllowMdnsDiscoveryValue) error {
+	return s.c.Add(ctx, URIAllowMdnsDiscovery, client.Int(int64(value)))
 }
 
 // UpdateAllowMdnsDiscovery updates ./Device/Vendor/MSFT/Policy/Config/WirelessDisplay/AllowMdnsDiscovery.
@@ -82,8 +84,8 @@ func (s *WirelessDisplay) CreateAllowMdnsDiscovery(ctx context.Context, value in
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WirelessDisplay) UpdateAllowMdnsDiscovery(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowMdnsDiscovery, client.Int(value))
+func (s *WirelessDisplay) UpdateAllowMdnsDiscovery(ctx context.Context, value AllowMdnsDiscoveryValue) error {
+	return s.c.Replace(ctx, URIAllowMdnsDiscovery, client.Int(int64(value)))
 }
 
 // DeleteAllowMdnsDiscovery deletes ./Device/Vendor/MSFT/Policy/Config/WirelessDisplay/AllowMdnsDiscovery.
@@ -105,12 +107,13 @@ func (s *WirelessDisplay) DeleteAllowMdnsDiscovery(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *WirelessDisplay) GetAllowMovementDetectionOnInfrastructure(ctx context.Context) (int64, error) {
+func (s *WirelessDisplay) GetAllowMovementDetectionOnInfrastructure(ctx context.Context) (AllowMovementDetectionOnInfrastructureValue, error) {
 	v, err := s.c.Get(ctx, URIAllowMovementDetectionOnInfrastructure)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowMovementDetectionOnInfrastructureValue(n), err
 }
 
 // CreateAllowMovementDetectionOnInfrastructure creates ./Device/Vendor/MSFT/Policy/Config/WirelessDisplay/AllowMovementDetectionOnInfrastructure.
@@ -122,8 +125,8 @@ func (s *WirelessDisplay) GetAllowMovementDetectionOnInfrastructure(ctx context.
 //
 // Default: 1.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *WirelessDisplay) CreateAllowMovementDetectionOnInfrastructure(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowMovementDetectionOnInfrastructure, client.Int(value))
+func (s *WirelessDisplay) CreateAllowMovementDetectionOnInfrastructure(ctx context.Context, value AllowMovementDetectionOnInfrastructureValue) error {
+	return s.c.Add(ctx, URIAllowMovementDetectionOnInfrastructure, client.Int(int64(value)))
 }
 
 // UpdateAllowMovementDetectionOnInfrastructure updates ./Device/Vendor/MSFT/Policy/Config/WirelessDisplay/AllowMovementDetectionOnInfrastructure.
@@ -135,8 +138,8 @@ func (s *WirelessDisplay) CreateAllowMovementDetectionOnInfrastructure(ctx conte
 //
 // Default: 1.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *WirelessDisplay) UpdateAllowMovementDetectionOnInfrastructure(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowMovementDetectionOnInfrastructure, client.Int(value))
+func (s *WirelessDisplay) UpdateAllowMovementDetectionOnInfrastructure(ctx context.Context, value AllowMovementDetectionOnInfrastructureValue) error {
+	return s.c.Replace(ctx, URIAllowMovementDetectionOnInfrastructure, client.Int(int64(value)))
 }
 
 // DeleteAllowMovementDetectionOnInfrastructure deletes ./Device/Vendor/MSFT/Policy/Config/WirelessDisplay/AllowMovementDetectionOnInfrastructure.
@@ -160,12 +163,13 @@ func (s *WirelessDisplay) DeleteAllowMovementDetectionOnInfrastructure(ctx conte
 //
 // Default: 1.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *WirelessDisplay) GetAllowPCReceiverToBeTCPServer(ctx context.Context) (int64, error) {
+func (s *WirelessDisplay) GetAllowPCReceiverToBeTCPServer(ctx context.Context) (AllowPCReceiverToBeTCPServerValue, error) {
 	v, err := s.c.Get(ctx, URIAllowPCReceiverToBeTCPServer)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowPCReceiverToBeTCPServerValue(n), err
 }
 
 // CreateAllowPCReceiverToBeTCPServer creates ./Device/Vendor/MSFT/Policy/Config/WirelessDisplay/AllowPCReceiverToBeTCPServer.
@@ -176,8 +180,8 @@ func (s *WirelessDisplay) GetAllowPCReceiverToBeTCPServer(ctx context.Context) (
 //
 // Default: 1.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *WirelessDisplay) CreateAllowPCReceiverToBeTCPServer(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowPCReceiverToBeTCPServer, client.Int(value))
+func (s *WirelessDisplay) CreateAllowPCReceiverToBeTCPServer(ctx context.Context, value AllowPCReceiverToBeTCPServerValue) error {
+	return s.c.Add(ctx, URIAllowPCReceiverToBeTCPServer, client.Int(int64(value)))
 }
 
 // UpdateAllowPCReceiverToBeTCPServer updates ./Device/Vendor/MSFT/Policy/Config/WirelessDisplay/AllowPCReceiverToBeTCPServer.
@@ -188,8 +192,8 @@ func (s *WirelessDisplay) CreateAllowPCReceiverToBeTCPServer(ctx context.Context
 //
 // Default: 1.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *WirelessDisplay) UpdateAllowPCReceiverToBeTCPServer(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowPCReceiverToBeTCPServer, client.Int(value))
+func (s *WirelessDisplay) UpdateAllowPCReceiverToBeTCPServer(ctx context.Context, value AllowPCReceiverToBeTCPServerValue) error {
+	return s.c.Replace(ctx, URIAllowPCReceiverToBeTCPServer, client.Int(int64(value)))
 }
 
 // DeleteAllowPCReceiverToBeTCPServer deletes ./Device/Vendor/MSFT/Policy/Config/WirelessDisplay/AllowPCReceiverToBeTCPServer.
@@ -212,12 +216,13 @@ func (s *WirelessDisplay) DeleteAllowPCReceiverToBeTCPServer(ctx context.Context
 //
 // Default: 1.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *WirelessDisplay) GetAllowPCSenderToBeTCPClient(ctx context.Context) (int64, error) {
+func (s *WirelessDisplay) GetAllowPCSenderToBeTCPClient(ctx context.Context) (AllowPCSenderToBeTCPClientValue, error) {
 	v, err := s.c.Get(ctx, URIAllowPCSenderToBeTCPClient)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowPCSenderToBeTCPClientValue(n), err
 }
 
 // CreateAllowPCSenderToBeTCPClient creates ./Device/Vendor/MSFT/Policy/Config/WirelessDisplay/AllowPCSenderToBeTCPClient.
@@ -228,8 +233,8 @@ func (s *WirelessDisplay) GetAllowPCSenderToBeTCPClient(ctx context.Context) (in
 //
 // Default: 1.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *WirelessDisplay) CreateAllowPCSenderToBeTCPClient(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowPCSenderToBeTCPClient, client.Int(value))
+func (s *WirelessDisplay) CreateAllowPCSenderToBeTCPClient(ctx context.Context, value AllowPCSenderToBeTCPClientValue) error {
+	return s.c.Add(ctx, URIAllowPCSenderToBeTCPClient, client.Int(int64(value)))
 }
 
 // UpdateAllowPCSenderToBeTCPClient updates ./Device/Vendor/MSFT/Policy/Config/WirelessDisplay/AllowPCSenderToBeTCPClient.
@@ -240,8 +245,8 @@ func (s *WirelessDisplay) CreateAllowPCSenderToBeTCPClient(ctx context.Context, 
 //
 // Default: 1.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *WirelessDisplay) UpdateAllowPCSenderToBeTCPClient(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowPCSenderToBeTCPClient, client.Int(value))
+func (s *WirelessDisplay) UpdateAllowPCSenderToBeTCPClient(ctx context.Context, value AllowPCSenderToBeTCPClientValue) error {
+	return s.c.Replace(ctx, URIAllowPCSenderToBeTCPClient, client.Int(int64(value)))
 }
 
 // DeleteAllowPCSenderToBeTCPClient deletes ./Device/Vendor/MSFT/Policy/Config/WirelessDisplay/AllowPCSenderToBeTCPClient.
@@ -263,12 +268,13 @@ func (s *WirelessDisplay) DeleteAllowPCSenderToBeTCPClient(ctx context.Context) 
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *WirelessDisplay) GetAllowProjectionFromPC(ctx context.Context) (int64, error) {
+func (s *WirelessDisplay) GetAllowProjectionFromPC(ctx context.Context) (AllowProjectionFromPCValue, error) {
 	v, err := s.c.Get(ctx, URIAllowProjectionFromPC)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowProjectionFromPCValue(n), err
 }
 
 // CreateAllowProjectionFromPC creates ./Device/Vendor/MSFT/Policy/Config/WirelessDisplay/AllowProjectionFromPC.
@@ -278,8 +284,8 @@ func (s *WirelessDisplay) GetAllowProjectionFromPC(ctx context.Context) (int64, 
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *WirelessDisplay) CreateAllowProjectionFromPC(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowProjectionFromPC, client.Int(value))
+func (s *WirelessDisplay) CreateAllowProjectionFromPC(ctx context.Context, value AllowProjectionFromPCValue) error {
+	return s.c.Add(ctx, URIAllowProjectionFromPC, client.Int(int64(value)))
 }
 
 // UpdateAllowProjectionFromPC updates ./Device/Vendor/MSFT/Policy/Config/WirelessDisplay/AllowProjectionFromPC.
@@ -289,8 +295,8 @@ func (s *WirelessDisplay) CreateAllowProjectionFromPC(ctx context.Context, value
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *WirelessDisplay) UpdateAllowProjectionFromPC(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowProjectionFromPC, client.Int(value))
+func (s *WirelessDisplay) UpdateAllowProjectionFromPC(ctx context.Context, value AllowProjectionFromPCValue) error {
+	return s.c.Replace(ctx, URIAllowProjectionFromPC, client.Int(int64(value)))
 }
 
 // DeleteAllowProjectionFromPC deletes ./Device/Vendor/MSFT/Policy/Config/WirelessDisplay/AllowProjectionFromPC.
@@ -312,12 +318,13 @@ func (s *WirelessDisplay) DeleteAllowProjectionFromPC(ctx context.Context) error
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *WirelessDisplay) GetAllowProjectionFromPCOverInfrastructure(ctx context.Context) (int64, error) {
+func (s *WirelessDisplay) GetAllowProjectionFromPCOverInfrastructure(ctx context.Context) (AllowProjectionFromPCOverInfrastructureValue, error) {
 	v, err := s.c.Get(ctx, URIAllowProjectionFromPCOverInfrastructure)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowProjectionFromPCOverInfrastructureValue(n), err
 }
 
 // CreateAllowProjectionFromPCOverInfrastructure creates ./Device/Vendor/MSFT/Policy/Config/WirelessDisplay/AllowProjectionFromPCOverInfrastructure.
@@ -328,8 +335,8 @@ func (s *WirelessDisplay) GetAllowProjectionFromPCOverInfrastructure(ctx context
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *WirelessDisplay) CreateAllowProjectionFromPCOverInfrastructure(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowProjectionFromPCOverInfrastructure, client.Int(value))
+func (s *WirelessDisplay) CreateAllowProjectionFromPCOverInfrastructure(ctx context.Context, value AllowProjectionFromPCOverInfrastructureValue) error {
+	return s.c.Add(ctx, URIAllowProjectionFromPCOverInfrastructure, client.Int(int64(value)))
 }
 
 // UpdateAllowProjectionFromPCOverInfrastructure updates ./Device/Vendor/MSFT/Policy/Config/WirelessDisplay/AllowProjectionFromPCOverInfrastructure.
@@ -340,8 +347,8 @@ func (s *WirelessDisplay) CreateAllowProjectionFromPCOverInfrastructure(ctx cont
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *WirelessDisplay) UpdateAllowProjectionFromPCOverInfrastructure(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowProjectionFromPCOverInfrastructure, client.Int(value))
+func (s *WirelessDisplay) UpdateAllowProjectionFromPCOverInfrastructure(ctx context.Context, value AllowProjectionFromPCOverInfrastructureValue) error {
+	return s.c.Replace(ctx, URIAllowProjectionFromPCOverInfrastructure, client.Int(int64(value)))
 }
 
 // DeleteAllowProjectionFromPCOverInfrastructure deletes ./Device/Vendor/MSFT/Policy/Config/WirelessDisplay/AllowProjectionFromPCOverInfrastructure.
@@ -364,12 +371,13 @@ func (s *WirelessDisplay) DeleteAllowProjectionFromPCOverInfrastructure(ctx cont
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *WirelessDisplay) GetAllowProjectionToPC(ctx context.Context) (int64, error) {
+func (s *WirelessDisplay) GetAllowProjectionToPC(ctx context.Context) (AllowProjectionToPCValue, error) {
 	v, err := s.c.Get(ctx, URIAllowProjectionToPC)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowProjectionToPCValue(n), err
 }
 
 // CreateAllowProjectionToPC creates ./Device/Vendor/MSFT/Policy/Config/WirelessDisplay/AllowProjectionToPC.
@@ -380,8 +388,8 @@ func (s *WirelessDisplay) GetAllowProjectionToPC(ctx context.Context) (int64, er
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *WirelessDisplay) CreateAllowProjectionToPC(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowProjectionToPC, client.Int(value))
+func (s *WirelessDisplay) CreateAllowProjectionToPC(ctx context.Context, value AllowProjectionToPCValue) error {
+	return s.c.Add(ctx, URIAllowProjectionToPC, client.Int(int64(value)))
 }
 
 // UpdateAllowProjectionToPC updates ./Device/Vendor/MSFT/Policy/Config/WirelessDisplay/AllowProjectionToPC.
@@ -392,8 +400,8 @@ func (s *WirelessDisplay) CreateAllowProjectionToPC(ctx context.Context, value i
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *WirelessDisplay) UpdateAllowProjectionToPC(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowProjectionToPC, client.Int(value))
+func (s *WirelessDisplay) UpdateAllowProjectionToPC(ctx context.Context, value AllowProjectionToPCValue) error {
+	return s.c.Replace(ctx, URIAllowProjectionToPC, client.Int(int64(value)))
 }
 
 // DeleteAllowProjectionToPC deletes ./Device/Vendor/MSFT/Policy/Config/WirelessDisplay/AllowProjectionToPC.
@@ -416,12 +424,13 @@ func (s *WirelessDisplay) DeleteAllowProjectionToPC(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *WirelessDisplay) GetAllowProjectionToPCOverInfrastructure(ctx context.Context) (int64, error) {
+func (s *WirelessDisplay) GetAllowProjectionToPCOverInfrastructure(ctx context.Context) (AllowProjectionToPCOverInfrastructureValue, error) {
 	v, err := s.c.Get(ctx, URIAllowProjectionToPCOverInfrastructure)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowProjectionToPCOverInfrastructureValue(n), err
 }
 
 // CreateAllowProjectionToPCOverInfrastructure creates ./Device/Vendor/MSFT/Policy/Config/WirelessDisplay/AllowProjectionToPCOverInfrastructure.
@@ -432,8 +441,8 @@ func (s *WirelessDisplay) GetAllowProjectionToPCOverInfrastructure(ctx context.C
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *WirelessDisplay) CreateAllowProjectionToPCOverInfrastructure(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowProjectionToPCOverInfrastructure, client.Int(value))
+func (s *WirelessDisplay) CreateAllowProjectionToPCOverInfrastructure(ctx context.Context, value AllowProjectionToPCOverInfrastructureValue) error {
+	return s.c.Add(ctx, URIAllowProjectionToPCOverInfrastructure, client.Int(int64(value)))
 }
 
 // UpdateAllowProjectionToPCOverInfrastructure updates ./Device/Vendor/MSFT/Policy/Config/WirelessDisplay/AllowProjectionToPCOverInfrastructure.
@@ -444,8 +453,8 @@ func (s *WirelessDisplay) CreateAllowProjectionToPCOverInfrastructure(ctx contex
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *WirelessDisplay) UpdateAllowProjectionToPCOverInfrastructure(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowProjectionToPCOverInfrastructure, client.Int(value))
+func (s *WirelessDisplay) UpdateAllowProjectionToPCOverInfrastructure(ctx context.Context, value AllowProjectionToPCOverInfrastructureValue) error {
+	return s.c.Replace(ctx, URIAllowProjectionToPCOverInfrastructure, client.Int(int64(value)))
 }
 
 // DeleteAllowProjectionToPCOverInfrastructure deletes ./Device/Vendor/MSFT/Policy/Config/WirelessDisplay/AllowProjectionToPCOverInfrastructure.
@@ -466,12 +475,13 @@ func (s *WirelessDisplay) DeleteAllowProjectionToPCOverInfrastructure(ctx contex
 //
 // Default: 1.
 // Supported from OS build 10.0.10586 (CSP v4.1).
-func (s *WirelessDisplay) GetAllowUserInputFromWirelessDisplayReceiver(ctx context.Context) (int64, error) {
+func (s *WirelessDisplay) GetAllowUserInputFromWirelessDisplayReceiver(ctx context.Context) (AllowUserInputFromWirelessDisplayReceiverValue, error) {
 	v, err := s.c.Get(ctx, URIAllowUserInputFromWirelessDisplayReceiver)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowUserInputFromWirelessDisplayReceiverValue(n), err
 }
 
 // CreateAllowUserInputFromWirelessDisplayReceiver creates ./Device/Vendor/MSFT/Policy/Config/WirelessDisplay/AllowUserInputFromWirelessDisplayReceiver.
@@ -480,8 +490,8 @@ func (s *WirelessDisplay) GetAllowUserInputFromWirelessDisplayReceiver(ctx conte
 //
 // Default: 1.
 // Supported from OS build 10.0.10586 (CSP v4.1).
-func (s *WirelessDisplay) CreateAllowUserInputFromWirelessDisplayReceiver(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowUserInputFromWirelessDisplayReceiver, client.Int(value))
+func (s *WirelessDisplay) CreateAllowUserInputFromWirelessDisplayReceiver(ctx context.Context, value AllowUserInputFromWirelessDisplayReceiverValue) error {
+	return s.c.Add(ctx, URIAllowUserInputFromWirelessDisplayReceiver, client.Int(int64(value)))
 }
 
 // UpdateAllowUserInputFromWirelessDisplayReceiver updates ./Device/Vendor/MSFT/Policy/Config/WirelessDisplay/AllowUserInputFromWirelessDisplayReceiver.
@@ -490,8 +500,8 @@ func (s *WirelessDisplay) CreateAllowUserInputFromWirelessDisplayReceiver(ctx co
 //
 // Default: 1.
 // Supported from OS build 10.0.10586 (CSP v4.1).
-func (s *WirelessDisplay) UpdateAllowUserInputFromWirelessDisplayReceiver(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowUserInputFromWirelessDisplayReceiver, client.Int(value))
+func (s *WirelessDisplay) UpdateAllowUserInputFromWirelessDisplayReceiver(ctx context.Context, value AllowUserInputFromWirelessDisplayReceiverValue) error {
+	return s.c.Replace(ctx, URIAllowUserInputFromWirelessDisplayReceiver, client.Int(int64(value)))
 }
 
 // DeleteAllowUserInputFromWirelessDisplayReceiver deletes ./Device/Vendor/MSFT/Policy/Config/WirelessDisplay/AllowUserInputFromWirelessDisplayReceiver.
@@ -511,12 +521,13 @@ func (s *WirelessDisplay) DeleteAllowUserInputFromWirelessDisplayReceiver(ctx co
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *WirelessDisplay) GetRequirePinForPairing(ctx context.Context) (int64, error) {
+func (s *WirelessDisplay) GetRequirePinForPairing(ctx context.Context) (RequirePinForPairingValue, error) {
 	v, err := s.c.Get(ctx, URIRequirePinForPairing)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return RequirePinForPairingValue(n), err
 }
 
 // CreateRequirePinForPairing creates ./Device/Vendor/MSFT/Policy/Config/WirelessDisplay/RequirePinForPairing.
@@ -526,8 +537,8 @@ func (s *WirelessDisplay) GetRequirePinForPairing(ctx context.Context) (int64, e
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *WirelessDisplay) CreateRequirePinForPairing(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIRequirePinForPairing, client.Int(value))
+func (s *WirelessDisplay) CreateRequirePinForPairing(ctx context.Context, value RequirePinForPairingValue) error {
+	return s.c.Add(ctx, URIRequirePinForPairing, client.Int(int64(value)))
 }
 
 // UpdateRequirePinForPairing updates ./Device/Vendor/MSFT/Policy/Config/WirelessDisplay/RequirePinForPairing.
@@ -537,8 +548,8 @@ func (s *WirelessDisplay) CreateRequirePinForPairing(ctx context.Context, value 
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *WirelessDisplay) UpdateRequirePinForPairing(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIRequirePinForPairing, client.Int(value))
+func (s *WirelessDisplay) UpdateRequirePinForPairing(ctx context.Context, value RequirePinForPairingValue) error {
+	return s.c.Replace(ctx, URIRequirePinForPairing, client.Int(int64(value)))
 }
 
 // DeleteRequirePinForPairing deletes ./Device/Vendor/MSFT/Policy/Config/WirelessDisplay/RequirePinForPairing.

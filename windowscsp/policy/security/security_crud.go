@@ -13,12 +13,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Security) GetAllowAddProvisioningPackage(ctx context.Context) (int64, error) {
+func (s *Security) GetAllowAddProvisioningPackage(ctx context.Context) (AllowAddProvisioningPackageValue, error) {
 	v, err := s.c.Get(ctx, URIAllowAddProvisioningPackage)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowAddProvisioningPackageValue(n), err
 }
 
 // CreateAllowAddProvisioningPackage creates ./Device/Vendor/MSFT/Policy/Config/Security/AllowAddProvisioningPackage.
@@ -26,8 +27,8 @@ func (s *Security) GetAllowAddProvisioningPackage(ctx context.Context) (int64, e
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Security) CreateAllowAddProvisioningPackage(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowAddProvisioningPackage, client.Int(value))
+func (s *Security) CreateAllowAddProvisioningPackage(ctx context.Context, value AllowAddProvisioningPackageValue) error {
+	return s.c.Add(ctx, URIAllowAddProvisioningPackage, client.Int(int64(value)))
 }
 
 // UpdateAllowAddProvisioningPackage updates ./Device/Vendor/MSFT/Policy/Config/Security/AllowAddProvisioningPackage.
@@ -35,8 +36,8 @@ func (s *Security) CreateAllowAddProvisioningPackage(ctx context.Context, value 
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Security) UpdateAllowAddProvisioningPackage(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowAddProvisioningPackage, client.Int(value))
+func (s *Security) UpdateAllowAddProvisioningPackage(ctx context.Context, value AllowAddProvisioningPackageValue) error {
+	return s.c.Replace(ctx, URIAllowAddProvisioningPackage, client.Int(int64(value)))
 }
 
 // DeleteAllowAddProvisioningPackage deletes ./Device/Vendor/MSFT/Policy/Config/Security/AllowAddProvisioningPackage.
@@ -55,12 +56,13 @@ func (s *Security) DeleteAllowAddProvisioningPackage(ctx context.Context) error 
 // Supported from OS build 10.0.10240 (CSP v1.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Security) GetAllowManualRootCertificateInstallation(ctx context.Context) (int64, error) {
+func (s *Security) GetAllowManualRootCertificateInstallation(ctx context.Context) (AllowManualRootCertificateInstallationValue, error) {
 	v, err := s.c.Get(ctx, URIAllowManualRootCertificateInstallation)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowManualRootCertificateInstallationValue(n), err
 }
 
 // CreateAllowManualRootCertificateInstallation creates ./Device/Vendor/MSFT/Policy/Config/Security/AllowManualRootCertificateInstallation.
@@ -70,8 +72,8 @@ func (s *Security) GetAllowManualRootCertificateInstallation(ctx context.Context
 // Supported from OS build 10.0.10240 (CSP v1.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Security) CreateAllowManualRootCertificateInstallation(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowManualRootCertificateInstallation, client.Int(value))
+func (s *Security) CreateAllowManualRootCertificateInstallation(ctx context.Context, value AllowManualRootCertificateInstallationValue) error {
+	return s.c.Add(ctx, URIAllowManualRootCertificateInstallation, client.Int(int64(value)))
 }
 
 // UpdateAllowManualRootCertificateInstallation updates ./Device/Vendor/MSFT/Policy/Config/Security/AllowManualRootCertificateInstallation.
@@ -81,8 +83,8 @@ func (s *Security) CreateAllowManualRootCertificateInstallation(ctx context.Cont
 // Supported from OS build 10.0.10240 (CSP v1.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Security) UpdateAllowManualRootCertificateInstallation(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowManualRootCertificateInstallation, client.Int(value))
+func (s *Security) UpdateAllowManualRootCertificateInstallation(ctx context.Context, value AllowManualRootCertificateInstallationValue) error {
+	return s.c.Replace(ctx, URIAllowManualRootCertificateInstallation, client.Int(int64(value)))
 }
 
 // DeleteAllowManualRootCertificateInstallation deletes ./Device/Vendor/MSFT/Policy/Config/Security/AllowManualRootCertificateInstallation.
@@ -101,12 +103,13 @@ func (s *Security) DeleteAllowManualRootCertificateInstallation(ctx context.Cont
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Security) GetAllowRemoveProvisioningPackage(ctx context.Context) (int64, error) {
+func (s *Security) GetAllowRemoveProvisioningPackage(ctx context.Context) (AllowRemoveProvisioningPackageValue, error) {
 	v, err := s.c.Get(ctx, URIAllowRemoveProvisioningPackage)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowRemoveProvisioningPackageValue(n), err
 }
 
 // CreateAllowRemoveProvisioningPackage creates ./Device/Vendor/MSFT/Policy/Config/Security/AllowRemoveProvisioningPackage.
@@ -114,8 +117,8 @@ func (s *Security) GetAllowRemoveProvisioningPackage(ctx context.Context) (int64
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Security) CreateAllowRemoveProvisioningPackage(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowRemoveProvisioningPackage, client.Int(value))
+func (s *Security) CreateAllowRemoveProvisioningPackage(ctx context.Context, value AllowRemoveProvisioningPackageValue) error {
+	return s.c.Add(ctx, URIAllowRemoveProvisioningPackage, client.Int(int64(value)))
 }
 
 // UpdateAllowRemoveProvisioningPackage updates ./Device/Vendor/MSFT/Policy/Config/Security/AllowRemoveProvisioningPackage.
@@ -123,8 +126,8 @@ func (s *Security) CreateAllowRemoveProvisioningPackage(ctx context.Context, val
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Security) UpdateAllowRemoveProvisioningPackage(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowRemoveProvisioningPackage, client.Int(value))
+func (s *Security) UpdateAllowRemoveProvisioningPackage(ctx context.Context, value AllowRemoveProvisioningPackageValue) error {
+	return s.c.Replace(ctx, URIAllowRemoveProvisioningPackage, client.Int(int64(value)))
 }
 
 // DeleteAllowRemoveProvisioningPackage deletes ./Device/Vendor/MSFT/Policy/Config/Security/AllowRemoveProvisioningPackage.
@@ -143,12 +146,13 @@ func (s *Security) DeleteAllowRemoveProvisioningPackage(ctx context.Context) err
 // Supported from OS build 10.0.10240 (CSP v1.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Security) GetAntiTheftMode(ctx context.Context) (int64, error) {
+func (s *Security) GetAntiTheftMode(ctx context.Context) (AntiTheftModeValue, error) {
 	v, err := s.c.Get(ctx, URIAntiTheftMode)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AntiTheftModeValue(n), err
 }
 
 // CreateAntiTheftMode creates ./Device/Vendor/MSFT/Policy/Config/Security/AntiTheftMode.
@@ -158,8 +162,8 @@ func (s *Security) GetAntiTheftMode(ctx context.Context) (int64, error) {
 // Supported from OS build 10.0.10240 (CSP v1.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Security) CreateAntiTheftMode(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAntiTheftMode, client.Int(value))
+func (s *Security) CreateAntiTheftMode(ctx context.Context, value AntiTheftModeValue) error {
+	return s.c.Add(ctx, URIAntiTheftMode, client.Int(int64(value)))
 }
 
 // UpdateAntiTheftMode updates ./Device/Vendor/MSFT/Policy/Config/Security/AntiTheftMode.
@@ -169,8 +173,8 @@ func (s *Security) CreateAntiTheftMode(ctx context.Context, value int64) error {
 // Supported from OS build 10.0.10240 (CSP v1.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Security) UpdateAntiTheftMode(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAntiTheftMode, client.Int(value))
+func (s *Security) UpdateAntiTheftMode(ctx context.Context, value AntiTheftModeValue) error {
+	return s.c.Replace(ctx, URIAntiTheftMode, client.Int(int64(value)))
 }
 
 // DeleteAntiTheftMode deletes ./Device/Vendor/MSFT/Policy/Config/Security/AntiTheftMode.
@@ -192,12 +196,13 @@ func (s *Security) DeleteAntiTheftMode(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Security) GetClearTPMIfNotReady(ctx context.Context) (int64, error) {
+func (s *Security) GetClearTPMIfNotReady(ctx context.Context) (ClearTPMIfNotReadyValue, error) {
 	v, err := s.c.Get(ctx, URIClearTPMIfNotReady)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ClearTPMIfNotReadyValue(n), err
 }
 
 // CreateClearTPMIfNotReady creates ./Device/Vendor/MSFT/Policy/Config/Security/ClearTPMIfNotReady.
@@ -208,8 +213,8 @@ func (s *Security) GetClearTPMIfNotReady(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Security) CreateClearTPMIfNotReady(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIClearTPMIfNotReady, client.Int(value))
+func (s *Security) CreateClearTPMIfNotReady(ctx context.Context, value ClearTPMIfNotReadyValue) error {
+	return s.c.Add(ctx, URIClearTPMIfNotReady, client.Int(int64(value)))
 }
 
 // UpdateClearTPMIfNotReady updates ./Device/Vendor/MSFT/Policy/Config/Security/ClearTPMIfNotReady.
@@ -220,8 +225,8 @@ func (s *Security) CreateClearTPMIfNotReady(ctx context.Context, value int64) er
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Security) UpdateClearTPMIfNotReady(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIClearTPMIfNotReady, client.Int(value))
+func (s *Security) UpdateClearTPMIfNotReady(ctx context.Context, value ClearTPMIfNotReadyValue) error {
+	return s.c.Replace(ctx, URIClearTPMIfNotReady, client.Int(int64(value)))
 }
 
 // DeleteClearTPMIfNotReady deletes ./Device/Vendor/MSFT/Policy/Config/Security/ClearTPMIfNotReady.
@@ -241,12 +246,13 @@ func (s *Security) DeleteClearTPMIfNotReady(ctx context.Context) error {
 //
 // Default: 2.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Security) GetConfigureWindowsPasswords(ctx context.Context) (int64, error) {
+func (s *Security) GetConfigureWindowsPasswords(ctx context.Context) (ConfigureWindowsPasswordsValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureWindowsPasswords)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureWindowsPasswordsValue(n), err
 }
 
 // CreateConfigureWindowsPasswords creates ./Device/Vendor/MSFT/Policy/Config/Security/ConfigureWindowsPasswords.
@@ -254,8 +260,8 @@ func (s *Security) GetConfigureWindowsPasswords(ctx context.Context) (int64, err
 //
 // Default: 2.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Security) CreateConfigureWindowsPasswords(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureWindowsPasswords, client.Int(value))
+func (s *Security) CreateConfigureWindowsPasswords(ctx context.Context, value ConfigureWindowsPasswordsValue) error {
+	return s.c.Add(ctx, URIConfigureWindowsPasswords, client.Int(int64(value)))
 }
 
 // UpdateConfigureWindowsPasswords updates ./Device/Vendor/MSFT/Policy/Config/Security/ConfigureWindowsPasswords.
@@ -263,8 +269,8 @@ func (s *Security) CreateConfigureWindowsPasswords(ctx context.Context, value in
 //
 // Default: 2.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Security) UpdateConfigureWindowsPasswords(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureWindowsPasswords, client.Int(value))
+func (s *Security) UpdateConfigureWindowsPasswords(ctx context.Context, value ConfigureWindowsPasswordsValue) error {
+	return s.c.Replace(ctx, URIConfigureWindowsPasswords, client.Int(int64(value)))
 }
 
 // DeleteConfigureWindowsPasswords deletes ./Device/Vendor/MSFT/Policy/Config/Security/ConfigureWindowsPasswords.
@@ -282,12 +288,13 @@ func (s *Security) DeleteConfigureWindowsPasswords(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Security) GetPreventAutomaticDeviceEncryptionForAzureADJoinedDevices(ctx context.Context) (int64, error) {
+func (s *Security) GetPreventAutomaticDeviceEncryptionForAzureADJoinedDevices(ctx context.Context) (PreventAutomaticDeviceEncryptionForAzureADJoinedDevicesValue, error) {
 	v, err := s.c.Get(ctx, URIPreventAutomaticDeviceEncryptionForAzureADJoinedDevices)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PreventAutomaticDeviceEncryptionForAzureADJoinedDevicesValue(n), err
 }
 
 // CreatePreventAutomaticDeviceEncryptionForAzureADJoinedDevices creates ./Device/Vendor/MSFT/Policy/Config/Security/PreventAutomaticDeviceEncryptionForAzureADJoinedDevices.
@@ -296,8 +303,8 @@ func (s *Security) GetPreventAutomaticDeviceEncryptionForAzureADJoinedDevices(ct
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Security) CreatePreventAutomaticDeviceEncryptionForAzureADJoinedDevices(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPreventAutomaticDeviceEncryptionForAzureADJoinedDevices, client.Int(value))
+func (s *Security) CreatePreventAutomaticDeviceEncryptionForAzureADJoinedDevices(ctx context.Context, value PreventAutomaticDeviceEncryptionForAzureADJoinedDevicesValue) error {
+	return s.c.Add(ctx, URIPreventAutomaticDeviceEncryptionForAzureADJoinedDevices, client.Int(int64(value)))
 }
 
 // UpdatePreventAutomaticDeviceEncryptionForAzureADJoinedDevices updates ./Device/Vendor/MSFT/Policy/Config/Security/PreventAutomaticDeviceEncryptionForAzureADJoinedDevices.
@@ -306,8 +313,8 @@ func (s *Security) CreatePreventAutomaticDeviceEncryptionForAzureADJoinedDevices
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Security) UpdatePreventAutomaticDeviceEncryptionForAzureADJoinedDevices(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPreventAutomaticDeviceEncryptionForAzureADJoinedDevices, client.Int(value))
+func (s *Security) UpdatePreventAutomaticDeviceEncryptionForAzureADJoinedDevices(ctx context.Context, value PreventAutomaticDeviceEncryptionForAzureADJoinedDevicesValue) error {
+	return s.c.Replace(ctx, URIPreventAutomaticDeviceEncryptionForAzureADJoinedDevices, client.Int(int64(value)))
 }
 
 // DeletePreventAutomaticDeviceEncryptionForAzureADJoinedDevices deletes ./Device/Vendor/MSFT/Policy/Config/Security/PreventAutomaticDeviceEncryptionForAzureADJoinedDevices.
@@ -325,12 +332,13 @@ func (s *Security) DeletePreventAutomaticDeviceEncryptionForAzureADJoinedDevices
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Security) GetRecoveryEnvironmentAuthentication(ctx context.Context) (int64, error) {
+func (s *Security) GetRecoveryEnvironmentAuthentication(ctx context.Context) (RecoveryEnvironmentAuthenticationValue, error) {
 	v, err := s.c.Get(ctx, URIRecoveryEnvironmentAuthentication)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return RecoveryEnvironmentAuthenticationValue(n), err
 }
 
 // CreateRecoveryEnvironmentAuthentication creates ./Device/Vendor/MSFT/Policy/Config/Security/RecoveryEnvironmentAuthentication.
@@ -338,8 +346,8 @@ func (s *Security) GetRecoveryEnvironmentAuthentication(ctx context.Context) (in
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Security) CreateRecoveryEnvironmentAuthentication(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIRecoveryEnvironmentAuthentication, client.Int(value))
+func (s *Security) CreateRecoveryEnvironmentAuthentication(ctx context.Context, value RecoveryEnvironmentAuthenticationValue) error {
+	return s.c.Add(ctx, URIRecoveryEnvironmentAuthentication, client.Int(int64(value)))
 }
 
 // UpdateRecoveryEnvironmentAuthentication updates ./Device/Vendor/MSFT/Policy/Config/Security/RecoveryEnvironmentAuthentication.
@@ -347,8 +355,8 @@ func (s *Security) CreateRecoveryEnvironmentAuthentication(ctx context.Context, 
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Security) UpdateRecoveryEnvironmentAuthentication(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIRecoveryEnvironmentAuthentication, client.Int(value))
+func (s *Security) UpdateRecoveryEnvironmentAuthentication(ctx context.Context, value RecoveryEnvironmentAuthenticationValue) error {
+	return s.c.Replace(ctx, URIRecoveryEnvironmentAuthentication, client.Int(int64(value)))
 }
 
 // DeleteRecoveryEnvironmentAuthentication deletes ./Device/Vendor/MSFT/Policy/Config/Security/RecoveryEnvironmentAuthentication.
@@ -366,12 +374,13 @@ func (s *Security) DeleteRecoveryEnvironmentAuthentication(ctx context.Context) 
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Security) GetRequireDeviceEncryption(ctx context.Context) (int64, error) {
+func (s *Security) GetRequireDeviceEncryption(ctx context.Context) (RequireDeviceEncryptionValue, error) {
 	v, err := s.c.Get(ctx, URIRequireDeviceEncryption)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return RequireDeviceEncryptionValue(n), err
 }
 
 // CreateRequireDeviceEncryption creates ./Device/Vendor/MSFT/Policy/Config/Security/RequireDeviceEncryption.
@@ -380,8 +389,8 @@ func (s *Security) GetRequireDeviceEncryption(ctx context.Context) (int64, error
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Security) CreateRequireDeviceEncryption(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIRequireDeviceEncryption, client.Int(value))
+func (s *Security) CreateRequireDeviceEncryption(ctx context.Context, value RequireDeviceEncryptionValue) error {
+	return s.c.Add(ctx, URIRequireDeviceEncryption, client.Int(int64(value)))
 }
 
 // UpdateRequireDeviceEncryption updates ./Device/Vendor/MSFT/Policy/Config/Security/RequireDeviceEncryption.
@@ -390,8 +399,8 @@ func (s *Security) CreateRequireDeviceEncryption(ctx context.Context, value int6
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Security) UpdateRequireDeviceEncryption(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIRequireDeviceEncryption, client.Int(value))
+func (s *Security) UpdateRequireDeviceEncryption(ctx context.Context, value RequireDeviceEncryptionValue) error {
+	return s.c.Replace(ctx, URIRequireDeviceEncryption, client.Int(int64(value)))
 }
 
 // DeleteRequireDeviceEncryption deletes ./Device/Vendor/MSFT/Policy/Config/Security/RequireDeviceEncryption.
@@ -410,12 +419,13 @@ func (s *Security) DeleteRequireDeviceEncryption(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Security) GetRequireProvisioningPackageSignature(ctx context.Context) (int64, error) {
+func (s *Security) GetRequireProvisioningPackageSignature(ctx context.Context) (RequireProvisioningPackageSignatureValue, error) {
 	v, err := s.c.Get(ctx, URIRequireProvisioningPackageSignature)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return RequireProvisioningPackageSignatureValue(n), err
 }
 
 // CreateRequireProvisioningPackageSignature creates ./Device/Vendor/MSFT/Policy/Config/Security/RequireProvisioningPackageSignature.
@@ -424,8 +434,8 @@ func (s *Security) GetRequireProvisioningPackageSignature(ctx context.Context) (
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Security) CreateRequireProvisioningPackageSignature(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIRequireProvisioningPackageSignature, client.Int(value))
+func (s *Security) CreateRequireProvisioningPackageSignature(ctx context.Context, value RequireProvisioningPackageSignatureValue) error {
+	return s.c.Add(ctx, URIRequireProvisioningPackageSignature, client.Int(int64(value)))
 }
 
 // UpdateRequireProvisioningPackageSignature updates ./Device/Vendor/MSFT/Policy/Config/Security/RequireProvisioningPackageSignature.
@@ -434,8 +444,8 @@ func (s *Security) CreateRequireProvisioningPackageSignature(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Security) UpdateRequireProvisioningPackageSignature(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIRequireProvisioningPackageSignature, client.Int(value))
+func (s *Security) UpdateRequireProvisioningPackageSignature(ctx context.Context, value RequireProvisioningPackageSignatureValue) error {
+	return s.c.Replace(ctx, URIRequireProvisioningPackageSignature, client.Int(int64(value)))
 }
 
 // DeleteRequireProvisioningPackageSignature deletes ./Device/Vendor/MSFT/Policy/Config/Security/RequireProvisioningPackageSignature.
@@ -459,12 +469,13 @@ func (s *Security) DeleteRequireProvisioningPackageSignature(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Security) GetRequireRetrieveHealthCertificateOnBoot(ctx context.Context) (int64, error) {
+func (s *Security) GetRequireRetrieveHealthCertificateOnBoot(ctx context.Context) (RequireRetrieveHealthCertificateOnBootValue, error) {
 	v, err := s.c.Get(ctx, URIRequireRetrieveHealthCertificateOnBoot)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return RequireRetrieveHealthCertificateOnBootValue(n), err
 }
 
 // CreateRequireRetrieveHealthCertificateOnBoot creates ./Device/Vendor/MSFT/Policy/Config/Security/RequireRetrieveHealthCertificateOnBoot.
@@ -478,8 +489,8 @@ func (s *Security) GetRequireRetrieveHealthCertificateOnBoot(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Security) CreateRequireRetrieveHealthCertificateOnBoot(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIRequireRetrieveHealthCertificateOnBoot, client.Int(value))
+func (s *Security) CreateRequireRetrieveHealthCertificateOnBoot(ctx context.Context, value RequireRetrieveHealthCertificateOnBootValue) error {
+	return s.c.Add(ctx, URIRequireRetrieveHealthCertificateOnBoot, client.Int(int64(value)))
 }
 
 // UpdateRequireRetrieveHealthCertificateOnBoot updates ./Device/Vendor/MSFT/Policy/Config/Security/RequireRetrieveHealthCertificateOnBoot.
@@ -493,8 +504,8 @@ func (s *Security) CreateRequireRetrieveHealthCertificateOnBoot(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Security) UpdateRequireRetrieveHealthCertificateOnBoot(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIRequireRetrieveHealthCertificateOnBoot, client.Int(value))
+func (s *Security) UpdateRequireRetrieveHealthCertificateOnBoot(ctx context.Context, value RequireRetrieveHealthCertificateOnBootValue) error {
+	return s.c.Replace(ctx, URIRequireRetrieveHealthCertificateOnBoot, client.Int(int64(value)))
 }
 
 // DeleteRequireRetrieveHealthCertificateOnBoot deletes ./Device/Vendor/MSFT/Policy/Config/Security/RequireRetrieveHealthCertificateOnBoot.

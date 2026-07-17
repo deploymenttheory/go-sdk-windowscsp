@@ -2,110 +2,155 @@
 
 package email2
 
-// AccountGUIDACCOUNTTYPE allowed values.
+// AccountGUIDACCOUNTTYPEValue — allowed values for the ACCOUNTTYPE node.
+type AccountGUIDACCOUNTTYPEValue string
+
 const (
 	// normal email
-	AccountGUIDACCOUNTTYPENormalEmail = "Email"
+	AccountGUIDACCOUNTTYPENormalEmail AccountGUIDACCOUNTTYPEValue = "Email"
 	// visual voice mail
-	AccountGUIDACCOUNTTYPEVisualVoiceMail = "VVM"
+	AccountGUIDACCOUNTTYPEVisualVoiceMail AccountGUIDACCOUNTTYPEValue = "VVM"
 )
 
-// AccountGUIDAUTHREQUIRED allowed values.
+// String returns the AccountGUIDACCOUNTTYPEValue value as a plain string.
+func (e AccountGUIDACCOUNTTYPEValue) String() string { return string(e) }
+
+// AccountGUIDAUTHREQUIREDValue — allowed values for the AUTHREQUIRED node.
+type AccountGUIDAUTHREQUIREDValue string
+
 const (
 	// Server authentication is not required.
-	AccountGUIDAUTHREQUIREDServerAuthenticationIsNotRequired = "0"
+	AccountGUIDAUTHREQUIREDServerAuthenticationIsNotRequired AccountGUIDAUTHREQUIREDValue = "0"
 	// Server authentication is required.
-	AccountGUIDAUTHREQUIREDServerAuthenticationIsRequired = "1"
+	AccountGUIDAUTHREQUIREDServerAuthenticationIsRequired AccountGUIDAUTHREQUIREDValue = "1"
 )
 
-// AccountGUIDDWNDAY allowed values.
+// String returns the AccountGUIDAUTHREQUIREDValue value as a plain string.
+func (e AccountGUIDAUTHREQUIREDValue) String() string { return string(e) }
+
+// AccountGUIDDWNDAYValue — allowed values for the DWNDAY node.
+type AccountGUIDDWNDAYValue string
+
 const (
 	// Specifies that all email currently on the server should be downloaded.
-	AccountGUIDDWNDAYSpecifiesThatAllEmailCurrentlyOn = "-1"
+	AccountGUIDDWNDAYSpecifiesThatAllEmailCurrentlyOn AccountGUIDDWNDAYValue = "-1"
 	// Specifies that 7 days’ worth of email should be downloaded.
-	AccountGUIDDWNDAYSpecifiesThat7DaysWorthOf = "7"
+	AccountGUIDDWNDAYSpecifiesThat7DaysWorthOf AccountGUIDDWNDAYValue = "7"
 	// Specifies that 14 days’ worth of email should be downloaded.
-	AccountGUIDDWNDAYSpecifiesThat14DaysWorthOf = "14"
+	AccountGUIDDWNDAYSpecifiesThat14DaysWorthOf AccountGUIDDWNDAYValue = "14"
 	// Specifies that 30 days’ worth of email should be downloaded.
-	AccountGUIDDWNDAYSpecifiesThat30DaysWorthOf = "30"
+	AccountGUIDDWNDAYSpecifiesThat30DaysWorthOf AccountGUIDDWNDAYValue = "30"
 	// Specifies that 90 days’ worth of email should be downloaded.
-	AccountGUIDDWNDAYSpecifiesThat90DaysWorthOf = "90"
+	AccountGUIDDWNDAYSpecifiesThat90DaysWorthOf AccountGUIDDWNDAYValue = "90"
 )
 
-// AccountGUIDKEEPMAX allowed values.
+// String returns the AccountGUIDDWNDAYValue value as a plain string.
+func (e AccountGUIDDWNDAYValue) String() string { return string(e) }
+
+// AccountGUIDKEEPMAXValue — allowed values for the KEEPMAX node.
+type AccountGUIDKEEPMAXValue string
+
 const (
 	// No limit is enforced
-	AccountGUIDKEEPMAXNoLimitIsEnforced = "-1"
+	AccountGUIDKEEPMAXNoLimitIsEnforced AccountGUIDKEEPMAXValue = "-1"
 	// No attachment is downloaded
-	AccountGUIDKEEPMAXNoAttachmentIsDownloaded = "0"
+	AccountGUIDKEEPMAXNoAttachmentIsDownloaded AccountGUIDKEEPMAXValue = "0"
 	// 25 KB
-	AccountGUIDKEEPMAXN25KB = "25"
+	AccountGUIDKEEPMAXN25KB AccountGUIDKEEPMAXValue = "25"
 	// 50 KB
-	AccountGUIDKEEPMAXN50KB = "50"
+	AccountGUIDKEEPMAXN50KB AccountGUIDKEEPMAXValue = "50"
 	// 100 KB
-	AccountGUIDKEEPMAXN100KB = "100"
+	AccountGUIDKEEPMAXN100KB AccountGUIDKEEPMAXValue = "100"
 	// 250 KB
-	AccountGUIDKEEPMAXN250KB = "250"
+	AccountGUIDKEEPMAXN250KB AccountGUIDKEEPMAXValue = "250"
 )
 
-// AccountGUIDSERVERDELETEACTION allowed values.
+// String returns the AccountGUIDKEEPMAXValue value as a plain string.
+func (e AccountGUIDKEEPMAXValue) String() string { return string(e) }
+
+// AccountGUIDSERVERDELETEACTIONValue — allowed values for the SERVERDELETEACTION node.
+type AccountGUIDSERVERDELETEACTIONValue string
+
 const (
 	// delete message on the server
-	AccountGUIDSERVERDELETEACTIONDeleteMessageOnTheServer = "1"
+	AccountGUIDSERVERDELETEACTIONDeleteMessageOnTheServer AccountGUIDSERVERDELETEACTIONValue = "1"
 	// keep the message on the server (delete to the Trash folder).
-	AccountGUIDSERVERDELETEACTIONKeepTheMessageOnTheServer = "2"
+	AccountGUIDSERVERDELETEACTIONKeepTheMessageOnTheServer AccountGUIDSERVERDELETEACTIONValue = "2"
 )
 
-// AccountGUIDSMTPALTENABLED allowed values.
+// String returns the AccountGUIDSERVERDELETEACTIONValue value as a plain string.
+func (e AccountGUIDSERVERDELETEACTIONValue) String() string { return string(e) }
+
+// AccountGUIDSMTPALTENABLEDValue — allowed values for the SMTPALTENABLED node.
+type AccountGUIDSMTPALTENABLEDValue string
+
 const (
 	// The user's alternate SMTP email account is disabled.
-	AccountGUIDSMTPALTENABLEDTheUserSAlternateSMTPEmailAccount = "0"
+	AccountGUIDSMTPALTENABLEDTheUserSAlternateSMTPEmailAccount AccountGUIDSMTPALTENABLEDValue = "0"
 	// The user's alternate SMTP email account is enabled.
-	AccountGUIDSMTPALTENABLEDTheUserSAlternateSMTPEmailAccount2 = "1"
+	AccountGUIDSMTPALTENABLEDTheUserSAlternateSMTPEmailAccount2 AccountGUIDSMTPALTENABLEDValue = "1"
 )
 
-// AccountGUIDSYNCINGCONTENTTYPES allowed values.
+// String returns the AccountGUIDSMTPALTENABLEDValue value as a plain string.
+func (e AccountGUIDSMTPALTENABLEDValue) String() string { return string(e) }
+
+// AccountGUIDSYNCINGCONTENTTYPESValue — allowed values for the SYNCINGCONTENTTYPES node.
+type AccountGUIDSYNCINGCONTENTTYPESValue string
+
 const (
 	// No data
-	AccountGUIDSYNCINGCONTENTTYPESNoData = "0x0"
+	AccountGUIDSYNCINGCONTENTTYPESNoData AccountGUIDSYNCINGCONTENTTYPESValue = "0x0"
 	// Contacts
-	AccountGUIDSYNCINGCONTENTTYPESContacts = "0x1"
+	AccountGUIDSYNCINGCONTENTTYPESContacts AccountGUIDSYNCINGCONTENTTYPESValue = "0x1"
 	// Mail
-	AccountGUIDSYNCINGCONTENTTYPESMail = "0x2"
+	AccountGUIDSYNCINGCONTENTTYPESMail AccountGUIDSYNCINGCONTENTTYPESValue = "0x2"
 	// Appointments
-	AccountGUIDSYNCINGCONTENTTYPESAppointments = "0x4"
+	AccountGUIDSYNCINGCONTENTTYPESAppointments AccountGUIDSYNCINGCONTENTTYPESValue = "0x4"
 	// Tasks
-	AccountGUIDSYNCINGCONTENTTYPESTasks = "0x8"
+	AccountGUIDSYNCINGCONTENTTYPESTasks AccountGUIDSYNCINGCONTENTTYPESValue = "0x8"
 	// Notes
-	AccountGUIDSYNCINGCONTENTTYPESNotes = "0x10"
+	AccountGUIDSYNCINGCONTENTTYPESNotes AccountGUIDSYNCINGCONTENTTYPESValue = "0x10"
 	// Feeds
-	AccountGUIDSYNCINGCONTENTTYPESFeeds = "0x60"
+	AccountGUIDSYNCINGCONTENTTYPESFeeds AccountGUIDSYNCINGCONTENTTYPESValue = "0x60"
 	// Network Photo
-	AccountGUIDSYNCINGCONTENTTYPESNetworkPhoto = "0x180"
+	AccountGUIDSYNCINGCONTENTTYPESNetworkPhoto AccountGUIDSYNCINGCONTENTTYPESValue = "0x180"
 	// Group and room
-	AccountGUIDSYNCINGCONTENTTYPESGroupAndRoom = "0x200"
+	AccountGUIDSYNCINGCONTENTTYPESGroupAndRoom AccountGUIDSYNCINGCONTENTTYPESValue = "0x200"
 	// Chat
-	AccountGUIDSYNCINGCONTENTTYPESChat = "0x400"
+	AccountGUIDSYNCINGCONTENTTYPESChat AccountGUIDSYNCINGCONTENTTYPESValue = "0x400"
 	// Email Recipient Email
-	AccountGUIDSYNCINGCONTENTTYPESEmailRecipientEmail = "0x800"
+	AccountGUIDSYNCINGCONTENTTYPESEmailRecipientEmail AccountGUIDSYNCINGCONTENTTYPESValue = "0x800"
 	// Server Link
-	AccountGUIDSYNCINGCONTENTTYPESServerLink = "0x1000"
+	AccountGUIDSYNCINGCONTENTTYPESServerLink AccountGUIDSYNCINGCONTENTTYPESValue = "0x1000"
 	// All items
-	AccountGUIDSYNCINGCONTENTTYPESAllItems = "0xffffffff"
+	AccountGUIDSYNCINGCONTENTTYPESAllItems AccountGUIDSYNCINGCONTENTTYPESValue = "0xffffffff"
 )
 
-// AccountGUIDTAGPROPSN8128000B allowed values.
+// String returns the AccountGUIDSYNCINGCONTENTTYPESValue value as a plain string.
+func (e AccountGUIDSYNCINGCONTENTTYPESValue) String() string { return string(e) }
+
+// AccountGUIDTAGPROPSN8128000BValue — allowed values for the 8128000B node.
+type AccountGUIDTAGPROPSN8128000BValue string
+
 const (
 	// SSL is not required.
-	AccountGUIDTAGPROPSN8128000BSSLIsNotRequired = "0"
+	AccountGUIDTAGPROPSN8128000BSSLIsNotRequired AccountGUIDTAGPROPSN8128000BValue = "0"
 	// SSL is required.
-	AccountGUIDTAGPROPSN8128000BSSLIsRequired = "1"
+	AccountGUIDTAGPROPSN8128000BSSLIsRequired AccountGUIDTAGPROPSN8128000BValue = "1"
 )
 
-// AccountGUIDTAGPROPSN812C000B allowed values.
+// String returns the AccountGUIDTAGPROPSN8128000BValue value as a plain string.
+func (e AccountGUIDTAGPROPSN8128000BValue) String() string { return string(e) }
+
+// AccountGUIDTAGPROPSN812C000BValue — allowed values for the 812C000B node.
+type AccountGUIDTAGPROPSN812C000BValue string
+
 const (
 	// SSL is not required.
-	AccountGUIDTAGPROPSN812C000BSSLIsNotRequired = "0"
+	AccountGUIDTAGPROPSN812C000BSSLIsNotRequired AccountGUIDTAGPROPSN812C000BValue = "0"
 	// SSL is required.
-	AccountGUIDTAGPROPSN812C000BSSLIsRequired = "1"
+	AccountGUIDTAGPROPSN812C000BSSLIsRequired AccountGUIDTAGPROPSN812C000BValue = "1"
 )
+
+// String returns the AccountGUIDTAGPROPSN812C000BValue value as a plain string.
+func (e AccountGUIDTAGPROPSN812C000BValue) String() string { return string(e) }

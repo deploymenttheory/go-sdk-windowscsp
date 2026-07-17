@@ -2,10 +2,29 @@
 
 package mixedreality_user
 
-// AutoUnlock allowed values.
+import (
+	"fmt"
+)
+
+// AutoUnlockValue — allowed values for the AutoUnlock node.
+type AutoUnlockValue int64
+
 const (
 	// User will be prompted for credentials.
-	AutoUnlockUserWillBePromptedForCredentials int64 = 0
+	AutoUnlockUserWillBePromptedForCredentials AutoUnlockValue = 0
 	// User will not be prompted for credentials.
-	AutoUnlockUserWillNotBePromptedFor int64 = 1
+	AutoUnlockUserWillNotBePromptedFor AutoUnlockValue = 1
 )
+
+// String returns the AutoUnlockValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AutoUnlockValue) String() string {
+	switch e {
+	case AutoUnlockUserWillBePromptedForCredentials:
+		return "AutoUnlockUserWillBePromptedForCredentials"
+	case AutoUnlockUserWillNotBePromptedFor:
+		return "AutoUnlockUserWillNotBePromptedFor"
+	default:
+		return fmt.Sprintf("AutoUnlockValue(%d)", int64(e))
+	}
+}

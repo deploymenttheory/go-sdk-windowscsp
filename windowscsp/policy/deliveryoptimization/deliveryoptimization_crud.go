@@ -58,12 +58,13 @@ func (s *DeliveryOptimization) DeleteDOAbsoluteMaxCacheSize(ctx context.Context)
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *DeliveryOptimization) GetDOAllowVPNPeerCaching(ctx context.Context) (int64, error) {
+func (s *DeliveryOptimization) GetDOAllowVPNPeerCaching(ctx context.Context) (DOAllowVPNPeerCachingValue, error) {
 	v, err := s.c.Get(ctx, URIDOAllowVPNPeerCaching)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DOAllowVPNPeerCachingValue(n), err
 }
 
 // CreateDOAllowVPNPeerCaching creates ./Device/Vendor/MSFT/Policy/Config/DeliveryOptimization/DOAllowVPNPeerCaching.
@@ -72,8 +73,8 @@ func (s *DeliveryOptimization) GetDOAllowVPNPeerCaching(ctx context.Context) (in
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *DeliveryOptimization) CreateDOAllowVPNPeerCaching(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDOAllowVPNPeerCaching, client.Int(value))
+func (s *DeliveryOptimization) CreateDOAllowVPNPeerCaching(ctx context.Context, value DOAllowVPNPeerCachingValue) error {
+	return s.c.Add(ctx, URIDOAllowVPNPeerCaching, client.Int(int64(value)))
 }
 
 // UpdateDOAllowVPNPeerCaching updates ./Device/Vendor/MSFT/Policy/Config/DeliveryOptimization/DOAllowVPNPeerCaching.
@@ -82,8 +83,8 @@ func (s *DeliveryOptimization) CreateDOAllowVPNPeerCaching(ctx context.Context, 
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *DeliveryOptimization) UpdateDOAllowVPNPeerCaching(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDOAllowVPNPeerCaching, client.Int(value))
+func (s *DeliveryOptimization) UpdateDOAllowVPNPeerCaching(ctx context.Context, value DOAllowVPNPeerCachingValue) error {
+	return s.c.Replace(ctx, URIDOAllowVPNPeerCaching, client.Int(int64(value)))
 }
 
 // DeleteDOAllowVPNPeerCaching deletes ./Device/Vendor/MSFT/Policy/Config/DeliveryOptimization/DOAllowVPNPeerCaching.
@@ -145,12 +146,13 @@ func (s *DeliveryOptimization) DeleteDOCacheHost(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *DeliveryOptimization) GetDOCacheHostSource(ctx context.Context) (int64, error) {
+func (s *DeliveryOptimization) GetDOCacheHostSource(ctx context.Context) (DOCacheHostSourceValue, error) {
 	v, err := s.c.Get(ctx, URIDOCacheHostSource)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DOCacheHostSourceValue(n), err
 }
 
 // CreateDOCacheHostSource creates ./Device/Vendor/MSFT/Policy/Config/DeliveryOptimization/DOCacheHostSource.
@@ -158,8 +160,8 @@ func (s *DeliveryOptimization) GetDOCacheHostSource(ctx context.Context) (int64,
 //
 // Default: 0.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *DeliveryOptimization) CreateDOCacheHostSource(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDOCacheHostSource, client.Int(value))
+func (s *DeliveryOptimization) CreateDOCacheHostSource(ctx context.Context, value DOCacheHostSourceValue) error {
+	return s.c.Add(ctx, URIDOCacheHostSource, client.Int(int64(value)))
 }
 
 // UpdateDOCacheHostSource updates ./Device/Vendor/MSFT/Policy/Config/DeliveryOptimization/DOCacheHostSource.
@@ -167,8 +169,8 @@ func (s *DeliveryOptimization) CreateDOCacheHostSource(ctx context.Context, valu
 //
 // Default: 0.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *DeliveryOptimization) UpdateDOCacheHostSource(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDOCacheHostSource, client.Int(value))
+func (s *DeliveryOptimization) UpdateDOCacheHostSource(ctx context.Context, value DOCacheHostSourceValue) error {
+	return s.c.Replace(ctx, URIDOCacheHostSource, client.Int(int64(value)))
 }
 
 // DeleteDOCacheHostSource deletes ./Device/Vendor/MSFT/Policy/Config/DeliveryOptimization/DOCacheHostSource.
@@ -364,12 +366,13 @@ func (s *DeliveryOptimization) DeleteDODelayForegroundDownloadFromHttp(ctx conte
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.22621.2361 (CSP v11.0).
-func (s *DeliveryOptimization) GetDODisallowCacheServerDownloadsOnVPN(ctx context.Context) (int64, error) {
+func (s *DeliveryOptimization) GetDODisallowCacheServerDownloadsOnVPN(ctx context.Context) (DODisallowCacheServerDownloadsOnVPNValue, error) {
 	v, err := s.c.Get(ctx, URIDODisallowCacheServerDownloadsOnVPN)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DODisallowCacheServerDownloadsOnVPNValue(n), err
 }
 
 // CreateDODisallowCacheServerDownloadsOnVPN creates ./Device/Vendor/MSFT/Policy/Config/DeliveryOptimization/DODisallowCacheServerDownloadsOnVPN.
@@ -380,8 +383,8 @@ func (s *DeliveryOptimization) GetDODisallowCacheServerDownloadsOnVPN(ctx contex
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.22621.2361 (CSP v11.0).
-func (s *DeliveryOptimization) CreateDODisallowCacheServerDownloadsOnVPN(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDODisallowCacheServerDownloadsOnVPN, client.Int(value))
+func (s *DeliveryOptimization) CreateDODisallowCacheServerDownloadsOnVPN(ctx context.Context, value DODisallowCacheServerDownloadsOnVPNValue) error {
+	return s.c.Add(ctx, URIDODisallowCacheServerDownloadsOnVPN, client.Int(int64(value)))
 }
 
 // UpdateDODisallowCacheServerDownloadsOnVPN updates ./Device/Vendor/MSFT/Policy/Config/DeliveryOptimization/DODisallowCacheServerDownloadsOnVPN.
@@ -392,8 +395,8 @@ func (s *DeliveryOptimization) CreateDODisallowCacheServerDownloadsOnVPN(ctx con
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.22621.2361 (CSP v11.0).
-func (s *DeliveryOptimization) UpdateDODisallowCacheServerDownloadsOnVPN(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDODisallowCacheServerDownloadsOnVPN, client.Int(value))
+func (s *DeliveryOptimization) UpdateDODisallowCacheServerDownloadsOnVPN(ctx context.Context, value DODisallowCacheServerDownloadsOnVPNValue) error {
+	return s.c.Replace(ctx, URIDODisallowCacheServerDownloadsOnVPN, client.Int(int64(value)))
 }
 
 // DeleteDODisallowCacheServerDownloadsOnVPN deletes ./Device/Vendor/MSFT/Policy/Config/DeliveryOptimization/DODisallowCacheServerDownloadsOnVPN.
@@ -414,12 +417,13 @@ func (s *DeliveryOptimization) DeleteDODisallowCacheServerDownloadsOnVPN(ctx con
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *DeliveryOptimization) GetDODownloadMode(ctx context.Context) (int64, error) {
+func (s *DeliveryOptimization) GetDODownloadMode(ctx context.Context) (DODownloadModeValue, error) {
 	v, err := s.c.Get(ctx, URIDODownloadMode)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DODownloadModeValue(n), err
 }
 
 // CreateDODownloadMode creates ./Device/Vendor/MSFT/Policy/Config/DeliveryOptimization/DODownloadMode.
@@ -428,8 +432,8 @@ func (s *DeliveryOptimization) GetDODownloadMode(ctx context.Context) (int64, er
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *DeliveryOptimization) CreateDODownloadMode(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDODownloadMode, client.Int(value))
+func (s *DeliveryOptimization) CreateDODownloadMode(ctx context.Context, value DODownloadModeValue) error {
+	return s.c.Add(ctx, URIDODownloadMode, client.Int(int64(value)))
 }
 
 // UpdateDODownloadMode updates ./Device/Vendor/MSFT/Policy/Config/DeliveryOptimization/DODownloadMode.
@@ -438,8 +442,8 @@ func (s *DeliveryOptimization) CreateDODownloadMode(ctx context.Context, value i
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *DeliveryOptimization) UpdateDODownloadMode(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDODownloadMode, client.Int(value))
+func (s *DeliveryOptimization) UpdateDODownloadMode(ctx context.Context, value DODownloadModeValue) error {
+	return s.c.Replace(ctx, URIDODownloadMode, client.Int(int64(value)))
 }
 
 // DeleteDODownloadMode deletes ./Device/Vendor/MSFT/Policy/Config/DeliveryOptimization/DODownloadMode.
@@ -493,12 +497,13 @@ func (s *DeliveryOptimization) DeleteDOGroupId(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *DeliveryOptimization) GetDOGroupIdSource(ctx context.Context) (int64, error) {
+func (s *DeliveryOptimization) GetDOGroupIdSource(ctx context.Context) (DOGroupIdSourceValue, error) {
 	v, err := s.c.Get(ctx, URIDOGroupIdSource)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DOGroupIdSourceValue(n), err
 }
 
 // CreateDOGroupIdSource creates ./Device/Vendor/MSFT/Policy/Config/DeliveryOptimization/DOGroupIdSource.
@@ -506,8 +511,8 @@ func (s *DeliveryOptimization) GetDOGroupIdSource(ctx context.Context) (int64, e
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *DeliveryOptimization) CreateDOGroupIdSource(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDOGroupIdSource, client.Int(value))
+func (s *DeliveryOptimization) CreateDOGroupIdSource(ctx context.Context, value DOGroupIdSourceValue) error {
+	return s.c.Add(ctx, URIDOGroupIdSource, client.Int(int64(value)))
 }
 
 // UpdateDOGroupIdSource updates ./Device/Vendor/MSFT/Policy/Config/DeliveryOptimization/DOGroupIdSource.
@@ -515,8 +520,8 @@ func (s *DeliveryOptimization) CreateDOGroupIdSource(ctx context.Context, value 
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *DeliveryOptimization) UpdateDOGroupIdSource(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDOGroupIdSource, client.Int(value))
+func (s *DeliveryOptimization) UpdateDOGroupIdSource(ctx context.Context, value DOGroupIdSourceValue) error {
+	return s.c.Replace(ctx, URIDOGroupIdSource, client.Int(int64(value)))
 }
 
 // DeleteDOGroupIdSource deletes ./Device/Vendor/MSFT/Policy/Config/DeliveryOptimization/DOGroupIdSource.
@@ -1086,12 +1091,13 @@ func (s *DeliveryOptimization) DeleteDOPercentageMaxForegroundBandwidth(ctx cont
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *DeliveryOptimization) GetDORestrictPeerSelectionBy(ctx context.Context) (int64, error) {
+func (s *DeliveryOptimization) GetDORestrictPeerSelectionBy(ctx context.Context) (DORestrictPeerSelectionByValue, error) {
 	v, err := s.c.Get(ctx, URIDORestrictPeerSelectionBy)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DORestrictPeerSelectionByValue(n), err
 }
 
 // CreateDORestrictPeerSelectionBy creates ./Device/Vendor/MSFT/Policy/Config/DeliveryOptimization/DORestrictPeerSelectionBy.
@@ -1100,8 +1106,8 @@ func (s *DeliveryOptimization) GetDORestrictPeerSelectionBy(ctx context.Context)
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *DeliveryOptimization) CreateDORestrictPeerSelectionBy(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDORestrictPeerSelectionBy, client.Int(value))
+func (s *DeliveryOptimization) CreateDORestrictPeerSelectionBy(ctx context.Context, value DORestrictPeerSelectionByValue) error {
+	return s.c.Add(ctx, URIDORestrictPeerSelectionBy, client.Int(int64(value)))
 }
 
 // UpdateDORestrictPeerSelectionBy updates ./Device/Vendor/MSFT/Policy/Config/DeliveryOptimization/DORestrictPeerSelectionBy.
@@ -1110,8 +1116,8 @@ func (s *DeliveryOptimization) CreateDORestrictPeerSelectionBy(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *DeliveryOptimization) UpdateDORestrictPeerSelectionBy(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDORestrictPeerSelectionBy, client.Int(value))
+func (s *DeliveryOptimization) UpdateDORestrictPeerSelectionBy(ctx context.Context, value DORestrictPeerSelectionByValue) error {
+	return s.c.Replace(ctx, URIDORestrictPeerSelectionBy, client.Int(int64(value)))
 }
 
 // DeleteDORestrictPeerSelectionBy deletes ./Device/Vendor/MSFT/Policy/Config/DeliveryOptimization/DORestrictPeerSelectionBy.

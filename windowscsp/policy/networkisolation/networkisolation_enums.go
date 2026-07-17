@@ -2,18 +2,52 @@
 
 package networkisolation
 
-// EnterpriseIPRangesAreAuthoritative allowed values.
-const (
-	// Enable
-	EnterpriseIPRangesAreAuthoritativeEnable int64 = 1
-	// Disable
-	EnterpriseIPRangesAreAuthoritativeDisable int64 = 0
+import (
+	"fmt"
 )
 
-// EnterpriseProxyServersAreAuthoritative allowed values.
+// EnterpriseIPRangesAreAuthoritativeValue — allowed values for the EnterpriseIPRangesAreAuthoritative node.
+type EnterpriseIPRangesAreAuthoritativeValue int64
+
 const (
 	// Enable
-	EnterpriseProxyServersAreAuthoritativeEnable int64 = 1
+	EnterpriseIPRangesAreAuthoritativeEnable EnterpriseIPRangesAreAuthoritativeValue = 1
 	// Disable
-	EnterpriseProxyServersAreAuthoritativeDisable int64 = 0
+	EnterpriseIPRangesAreAuthoritativeDisable EnterpriseIPRangesAreAuthoritativeValue = 0
 )
+
+// String returns the EnterpriseIPRangesAreAuthoritativeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnterpriseIPRangesAreAuthoritativeValue) String() string {
+	switch e {
+	case EnterpriseIPRangesAreAuthoritativeEnable:
+		return "EnterpriseIPRangesAreAuthoritativeEnable"
+	case EnterpriseIPRangesAreAuthoritativeDisable:
+		return "EnterpriseIPRangesAreAuthoritativeDisable"
+	default:
+		return fmt.Sprintf("EnterpriseIPRangesAreAuthoritativeValue(%d)", int64(e))
+	}
+}
+
+// EnterpriseProxyServersAreAuthoritativeValue — allowed values for the EnterpriseProxyServersAreAuthoritative node.
+type EnterpriseProxyServersAreAuthoritativeValue int64
+
+const (
+	// Enable
+	EnterpriseProxyServersAreAuthoritativeEnable EnterpriseProxyServersAreAuthoritativeValue = 1
+	// Disable
+	EnterpriseProxyServersAreAuthoritativeDisable EnterpriseProxyServersAreAuthoritativeValue = 0
+)
+
+// String returns the EnterpriseProxyServersAreAuthoritativeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnterpriseProxyServersAreAuthoritativeValue) String() string {
+	switch e {
+	case EnterpriseProxyServersAreAuthoritativeEnable:
+		return "EnterpriseProxyServersAreAuthoritativeEnable"
+	case EnterpriseProxyServersAreAuthoritativeDisable:
+		return "EnterpriseProxyServersAreAuthoritativeDisable"
+	default:
+		return fmt.Sprintf("EnterpriseProxyServersAreAuthoritativeValue(%d)", int64(e))
+	}
+}

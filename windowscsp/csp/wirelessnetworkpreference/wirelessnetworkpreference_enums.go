@@ -2,27 +2,76 @@
 
 package wirelessnetworkpreference
 
-// ConnectionProfilesConnectionProfileIDStayConnected allowed values.
+import (
+	"fmt"
+)
+
+// ConnectionProfilesConnectionProfileIDStayConnectedValue — allowed values for the StayConnected node.
+type ConnectionProfilesConnectionProfileIDStayConnectedValue int64
+
 const (
 	// Default network discovery behavior.
-	ConnectionProfilesConnectionProfileIDStayConnectedDefaultNetworkDiscoveryBehavior int64 = 0
+	ConnectionProfilesConnectionProfileIDStayConnectedDefaultNetworkDiscoveryBehavior ConnectionProfilesConnectionProfileIDStayConnectedValue = 0
 	// Once connected to this network, try to stay connected.
-	ConnectionProfilesConnectionProfileIDStayConnectedOnceConnectedToThisNetworkTry int64 = 1
+	ConnectionProfilesConnectionProfileIDStayConnectedOnceConnectedToThisNetworkTry ConnectionProfilesConnectionProfileIDStayConnectedValue = 1
 )
 
-// ConnectionProfilesConnectionProfileIDWirelessType allowed values.
+// String returns the ConnectionProfilesConnectionProfileIDStayConnectedValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConnectionProfilesConnectionProfileIDStayConnectedValue) String() string {
+	switch e {
+	case ConnectionProfilesConnectionProfileIDStayConnectedDefaultNetworkDiscoveryBehavior:
+		return "ConnectionProfilesConnectionProfileIDStayConnectedDefaultNetworkDiscoveryBehavior"
+	case ConnectionProfilesConnectionProfileIDStayConnectedOnceConnectedToThisNetworkTry:
+		return "ConnectionProfilesConnectionProfileIDStayConnectedOnceConnectedToThisNetworkTry"
+	default:
+		return fmt.Sprintf("ConnectionProfilesConnectionProfileIDStayConnectedValue(%d)", int64(e))
+	}
+}
+
+// ConnectionProfilesConnectionProfileIDWirelessTypeValue — allowed values for the WirelessType node.
+type ConnectionProfilesConnectionProfileIDWirelessTypeValue int64
+
 const (
 	// Cellular
-	ConnectionProfilesConnectionProfileIDWirelessTypeCellular int64 = 0
+	ConnectionProfilesConnectionProfileIDWirelessTypeCellular ConnectionProfilesConnectionProfileIDWirelessTypeValue = 0
 	// Wi-Fi
-	ConnectionProfilesConnectionProfileIDWirelessTypeWiFi int64 = 1
+	ConnectionProfilesConnectionProfileIDWirelessTypeWiFi ConnectionProfilesConnectionProfileIDWirelessTypeValue = 1
 )
 
-// ParametersCellularParametersNetworkDiscoveryOption allowed values.
+// String returns the ConnectionProfilesConnectionProfileIDWirelessTypeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConnectionProfilesConnectionProfileIDWirelessTypeValue) String() string {
+	switch e {
+	case ConnectionProfilesConnectionProfileIDWirelessTypeCellular:
+		return "ConnectionProfilesConnectionProfileIDWirelessTypeCellular"
+	case ConnectionProfilesConnectionProfileIDWirelessTypeWiFi:
+		return "ConnectionProfilesConnectionProfileIDWirelessTypeWiFi"
+	default:
+		return fmt.Sprintf("ConnectionProfilesConnectionProfileIDWirelessTypeValue(%d)", int64(e))
+	}
+}
+
+// ParametersCellularParametersNetworkDiscoveryOptionValue — allowed values for the NetworkDiscoveryOption node.
+type ParametersCellularParametersNetworkDiscoveryOptionValue int64
+
 const (
 	// No network scan will be performed -- rather, registration and connection will be attempted with
 	// each eSIM profile in descending order of preference.
-	ParametersCellularParametersNetworkDiscoveryOptionNoNetworkScanWillBePerformed int64 = 0
+	ParametersCellularParametersNetworkDiscoveryOptionNoNetworkScanWillBePerformed ParametersCellularParametersNetworkDiscoveryOptionValue = 0
 	// Network scan will be performed using the current active eSIM profile.
-	ParametersCellularParametersNetworkDiscoveryOptionNetworkScanWillBePerformedUsing int64 = 1
+	ParametersCellularParametersNetworkDiscoveryOptionNetworkScanWillBePerformedUsing ParametersCellularParametersNetworkDiscoveryOptionValue = 1
 )
+
+// String returns the ParametersCellularParametersNetworkDiscoveryOptionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ParametersCellularParametersNetworkDiscoveryOptionValue) String() string {
+	switch e {
+	case ParametersCellularParametersNetworkDiscoveryOptionNoNetworkScanWillBePerformed:
+		return "ParametersCellularParametersNetworkDiscoveryOptionNoNetworkScanWillBePerformed"
+	case ParametersCellularParametersNetworkDiscoveryOptionNetworkScanWillBePerformedUsing:
+		return "ParametersCellularParametersNetworkDiscoveryOptionNetworkScanWillBePerformedUsing"
+	default:
+		return fmt.Sprintf("ParametersCellularParametersNetworkDiscoveryOptionValue(%d)", int64(e))
+	}
+}

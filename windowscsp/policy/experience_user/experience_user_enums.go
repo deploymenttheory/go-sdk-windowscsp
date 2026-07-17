@@ -2,78 +2,221 @@
 
 package experience_user
 
-// AllowScreenRecorder allowed values.
+import (
+	"fmt"
+)
+
+// AllowScreenRecorderValue — allowed values for the AllowScreenRecorder node.
+type AllowScreenRecorderValue int64
+
 const (
 	// Disabled.
-	AllowScreenRecorderDisabled int64 = 0
+	AllowScreenRecorderDisabled AllowScreenRecorderValue = 0
 	// Enabled.
-	AllowScreenRecorderEnabled int64 = 1
+	AllowScreenRecorderEnabled AllowScreenRecorderValue = 1
 )
 
-// AllowTailoredExperiencesWithDiagnosticData allowed values.
+// String returns the AllowScreenRecorderValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowScreenRecorderValue) String() string {
+	switch e {
+	case AllowScreenRecorderDisabled:
+		return "AllowScreenRecorderDisabled"
+	case AllowScreenRecorderEnabled:
+		return "AllowScreenRecorderEnabled"
+	default:
+		return fmt.Sprintf("AllowScreenRecorderValue(%d)", int64(e))
+	}
+}
+
+// AllowTailoredExperiencesWithDiagnosticDataValue — allowed values for the AllowTailoredExperiencesWithDiagnosticData node.
+type AllowTailoredExperiencesWithDiagnosticDataValue int64
+
 const (
 	// Not allowed.
-	AllowTailoredExperiencesWithDiagnosticDataNotAllowed int64 = 0
+	AllowTailoredExperiencesWithDiagnosticDataNotAllowed AllowTailoredExperiencesWithDiagnosticDataValue = 0
 	// Allowed.
-	AllowTailoredExperiencesWithDiagnosticDataAllowed int64 = 1
+	AllowTailoredExperiencesWithDiagnosticDataAllowed AllowTailoredExperiencesWithDiagnosticDataValue = 1
 )
 
-// AllowThirdPartySuggestionsInWindowsSpotlight allowed values.
+// String returns the AllowTailoredExperiencesWithDiagnosticDataValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowTailoredExperiencesWithDiagnosticDataValue) String() string {
+	switch e {
+	case AllowTailoredExperiencesWithDiagnosticDataNotAllowed:
+		return "AllowTailoredExperiencesWithDiagnosticDataNotAllowed"
+	case AllowTailoredExperiencesWithDiagnosticDataAllowed:
+		return "AllowTailoredExperiencesWithDiagnosticDataAllowed"
+	default:
+		return fmt.Sprintf("AllowTailoredExperiencesWithDiagnosticDataValue(%d)", int64(e))
+	}
+}
+
+// AllowThirdPartySuggestionsInWindowsSpotlightValue — allowed values for the AllowThirdPartySuggestionsInWindowsSpotlight node.
+type AllowThirdPartySuggestionsInWindowsSpotlightValue int64
+
 const (
 	// Third-party suggestions not allowed.
-	AllowThirdPartySuggestionsInWindowsSpotlightThirdPartySuggestionsNotAllowed int64 = 0
+	AllowThirdPartySuggestionsInWindowsSpotlightThirdPartySuggestionsNotAllowed AllowThirdPartySuggestionsInWindowsSpotlightValue = 0
 	// Third-party suggestions allowed.
-	AllowThirdPartySuggestionsInWindowsSpotlightThirdPartySuggestionsAllowed int64 = 1
+	AllowThirdPartySuggestionsInWindowsSpotlightThirdPartySuggestionsAllowed AllowThirdPartySuggestionsInWindowsSpotlightValue = 1
 )
 
-// AllowWindowsSpotlight allowed values.
+// String returns the AllowThirdPartySuggestionsInWindowsSpotlightValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowThirdPartySuggestionsInWindowsSpotlightValue) String() string {
+	switch e {
+	case AllowThirdPartySuggestionsInWindowsSpotlightThirdPartySuggestionsNotAllowed:
+		return "AllowThirdPartySuggestionsInWindowsSpotlightThirdPartySuggestionsNotAllowed"
+	case AllowThirdPartySuggestionsInWindowsSpotlightThirdPartySuggestionsAllowed:
+		return "AllowThirdPartySuggestionsInWindowsSpotlightThirdPartySuggestionsAllowed"
+	default:
+		return fmt.Sprintf("AllowThirdPartySuggestionsInWindowsSpotlightValue(%d)", int64(e))
+	}
+}
+
+// AllowWindowsSpotlightValue — allowed values for the AllowWindowsSpotlight node.
+type AllowWindowsSpotlightValue int64
+
 const (
 	// Not allowed.
-	AllowWindowsSpotlightNotAllowed int64 = 0
+	AllowWindowsSpotlightNotAllowed AllowWindowsSpotlightValue = 0
 	// Allowed.
-	AllowWindowsSpotlightAllowed int64 = 1
+	AllowWindowsSpotlightAllowed AllowWindowsSpotlightValue = 1
 )
 
-// AllowWindowsSpotlightOnActionCenter allowed values.
+// String returns the AllowWindowsSpotlightValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowWindowsSpotlightValue) String() string {
+	switch e {
+	case AllowWindowsSpotlightNotAllowed:
+		return "AllowWindowsSpotlightNotAllowed"
+	case AllowWindowsSpotlightAllowed:
+		return "AllowWindowsSpotlightAllowed"
+	default:
+		return fmt.Sprintf("AllowWindowsSpotlightValue(%d)", int64(e))
+	}
+}
+
+// AllowWindowsSpotlightOnActionCenterValue — allowed values for the AllowWindowsSpotlightOnActionCenter node.
+type AllowWindowsSpotlightOnActionCenterValue int64
+
 const (
 	// Not allowed.
-	AllowWindowsSpotlightOnActionCenterNotAllowed int64 = 0
+	AllowWindowsSpotlightOnActionCenterNotAllowed AllowWindowsSpotlightOnActionCenterValue = 0
 	// Allowed.
-	AllowWindowsSpotlightOnActionCenterAllowed int64 = 1
+	AllowWindowsSpotlightOnActionCenterAllowed AllowWindowsSpotlightOnActionCenterValue = 1
 )
 
-// AllowWindowsSpotlightOnSettings allowed values.
+// String returns the AllowWindowsSpotlightOnActionCenterValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowWindowsSpotlightOnActionCenterValue) String() string {
+	switch e {
+	case AllowWindowsSpotlightOnActionCenterNotAllowed:
+		return "AllowWindowsSpotlightOnActionCenterNotAllowed"
+	case AllowWindowsSpotlightOnActionCenterAllowed:
+		return "AllowWindowsSpotlightOnActionCenterAllowed"
+	default:
+		return fmt.Sprintf("AllowWindowsSpotlightOnActionCenterValue(%d)", int64(e))
+	}
+}
+
+// AllowWindowsSpotlightOnSettingsValue — allowed values for the AllowWindowsSpotlightOnSettings node.
+type AllowWindowsSpotlightOnSettingsValue int64
+
 const (
 	// Not allowed.
-	AllowWindowsSpotlightOnSettingsNotAllowed int64 = 0
+	AllowWindowsSpotlightOnSettingsNotAllowed AllowWindowsSpotlightOnSettingsValue = 0
 	// Allowed.
-	AllowWindowsSpotlightOnSettingsAllowed int64 = 1
+	AllowWindowsSpotlightOnSettingsAllowed AllowWindowsSpotlightOnSettingsValue = 1
 )
 
-// AllowWindowsSpotlightWindowsWelcomeExperience allowed values.
+// String returns the AllowWindowsSpotlightOnSettingsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowWindowsSpotlightOnSettingsValue) String() string {
+	switch e {
+	case AllowWindowsSpotlightOnSettingsNotAllowed:
+		return "AllowWindowsSpotlightOnSettingsNotAllowed"
+	case AllowWindowsSpotlightOnSettingsAllowed:
+		return "AllowWindowsSpotlightOnSettingsAllowed"
+	default:
+		return fmt.Sprintf("AllowWindowsSpotlightOnSettingsValue(%d)", int64(e))
+	}
+}
+
+// AllowWindowsSpotlightWindowsWelcomeExperienceValue — allowed values for the AllowWindowsSpotlightWindowsWelcomeExperience node.
+type AllowWindowsSpotlightWindowsWelcomeExperienceValue int64
+
 const (
 	// Not allowed.
-	AllowWindowsSpotlightWindowsWelcomeExperienceNotAllowed int64 = 0
+	AllowWindowsSpotlightWindowsWelcomeExperienceNotAllowed AllowWindowsSpotlightWindowsWelcomeExperienceValue = 0
 	// Allowed.
-	AllowWindowsSpotlightWindowsWelcomeExperienceAllowed int64 = 1
+	AllowWindowsSpotlightWindowsWelcomeExperienceAllowed AllowWindowsSpotlightWindowsWelcomeExperienceValue = 1
 )
 
-// ConfigureWindowsSpotlightOnLockScreen allowed values.
+// String returns the AllowWindowsSpotlightWindowsWelcomeExperienceValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowWindowsSpotlightWindowsWelcomeExperienceValue) String() string {
+	switch e {
+	case AllowWindowsSpotlightWindowsWelcomeExperienceNotAllowed:
+		return "AllowWindowsSpotlightWindowsWelcomeExperienceNotAllowed"
+	case AllowWindowsSpotlightWindowsWelcomeExperienceAllowed:
+		return "AllowWindowsSpotlightWindowsWelcomeExperienceAllowed"
+	default:
+		return fmt.Sprintf("AllowWindowsSpotlightWindowsWelcomeExperienceValue(%d)", int64(e))
+	}
+}
+
+// ConfigureWindowsSpotlightOnLockScreenValue — allowed values for the ConfigureWindowsSpotlightOnLockScreen node.
+type ConfigureWindowsSpotlightOnLockScreenValue int64
+
 const (
 	// Windows spotlight disabled.
-	ConfigureWindowsSpotlightOnLockScreenWindowsSpotlightDisabled int64 = 0
+	ConfigureWindowsSpotlightOnLockScreenWindowsSpotlightDisabled ConfigureWindowsSpotlightOnLockScreenValue = 0
 	// Windows spotlight enabled.
-	ConfigureWindowsSpotlightOnLockScreenWindowsSpotlightEnabled int64 = 1
+	ConfigureWindowsSpotlightOnLockScreenWindowsSpotlightEnabled ConfigureWindowsSpotlightOnLockScreenValue = 1
 	// Windows spotlight is always enabled, the user cannot disable it
-	ConfigureWindowsSpotlightOnLockScreenWindowsSpotlightIsAlwaysEnabledThe int64 = 2
+	ConfigureWindowsSpotlightOnLockScreenWindowsSpotlightIsAlwaysEnabledThe ConfigureWindowsSpotlightOnLockScreenValue = 2
 	// Windows spotlight is always enabled, the user cannot disable it. For special configurations only
-	ConfigureWindowsSpotlightOnLockScreenWindowsSpotlightIsAlwaysEnabledThe2 int64 = 3
+	ConfigureWindowsSpotlightOnLockScreenWindowsSpotlightIsAlwaysEnabledThe2 ConfigureWindowsSpotlightOnLockScreenValue = 3
 )
 
-// EnableOrganizationalMessages allowed values.
+// String returns the ConfigureWindowsSpotlightOnLockScreenValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureWindowsSpotlightOnLockScreenValue) String() string {
+	switch e {
+	case ConfigureWindowsSpotlightOnLockScreenWindowsSpotlightDisabled:
+		return "ConfigureWindowsSpotlightOnLockScreenWindowsSpotlightDisabled"
+	case ConfigureWindowsSpotlightOnLockScreenWindowsSpotlightEnabled:
+		return "ConfigureWindowsSpotlightOnLockScreenWindowsSpotlightEnabled"
+	case ConfigureWindowsSpotlightOnLockScreenWindowsSpotlightIsAlwaysEnabledThe:
+		return "ConfigureWindowsSpotlightOnLockScreenWindowsSpotlightIsAlwaysEnabledThe"
+	case ConfigureWindowsSpotlightOnLockScreenWindowsSpotlightIsAlwaysEnabledThe2:
+		return "ConfigureWindowsSpotlightOnLockScreenWindowsSpotlightIsAlwaysEnabledThe2"
+	default:
+		return fmt.Sprintf("ConfigureWindowsSpotlightOnLockScreenValue(%d)", int64(e))
+	}
+}
+
+// EnableOrganizationalMessagesValue — allowed values for the EnableOrganizationalMessages node.
+type EnableOrganizationalMessagesValue int64
+
 const (
 	// Disabled.
-	EnableOrganizationalMessagesDisabled int64 = 0
+	EnableOrganizationalMessagesDisabled EnableOrganizationalMessagesValue = 0
 	// Enabled.
-	EnableOrganizationalMessagesEnabled int64 = 1
+	EnableOrganizationalMessagesEnabled EnableOrganizationalMessagesValue = 1
 )
+
+// String returns the EnableOrganizationalMessagesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableOrganizationalMessagesValue) String() string {
+	switch e {
+	case EnableOrganizationalMessagesDisabled:
+		return "EnableOrganizationalMessagesDisabled"
+	case EnableOrganizationalMessagesEnabled:
+		return "EnableOrganizationalMessagesEnabled"
+	default:
+		return fmt.Sprintf("EnableOrganizationalMessagesValue(%d)", int64(e))
+	}
+}

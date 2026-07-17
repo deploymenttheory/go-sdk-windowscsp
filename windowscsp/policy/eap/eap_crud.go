@@ -14,12 +14,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *Eap) GetAllowTLS13(ctx context.Context) (int64, error) {
+func (s *Eap) GetAllowTLS13(ctx context.Context) (AllowTLS13Value, error) {
 	v, err := s.c.Get(ctx, URIAllowTLS13)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowTLS13Value(n), err
 }
 
 // CreateAllowTLS13 creates ./Device/Vendor/MSFT/Policy/Config/Eap/AllowTLS1_3.
@@ -28,8 +29,8 @@ func (s *Eap) GetAllowTLS13(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *Eap) CreateAllowTLS13(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowTLS13, client.Int(value))
+func (s *Eap) CreateAllowTLS13(ctx context.Context, value AllowTLS13Value) error {
+	return s.c.Add(ctx, URIAllowTLS13, client.Int(int64(value)))
 }
 
 // UpdateAllowTLS13 updates ./Device/Vendor/MSFT/Policy/Config/Eap/AllowTLS1_3.
@@ -38,8 +39,8 @@ func (s *Eap) CreateAllowTLS13(ctx context.Context, value int64) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *Eap) UpdateAllowTLS13(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowTLS13, client.Int(value))
+func (s *Eap) UpdateAllowTLS13(ctx context.Context, value AllowTLS13Value) error {
+	return s.c.Replace(ctx, URIAllowTLS13, client.Int(int64(value)))
 }
 
 // DeleteAllowTLS13 deletes ./Device/Vendor/MSFT/Policy/Config/Eap/AllowTLS1_3.

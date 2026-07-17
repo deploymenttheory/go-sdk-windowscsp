@@ -2,10 +2,29 @@
 
 package printers
 
-// RequireIppsPolicy allowed values.
+import (
+	"fmt"
+)
+
+// RequireIppsPolicyValue — allowed values for the RequireIppsPolicy node.
+type RequireIppsPolicyValue int64
+
 const (
 	// Disabled
-	RequireIppsPolicyDisabled int64 = 0
+	RequireIppsPolicyDisabled RequireIppsPolicyValue = 0
 	// Enabled
-	RequireIppsPolicyEnabled int64 = 1
+	RequireIppsPolicyEnabled RequireIppsPolicyValue = 1
 )
+
+// String returns the RequireIppsPolicyValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e RequireIppsPolicyValue) String() string {
+	switch e {
+	case RequireIppsPolicyDisabled:
+		return "RequireIppsPolicyDisabled"
+	case RequireIppsPolicyEnabled:
+		return "RequireIppsPolicyEnabled"
+	default:
+		return fmt.Sprintf("RequireIppsPolicyValue(%d)", int64(e))
+	}
+}

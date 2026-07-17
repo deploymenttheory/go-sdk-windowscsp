@@ -12,20 +12,21 @@ import (
 // Automatically detect settings. If enabled, the system tries to find the path to a PAC script.
 //
 // Default: 1.
-func (s *NetworkProxy) GetAutoDetect(ctx context.Context) (int64, error) {
+func (s *NetworkProxy) GetAutoDetect(ctx context.Context) (AutoDetectValue, error) {
 	v, err := s.c.Get(ctx, URIAutoDetect)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AutoDetectValue(n), err
 }
 
 // UpdateAutoDetect updates ./Vendor/MSFT/NetworkProxy/AutoDetect.
 // Automatically detect settings. If enabled, the system tries to find the path to a PAC script.
 //
 // Default: 1.
-func (s *NetworkProxy) UpdateAutoDetect(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAutoDetect, client.Int(value))
+func (s *NetworkProxy) UpdateAutoDetect(ctx context.Context, value AutoDetectValue) error {
+	return s.c.Replace(ctx, URIAutoDetect, client.Int(int64(value)))
 }
 
 // DeleteAutoDetect deletes ./Vendor/MSFT/NetworkProxy/AutoDetect.
@@ -87,20 +88,21 @@ func (s *NetworkProxy) DeleteProxyServerProxyAddress(ctx context.Context) error 
 // Specifies whether the proxy server should be used for local (intranet) addresses. Valid values:
 //
 // Default: 0.
-func (s *NetworkProxy) GetProxyServerUseProxyForLocalAddresses(ctx context.Context) (int64, error) {
+func (s *NetworkProxy) GetProxyServerUseProxyForLocalAddresses(ctx context.Context) (ProxyServerUseProxyForLocalAddressesValue, error) {
 	v, err := s.c.Get(ctx, URIProxyServerUseProxyForLocalAddresses)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ProxyServerUseProxyForLocalAddressesValue(n), err
 }
 
 // UpdateProxyServerUseProxyForLocalAddresses updates ./Vendor/MSFT/NetworkProxy/ProxyServer/UseProxyForLocalAddresses.
 // Specifies whether the proxy server should be used for local (intranet) addresses. Valid values:
 //
 // Default: 0.
-func (s *NetworkProxy) UpdateProxyServerUseProxyForLocalAddresses(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIProxyServerUseProxyForLocalAddresses, client.Int(value))
+func (s *NetworkProxy) UpdateProxyServerUseProxyForLocalAddresses(ctx context.Context, value ProxyServerUseProxyForLocalAddressesValue) error {
+	return s.c.Replace(ctx, URIProxyServerUseProxyForLocalAddresses, client.Int(int64(value)))
 }
 
 // DeleteProxyServerUseProxyForLocalAddresses deletes ./Vendor/MSFT/NetworkProxy/ProxyServer/UseProxyForLocalAddresses.
@@ -116,12 +118,13 @@ func (s *NetworkProxy) DeleteProxyServerUseProxyForLocalAddresses(ctx context.Co
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v1.0).
-func (s *NetworkProxy) GetProxySettingsPerUser(ctx context.Context) (int64, error) {
+func (s *NetworkProxy) GetProxySettingsPerUser(ctx context.Context) (ProxySettingsPerUserValue, error) {
 	v, err := s.c.Get(ctx, URIProxySettingsPerUser)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ProxySettingsPerUserValue(n), err
 }
 
 // UpdateProxySettingsPerUser updates ./Vendor/MSFT/NetworkProxy/ProxySettingsPerUser.
@@ -129,8 +132,8 @@ func (s *NetworkProxy) GetProxySettingsPerUser(ctx context.Context) (int64, erro
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v1.0).
-func (s *NetworkProxy) UpdateProxySettingsPerUser(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIProxySettingsPerUser, client.Int(value))
+func (s *NetworkProxy) UpdateProxySettingsPerUser(ctx context.Context, value ProxySettingsPerUserValue) error {
+	return s.c.Replace(ctx, URIProxySettingsPerUser, client.Int(int64(value)))
 }
 
 // DeleteProxySettingsPerUser deletes ./Vendor/MSFT/NetworkProxy/ProxySettingsPerUser.

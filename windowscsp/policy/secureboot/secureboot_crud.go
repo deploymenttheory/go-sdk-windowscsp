@@ -14,12 +14,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.19044 (CSP v11.0).
-func (s *SecureBoot) GetConfigureHighConfidenceOptOut(ctx context.Context) (int64, error) {
+func (s *SecureBoot) GetConfigureHighConfidenceOptOut(ctx context.Context) (ConfigureHighConfidenceOptOutValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureHighConfidenceOptOut)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureHighConfidenceOptOutValue(n), err
 }
 
 // CreateConfigureHighConfidenceOptOut creates ./Device/Vendor/MSFT/Policy/Config/SecureBoot/ConfigureHighConfidenceOptOut.
@@ -28,8 +29,8 @@ func (s *SecureBoot) GetConfigureHighConfidenceOptOut(ctx context.Context) (int6
 //
 // Default: 0.
 // Supported from OS build 10.0.19044 (CSP v11.0).
-func (s *SecureBoot) CreateConfigureHighConfidenceOptOut(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureHighConfidenceOptOut, client.Int(value))
+func (s *SecureBoot) CreateConfigureHighConfidenceOptOut(ctx context.Context, value ConfigureHighConfidenceOptOutValue) error {
+	return s.c.Add(ctx, URIConfigureHighConfidenceOptOut, client.Int(int64(value)))
 }
 
 // UpdateConfigureHighConfidenceOptOut updates ./Device/Vendor/MSFT/Policy/Config/SecureBoot/ConfigureHighConfidenceOptOut.
@@ -38,8 +39,8 @@ func (s *SecureBoot) CreateConfigureHighConfidenceOptOut(ctx context.Context, va
 //
 // Default: 0.
 // Supported from OS build 10.0.19044 (CSP v11.0).
-func (s *SecureBoot) UpdateConfigureHighConfidenceOptOut(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureHighConfidenceOptOut, client.Int(value))
+func (s *SecureBoot) UpdateConfigureHighConfidenceOptOut(ctx context.Context, value ConfigureHighConfidenceOptOutValue) error {
+	return s.c.Replace(ctx, URIConfigureHighConfidenceOptOut, client.Int(int64(value)))
 }
 
 // DeleteConfigureHighConfidenceOptOut deletes ./Device/Vendor/MSFT/Policy/Config/SecureBoot/ConfigureHighConfidenceOptOut.
@@ -57,12 +58,13 @@ func (s *SecureBoot) DeleteConfigureHighConfidenceOptOut(ctx context.Context) er
 //
 // Default: 0.
 // Supported from OS build 10.0.19044 (CSP v11.0).
-func (s *SecureBoot) GetConfigureMicrosoftUpdateManagedOptIn(ctx context.Context) (int64, error) {
+func (s *SecureBoot) GetConfigureMicrosoftUpdateManagedOptIn(ctx context.Context) (ConfigureMicrosoftUpdateManagedOptInValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureMicrosoftUpdateManagedOptIn)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureMicrosoftUpdateManagedOptInValue(n), err
 }
 
 // CreateConfigureMicrosoftUpdateManagedOptIn creates ./Device/Vendor/MSFT/Policy/Config/SecureBoot/ConfigureMicrosoftUpdateManagedOptIn.
@@ -70,8 +72,8 @@ func (s *SecureBoot) GetConfigureMicrosoftUpdateManagedOptIn(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.19044 (CSP v11.0).
-func (s *SecureBoot) CreateConfigureMicrosoftUpdateManagedOptIn(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureMicrosoftUpdateManagedOptIn, client.Int(value))
+func (s *SecureBoot) CreateConfigureMicrosoftUpdateManagedOptIn(ctx context.Context, value ConfigureMicrosoftUpdateManagedOptInValue) error {
+	return s.c.Add(ctx, URIConfigureMicrosoftUpdateManagedOptIn, client.Int(int64(value)))
 }
 
 // UpdateConfigureMicrosoftUpdateManagedOptIn updates ./Device/Vendor/MSFT/Policy/Config/SecureBoot/ConfigureMicrosoftUpdateManagedOptIn.
@@ -79,8 +81,8 @@ func (s *SecureBoot) CreateConfigureMicrosoftUpdateManagedOptIn(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 10.0.19044 (CSP v11.0).
-func (s *SecureBoot) UpdateConfigureMicrosoftUpdateManagedOptIn(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureMicrosoftUpdateManagedOptIn, client.Int(value))
+func (s *SecureBoot) UpdateConfigureMicrosoftUpdateManagedOptIn(ctx context.Context, value ConfigureMicrosoftUpdateManagedOptInValue) error {
+	return s.c.Replace(ctx, URIConfigureMicrosoftUpdateManagedOptIn, client.Int(int64(value)))
 }
 
 // DeleteConfigureMicrosoftUpdateManagedOptIn deletes ./Device/Vendor/MSFT/Policy/Config/SecureBoot/ConfigureMicrosoftUpdateManagedOptIn.
@@ -99,12 +101,13 @@ func (s *SecureBoot) DeleteConfigureMicrosoftUpdateManagedOptIn(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 10.0.19044 (CSP v11.0).
-func (s *SecureBoot) GetEnableSecurebootCertificateUpdates(ctx context.Context) (int64, error) {
+func (s *SecureBoot) GetEnableSecurebootCertificateUpdates(ctx context.Context) (EnableSecurebootCertificateUpdatesValue, error) {
 	v, err := s.c.Get(ctx, URIEnableSecurebootCertificateUpdates)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableSecurebootCertificateUpdatesValue(n), err
 }
 
 // CreateEnableSecurebootCertificateUpdates creates ./Device/Vendor/MSFT/Policy/Config/SecureBoot/EnableSecurebootCertificateUpdates.
@@ -114,8 +117,8 @@ func (s *SecureBoot) GetEnableSecurebootCertificateUpdates(ctx context.Context) 
 //
 // Default: 0.
 // Supported from OS build 10.0.19044 (CSP v11.0).
-func (s *SecureBoot) CreateEnableSecurebootCertificateUpdates(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableSecurebootCertificateUpdates, client.Int(value))
+func (s *SecureBoot) CreateEnableSecurebootCertificateUpdates(ctx context.Context, value EnableSecurebootCertificateUpdatesValue) error {
+	return s.c.Add(ctx, URIEnableSecurebootCertificateUpdates, client.Int(int64(value)))
 }
 
 // UpdateEnableSecurebootCertificateUpdates updates ./Device/Vendor/MSFT/Policy/Config/SecureBoot/EnableSecurebootCertificateUpdates.
@@ -125,8 +128,8 @@ func (s *SecureBoot) CreateEnableSecurebootCertificateUpdates(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.19044 (CSP v11.0).
-func (s *SecureBoot) UpdateEnableSecurebootCertificateUpdates(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableSecurebootCertificateUpdates, client.Int(value))
+func (s *SecureBoot) UpdateEnableSecurebootCertificateUpdates(ctx context.Context, value EnableSecurebootCertificateUpdatesValue) error {
+	return s.c.Replace(ctx, URIEnableSecurebootCertificateUpdates, client.Int(int64(value)))
 }
 
 // DeleteEnableSecurebootCertificateUpdates deletes ./Device/Vendor/MSFT/Policy/Config/SecureBoot/EnableSecurebootCertificateUpdates.

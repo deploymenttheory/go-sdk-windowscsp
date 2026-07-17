@@ -2,10 +2,29 @@
 
 package taskmanager
 
-// AllowEndTask allowed values.
+import (
+	"fmt"
+)
+
+// AllowEndTaskValue — allowed values for the AllowEndTask node.
+type AllowEndTaskValue int64
+
 const (
 	// Disabled. EndTask functionality is blocked in TaskManager.
-	AllowEndTaskDisabled int64 = 0
+	AllowEndTaskDisabled AllowEndTaskValue = 0
 	// Enabled. Users can perform EndTask in TaskManager.
-	AllowEndTaskEnabled int64 = 1
+	AllowEndTaskEnabled AllowEndTaskValue = 1
 )
+
+// String returns the AllowEndTaskValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowEndTaskValue) String() string {
+	switch e {
+	case AllowEndTaskDisabled:
+		return "AllowEndTaskDisabled"
+	case AllowEndTaskEnabled:
+		return "AllowEndTaskEnabled"
+	default:
+		return fmt.Sprintf("AllowEndTaskValue(%d)", int64(e))
+	}
+}

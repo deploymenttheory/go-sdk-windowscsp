@@ -10,24 +10,25 @@ import (
 
 // GetEnablePersonalDataEncryption reads ./User/Vendor/MSFT/PDE/EnablePersonalDataEncryption.
 // Allows the Admin to enable Personal Data Encryption. Set to '1' to set this policy.
-func (s *PDE) GetEnablePersonalDataEncryption(ctx context.Context) (int64, error) {
+func (s *PDE) GetEnablePersonalDataEncryption(ctx context.Context) (EnablePersonalDataEncryptionValue, error) {
 	v, err := s.c.Get(ctx, URIEnablePersonalDataEncryption)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnablePersonalDataEncryptionValue(n), err
 }
 
 // CreateEnablePersonalDataEncryption creates ./User/Vendor/MSFT/PDE/EnablePersonalDataEncryption.
 // Allows the Admin to enable Personal Data Encryption. Set to '1' to set this policy.
-func (s *PDE) CreateEnablePersonalDataEncryption(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnablePersonalDataEncryption, client.Int(value))
+func (s *PDE) CreateEnablePersonalDataEncryption(ctx context.Context, value EnablePersonalDataEncryptionValue) error {
+	return s.c.Add(ctx, URIEnablePersonalDataEncryption, client.Int(int64(value)))
 }
 
 // UpdateEnablePersonalDataEncryption updates ./User/Vendor/MSFT/PDE/EnablePersonalDataEncryption.
 // Allows the Admin to enable Personal Data Encryption. Set to '1' to set this policy.
-func (s *PDE) UpdateEnablePersonalDataEncryption(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnablePersonalDataEncryption, client.Int(value))
+func (s *PDE) UpdateEnablePersonalDataEncryption(ctx context.Context, value EnablePersonalDataEncryptionValue) error {
+	return s.c.Replace(ctx, URIEnablePersonalDataEncryption, client.Int(int64(value)))
 }
 
 // DeleteEnablePersonalDataEncryption deletes ./User/Vendor/MSFT/PDE/EnablePersonalDataEncryption.
@@ -38,24 +39,25 @@ func (s *PDE) DeleteEnablePersonalDataEncryption(ctx context.Context) error {
 
 // GetProtectFoldersProtectDesktop reads ./User/Vendor/MSFT/PDE/ProtectFolders/ProtectDesktop.
 // Allows the Admin to enable PDE on Desktop folder. Set to '1' to set this policy.
-func (s *PDE) GetProtectFoldersProtectDesktop(ctx context.Context) (int64, error) {
+func (s *PDE) GetProtectFoldersProtectDesktop(ctx context.Context) (ProtectFoldersProtectDesktopValue, error) {
 	v, err := s.c.Get(ctx, URIProtectFoldersProtectDesktop)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ProtectFoldersProtectDesktopValue(n), err
 }
 
 // CreateProtectFoldersProtectDesktop creates ./User/Vendor/MSFT/PDE/ProtectFolders/ProtectDesktop.
 // Allows the Admin to enable PDE on Desktop folder. Set to '1' to set this policy.
-func (s *PDE) CreateProtectFoldersProtectDesktop(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIProtectFoldersProtectDesktop, client.Int(value))
+func (s *PDE) CreateProtectFoldersProtectDesktop(ctx context.Context, value ProtectFoldersProtectDesktopValue) error {
+	return s.c.Add(ctx, URIProtectFoldersProtectDesktop, client.Int(int64(value)))
 }
 
 // UpdateProtectFoldersProtectDesktop updates ./User/Vendor/MSFT/PDE/ProtectFolders/ProtectDesktop.
 // Allows the Admin to enable PDE on Desktop folder. Set to '1' to set this policy.
-func (s *PDE) UpdateProtectFoldersProtectDesktop(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIProtectFoldersProtectDesktop, client.Int(value))
+func (s *PDE) UpdateProtectFoldersProtectDesktop(ctx context.Context, value ProtectFoldersProtectDesktopValue) error {
+	return s.c.Replace(ctx, URIProtectFoldersProtectDesktop, client.Int(int64(value)))
 }
 
 // DeleteProtectFoldersProtectDesktop deletes ./User/Vendor/MSFT/PDE/ProtectFolders/ProtectDesktop.
@@ -66,24 +68,25 @@ func (s *PDE) DeleteProtectFoldersProtectDesktop(ctx context.Context) error {
 
 // GetProtectFoldersProtectDocuments reads ./User/Vendor/MSFT/PDE/ProtectFolders/ProtectDocuments.
 // Allows the Admin to enable PDE on Documents folder. Set to '1' to set this policy.
-func (s *PDE) GetProtectFoldersProtectDocuments(ctx context.Context) (int64, error) {
+func (s *PDE) GetProtectFoldersProtectDocuments(ctx context.Context) (ProtectFoldersProtectDocumentsValue, error) {
 	v, err := s.c.Get(ctx, URIProtectFoldersProtectDocuments)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ProtectFoldersProtectDocumentsValue(n), err
 }
 
 // CreateProtectFoldersProtectDocuments creates ./User/Vendor/MSFT/PDE/ProtectFolders/ProtectDocuments.
 // Allows the Admin to enable PDE on Documents folder. Set to '1' to set this policy.
-func (s *PDE) CreateProtectFoldersProtectDocuments(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIProtectFoldersProtectDocuments, client.Int(value))
+func (s *PDE) CreateProtectFoldersProtectDocuments(ctx context.Context, value ProtectFoldersProtectDocumentsValue) error {
+	return s.c.Add(ctx, URIProtectFoldersProtectDocuments, client.Int(int64(value)))
 }
 
 // UpdateProtectFoldersProtectDocuments updates ./User/Vendor/MSFT/PDE/ProtectFolders/ProtectDocuments.
 // Allows the Admin to enable PDE on Documents folder. Set to '1' to set this policy.
-func (s *PDE) UpdateProtectFoldersProtectDocuments(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIProtectFoldersProtectDocuments, client.Int(value))
+func (s *PDE) UpdateProtectFoldersProtectDocuments(ctx context.Context, value ProtectFoldersProtectDocumentsValue) error {
+	return s.c.Replace(ctx, URIProtectFoldersProtectDocuments, client.Int(int64(value)))
 }
 
 // DeleteProtectFoldersProtectDocuments deletes ./User/Vendor/MSFT/PDE/ProtectFolders/ProtectDocuments.
@@ -94,24 +97,25 @@ func (s *PDE) DeleteProtectFoldersProtectDocuments(ctx context.Context) error {
 
 // GetProtectFoldersProtectPictures reads ./User/Vendor/MSFT/PDE/ProtectFolders/ProtectPictures.
 // Allows the Admin to enable PDE on Pictures folder. Set to '1' to set this policy.
-func (s *PDE) GetProtectFoldersProtectPictures(ctx context.Context) (int64, error) {
+func (s *PDE) GetProtectFoldersProtectPictures(ctx context.Context) (ProtectFoldersProtectPicturesValue, error) {
 	v, err := s.c.Get(ctx, URIProtectFoldersProtectPictures)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ProtectFoldersProtectPicturesValue(n), err
 }
 
 // CreateProtectFoldersProtectPictures creates ./User/Vendor/MSFT/PDE/ProtectFolders/ProtectPictures.
 // Allows the Admin to enable PDE on Pictures folder. Set to '1' to set this policy.
-func (s *PDE) CreateProtectFoldersProtectPictures(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIProtectFoldersProtectPictures, client.Int(value))
+func (s *PDE) CreateProtectFoldersProtectPictures(ctx context.Context, value ProtectFoldersProtectPicturesValue) error {
+	return s.c.Add(ctx, URIProtectFoldersProtectPictures, client.Int(int64(value)))
 }
 
 // UpdateProtectFoldersProtectPictures updates ./User/Vendor/MSFT/PDE/ProtectFolders/ProtectPictures.
 // Allows the Admin to enable PDE on Pictures folder. Set to '1' to set this policy.
-func (s *PDE) UpdateProtectFoldersProtectPictures(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIProtectFoldersProtectPictures, client.Int(value))
+func (s *PDE) UpdateProtectFoldersProtectPictures(ctx context.Context, value ProtectFoldersProtectPicturesValue) error {
+	return s.c.Replace(ctx, URIProtectFoldersProtectPictures, client.Int(int64(value)))
 }
 
 // DeleteProtectFoldersProtectPictures deletes ./User/Vendor/MSFT/PDE/ProtectFolders/ProtectPictures.
@@ -124,12 +128,13 @@ func (s *PDE) DeleteProtectFoldersProtectPictures(ctx context.Context) error {
 // This node reports folder protection status for a user.
 //
 // Supported from OS build 10.0.26100 (CSP v1.0).
-func (s *PDE) GetStatusFolderProtectionStatus(ctx context.Context) (int64, error) {
+func (s *PDE) GetStatusFolderProtectionStatus(ctx context.Context) (StatusFolderProtectionStatusValue, error) {
 	v, err := s.c.Get(ctx, URIStatusFolderProtectionStatus)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return StatusFolderProtectionStatusValue(n), err
 }
 
 // GetStatusFoldersProtected reads ./User/Vendor/MSFT/PDE/Status/FoldersProtected.

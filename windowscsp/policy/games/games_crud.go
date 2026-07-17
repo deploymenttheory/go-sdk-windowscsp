@@ -14,12 +14,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Games) GetAllowAdvancedGamingServices(ctx context.Context) (int64, error) {
+func (s *Games) GetAllowAdvancedGamingServices(ctx context.Context) (AllowAdvancedGamingServicesValue, error) {
 	v, err := s.c.Get(ctx, URIAllowAdvancedGamingServices)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowAdvancedGamingServicesValue(n), err
 }
 
 // CreateAllowAdvancedGamingServices creates ./Device/Vendor/MSFT/Policy/Config/Games/AllowAdvancedGamingServices.
@@ -28,8 +29,8 @@ func (s *Games) GetAllowAdvancedGamingServices(ctx context.Context) (int64, erro
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Games) CreateAllowAdvancedGamingServices(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowAdvancedGamingServices, client.Int(value))
+func (s *Games) CreateAllowAdvancedGamingServices(ctx context.Context, value AllowAdvancedGamingServicesValue) error {
+	return s.c.Add(ctx, URIAllowAdvancedGamingServices, client.Int(int64(value)))
 }
 
 // UpdateAllowAdvancedGamingServices updates ./Device/Vendor/MSFT/Policy/Config/Games/AllowAdvancedGamingServices.
@@ -38,8 +39,8 @@ func (s *Games) CreateAllowAdvancedGamingServices(ctx context.Context, value int
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Games) UpdateAllowAdvancedGamingServices(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowAdvancedGamingServices, client.Int(value))
+func (s *Games) UpdateAllowAdvancedGamingServices(ctx context.Context, value AllowAdvancedGamingServicesValue) error {
+	return s.c.Replace(ctx, URIAllowAdvancedGamingServices, client.Int(int64(value)))
 }
 
 // DeleteAllowAdvancedGamingServices deletes ./Device/Vendor/MSFT/Policy/Config/Games/AllowAdvancedGamingServices.
@@ -57,12 +58,13 @@ func (s *Games) DeleteAllowAdvancedGamingServices(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Games) GetDisableGamingFullScreenExperience(ctx context.Context) (int64, error) {
+func (s *Games) GetDisableGamingFullScreenExperience(ctx context.Context) (DisableGamingFullScreenExperienceValue, error) {
 	v, err := s.c.Get(ctx, URIDisableGamingFullScreenExperience)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableGamingFullScreenExperienceValue(n), err
 }
 
 // CreateDisableGamingFullScreenExperience creates ./Device/Vendor/MSFT/Policy/Config/Games/DisableGamingFullScreenExperience.
@@ -70,8 +72,8 @@ func (s *Games) GetDisableGamingFullScreenExperience(ctx context.Context) (int64
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Games) CreateDisableGamingFullScreenExperience(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableGamingFullScreenExperience, client.Int(value))
+func (s *Games) CreateDisableGamingFullScreenExperience(ctx context.Context, value DisableGamingFullScreenExperienceValue) error {
+	return s.c.Add(ctx, URIDisableGamingFullScreenExperience, client.Int(int64(value)))
 }
 
 // UpdateDisableGamingFullScreenExperience updates ./Device/Vendor/MSFT/Policy/Config/Games/DisableGamingFullScreenExperience.
@@ -79,8 +81,8 @@ func (s *Games) CreateDisableGamingFullScreenExperience(ctx context.Context, val
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Games) UpdateDisableGamingFullScreenExperience(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableGamingFullScreenExperience, client.Int(value))
+func (s *Games) UpdateDisableGamingFullScreenExperience(ctx context.Context, value DisableGamingFullScreenExperienceValue) error {
+	return s.c.Replace(ctx, URIDisableGamingFullScreenExperience, client.Int(int64(value)))
 }
 
 // DeleteDisableGamingFullScreenExperience deletes ./Device/Vendor/MSFT/Policy/Config/Games/DisableGamingFullScreenExperience.

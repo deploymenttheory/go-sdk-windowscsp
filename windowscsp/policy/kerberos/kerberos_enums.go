@@ -2,66 +2,176 @@
 
 package kerberos
 
-// CloudKerberosTicketRetrievalEnabled allowed values.
+import (
+	"fmt"
+)
+
+// CloudKerberosTicketRetrievalEnabledValue — allowed values for the CloudKerberosTicketRetrievalEnabled node.
+type CloudKerberosTicketRetrievalEnabledValue int64
+
 const (
 	// Disabled.
-	CloudKerberosTicketRetrievalEnabledDisabled int64 = 0
+	CloudKerberosTicketRetrievalEnabledDisabled CloudKerberosTicketRetrievalEnabledValue = 0
 	// Enabled.
-	CloudKerberosTicketRetrievalEnabledEnabled int64 = 1
+	CloudKerberosTicketRetrievalEnabledEnabled CloudKerberosTicketRetrievalEnabledValue = 1
 )
 
-// PKInitHashAlgorithmConfiguration allowed values.
+// String returns the CloudKerberosTicketRetrievalEnabledValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e CloudKerberosTicketRetrievalEnabledValue) String() string {
+	switch e {
+	case CloudKerberosTicketRetrievalEnabledDisabled:
+		return "CloudKerberosTicketRetrievalEnabledDisabled"
+	case CloudKerberosTicketRetrievalEnabledEnabled:
+		return "CloudKerberosTicketRetrievalEnabledEnabled"
+	default:
+		return fmt.Sprintf("CloudKerberosTicketRetrievalEnabledValue(%d)", int64(e))
+	}
+}
+
+// PKInitHashAlgorithmConfigurationValue — allowed values for the PKInitHashAlgorithmConfiguration node.
+type PKInitHashAlgorithmConfigurationValue int64
+
 const (
 	// Disabled / Not Configured
-	PKInitHashAlgorithmConfigurationDisabledNotConfigured int64 = 0
+	PKInitHashAlgorithmConfigurationDisabledNotConfigured PKInitHashAlgorithmConfigurationValue = 0
 	// Enabled
-	PKInitHashAlgorithmConfigurationEnabled int64 = 1
+	PKInitHashAlgorithmConfigurationEnabled PKInitHashAlgorithmConfigurationValue = 1
 )
 
-// PKInitHashAlgorithmSHA1 allowed values.
+// String returns the PKInitHashAlgorithmConfigurationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PKInitHashAlgorithmConfigurationValue) String() string {
+	switch e {
+	case PKInitHashAlgorithmConfigurationDisabledNotConfigured:
+		return "PKInitHashAlgorithmConfigurationDisabledNotConfigured"
+	case PKInitHashAlgorithmConfigurationEnabled:
+		return "PKInitHashAlgorithmConfigurationEnabled"
+	default:
+		return fmt.Sprintf("PKInitHashAlgorithmConfigurationValue(%d)", int64(e))
+	}
+}
+
+// PKInitHashAlgorithmSHA1Value — allowed values for the PKInitHashAlgorithmSHA1 node.
+type PKInitHashAlgorithmSHA1Value int64
+
 const (
 	// Not Supported
-	PKInitHashAlgorithmSHA1NotSupported int64 = 0
+	PKInitHashAlgorithmSHA1NotSupported PKInitHashAlgorithmSHA1Value = 0
 	// Default
-	PKInitHashAlgorithmSHA1Default int64 = 1
+	PKInitHashAlgorithmSHA1Default PKInitHashAlgorithmSHA1Value = 1
 	// Audited
-	PKInitHashAlgorithmSHA1Audited int64 = 2
+	PKInitHashAlgorithmSHA1Audited PKInitHashAlgorithmSHA1Value = 2
 	// Supported
-	PKInitHashAlgorithmSHA1Supported int64 = 3
+	PKInitHashAlgorithmSHA1Supported PKInitHashAlgorithmSHA1Value = 3
 )
 
-// PKInitHashAlgorithmSHA256 allowed values.
+// String returns the PKInitHashAlgorithmSHA1Value constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PKInitHashAlgorithmSHA1Value) String() string {
+	switch e {
+	case PKInitHashAlgorithmSHA1NotSupported:
+		return "PKInitHashAlgorithmSHA1NotSupported"
+	case PKInitHashAlgorithmSHA1Default:
+		return "PKInitHashAlgorithmSHA1Default"
+	case PKInitHashAlgorithmSHA1Audited:
+		return "PKInitHashAlgorithmSHA1Audited"
+	case PKInitHashAlgorithmSHA1Supported:
+		return "PKInitHashAlgorithmSHA1Supported"
+	default:
+		return fmt.Sprintf("PKInitHashAlgorithmSHA1Value(%d)", int64(e))
+	}
+}
+
+// PKInitHashAlgorithmSHA256Value — allowed values for the PKInitHashAlgorithmSHA256 node.
+type PKInitHashAlgorithmSHA256Value int64
+
 const (
 	// Not Supported
-	PKInitHashAlgorithmSHA256NotSupported int64 = 0
+	PKInitHashAlgorithmSHA256NotSupported PKInitHashAlgorithmSHA256Value = 0
 	// Default
-	PKInitHashAlgorithmSHA256Default int64 = 1
+	PKInitHashAlgorithmSHA256Default PKInitHashAlgorithmSHA256Value = 1
 	// Audited
-	PKInitHashAlgorithmSHA256Audited int64 = 2
+	PKInitHashAlgorithmSHA256Audited PKInitHashAlgorithmSHA256Value = 2
 	// Supported
-	PKInitHashAlgorithmSHA256Supported int64 = 3
+	PKInitHashAlgorithmSHA256Supported PKInitHashAlgorithmSHA256Value = 3
 )
 
-// PKInitHashAlgorithmSHA384 allowed values.
+// String returns the PKInitHashAlgorithmSHA256Value constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PKInitHashAlgorithmSHA256Value) String() string {
+	switch e {
+	case PKInitHashAlgorithmSHA256NotSupported:
+		return "PKInitHashAlgorithmSHA256NotSupported"
+	case PKInitHashAlgorithmSHA256Default:
+		return "PKInitHashAlgorithmSHA256Default"
+	case PKInitHashAlgorithmSHA256Audited:
+		return "PKInitHashAlgorithmSHA256Audited"
+	case PKInitHashAlgorithmSHA256Supported:
+		return "PKInitHashAlgorithmSHA256Supported"
+	default:
+		return fmt.Sprintf("PKInitHashAlgorithmSHA256Value(%d)", int64(e))
+	}
+}
+
+// PKInitHashAlgorithmSHA384Value — allowed values for the PKInitHashAlgorithmSHA384 node.
+type PKInitHashAlgorithmSHA384Value int64
+
 const (
 	// Not Supported
-	PKInitHashAlgorithmSHA384NotSupported int64 = 0
+	PKInitHashAlgorithmSHA384NotSupported PKInitHashAlgorithmSHA384Value = 0
 	// Default
-	PKInitHashAlgorithmSHA384Default int64 = 1
+	PKInitHashAlgorithmSHA384Default PKInitHashAlgorithmSHA384Value = 1
 	// Audited
-	PKInitHashAlgorithmSHA384Audited int64 = 2
+	PKInitHashAlgorithmSHA384Audited PKInitHashAlgorithmSHA384Value = 2
 	// Supported
-	PKInitHashAlgorithmSHA384Supported int64 = 3
+	PKInitHashAlgorithmSHA384Supported PKInitHashAlgorithmSHA384Value = 3
 )
 
-// PKInitHashAlgorithmSHA512 allowed values.
+// String returns the PKInitHashAlgorithmSHA384Value constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PKInitHashAlgorithmSHA384Value) String() string {
+	switch e {
+	case PKInitHashAlgorithmSHA384NotSupported:
+		return "PKInitHashAlgorithmSHA384NotSupported"
+	case PKInitHashAlgorithmSHA384Default:
+		return "PKInitHashAlgorithmSHA384Default"
+	case PKInitHashAlgorithmSHA384Audited:
+		return "PKInitHashAlgorithmSHA384Audited"
+	case PKInitHashAlgorithmSHA384Supported:
+		return "PKInitHashAlgorithmSHA384Supported"
+	default:
+		return fmt.Sprintf("PKInitHashAlgorithmSHA384Value(%d)", int64(e))
+	}
+}
+
+// PKInitHashAlgorithmSHA512Value — allowed values for the PKInitHashAlgorithmSHA512 node.
+type PKInitHashAlgorithmSHA512Value int64
+
 const (
 	// Not Supported
-	PKInitHashAlgorithmSHA512NotSupported int64 = 0
+	PKInitHashAlgorithmSHA512NotSupported PKInitHashAlgorithmSHA512Value = 0
 	// Default
-	PKInitHashAlgorithmSHA512Default int64 = 1
+	PKInitHashAlgorithmSHA512Default PKInitHashAlgorithmSHA512Value = 1
 	// Audited
-	PKInitHashAlgorithmSHA512Audited int64 = 2
+	PKInitHashAlgorithmSHA512Audited PKInitHashAlgorithmSHA512Value = 2
 	// Supported
-	PKInitHashAlgorithmSHA512Supported int64 = 3
+	PKInitHashAlgorithmSHA512Supported PKInitHashAlgorithmSHA512Value = 3
 )
+
+// String returns the PKInitHashAlgorithmSHA512Value constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PKInitHashAlgorithmSHA512Value) String() string {
+	switch e {
+	case PKInitHashAlgorithmSHA512NotSupported:
+		return "PKInitHashAlgorithmSHA512NotSupported"
+	case PKInitHashAlgorithmSHA512Default:
+		return "PKInitHashAlgorithmSHA512Default"
+	case PKInitHashAlgorithmSHA512Audited:
+		return "PKInitHashAlgorithmSHA512Audited"
+	case PKInitHashAlgorithmSHA512Supported:
+		return "PKInitHashAlgorithmSHA512Supported"
+	default:
+		return fmt.Sprintf("PKInitHashAlgorithmSHA512Value(%d)", int64(e))
+	}
+}

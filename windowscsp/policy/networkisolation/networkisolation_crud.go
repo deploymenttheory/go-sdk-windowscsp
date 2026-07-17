@@ -126,12 +126,13 @@ func (s *NetworkIsolation) DeleteEnterpriseIPRange(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *NetworkIsolation) GetEnterpriseIPRangesAreAuthoritative(ctx context.Context) (int64, error) {
+func (s *NetworkIsolation) GetEnterpriseIPRangesAreAuthoritative(ctx context.Context) (EnterpriseIPRangesAreAuthoritativeValue, error) {
 	v, err := s.c.Get(ctx, URIEnterpriseIPRangesAreAuthoritative)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnterpriseIPRangesAreAuthoritativeValue(n), err
 }
 
 // CreateEnterpriseIPRangesAreAuthoritative creates ./Device/Vendor/MSFT/Policy/Config/NetworkIsolation/EnterpriseIPRangesAreAuthoritative.
@@ -140,8 +141,8 @@ func (s *NetworkIsolation) GetEnterpriseIPRangesAreAuthoritative(ctx context.Con
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *NetworkIsolation) CreateEnterpriseIPRangesAreAuthoritative(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnterpriseIPRangesAreAuthoritative, client.Int(value))
+func (s *NetworkIsolation) CreateEnterpriseIPRangesAreAuthoritative(ctx context.Context, value EnterpriseIPRangesAreAuthoritativeValue) error {
+	return s.c.Add(ctx, URIEnterpriseIPRangesAreAuthoritative, client.Int(int64(value)))
 }
 
 // UpdateEnterpriseIPRangesAreAuthoritative updates ./Device/Vendor/MSFT/Policy/Config/NetworkIsolation/EnterpriseIPRangesAreAuthoritative.
@@ -150,8 +151,8 @@ func (s *NetworkIsolation) CreateEnterpriseIPRangesAreAuthoritative(ctx context.
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *NetworkIsolation) UpdateEnterpriseIPRangesAreAuthoritative(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnterpriseIPRangesAreAuthoritative, client.Int(value))
+func (s *NetworkIsolation) UpdateEnterpriseIPRangesAreAuthoritative(ctx context.Context, value EnterpriseIPRangesAreAuthoritativeValue) error {
+	return s.c.Replace(ctx, URIEnterpriseIPRangesAreAuthoritative, client.Int(int64(value)))
 }
 
 // DeleteEnterpriseIPRangesAreAuthoritative deletes ./Device/Vendor/MSFT/Policy/Config/NetworkIsolation/EnterpriseIPRangesAreAuthoritative.
@@ -334,12 +335,13 @@ func (s *NetworkIsolation) DeleteEnterpriseProxyServers(ctx context.Context) err
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *NetworkIsolation) GetEnterpriseProxyServersAreAuthoritative(ctx context.Context) (int64, error) {
+func (s *NetworkIsolation) GetEnterpriseProxyServersAreAuthoritative(ctx context.Context) (EnterpriseProxyServersAreAuthoritativeValue, error) {
 	v, err := s.c.Get(ctx, URIEnterpriseProxyServersAreAuthoritative)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnterpriseProxyServersAreAuthoritativeValue(n), err
 }
 
 // CreateEnterpriseProxyServersAreAuthoritative creates ./Device/Vendor/MSFT/Policy/Config/NetworkIsolation/EnterpriseProxyServersAreAuthoritative.
@@ -348,8 +350,8 @@ func (s *NetworkIsolation) GetEnterpriseProxyServersAreAuthoritative(ctx context
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *NetworkIsolation) CreateEnterpriseProxyServersAreAuthoritative(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnterpriseProxyServersAreAuthoritative, client.Int(value))
+func (s *NetworkIsolation) CreateEnterpriseProxyServersAreAuthoritative(ctx context.Context, value EnterpriseProxyServersAreAuthoritativeValue) error {
+	return s.c.Add(ctx, URIEnterpriseProxyServersAreAuthoritative, client.Int(int64(value)))
 }
 
 // UpdateEnterpriseProxyServersAreAuthoritative updates ./Device/Vendor/MSFT/Policy/Config/NetworkIsolation/EnterpriseProxyServersAreAuthoritative.
@@ -358,8 +360,8 @@ func (s *NetworkIsolation) CreateEnterpriseProxyServersAreAuthoritative(ctx cont
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *NetworkIsolation) UpdateEnterpriseProxyServersAreAuthoritative(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnterpriseProxyServersAreAuthoritative, client.Int(value))
+func (s *NetworkIsolation) UpdateEnterpriseProxyServersAreAuthoritative(ctx context.Context, value EnterpriseProxyServersAreAuthoritativeValue) error {
+	return s.c.Replace(ctx, URIEnterpriseProxyServersAreAuthoritative, client.Int(int64(value)))
 }
 
 // DeleteEnterpriseProxyServersAreAuthoritative deletes ./Device/Vendor/MSFT/Policy/Config/NetworkIsolation/EnterpriseProxyServersAreAuthoritative.

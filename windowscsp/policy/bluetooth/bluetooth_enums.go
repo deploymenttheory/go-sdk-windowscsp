@@ -2,44 +2,108 @@
 
 package bluetooth
 
-// AllowAdvertising allowed values.
+import (
+	"fmt"
+)
+
+// AllowAdvertisingValue — allowed values for the AllowAdvertising node.
+type AllowAdvertisingValue int64
+
 const (
 	// Not allowed. When set to 0, the device will not send out advertisements. To verify, use any
 	// Bluetooth LE app and enable it to do advertising. Then, verify that the advertisement is not
 	// received by the peripheral.
-	AllowAdvertisingNotAllowed int64 = 0
+	AllowAdvertisingNotAllowed AllowAdvertisingValue = 0
 	// Allowed. When set to 1, the device will send out advertisements. To verify, use any Bluetooth LE
 	// app and enable it to do advertising. Then, verify that the advertisement is received by the
 	// peripheral.
-	AllowAdvertisingAllowed int64 = 1
+	AllowAdvertisingAllowed AllowAdvertisingValue = 1
 )
 
-// AllowDiscoverableMode allowed values.
+// String returns the AllowAdvertisingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowAdvertisingValue) String() string {
+	switch e {
+	case AllowAdvertisingNotAllowed:
+		return "AllowAdvertisingNotAllowed"
+	case AllowAdvertisingAllowed:
+		return "AllowAdvertisingAllowed"
+	default:
+		return fmt.Sprintf("AllowAdvertisingValue(%d)", int64(e))
+	}
+}
+
+// AllowDiscoverableModeValue — allowed values for the AllowDiscoverableMode node.
+type AllowDiscoverableModeValue int64
+
 const (
 	// Not allowed. When set to 0, other devices will not be able to detect the device. To verify, open
 	// the Bluetooth control panel on the device. Then, go to another Bluetooth-enabled device, open
 	// the Bluetooth control panel, and verify that you cannot see the name of the device.
-	AllowDiscoverableModeNotAllowed int64 = 0
+	AllowDiscoverableModeNotAllowed AllowDiscoverableModeValue = 0
 	// Allowed. When set to 1, other devices will be able to detect the device. To verify, open the
 	// Bluetooth control panel on the device. Then, go to another Bluetooth-enabled device, open the
 	// Bluetooth control panel and verify that you can discover it.
-	AllowDiscoverableModeAllowed int64 = 1
+	AllowDiscoverableModeAllowed AllowDiscoverableModeValue = 1
 )
 
-// AllowPrepairing allowed values.
+// String returns the AllowDiscoverableModeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowDiscoverableModeValue) String() string {
+	switch e {
+	case AllowDiscoverableModeNotAllowed:
+		return "AllowDiscoverableModeNotAllowed"
+	case AllowDiscoverableModeAllowed:
+		return "AllowDiscoverableModeAllowed"
+	default:
+		return fmt.Sprintf("AllowDiscoverableModeValue(%d)", int64(e))
+	}
+}
+
+// AllowPrepairingValue — allowed values for the AllowPrepairing node.
+type AllowPrepairingValue int64
+
 const (
 	// Not allowed.
-	AllowPrepairingNotAllowed int64 = 0
+	AllowPrepairingNotAllowed AllowPrepairingValue = 0
 	// Allowed.
-	AllowPrepairingAllowed int64 = 1
+	AllowPrepairingAllowed AllowPrepairingValue = 1
 )
 
-// AllowPromptedProximalConnections allowed values.
+// String returns the AllowPrepairingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowPrepairingValue) String() string {
+	switch e {
+	case AllowPrepairingNotAllowed:
+		return "AllowPrepairingNotAllowed"
+	case AllowPrepairingAllowed:
+		return "AllowPrepairingAllowed"
+	default:
+		return fmt.Sprintf("AllowPrepairingValue(%d)", int64(e))
+	}
+}
+
+// AllowPromptedProximalConnectionsValue — allowed values for the AllowPromptedProximalConnections node.
+type AllowPromptedProximalConnectionsValue int64
+
 const (
 	// Disallow. Block users on these managed devices from using Swift Pair and other proximity based
 	// scenarios
-	AllowPromptedProximalConnectionsDisallow int64 = 0
+	AllowPromptedProximalConnectionsDisallow AllowPromptedProximalConnectionsValue = 0
 	// Allow. Allow users on these managed devices to use Swift Pair and other proximity based
 	// scenarios
-	AllowPromptedProximalConnectionsAllow int64 = 1
+	AllowPromptedProximalConnectionsAllow AllowPromptedProximalConnectionsValue = 1
 )
+
+// String returns the AllowPromptedProximalConnectionsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowPromptedProximalConnectionsValue) String() string {
+	switch e {
+	case AllowPromptedProximalConnectionsDisallow:
+		return "AllowPromptedProximalConnectionsDisallow"
+	case AllowPromptedProximalConnectionsAllow:
+		return "AllowPromptedProximalConnectionsAllow"
+	default:
+		return fmt.Sprintf("AllowPromptedProximalConnectionsValue(%d)", int64(e))
+	}
+}

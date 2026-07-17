@@ -57,18 +57,19 @@ func (s *WindowsLicensing) GetDeviceLicensingServiceDeviceLicensingStatus(ctx co
 
 // GetDeviceLicensingServiceLicenseType reads ./Vendor/MSFT/WindowsLicensing/DeviceLicensingService/LicenseType.
 // License Type: User Based Subscription or Device Based Subscription
-func (s *WindowsLicensing) GetDeviceLicensingServiceLicenseType(ctx context.Context) (int64, error) {
+func (s *WindowsLicensing) GetDeviceLicensingServiceLicenseType(ctx context.Context) (DeviceLicensingServiceLicenseTypeValue, error) {
 	v, err := s.c.Get(ctx, URIDeviceLicensingServiceLicenseType)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DeviceLicensingServiceLicenseTypeValue(n), err
 }
 
 // UpdateDeviceLicensingServiceLicenseType updates ./Vendor/MSFT/WindowsLicensing/DeviceLicensingService/LicenseType.
 // License Type: User Based Subscription or Device Based Subscription
-func (s *WindowsLicensing) UpdateDeviceLicensingServiceLicenseType(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDeviceLicensingServiceLicenseType, client.Int(value))
+func (s *WindowsLicensing) UpdateDeviceLicensingServiceLicenseType(ctx context.Context, value DeviceLicensingServiceLicenseTypeValue) error {
+	return s.c.Replace(ctx, URIDeviceLicensingServiceLicenseType, client.Int(int64(value)))
 }
 
 // GetEdition reads ./Vendor/MSFT/WindowsLicensing/Edition.
@@ -113,24 +114,25 @@ func (s *WindowsLicensing) ExecSModeSwitchFromSMode(ctx context.Context) error {
 
 // GetSModeSwitchingPolicy reads ./Vendor/MSFT/WindowsLicensing/SMode/SwitchingPolicy.
 // Policy that determines whether a consumer can switch the device out of S mode
-func (s *WindowsLicensing) GetSModeSwitchingPolicy(ctx context.Context) (int64, error) {
+func (s *WindowsLicensing) GetSModeSwitchingPolicy(ctx context.Context) (SModeSwitchingPolicyValue, error) {
 	v, err := s.c.Get(ctx, URISModeSwitchingPolicy)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SModeSwitchingPolicyValue(n), err
 }
 
 // CreateSModeSwitchingPolicy creates ./Vendor/MSFT/WindowsLicensing/SMode/SwitchingPolicy.
 // Policy that determines whether a consumer can switch the device out of S mode
-func (s *WindowsLicensing) CreateSModeSwitchingPolicy(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISModeSwitchingPolicy, client.Int(value))
+func (s *WindowsLicensing) CreateSModeSwitchingPolicy(ctx context.Context, value SModeSwitchingPolicyValue) error {
+	return s.c.Add(ctx, URISModeSwitchingPolicy, client.Int(int64(value)))
 }
 
 // UpdateSModeSwitchingPolicy updates ./Vendor/MSFT/WindowsLicensing/SMode/SwitchingPolicy.
 // Policy that determines whether a consumer can switch the device out of S mode
-func (s *WindowsLicensing) UpdateSModeSwitchingPolicy(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISModeSwitchingPolicy, client.Int(value))
+func (s *WindowsLicensing) UpdateSModeSwitchingPolicy(ctx context.Context, value SModeSwitchingPolicyValue) error {
+	return s.c.Replace(ctx, URISModeSwitchingPolicy, client.Int(int64(value)))
 }
 
 // DeleteSModeSwitchingPolicy deletes ./Vendor/MSFT/WindowsLicensing/SMode/SwitchingPolicy.
@@ -182,8 +184,8 @@ func (s *WindowsLicensing) GetSubscriptionsSubscriptionIdStatus(ctx context.Cont
 // Disable or Enable subscription activation on a device
 //
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsLicensing) UpdateSubscriptionsDisableSubscription(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISubscriptionsDisableSubscription, client.Int(value))
+func (s *WindowsLicensing) UpdateSubscriptionsDisableSubscription(ctx context.Context, value SubscriptionsDisableSubscriptionValue) error {
+	return s.c.Replace(ctx, URISubscriptionsDisableSubscription, client.Int(int64(value)))
 }
 
 // ExecSubscriptionsRemoveSubscription executes ./Vendor/MSFT/WindowsLicensing/Subscriptions/RemoveSubscription.
@@ -238,12 +240,13 @@ func (s *WindowsLicensing) GetSubscriptionsSubscriptionStatus(ctx context.Contex
 // Based Subscription the existing process of user logon will be required.
 //
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsLicensing) GetSubscriptionsSubscriptionType(ctx context.Context) (int64, error) {
+func (s *WindowsLicensing) GetSubscriptionsSubscriptionType(ctx context.Context) (SubscriptionsSubscriptionTypeValue, error) {
 	v, err := s.c.Get(ctx, URISubscriptionsSubscriptionType)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SubscriptionsSubscriptionTypeValue(n), err
 }
 
 // UpdateSubscriptionsSubscriptionType updates ./Vendor/MSFT/WindowsLicensing/Subscriptions/SubscriptionType.
@@ -252,8 +255,8 @@ func (s *WindowsLicensing) GetSubscriptionsSubscriptionType(ctx context.Context)
 // Based Subscription the existing process of user logon will be required.
 //
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsLicensing) UpdateSubscriptionsSubscriptionType(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISubscriptionsSubscriptionType, client.Int(value))
+func (s *WindowsLicensing) UpdateSubscriptionsSubscriptionType(ctx context.Context, value SubscriptionsSubscriptionTypeValue) error {
+	return s.c.Replace(ctx, URISubscriptionsSubscriptionType, client.Int(int64(value)))
 }
 
 // ExecUpgradeEditionWithLicense executes ./Vendor/MSFT/WindowsLicensing/UpgradeEditionWithLicense.

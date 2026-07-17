@@ -2,42 +2,121 @@
 
 package webthreatdefense
 
-// AutomaticDataCollection allowed values.
-const (
-	// Disabled
-	AutomaticDataCollectionDisabled int64 = 0
-	// Enabled
-	AutomaticDataCollectionEnabled int64 = 1
+import (
+	"fmt"
 )
 
-// NotifyMalicious allowed values.
+// AutomaticDataCollectionValue — allowed values for the AutomaticDataCollection node.
+type AutomaticDataCollectionValue int64
+
 const (
 	// Disabled
-	NotifyMaliciousDisabled int64 = 0
+	AutomaticDataCollectionDisabled AutomaticDataCollectionValue = 0
 	// Enabled
-	NotifyMaliciousEnabled int64 = 1
+	AutomaticDataCollectionEnabled AutomaticDataCollectionValue = 1
 )
 
-// NotifyPasswordReuse allowed values.
+// String returns the AutomaticDataCollectionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AutomaticDataCollectionValue) String() string {
+	switch e {
+	case AutomaticDataCollectionDisabled:
+		return "AutomaticDataCollectionDisabled"
+	case AutomaticDataCollectionEnabled:
+		return "AutomaticDataCollectionEnabled"
+	default:
+		return fmt.Sprintf("AutomaticDataCollectionValue(%d)", int64(e))
+	}
+}
+
+// NotifyMaliciousValue — allowed values for the NotifyMalicious node.
+type NotifyMaliciousValue int64
+
 const (
 	// Disabled
-	NotifyPasswordReuseDisabled int64 = 0
+	NotifyMaliciousDisabled NotifyMaliciousValue = 0
 	// Enabled
-	NotifyPasswordReuseEnabled int64 = 1
+	NotifyMaliciousEnabled NotifyMaliciousValue = 1
 )
 
-// NotifyUnsafeApp allowed values.
+// String returns the NotifyMaliciousValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e NotifyMaliciousValue) String() string {
+	switch e {
+	case NotifyMaliciousDisabled:
+		return "NotifyMaliciousDisabled"
+	case NotifyMaliciousEnabled:
+		return "NotifyMaliciousEnabled"
+	default:
+		return fmt.Sprintf("NotifyMaliciousValue(%d)", int64(e))
+	}
+}
+
+// NotifyPasswordReuseValue — allowed values for the NotifyPasswordReuse node.
+type NotifyPasswordReuseValue int64
+
 const (
 	// Disabled
-	NotifyUnsafeAppDisabled int64 = 0
+	NotifyPasswordReuseDisabled NotifyPasswordReuseValue = 0
 	// Enabled
-	NotifyUnsafeAppEnabled int64 = 1
+	NotifyPasswordReuseEnabled NotifyPasswordReuseValue = 1
 )
 
-// ServiceEnabled allowed values.
+// String returns the NotifyPasswordReuseValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e NotifyPasswordReuseValue) String() string {
+	switch e {
+	case NotifyPasswordReuseDisabled:
+		return "NotifyPasswordReuseDisabled"
+	case NotifyPasswordReuseEnabled:
+		return "NotifyPasswordReuseEnabled"
+	default:
+		return fmt.Sprintf("NotifyPasswordReuseValue(%d)", int64(e))
+	}
+}
+
+// NotifyUnsafeAppValue — allowed values for the NotifyUnsafeApp node.
+type NotifyUnsafeAppValue int64
+
 const (
 	// Disabled
-	ServiceEnabledDisabled int64 = 0
+	NotifyUnsafeAppDisabled NotifyUnsafeAppValue = 0
 	// Enabled
-	ServiceEnabledEnabled int64 = 1
+	NotifyUnsafeAppEnabled NotifyUnsafeAppValue = 1
 )
+
+// String returns the NotifyUnsafeAppValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e NotifyUnsafeAppValue) String() string {
+	switch e {
+	case NotifyUnsafeAppDisabled:
+		return "NotifyUnsafeAppDisabled"
+	case NotifyUnsafeAppEnabled:
+		return "NotifyUnsafeAppEnabled"
+	default:
+		return fmt.Sprintf("NotifyUnsafeAppValue(%d)", int64(e))
+	}
+}
+
+// ServiceEnabledValue — allowed values for the ServiceEnabled node.
+type ServiceEnabledValue int64
+
+const (
+	// Disabled
+	ServiceEnabledDisabled ServiceEnabledValue = 0
+	// Enabled
+	ServiceEnabledEnabled ServiceEnabledValue = 1
+)
+
+// String returns the ServiceEnabledValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ServiceEnabledValue) String() string {
+	switch e {
+	case ServiceEnabledDisabled:
+		return "ServiceEnabledDisabled"
+	case ServiceEnabledEnabled:
+		return "ServiceEnabledEnabled"
+	default:
+		return fmt.Sprintf("ServiceEnabledValue(%d)", int64(e))
+	}
+}

@@ -15,12 +15,13 @@ import (
 // Supported from OS build 10.0.10240 (CSP v1.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *AboveLock) GetAllowActionCenterNotifications(ctx context.Context) (int64, error) {
+func (s *AboveLock) GetAllowActionCenterNotifications(ctx context.Context) (AllowActionCenterNotificationsValue, error) {
 	v, err := s.c.Get(ctx, URIAllowActionCenterNotifications)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowActionCenterNotificationsValue(n), err
 }
 
 // CreateAllowActionCenterNotifications creates ./Device/Vendor/MSFT/Policy/Config/AboveLock/AllowActionCenterNotifications.
@@ -30,8 +31,8 @@ func (s *AboveLock) GetAllowActionCenterNotifications(ctx context.Context) (int6
 // Supported from OS build 10.0.10240 (CSP v1.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *AboveLock) CreateAllowActionCenterNotifications(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowActionCenterNotifications, client.Int(value))
+func (s *AboveLock) CreateAllowActionCenterNotifications(ctx context.Context, value AllowActionCenterNotificationsValue) error {
+	return s.c.Add(ctx, URIAllowActionCenterNotifications, client.Int(int64(value)))
 }
 
 // UpdateAllowActionCenterNotifications updates ./Device/Vendor/MSFT/Policy/Config/AboveLock/AllowActionCenterNotifications.
@@ -41,8 +42,8 @@ func (s *AboveLock) CreateAllowActionCenterNotifications(ctx context.Context, va
 // Supported from OS build 10.0.10240 (CSP v1.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *AboveLock) UpdateAllowActionCenterNotifications(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowActionCenterNotifications, client.Int(value))
+func (s *AboveLock) UpdateAllowActionCenterNotifications(ctx context.Context, value AllowActionCenterNotificationsValue) error {
+	return s.c.Replace(ctx, URIAllowActionCenterNotifications, client.Int(int64(value)))
 }
 
 // DeleteAllowActionCenterNotifications deletes ./Device/Vendor/MSFT/Policy/Config/AboveLock/AllowActionCenterNotifications.
@@ -64,12 +65,13 @@ func (s *AboveLock) DeleteAllowActionCenterNotifications(ctx context.Context) er
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *AboveLock) GetAllowCortanaAboveLock(ctx context.Context) (int64, error) {
+func (s *AboveLock) GetAllowCortanaAboveLock(ctx context.Context) (AllowCortanaAboveLockValue, error) {
 	v, err := s.c.Get(ctx, URIAllowCortanaAboveLock)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowCortanaAboveLockValue(n), err
 }
 
 // CreateAllowCortanaAboveLock creates ./Device/Vendor/MSFT/Policy/Config/AboveLock/AllowCortanaAboveLock.
@@ -80,8 +82,8 @@ func (s *AboveLock) GetAllowCortanaAboveLock(ctx context.Context) (int64, error)
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *AboveLock) CreateAllowCortanaAboveLock(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowCortanaAboveLock, client.Int(value))
+func (s *AboveLock) CreateAllowCortanaAboveLock(ctx context.Context, value AllowCortanaAboveLockValue) error {
+	return s.c.Add(ctx, URIAllowCortanaAboveLock, client.Int(int64(value)))
 }
 
 // UpdateAllowCortanaAboveLock updates ./Device/Vendor/MSFT/Policy/Config/AboveLock/AllowCortanaAboveLock.
@@ -92,8 +94,8 @@ func (s *AboveLock) CreateAllowCortanaAboveLock(ctx context.Context, value int64
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *AboveLock) UpdateAllowCortanaAboveLock(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowCortanaAboveLock, client.Int(value))
+func (s *AboveLock) UpdateAllowCortanaAboveLock(ctx context.Context, value AllowCortanaAboveLockValue) error {
+	return s.c.Replace(ctx, URIAllowCortanaAboveLock, client.Int(int64(value)))
 }
 
 // DeleteAllowCortanaAboveLock deletes ./Device/Vendor/MSFT/Policy/Config/AboveLock/AllowCortanaAboveLock.
@@ -114,12 +116,13 @@ func (s *AboveLock) DeleteAllowCortanaAboveLock(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *AboveLock) GetAllowToasts(ctx context.Context) (int64, error) {
+func (s *AboveLock) GetAllowToasts(ctx context.Context) (AllowToastsValue, error) {
 	v, err := s.c.Get(ctx, URIAllowToasts)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowToastsValue(n), err
 }
 
 // CreateAllowToasts creates ./Device/Vendor/MSFT/Policy/Config/AboveLock/AllowToasts.
@@ -128,8 +131,8 @@ func (s *AboveLock) GetAllowToasts(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *AboveLock) CreateAllowToasts(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowToasts, client.Int(value))
+func (s *AboveLock) CreateAllowToasts(ctx context.Context, value AllowToastsValue) error {
+	return s.c.Add(ctx, URIAllowToasts, client.Int(int64(value)))
 }
 
 // UpdateAllowToasts updates ./Device/Vendor/MSFT/Policy/Config/AboveLock/AllowToasts.
@@ -138,8 +141,8 @@ func (s *AboveLock) CreateAllowToasts(ctx context.Context, value int64) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *AboveLock) UpdateAllowToasts(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowToasts, client.Int(value))
+func (s *AboveLock) UpdateAllowToasts(ctx context.Context, value AllowToastsValue) error {
+	return s.c.Replace(ctx, URIAllowToasts, client.Int(int64(value)))
 }
 
 // DeleteAllowToasts deletes ./Device/Vendor/MSFT/Policy/Config/AboveLock/AllowToasts.
@@ -158,12 +161,13 @@ func (s *AboveLock) DeleteAllowToasts(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *AboveLock) GetConfigureAudioOnLockScreen(ctx context.Context) (int64, error) {
+func (s *AboveLock) GetConfigureAudioOnLockScreen(ctx context.Context) (ConfigureAudioOnLockScreenValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureAudioOnLockScreen)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureAudioOnLockScreenValue(n), err
 }
 
 // CreateConfigureAudioOnLockScreen creates ./Device/Vendor/MSFT/Policy/Config/AboveLock/ConfigureAudioOnLockScreen.
@@ -172,8 +176,8 @@ func (s *AboveLock) GetConfigureAudioOnLockScreen(ctx context.Context) (int64, e
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *AboveLock) CreateConfigureAudioOnLockScreen(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureAudioOnLockScreen, client.Int(value))
+func (s *AboveLock) CreateConfigureAudioOnLockScreen(ctx context.Context, value ConfigureAudioOnLockScreenValue) error {
+	return s.c.Add(ctx, URIConfigureAudioOnLockScreen, client.Int(int64(value)))
 }
 
 // UpdateConfigureAudioOnLockScreen updates ./Device/Vendor/MSFT/Policy/Config/AboveLock/ConfigureAudioOnLockScreen.
@@ -182,8 +186,8 @@ func (s *AboveLock) CreateConfigureAudioOnLockScreen(ctx context.Context, value 
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *AboveLock) UpdateConfigureAudioOnLockScreen(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureAudioOnLockScreen, client.Int(value))
+func (s *AboveLock) UpdateConfigureAudioOnLockScreen(ctx context.Context, value ConfigureAudioOnLockScreenValue) error {
+	return s.c.Replace(ctx, URIConfigureAudioOnLockScreen, client.Int(int64(value)))
 }
 
 // DeleteConfigureAudioOnLockScreen deletes ./Device/Vendor/MSFT/Policy/Config/AboveLock/ConfigureAudioOnLockScreen.

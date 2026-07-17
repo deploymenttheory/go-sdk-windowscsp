@@ -2,34 +2,91 @@
 
 package display_user
 
-// ConfigureMultipleDisplayMode allowed values.
-const (
-	// Default.
-	ConfigureMultipleDisplayModeDefault int64 = 0
-	// Internal Only.
-	ConfigureMultipleDisplayModeInternalOnly int64 = 1
-	// External Only.
-	ConfigureMultipleDisplayModeExternalOnly int64 = 2
-	// Clone.
-	ConfigureMultipleDisplayModeClone int64 = 3
-	// Extend.
-	ConfigureMultipleDisplayModeExtend int64 = 4
+import (
+	"fmt"
 )
 
-// EnablePerProcessDpi allowed values.
+// ConfigureMultipleDisplayModeValue — allowed values for the ConfigureMultipleDisplayMode node.
+type ConfigureMultipleDisplayModeValue int64
+
+const (
+	// Default.
+	ConfigureMultipleDisplayModeDefault ConfigureMultipleDisplayModeValue = 0
+	// Internal Only.
+	ConfigureMultipleDisplayModeInternalOnly ConfigureMultipleDisplayModeValue = 1
+	// External Only.
+	ConfigureMultipleDisplayModeExternalOnly ConfigureMultipleDisplayModeValue = 2
+	// Clone.
+	ConfigureMultipleDisplayModeClone ConfigureMultipleDisplayModeValue = 3
+	// Extend.
+	ConfigureMultipleDisplayModeExtend ConfigureMultipleDisplayModeValue = 4
+)
+
+// String returns the ConfigureMultipleDisplayModeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureMultipleDisplayModeValue) String() string {
+	switch e {
+	case ConfigureMultipleDisplayModeDefault:
+		return "ConfigureMultipleDisplayModeDefault"
+	case ConfigureMultipleDisplayModeInternalOnly:
+		return "ConfigureMultipleDisplayModeInternalOnly"
+	case ConfigureMultipleDisplayModeExternalOnly:
+		return "ConfigureMultipleDisplayModeExternalOnly"
+	case ConfigureMultipleDisplayModeClone:
+		return "ConfigureMultipleDisplayModeClone"
+	case ConfigureMultipleDisplayModeExtend:
+		return "ConfigureMultipleDisplayModeExtend"
+	default:
+		return fmt.Sprintf("ConfigureMultipleDisplayModeValue(%d)", int64(e))
+	}
+}
+
+// EnablePerProcessDpiValue — allowed values for the EnablePerProcessDpi node.
+type EnablePerProcessDpiValue int64
+
 const (
 	// Disable.
-	EnablePerProcessDpiDisable int64 = 0
+	EnablePerProcessDpiDisable EnablePerProcessDpiValue = 0
 	// Enable.
-	EnablePerProcessDpiEnable int64 = 1
+	EnablePerProcessDpiEnable EnablePerProcessDpiValue = 1
 )
 
-// SetClonePreferredResolutionSource allowed values.
+// String returns the EnablePerProcessDpiValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnablePerProcessDpiValue) String() string {
+	switch e {
+	case EnablePerProcessDpiDisable:
+		return "EnablePerProcessDpiDisable"
+	case EnablePerProcessDpiEnable:
+		return "EnablePerProcessDpiEnable"
+	default:
+		return fmt.Sprintf("EnablePerProcessDpiValue(%d)", int64(e))
+	}
+}
+
+// SetClonePreferredResolutionSourceValue — allowed values for the SetClonePreferredResolutionSource node.
+type SetClonePreferredResolutionSourceValue int64
+
 const (
 	// Default.
-	SetClonePreferredResolutionSourceDefault int64 = 0
+	SetClonePreferredResolutionSourceDefault SetClonePreferredResolutionSourceValue = 0
 	// Internal.
-	SetClonePreferredResolutionSourceInternal int64 = 1
+	SetClonePreferredResolutionSourceInternal SetClonePreferredResolutionSourceValue = 1
 	// External.
-	SetClonePreferredResolutionSourceExternal int64 = 2
+	SetClonePreferredResolutionSourceExternal SetClonePreferredResolutionSourceValue = 2
 )
+
+// String returns the SetClonePreferredResolutionSourceValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SetClonePreferredResolutionSourceValue) String() string {
+	switch e {
+	case SetClonePreferredResolutionSourceDefault:
+		return "SetClonePreferredResolutionSourceDefault"
+	case SetClonePreferredResolutionSourceInternal:
+		return "SetClonePreferredResolutionSourceInternal"
+	case SetClonePreferredResolutionSourceExternal:
+		return "SetClonePreferredResolutionSourceExternal"
+	default:
+		return fmt.Sprintf("SetClonePreferredResolutionSourceValue(%d)", int64(e))
+	}
+}

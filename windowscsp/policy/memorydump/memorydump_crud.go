@@ -14,12 +14,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *MemoryDump) GetAllowCrashDump(ctx context.Context) (int64, error) {
+func (s *MemoryDump) GetAllowCrashDump(ctx context.Context) (AllowCrashDumpValue, error) {
 	v, err := s.c.Get(ctx, URIAllowCrashDump)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowCrashDumpValue(n), err
 }
 
 // CreateAllowCrashDump creates ./Device/Vendor/MSFT/Policy/Config/MemoryDump/AllowCrashDump.
@@ -28,8 +29,8 @@ func (s *MemoryDump) GetAllowCrashDump(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *MemoryDump) CreateAllowCrashDump(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowCrashDump, client.Int(value))
+func (s *MemoryDump) CreateAllowCrashDump(ctx context.Context, value AllowCrashDumpValue) error {
+	return s.c.Add(ctx, URIAllowCrashDump, client.Int(int64(value)))
 }
 
 // UpdateAllowCrashDump updates ./Device/Vendor/MSFT/Policy/Config/MemoryDump/AllowCrashDump.
@@ -38,8 +39,8 @@ func (s *MemoryDump) CreateAllowCrashDump(ctx context.Context, value int64) erro
 //
 // Default: 1.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *MemoryDump) UpdateAllowCrashDump(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowCrashDump, client.Int(value))
+func (s *MemoryDump) UpdateAllowCrashDump(ctx context.Context, value AllowCrashDumpValue) error {
+	return s.c.Replace(ctx, URIAllowCrashDump, client.Int(int64(value)))
 }
 
 // DeleteAllowCrashDump deletes ./Device/Vendor/MSFT/Policy/Config/MemoryDump/AllowCrashDump.
@@ -58,12 +59,13 @@ func (s *MemoryDump) DeleteAllowCrashDump(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *MemoryDump) GetAllowLiveDump(ctx context.Context) (int64, error) {
+func (s *MemoryDump) GetAllowLiveDump(ctx context.Context) (AllowLiveDumpValue, error) {
 	v, err := s.c.Get(ctx, URIAllowLiveDump)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowLiveDumpValue(n), err
 }
 
 // CreateAllowLiveDump creates ./Device/Vendor/MSFT/Policy/Config/MemoryDump/AllowLiveDump.
@@ -72,8 +74,8 @@ func (s *MemoryDump) GetAllowLiveDump(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *MemoryDump) CreateAllowLiveDump(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowLiveDump, client.Int(value))
+func (s *MemoryDump) CreateAllowLiveDump(ctx context.Context, value AllowLiveDumpValue) error {
+	return s.c.Add(ctx, URIAllowLiveDump, client.Int(int64(value)))
 }
 
 // UpdateAllowLiveDump updates ./Device/Vendor/MSFT/Policy/Config/MemoryDump/AllowLiveDump.
@@ -82,8 +84,8 @@ func (s *MemoryDump) CreateAllowLiveDump(ctx context.Context, value int64) error
 //
 // Default: 1.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *MemoryDump) UpdateAllowLiveDump(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowLiveDump, client.Int(value))
+func (s *MemoryDump) UpdateAllowLiveDump(ctx context.Context, value AllowLiveDumpValue) error {
+	return s.c.Replace(ctx, URIAllowLiveDump, client.Int(int64(value)))
 }
 
 // DeleteAllowLiveDump deletes ./Device/Vendor/MSFT/Policy/Config/MemoryDump/AllowLiveDump.

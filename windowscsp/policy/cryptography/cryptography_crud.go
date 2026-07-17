@@ -13,12 +13,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Cryptography) GetAllowFipsAlgorithmPolicy(ctx context.Context) (int64, error) {
+func (s *Cryptography) GetAllowFipsAlgorithmPolicy(ctx context.Context) (AllowFipsAlgorithmPolicyValue, error) {
 	v, err := s.c.Get(ctx, URIAllowFipsAlgorithmPolicy)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowFipsAlgorithmPolicyValue(n), err
 }
 
 // CreateAllowFipsAlgorithmPolicy creates ./Device/Vendor/MSFT/Policy/Config/Cryptography/AllowFipsAlgorithmPolicy.
@@ -26,8 +27,8 @@ func (s *Cryptography) GetAllowFipsAlgorithmPolicy(ctx context.Context) (int64, 
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Cryptography) CreateAllowFipsAlgorithmPolicy(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowFipsAlgorithmPolicy, client.Int(value))
+func (s *Cryptography) CreateAllowFipsAlgorithmPolicy(ctx context.Context, value AllowFipsAlgorithmPolicyValue) error {
+	return s.c.Add(ctx, URIAllowFipsAlgorithmPolicy, client.Int(int64(value)))
 }
 
 // UpdateAllowFipsAlgorithmPolicy updates ./Device/Vendor/MSFT/Policy/Config/Cryptography/AllowFipsAlgorithmPolicy.
@@ -35,8 +36,8 @@ func (s *Cryptography) CreateAllowFipsAlgorithmPolicy(ctx context.Context, value
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Cryptography) UpdateAllowFipsAlgorithmPolicy(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowFipsAlgorithmPolicy, client.Int(value))
+func (s *Cryptography) UpdateAllowFipsAlgorithmPolicy(ctx context.Context, value AllowFipsAlgorithmPolicyValue) error {
+	return s.c.Replace(ctx, URIAllowFipsAlgorithmPolicy, client.Int(int64(value)))
 }
 
 // DeleteAllowFipsAlgorithmPolicy deletes ./Device/Vendor/MSFT/Policy/Config/Cryptography/AllowFipsAlgorithmPolicy.
@@ -90,12 +91,13 @@ func (s *Cryptography) DeleteConfigureEllipticCurveCryptography(ctx context.Cont
 //
 // Default: 2.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *Cryptography) GetConfigureSystemCryptographyForceStrongKeyProtection(ctx context.Context) (int64, error) {
+func (s *Cryptography) GetConfigureSystemCryptographyForceStrongKeyProtection(ctx context.Context) (ConfigureSystemCryptographyForceStrongKeyProtectionValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureSystemCryptographyForceStrongKeyProtection)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureSystemCryptographyForceStrongKeyProtectionValue(n), err
 }
 
 // CreateConfigureSystemCryptographyForceStrongKeyProtection creates ./Device/Vendor/MSFT/Policy/Config/Cryptography/ConfigureSystemCryptographyForceStrongKeyProtection.
@@ -104,8 +106,8 @@ func (s *Cryptography) GetConfigureSystemCryptographyForceStrongKeyProtection(ct
 //
 // Default: 2.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *Cryptography) CreateConfigureSystemCryptographyForceStrongKeyProtection(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureSystemCryptographyForceStrongKeyProtection, client.Int(value))
+func (s *Cryptography) CreateConfigureSystemCryptographyForceStrongKeyProtection(ctx context.Context, value ConfigureSystemCryptographyForceStrongKeyProtectionValue) error {
+	return s.c.Add(ctx, URIConfigureSystemCryptographyForceStrongKeyProtection, client.Int(int64(value)))
 }
 
 // UpdateConfigureSystemCryptographyForceStrongKeyProtection updates ./Device/Vendor/MSFT/Policy/Config/Cryptography/ConfigureSystemCryptographyForceStrongKeyProtection.
@@ -114,8 +116,8 @@ func (s *Cryptography) CreateConfigureSystemCryptographyForceStrongKeyProtection
 //
 // Default: 2.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *Cryptography) UpdateConfigureSystemCryptographyForceStrongKeyProtection(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureSystemCryptographyForceStrongKeyProtection, client.Int(value))
+func (s *Cryptography) UpdateConfigureSystemCryptographyForceStrongKeyProtection(ctx context.Context, value ConfigureSystemCryptographyForceStrongKeyProtectionValue) error {
+	return s.c.Replace(ctx, URIConfigureSystemCryptographyForceStrongKeyProtection, client.Int(int64(value)))
 }
 
 // DeleteConfigureSystemCryptographyForceStrongKeyProtection deletes ./Device/Vendor/MSFT/Policy/Config/Cryptography/ConfigureSystemCryptographyForceStrongKeyProtection.

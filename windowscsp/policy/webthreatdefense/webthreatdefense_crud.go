@@ -14,12 +14,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *WebThreatDefense) GetAutomaticDataCollection(ctx context.Context) (int64, error) {
+func (s *WebThreatDefense) GetAutomaticDataCollection(ctx context.Context) (AutomaticDataCollectionValue, error) {
 	v, err := s.c.Get(ctx, URIAutomaticDataCollection)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AutomaticDataCollectionValue(n), err
 }
 
 // CreateAutomaticDataCollection creates ./Device/Vendor/MSFT/Policy/Config/WebThreatDefense/AutomaticDataCollection.
@@ -28,8 +29,8 @@ func (s *WebThreatDefense) GetAutomaticDataCollection(ctx context.Context) (int6
 //
 // Default: 0.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *WebThreatDefense) CreateAutomaticDataCollection(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAutomaticDataCollection, client.Int(value))
+func (s *WebThreatDefense) CreateAutomaticDataCollection(ctx context.Context, value AutomaticDataCollectionValue) error {
+	return s.c.Add(ctx, URIAutomaticDataCollection, client.Int(int64(value)))
 }
 
 // UpdateAutomaticDataCollection updates ./Device/Vendor/MSFT/Policy/Config/WebThreatDefense/AutomaticDataCollection.
@@ -38,8 +39,8 @@ func (s *WebThreatDefense) CreateAutomaticDataCollection(ctx context.Context, va
 //
 // Default: 0.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *WebThreatDefense) UpdateAutomaticDataCollection(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAutomaticDataCollection, client.Int(value))
+func (s *WebThreatDefense) UpdateAutomaticDataCollection(ctx context.Context, value AutomaticDataCollectionValue) error {
+	return s.c.Replace(ctx, URIAutomaticDataCollection, client.Int(int64(value)))
 }
 
 // DeleteAutomaticDataCollection deletes ./Device/Vendor/MSFT/Policy/Config/WebThreatDefense/AutomaticDataCollection.
@@ -57,12 +58,13 @@ func (s *WebThreatDefense) DeleteAutomaticDataCollection(ctx context.Context) er
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *WebThreatDefense) GetNotifyMalicious(ctx context.Context) (int64, error) {
+func (s *WebThreatDefense) GetNotifyMalicious(ctx context.Context) (NotifyMaliciousValue, error) {
 	v, err := s.c.Get(ctx, URINotifyMalicious)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return NotifyMaliciousValue(n), err
 }
 
 // CreateNotifyMalicious creates ./Device/Vendor/MSFT/Policy/Config/WebThreatDefense/NotifyMalicious.
@@ -70,8 +72,8 @@ func (s *WebThreatDefense) GetNotifyMalicious(ctx context.Context) (int64, error
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *WebThreatDefense) CreateNotifyMalicious(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URINotifyMalicious, client.Int(value))
+func (s *WebThreatDefense) CreateNotifyMalicious(ctx context.Context, value NotifyMaliciousValue) error {
+	return s.c.Add(ctx, URINotifyMalicious, client.Int(int64(value)))
 }
 
 // UpdateNotifyMalicious updates ./Device/Vendor/MSFT/Policy/Config/WebThreatDefense/NotifyMalicious.
@@ -79,8 +81,8 @@ func (s *WebThreatDefense) CreateNotifyMalicious(ctx context.Context, value int6
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *WebThreatDefense) UpdateNotifyMalicious(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URINotifyMalicious, client.Int(value))
+func (s *WebThreatDefense) UpdateNotifyMalicious(ctx context.Context, value NotifyMaliciousValue) error {
+	return s.c.Replace(ctx, URINotifyMalicious, client.Int(int64(value)))
 }
 
 // DeleteNotifyMalicious deletes ./Device/Vendor/MSFT/Policy/Config/WebThreatDefense/NotifyMalicious.
@@ -97,12 +99,13 @@ func (s *WebThreatDefense) DeleteNotifyMalicious(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *WebThreatDefense) GetNotifyPasswordReuse(ctx context.Context) (int64, error) {
+func (s *WebThreatDefense) GetNotifyPasswordReuse(ctx context.Context) (NotifyPasswordReuseValue, error) {
 	v, err := s.c.Get(ctx, URINotifyPasswordReuse)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return NotifyPasswordReuseValue(n), err
 }
 
 // CreateNotifyPasswordReuse creates ./Device/Vendor/MSFT/Policy/Config/WebThreatDefense/NotifyPasswordReuse.
@@ -110,8 +113,8 @@ func (s *WebThreatDefense) GetNotifyPasswordReuse(ctx context.Context) (int64, e
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *WebThreatDefense) CreateNotifyPasswordReuse(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URINotifyPasswordReuse, client.Int(value))
+func (s *WebThreatDefense) CreateNotifyPasswordReuse(ctx context.Context, value NotifyPasswordReuseValue) error {
+	return s.c.Add(ctx, URINotifyPasswordReuse, client.Int(int64(value)))
 }
 
 // UpdateNotifyPasswordReuse updates ./Device/Vendor/MSFT/Policy/Config/WebThreatDefense/NotifyPasswordReuse.
@@ -119,8 +122,8 @@ func (s *WebThreatDefense) CreateNotifyPasswordReuse(ctx context.Context, value 
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *WebThreatDefense) UpdateNotifyPasswordReuse(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URINotifyPasswordReuse, client.Int(value))
+func (s *WebThreatDefense) UpdateNotifyPasswordReuse(ctx context.Context, value NotifyPasswordReuseValue) error {
+	return s.c.Replace(ctx, URINotifyPasswordReuse, client.Int(int64(value)))
 }
 
 // DeleteNotifyPasswordReuse deletes ./Device/Vendor/MSFT/Policy/Config/WebThreatDefense/NotifyPasswordReuse.
@@ -138,12 +141,13 @@ func (s *WebThreatDefense) DeleteNotifyPasswordReuse(ctx context.Context) error 
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *WebThreatDefense) GetNotifyUnsafeApp(ctx context.Context) (int64, error) {
+func (s *WebThreatDefense) GetNotifyUnsafeApp(ctx context.Context) (NotifyUnsafeAppValue, error) {
 	v, err := s.c.Get(ctx, URINotifyUnsafeApp)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return NotifyUnsafeAppValue(n), err
 }
 
 // CreateNotifyUnsafeApp creates ./Device/Vendor/MSFT/Policy/Config/WebThreatDefense/NotifyUnsafeApp.
@@ -152,8 +156,8 @@ func (s *WebThreatDefense) GetNotifyUnsafeApp(ctx context.Context) (int64, error
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *WebThreatDefense) CreateNotifyUnsafeApp(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URINotifyUnsafeApp, client.Int(value))
+func (s *WebThreatDefense) CreateNotifyUnsafeApp(ctx context.Context, value NotifyUnsafeAppValue) error {
+	return s.c.Add(ctx, URINotifyUnsafeApp, client.Int(int64(value)))
 }
 
 // UpdateNotifyUnsafeApp updates ./Device/Vendor/MSFT/Policy/Config/WebThreatDefense/NotifyUnsafeApp.
@@ -162,8 +166,8 @@ func (s *WebThreatDefense) CreateNotifyUnsafeApp(ctx context.Context, value int6
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *WebThreatDefense) UpdateNotifyUnsafeApp(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URINotifyUnsafeApp, client.Int(value))
+func (s *WebThreatDefense) UpdateNotifyUnsafeApp(ctx context.Context, value NotifyUnsafeAppValue) error {
+	return s.c.Replace(ctx, URINotifyUnsafeApp, client.Int(int64(value)))
 }
 
 // DeleteNotifyUnsafeApp deletes ./Device/Vendor/MSFT/Policy/Config/WebThreatDefense/NotifyUnsafeApp.
@@ -181,12 +185,13 @@ func (s *WebThreatDefense) DeleteNotifyUnsafeApp(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *WebThreatDefense) GetServiceEnabled(ctx context.Context) (int64, error) {
+func (s *WebThreatDefense) GetServiceEnabled(ctx context.Context) (ServiceEnabledValue, error) {
 	v, err := s.c.Get(ctx, URIServiceEnabled)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ServiceEnabledValue(n), err
 }
 
 // CreateServiceEnabled creates ./Device/Vendor/MSFT/Policy/Config/WebThreatDefense/ServiceEnabled.
@@ -194,8 +199,8 @@ func (s *WebThreatDefense) GetServiceEnabled(ctx context.Context) (int64, error)
 //
 // Default: 1.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *WebThreatDefense) CreateServiceEnabled(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIServiceEnabled, client.Int(value))
+func (s *WebThreatDefense) CreateServiceEnabled(ctx context.Context, value ServiceEnabledValue) error {
+	return s.c.Add(ctx, URIServiceEnabled, client.Int(int64(value)))
 }
 
 // UpdateServiceEnabled updates ./Device/Vendor/MSFT/Policy/Config/WebThreatDefense/ServiceEnabled.
@@ -203,8 +208,8 @@ func (s *WebThreatDefense) CreateServiceEnabled(ctx context.Context, value int64
 //
 // Default: 1.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *WebThreatDefense) UpdateServiceEnabled(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIServiceEnabled, client.Int(value))
+func (s *WebThreatDefense) UpdateServiceEnabled(ctx context.Context, value ServiceEnabledValue) error {
+	return s.c.Replace(ctx, URIServiceEnabled, client.Int(int64(value)))
 }
 
 // DeleteServiceEnabled deletes ./Device/Vendor/MSFT/Policy/Config/WebThreatDefense/ServiceEnabled.

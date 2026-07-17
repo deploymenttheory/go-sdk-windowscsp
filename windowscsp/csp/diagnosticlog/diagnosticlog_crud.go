@@ -268,12 +268,13 @@ func (s *DiagnosticLog) UpdateEtwLogCollectorsCollectorNameProvidersProviderGuid
 // not, it'll be applied next time that session is started.
 //
 // Default: 5.
-func (s *DiagnosticLog) GetEtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevel(ctx context.Context, collectorName string, providerGuid string) (int64, error) {
+func (s *DiagnosticLog) GetEtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevel(ctx context.Context, collectorName string, providerGuid string) (EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevelValue, error) {
 	v, err := s.c.Get(ctx, URIEtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevel(collectorName, providerGuid))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevelValue(n), err
 }
 
 // UpdateEtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevel updates ./Vendor/MSFT/DiagnosticLog/EtwLog/Collectors/{collectorName}/Providers/{providerGuid}/TraceLevel.
@@ -283,26 +284,26 @@ func (s *DiagnosticLog) GetEtwLogCollectorsCollectorNameProvidersProviderGuidTra
 // not, it'll be applied next time that session is started.
 //
 // Default: 5.
-func (s *DiagnosticLog) UpdateEtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevel(ctx context.Context, collectorName string, providerGuid string, value int64) error {
-	return s.c.Replace(ctx, URIEtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevel(collectorName, providerGuid), client.Int(value))
+func (s *DiagnosticLog) UpdateEtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevel(ctx context.Context, collectorName string, providerGuid string, value EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevelValue) error {
+	return s.c.Replace(ctx, URIEtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevel(collectorName, providerGuid), client.Int(int64(value)))
 }
 
 // GetEtwLogCollectorsCollectorNameTraceControl reads ./Vendor/MSFT/DiagnosticLog/EtwLog/Collectors/{collectorName}/TraceControl.
 // This node is to trigger "start" and "stop" of this collector node's associated trace session.
 // "Get" returns the name of this node.
-func (s *DiagnosticLog) GetEtwLogCollectorsCollectorNameTraceControl(ctx context.Context, collectorName string) (string, error) {
+func (s *DiagnosticLog) GetEtwLogCollectorsCollectorNameTraceControl(ctx context.Context, collectorName string) (EtwLogCollectorsCollectorNameTraceControlValue, error) {
 	v, err := s.c.Get(ctx, URIEtwLogCollectorsCollectorNameTraceControl(collectorName))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return EtwLogCollectorsCollectorNameTraceControlValue(v.Str()), nil
 }
 
 // ExecEtwLogCollectorsCollectorNameTraceControl executes ./Vendor/MSFT/DiagnosticLog/EtwLog/Collectors/{collectorName}/TraceControl.
 // This node is to trigger "start" and "stop" of this collector node's associated trace session.
 // "Get" returns the name of this node.
-func (s *DiagnosticLog) ExecEtwLogCollectorsCollectorNameTraceControl(ctx context.Context, collectorName string, value string) error {
-	return s.c.Exec(ctx, URIEtwLogCollectorsCollectorNameTraceControl(collectorName), client.Chr(value))
+func (s *DiagnosticLog) ExecEtwLogCollectorsCollectorNameTraceControl(ctx context.Context, collectorName string, value EtwLogCollectorsCollectorNameTraceControlValue) error {
+	return s.c.Exec(ctx, URIEtwLogCollectorsCollectorNameTraceControl(collectorName), client.Chr(string(value)))
 }
 
 // GetEtwLogCollectorsCollectorNameTraceLogFileMode reads ./Vendor/MSFT/DiagnosticLog/EtwLog/Collectors/{collectorName}/TraceLogFileMode.
@@ -311,12 +312,13 @@ func (s *DiagnosticLog) ExecEtwLogCollectorsCollectorNameTraceControl(ctx contex
 // EVENT_TRACE_FILE_MODE_SEQUENTIAL and EVENT_TRACE_FILE_MODE_CIRCULAR. Default value is 1.
 //
 // Default: 1.
-func (s *DiagnosticLog) GetEtwLogCollectorsCollectorNameTraceLogFileMode(ctx context.Context, collectorName string) (int64, error) {
+func (s *DiagnosticLog) GetEtwLogCollectorsCollectorNameTraceLogFileMode(ctx context.Context, collectorName string) (EtwLogCollectorsCollectorNameTraceLogFileModeValue, error) {
 	v, err := s.c.Get(ctx, URIEtwLogCollectorsCollectorNameTraceLogFileMode(collectorName))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EtwLogCollectorsCollectorNameTraceLogFileModeValue(n), err
 }
 
 // UpdateEtwLogCollectorsCollectorNameTraceLogFileMode updates ./Vendor/MSFT/DiagnosticLog/EtwLog/Collectors/{collectorName}/TraceLogFileMode.
@@ -325,8 +327,8 @@ func (s *DiagnosticLog) GetEtwLogCollectorsCollectorNameTraceLogFileMode(ctx con
 // EVENT_TRACE_FILE_MODE_SEQUENTIAL and EVENT_TRACE_FILE_MODE_CIRCULAR. Default value is 1.
 //
 // Default: 1.
-func (s *DiagnosticLog) UpdateEtwLogCollectorsCollectorNameTraceLogFileMode(ctx context.Context, collectorName string, value int64) error {
-	return s.c.Replace(ctx, URIEtwLogCollectorsCollectorNameTraceLogFileMode(collectorName), client.Int(value))
+func (s *DiagnosticLog) UpdateEtwLogCollectorsCollectorNameTraceLogFileMode(ctx context.Context, collectorName string, value EtwLogCollectorsCollectorNameTraceLogFileModeValue) error {
+	return s.c.Replace(ctx, URIEtwLogCollectorsCollectorNameTraceLogFileMode(collectorName), client.Int(int64(value)))
 }
 
 // GetEtwLogCollectorsCollectorNameTraceStatus reads ./Vendor/MSFT/DiagnosticLog/EtwLog/Collectors/{collectorName}/TraceStatus.
@@ -456,24 +458,24 @@ func (s *DiagnosticLog) DeletePolicyChannelsChannelName(ctx context.Context, cha
 
 // GetPolicyChannelsChannelNameActionWhenFull reads ./Vendor/MSFT/DiagnosticLog/Policy/Channels/{channelName}/ActionWhenFull.
 // Action to take when the log file reaches maximum size. "Truncate", "Overwrite", "Archive".
-func (s *DiagnosticLog) GetPolicyChannelsChannelNameActionWhenFull(ctx context.Context, channelName string) (string, error) {
+func (s *DiagnosticLog) GetPolicyChannelsChannelNameActionWhenFull(ctx context.Context, channelName string) (PolicyChannelsChannelNameActionWhenFullValue, error) {
 	v, err := s.c.Get(ctx, URIPolicyChannelsChannelNameActionWhenFull(channelName))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return PolicyChannelsChannelNameActionWhenFullValue(v.Str()), nil
 }
 
 // CreatePolicyChannelsChannelNameActionWhenFull creates ./Vendor/MSFT/DiagnosticLog/Policy/Channels/{channelName}/ActionWhenFull.
 // Action to take when the log file reaches maximum size. "Truncate", "Overwrite", "Archive".
-func (s *DiagnosticLog) CreatePolicyChannelsChannelNameActionWhenFull(ctx context.Context, channelName string, value string) error {
-	return s.c.Add(ctx, URIPolicyChannelsChannelNameActionWhenFull(channelName), client.Chr(value))
+func (s *DiagnosticLog) CreatePolicyChannelsChannelNameActionWhenFull(ctx context.Context, channelName string, value PolicyChannelsChannelNameActionWhenFullValue) error {
+	return s.c.Add(ctx, URIPolicyChannelsChannelNameActionWhenFull(channelName), client.Chr(string(value)))
 }
 
 // UpdatePolicyChannelsChannelNameActionWhenFull updates ./Vendor/MSFT/DiagnosticLog/Policy/Channels/{channelName}/ActionWhenFull.
 // Action to take when the log file reaches maximum size. "Truncate", "Overwrite", "Archive".
-func (s *DiagnosticLog) UpdatePolicyChannelsChannelNameActionWhenFull(ctx context.Context, channelName string, value string) error {
-	return s.c.Replace(ctx, URIPolicyChannelsChannelNameActionWhenFull(channelName), client.Chr(value))
+func (s *DiagnosticLog) UpdatePolicyChannelsChannelNameActionWhenFull(ctx context.Context, channelName string, value PolicyChannelsChannelNameActionWhenFullValue) error {
+	return s.c.Replace(ctx, URIPolicyChannelsChannelNameActionWhenFull(channelName), client.Chr(string(value)))
 }
 
 // DeletePolicyChannelsChannelNameActionWhenFull deletes ./Vendor/MSFT/DiagnosticLog/Policy/Channels/{channelName}/ActionWhenFull.

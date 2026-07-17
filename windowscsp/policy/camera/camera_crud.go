@@ -13,12 +13,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Camera) GetAllowCamera(ctx context.Context) (int64, error) {
+func (s *Camera) GetAllowCamera(ctx context.Context) (AllowCameraValue, error) {
 	v, err := s.c.Get(ctx, URIAllowCamera)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowCameraValue(n), err
 }
 
 // CreateAllowCamera creates ./Device/Vendor/MSFT/Policy/Config/Camera/AllowCamera.
@@ -26,8 +27,8 @@ func (s *Camera) GetAllowCamera(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Camera) CreateAllowCamera(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowCamera, client.Int(value))
+func (s *Camera) CreateAllowCamera(ctx context.Context, value AllowCameraValue) error {
+	return s.c.Add(ctx, URIAllowCamera, client.Int(int64(value)))
 }
 
 // UpdateAllowCamera updates ./Device/Vendor/MSFT/Policy/Config/Camera/AllowCamera.
@@ -35,8 +36,8 @@ func (s *Camera) CreateAllowCamera(ctx context.Context, value int64) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Camera) UpdateAllowCamera(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowCamera, client.Int(value))
+func (s *Camera) UpdateAllowCamera(ctx context.Context, value AllowCameraValue) error {
+	return s.c.Replace(ctx, URIAllowCamera, client.Int(int64(value)))
 }
 
 // DeleteAllowCamera deletes ./Device/Vendor/MSFT/Policy/Config/Camera/AllowCamera.

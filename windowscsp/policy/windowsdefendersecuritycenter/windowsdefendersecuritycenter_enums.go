@@ -2,165 +2,439 @@
 
 package windowsdefendersecuritycenter
 
-// DisableAccountProtectionUI allowed values.
+import (
+	"fmt"
+)
+
+// DisableAccountProtectionUIValue — allowed values for the DisableAccountProtectionUI node.
+type DisableAccountProtectionUIValue int64
+
 const (
 	// (Disable) The users can see the display of the Account protection area in Windows Defender
 	// Security Center.
-	DisableAccountProtectionUIDisableTheUsersCanSeeThe int64 = 0
+	DisableAccountProtectionUIDisableTheUsersCanSeeThe DisableAccountProtectionUIValue = 0
 	// (Enable) The users cannot see the display of the Account protection area in Windows Defender
 	// Security Center.
-	DisableAccountProtectionUIEnableTheUsersCannotSeeThe int64 = 1
+	DisableAccountProtectionUIEnableTheUsersCannotSeeThe DisableAccountProtectionUIValue = 1
 )
 
-// DisableAppBrowserUI allowed values.
+// String returns the DisableAccountProtectionUIValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableAccountProtectionUIValue) String() string {
+	switch e {
+	case DisableAccountProtectionUIDisableTheUsersCanSeeThe:
+		return "DisableAccountProtectionUIDisableTheUsersCanSeeThe"
+	case DisableAccountProtectionUIEnableTheUsersCannotSeeThe:
+		return "DisableAccountProtectionUIEnableTheUsersCannotSeeThe"
+	default:
+		return fmt.Sprintf("DisableAccountProtectionUIValue(%d)", int64(e))
+	}
+}
+
+// DisableAppBrowserUIValue — allowed values for the DisableAppBrowserUI node.
+type DisableAppBrowserUIValue int64
+
 const (
 	// (Disable) The users can see the display of the app and browser protection area in Windows
 	// Defender Security Center.
-	DisableAppBrowserUIDisableTheUsersCanSeeThe int64 = 0
+	DisableAppBrowserUIDisableTheUsersCanSeeThe DisableAppBrowserUIValue = 0
 	// (Enable) The users cannot see the display of the app and browser protection area in Windows
 	// Defender Security Center.
-	DisableAppBrowserUIEnableTheUsersCannotSeeThe int64 = 1
+	DisableAppBrowserUIEnableTheUsersCannotSeeThe DisableAppBrowserUIValue = 1
 )
 
-// DisableClearTpmButton allowed values.
+// String returns the DisableAppBrowserUIValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableAppBrowserUIValue) String() string {
+	switch e {
+	case DisableAppBrowserUIDisableTheUsersCanSeeThe:
+		return "DisableAppBrowserUIDisableTheUsersCanSeeThe"
+	case DisableAppBrowserUIEnableTheUsersCannotSeeThe:
+		return "DisableAppBrowserUIEnableTheUsersCannotSeeThe"
+	default:
+		return fmt.Sprintf("DisableAppBrowserUIValue(%d)", int64(e))
+	}
+}
+
+// DisableClearTpmButtonValue — allowed values for the DisableClearTpmButton node.
+type DisableClearTpmButtonValue int64
+
 const (
 	// (Disabled or not configured) The security processor troubleshooting page shows a button that
 	// initiates the process to clear the security processor (TPM).
-	DisableClearTpmButtonDisabledOrNotConfiguredTheSecurity int64 = 0
+	DisableClearTpmButtonDisabledOrNotConfiguredTheSecurity DisableClearTpmButtonValue = 0
 	// (Enabled) The security processor troubleshooting page will not show a button to initiate the
 	// process to clear the security processor (TPM)
-	DisableClearTpmButtonEnabledTheSecurityProcessorTroubleshootingPage int64 = 1
+	DisableClearTpmButtonEnabledTheSecurityProcessorTroubleshootingPage DisableClearTpmButtonValue = 1
 )
 
-// DisableDeviceSecurityUI allowed values.
+// String returns the DisableClearTpmButtonValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableClearTpmButtonValue) String() string {
+	switch e {
+	case DisableClearTpmButtonDisabledOrNotConfiguredTheSecurity:
+		return "DisableClearTpmButtonDisabledOrNotConfiguredTheSecurity"
+	case DisableClearTpmButtonEnabledTheSecurityProcessorTroubleshootingPage:
+		return "DisableClearTpmButtonEnabledTheSecurityProcessorTroubleshootingPage"
+	default:
+		return fmt.Sprintf("DisableClearTpmButtonValue(%d)", int64(e))
+	}
+}
+
+// DisableDeviceSecurityUIValue — allowed values for the DisableDeviceSecurityUI node.
+type DisableDeviceSecurityUIValue int64
+
 const (
 	// (Disable) The users can see the display of the Device security area in Windows Defender Security
 	// Center.
-	DisableDeviceSecurityUIDisableTheUsersCanSeeThe int64 = 0
+	DisableDeviceSecurityUIDisableTheUsersCanSeeThe DisableDeviceSecurityUIValue = 0
 	// (Enable) The users cannot see the display of the Device security area in Windows Defender
 	// Security Center.
-	DisableDeviceSecurityUIEnableTheUsersCannotSeeThe int64 = 1
+	DisableDeviceSecurityUIEnableTheUsersCannotSeeThe DisableDeviceSecurityUIValue = 1
 )
 
-// DisableEnhancedNotifications allowed values.
+// String returns the DisableDeviceSecurityUIValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableDeviceSecurityUIValue) String() string {
+	switch e {
+	case DisableDeviceSecurityUIDisableTheUsersCanSeeThe:
+		return "DisableDeviceSecurityUIDisableTheUsersCanSeeThe"
+	case DisableDeviceSecurityUIEnableTheUsersCannotSeeThe:
+		return "DisableDeviceSecurityUIEnableTheUsersCannotSeeThe"
+	default:
+		return fmt.Sprintf("DisableDeviceSecurityUIValue(%d)", int64(e))
+	}
+}
+
+// DisableEnhancedNotificationsValue — allowed values for the DisableEnhancedNotifications node.
+type DisableEnhancedNotificationsValue int64
+
 const (
 	// (Disable) Windows Defender Security Center will display critical and non-critical notifications
 	// to users..
-	DisableEnhancedNotificationsDisableWindowsDefenderSecurityCenterWill int64 = 0
+	DisableEnhancedNotificationsDisableWindowsDefenderSecurityCenterWill DisableEnhancedNotificationsValue = 0
 	// (Enable) Windows Defender Security Center only display notifications which are considered
 	// critical on clients.
-	DisableEnhancedNotificationsEnableWindowsDefenderSecurityCenterOnly int64 = 1
+	DisableEnhancedNotificationsEnableWindowsDefenderSecurityCenterOnly DisableEnhancedNotificationsValue = 1
 )
 
-// DisableFamilyUI allowed values.
+// String returns the DisableEnhancedNotificationsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableEnhancedNotificationsValue) String() string {
+	switch e {
+	case DisableEnhancedNotificationsDisableWindowsDefenderSecurityCenterWill:
+		return "DisableEnhancedNotificationsDisableWindowsDefenderSecurityCenterWill"
+	case DisableEnhancedNotificationsEnableWindowsDefenderSecurityCenterOnly:
+		return "DisableEnhancedNotificationsEnableWindowsDefenderSecurityCenterOnly"
+	default:
+		return fmt.Sprintf("DisableEnhancedNotificationsValue(%d)", int64(e))
+	}
+}
+
+// DisableFamilyUIValue — allowed values for the DisableFamilyUI node.
+type DisableFamilyUIValue int64
+
 const (
 	// (Disable) The users can see the display of the family options area in Windows Defender Security
 	// Center.
-	DisableFamilyUIDisableTheUsersCanSeeThe int64 = 0
+	DisableFamilyUIDisableTheUsersCanSeeThe DisableFamilyUIValue = 0
 	// (Enable) The users cannot see the display of the family options area in Windows Defender
 	// Security Center.
-	DisableFamilyUIEnableTheUsersCannotSeeThe int64 = 1
+	DisableFamilyUIEnableTheUsersCannotSeeThe DisableFamilyUIValue = 1
 )
 
-// DisableHealthUI allowed values.
+// String returns the DisableFamilyUIValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableFamilyUIValue) String() string {
+	switch e {
+	case DisableFamilyUIDisableTheUsersCanSeeThe:
+		return "DisableFamilyUIDisableTheUsersCanSeeThe"
+	case DisableFamilyUIEnableTheUsersCannotSeeThe:
+		return "DisableFamilyUIEnableTheUsersCannotSeeThe"
+	default:
+		return fmt.Sprintf("DisableFamilyUIValue(%d)", int64(e))
+	}
+}
+
+// DisableHealthUIValue — allowed values for the DisableHealthUI node.
+type DisableHealthUIValue int64
+
 const (
 	// (Disable) The users can see the display of the device performance and health area in Windows
 	// Defender Security Center.
-	DisableHealthUIDisableTheUsersCanSeeThe int64 = 0
+	DisableHealthUIDisableTheUsersCanSeeThe DisableHealthUIValue = 0
 	// (Enable) The users cannot see the display of the device performance and health area in Windows
 	// Defender Security Center.
-	DisableHealthUIEnableTheUsersCannotSeeThe int64 = 1
+	DisableHealthUIEnableTheUsersCannotSeeThe DisableHealthUIValue = 1
 )
 
-// DisableNetworkUI allowed values.
+// String returns the DisableHealthUIValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableHealthUIValue) String() string {
+	switch e {
+	case DisableHealthUIDisableTheUsersCanSeeThe:
+		return "DisableHealthUIDisableTheUsersCanSeeThe"
+	case DisableHealthUIEnableTheUsersCannotSeeThe:
+		return "DisableHealthUIEnableTheUsersCannotSeeThe"
+	default:
+		return fmt.Sprintf("DisableHealthUIValue(%d)", int64(e))
+	}
+}
+
+// DisableNetworkUIValue — allowed values for the DisableNetworkUI node.
+type DisableNetworkUIValue int64
+
 const (
 	// (Disable) The users can see the display of the firewall and network protection area in Windows
 	// Defender Security Center.
-	DisableNetworkUIDisableTheUsersCanSeeThe int64 = 0
+	DisableNetworkUIDisableTheUsersCanSeeThe DisableNetworkUIValue = 0
 	// (Enable) The users cannot see the display of the firewall and network protection area in Windows
 	// Defender Security Center.
-	DisableNetworkUIEnableTheUsersCannotSeeThe int64 = 1
+	DisableNetworkUIEnableTheUsersCannotSeeThe DisableNetworkUIValue = 1
 )
 
-// DisableNotifications allowed values.
+// String returns the DisableNetworkUIValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableNetworkUIValue) String() string {
+	switch e {
+	case DisableNetworkUIDisableTheUsersCanSeeThe:
+		return "DisableNetworkUIDisableTheUsersCanSeeThe"
+	case DisableNetworkUIEnableTheUsersCannotSeeThe:
+		return "DisableNetworkUIEnableTheUsersCannotSeeThe"
+	default:
+		return fmt.Sprintf("DisableNetworkUIValue(%d)", int64(e))
+	}
+}
+
+// DisableNotificationsValue — allowed values for the DisableNotifications node.
+type DisableNotificationsValue int64
+
 const (
 	// (Disable) The users can see the display of Windows Defender Security Center notifications.
-	DisableNotificationsDisableTheUsersCanSeeThe int64 = 0
+	DisableNotificationsDisableTheUsersCanSeeThe DisableNotificationsValue = 0
 	// (Enable) The users cannot see the display of Windows Defender Security Center notifications.
-	DisableNotificationsEnableTheUsersCannotSeeThe int64 = 1
+	DisableNotificationsEnableTheUsersCannotSeeThe DisableNotificationsValue = 1
 )
 
-// DisableTpmFirmwareUpdateWarning allowed values.
+// String returns the DisableNotificationsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableNotificationsValue) String() string {
+	switch e {
+	case DisableNotificationsDisableTheUsersCanSeeThe:
+		return "DisableNotificationsDisableTheUsersCanSeeThe"
+	case DisableNotificationsEnableTheUsersCannotSeeThe:
+		return "DisableNotificationsEnableTheUsersCannotSeeThe"
+	default:
+		return fmt.Sprintf("DisableNotificationsValue(%d)", int64(e))
+	}
+}
+
+// DisableTpmFirmwareUpdateWarningValue — allowed values for the DisableTpmFirmwareUpdateWarning node.
+type DisableTpmFirmwareUpdateWarningValue int64
+
 const (
 	// (Disable or Not configured) A warning will be displayed if the firmware of the security
 	// processor (TPM) should be updated for TPMs that have a vulnerability.
-	DisableTpmFirmwareUpdateWarningDisableOrNotConfiguredAWarning int64 = 0
+	DisableTpmFirmwareUpdateWarningDisableOrNotConfiguredAWarning DisableTpmFirmwareUpdateWarningValue = 0
 	// (Enabled) No warning will be displayed if the firmware of the security processor (TPM) should be
 	// updated.
-	DisableTpmFirmwareUpdateWarningEnabledNoWarningWillBeDisplayed int64 = 1
+	DisableTpmFirmwareUpdateWarningEnabledNoWarningWillBeDisplayed DisableTpmFirmwareUpdateWarningValue = 1
 )
 
-// DisableVirusUI allowed values.
+// String returns the DisableTpmFirmwareUpdateWarningValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableTpmFirmwareUpdateWarningValue) String() string {
+	switch e {
+	case DisableTpmFirmwareUpdateWarningDisableOrNotConfiguredAWarning:
+		return "DisableTpmFirmwareUpdateWarningDisableOrNotConfiguredAWarning"
+	case DisableTpmFirmwareUpdateWarningEnabledNoWarningWillBeDisplayed:
+		return "DisableTpmFirmwareUpdateWarningEnabledNoWarningWillBeDisplayed"
+	default:
+		return fmt.Sprintf("DisableTpmFirmwareUpdateWarningValue(%d)", int64(e))
+	}
+}
+
+// DisableVirusUIValue — allowed values for the DisableVirusUI node.
+type DisableVirusUIValue int64
+
 const (
 	// (Disable) The users can see the display of the virus and threat protection area in Windows
 	// Defender Security Center.
-	DisableVirusUIDisableTheUsersCanSeeThe int64 = 0
+	DisableVirusUIDisableTheUsersCanSeeThe DisableVirusUIValue = 0
 	// (Enable) The users cannot see the display of the virus and threat protection area in Windows
 	// Defender Security Center.
-	DisableVirusUIEnableTheUsersCannotSeeThe int64 = 1
+	DisableVirusUIEnableTheUsersCannotSeeThe DisableVirusUIValue = 1
 )
 
-// DisallowExploitProtectionOverride allowed values.
+// String returns the DisableVirusUIValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableVirusUIValue) String() string {
+	switch e {
+	case DisableVirusUIDisableTheUsersCanSeeThe:
+		return "DisableVirusUIDisableTheUsersCanSeeThe"
+	case DisableVirusUIEnableTheUsersCannotSeeThe:
+		return "DisableVirusUIEnableTheUsersCannotSeeThe"
+	default:
+		return fmt.Sprintf("DisableVirusUIValue(%d)", int64(e))
+	}
+}
+
+// DisallowExploitProtectionOverrideValue — allowed values for the DisallowExploitProtectionOverride node.
+type DisallowExploitProtectionOverrideValue int64
+
 const (
 	// (Disable) Local users are allowed to make changes in the exploit protection settings area.
-	DisallowExploitProtectionOverrideDisableLocalUsersAreAllowedTo int64 = 0
+	DisallowExploitProtectionOverrideDisableLocalUsersAreAllowedTo DisallowExploitProtectionOverrideValue = 0
 	// (Enable) Local users cannot make changes in the exploit protection settings area.
-	DisallowExploitProtectionOverrideEnableLocalUsersCannotMakeChanges int64 = 1
+	DisallowExploitProtectionOverrideEnableLocalUsersCannotMakeChanges DisallowExploitProtectionOverrideValue = 1
 )
 
-// EnableCustomizedToasts allowed values.
+// String returns the DisallowExploitProtectionOverrideValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisallowExploitProtectionOverrideValue) String() string {
+	switch e {
+	case DisallowExploitProtectionOverrideDisableLocalUsersAreAllowedTo:
+		return "DisallowExploitProtectionOverrideDisableLocalUsersAreAllowedTo"
+	case DisallowExploitProtectionOverrideEnableLocalUsersCannotMakeChanges:
+		return "DisallowExploitProtectionOverrideEnableLocalUsersCannotMakeChanges"
+	default:
+		return fmt.Sprintf("DisallowExploitProtectionOverrideValue(%d)", int64(e))
+	}
+}
+
+// EnableCustomizedToastsValue — allowed values for the EnableCustomizedToasts node.
+type EnableCustomizedToastsValue int64
+
 const (
 	// notification text.
-	EnableCustomizedToastsNotificationText int64 = 0
+	EnableCustomizedToastsNotificationText EnableCustomizedToastsValue = 0
 	// (Enable) Notifications contain the company name and contact options.
-	EnableCustomizedToastsEnableNotificationsContainTheCompanyName int64 = 1
+	EnableCustomizedToastsEnableNotificationsContainTheCompanyName EnableCustomizedToastsValue = 1
 )
 
-// EnableInAppCustomization allowed values.
+// String returns the EnableCustomizedToastsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableCustomizedToastsValue) String() string {
+	switch e {
+	case EnableCustomizedToastsNotificationText:
+		return "EnableCustomizedToastsNotificationText"
+	case EnableCustomizedToastsEnableNotificationsContainTheCompanyName:
+		return "EnableCustomizedToastsEnableNotificationsContainTheCompanyName"
+	default:
+		return fmt.Sprintf("EnableCustomizedToastsValue(%d)", int64(e))
+	}
+}
+
+// EnableInAppCustomizationValue — allowed values for the EnableInAppCustomization node.
+type EnableInAppCustomizationValue int64
+
 const (
 	// (Disable) Do not display the company name and contact options in the card fly out notification.
-	EnableInAppCustomizationDisableDoNotDisplayTheCompany int64 = 0
+	EnableInAppCustomizationDisableDoNotDisplayTheCompany EnableInAppCustomizationValue = 0
 	// (Enable) Display the company name and contact options in the card fly out notification.
-	EnableInAppCustomizationEnableDisplayTheCompanyNameAnd int64 = 1
+	EnableInAppCustomizationEnableDisplayTheCompanyNameAnd EnableInAppCustomizationValue = 1
 )
 
-// HideRansomwareDataRecovery allowed values.
+// String returns the EnableInAppCustomizationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableInAppCustomizationValue) String() string {
+	switch e {
+	case EnableInAppCustomizationDisableDoNotDisplayTheCompany:
+		return "EnableInAppCustomizationDisableDoNotDisplayTheCompany"
+	case EnableInAppCustomizationEnableDisplayTheCompanyNameAnd:
+		return "EnableInAppCustomizationEnableDisplayTheCompanyNameAnd"
+	default:
+		return fmt.Sprintf("EnableInAppCustomizationValue(%d)", int64(e))
+	}
+}
+
+// HideRansomwareDataRecoveryValue — allowed values for the HideRansomwareDataRecovery node.
+type HideRansomwareDataRecoveryValue int64
+
 const (
 	// (Disable or not configured) The Ransomware data recovery area will be visible.
-	HideRansomwareDataRecoveryDisableOrNotConfiguredTheRansomware int64 = 0
+	HideRansomwareDataRecoveryDisableOrNotConfiguredTheRansomware HideRansomwareDataRecoveryValue = 0
 	// (Enable) The Ransomware data recovery area is hidden.
-	HideRansomwareDataRecoveryEnableTheRansomwareDataRecoveryArea int64 = 1
+	HideRansomwareDataRecoveryEnableTheRansomwareDataRecoveryArea HideRansomwareDataRecoveryValue = 1
 )
 
-// HideSecureBoot allowed values.
+// String returns the HideRansomwareDataRecoveryValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HideRansomwareDataRecoveryValue) String() string {
+	switch e {
+	case HideRansomwareDataRecoveryDisableOrNotConfiguredTheRansomware:
+		return "HideRansomwareDataRecoveryDisableOrNotConfiguredTheRansomware"
+	case HideRansomwareDataRecoveryEnableTheRansomwareDataRecoveryArea:
+		return "HideRansomwareDataRecoveryEnableTheRansomwareDataRecoveryArea"
+	default:
+		return fmt.Sprintf("HideRansomwareDataRecoveryValue(%d)", int64(e))
+	}
+}
+
+// HideSecureBootValue — allowed values for the HideSecureBoot node.
+type HideSecureBootValue int64
+
 const (
 	// (Disable or not configured) The Secure boot area is displayed.
-	HideSecureBootDisableOrNotConfiguredTheSecure int64 = 0
+	HideSecureBootDisableOrNotConfiguredTheSecure HideSecureBootValue = 0
 	// (Enable) The Secure boot area is hidden.
-	HideSecureBootEnableTheSecureBootAreaIs int64 = 1
+	HideSecureBootEnableTheSecureBootAreaIs HideSecureBootValue = 1
 )
 
-// HideTPMTroubleshooting allowed values.
+// String returns the HideSecureBootValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HideSecureBootValue) String() string {
+	switch e {
+	case HideSecureBootDisableOrNotConfiguredTheSecure:
+		return "HideSecureBootDisableOrNotConfiguredTheSecure"
+	case HideSecureBootEnableTheSecureBootAreaIs:
+		return "HideSecureBootEnableTheSecureBootAreaIs"
+	default:
+		return fmt.Sprintf("HideSecureBootValue(%d)", int64(e))
+	}
+}
+
+// HideTPMTroubleshootingValue — allowed values for the HideTPMTroubleshooting node.
+type HideTPMTroubleshootingValue int64
+
 const (
 	// (Disable or not configured) The Security processor (TPM) troubleshooting area is displayed.
-	HideTPMTroubleshootingDisableOrNotConfiguredTheSecurity int64 = 0
+	HideTPMTroubleshootingDisableOrNotConfiguredTheSecurity HideTPMTroubleshootingValue = 0
 	// (Enable) The Security processor (TPM) troubleshooting area is hidden.
-	HideTPMTroubleshootingEnableTheSecurityProcessorTPMTroubleshooting int64 = 1
+	HideTPMTroubleshootingEnableTheSecurityProcessorTPMTroubleshooting HideTPMTroubleshootingValue = 1
 )
 
-// HideWindowsSecurityNotificationAreaControl allowed values.
+// String returns the HideTPMTroubleshootingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HideTPMTroubleshootingValue) String() string {
+	switch e {
+	case HideTPMTroubleshootingDisableOrNotConfiguredTheSecurity:
+		return "HideTPMTroubleshootingDisableOrNotConfiguredTheSecurity"
+	case HideTPMTroubleshootingEnableTheSecurityProcessorTPMTroubleshooting:
+		return "HideTPMTroubleshootingEnableTheSecurityProcessorTPMTroubleshooting"
+	default:
+		return fmt.Sprintf("HideTPMTroubleshootingValue(%d)", int64(e))
+	}
+}
+
+// HideWindowsSecurityNotificationAreaControlValue — allowed values for the HideWindowsSecurityNotificationAreaControl node.
+type HideWindowsSecurityNotificationAreaControlValue int64
+
 const (
-	HideWindowsSecurityNotificationAreaControlValue0 int64 = 0
+	HideWindowsSecurityNotificationAreaControlValue0 HideWindowsSecurityNotificationAreaControlValue = 0
 	// Enabled
-	HideWindowsSecurityNotificationAreaControlEnabled int64 = 1
+	HideWindowsSecurityNotificationAreaControlEnabled HideWindowsSecurityNotificationAreaControlValue = 1
 )
+
+// String returns the HideWindowsSecurityNotificationAreaControlValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HideWindowsSecurityNotificationAreaControlValue) String() string {
+	switch e {
+	case HideWindowsSecurityNotificationAreaControlValue0:
+		return "HideWindowsSecurityNotificationAreaControlValue0"
+	case HideWindowsSecurityNotificationAreaControlEnabled:
+		return "HideWindowsSecurityNotificationAreaControlEnabled"
+	default:
+		return fmt.Sprintf("HideWindowsSecurityNotificationAreaControlValue(%d)", int64(e))
+	}
+}

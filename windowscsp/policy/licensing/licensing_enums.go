@@ -2,26 +2,75 @@
 
 package licensing
 
-// AllowWindowsEntitlementReactivation allowed values.
+import (
+	"fmt"
+)
+
+// AllowWindowsEntitlementReactivationValue — allowed values for the AllowWindowsEntitlementReactivation node.
+type AllowWindowsEntitlementReactivationValue int64
+
 const (
 	// Disable Windows license reactivation on managed devices.
-	AllowWindowsEntitlementReactivationDisableWindowsLicenseReactivationOnManaged int64 = 0
+	AllowWindowsEntitlementReactivationDisableWindowsLicenseReactivationOnManaged AllowWindowsEntitlementReactivationValue = 0
 	// Enable Windows license reactivation on managed devices.
-	AllowWindowsEntitlementReactivationEnableWindowsLicenseReactivationOnManaged int64 = 1
+	AllowWindowsEntitlementReactivationEnableWindowsLicenseReactivationOnManaged AllowWindowsEntitlementReactivationValue = 1
 )
 
-// DisallowKMSClientOnlineAVSValidation allowed values.
+// String returns the AllowWindowsEntitlementReactivationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowWindowsEntitlementReactivationValue) String() string {
+	switch e {
+	case AllowWindowsEntitlementReactivationDisableWindowsLicenseReactivationOnManaged:
+		return "AllowWindowsEntitlementReactivationDisableWindowsLicenseReactivationOnManaged"
+	case AllowWindowsEntitlementReactivationEnableWindowsLicenseReactivationOnManaged:
+		return "AllowWindowsEntitlementReactivationEnableWindowsLicenseReactivationOnManaged"
+	default:
+		return fmt.Sprintf("AllowWindowsEntitlementReactivationValue(%d)", int64(e))
+	}
+}
+
+// DisallowKMSClientOnlineAVSValidationValue — allowed values for the DisallowKMSClientOnlineAVSValidation node.
+type DisallowKMSClientOnlineAVSValidationValue int64
+
 const (
 	// Disabled.
-	DisallowKMSClientOnlineAVSValidationDisabled int64 = 0
+	DisallowKMSClientOnlineAVSValidationDisabled DisallowKMSClientOnlineAVSValidationValue = 0
 	// Enabled.
-	DisallowKMSClientOnlineAVSValidationEnabled int64 = 1
+	DisallowKMSClientOnlineAVSValidationEnabled DisallowKMSClientOnlineAVSValidationValue = 1
 )
 
-// EnableESUSubscriptionCheck allowed values.
+// String returns the DisallowKMSClientOnlineAVSValidationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisallowKMSClientOnlineAVSValidationValue) String() string {
+	switch e {
+	case DisallowKMSClientOnlineAVSValidationDisabled:
+		return "DisallowKMSClientOnlineAVSValidationDisabled"
+	case DisallowKMSClientOnlineAVSValidationEnabled:
+		return "DisallowKMSClientOnlineAVSValidationEnabled"
+	default:
+		return fmt.Sprintf("DisallowKMSClientOnlineAVSValidationValue(%d)", int64(e))
+	}
+}
+
+// EnableESUSubscriptionCheckValue — allowed values for the EnableESUSubscriptionCheck node.
+type EnableESUSubscriptionCheckValue int64
+
 const (
 	// Disabled.
-	EnableESUSubscriptionCheckDisabled int64 = 0
+	EnableESUSubscriptionCheckDisabled EnableESUSubscriptionCheckValue = 0
 	// Enabled.
-	EnableESUSubscriptionCheckEnabled int64 = 1
+	EnableESUSubscriptionCheckEnabled EnableESUSubscriptionCheckValue = 1
 )
+
+// String returns the EnableESUSubscriptionCheckValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableESUSubscriptionCheckValue) String() string {
+	switch e {
+	case EnableESUSubscriptionCheckDisabled:
+		return "EnableESUSubscriptionCheckDisabled"
+	case EnableESUSubscriptionCheckEnabled:
+		return "EnableESUSubscriptionCheckEnabled"
+	default:
+		return fmt.Sprintf("EnableESUSubscriptionCheckValue(%d)", int64(e))
+	}
+}

@@ -13,12 +13,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsAI) GetAgentConnectorMinimumPolicy(ctx context.Context) (int64, error) {
+func (s *WindowsAI) GetAgentConnectorMinimumPolicy(ctx context.Context) (AgentConnectorMinimumPolicyValue, error) {
 	v, err := s.c.Get(ctx, URIAgentConnectorMinimumPolicy)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AgentConnectorMinimumPolicyValue(n), err
 }
 
 // CreateAgentConnectorMinimumPolicy creates ./Device/Vendor/MSFT/Policy/Config/WindowsAI/AgentConnectorMinimumPolicy.
@@ -26,8 +27,8 @@ func (s *WindowsAI) GetAgentConnectorMinimumPolicy(ctx context.Context) (int64, 
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsAI) CreateAgentConnectorMinimumPolicy(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAgentConnectorMinimumPolicy, client.Int(value))
+func (s *WindowsAI) CreateAgentConnectorMinimumPolicy(ctx context.Context, value AgentConnectorMinimumPolicyValue) error {
+	return s.c.Add(ctx, URIAgentConnectorMinimumPolicy, client.Int(int64(value)))
 }
 
 // UpdateAgentConnectorMinimumPolicy updates ./Device/Vendor/MSFT/Policy/Config/WindowsAI/AgentConnectorMinimumPolicy.
@@ -35,8 +36,8 @@ func (s *WindowsAI) CreateAgentConnectorMinimumPolicy(ctx context.Context, value
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsAI) UpdateAgentConnectorMinimumPolicy(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAgentConnectorMinimumPolicy, client.Int(value))
+func (s *WindowsAI) UpdateAgentConnectorMinimumPolicy(ctx context.Context, value AgentConnectorMinimumPolicyValue) error {
+	return s.c.Replace(ctx, URIAgentConnectorMinimumPolicy, client.Int(int64(value)))
 }
 
 // DeleteAgentConnectorMinimumPolicy deletes ./Device/Vendor/MSFT/Policy/Config/WindowsAI/AgentConnectorMinimumPolicy.
@@ -63,12 +64,13 @@ func (s *WindowsAI) DeleteAgentConnectorMinimumPolicy(ctx context.Context) error
 //
 // Default: 1.
 // Supported from OS build 99.9.99999, 10.0.26100.3915 (CSP v11.0).
-func (s *WindowsAI) GetAllowRecallEnablement(ctx context.Context) (int64, error) {
+func (s *WindowsAI) GetAllowRecallEnablement(ctx context.Context) (AllowRecallEnablementValue, error) {
 	v, err := s.c.Get(ctx, URIAllowRecallEnablement)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowRecallEnablementValue(n), err
 }
 
 // CreateAllowRecallEnablement creates ./Device/Vendor/MSFT/Policy/Config/WindowsAI/AllowRecallEnablement.
@@ -86,8 +88,8 @@ func (s *WindowsAI) GetAllowRecallEnablement(ctx context.Context) (int64, error)
 //
 // Default: 1.
 // Supported from OS build 99.9.99999, 10.0.26100.3915 (CSP v11.0).
-func (s *WindowsAI) CreateAllowRecallEnablement(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowRecallEnablement, client.Int(value))
+func (s *WindowsAI) CreateAllowRecallEnablement(ctx context.Context, value AllowRecallEnablementValue) error {
+	return s.c.Add(ctx, URIAllowRecallEnablement, client.Int(int64(value)))
 }
 
 // UpdateAllowRecallEnablement updates ./Device/Vendor/MSFT/Policy/Config/WindowsAI/AllowRecallEnablement.
@@ -105,8 +107,8 @@ func (s *WindowsAI) CreateAllowRecallEnablement(ctx context.Context, value int64
 //
 // Default: 1.
 // Supported from OS build 99.9.99999, 10.0.26100.3915 (CSP v11.0).
-func (s *WindowsAI) UpdateAllowRecallEnablement(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowRecallEnablement, client.Int(value))
+func (s *WindowsAI) UpdateAllowRecallEnablement(ctx context.Context, value AllowRecallEnablementValue) error {
+	return s.c.Replace(ctx, URIAllowRecallEnablement, client.Int(int64(value)))
 }
 
 // DeleteAllowRecallEnablement deletes ./Device/Vendor/MSFT/Policy/Config/WindowsAI/AllowRecallEnablement.
@@ -149,12 +151,13 @@ func (s *WindowsAI) DeleteAllowRecallEnablement(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsAI) GetAllowRecallExport(ctx context.Context) (int64, error) {
+func (s *WindowsAI) GetAllowRecallExport(ctx context.Context) (AllowRecallExportValue, error) {
 	v, err := s.c.Get(ctx, URIAllowRecallExport)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowRecallExportValue(n), err
 }
 
 // CreateAllowRecallExport creates ./Device/Vendor/MSFT/Policy/Config/WindowsAI/AllowRecallExport.
@@ -178,8 +181,8 @@ func (s *WindowsAI) GetAllowRecallExport(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsAI) CreateAllowRecallExport(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowRecallExport, client.Int(value))
+func (s *WindowsAI) CreateAllowRecallExport(ctx context.Context, value AllowRecallExportValue) error {
+	return s.c.Add(ctx, URIAllowRecallExport, client.Int(int64(value)))
 }
 
 // UpdateAllowRecallExport updates ./Device/Vendor/MSFT/Policy/Config/WindowsAI/AllowRecallExport.
@@ -203,8 +206,8 @@ func (s *WindowsAI) CreateAllowRecallExport(ctx context.Context, value int64) er
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsAI) UpdateAllowRecallExport(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowRecallExport, client.Int(value))
+func (s *WindowsAI) UpdateAllowRecallExport(ctx context.Context, value AllowRecallExportValue) error {
+	return s.c.Replace(ctx, URIAllowRecallExport, client.Int(int64(value)))
 }
 
 // DeleteAllowRecallExport deletes ./Device/Vendor/MSFT/Policy/Config/WindowsAI/AllowRecallExport.
@@ -245,12 +248,13 @@ func (s *WindowsAI) DeleteAllowRecallExport(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3915 (CSP v11.0).
-func (s *WindowsAI) GetDisableAIDataAnalysis(ctx context.Context) (int64, error) {
+func (s *WindowsAI) GetDisableAIDataAnalysis(ctx context.Context) (DisableAIDataAnalysisValue, error) {
 	v, err := s.c.Get(ctx, URIDisableAIDataAnalysis)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableAIDataAnalysisValue(n), err
 }
 
 // CreateDisableAIDataAnalysis creates ./Device/Vendor/MSFT/Policy/Config/WindowsAI/DisableAIDataAnalysis.
@@ -266,8 +270,8 @@ func (s *WindowsAI) GetDisableAIDataAnalysis(ctx context.Context) (int64, error)
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3915 (CSP v11.0).
-func (s *WindowsAI) CreateDisableAIDataAnalysis(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableAIDataAnalysis, client.Int(value))
+func (s *WindowsAI) CreateDisableAIDataAnalysis(ctx context.Context, value DisableAIDataAnalysisValue) error {
+	return s.c.Add(ctx, URIDisableAIDataAnalysis, client.Int(int64(value)))
 }
 
 // UpdateDisableAIDataAnalysis updates ./Device/Vendor/MSFT/Policy/Config/WindowsAI/DisableAIDataAnalysis.
@@ -283,8 +287,8 @@ func (s *WindowsAI) CreateDisableAIDataAnalysis(ctx context.Context, value int64
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3915 (CSP v11.0).
-func (s *WindowsAI) UpdateDisableAIDataAnalysis(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableAIDataAnalysis, client.Int(value))
+func (s *WindowsAI) UpdateDisableAIDataAnalysis(ctx context.Context, value DisableAIDataAnalysisValue) error {
+	return s.c.Replace(ctx, URIDisableAIDataAnalysis, client.Int(int64(value)))
 }
 
 // DeleteDisableAIDataAnalysis deletes ./Device/Vendor/MSFT/Policy/Config/WindowsAI/DisableAIDataAnalysis.
@@ -309,12 +313,13 @@ func (s *WindowsAI) DeleteDisableAIDataAnalysis(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsAI) GetDisableAgentConnectors(ctx context.Context) (int64, error) {
+func (s *WindowsAI) GetDisableAgentConnectors(ctx context.Context) (DisableAgentConnectorsValue, error) {
 	v, err := s.c.Get(ctx, URIDisableAgentConnectors)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableAgentConnectorsValue(n), err
 }
 
 // CreateDisableAgentConnectors creates ./Device/Vendor/MSFT/Policy/Config/WindowsAI/DisableAgentConnectors.
@@ -322,8 +327,8 @@ func (s *WindowsAI) GetDisableAgentConnectors(ctx context.Context) (int64, error
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsAI) CreateDisableAgentConnectors(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableAgentConnectors, client.Int(value))
+func (s *WindowsAI) CreateDisableAgentConnectors(ctx context.Context, value DisableAgentConnectorsValue) error {
+	return s.c.Add(ctx, URIDisableAgentConnectors, client.Int(int64(value)))
 }
 
 // UpdateDisableAgentConnectors updates ./Device/Vendor/MSFT/Policy/Config/WindowsAI/DisableAgentConnectors.
@@ -331,8 +336,8 @@ func (s *WindowsAI) CreateDisableAgentConnectors(ctx context.Context, value int6
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsAI) UpdateDisableAgentConnectors(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableAgentConnectors, client.Int(value))
+func (s *WindowsAI) UpdateDisableAgentConnectors(ctx context.Context, value DisableAgentConnectorsValue) error {
+	return s.c.Replace(ctx, URIDisableAgentConnectors, client.Int(int64(value)))
 }
 
 // DeleteDisableAgentConnectors deletes ./Device/Vendor/MSFT/Policy/Config/WindowsAI/DisableAgentConnectors.
@@ -349,12 +354,13 @@ func (s *WindowsAI) DeleteDisableAgentConnectors(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsAI) GetDisableAgentWorkspaces(ctx context.Context) (int64, error) {
+func (s *WindowsAI) GetDisableAgentWorkspaces(ctx context.Context) (DisableAgentWorkspacesValue, error) {
 	v, err := s.c.Get(ctx, URIDisableAgentWorkspaces)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableAgentWorkspacesValue(n), err
 }
 
 // CreateDisableAgentWorkspaces creates ./Device/Vendor/MSFT/Policy/Config/WindowsAI/DisableAgentWorkspaces.
@@ -362,8 +368,8 @@ func (s *WindowsAI) GetDisableAgentWorkspaces(ctx context.Context) (int64, error
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsAI) CreateDisableAgentWorkspaces(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableAgentWorkspaces, client.Int(value))
+func (s *WindowsAI) CreateDisableAgentWorkspaces(ctx context.Context, value DisableAgentWorkspacesValue) error {
+	return s.c.Add(ctx, URIDisableAgentWorkspaces, client.Int(int64(value)))
 }
 
 // UpdateDisableAgentWorkspaces updates ./Device/Vendor/MSFT/Policy/Config/WindowsAI/DisableAgentWorkspaces.
@@ -371,8 +377,8 @@ func (s *WindowsAI) CreateDisableAgentWorkspaces(ctx context.Context, value int6
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsAI) UpdateDisableAgentWorkspaces(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableAgentWorkspaces, client.Int(value))
+func (s *WindowsAI) UpdateDisableAgentWorkspaces(ctx context.Context, value DisableAgentWorkspacesValue) error {
+	return s.c.Replace(ctx, URIDisableAgentWorkspaces, client.Int(int64(value)))
 }
 
 // DeleteDisableAgentWorkspaces deletes ./Device/Vendor/MSFT/Policy/Config/WindowsAI/DisableAgentWorkspaces.
@@ -395,12 +401,13 @@ func (s *WindowsAI) DeleteDisableAgentWorkspaces(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsAI) GetDisableClickToDo(ctx context.Context) (int64, error) {
+func (s *WindowsAI) GetDisableClickToDo(ctx context.Context) (DisableClickToDoValue, error) {
 	v, err := s.c.Get(ctx, URIDisableClickToDo)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableClickToDoValue(n), err
 }
 
 // CreateDisableClickToDo creates ./Device/Vendor/MSFT/Policy/Config/WindowsAI/DisableClickToDo.
@@ -414,8 +421,8 @@ func (s *WindowsAI) GetDisableClickToDo(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsAI) CreateDisableClickToDo(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableClickToDo, client.Int(value))
+func (s *WindowsAI) CreateDisableClickToDo(ctx context.Context, value DisableClickToDoValue) error {
+	return s.c.Add(ctx, URIDisableClickToDo, client.Int(int64(value)))
 }
 
 // UpdateDisableClickToDo updates ./Device/Vendor/MSFT/Policy/Config/WindowsAI/DisableClickToDo.
@@ -429,8 +436,8 @@ func (s *WindowsAI) CreateDisableClickToDo(ctx context.Context, value int64) err
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsAI) UpdateDisableClickToDo(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableClickToDo, client.Int(value))
+func (s *WindowsAI) UpdateDisableClickToDo(ctx context.Context, value DisableClickToDoValue) error {
+	return s.c.Replace(ctx, URIDisableClickToDo, client.Int(int64(value)))
 }
 
 // DeleteDisableClickToDo deletes ./Device/Vendor/MSFT/Policy/Config/WindowsAI/DisableClickToDo.
@@ -456,12 +463,13 @@ func (s *WindowsAI) DeleteDisableClickToDo(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3360, 10.0.22621.4870 (CSP v10.0).
-func (s *WindowsAI) GetDisableCocreator(ctx context.Context) (int64, error) {
+func (s *WindowsAI) GetDisableCocreator(ctx context.Context) (DisableCocreatorValue, error) {
 	v, err := s.c.Get(ctx, URIDisableCocreator)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableCocreatorValue(n), err
 }
 
 // CreateDisableCocreator creates ./Device/Vendor/MSFT/Policy/Config/WindowsAI/DisableCocreator.
@@ -472,8 +480,8 @@ func (s *WindowsAI) GetDisableCocreator(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3360, 10.0.22621.4870 (CSP v10.0).
-func (s *WindowsAI) CreateDisableCocreator(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableCocreator, client.Int(value))
+func (s *WindowsAI) CreateDisableCocreator(ctx context.Context, value DisableCocreatorValue) error {
+	return s.c.Add(ctx, URIDisableCocreator, client.Int(int64(value)))
 }
 
 // UpdateDisableCocreator updates ./Device/Vendor/MSFT/Policy/Config/WindowsAI/DisableCocreator.
@@ -484,8 +492,8 @@ func (s *WindowsAI) CreateDisableCocreator(ctx context.Context, value int64) err
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3360, 10.0.22621.4870 (CSP v10.0).
-func (s *WindowsAI) UpdateDisableCocreator(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableCocreator, client.Int(value))
+func (s *WindowsAI) UpdateDisableCocreator(ctx context.Context, value DisableCocreatorValue) error {
+	return s.c.Replace(ctx, URIDisableCocreator, client.Int(int64(value)))
 }
 
 // DeleteDisableCocreator deletes ./Device/Vendor/MSFT/Policy/Config/WindowsAI/DisableCocreator.
@@ -508,12 +516,13 @@ func (s *WindowsAI) DeleteDisableCocreator(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3360, 10.0.22621.4870 (CSP v10.0).
-func (s *WindowsAI) GetDisableGenerativeFill(ctx context.Context) (int64, error) {
+func (s *WindowsAI) GetDisableGenerativeFill(ctx context.Context) (DisableGenerativeFillValue, error) {
 	v, err := s.c.Get(ctx, URIDisableGenerativeFill)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableGenerativeFillValue(n), err
 }
 
 // CreateDisableGenerativeFill creates ./Device/Vendor/MSFT/Policy/Config/WindowsAI/DisableGenerativeFill.
@@ -524,8 +533,8 @@ func (s *WindowsAI) GetDisableGenerativeFill(ctx context.Context) (int64, error)
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3360, 10.0.22621.4870 (CSP v10.0).
-func (s *WindowsAI) CreateDisableGenerativeFill(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableGenerativeFill, client.Int(value))
+func (s *WindowsAI) CreateDisableGenerativeFill(ctx context.Context, value DisableGenerativeFillValue) error {
+	return s.c.Add(ctx, URIDisableGenerativeFill, client.Int(int64(value)))
 }
 
 // UpdateDisableGenerativeFill updates ./Device/Vendor/MSFT/Policy/Config/WindowsAI/DisableGenerativeFill.
@@ -536,8 +545,8 @@ func (s *WindowsAI) CreateDisableGenerativeFill(ctx context.Context, value int64
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3360, 10.0.22621.4870 (CSP v10.0).
-func (s *WindowsAI) UpdateDisableGenerativeFill(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableGenerativeFill, client.Int(value))
+func (s *WindowsAI) UpdateDisableGenerativeFill(ctx context.Context, value DisableGenerativeFillValue) error {
+	return s.c.Replace(ctx, URIDisableGenerativeFill, client.Int(int64(value)))
 }
 
 // DeleteDisableGenerativeFill deletes ./Device/Vendor/MSFT/Policy/Config/WindowsAI/DisableGenerativeFill.
@@ -560,12 +569,13 @@ func (s *WindowsAI) DeleteDisableGenerativeFill(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3360, 10.0.22621.4870 (CSP v10.0).
-func (s *WindowsAI) GetDisableImageCreator(ctx context.Context) (int64, error) {
+func (s *WindowsAI) GetDisableImageCreator(ctx context.Context) (DisableImageCreatorValue, error) {
 	v, err := s.c.Get(ctx, URIDisableImageCreator)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableImageCreatorValue(n), err
 }
 
 // CreateDisableImageCreator creates ./Device/Vendor/MSFT/Policy/Config/WindowsAI/DisableImageCreator.
@@ -576,8 +586,8 @@ func (s *WindowsAI) GetDisableImageCreator(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3360, 10.0.22621.4870 (CSP v10.0).
-func (s *WindowsAI) CreateDisableImageCreator(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableImageCreator, client.Int(value))
+func (s *WindowsAI) CreateDisableImageCreator(ctx context.Context, value DisableImageCreatorValue) error {
+	return s.c.Add(ctx, URIDisableImageCreator, client.Int(int64(value)))
 }
 
 // UpdateDisableImageCreator updates ./Device/Vendor/MSFT/Policy/Config/WindowsAI/DisableImageCreator.
@@ -588,8 +598,8 @@ func (s *WindowsAI) CreateDisableImageCreator(ctx context.Context, value int64) 
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3360, 10.0.22621.4870 (CSP v10.0).
-func (s *WindowsAI) UpdateDisableImageCreator(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableImageCreator, client.Int(value))
+func (s *WindowsAI) UpdateDisableImageCreator(ctx context.Context, value DisableImageCreatorValue) error {
+	return s.c.Replace(ctx, URIDisableImageCreator, client.Int(int64(value)))
 }
 
 // DeleteDisableImageCreator deletes ./Device/Vendor/MSFT/Policy/Config/WindowsAI/DisableImageCreator.
@@ -609,12 +619,13 @@ func (s *WindowsAI) DeleteDisableImageCreator(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsAI) GetDisableRemoteAgentConnectors(ctx context.Context) (int64, error) {
+func (s *WindowsAI) GetDisableRemoteAgentConnectors(ctx context.Context) (DisableRemoteAgentConnectorsValue, error) {
 	v, err := s.c.Get(ctx, URIDisableRemoteAgentConnectors)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableRemoteAgentConnectorsValue(n), err
 }
 
 // CreateDisableRemoteAgentConnectors creates ./Device/Vendor/MSFT/Policy/Config/WindowsAI/DisableRemoteAgentConnectors.
@@ -622,8 +633,8 @@ func (s *WindowsAI) GetDisableRemoteAgentConnectors(ctx context.Context) (int64,
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsAI) CreateDisableRemoteAgentConnectors(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableRemoteAgentConnectors, client.Int(value))
+func (s *WindowsAI) CreateDisableRemoteAgentConnectors(ctx context.Context, value DisableRemoteAgentConnectorsValue) error {
+	return s.c.Add(ctx, URIDisableRemoteAgentConnectors, client.Int(int64(value)))
 }
 
 // UpdateDisableRemoteAgentConnectors updates ./Device/Vendor/MSFT/Policy/Config/WindowsAI/DisableRemoteAgentConnectors.
@@ -631,8 +642,8 @@ func (s *WindowsAI) CreateDisableRemoteAgentConnectors(ctx context.Context, valu
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsAI) UpdateDisableRemoteAgentConnectors(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableRemoteAgentConnectors, client.Int(value))
+func (s *WindowsAI) UpdateDisableRemoteAgentConnectors(ctx context.Context, value DisableRemoteAgentConnectorsValue) error {
+	return s.c.Replace(ctx, URIDisableRemoteAgentConnectors, client.Int(int64(value)))
 }
 
 // DeleteDisableRemoteAgentConnectors deletes ./Device/Vendor/MSFT/Policy/Config/WindowsAI/DisableRemoteAgentConnectors.
@@ -653,12 +664,13 @@ func (s *WindowsAI) DeleteDisableRemoteAgentConnectors(ctx context.Context) erro
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsAI) GetDisableSettingsAgent(ctx context.Context) (int64, error) {
+func (s *WindowsAI) GetDisableSettingsAgent(ctx context.Context) (DisableSettingsAgentValue, error) {
 	v, err := s.c.Get(ctx, URIDisableSettingsAgent)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableSettingsAgentValue(n), err
 }
 
 // CreateDisableSettingsAgent creates ./Device/Vendor/MSFT/Policy/Config/WindowsAI/DisableSettingsAgent.
@@ -670,8 +682,8 @@ func (s *WindowsAI) GetDisableSettingsAgent(ctx context.Context) (int64, error) 
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsAI) CreateDisableSettingsAgent(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableSettingsAgent, client.Int(value))
+func (s *WindowsAI) CreateDisableSettingsAgent(ctx context.Context, value DisableSettingsAgentValue) error {
+	return s.c.Add(ctx, URIDisableSettingsAgent, client.Int(int64(value)))
 }
 
 // UpdateDisableSettingsAgent updates ./Device/Vendor/MSFT/Policy/Config/WindowsAI/DisableSettingsAgent.
@@ -683,8 +695,8 @@ func (s *WindowsAI) CreateDisableSettingsAgent(ctx context.Context, value int64)
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsAI) UpdateDisableSettingsAgent(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableSettingsAgent, client.Int(value))
+func (s *WindowsAI) UpdateDisableSettingsAgent(ctx context.Context, value DisableSettingsAgentValue) error {
+	return s.c.Replace(ctx, URIDisableSettingsAgent, client.Int(int64(value)))
 }
 
 // DeleteDisableSettingsAgent deletes ./Device/Vendor/MSFT/Policy/Config/WindowsAI/DisableSettingsAgent.
@@ -709,12 +721,13 @@ func (s *WindowsAI) DeleteDisableSettingsAgent(ctx context.Context) error {
 // setting applies to Enterprise, Professional and Education client SKUs only.
 //
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsAI) GetRemoveMicrosoftCopilotApp(ctx context.Context) (int64, error) {
+func (s *WindowsAI) GetRemoveMicrosoftCopilotApp(ctx context.Context) (RemoveMicrosoftCopilotAppValue, error) {
 	v, err := s.c.Get(ctx, URIRemoveMicrosoftCopilotApp)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return RemoveMicrosoftCopilotAppValue(n), err
 }
 
 // CreateRemoveMicrosoftCopilotApp creates ./Device/Vendor/MSFT/Policy/Config/WindowsAI/RemoveMicrosoftCopilotApp.
@@ -726,8 +739,8 @@ func (s *WindowsAI) GetRemoveMicrosoftCopilotApp(ctx context.Context) (int64, er
 // setting applies to Enterprise, Professional and Education client SKUs only.
 //
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsAI) CreateRemoveMicrosoftCopilotApp(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIRemoveMicrosoftCopilotApp, client.Int(value))
+func (s *WindowsAI) CreateRemoveMicrosoftCopilotApp(ctx context.Context, value RemoveMicrosoftCopilotAppValue) error {
+	return s.c.Add(ctx, URIRemoveMicrosoftCopilotApp, client.Int(int64(value)))
 }
 
 // UpdateRemoveMicrosoftCopilotApp updates ./Device/Vendor/MSFT/Policy/Config/WindowsAI/RemoveMicrosoftCopilotApp.
@@ -739,8 +752,8 @@ func (s *WindowsAI) CreateRemoveMicrosoftCopilotApp(ctx context.Context, value i
 // setting applies to Enterprise, Professional and Education client SKUs only.
 //
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsAI) UpdateRemoveMicrosoftCopilotApp(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIRemoveMicrosoftCopilotApp, client.Int(value))
+func (s *WindowsAI) UpdateRemoveMicrosoftCopilotApp(ctx context.Context, value RemoveMicrosoftCopilotAppValue) error {
+	return s.c.Replace(ctx, URIRemoveMicrosoftCopilotApp, client.Int(int64(value)))
 }
 
 // DeleteRemoveMicrosoftCopilotApp deletes ./Device/Vendor/MSFT/Policy/Config/WindowsAI/RemoveMicrosoftCopilotApp.
@@ -935,12 +948,13 @@ func (s *WindowsAI) DeleteSetDenyUriListForRecall(ctx context.Context) error {
 //
 // Default: 90.
 // Supported from OS build 99.9.99999, 10.0.26100.3915 (CSP v11.0).
-func (s *WindowsAI) GetSetMaximumStorageDurationForRecallSnapshots(ctx context.Context) (int64, error) {
+func (s *WindowsAI) GetSetMaximumStorageDurationForRecallSnapshots(ctx context.Context) (SetMaximumStorageDurationForRecallSnapshotsValue, error) {
 	v, err := s.c.Get(ctx, URISetMaximumStorageDurationForRecallSnapshots)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SetMaximumStorageDurationForRecallSnapshotsValue(n), err
 }
 
 // CreateSetMaximumStorageDurationForRecallSnapshots creates ./Device/Vendor/MSFT/Policy/Config/WindowsAI/SetMaximumStorageDurationForRecallSnapshots.
@@ -954,8 +968,8 @@ func (s *WindowsAI) GetSetMaximumStorageDurationForRecallSnapshots(ctx context.C
 //
 // Default: 90.
 // Supported from OS build 99.9.99999, 10.0.26100.3915 (CSP v11.0).
-func (s *WindowsAI) CreateSetMaximumStorageDurationForRecallSnapshots(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISetMaximumStorageDurationForRecallSnapshots, client.Int(value))
+func (s *WindowsAI) CreateSetMaximumStorageDurationForRecallSnapshots(ctx context.Context, value SetMaximumStorageDurationForRecallSnapshotsValue) error {
+	return s.c.Add(ctx, URISetMaximumStorageDurationForRecallSnapshots, client.Int(int64(value)))
 }
 
 // UpdateSetMaximumStorageDurationForRecallSnapshots updates ./Device/Vendor/MSFT/Policy/Config/WindowsAI/SetMaximumStorageDurationForRecallSnapshots.
@@ -969,8 +983,8 @@ func (s *WindowsAI) CreateSetMaximumStorageDurationForRecallSnapshots(ctx contex
 //
 // Default: 90.
 // Supported from OS build 99.9.99999, 10.0.26100.3915 (CSP v11.0).
-func (s *WindowsAI) UpdateSetMaximumStorageDurationForRecallSnapshots(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISetMaximumStorageDurationForRecallSnapshots, client.Int(value))
+func (s *WindowsAI) UpdateSetMaximumStorageDurationForRecallSnapshots(ctx context.Context, value SetMaximumStorageDurationForRecallSnapshotsValue) error {
+	return s.c.Replace(ctx, URISetMaximumStorageDurationForRecallSnapshots, client.Int(int64(value)))
 }
 
 // DeleteSetMaximumStorageDurationForRecallSnapshots deletes ./Device/Vendor/MSFT/Policy/Config/WindowsAI/SetMaximumStorageDurationForRecallSnapshots.
@@ -1001,12 +1015,13 @@ func (s *WindowsAI) DeleteSetMaximumStorageDurationForRecallSnapshots(ctx contex
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3915 (CSP v11.0).
-func (s *WindowsAI) GetSetMaximumStorageSpaceForRecallSnapshots(ctx context.Context) (int64, error) {
+func (s *WindowsAI) GetSetMaximumStorageSpaceForRecallSnapshots(ctx context.Context) (SetMaximumStorageSpaceForRecallSnapshotsValue, error) {
 	v, err := s.c.Get(ctx, URISetMaximumStorageSpaceForRecallSnapshots)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SetMaximumStorageSpaceForRecallSnapshotsValue(n), err
 }
 
 // CreateSetMaximumStorageSpaceForRecallSnapshots creates ./Device/Vendor/MSFT/Policy/Config/WindowsAI/SetMaximumStorageSpaceForRecallSnapshots.
@@ -1022,8 +1037,8 @@ func (s *WindowsAI) GetSetMaximumStorageSpaceForRecallSnapshots(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3915 (CSP v11.0).
-func (s *WindowsAI) CreateSetMaximumStorageSpaceForRecallSnapshots(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISetMaximumStorageSpaceForRecallSnapshots, client.Int(value))
+func (s *WindowsAI) CreateSetMaximumStorageSpaceForRecallSnapshots(ctx context.Context, value SetMaximumStorageSpaceForRecallSnapshotsValue) error {
+	return s.c.Add(ctx, URISetMaximumStorageSpaceForRecallSnapshots, client.Int(int64(value)))
 }
 
 // UpdateSetMaximumStorageSpaceForRecallSnapshots updates ./Device/Vendor/MSFT/Policy/Config/WindowsAI/SetMaximumStorageSpaceForRecallSnapshots.
@@ -1039,8 +1054,8 @@ func (s *WindowsAI) CreateSetMaximumStorageSpaceForRecallSnapshots(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3915 (CSP v11.0).
-func (s *WindowsAI) UpdateSetMaximumStorageSpaceForRecallSnapshots(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISetMaximumStorageSpaceForRecallSnapshots, client.Int(value))
+func (s *WindowsAI) UpdateSetMaximumStorageSpaceForRecallSnapshots(ctx context.Context, value SetMaximumStorageSpaceForRecallSnapshotsValue) error {
+	return s.c.Replace(ctx, URISetMaximumStorageSpaceForRecallSnapshots, client.Int(int64(value)))
 }
 
 // DeleteSetMaximumStorageSpaceForRecallSnapshots deletes ./Device/Vendor/MSFT/Policy/Config/WindowsAI/SetMaximumStorageSpaceForRecallSnapshots.

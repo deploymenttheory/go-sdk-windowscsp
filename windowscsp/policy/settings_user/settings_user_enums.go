@@ -2,14 +2,37 @@
 
 package settings_user
 
-// ConfigureTaskbarCalendar allowed values.
+import (
+	"fmt"
+)
+
+// ConfigureTaskbarCalendarValue — allowed values for the ConfigureTaskbarCalendar node.
+type ConfigureTaskbarCalendarValue int64
+
 const (
 	// User will be allowed to configure the setting.
-	ConfigureTaskbarCalendarUserWillBeAllowedToConfigure int64 = 0
+	ConfigureTaskbarCalendarUserWillBeAllowedToConfigure ConfigureTaskbarCalendarValue = 0
 	// Don't show additional calendars.
-	ConfigureTaskbarCalendarDonTShowAdditionalCalendars int64 = 1
+	ConfigureTaskbarCalendarDonTShowAdditionalCalendars ConfigureTaskbarCalendarValue = 1
 	// Simplified Chinese (Lunar).
-	ConfigureTaskbarCalendarSimplifiedChinese int64 = 2
+	ConfigureTaskbarCalendarSimplifiedChinese ConfigureTaskbarCalendarValue = 2
 	// Traditional Chinese (Lunar).
-	ConfigureTaskbarCalendarTraditionalChinese int64 = 3
+	ConfigureTaskbarCalendarTraditionalChinese ConfigureTaskbarCalendarValue = 3
 )
+
+// String returns the ConfigureTaskbarCalendarValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureTaskbarCalendarValue) String() string {
+	switch e {
+	case ConfigureTaskbarCalendarUserWillBeAllowedToConfigure:
+		return "ConfigureTaskbarCalendarUserWillBeAllowedToConfigure"
+	case ConfigureTaskbarCalendarDonTShowAdditionalCalendars:
+		return "ConfigureTaskbarCalendarDonTShowAdditionalCalendars"
+	case ConfigureTaskbarCalendarSimplifiedChinese:
+		return "ConfigureTaskbarCalendarSimplifiedChinese"
+	case ConfigureTaskbarCalendarTraditionalChinese:
+		return "ConfigureTaskbarCalendarTraditionalChinese"
+	default:
+		return fmt.Sprintf("ConfigureTaskbarCalendarValue(%d)", int64(e))
+	}
+}

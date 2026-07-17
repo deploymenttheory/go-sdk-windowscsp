@@ -2,49 +2,132 @@
 
 package pde
 
-// EnablePersonalDataEncryption allowed values.
+import (
+	"fmt"
+)
+
+// EnablePersonalDataEncryptionValue — allowed values for the EnablePersonalDataEncryption node.
+type EnablePersonalDataEncryptionValue int64
+
 const (
 	// Disable Personal Data Encryption.
-	EnablePersonalDataEncryptionDisablePersonalDataEncryption int64 = 0
+	EnablePersonalDataEncryptionDisablePersonalDataEncryption EnablePersonalDataEncryptionValue = 0
 	// Enable Personal Data Encryption.
-	EnablePersonalDataEncryptionEnablePersonalDataEncryption int64 = 1
+	EnablePersonalDataEncryptionEnablePersonalDataEncryption EnablePersonalDataEncryptionValue = 1
 )
 
-// ProtectFoldersProtectDesktop allowed values.
+// String returns the EnablePersonalDataEncryptionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnablePersonalDataEncryptionValue) String() string {
+	switch e {
+	case EnablePersonalDataEncryptionDisablePersonalDataEncryption:
+		return "EnablePersonalDataEncryptionDisablePersonalDataEncryption"
+	case EnablePersonalDataEncryptionEnablePersonalDataEncryption:
+		return "EnablePersonalDataEncryptionEnablePersonalDataEncryption"
+	default:
+		return fmt.Sprintf("EnablePersonalDataEncryptionValue(%d)", int64(e))
+	}
+}
+
+// ProtectFoldersProtectDesktopValue — allowed values for the ProtectDesktop node.
+type ProtectFoldersProtectDesktopValue int64
+
 const (
 	// Disable PDE on the folder. If the folder is currently protected by PDE, this will result in
 	// unprotecting the folder.
-	ProtectFoldersProtectDesktopDisablePDEOnTheFolder int64 = 0
+	ProtectFoldersProtectDesktopDisablePDEOnTheFolder ProtectFoldersProtectDesktopValue = 0
 	// Enable PDE on the folder.
-	ProtectFoldersProtectDesktopEnablePDEOnTheFolder int64 = 1
+	ProtectFoldersProtectDesktopEnablePDEOnTheFolder ProtectFoldersProtectDesktopValue = 1
 )
 
-// ProtectFoldersProtectDocuments allowed values.
+// String returns the ProtectFoldersProtectDesktopValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ProtectFoldersProtectDesktopValue) String() string {
+	switch e {
+	case ProtectFoldersProtectDesktopDisablePDEOnTheFolder:
+		return "ProtectFoldersProtectDesktopDisablePDEOnTheFolder"
+	case ProtectFoldersProtectDesktopEnablePDEOnTheFolder:
+		return "ProtectFoldersProtectDesktopEnablePDEOnTheFolder"
+	default:
+		return fmt.Sprintf("ProtectFoldersProtectDesktopValue(%d)", int64(e))
+	}
+}
+
+// ProtectFoldersProtectDocumentsValue — allowed values for the ProtectDocuments node.
+type ProtectFoldersProtectDocumentsValue int64
+
 const (
 	// Disable PDE on the folder. If the folder is currently protected by PDE, this will result in
 	// unprotecting the folder.
-	ProtectFoldersProtectDocumentsDisablePDEOnTheFolder int64 = 0
+	ProtectFoldersProtectDocumentsDisablePDEOnTheFolder ProtectFoldersProtectDocumentsValue = 0
 	// Enable PDE on the folder.
-	ProtectFoldersProtectDocumentsEnablePDEOnTheFolder int64 = 1
+	ProtectFoldersProtectDocumentsEnablePDEOnTheFolder ProtectFoldersProtectDocumentsValue = 1
 )
 
-// ProtectFoldersProtectPictures allowed values.
+// String returns the ProtectFoldersProtectDocumentsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ProtectFoldersProtectDocumentsValue) String() string {
+	switch e {
+	case ProtectFoldersProtectDocumentsDisablePDEOnTheFolder:
+		return "ProtectFoldersProtectDocumentsDisablePDEOnTheFolder"
+	case ProtectFoldersProtectDocumentsEnablePDEOnTheFolder:
+		return "ProtectFoldersProtectDocumentsEnablePDEOnTheFolder"
+	default:
+		return fmt.Sprintf("ProtectFoldersProtectDocumentsValue(%d)", int64(e))
+	}
+}
+
+// ProtectFoldersProtectPicturesValue — allowed values for the ProtectPictures node.
+type ProtectFoldersProtectPicturesValue int64
+
 const (
 	// Disable PDE on the folder. If the folder is currently protected by PDE, this will result in
 	// unprotecting the folder.
-	ProtectFoldersProtectPicturesDisablePDEOnTheFolder int64 = 0
+	ProtectFoldersProtectPicturesDisablePDEOnTheFolder ProtectFoldersProtectPicturesValue = 0
 	// Enable PDE on the folder.
-	ProtectFoldersProtectPicturesEnablePDEOnTheFolder int64 = 1
+	ProtectFoldersProtectPicturesEnablePDEOnTheFolder ProtectFoldersProtectPicturesValue = 1
 )
 
-// StatusFolderProtectionStatus allowed values.
+// String returns the ProtectFoldersProtectPicturesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ProtectFoldersProtectPicturesValue) String() string {
+	switch e {
+	case ProtectFoldersProtectPicturesDisablePDEOnTheFolder:
+		return "ProtectFoldersProtectPicturesDisablePDEOnTheFolder"
+	case ProtectFoldersProtectPicturesEnablePDEOnTheFolder:
+		return "ProtectFoldersProtectPicturesEnablePDEOnTheFolder"
+	default:
+		return fmt.Sprintf("ProtectFoldersProtectPicturesValue(%d)", int64(e))
+	}
+}
+
+// StatusFolderProtectionStatusValue — allowed values for the FolderProtectionStatus node.
+type StatusFolderProtectionStatusValue int64
+
 const (
 	// Protection not started.
-	StatusFolderProtectionStatusProtectionNotStarted int64 = 0
+	StatusFolderProtectionStatusProtectionNotStarted StatusFolderProtectionStatusValue = 0
 	// Protection is completed with no failures.
-	StatusFolderProtectionStatusProtectionIsCompletedWithNoFailures int64 = 1
+	StatusFolderProtectionStatusProtectionIsCompletedWithNoFailures StatusFolderProtectionStatusValue = 1
 	// Protection in progress.
-	StatusFolderProtectionStatusProtectionInProgress int64 = 2
+	StatusFolderProtectionStatusProtectionInProgress StatusFolderProtectionStatusValue = 2
 	// Protection failed.
-	StatusFolderProtectionStatusProtectionFailed int64 = 3
+	StatusFolderProtectionStatusProtectionFailed StatusFolderProtectionStatusValue = 3
 )
+
+// String returns the StatusFolderProtectionStatusValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e StatusFolderProtectionStatusValue) String() string {
+	switch e {
+	case StatusFolderProtectionStatusProtectionNotStarted:
+		return "StatusFolderProtectionStatusProtectionNotStarted"
+	case StatusFolderProtectionStatusProtectionIsCompletedWithNoFailures:
+		return "StatusFolderProtectionStatusProtectionIsCompletedWithNoFailures"
+	case StatusFolderProtectionStatusProtectionInProgress:
+		return "StatusFolderProtectionStatusProtectionInProgress"
+	case StatusFolderProtectionStatusProtectionFailed:
+		return "StatusFolderProtectionStatusProtectionFailed"
+	default:
+		return fmt.Sprintf("StatusFolderProtectionStatusValue(%d)", int64(e))
+	}
+}

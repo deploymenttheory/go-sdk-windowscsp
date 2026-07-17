@@ -14,12 +14,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *TaskManager) GetAllowEndTask(ctx context.Context) (int64, error) {
+func (s *TaskManager) GetAllowEndTask(ctx context.Context) (AllowEndTaskValue, error) {
 	v, err := s.c.Get(ctx, URIAllowEndTask)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowEndTaskValue(n), err
 }
 
 // CreateAllowEndTask creates ./Device/Vendor/MSFT/Policy/Config/TaskManager/AllowEndTask.
@@ -28,8 +29,8 @@ func (s *TaskManager) GetAllowEndTask(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *TaskManager) CreateAllowEndTask(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowEndTask, client.Int(value))
+func (s *TaskManager) CreateAllowEndTask(ctx context.Context, value AllowEndTaskValue) error {
+	return s.c.Add(ctx, URIAllowEndTask, client.Int(int64(value)))
 }
 
 // UpdateAllowEndTask updates ./Device/Vendor/MSFT/Policy/Config/TaskManager/AllowEndTask.
@@ -38,8 +39,8 @@ func (s *TaskManager) CreateAllowEndTask(ctx context.Context, value int64) error
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *TaskManager) UpdateAllowEndTask(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowEndTask, client.Int(value))
+func (s *TaskManager) UpdateAllowEndTask(ctx context.Context, value AllowEndTaskValue) error {
+	return s.c.Replace(ctx, URIAllowEndTask, client.Int(int64(value)))
 }
 
 // DeleteAllowEndTask deletes ./Device/Vendor/MSFT/Policy/Config/TaskManager/AllowEndTask.

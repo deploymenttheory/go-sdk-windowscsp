@@ -19,12 +19,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *ConnectivityUser) GetDisableCrossDeviceResume(ctx context.Context) (int64, error) {
+func (s *ConnectivityUser) GetDisableCrossDeviceResume(ctx context.Context) (DisableCrossDeviceResumeValue, error) {
 	v, err := s.c.Get(ctx, URIDisableCrossDeviceResume)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableCrossDeviceResumeValue(n), err
 }
 
 // CreateDisableCrossDeviceResume creates ./User/Vendor/MSFT/Policy/Config/Connectivity/DisableCrossDeviceResume.
@@ -38,8 +39,8 @@ func (s *ConnectivityUser) GetDisableCrossDeviceResume(ctx context.Context) (int
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *ConnectivityUser) CreateDisableCrossDeviceResume(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableCrossDeviceResume, client.Int(value))
+func (s *ConnectivityUser) CreateDisableCrossDeviceResume(ctx context.Context, value DisableCrossDeviceResumeValue) error {
+	return s.c.Add(ctx, URIDisableCrossDeviceResume, client.Int(int64(value)))
 }
 
 // UpdateDisableCrossDeviceResume updates ./User/Vendor/MSFT/Policy/Config/Connectivity/DisableCrossDeviceResume.
@@ -53,8 +54,8 @@ func (s *ConnectivityUser) CreateDisableCrossDeviceResume(ctx context.Context, v
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *ConnectivityUser) UpdateDisableCrossDeviceResume(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableCrossDeviceResume, client.Int(value))
+func (s *ConnectivityUser) UpdateDisableCrossDeviceResume(ctx context.Context, value DisableCrossDeviceResumeValue) error {
+	return s.c.Replace(ctx, URIDisableCrossDeviceResume, client.Int(int64(value)))
 }
 
 // DeleteDisableCrossDeviceResume deletes ./User/Vendor/MSFT/Policy/Config/Connectivity/DisableCrossDeviceResume.

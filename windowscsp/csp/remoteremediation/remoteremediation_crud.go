@@ -219,26 +219,27 @@ func (s *RemoteRemediation) DeleteCloudRemediationSettingsNetworkSettingsNetwork
 // GetCloudRemediationSettingsNetworkSettingsNetworkCredentialsNetworkPasswordEncryptionType reads ./Vendor/MSFT/RemoteRemediation/CloudRemediationSettings/NetworkSettings/NetworkCredentials/NetworkPasswordEncryptionType.
 // Refers to the type of encryption that can be used for the network password. If you specify
 // "Encrypt with custom certificate" you must also enter the encryption store.
-func (s *RemoteRemediation) GetCloudRemediationSettingsNetworkSettingsNetworkCredentialsNetworkPasswordEncryptionType(ctx context.Context) (int64, error) {
+func (s *RemoteRemediation) GetCloudRemediationSettingsNetworkSettingsNetworkCredentialsNetworkPasswordEncryptionType(ctx context.Context) (CloudRemediationSettingsNetworkSettingsNetworkCredentialsNetworkPasswordEncryptionTypeValue, error) {
 	v, err := s.c.Get(ctx, URICloudRemediationSettingsNetworkSettingsNetworkCredentialsNetworkPasswordEncryptionType)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return CloudRemediationSettingsNetworkSettingsNetworkCredentialsNetworkPasswordEncryptionTypeValue(n), err
 }
 
 // CreateCloudRemediationSettingsNetworkSettingsNetworkCredentialsNetworkPasswordEncryptionType creates ./Vendor/MSFT/RemoteRemediation/CloudRemediationSettings/NetworkSettings/NetworkCredentials/NetworkPasswordEncryptionType.
 // Refers to the type of encryption that can be used for the network password. If you specify
 // "Encrypt with custom certificate" you must also enter the encryption store.
-func (s *RemoteRemediation) CreateCloudRemediationSettingsNetworkSettingsNetworkCredentialsNetworkPasswordEncryptionType(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URICloudRemediationSettingsNetworkSettingsNetworkCredentialsNetworkPasswordEncryptionType, client.Int(value))
+func (s *RemoteRemediation) CreateCloudRemediationSettingsNetworkSettingsNetworkCredentialsNetworkPasswordEncryptionType(ctx context.Context, value CloudRemediationSettingsNetworkSettingsNetworkCredentialsNetworkPasswordEncryptionTypeValue) error {
+	return s.c.Add(ctx, URICloudRemediationSettingsNetworkSettingsNetworkCredentialsNetworkPasswordEncryptionType, client.Int(int64(value)))
 }
 
 // UpdateCloudRemediationSettingsNetworkSettingsNetworkCredentialsNetworkPasswordEncryptionType updates ./Vendor/MSFT/RemoteRemediation/CloudRemediationSettings/NetworkSettings/NetworkCredentials/NetworkPasswordEncryptionType.
 // Refers to the type of encryption that can be used for the network password. If you specify
 // "Encrypt with custom certificate" you must also enter the encryption store.
-func (s *RemoteRemediation) UpdateCloudRemediationSettingsNetworkSettingsNetworkCredentialsNetworkPasswordEncryptionType(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URICloudRemediationSettingsNetworkSettingsNetworkCredentialsNetworkPasswordEncryptionType, client.Int(value))
+func (s *RemoteRemediation) UpdateCloudRemediationSettingsNetworkSettingsNetworkCredentialsNetworkPasswordEncryptionType(ctx context.Context, value CloudRemediationSettingsNetworkSettingsNetworkCredentialsNetworkPasswordEncryptionTypeValue) error {
+	return s.c.Replace(ctx, URICloudRemediationSettingsNetworkSettingsNetworkCredentialsNetworkPasswordEncryptionType, client.Int(int64(value)))
 }
 
 // DeleteCloudRemediationSettingsNetworkSettingsNetworkCredentialsNetworkPasswordEncryptionType deletes ./Vendor/MSFT/RemoteRemediation/CloudRemediationSettings/NetworkSettings/NetworkCredentials/NetworkPasswordEncryptionType.

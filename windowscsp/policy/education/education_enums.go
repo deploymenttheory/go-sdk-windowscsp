@@ -2,18 +2,52 @@
 
 package education
 
-// EnableEduThemes allowed values.
-const (
-	// Disabled.
-	EnableEduThemesDisabled int64 = 0
-	// Enabled.
-	EnableEduThemesEnabled int64 = 1
+import (
+	"fmt"
 )
 
-// IsEducationEnvironment allowed values.
+// EnableEduThemesValue — allowed values for the EnableEduThemes node.
+type EnableEduThemesValue int64
+
 const (
 	// Disabled.
-	IsEducationEnvironmentDisabled int64 = 0
+	EnableEduThemesDisabled EnableEduThemesValue = 0
 	// Enabled.
-	IsEducationEnvironmentEnabled int64 = 1
+	EnableEduThemesEnabled EnableEduThemesValue = 1
 )
+
+// String returns the EnableEduThemesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableEduThemesValue) String() string {
+	switch e {
+	case EnableEduThemesDisabled:
+		return "EnableEduThemesDisabled"
+	case EnableEduThemesEnabled:
+		return "EnableEduThemesEnabled"
+	default:
+		return fmt.Sprintf("EnableEduThemesValue(%d)", int64(e))
+	}
+}
+
+// IsEducationEnvironmentValue — allowed values for the IsEducationEnvironment node.
+type IsEducationEnvironmentValue int64
+
+const (
+	// Disabled.
+	IsEducationEnvironmentDisabled IsEducationEnvironmentValue = 0
+	// Enabled.
+	IsEducationEnvironmentEnabled IsEducationEnvironmentValue = 1
+)
+
+// String returns the IsEducationEnvironmentValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e IsEducationEnvironmentValue) String() string {
+	switch e {
+	case IsEducationEnvironmentDisabled:
+		return "IsEducationEnvironmentDisabled"
+	case IsEducationEnvironmentEnabled:
+		return "IsEducationEnvironmentEnabled"
+	default:
+		return fmt.Sprintf("IsEducationEnvironmentValue(%d)", int64(e))
+	}
+}

@@ -67,12 +67,13 @@ func (s *WindowsDefenderSecurityCenter) DeleteCompanyName(ctx context.Context) e
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *WindowsDefenderSecurityCenter) GetDisableAccountProtectionUI(ctx context.Context) (int64, error) {
+func (s *WindowsDefenderSecurityCenter) GetDisableAccountProtectionUI(ctx context.Context) (DisableAccountProtectionUIValue, error) {
 	v, err := s.c.Get(ctx, URIDisableAccountProtectionUI)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableAccountProtectionUIValue(n), err
 }
 
 // CreateDisableAccountProtectionUI creates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisableAccountProtectionUI.
@@ -82,8 +83,8 @@ func (s *WindowsDefenderSecurityCenter) GetDisableAccountProtectionUI(ctx contex
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *WindowsDefenderSecurityCenter) CreateDisableAccountProtectionUI(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableAccountProtectionUI, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) CreateDisableAccountProtectionUI(ctx context.Context, value DisableAccountProtectionUIValue) error {
+	return s.c.Add(ctx, URIDisableAccountProtectionUI, client.Int(int64(value)))
 }
 
 // UpdateDisableAccountProtectionUI updates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisableAccountProtectionUI.
@@ -93,8 +94,8 @@ func (s *WindowsDefenderSecurityCenter) CreateDisableAccountProtectionUI(ctx con
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *WindowsDefenderSecurityCenter) UpdateDisableAccountProtectionUI(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableAccountProtectionUI, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) UpdateDisableAccountProtectionUI(ctx context.Context, value DisableAccountProtectionUIValue) error {
+	return s.c.Replace(ctx, URIDisableAccountProtectionUI, client.Int(int64(value)))
 }
 
 // DeleteDisableAccountProtectionUI deletes ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisableAccountProtectionUI.
@@ -116,12 +117,13 @@ func (s *WindowsDefenderSecurityCenter) DeleteDisableAccountProtectionUI(ctx con
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WindowsDefenderSecurityCenter) GetDisableAppBrowserUI(ctx context.Context) (int64, error) {
+func (s *WindowsDefenderSecurityCenter) GetDisableAppBrowserUI(ctx context.Context) (DisableAppBrowserUIValue, error) {
 	v, err := s.c.Get(ctx, URIDisableAppBrowserUI)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableAppBrowserUIValue(n), err
 }
 
 // CreateDisableAppBrowserUI creates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisableAppBrowserUI.
@@ -132,8 +134,8 @@ func (s *WindowsDefenderSecurityCenter) GetDisableAppBrowserUI(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WindowsDefenderSecurityCenter) CreateDisableAppBrowserUI(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableAppBrowserUI, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) CreateDisableAppBrowserUI(ctx context.Context, value DisableAppBrowserUIValue) error {
+	return s.c.Add(ctx, URIDisableAppBrowserUI, client.Int(int64(value)))
 }
 
 // UpdateDisableAppBrowserUI updates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisableAppBrowserUI.
@@ -144,8 +146,8 @@ func (s *WindowsDefenderSecurityCenter) CreateDisableAppBrowserUI(ctx context.Co
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WindowsDefenderSecurityCenter) UpdateDisableAppBrowserUI(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableAppBrowserUI, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) UpdateDisableAppBrowserUI(ctx context.Context, value DisableAppBrowserUIValue) error {
+	return s.c.Replace(ctx, URIDisableAppBrowserUI, client.Int(int64(value)))
 }
 
 // DeleteDisableAppBrowserUI deletes ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisableAppBrowserUI.
@@ -167,12 +169,13 @@ func (s *WindowsDefenderSecurityCenter) DeleteDisableAppBrowserUI(ctx context.Co
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *WindowsDefenderSecurityCenter) GetDisableClearTpmButton(ctx context.Context) (int64, error) {
+func (s *WindowsDefenderSecurityCenter) GetDisableClearTpmButton(ctx context.Context) (DisableClearTpmButtonValue, error) {
 	v, err := s.c.Get(ctx, URIDisableClearTpmButton)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableClearTpmButtonValue(n), err
 }
 
 // CreateDisableClearTpmButton creates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisableClearTpmButton.
@@ -182,8 +185,8 @@ func (s *WindowsDefenderSecurityCenter) GetDisableClearTpmButton(ctx context.Con
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *WindowsDefenderSecurityCenter) CreateDisableClearTpmButton(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableClearTpmButton, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) CreateDisableClearTpmButton(ctx context.Context, value DisableClearTpmButtonValue) error {
+	return s.c.Add(ctx, URIDisableClearTpmButton, client.Int(int64(value)))
 }
 
 // UpdateDisableClearTpmButton updates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisableClearTpmButton.
@@ -193,8 +196,8 @@ func (s *WindowsDefenderSecurityCenter) CreateDisableClearTpmButton(ctx context.
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *WindowsDefenderSecurityCenter) UpdateDisableClearTpmButton(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableClearTpmButton, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) UpdateDisableClearTpmButton(ctx context.Context, value DisableClearTpmButtonValue) error {
+	return s.c.Replace(ctx, URIDisableClearTpmButton, client.Int(int64(value)))
 }
 
 // DeleteDisableClearTpmButton deletes ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisableClearTpmButton.
@@ -215,12 +218,13 @@ func (s *WindowsDefenderSecurityCenter) DeleteDisableClearTpmButton(ctx context.
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *WindowsDefenderSecurityCenter) GetDisableDeviceSecurityUI(ctx context.Context) (int64, error) {
+func (s *WindowsDefenderSecurityCenter) GetDisableDeviceSecurityUI(ctx context.Context) (DisableDeviceSecurityUIValue, error) {
 	v, err := s.c.Get(ctx, URIDisableDeviceSecurityUI)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableDeviceSecurityUIValue(n), err
 }
 
 // CreateDisableDeviceSecurityUI creates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisableDeviceSecurityUI.
@@ -230,8 +234,8 @@ func (s *WindowsDefenderSecurityCenter) GetDisableDeviceSecurityUI(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *WindowsDefenderSecurityCenter) CreateDisableDeviceSecurityUI(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableDeviceSecurityUI, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) CreateDisableDeviceSecurityUI(ctx context.Context, value DisableDeviceSecurityUIValue) error {
+	return s.c.Add(ctx, URIDisableDeviceSecurityUI, client.Int(int64(value)))
 }
 
 // UpdateDisableDeviceSecurityUI updates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisableDeviceSecurityUI.
@@ -241,8 +245,8 @@ func (s *WindowsDefenderSecurityCenter) CreateDisableDeviceSecurityUI(ctx contex
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *WindowsDefenderSecurityCenter) UpdateDisableDeviceSecurityUI(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableDeviceSecurityUI, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) UpdateDisableDeviceSecurityUI(ctx context.Context, value DisableDeviceSecurityUIValue) error {
+	return s.c.Replace(ctx, URIDisableDeviceSecurityUI, client.Int(int64(value)))
 }
 
 // DeleteDisableDeviceSecurityUI deletes ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisableDeviceSecurityUI.
@@ -265,12 +269,13 @@ func (s *WindowsDefenderSecurityCenter) DeleteDisableDeviceSecurityUI(ctx contex
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WindowsDefenderSecurityCenter) GetDisableEnhancedNotifications(ctx context.Context) (int64, error) {
+func (s *WindowsDefenderSecurityCenter) GetDisableEnhancedNotifications(ctx context.Context) (DisableEnhancedNotificationsValue, error) {
 	v, err := s.c.Get(ctx, URIDisableEnhancedNotifications)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableEnhancedNotificationsValue(n), err
 }
 
 // CreateDisableEnhancedNotifications creates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisableEnhancedNotifications.
@@ -282,8 +287,8 @@ func (s *WindowsDefenderSecurityCenter) GetDisableEnhancedNotifications(ctx cont
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WindowsDefenderSecurityCenter) CreateDisableEnhancedNotifications(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableEnhancedNotifications, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) CreateDisableEnhancedNotifications(ctx context.Context, value DisableEnhancedNotificationsValue) error {
+	return s.c.Add(ctx, URIDisableEnhancedNotifications, client.Int(int64(value)))
 }
 
 // UpdateDisableEnhancedNotifications updates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisableEnhancedNotifications.
@@ -295,8 +300,8 @@ func (s *WindowsDefenderSecurityCenter) CreateDisableEnhancedNotifications(ctx c
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WindowsDefenderSecurityCenter) UpdateDisableEnhancedNotifications(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableEnhancedNotifications, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) UpdateDisableEnhancedNotifications(ctx context.Context, value DisableEnhancedNotificationsValue) error {
+	return s.c.Replace(ctx, URIDisableEnhancedNotifications, client.Int(int64(value)))
 }
 
 // DeleteDisableEnhancedNotifications deletes ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisableEnhancedNotifications.
@@ -320,12 +325,13 @@ func (s *WindowsDefenderSecurityCenter) DeleteDisableEnhancedNotifications(ctx c
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WindowsDefenderSecurityCenter) GetDisableFamilyUI(ctx context.Context) (int64, error) {
+func (s *WindowsDefenderSecurityCenter) GetDisableFamilyUI(ctx context.Context) (DisableFamilyUIValue, error) {
 	v, err := s.c.Get(ctx, URIDisableFamilyUI)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableFamilyUIValue(n), err
 }
 
 // CreateDisableFamilyUI creates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisableFamilyUI.
@@ -336,8 +342,8 @@ func (s *WindowsDefenderSecurityCenter) GetDisableFamilyUI(ctx context.Context) 
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WindowsDefenderSecurityCenter) CreateDisableFamilyUI(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableFamilyUI, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) CreateDisableFamilyUI(ctx context.Context, value DisableFamilyUIValue) error {
+	return s.c.Add(ctx, URIDisableFamilyUI, client.Int(int64(value)))
 }
 
 // UpdateDisableFamilyUI updates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisableFamilyUI.
@@ -348,8 +354,8 @@ func (s *WindowsDefenderSecurityCenter) CreateDisableFamilyUI(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WindowsDefenderSecurityCenter) UpdateDisableFamilyUI(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableFamilyUI, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) UpdateDisableFamilyUI(ctx context.Context, value DisableFamilyUIValue) error {
+	return s.c.Replace(ctx, URIDisableFamilyUI, client.Int(int64(value)))
 }
 
 // DeleteDisableFamilyUI deletes ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisableFamilyUI.
@@ -372,12 +378,13 @@ func (s *WindowsDefenderSecurityCenter) DeleteDisableFamilyUI(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WindowsDefenderSecurityCenter) GetDisableHealthUI(ctx context.Context) (int64, error) {
+func (s *WindowsDefenderSecurityCenter) GetDisableHealthUI(ctx context.Context) (DisableHealthUIValue, error) {
 	v, err := s.c.Get(ctx, URIDisableHealthUI)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableHealthUIValue(n), err
 }
 
 // CreateDisableHealthUI creates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisableHealthUI.
@@ -388,8 +395,8 @@ func (s *WindowsDefenderSecurityCenter) GetDisableHealthUI(ctx context.Context) 
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WindowsDefenderSecurityCenter) CreateDisableHealthUI(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableHealthUI, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) CreateDisableHealthUI(ctx context.Context, value DisableHealthUIValue) error {
+	return s.c.Add(ctx, URIDisableHealthUI, client.Int(int64(value)))
 }
 
 // UpdateDisableHealthUI updates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisableHealthUI.
@@ -400,8 +407,8 @@ func (s *WindowsDefenderSecurityCenter) CreateDisableHealthUI(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WindowsDefenderSecurityCenter) UpdateDisableHealthUI(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableHealthUI, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) UpdateDisableHealthUI(ctx context.Context, value DisableHealthUIValue) error {
+	return s.c.Replace(ctx, URIDisableHealthUI, client.Int(int64(value)))
 }
 
 // DeleteDisableHealthUI deletes ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisableHealthUI.
@@ -424,12 +431,13 @@ func (s *WindowsDefenderSecurityCenter) DeleteDisableHealthUI(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WindowsDefenderSecurityCenter) GetDisableNetworkUI(ctx context.Context) (int64, error) {
+func (s *WindowsDefenderSecurityCenter) GetDisableNetworkUI(ctx context.Context) (DisableNetworkUIValue, error) {
 	v, err := s.c.Get(ctx, URIDisableNetworkUI)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableNetworkUIValue(n), err
 }
 
 // CreateDisableNetworkUI creates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisableNetworkUI.
@@ -440,8 +448,8 @@ func (s *WindowsDefenderSecurityCenter) GetDisableNetworkUI(ctx context.Context)
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WindowsDefenderSecurityCenter) CreateDisableNetworkUI(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableNetworkUI, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) CreateDisableNetworkUI(ctx context.Context, value DisableNetworkUIValue) error {
+	return s.c.Add(ctx, URIDisableNetworkUI, client.Int(int64(value)))
 }
 
 // UpdateDisableNetworkUI updates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisableNetworkUI.
@@ -452,8 +460,8 @@ func (s *WindowsDefenderSecurityCenter) CreateDisableNetworkUI(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WindowsDefenderSecurityCenter) UpdateDisableNetworkUI(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableNetworkUI, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) UpdateDisableNetworkUI(ctx context.Context, value DisableNetworkUIValue) error {
+	return s.c.Replace(ctx, URIDisableNetworkUI, client.Int(int64(value)))
 }
 
 // DeleteDisableNetworkUI deletes ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisableNetworkUI.
@@ -476,12 +484,13 @@ func (s *WindowsDefenderSecurityCenter) DeleteDisableNetworkUI(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WindowsDefenderSecurityCenter) GetDisableNotifications(ctx context.Context) (int64, error) {
+func (s *WindowsDefenderSecurityCenter) GetDisableNotifications(ctx context.Context) (DisableNotificationsValue, error) {
 	v, err := s.c.Get(ctx, URIDisableNotifications)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableNotificationsValue(n), err
 }
 
 // CreateDisableNotifications creates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisableNotifications.
@@ -492,8 +501,8 @@ func (s *WindowsDefenderSecurityCenter) GetDisableNotifications(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WindowsDefenderSecurityCenter) CreateDisableNotifications(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableNotifications, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) CreateDisableNotifications(ctx context.Context, value DisableNotificationsValue) error {
+	return s.c.Add(ctx, URIDisableNotifications, client.Int(int64(value)))
 }
 
 // UpdateDisableNotifications updates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisableNotifications.
@@ -504,8 +513,8 @@ func (s *WindowsDefenderSecurityCenter) CreateDisableNotifications(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WindowsDefenderSecurityCenter) UpdateDisableNotifications(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableNotifications, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) UpdateDisableNotifications(ctx context.Context, value DisableNotificationsValue) error {
+	return s.c.Replace(ctx, URIDisableNotifications, client.Int(int64(value)))
 }
 
 // DeleteDisableNotifications deletes ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisableNotifications.
@@ -529,12 +538,13 @@ func (s *WindowsDefenderSecurityCenter) DeleteDisableNotifications(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *WindowsDefenderSecurityCenter) GetDisableTpmFirmwareUpdateWarning(ctx context.Context) (int64, error) {
+func (s *WindowsDefenderSecurityCenter) GetDisableTpmFirmwareUpdateWarning(ctx context.Context) (DisableTpmFirmwareUpdateWarningValue, error) {
 	v, err := s.c.Get(ctx, URIDisableTpmFirmwareUpdateWarning)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableTpmFirmwareUpdateWarningValue(n), err
 }
 
 // CreateDisableTpmFirmwareUpdateWarning creates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisableTpmFirmwareUpdateWarning.
@@ -546,8 +556,8 @@ func (s *WindowsDefenderSecurityCenter) GetDisableTpmFirmwareUpdateWarning(ctx c
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *WindowsDefenderSecurityCenter) CreateDisableTpmFirmwareUpdateWarning(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableTpmFirmwareUpdateWarning, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) CreateDisableTpmFirmwareUpdateWarning(ctx context.Context, value DisableTpmFirmwareUpdateWarningValue) error {
+	return s.c.Add(ctx, URIDisableTpmFirmwareUpdateWarning, client.Int(int64(value)))
 }
 
 // UpdateDisableTpmFirmwareUpdateWarning updates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisableTpmFirmwareUpdateWarning.
@@ -559,8 +569,8 @@ func (s *WindowsDefenderSecurityCenter) CreateDisableTpmFirmwareUpdateWarning(ct
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *WindowsDefenderSecurityCenter) UpdateDisableTpmFirmwareUpdateWarning(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableTpmFirmwareUpdateWarning, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) UpdateDisableTpmFirmwareUpdateWarning(ctx context.Context, value DisableTpmFirmwareUpdateWarningValue) error {
+	return s.c.Replace(ctx, URIDisableTpmFirmwareUpdateWarning, client.Int(int64(value)))
 }
 
 // DeleteDisableTpmFirmwareUpdateWarning deletes ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisableTpmFirmwareUpdateWarning.
@@ -584,12 +594,13 @@ func (s *WindowsDefenderSecurityCenter) DeleteDisableTpmFirmwareUpdateWarning(ct
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WindowsDefenderSecurityCenter) GetDisableVirusUI(ctx context.Context) (int64, error) {
+func (s *WindowsDefenderSecurityCenter) GetDisableVirusUI(ctx context.Context) (DisableVirusUIValue, error) {
 	v, err := s.c.Get(ctx, URIDisableVirusUI)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableVirusUIValue(n), err
 }
 
 // CreateDisableVirusUI creates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisableVirusUI.
@@ -600,8 +611,8 @@ func (s *WindowsDefenderSecurityCenter) GetDisableVirusUI(ctx context.Context) (
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WindowsDefenderSecurityCenter) CreateDisableVirusUI(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableVirusUI, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) CreateDisableVirusUI(ctx context.Context, value DisableVirusUIValue) error {
+	return s.c.Add(ctx, URIDisableVirusUI, client.Int(int64(value)))
 }
 
 // UpdateDisableVirusUI updates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisableVirusUI.
@@ -612,8 +623,8 @@ func (s *WindowsDefenderSecurityCenter) CreateDisableVirusUI(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WindowsDefenderSecurityCenter) UpdateDisableVirusUI(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableVirusUI, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) UpdateDisableVirusUI(ctx context.Context, value DisableVirusUIValue) error {
+	return s.c.Replace(ctx, URIDisableVirusUI, client.Int(int64(value)))
 }
 
 // DeleteDisableVirusUI deletes ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisableVirusUI.
@@ -636,12 +647,13 @@ func (s *WindowsDefenderSecurityCenter) DeleteDisableVirusUI(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WindowsDefenderSecurityCenter) GetDisallowExploitProtectionOverride(ctx context.Context) (int64, error) {
+func (s *WindowsDefenderSecurityCenter) GetDisallowExploitProtectionOverride(ctx context.Context) (DisallowExploitProtectionOverrideValue, error) {
 	v, err := s.c.Get(ctx, URIDisallowExploitProtectionOverride)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisallowExploitProtectionOverrideValue(n), err
 }
 
 // CreateDisallowExploitProtectionOverride creates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisallowExploitProtectionOverride.
@@ -652,8 +664,8 @@ func (s *WindowsDefenderSecurityCenter) GetDisallowExploitProtectionOverride(ctx
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WindowsDefenderSecurityCenter) CreateDisallowExploitProtectionOverride(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisallowExploitProtectionOverride, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) CreateDisallowExploitProtectionOverride(ctx context.Context, value DisallowExploitProtectionOverrideValue) error {
+	return s.c.Add(ctx, URIDisallowExploitProtectionOverride, client.Int(int64(value)))
 }
 
 // UpdateDisallowExploitProtectionOverride updates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisallowExploitProtectionOverride.
@@ -664,8 +676,8 @@ func (s *WindowsDefenderSecurityCenter) CreateDisallowExploitProtectionOverride(
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WindowsDefenderSecurityCenter) UpdateDisallowExploitProtectionOverride(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisallowExploitProtectionOverride, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) UpdateDisallowExploitProtectionOverride(ctx context.Context, value DisallowExploitProtectionOverrideValue) error {
+	return s.c.Replace(ctx, URIDisallowExploitProtectionOverride, client.Int(int64(value)))
 }
 
 // DeleteDisallowExploitProtectionOverride deletes ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/DisallowExploitProtectionOverride.
@@ -737,12 +749,13 @@ func (s *WindowsDefenderSecurityCenter) DeleteEmail(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WindowsDefenderSecurityCenter) GetEnableCustomizedToasts(ctx context.Context) (int64, error) {
+func (s *WindowsDefenderSecurityCenter) GetEnableCustomizedToasts(ctx context.Context) (EnableCustomizedToastsValue, error) {
 	v, err := s.c.Get(ctx, URIEnableCustomizedToasts)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableCustomizedToastsValue(n), err
 }
 
 // CreateEnableCustomizedToasts creates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/EnableCustomizedToasts.
@@ -754,8 +767,8 @@ func (s *WindowsDefenderSecurityCenter) GetEnableCustomizedToasts(ctx context.Co
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WindowsDefenderSecurityCenter) CreateEnableCustomizedToasts(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableCustomizedToasts, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) CreateEnableCustomizedToasts(ctx context.Context, value EnableCustomizedToastsValue) error {
+	return s.c.Add(ctx, URIEnableCustomizedToasts, client.Int(int64(value)))
 }
 
 // UpdateEnableCustomizedToasts updates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/EnableCustomizedToasts.
@@ -767,8 +780,8 @@ func (s *WindowsDefenderSecurityCenter) CreateEnableCustomizedToasts(ctx context
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WindowsDefenderSecurityCenter) UpdateEnableCustomizedToasts(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableCustomizedToasts, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) UpdateEnableCustomizedToasts(ctx context.Context, value EnableCustomizedToastsValue) error {
+	return s.c.Replace(ctx, URIEnableCustomizedToasts, client.Int(int64(value)))
 }
 
 // DeleteEnableCustomizedToasts deletes ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/EnableCustomizedToasts.
@@ -793,12 +806,13 @@ func (s *WindowsDefenderSecurityCenter) DeleteEnableCustomizedToasts(ctx context
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WindowsDefenderSecurityCenter) GetEnableInAppCustomization(ctx context.Context) (int64, error) {
+func (s *WindowsDefenderSecurityCenter) GetEnableInAppCustomization(ctx context.Context) (EnableInAppCustomizationValue, error) {
 	v, err := s.c.Get(ctx, URIEnableInAppCustomization)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableInAppCustomizationValue(n), err
 }
 
 // CreateEnableInAppCustomization creates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/EnableInAppCustomization.
@@ -810,8 +824,8 @@ func (s *WindowsDefenderSecurityCenter) GetEnableInAppCustomization(ctx context.
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WindowsDefenderSecurityCenter) CreateEnableInAppCustomization(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableInAppCustomization, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) CreateEnableInAppCustomization(ctx context.Context, value EnableInAppCustomizationValue) error {
+	return s.c.Add(ctx, URIEnableInAppCustomization, client.Int(int64(value)))
 }
 
 // UpdateEnableInAppCustomization updates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/EnableInAppCustomization.
@@ -823,8 +837,8 @@ func (s *WindowsDefenderSecurityCenter) CreateEnableInAppCustomization(ctx conte
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *WindowsDefenderSecurityCenter) UpdateEnableInAppCustomization(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableInAppCustomization, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) UpdateEnableInAppCustomization(ctx context.Context, value EnableInAppCustomizationValue) error {
+	return s.c.Replace(ctx, URIEnableInAppCustomization, client.Int(int64(value)))
 }
 
 // DeleteEnableInAppCustomization deletes ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/EnableInAppCustomization.
@@ -846,12 +860,13 @@ func (s *WindowsDefenderSecurityCenter) DeleteEnableInAppCustomization(ctx conte
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *WindowsDefenderSecurityCenter) GetHideRansomwareDataRecovery(ctx context.Context) (int64, error) {
+func (s *WindowsDefenderSecurityCenter) GetHideRansomwareDataRecovery(ctx context.Context) (HideRansomwareDataRecoveryValue, error) {
 	v, err := s.c.Get(ctx, URIHideRansomwareDataRecovery)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HideRansomwareDataRecoveryValue(n), err
 }
 
 // CreateHideRansomwareDataRecovery creates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/HideRansomwareDataRecovery.
@@ -860,8 +875,8 @@ func (s *WindowsDefenderSecurityCenter) GetHideRansomwareDataRecovery(ctx contex
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *WindowsDefenderSecurityCenter) CreateHideRansomwareDataRecovery(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHideRansomwareDataRecovery, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) CreateHideRansomwareDataRecovery(ctx context.Context, value HideRansomwareDataRecoveryValue) error {
+	return s.c.Add(ctx, URIHideRansomwareDataRecovery, client.Int(int64(value)))
 }
 
 // UpdateHideRansomwareDataRecovery updates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/HideRansomwareDataRecovery.
@@ -870,8 +885,8 @@ func (s *WindowsDefenderSecurityCenter) CreateHideRansomwareDataRecovery(ctx con
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *WindowsDefenderSecurityCenter) UpdateHideRansomwareDataRecovery(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHideRansomwareDataRecovery, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) UpdateHideRansomwareDataRecovery(ctx context.Context, value HideRansomwareDataRecoveryValue) error {
+	return s.c.Replace(ctx, URIHideRansomwareDataRecovery, client.Int(int64(value)))
 }
 
 // DeleteHideRansomwareDataRecovery deletes ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/HideRansomwareDataRecovery.
@@ -889,12 +904,13 @@ func (s *WindowsDefenderSecurityCenter) DeleteHideRansomwareDataRecovery(ctx con
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *WindowsDefenderSecurityCenter) GetHideSecureBoot(ctx context.Context) (int64, error) {
+func (s *WindowsDefenderSecurityCenter) GetHideSecureBoot(ctx context.Context) (HideSecureBootValue, error) {
 	v, err := s.c.Get(ctx, URIHideSecureBoot)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HideSecureBootValue(n), err
 }
 
 // CreateHideSecureBoot creates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/HideSecureBoot.
@@ -902,8 +918,8 @@ func (s *WindowsDefenderSecurityCenter) GetHideSecureBoot(ctx context.Context) (
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *WindowsDefenderSecurityCenter) CreateHideSecureBoot(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHideSecureBoot, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) CreateHideSecureBoot(ctx context.Context, value HideSecureBootValue) error {
+	return s.c.Add(ctx, URIHideSecureBoot, client.Int(int64(value)))
 }
 
 // UpdateHideSecureBoot updates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/HideSecureBoot.
@@ -911,8 +927,8 @@ func (s *WindowsDefenderSecurityCenter) CreateHideSecureBoot(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *WindowsDefenderSecurityCenter) UpdateHideSecureBoot(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHideSecureBoot, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) UpdateHideSecureBoot(ctx context.Context, value HideSecureBootValue) error {
+	return s.c.Replace(ctx, URIHideSecureBoot, client.Int(int64(value)))
 }
 
 // DeleteHideSecureBoot deletes ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/HideSecureBoot.
@@ -930,12 +946,13 @@ func (s *WindowsDefenderSecurityCenter) DeleteHideSecureBoot(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *WindowsDefenderSecurityCenter) GetHideTPMTroubleshooting(ctx context.Context) (int64, error) {
+func (s *WindowsDefenderSecurityCenter) GetHideTPMTroubleshooting(ctx context.Context) (HideTPMTroubleshootingValue, error) {
 	v, err := s.c.Get(ctx, URIHideTPMTroubleshooting)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HideTPMTroubleshootingValue(n), err
 }
 
 // CreateHideTPMTroubleshooting creates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/HideTPMTroubleshooting.
@@ -944,8 +961,8 @@ func (s *WindowsDefenderSecurityCenter) GetHideTPMTroubleshooting(ctx context.Co
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *WindowsDefenderSecurityCenter) CreateHideTPMTroubleshooting(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHideTPMTroubleshooting, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) CreateHideTPMTroubleshooting(ctx context.Context, value HideTPMTroubleshootingValue) error {
+	return s.c.Add(ctx, URIHideTPMTroubleshooting, client.Int(int64(value)))
 }
 
 // UpdateHideTPMTroubleshooting updates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/HideTPMTroubleshooting.
@@ -954,8 +971,8 @@ func (s *WindowsDefenderSecurityCenter) CreateHideTPMTroubleshooting(ctx context
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *WindowsDefenderSecurityCenter) UpdateHideTPMTroubleshooting(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHideTPMTroubleshooting, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) UpdateHideTPMTroubleshooting(ctx context.Context, value HideTPMTroubleshootingValue) error {
+	return s.c.Replace(ctx, URIHideTPMTroubleshooting, client.Int(int64(value)))
 }
 
 // DeleteHideTPMTroubleshooting deletes ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/HideTPMTroubleshooting.
@@ -977,12 +994,13 @@ func (s *WindowsDefenderSecurityCenter) DeleteHideTPMTroubleshooting(ctx context
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *WindowsDefenderSecurityCenter) GetHideWindowsSecurityNotificationAreaControl(ctx context.Context) (int64, error) {
+func (s *WindowsDefenderSecurityCenter) GetHideWindowsSecurityNotificationAreaControl(ctx context.Context) (HideWindowsSecurityNotificationAreaControlValue, error) {
 	v, err := s.c.Get(ctx, URIHideWindowsSecurityNotificationAreaControl)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HideWindowsSecurityNotificationAreaControlValue(n), err
 }
 
 // CreateHideWindowsSecurityNotificationAreaControl creates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/HideWindowsSecurityNotificationAreaControl.
@@ -994,8 +1012,8 @@ func (s *WindowsDefenderSecurityCenter) GetHideWindowsSecurityNotificationAreaCo
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *WindowsDefenderSecurityCenter) CreateHideWindowsSecurityNotificationAreaControl(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHideWindowsSecurityNotificationAreaControl, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) CreateHideWindowsSecurityNotificationAreaControl(ctx context.Context, value HideWindowsSecurityNotificationAreaControlValue) error {
+	return s.c.Add(ctx, URIHideWindowsSecurityNotificationAreaControl, client.Int(int64(value)))
 }
 
 // UpdateHideWindowsSecurityNotificationAreaControl updates ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/HideWindowsSecurityNotificationAreaControl.
@@ -1007,8 +1025,8 @@ func (s *WindowsDefenderSecurityCenter) CreateHideWindowsSecurityNotificationAre
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *WindowsDefenderSecurityCenter) UpdateHideWindowsSecurityNotificationAreaControl(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHideWindowsSecurityNotificationAreaControl, client.Int(value))
+func (s *WindowsDefenderSecurityCenter) UpdateHideWindowsSecurityNotificationAreaControl(ctx context.Context, value HideWindowsSecurityNotificationAreaControlValue) error {
+	return s.c.Replace(ctx, URIHideWindowsSecurityNotificationAreaControl, client.Int(int64(value)))
 }
 
 // DeleteHideWindowsSecurityNotificationAreaControl deletes ./Device/Vendor/MSFT/Policy/Config/WindowsDefenderSecurityCenter/HideWindowsSecurityNotificationAreaControl.

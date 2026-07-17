@@ -2,68 +2,100 @@
 
 package activesync
 
-// AccountsAccountGUIDOptionsContentTypesContentTypeGUIDEnabled allowed values.
+// AccountsAccountGUIDOptionsContentTypesContentTypeGUIDEnabledValue — allowed values for the Enabled node.
+type AccountsAccountGUIDOptionsContentTypesContentTypeGUIDEnabledValue string
+
 const (
 	// Sync for email, contacts, calendar, or tasks is disabled.
-	AccountsAccountGUIDOptionsContentTypesContentTypeGUIDEnabledSyncForEmailContactsCalendarOr = "0"
+	AccountsAccountGUIDOptionsContentTypesContentTypeGUIDEnabledSyncForEmailContactsCalendarOr AccountsAccountGUIDOptionsContentTypesContentTypeGUIDEnabledValue = "0"
 	// Sync is enabled.
-	AccountsAccountGUIDOptionsContentTypesContentTypeGUIDEnabledSyncIsEnabled = "1"
+	AccountsAccountGUIDOptionsContentTypesContentTypeGUIDEnabledSyncIsEnabled AccountsAccountGUIDOptionsContentTypesContentTypeGUIDEnabledValue = "1"
 )
 
-// AccountsAccountGUIDOptionsLogging allowed values.
+// String returns the AccountsAccountGUIDOptionsContentTypesContentTypeGUIDEnabledValue value as a plain string.
+func (e AccountsAccountGUIDOptionsContentTypesContentTypeGUIDEnabledValue) String() string {
+	return string(e)
+}
+
+// AccountsAccountGUIDOptionsLoggingValue — allowed values for the Logging node.
+type AccountsAccountGUIDOptionsLoggingValue string
+
 const (
 	// Logging is off.
-	AccountsAccountGUIDOptionsLoggingLoggingIsOff = "0"
+	AccountsAccountGUIDOptionsLoggingLoggingIsOff AccountsAccountGUIDOptionsLoggingValue = "0"
 	// Basic logging is enabled.
-	AccountsAccountGUIDOptionsLoggingBasicLoggingIsEnabled = "1"
+	AccountsAccountGUIDOptionsLoggingBasicLoggingIsEnabled AccountsAccountGUIDOptionsLoggingValue = "1"
 	// Advanced logging is enabled.
-	AccountsAccountGUIDOptionsLoggingAdvancedLoggingIsEnabled = "2"
+	AccountsAccountGUIDOptionsLoggingAdvancedLoggingIsEnabled AccountsAccountGUIDOptionsLoggingValue = "2"
 )
 
-// AccountsAccountGUIDOptionsMailAgeFilter allowed values.
+// String returns the AccountsAccountGUIDOptionsLoggingValue value as a plain string.
+func (e AccountsAccountGUIDOptionsLoggingValue) String() string { return string(e) }
+
+// AccountsAccountGUIDOptionsMailAgeFilterValue — allowed values for the MailAgeFilter node.
+type AccountsAccountGUIDOptionsMailAgeFilterValue string
+
 const (
 	// No age filter is used, and all email items are synced to the device.
-	AccountsAccountGUIDOptionsMailAgeFilterNoAgeFilterIsUsedAnd = "0"
+	AccountsAccountGUIDOptionsMailAgeFilterNoAgeFilterIsUsedAnd AccountsAccountGUIDOptionsMailAgeFilterValue = "0"
 	// Only email up to one day old is synced to the device
-	AccountsAccountGUIDOptionsMailAgeFilterOnlyEmailUpToOneDay = "1"
+	AccountsAccountGUIDOptionsMailAgeFilterOnlyEmailUpToOneDay AccountsAccountGUIDOptionsMailAgeFilterValue = "1"
 	// Only email up to three days old is synced to the device.
-	AccountsAccountGUIDOptionsMailAgeFilterOnlyEmailUpToThreeDays = "2"
+	AccountsAccountGUIDOptionsMailAgeFilterOnlyEmailUpToThreeDays AccountsAccountGUIDOptionsMailAgeFilterValue = "2"
 	// Email up to a week old is synced to the device.
-	AccountsAccountGUIDOptionsMailAgeFilterEmailUpToAWeekOld = "3"
+	AccountsAccountGUIDOptionsMailAgeFilterEmailUpToAWeekOld AccountsAccountGUIDOptionsMailAgeFilterValue = "3"
 	// Email up to two weeks old is synced to the device.
-	AccountsAccountGUIDOptionsMailAgeFilterEmailUpToTwoWeeksOld = "4"
+	AccountsAccountGUIDOptionsMailAgeFilterEmailUpToTwoWeeksOld AccountsAccountGUIDOptionsMailAgeFilterValue = "4"
 	// Email up to a month old is synced to the device.
-	AccountsAccountGUIDOptionsMailAgeFilterEmailUpToAMonthOld = "5"
+	AccountsAccountGUIDOptionsMailAgeFilterEmailUpToAMonthOld AccountsAccountGUIDOptionsMailAgeFilterValue = "5"
 	// Email up to three months old is synced to the device.
-	AccountsAccountGUIDOptionsMailAgeFilterEmailUpToThreeMonthsOld = "6"
+	AccountsAccountGUIDOptionsMailAgeFilterEmailUpToThreeMonthsOld AccountsAccountGUIDOptionsMailAgeFilterValue = "6"
 )
 
-// AccountsAccountGUIDOptionsMailBodyType allowed values.
+// String returns the AccountsAccountGUIDOptionsMailAgeFilterValue value as a plain string.
+func (e AccountsAccountGUIDOptionsMailAgeFilterValue) String() string { return string(e) }
+
+// AccountsAccountGUIDOptionsMailBodyTypeValue — allowed values for the MailBodyType node.
+type AccountsAccountGUIDOptionsMailBodyTypeValue string
+
 const (
 	// none
-	AccountsAccountGUIDOptionsMailBodyTypeNone = "0"
+	AccountsAccountGUIDOptionsMailBodyTypeNone AccountsAccountGUIDOptionsMailBodyTypeValue = "0"
 	// text
-	AccountsAccountGUIDOptionsMailBodyTypeText = "1"
+	AccountsAccountGUIDOptionsMailBodyTypeText AccountsAccountGUIDOptionsMailBodyTypeValue = "1"
 	// HTML
-	AccountsAccountGUIDOptionsMailBodyTypeHTML = "2"
+	AccountsAccountGUIDOptionsMailBodyTypeHTML AccountsAccountGUIDOptionsMailBodyTypeValue = "2"
 	// RTF
-	AccountsAccountGUIDOptionsMailBodyTypeRTF = "3"
+	AccountsAccountGUIDOptionsMailBodyTypeRTF AccountsAccountGUIDOptionsMailBodyTypeValue = "3"
 	// MIME
-	AccountsAccountGUIDOptionsMailBodyTypeMIME = "4"
+	AccountsAccountGUIDOptionsMailBodyTypeMIME AccountsAccountGUIDOptionsMailBodyTypeValue = "4"
 )
 
-// AccountsAccountGUIDOptionsUseSSL allowed values.
+// String returns the AccountsAccountGUIDOptionsMailBodyTypeValue value as a plain string.
+func (e AccountsAccountGUIDOptionsMailBodyTypeValue) String() string { return string(e) }
+
+// AccountsAccountGUIDOptionsUseSSLValue — allowed values for the UseSSL node.
+type AccountsAccountGUIDOptionsUseSSLValue string
+
 const (
 	// SSL is not used.
-	AccountsAccountGUIDOptionsUseSSLSSLIsNotUsed = "0"
+	AccountsAccountGUIDOptionsUseSSLSSLIsNotUsed AccountsAccountGUIDOptionsUseSSLValue = "0"
 	// SSL is used.
-	AccountsAccountGUIDOptionsUseSSLSSLIsUsed = "1"
+	AccountsAccountGUIDOptionsUseSSLSSLIsUsed AccountsAccountGUIDOptionsUseSSLValue = "1"
 )
 
-// AccountsAccountGUIDPoliciesMailBodyType allowed values.
+// String returns the AccountsAccountGUIDOptionsUseSSLValue value as a plain string.
+func (e AccountsAccountGUIDOptionsUseSSLValue) String() string { return string(e) }
+
+// AccountsAccountGUIDPoliciesMailBodyTypeValue — allowed values for the MailBodyType node.
+type AccountsAccountGUIDPoliciesMailBodyTypeValue string
+
 const (
 	// HTML
-	AccountsAccountGUIDPoliciesMailBodyTypeHTML = "HTML"
+	AccountsAccountGUIDPoliciesMailBodyTypeHTML AccountsAccountGUIDPoliciesMailBodyTypeValue = "HTML"
 	// plain
-	AccountsAccountGUIDPoliciesMailBodyTypePlain = "plain"
+	AccountsAccountGUIDPoliciesMailBodyTypePlain AccountsAccountGUIDPoliciesMailBodyTypeValue = "plain"
 )
+
+// String returns the AccountsAccountGUIDPoliciesMailBodyTypeValue value as a plain string.
+func (e AccountsAccountGUIDPoliciesMailBodyTypeValue) String() string { return string(e) }

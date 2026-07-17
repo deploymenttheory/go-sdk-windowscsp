@@ -14,12 +14,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Wifi) GetAllowAutoConnectToWiFiSenseHotspots(ctx context.Context) (int64, error) {
+func (s *Wifi) GetAllowAutoConnectToWiFiSenseHotspots(ctx context.Context) (AllowAutoConnectToWiFiSenseHotspotsValue, error) {
 	v, err := s.c.Get(ctx, URIAllowAutoConnectToWiFiSenseHotspots)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowAutoConnectToWiFiSenseHotspotsValue(n), err
 }
 
 // CreateAllowAutoConnectToWiFiSenseHotspots creates ./Device/Vendor/MSFT/Policy/Config/Wifi/AllowAutoConnectToWiFiSenseHotspots.
@@ -28,8 +29,8 @@ func (s *Wifi) GetAllowAutoConnectToWiFiSenseHotspots(ctx context.Context) (int6
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Wifi) CreateAllowAutoConnectToWiFiSenseHotspots(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowAutoConnectToWiFiSenseHotspots, client.Int(value))
+func (s *Wifi) CreateAllowAutoConnectToWiFiSenseHotspots(ctx context.Context, value AllowAutoConnectToWiFiSenseHotspotsValue) error {
+	return s.c.Add(ctx, URIAllowAutoConnectToWiFiSenseHotspots, client.Int(int64(value)))
 }
 
 // UpdateAllowAutoConnectToWiFiSenseHotspots updates ./Device/Vendor/MSFT/Policy/Config/Wifi/AllowAutoConnectToWiFiSenseHotspots.
@@ -38,8 +39,8 @@ func (s *Wifi) CreateAllowAutoConnectToWiFiSenseHotspots(ctx context.Context, va
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Wifi) UpdateAllowAutoConnectToWiFiSenseHotspots(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowAutoConnectToWiFiSenseHotspots, client.Int(value))
+func (s *Wifi) UpdateAllowAutoConnectToWiFiSenseHotspots(ctx context.Context, value AllowAutoConnectToWiFiSenseHotspotsValue) error {
+	return s.c.Replace(ctx, URIAllowAutoConnectToWiFiSenseHotspots, client.Int(int64(value)))
 }
 
 // DeleteAllowAutoConnectToWiFiSenseHotspots deletes ./Device/Vendor/MSFT/Policy/Config/Wifi/AllowAutoConnectToWiFiSenseHotspots.
@@ -57,12 +58,13 @@ func (s *Wifi) DeleteAllowAutoConnectToWiFiSenseHotspots(ctx context.Context) er
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Wifi) GetAllowInternetSharing(ctx context.Context) (int64, error) {
+func (s *Wifi) GetAllowInternetSharing(ctx context.Context) (AllowInternetSharingValue, error) {
 	v, err := s.c.Get(ctx, URIAllowInternetSharing)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowInternetSharingValue(n), err
 }
 
 // CreateAllowInternetSharing creates ./Device/Vendor/MSFT/Policy/Config/Wifi/AllowInternetSharing.
@@ -70,8 +72,8 @@ func (s *Wifi) GetAllowInternetSharing(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Wifi) CreateAllowInternetSharing(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowInternetSharing, client.Int(value))
+func (s *Wifi) CreateAllowInternetSharing(ctx context.Context, value AllowInternetSharingValue) error {
+	return s.c.Add(ctx, URIAllowInternetSharing, client.Int(int64(value)))
 }
 
 // UpdateAllowInternetSharing updates ./Device/Vendor/MSFT/Policy/Config/Wifi/AllowInternetSharing.
@@ -79,8 +81,8 @@ func (s *Wifi) CreateAllowInternetSharing(ctx context.Context, value int64) erro
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Wifi) UpdateAllowInternetSharing(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowInternetSharing, client.Int(value))
+func (s *Wifi) UpdateAllowInternetSharing(ctx context.Context, value AllowInternetSharingValue) error {
+	return s.c.Replace(ctx, URIAllowInternetSharing, client.Int(int64(value)))
 }
 
 // DeleteAllowInternetSharing deletes ./Device/Vendor/MSFT/Policy/Config/Wifi/AllowInternetSharing.
@@ -102,12 +104,13 @@ func (s *Wifi) DeleteAllowInternetSharing(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Wifi) GetAllowManualWiFiConfiguration(ctx context.Context) (int64, error) {
+func (s *Wifi) GetAllowManualWiFiConfiguration(ctx context.Context) (AllowManualWiFiConfigurationValue, error) {
 	v, err := s.c.Get(ctx, URIAllowManualWiFiConfiguration)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowManualWiFiConfigurationValue(n), err
 }
 
 // CreateAllowManualWiFiConfiguration creates ./Device/Vendor/MSFT/Policy/Config/Wifi/AllowManualWiFiConfiguration.
@@ -120,8 +123,8 @@ func (s *Wifi) GetAllowManualWiFiConfiguration(ctx context.Context) (int64, erro
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Wifi) CreateAllowManualWiFiConfiguration(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowManualWiFiConfiguration, client.Int(value))
+func (s *Wifi) CreateAllowManualWiFiConfiguration(ctx context.Context, value AllowManualWiFiConfigurationValue) error {
+	return s.c.Add(ctx, URIAllowManualWiFiConfiguration, client.Int(int64(value)))
 }
 
 // UpdateAllowManualWiFiConfiguration updates ./Device/Vendor/MSFT/Policy/Config/Wifi/AllowManualWiFiConfiguration.
@@ -134,8 +137,8 @@ func (s *Wifi) CreateAllowManualWiFiConfiguration(ctx context.Context, value int
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Wifi) UpdateAllowManualWiFiConfiguration(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowManualWiFiConfiguration, client.Int(value))
+func (s *Wifi) UpdateAllowManualWiFiConfiguration(ctx context.Context, value AllowManualWiFiConfigurationValue) error {
+	return s.c.Replace(ctx, URIAllowManualWiFiConfiguration, client.Int(int64(value)))
 }
 
 // DeleteAllowManualWiFiConfiguration deletes ./Device/Vendor/MSFT/Policy/Config/Wifi/AllowManualWiFiConfiguration.
@@ -158,12 +161,13 @@ func (s *Wifi) DeleteAllowManualWiFiConfiguration(ctx context.Context) error {
 //
 // Default: 2.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Wifi) GetAllowWFAQosManagementDSCPToUPMapping(ctx context.Context) (int64, error) {
+func (s *Wifi) GetAllowWFAQosManagementDSCPToUPMapping(ctx context.Context) (AllowWFAQosManagementDSCPToUPMappingValue, error) {
 	v, err := s.c.Get(ctx, URIAllowWFAQosManagementDSCPToUPMapping)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowWFAQosManagementDSCPToUPMappingValue(n), err
 }
 
 // CreateAllowWFAQosManagementDSCPToUPMapping creates ./Device/Vendor/MSFT/Policy/Config/Wifi/AllowWFAQosManagementDSCPToUPMapping.
@@ -172,8 +176,8 @@ func (s *Wifi) GetAllowWFAQosManagementDSCPToUPMapping(ctx context.Context) (int
 //
 // Default: 2.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Wifi) CreateAllowWFAQosManagementDSCPToUPMapping(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowWFAQosManagementDSCPToUPMapping, client.Int(value))
+func (s *Wifi) CreateAllowWFAQosManagementDSCPToUPMapping(ctx context.Context, value AllowWFAQosManagementDSCPToUPMappingValue) error {
+	return s.c.Add(ctx, URIAllowWFAQosManagementDSCPToUPMapping, client.Int(int64(value)))
 }
 
 // UpdateAllowWFAQosManagementDSCPToUPMapping updates ./Device/Vendor/MSFT/Policy/Config/Wifi/AllowWFAQosManagementDSCPToUPMapping.
@@ -182,8 +186,8 @@ func (s *Wifi) CreateAllowWFAQosManagementDSCPToUPMapping(ctx context.Context, v
 //
 // Default: 2.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Wifi) UpdateAllowWFAQosManagementDSCPToUPMapping(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowWFAQosManagementDSCPToUPMapping, client.Int(value))
+func (s *Wifi) UpdateAllowWFAQosManagementDSCPToUPMapping(ctx context.Context, value AllowWFAQosManagementDSCPToUPMappingValue) error {
+	return s.c.Replace(ctx, URIAllowWFAQosManagementDSCPToUPMapping, client.Int(int64(value)))
 }
 
 // DeleteAllowWFAQosManagementDSCPToUPMapping deletes ./Device/Vendor/MSFT/Policy/Config/Wifi/AllowWFAQosManagementDSCPToUPMapping.
@@ -204,12 +208,13 @@ func (s *Wifi) DeleteAllowWFAQosManagementDSCPToUPMapping(ctx context.Context) e
 //
 // Default: 1.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Wifi) GetAllowWFAQosManagementMSCS(ctx context.Context) (int64, error) {
+func (s *Wifi) GetAllowWFAQosManagementMSCS(ctx context.Context) (AllowWFAQosManagementMSCSValue, error) {
 	v, err := s.c.Get(ctx, URIAllowWFAQosManagementMSCS)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowWFAQosManagementMSCSValue(n), err
 }
 
 // CreateAllowWFAQosManagementMSCS creates ./Device/Vendor/MSFT/Policy/Config/Wifi/AllowWFAQosManagementMSCS.
@@ -220,8 +225,8 @@ func (s *Wifi) GetAllowWFAQosManagementMSCS(ctx context.Context) (int64, error) 
 //
 // Default: 1.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Wifi) CreateAllowWFAQosManagementMSCS(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowWFAQosManagementMSCS, client.Int(value))
+func (s *Wifi) CreateAllowWFAQosManagementMSCS(ctx context.Context, value AllowWFAQosManagementMSCSValue) error {
+	return s.c.Add(ctx, URIAllowWFAQosManagementMSCS, client.Int(int64(value)))
 }
 
 // UpdateAllowWFAQosManagementMSCS updates ./Device/Vendor/MSFT/Policy/Config/Wifi/AllowWFAQosManagementMSCS.
@@ -232,8 +237,8 @@ func (s *Wifi) CreateAllowWFAQosManagementMSCS(ctx context.Context, value int64)
 //
 // Default: 1.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Wifi) UpdateAllowWFAQosManagementMSCS(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowWFAQosManagementMSCS, client.Int(value))
+func (s *Wifi) UpdateAllowWFAQosManagementMSCS(ctx context.Context, value AllowWFAQosManagementMSCSValue) error {
+	return s.c.Replace(ctx, URIAllowWFAQosManagementMSCS, client.Int(int64(value)))
 }
 
 // DeleteAllowWFAQosManagementMSCS deletes ./Device/Vendor/MSFT/Policy/Config/Wifi/AllowWFAQosManagementMSCS.
@@ -253,12 +258,13 @@ func (s *Wifi) DeleteAllowWFAQosManagementMSCS(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Wifi) GetAllowWiFi(ctx context.Context) (int64, error) {
+func (s *Wifi) GetAllowWiFi(ctx context.Context) (AllowWiFiValue, error) {
 	v, err := s.c.Get(ctx, URIAllowWiFi)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowWiFiValue(n), err
 }
 
 // CreateAllowWiFi creates ./Device/Vendor/MSFT/Policy/Config/Wifi/AllowWiFi.
@@ -266,8 +272,8 @@ func (s *Wifi) GetAllowWiFi(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Wifi) CreateAllowWiFi(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowWiFi, client.Int(value))
+func (s *Wifi) CreateAllowWiFi(ctx context.Context, value AllowWiFiValue) error {
+	return s.c.Add(ctx, URIAllowWiFi, client.Int(int64(value)))
 }
 
 // UpdateAllowWiFi updates ./Device/Vendor/MSFT/Policy/Config/Wifi/AllowWiFi.
@@ -275,8 +281,8 @@ func (s *Wifi) CreateAllowWiFi(ctx context.Context, value int64) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Wifi) UpdateAllowWiFi(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowWiFi, client.Int(value))
+func (s *Wifi) UpdateAllowWiFi(ctx context.Context, value AllowWiFiValue) error {
+	return s.c.Replace(ctx, URIAllowWiFi, client.Int(int64(value)))
 }
 
 // DeleteAllowWiFi deletes ./Device/Vendor/MSFT/Policy/Config/Wifi/AllowWiFi.
@@ -293,12 +299,13 @@ func (s *Wifi) DeleteAllowWiFi(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Wifi) GetAllowWiFiDirect(ctx context.Context) (int64, error) {
+func (s *Wifi) GetAllowWiFiDirect(ctx context.Context) (AllowWiFiDirectValue, error) {
 	v, err := s.c.Get(ctx, URIAllowWiFiDirect)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowWiFiDirectValue(n), err
 }
 
 // CreateAllowWiFiDirect creates ./Device/Vendor/MSFT/Policy/Config/Wifi/AllowWiFiDirect.
@@ -306,8 +313,8 @@ func (s *Wifi) GetAllowWiFiDirect(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Wifi) CreateAllowWiFiDirect(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowWiFiDirect, client.Int(value))
+func (s *Wifi) CreateAllowWiFiDirect(ctx context.Context, value AllowWiFiDirectValue) error {
+	return s.c.Add(ctx, URIAllowWiFiDirect, client.Int(int64(value)))
 }
 
 // UpdateAllowWiFiDirect updates ./Device/Vendor/MSFT/Policy/Config/Wifi/AllowWiFiDirect.
@@ -315,8 +322,8 @@ func (s *Wifi) CreateAllowWiFiDirect(ctx context.Context, value int64) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Wifi) UpdateAllowWiFiDirect(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowWiFiDirect, client.Int(value))
+func (s *Wifi) UpdateAllowWiFiDirect(ctx context.Context, value AllowWiFiDirectValue) error {
+	return s.c.Replace(ctx, URIAllowWiFiDirect, client.Int(int64(value)))
 }
 
 // DeleteAllowWiFiDirect deletes ./Device/Vendor/MSFT/Policy/Config/Wifi/AllowWiFiDirect.

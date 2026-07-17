@@ -2,36 +2,102 @@
 
 package abovelock
 
-// AllowActionCenterNotifications allowed values.
-const (
-	// Not allowed.
-	AllowActionCenterNotificationsNotAllowed int64 = 0
-	// Allowed.
-	AllowActionCenterNotificationsAllowed int64 = 1
+import (
+	"fmt"
 )
 
-// AllowCortanaAboveLock allowed values.
+// AllowActionCenterNotificationsValue — allowed values for the AllowActionCenterNotifications node.
+type AllowActionCenterNotificationsValue int64
+
 const (
 	// Not allowed.
-	AllowCortanaAboveLockNotAllowed int64 = 0
+	AllowActionCenterNotificationsNotAllowed AllowActionCenterNotificationsValue = 0
 	// Allowed.
-	AllowCortanaAboveLockAllowed int64 = 1
+	AllowActionCenterNotificationsAllowed AllowActionCenterNotificationsValue = 1
 )
 
-// AllowToasts allowed values.
+// String returns the AllowActionCenterNotificationsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowActionCenterNotificationsValue) String() string {
+	switch e {
+	case AllowActionCenterNotificationsNotAllowed:
+		return "AllowActionCenterNotificationsNotAllowed"
+	case AllowActionCenterNotificationsAllowed:
+		return "AllowActionCenterNotificationsAllowed"
+	default:
+		return fmt.Sprintf("AllowActionCenterNotificationsValue(%d)", int64(e))
+	}
+}
+
+// AllowCortanaAboveLockValue — allowed values for the AllowCortanaAboveLock node.
+type AllowCortanaAboveLockValue int64
+
 const (
 	// Not allowed.
-	AllowToastsNotAllowed int64 = 0
+	AllowCortanaAboveLockNotAllowed AllowCortanaAboveLockValue = 0
 	// Allowed.
-	AllowToastsAllowed int64 = 1
+	AllowCortanaAboveLockAllowed AllowCortanaAboveLockValue = 1
 )
 
-// ConfigureAudioOnLockScreen allowed values.
+// String returns the AllowCortanaAboveLockValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowCortanaAboveLockValue) String() string {
+	switch e {
+	case AllowCortanaAboveLockNotAllowed:
+		return "AllowCortanaAboveLockNotAllowed"
+	case AllowCortanaAboveLockAllowed:
+		return "AllowCortanaAboveLockAllowed"
+	default:
+		return fmt.Sprintf("AllowCortanaAboveLockValue(%d)", int64(e))
+	}
+}
+
+// AllowToastsValue — allowed values for the AllowToasts node.
+type AllowToastsValue int64
+
+const (
+	// Not allowed.
+	AllowToastsNotAllowed AllowToastsValue = 0
+	// Allowed.
+	AllowToastsAllowed AllowToastsValue = 1
+)
+
+// String returns the AllowToastsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowToastsValue) String() string {
+	switch e {
+	case AllowToastsNotAllowed:
+		return "AllowToastsNotAllowed"
+	case AllowToastsAllowed:
+		return "AllowToastsAllowed"
+	default:
+		return fmt.Sprintf("AllowToastsValue(%d)", int64(e))
+	}
+}
+
+// ConfigureAudioOnLockScreenValue — allowed values for the ConfigureAudioOnLockScreen node.
+type ConfigureAudioOnLockScreenValue int64
+
 const (
 	// No audio playback or recording on lock screen (aside from OS defined exceptions).
-	ConfigureAudioOnLockScreenNoAudioPlaybackOrRecordingOn int64 = 0
+	ConfigureAudioOnLockScreenNoAudioPlaybackOrRecordingOn ConfigureAudioOnLockScreenValue = 0
 	// Audio playback allowed on lock screen. Audio recording is not allowed.
-	ConfigureAudioOnLockScreenAudioPlaybackAllowedOnLockScreen int64 = 1
+	ConfigureAudioOnLockScreenAudioPlaybackAllowedOnLockScreen ConfigureAudioOnLockScreenValue = 1
 	// Audio playback and recording allowed on lock screen.
-	ConfigureAudioOnLockScreenAudioPlaybackAndRecordingAllowedOn int64 = 2
+	ConfigureAudioOnLockScreenAudioPlaybackAndRecordingAllowedOn ConfigureAudioOnLockScreenValue = 2
 )
+
+// String returns the ConfigureAudioOnLockScreenValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureAudioOnLockScreenValue) String() string {
+	switch e {
+	case ConfigureAudioOnLockScreenNoAudioPlaybackOrRecordingOn:
+		return "ConfigureAudioOnLockScreenNoAudioPlaybackOrRecordingOn"
+	case ConfigureAudioOnLockScreenAudioPlaybackAllowedOnLockScreen:
+		return "ConfigureAudioOnLockScreenAudioPlaybackAllowedOnLockScreen"
+	case ConfigureAudioOnLockScreenAudioPlaybackAndRecordingAllowedOn:
+		return "ConfigureAudioOnLockScreenAudioPlaybackAndRecordingAllowedOn"
+	default:
+		return fmt.Sprintf("ConfigureAudioOnLockScreenValue(%d)", int64(e))
+	}
+}

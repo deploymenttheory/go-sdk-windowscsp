@@ -39,12 +39,13 @@ func (s *WiFiUser) DeleteProfileSSID(ctx context.Context, ssid string) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v1.1).
-func (s *WiFiUser) GetProfileSSIDProfileSource(ctx context.Context, ssid string) (int64, error) {
+func (s *WiFiUser) GetProfileSSIDProfileSource(ctx context.Context, ssid string) (ProfileSSIDProfileSourceValue, error) {
 	v, err := s.c.Get(ctx, URIProfileSSIDProfileSource(ssid))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ProfileSSIDProfileSourceValue(n), err
 }
 
 // UpdateProfileSSIDProfileSource updates ./User/Vendor/MSFT/WiFi/Profile/{ssid}/ProfileSource.
@@ -53,8 +54,8 @@ func (s *WiFiUser) GetProfileSSIDProfileSource(ctx context.Context, ssid string)
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v1.1).
-func (s *WiFiUser) UpdateProfileSSIDProfileSource(ctx context.Context, ssid string, value int64) error {
-	return s.c.Replace(ctx, URIProfileSSIDProfileSource(ssid), client.Int(value))
+func (s *WiFiUser) UpdateProfileSSIDProfileSource(ctx context.Context, ssid string, value ProfileSSIDProfileSourceValue) error {
+	return s.c.Replace(ctx, URIProfileSSIDProfileSource(ssid), client.Int(int64(value)))
 }
 
 // GetProfileSSIDProxy reads ./User/Vendor/MSFT/WiFi/Profile/{ssid}/Proxy.
@@ -165,12 +166,13 @@ func (s *WiFiUser) DeleteProfileSSIDProxyWPAD(ctx context.Context, ssid string) 
 //
 // Default: 1.
 // Supported from OS build 10.0.22000, 10.0.17763 (CSP v1.1).
-func (s *WiFiUser) GetProfileSSIDWiFiCost(ctx context.Context, ssid string) (int64, error) {
+func (s *WiFiUser) GetProfileSSIDWiFiCost(ctx context.Context, ssid string) (ProfileSSIDWiFiCostValue, error) {
 	v, err := s.c.Get(ctx, URIProfileSSIDWiFiCost(ssid))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ProfileSSIDWiFiCostValue(n), err
 }
 
 // CreateProfileSSIDWiFiCost creates ./User/Vendor/MSFT/WiFi/Profile/{ssid}/WiFiCost.
@@ -181,8 +183,8 @@ func (s *WiFiUser) GetProfileSSIDWiFiCost(ctx context.Context, ssid string) (int
 //
 // Default: 1.
 // Supported from OS build 10.0.22000, 10.0.17763 (CSP v1.1).
-func (s *WiFiUser) CreateProfileSSIDWiFiCost(ctx context.Context, ssid string, value int64) error {
-	return s.c.Add(ctx, URIProfileSSIDWiFiCost(ssid), client.Int(value))
+func (s *WiFiUser) CreateProfileSSIDWiFiCost(ctx context.Context, ssid string, value ProfileSSIDWiFiCostValue) error {
+	return s.c.Add(ctx, URIProfileSSIDWiFiCost(ssid), client.Int(int64(value)))
 }
 
 // UpdateProfileSSIDWiFiCost updates ./User/Vendor/MSFT/WiFi/Profile/{ssid}/WiFiCost.
@@ -193,8 +195,8 @@ func (s *WiFiUser) CreateProfileSSIDWiFiCost(ctx context.Context, ssid string, v
 //
 // Default: 1.
 // Supported from OS build 10.0.22000, 10.0.17763 (CSP v1.1).
-func (s *WiFiUser) UpdateProfileSSIDWiFiCost(ctx context.Context, ssid string, value int64) error {
-	return s.c.Replace(ctx, URIProfileSSIDWiFiCost(ssid), client.Int(value))
+func (s *WiFiUser) UpdateProfileSSIDWiFiCost(ctx context.Context, ssid string, value ProfileSSIDWiFiCostValue) error {
+	return s.c.Replace(ctx, URIProfileSSIDWiFiCost(ssid), client.Int(int64(value)))
 }
 
 // DeleteProfileSSIDWiFiCost deletes ./User/Vendor/MSFT/WiFi/Profile/{ssid}/WiFiCost.

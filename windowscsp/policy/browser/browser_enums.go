@@ -2,398 +2,1108 @@
 
 package browser
 
-// AllowAddressBarDropdown allowed values.
+import (
+	"fmt"
+)
+
+// AllowAddressBarDropdownValue — allowed values for the AllowAddressBarDropdown node.
+type AllowAddressBarDropdownValue int64
+
 const (
 	// Prevented/not allowed. Hide the Address bar drop-down functionality and disable the Show search
 	// and site suggestions as I type toggle in Settings.
-	AllowAddressBarDropdownPreventedNotAllowed int64 = 0
+	AllowAddressBarDropdownPreventedNotAllowed AllowAddressBarDropdownValue = 0
 	// Allowed. Show the Address bar drop-down list and make it available.
-	AllowAddressBarDropdownAllowed int64 = 1
+	AllowAddressBarDropdownAllowed AllowAddressBarDropdownValue = 1
 )
 
-// AllowAutofill allowed values.
+// String returns the AllowAddressBarDropdownValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowAddressBarDropdownValue) String() string {
+	switch e {
+	case AllowAddressBarDropdownPreventedNotAllowed:
+		return "AllowAddressBarDropdownPreventedNotAllowed"
+	case AllowAddressBarDropdownAllowed:
+		return "AllowAddressBarDropdownAllowed"
+	default:
+		return fmt.Sprintf("AllowAddressBarDropdownValue(%d)", int64(e))
+	}
+}
+
+// AllowAutofillValue — allowed values for the AllowAutofill node.
+type AllowAutofillValue int64
+
 const (
 	// Prevented/Not allowed.
-	AllowAutofillPreventedNotAllowed int64 = 0
+	AllowAutofillPreventedNotAllowed AllowAutofillValue = 0
 	// Allowed.
-	AllowAutofillAllowed int64 = 1
+	AllowAutofillAllowed AllowAutofillValue = 1
 )
 
-// AllowBrowser allowed values.
+// String returns the AllowAutofillValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowAutofillValue) String() string {
+	switch e {
+	case AllowAutofillPreventedNotAllowed:
+		return "AllowAutofillPreventedNotAllowed"
+	case AllowAutofillAllowed:
+		return "AllowAutofillAllowed"
+	default:
+		return fmt.Sprintf("AllowAutofillValue(%d)", int64(e))
+	}
+}
+
+// AllowBrowserValue — allowed values for the AllowBrowser node.
+type AllowBrowserValue int64
+
 const (
 	// Not allowed.
-	AllowBrowserNotAllowed int64 = 0
+	AllowBrowserNotAllowed AllowBrowserValue = 0
 	// Allowed.
-	AllowBrowserAllowed int64 = 1
+	AllowBrowserAllowed AllowBrowserValue = 1
 )
 
-// AllowConfigurationUpdateForBooksLibrary allowed values.
+// String returns the AllowBrowserValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowBrowserValue) String() string {
+	switch e {
+	case AllowBrowserNotAllowed:
+		return "AllowBrowserNotAllowed"
+	case AllowBrowserAllowed:
+		return "AllowBrowserAllowed"
+	default:
+		return fmt.Sprintf("AllowBrowserValue(%d)", int64(e))
+	}
+}
+
+// AllowConfigurationUpdateForBooksLibraryValue — allowed values for the AllowConfigurationUpdateForBooksLibrary node.
+type AllowConfigurationUpdateForBooksLibraryValue int64
+
 const (
 	// Prevented/Not allowed.
-	AllowConfigurationUpdateForBooksLibraryPreventedNotAllowed int64 = 0
+	AllowConfigurationUpdateForBooksLibraryPreventedNotAllowed AllowConfigurationUpdateForBooksLibraryValue = 0
 	// Allowed. Microsoft Edge updates the configuration data for the Books Library automatically.
-	AllowConfigurationUpdateForBooksLibraryAllowed int64 = 1
+	AllowConfigurationUpdateForBooksLibraryAllowed AllowConfigurationUpdateForBooksLibraryValue = 1
 )
 
-// AllowCookies allowed values.
+// String returns the AllowConfigurationUpdateForBooksLibraryValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowConfigurationUpdateForBooksLibraryValue) String() string {
+	switch e {
+	case AllowConfigurationUpdateForBooksLibraryPreventedNotAllowed:
+		return "AllowConfigurationUpdateForBooksLibraryPreventedNotAllowed"
+	case AllowConfigurationUpdateForBooksLibraryAllowed:
+		return "AllowConfigurationUpdateForBooksLibraryAllowed"
+	default:
+		return fmt.Sprintf("AllowConfigurationUpdateForBooksLibraryValue(%d)", int64(e))
+	}
+}
+
+// AllowCookiesValue — allowed values for the AllowCookies node.
+type AllowCookiesValue int64
+
 const (
 	// Block all cookies from all sites
-	AllowCookiesBlockAllCookiesFromAllSites int64 = 0
+	AllowCookiesBlockAllCookiesFromAllSites AllowCookiesValue = 0
 	// Block only cookies from third party websites
-	AllowCookiesBlockOnlyCookiesFromThirdParty int64 = 1
+	AllowCookiesBlockOnlyCookiesFromThirdParty AllowCookiesValue = 1
 	// Allow all cookies from all sites
-	AllowCookiesAllowAllCookiesFromAllSites int64 = 2
+	AllowCookiesAllowAllCookiesFromAllSites AllowCookiesValue = 2
 )
 
-// AllowDeveloperTools allowed values.
+// String returns the AllowCookiesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowCookiesValue) String() string {
+	switch e {
+	case AllowCookiesBlockAllCookiesFromAllSites:
+		return "AllowCookiesBlockAllCookiesFromAllSites"
+	case AllowCookiesBlockOnlyCookiesFromThirdParty:
+		return "AllowCookiesBlockOnlyCookiesFromThirdParty"
+	case AllowCookiesAllowAllCookiesFromAllSites:
+		return "AllowCookiesAllowAllCookiesFromAllSites"
+	default:
+		return fmt.Sprintf("AllowCookiesValue(%d)", int64(e))
+	}
+}
+
+// AllowDeveloperToolsValue — allowed values for the AllowDeveloperTools node.
+type AllowDeveloperToolsValue int64
+
 const (
 	// Prevented/Not allowed.
-	AllowDeveloperToolsPreventedNotAllowed int64 = 0
+	AllowDeveloperToolsPreventedNotAllowed AllowDeveloperToolsValue = 0
 	// Allowed.
-	AllowDeveloperToolsAllowed int64 = 1
+	AllowDeveloperToolsAllowed AllowDeveloperToolsValue = 1
 )
 
-// AllowDoNotTrack allowed values.
+// String returns the AllowDeveloperToolsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowDeveloperToolsValue) String() string {
+	switch e {
+	case AllowDeveloperToolsPreventedNotAllowed:
+		return "AllowDeveloperToolsPreventedNotAllowed"
+	case AllowDeveloperToolsAllowed:
+		return "AllowDeveloperToolsAllowed"
+	default:
+		return fmt.Sprintf("AllowDeveloperToolsValue(%d)", int64(e))
+	}
+}
+
+// AllowDoNotTrackValue — allowed values for the AllowDoNotTrack node.
+type AllowDoNotTrackValue int64
+
 const (
 	// Never send tracking information.
-	AllowDoNotTrackNeverSendTrackingInformation int64 = 0
+	AllowDoNotTrackNeverSendTrackingInformation AllowDoNotTrackValue = 0
 	// Send tracking information.
-	AllowDoNotTrackSendTrackingInformation int64 = 1
+	AllowDoNotTrackSendTrackingInformation AllowDoNotTrackValue = 1
 )
 
-// AllowExtensions allowed values.
+// String returns the AllowDoNotTrackValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowDoNotTrackValue) String() string {
+	switch e {
+	case AllowDoNotTrackNeverSendTrackingInformation:
+		return "AllowDoNotTrackNeverSendTrackingInformation"
+	case AllowDoNotTrackSendTrackingInformation:
+		return "AllowDoNotTrackSendTrackingInformation"
+	default:
+		return fmt.Sprintf("AllowDoNotTrackValue(%d)", int64(e))
+	}
+}
+
+// AllowExtensionsValue — allowed values for the AllowExtensions node.
+type AllowExtensionsValue int64
+
 const (
 	// Prevented/Not allowed.
-	AllowExtensionsPreventedNotAllowed int64 = 0
+	AllowExtensionsPreventedNotAllowed AllowExtensionsValue = 0
 	// Allowed.
-	AllowExtensionsAllowed int64 = 1
+	AllowExtensionsAllowed AllowExtensionsValue = 1
 )
 
-// AllowFlash allowed values.
+// String returns the AllowExtensionsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowExtensionsValue) String() string {
+	switch e {
+	case AllowExtensionsPreventedNotAllowed:
+		return "AllowExtensionsPreventedNotAllowed"
+	case AllowExtensionsAllowed:
+		return "AllowExtensionsAllowed"
+	default:
+		return fmt.Sprintf("AllowExtensionsValue(%d)", int64(e))
+	}
+}
+
+// AllowFlashValue — allowed values for the AllowFlash node.
+type AllowFlashValue int64
+
 const (
 	// Prevented/Not allowed.
-	AllowFlashPreventedNotAllowed int64 = 0
+	AllowFlashPreventedNotAllowed AllowFlashValue = 0
 	// Allowed.
-	AllowFlashAllowed int64 = 1
+	AllowFlashAllowed AllowFlashValue = 1
 )
 
-// AllowFlashClickToRun allowed values.
+// String returns the AllowFlashValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowFlashValue) String() string {
+	switch e {
+	case AllowFlashPreventedNotAllowed:
+		return "AllowFlashPreventedNotAllowed"
+	case AllowFlashAllowed:
+		return "AllowFlashAllowed"
+	default:
+		return fmt.Sprintf("AllowFlashValue(%d)", int64(e))
+	}
+}
+
+// AllowFlashClickToRunValue — allowed values for the AllowFlashClickToRun node.
+type AllowFlashClickToRunValue int64
+
 const (
 	// Load and run Adobe Flash content automatically.
-	AllowFlashClickToRunLoadAndRunAdobeFlashContent int64 = 0
+	AllowFlashClickToRunLoadAndRunAdobeFlashContent AllowFlashClickToRunValue = 0
 	// Does not load or run Adobe Flash content automatically. Requires action from the user.
-	AllowFlashClickToRunDoesNotLoadOrRunAdobe int64 = 1
+	AllowFlashClickToRunDoesNotLoadOrRunAdobe AllowFlashClickToRunValue = 1
 )
 
-// AllowFullScreenMode allowed values.
+// String returns the AllowFlashClickToRunValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowFlashClickToRunValue) String() string {
+	switch e {
+	case AllowFlashClickToRunLoadAndRunAdobeFlashContent:
+		return "AllowFlashClickToRunLoadAndRunAdobeFlashContent"
+	case AllowFlashClickToRunDoesNotLoadOrRunAdobe:
+		return "AllowFlashClickToRunDoesNotLoadOrRunAdobe"
+	default:
+		return fmt.Sprintf("AllowFlashClickToRunValue(%d)", int64(e))
+	}
+}
+
+// AllowFullScreenModeValue — allowed values for the AllowFullScreenMode node.
+type AllowFullScreenModeValue int64
+
 const (
 	// Prevented/Not allowed.
-	AllowFullScreenModePreventedNotAllowed int64 = 0
+	AllowFullScreenModePreventedNotAllowed AllowFullScreenModeValue = 0
 	// Allowed.
-	AllowFullScreenModeAllowed int64 = 1
+	AllowFullScreenModeAllowed AllowFullScreenModeValue = 1
 )
 
-// AllowInPrivate allowed values.
+// String returns the AllowFullScreenModeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowFullScreenModeValue) String() string {
+	switch e {
+	case AllowFullScreenModePreventedNotAllowed:
+		return "AllowFullScreenModePreventedNotAllowed"
+	case AllowFullScreenModeAllowed:
+		return "AllowFullScreenModeAllowed"
+	default:
+		return fmt.Sprintf("AllowFullScreenModeValue(%d)", int64(e))
+	}
+}
+
+// AllowInPrivateValue — allowed values for the AllowInPrivate node.
+type AllowInPrivateValue int64
+
 const (
 	// Prevented/Not allowed.
-	AllowInPrivatePreventedNotAllowed int64 = 0
+	AllowInPrivatePreventedNotAllowed AllowInPrivateValue = 0
 	// Allowed.
-	AllowInPrivateAllowed int64 = 1
+	AllowInPrivateAllowed AllowInPrivateValue = 1
 )
 
-// AllowMicrosoftCompatibilityList allowed values.
+// String returns the AllowInPrivateValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowInPrivateValue) String() string {
+	switch e {
+	case AllowInPrivatePreventedNotAllowed:
+		return "AllowInPrivatePreventedNotAllowed"
+	case AllowInPrivateAllowed:
+		return "AllowInPrivateAllowed"
+	default:
+		return fmt.Sprintf("AllowInPrivateValue(%d)", int64(e))
+	}
+}
+
+// AllowMicrosoftCompatibilityListValue — allowed values for the AllowMicrosoftCompatibilityList node.
+type AllowMicrosoftCompatibilityListValue int64
+
 const (
 	// Prevented/Not allowed.
-	AllowMicrosoftCompatibilityListPreventedNotAllowed int64 = 0
+	AllowMicrosoftCompatibilityListPreventedNotAllowed AllowMicrosoftCompatibilityListValue = 0
 	// Allowed.
-	AllowMicrosoftCompatibilityListAllowed int64 = 1
+	AllowMicrosoftCompatibilityListAllowed AllowMicrosoftCompatibilityListValue = 1
 )
 
-// AllowPasswordManager allowed values.
+// String returns the AllowMicrosoftCompatibilityListValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowMicrosoftCompatibilityListValue) String() string {
+	switch e {
+	case AllowMicrosoftCompatibilityListPreventedNotAllowed:
+		return "AllowMicrosoftCompatibilityListPreventedNotAllowed"
+	case AllowMicrosoftCompatibilityListAllowed:
+		return "AllowMicrosoftCompatibilityListAllowed"
+	default:
+		return fmt.Sprintf("AllowMicrosoftCompatibilityListValue(%d)", int64(e))
+	}
+}
+
+// AllowPasswordManagerValue — allowed values for the AllowPasswordManager node.
+type AllowPasswordManagerValue int64
+
 const (
 	// Not allowed.
-	AllowPasswordManagerNotAllowed int64 = 0
+	AllowPasswordManagerNotAllowed AllowPasswordManagerValue = 0
 	// Allowed.
-	AllowPasswordManagerAllowed int64 = 1
+	AllowPasswordManagerAllowed AllowPasswordManagerValue = 1
 )
 
-// AllowPopups allowed values.
+// String returns the AllowPasswordManagerValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowPasswordManagerValue) String() string {
+	switch e {
+	case AllowPasswordManagerNotAllowed:
+		return "AllowPasswordManagerNotAllowed"
+	case AllowPasswordManagerAllowed:
+		return "AllowPasswordManagerAllowed"
+	default:
+		return fmt.Sprintf("AllowPasswordManagerValue(%d)", int64(e))
+	}
+}
+
+// AllowPopupsValue — allowed values for the AllowPopups node.
+type AllowPopupsValue int64
+
 const (
 	// Turn off Pop-up Blocker letting pop-up windows open.
-	AllowPopupsTurnOffPopUpBlockerLettingPopUp int64 = 0
+	AllowPopupsTurnOffPopUpBlockerLettingPopUp AllowPopupsValue = 0
 	// Turn on Pop-up Blocker stopping pop-up windows from opening.
-	AllowPopupsTurnOnPopUpBlockerStoppingPopUp int64 = 1
+	AllowPopupsTurnOnPopUpBlockerStoppingPopUp AllowPopupsValue = 1
 )
 
-// AllowPrelaunch allowed values.
+// String returns the AllowPopupsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowPopupsValue) String() string {
+	switch e {
+	case AllowPopupsTurnOffPopUpBlockerLettingPopUp:
+		return "AllowPopupsTurnOffPopUpBlockerLettingPopUp"
+	case AllowPopupsTurnOnPopUpBlockerStoppingPopUp:
+		return "AllowPopupsTurnOnPopUpBlockerStoppingPopUp"
+	default:
+		return fmt.Sprintf("AllowPopupsValue(%d)", int64(e))
+	}
+}
+
+// AllowPrelaunchValue — allowed values for the AllowPrelaunch node.
+type AllowPrelaunchValue int64
+
 const (
 	// Prevented/Not allowed.
-	AllowPrelaunchPreventedNotAllowed int64 = 0
+	AllowPrelaunchPreventedNotAllowed AllowPrelaunchValue = 0
 	// Allowed.
-	AllowPrelaunchAllowed int64 = 1
+	AllowPrelaunchAllowed AllowPrelaunchValue = 1
 )
 
-// AllowPrinting allowed values.
+// String returns the AllowPrelaunchValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowPrelaunchValue) String() string {
+	switch e {
+	case AllowPrelaunchPreventedNotAllowed:
+		return "AllowPrelaunchPreventedNotAllowed"
+	case AllowPrelaunchAllowed:
+		return "AllowPrelaunchAllowed"
+	default:
+		return fmt.Sprintf("AllowPrelaunchValue(%d)", int64(e))
+	}
+}
+
+// AllowPrintingValue — allowed values for the AllowPrinting node.
+type AllowPrintingValue int64
+
 const (
 	// Prevented/Not allowed.
-	AllowPrintingPreventedNotAllowed int64 = 0
+	AllowPrintingPreventedNotAllowed AllowPrintingValue = 0
 	// Allowed.
-	AllowPrintingAllowed int64 = 1
+	AllowPrintingAllowed AllowPrintingValue = 1
 )
 
-// AllowSavingHistory allowed values.
+// String returns the AllowPrintingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowPrintingValue) String() string {
+	switch e {
+	case AllowPrintingPreventedNotAllowed:
+		return "AllowPrintingPreventedNotAllowed"
+	case AllowPrintingAllowed:
+		return "AllowPrintingAllowed"
+	default:
+		return fmt.Sprintf("AllowPrintingValue(%d)", int64(e))
+	}
+}
+
+// AllowSavingHistoryValue — allowed values for the AllowSavingHistory node.
+type AllowSavingHistoryValue int64
+
 const (
 	// Prevented/Not allowed.
-	AllowSavingHistoryPreventedNotAllowed int64 = 0
+	AllowSavingHistoryPreventedNotAllowed AllowSavingHistoryValue = 0
 	// Allowed.
-	AllowSavingHistoryAllowed int64 = 1
+	AllowSavingHistoryAllowed AllowSavingHistoryValue = 1
 )
 
-// AllowSearchEngineCustomization allowed values.
+// String returns the AllowSavingHistoryValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowSavingHistoryValue) String() string {
+	switch e {
+	case AllowSavingHistoryPreventedNotAllowed:
+		return "AllowSavingHistoryPreventedNotAllowed"
+	case AllowSavingHistoryAllowed:
+		return "AllowSavingHistoryAllowed"
+	default:
+		return fmt.Sprintf("AllowSavingHistoryValue(%d)", int64(e))
+	}
+}
+
+// AllowSearchEngineCustomizationValue — allowed values for the AllowSearchEngineCustomization node.
+type AllowSearchEngineCustomizationValue int64
+
 const (
 	// Prevented/Not allowed.
-	AllowSearchEngineCustomizationPreventedNotAllowed int64 = 0
+	AllowSearchEngineCustomizationPreventedNotAllowed AllowSearchEngineCustomizationValue = 0
 	// Allowed.
-	AllowSearchEngineCustomizationAllowed int64 = 1
+	AllowSearchEngineCustomizationAllowed AllowSearchEngineCustomizationValue = 1
 )
 
-// AllowSearchSuggestionsinAddressBar allowed values.
+// String returns the AllowSearchEngineCustomizationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowSearchEngineCustomizationValue) String() string {
+	switch e {
+	case AllowSearchEngineCustomizationPreventedNotAllowed:
+		return "AllowSearchEngineCustomizationPreventedNotAllowed"
+	case AllowSearchEngineCustomizationAllowed:
+		return "AllowSearchEngineCustomizationAllowed"
+	default:
+		return fmt.Sprintf("AllowSearchEngineCustomizationValue(%d)", int64(e))
+	}
+}
+
+// AllowSearchSuggestionsinAddressBarValue — allowed values for the AllowSearchSuggestionsinAddressBar node.
+type AllowSearchSuggestionsinAddressBarValue int64
+
 const (
 	// Prevented/Not allowed. Hide the search suggestions.
-	AllowSearchSuggestionsinAddressBarPreventedNotAllowed int64 = 0
+	AllowSearchSuggestionsinAddressBarPreventedNotAllowed AllowSearchSuggestionsinAddressBarValue = 0
 	// Allowed. Show the search suggestions.
-	AllowSearchSuggestionsinAddressBarAllowed int64 = 1
+	AllowSearchSuggestionsinAddressBarAllowed AllowSearchSuggestionsinAddressBarValue = 1
 )
 
-// AllowSideloadingOfExtensions allowed values.
+// String returns the AllowSearchSuggestionsinAddressBarValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowSearchSuggestionsinAddressBarValue) String() string {
+	switch e {
+	case AllowSearchSuggestionsinAddressBarPreventedNotAllowed:
+		return "AllowSearchSuggestionsinAddressBarPreventedNotAllowed"
+	case AllowSearchSuggestionsinAddressBarAllowed:
+		return "AllowSearchSuggestionsinAddressBarAllowed"
+	default:
+		return fmt.Sprintf("AllowSearchSuggestionsinAddressBarValue(%d)", int64(e))
+	}
+}
+
+// AllowSideloadingOfExtensionsValue — allowed values for the AllowSideloadingOfExtensions node.
+type AllowSideloadingOfExtensionsValue int64
+
 const (
 	// Prevented/Not allowed. Disabling does not prevent sideloading of extensions using
 	// Add-AppxPackage via Powershell. To prevent this, set the
 	// ApplicationManagement/AllowDeveloperUnlock policy to 1 (enabled).
-	AllowSideloadingOfExtensionsPreventedNotAllowed int64 = 0
+	AllowSideloadingOfExtensionsPreventedNotAllowed AllowSideloadingOfExtensionsValue = 0
 	// Allowed.
-	AllowSideloadingOfExtensionsAllowed int64 = 1
+	AllowSideloadingOfExtensionsAllowed AllowSideloadingOfExtensionsValue = 1
 )
 
-// AllowSmartScreen allowed values.
+// String returns the AllowSideloadingOfExtensionsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowSideloadingOfExtensionsValue) String() string {
+	switch e {
+	case AllowSideloadingOfExtensionsPreventedNotAllowed:
+		return "AllowSideloadingOfExtensionsPreventedNotAllowed"
+	case AllowSideloadingOfExtensionsAllowed:
+		return "AllowSideloadingOfExtensionsAllowed"
+	default:
+		return fmt.Sprintf("AllowSideloadingOfExtensionsValue(%d)", int64(e))
+	}
+}
+
+// AllowSmartScreenValue — allowed values for the AllowSmartScreen node.
+type AllowSmartScreenValue int64
+
 const (
 	// Turned off. Do not protect users from potential threats and prevent users from turning it on.
-	AllowSmartScreenTurnedOff int64 = 0
+	AllowSmartScreenTurnedOff AllowSmartScreenValue = 0
 	// Turned on. Protect users from potential threats and prevent users from turning it off.
-	AllowSmartScreenTurnedOn int64 = 1
+	AllowSmartScreenTurnedOn AllowSmartScreenValue = 1
 )
 
-// AllowTabPreloading allowed values.
+// String returns the AllowSmartScreenValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowSmartScreenValue) String() string {
+	switch e {
+	case AllowSmartScreenTurnedOff:
+		return "AllowSmartScreenTurnedOff"
+	case AllowSmartScreenTurnedOn:
+		return "AllowSmartScreenTurnedOn"
+	default:
+		return fmt.Sprintf("AllowSmartScreenValue(%d)", int64(e))
+	}
+}
+
+// AllowTabPreloadingValue — allowed values for the AllowTabPreloading node.
+type AllowTabPreloadingValue int64
+
 const (
 	// Prevented/Not allowed.
-	AllowTabPreloadingPreventedNotAllowed int64 = 0
+	AllowTabPreloadingPreventedNotAllowed AllowTabPreloadingValue = 0
 	// Allowed. Preload Start and New tab pages.
-	AllowTabPreloadingAllowed int64 = 1
+	AllowTabPreloadingAllowed AllowTabPreloadingValue = 1
 )
 
-// AllowWebContentOnNewTabPage allowed values.
+// String returns the AllowTabPreloadingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowTabPreloadingValue) String() string {
+	switch e {
+	case AllowTabPreloadingPreventedNotAllowed:
+		return "AllowTabPreloadingPreventedNotAllowed"
+	case AllowTabPreloadingAllowed:
+		return "AllowTabPreloadingAllowed"
+	default:
+		return fmt.Sprintf("AllowTabPreloadingValue(%d)", int64(e))
+	}
+}
+
+// AllowWebContentOnNewTabPageValue — allowed values for the AllowWebContentOnNewTabPage node.
+type AllowWebContentOnNewTabPageValue int64
+
 const (
 	// Load a blank page instead of the default New tab page and prevent users from changing it.
-	AllowWebContentOnNewTabPageLoadABlankPageInsteadOf int64 = 0
+	AllowWebContentOnNewTabPageLoadABlankPageInsteadOf AllowWebContentOnNewTabPageValue = 0
 	// Load the default New tab page.
-	AllowWebContentOnNewTabPageLoadTheDefaultNewTabPage int64 = 1
+	AllowWebContentOnNewTabPageLoadTheDefaultNewTabPage AllowWebContentOnNewTabPageValue = 1
 )
 
-// AlwaysEnableBooksLibrary allowed values.
+// String returns the AllowWebContentOnNewTabPageValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowWebContentOnNewTabPageValue) String() string {
+	switch e {
+	case AllowWebContentOnNewTabPageLoadABlankPageInsteadOf:
+		return "AllowWebContentOnNewTabPageLoadABlankPageInsteadOf"
+	case AllowWebContentOnNewTabPageLoadTheDefaultNewTabPage:
+		return "AllowWebContentOnNewTabPageLoadTheDefaultNewTabPage"
+	default:
+		return fmt.Sprintf("AllowWebContentOnNewTabPageValue(%d)", int64(e))
+	}
+}
+
+// AlwaysEnableBooksLibraryValue — allowed values for the AlwaysEnableBooksLibrary node.
+type AlwaysEnableBooksLibraryValue int64
+
 const (
 	// Show the Books Library only in countries or regions where supported.
-	AlwaysEnableBooksLibraryShowTheBooksLibraryOnlyIn int64 = 0
+	AlwaysEnableBooksLibraryShowTheBooksLibraryOnlyIn AlwaysEnableBooksLibraryValue = 0
 	// Show the Books Library, regardless of the device's country or region.
-	AlwaysEnableBooksLibraryShowTheBooksLibraryRegardlessOf int64 = 1
+	AlwaysEnableBooksLibraryShowTheBooksLibraryRegardlessOf AlwaysEnableBooksLibraryValue = 1
 )
 
-// ClearBrowsingDataOnExit allowed values.
+// String returns the AlwaysEnableBooksLibraryValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AlwaysEnableBooksLibraryValue) String() string {
+	switch e {
+	case AlwaysEnableBooksLibraryShowTheBooksLibraryOnlyIn:
+		return "AlwaysEnableBooksLibraryShowTheBooksLibraryOnlyIn"
+	case AlwaysEnableBooksLibraryShowTheBooksLibraryRegardlessOf:
+		return "AlwaysEnableBooksLibraryShowTheBooksLibraryRegardlessOf"
+	default:
+		return fmt.Sprintf("AlwaysEnableBooksLibraryValue(%d)", int64(e))
+	}
+}
+
+// ClearBrowsingDataOnExitValue — allowed values for the ClearBrowsingDataOnExit node.
+type ClearBrowsingDataOnExitValue int64
+
 const (
 	// Prevented/not allowed. Users can configure the 'Clear browsing data' option in Settings.
-	ClearBrowsingDataOnExitPreventedNotAllowed int64 = 0
+	ClearBrowsingDataOnExitPreventedNotAllowed ClearBrowsingDataOnExitValue = 0
 	// Allowed. Clear the browsing data upon exit automatically.
-	ClearBrowsingDataOnExitAllowed int64 = 1
+	ClearBrowsingDataOnExitAllowed ClearBrowsingDataOnExitValue = 1
 )
 
-// ConfigureFavoritesBar allowed values.
+// String returns the ClearBrowsingDataOnExitValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ClearBrowsingDataOnExitValue) String() string {
+	switch e {
+	case ClearBrowsingDataOnExitPreventedNotAllowed:
+		return "ClearBrowsingDataOnExitPreventedNotAllowed"
+	case ClearBrowsingDataOnExitAllowed:
+		return "ClearBrowsingDataOnExitAllowed"
+	default:
+		return fmt.Sprintf("ClearBrowsingDataOnExitValue(%d)", int64(e))
+	}
+}
+
+// ConfigureFavoritesBarValue — allowed values for the ConfigureFavoritesBar node.
+type ConfigureFavoritesBarValue int64
+
 const (
 	// Hide the favorites bar on all pages. Also, the favorites bar toggle, in Settings, is set to Off
 	// and disabled preventing users from making changes. Microsoft Edge also hides the “show
 	// bar/hide bar” option in the context menu.
-	ConfigureFavoritesBarHideTheFavoritesBarOnAll int64 = 0
+	ConfigureFavoritesBarHideTheFavoritesBarOnAll ConfigureFavoritesBarValue = 0
 	// Show the favorites bar on all pages. Also, the favorites bar toggle, in Settings, is set to On
 	// and disabled preventing users from making changes. Microsoft Edge also hides the “show
 	// bar/hide bar” option in the context menu.
-	ConfigureFavoritesBarShowTheFavoritesBarOnAll int64 = 1
+	ConfigureFavoritesBarShowTheFavoritesBarOnAll ConfigureFavoritesBarValue = 1
 )
 
-// ConfigureHomeButton allowed values.
+// String returns the ConfigureFavoritesBarValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureFavoritesBarValue) String() string {
+	switch e {
+	case ConfigureFavoritesBarHideTheFavoritesBarOnAll:
+		return "ConfigureFavoritesBarHideTheFavoritesBarOnAll"
+	case ConfigureFavoritesBarShowTheFavoritesBarOnAll:
+		return "ConfigureFavoritesBarShowTheFavoritesBarOnAll"
+	default:
+		return fmt.Sprintf("ConfigureFavoritesBarValue(%d)", int64(e))
+	}
+}
+
+// ConfigureHomeButtonValue — allowed values for the ConfigureHomeButton node.
+type ConfigureHomeButtonValue int64
+
 const (
 	// Show home button and load the Start page
-	ConfigureHomeButtonShowHomeButtonAndLoadThe int64 = 0
+	ConfigureHomeButtonShowHomeButtonAndLoadThe ConfigureHomeButtonValue = 0
 	// Show home button and load the New tab page
-	ConfigureHomeButtonShowHomeButtonAndLoadThe2 int64 = 1
+	ConfigureHomeButtonShowHomeButtonAndLoadThe2 ConfigureHomeButtonValue = 1
 	// Show home button and load the custom URL defined in the Set Home Button URL policy
-	ConfigureHomeButtonShowHomeButtonAndLoadThe3 int64 = 2
+	ConfigureHomeButtonShowHomeButtonAndLoadThe3 ConfigureHomeButtonValue = 2
 	// Hide home button
-	ConfigureHomeButtonHideHomeButton int64 = 3
+	ConfigureHomeButtonHideHomeButton ConfigureHomeButtonValue = 3
 )
 
-// ConfigureKioskMode allowed values.
+// String returns the ConfigureHomeButtonValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureHomeButtonValue) String() string {
+	switch e {
+	case ConfigureHomeButtonShowHomeButtonAndLoadThe:
+		return "ConfigureHomeButtonShowHomeButtonAndLoadThe"
+	case ConfigureHomeButtonShowHomeButtonAndLoadThe2:
+		return "ConfigureHomeButtonShowHomeButtonAndLoadThe2"
+	case ConfigureHomeButtonShowHomeButtonAndLoadThe3:
+		return "ConfigureHomeButtonShowHomeButtonAndLoadThe3"
+	case ConfigureHomeButtonHideHomeButton:
+		return "ConfigureHomeButtonHideHomeButton"
+	default:
+		return fmt.Sprintf("ConfigureHomeButtonValue(%d)", int64(e))
+	}
+}
+
+// ConfigureKioskModeValue — allowed values for the ConfigureKioskMode node.
+type ConfigureKioskModeValue int64
+
 const (
 	// Enable
-	ConfigureKioskModeEnable int64 = 1
+	ConfigureKioskModeEnable ConfigureKioskModeValue = 1
 	// Disable
-	ConfigureKioskModeDisable int64 = 0
+	ConfigureKioskModeDisable ConfigureKioskModeValue = 0
 )
 
-// ConfigureOpenMicrosoftEdgeWith allowed values.
+// String returns the ConfigureKioskModeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureKioskModeValue) String() string {
+	switch e {
+	case ConfigureKioskModeEnable:
+		return "ConfigureKioskModeEnable"
+	case ConfigureKioskModeDisable:
+		return "ConfigureKioskModeDisable"
+	default:
+		return fmt.Sprintf("ConfigureKioskModeValue(%d)", int64(e))
+	}
+}
+
+// ConfigureOpenMicrosoftEdgeWithValue — allowed values for the ConfigureOpenMicrosoftEdgeWith node.
+type ConfigureOpenMicrosoftEdgeWithValue int64
+
 const (
 	// Load the Start page
-	ConfigureOpenMicrosoftEdgeWithLoadTheStartPage int64 = 0
+	ConfigureOpenMicrosoftEdgeWithLoadTheStartPage ConfigureOpenMicrosoftEdgeWithValue = 0
 	// Load the New tab page
-	ConfigureOpenMicrosoftEdgeWithLoadTheNewTabPage int64 = 1
+	ConfigureOpenMicrosoftEdgeWithLoadTheNewTabPage ConfigureOpenMicrosoftEdgeWithValue = 1
 	// Load the previous pages
-	ConfigureOpenMicrosoftEdgeWithLoadThePreviousPages int64 = 2
+	ConfigureOpenMicrosoftEdgeWithLoadThePreviousPages ConfigureOpenMicrosoftEdgeWithValue = 2
 	// Load a specific page or pages
-	ConfigureOpenMicrosoftEdgeWithLoadASpecificPageOrPages int64 = 3
+	ConfigureOpenMicrosoftEdgeWithLoadASpecificPageOrPages ConfigureOpenMicrosoftEdgeWithValue = 3
 )
 
-// ConfigureTelemetryForMicrosoft365Analytics allowed values.
+// String returns the ConfigureOpenMicrosoftEdgeWithValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureOpenMicrosoftEdgeWithValue) String() string {
+	switch e {
+	case ConfigureOpenMicrosoftEdgeWithLoadTheStartPage:
+		return "ConfigureOpenMicrosoftEdgeWithLoadTheStartPage"
+	case ConfigureOpenMicrosoftEdgeWithLoadTheNewTabPage:
+		return "ConfigureOpenMicrosoftEdgeWithLoadTheNewTabPage"
+	case ConfigureOpenMicrosoftEdgeWithLoadThePreviousPages:
+		return "ConfigureOpenMicrosoftEdgeWithLoadThePreviousPages"
+	case ConfigureOpenMicrosoftEdgeWithLoadASpecificPageOrPages:
+		return "ConfigureOpenMicrosoftEdgeWithLoadASpecificPageOrPages"
+	default:
+		return fmt.Sprintf("ConfigureOpenMicrosoftEdgeWithValue(%d)", int64(e))
+	}
+}
+
+// ConfigureTelemetryForMicrosoft365AnalyticsValue — allowed values for the ConfigureTelemetryForMicrosoft365Analytics node.
+type ConfigureTelemetryForMicrosoft365AnalyticsValue int64
+
 const (
 	// No data collected or sent
-	ConfigureTelemetryForMicrosoft365AnalyticsNoDataCollectedOrSent int64 = 0
+	ConfigureTelemetryForMicrosoft365AnalyticsNoDataCollectedOrSent ConfigureTelemetryForMicrosoft365AnalyticsValue = 0
 	// Send intranet history only
-	ConfigureTelemetryForMicrosoft365AnalyticsSendIntranetHistoryOnly int64 = 1
+	ConfigureTelemetryForMicrosoft365AnalyticsSendIntranetHistoryOnly ConfigureTelemetryForMicrosoft365AnalyticsValue = 1
 	// Send Internet history only
-	ConfigureTelemetryForMicrosoft365AnalyticsSendInternetHistoryOnly int64 = 2
+	ConfigureTelemetryForMicrosoft365AnalyticsSendInternetHistoryOnly ConfigureTelemetryForMicrosoft365AnalyticsValue = 2
 	// Send both intranet and Internet history
-	ConfigureTelemetryForMicrosoft365AnalyticsSendBothIntranetAndInternetHistory int64 = 3
+	ConfigureTelemetryForMicrosoft365AnalyticsSendBothIntranetAndInternetHistory ConfigureTelemetryForMicrosoft365AnalyticsValue = 3
 )
 
-// DisableLockdownOfStartPages allowed values.
+// String returns the ConfigureTelemetryForMicrosoft365AnalyticsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureTelemetryForMicrosoft365AnalyticsValue) String() string {
+	switch e {
+	case ConfigureTelemetryForMicrosoft365AnalyticsNoDataCollectedOrSent:
+		return "ConfigureTelemetryForMicrosoft365AnalyticsNoDataCollectedOrSent"
+	case ConfigureTelemetryForMicrosoft365AnalyticsSendIntranetHistoryOnly:
+		return "ConfigureTelemetryForMicrosoft365AnalyticsSendIntranetHistoryOnly"
+	case ConfigureTelemetryForMicrosoft365AnalyticsSendInternetHistoryOnly:
+		return "ConfigureTelemetryForMicrosoft365AnalyticsSendInternetHistoryOnly"
+	case ConfigureTelemetryForMicrosoft365AnalyticsSendBothIntranetAndInternetHistory:
+		return "ConfigureTelemetryForMicrosoft365AnalyticsSendBothIntranetAndInternetHistory"
+	default:
+		return fmt.Sprintf("ConfigureTelemetryForMicrosoft365AnalyticsValue(%d)", int64(e))
+	}
+}
+
+// DisableLockdownOfStartPagesValue — allowed values for the DisableLockdownOfStartPages node.
+type DisableLockdownOfStartPagesValue int64
+
 const (
 	// Lock down Start pages configured in either the ConfigureOpenEdgeWith policy and HomePages
 	// policy.
-	DisableLockdownOfStartPagesLockDownStartPagesConfiguredIn int64 = 0
+	DisableLockdownOfStartPagesLockDownStartPagesConfiguredIn DisableLockdownOfStartPagesValue = 0
 	// Unlocked. Users can make changes to all configured start pages.
-	DisableLockdownOfStartPagesUnlocked int64 = 1
+	DisableLockdownOfStartPagesUnlocked DisableLockdownOfStartPagesValue = 1
 )
 
-// EnableExtendedBooksTelemetry allowed values.
+// String returns the DisableLockdownOfStartPagesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableLockdownOfStartPagesValue) String() string {
+	switch e {
+	case DisableLockdownOfStartPagesLockDownStartPagesConfiguredIn:
+		return "DisableLockdownOfStartPagesLockDownStartPagesConfiguredIn"
+	case DisableLockdownOfStartPagesUnlocked:
+		return "DisableLockdownOfStartPagesUnlocked"
+	default:
+		return fmt.Sprintf("DisableLockdownOfStartPagesValue(%d)", int64(e))
+	}
+}
+
+// EnableExtendedBooksTelemetryValue — allowed values for the EnableExtendedBooksTelemetry node.
+type EnableExtendedBooksTelemetryValue int64
+
 const (
 	// Gather and send only basic diagnostic data, depending on the device configuration.
-	EnableExtendedBooksTelemetryGatherAndSendOnlyBasicDiagnostic int64 = 0
+	EnableExtendedBooksTelemetryGatherAndSendOnlyBasicDiagnostic EnableExtendedBooksTelemetryValue = 0
 	// Gather all diagnostic data.
-	EnableExtendedBooksTelemetryGatherAllDiagnosticData int64 = 1
+	EnableExtendedBooksTelemetryGatherAllDiagnosticData EnableExtendedBooksTelemetryValue = 1
 )
 
-// LockdownFavorites allowed values.
+// String returns the EnableExtendedBooksTelemetryValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableExtendedBooksTelemetryValue) String() string {
+	switch e {
+	case EnableExtendedBooksTelemetryGatherAndSendOnlyBasicDiagnostic:
+		return "EnableExtendedBooksTelemetryGatherAndSendOnlyBasicDiagnostic"
+	case EnableExtendedBooksTelemetryGatherAllDiagnosticData:
+		return "EnableExtendedBooksTelemetryGatherAllDiagnosticData"
+	default:
+		return fmt.Sprintf("EnableExtendedBooksTelemetryValue(%d)", int64(e))
+	}
+}
+
+// LockdownFavoritesValue — allowed values for the LockdownFavorites node.
+type LockdownFavoritesValue int64
+
 const (
 	// Allowed/not locked down. Users can add, import, and make changes to the favorites.
-	LockdownFavoritesAllowedNotLockedDown int64 = 0
+	LockdownFavoritesAllowedNotLockedDown LockdownFavoritesValue = 0
 	// Prevented/locked down.
-	LockdownFavoritesPreventedLockedDown int64 = 1
+	LockdownFavoritesPreventedLockedDown LockdownFavoritesValue = 1
 )
 
-// PreventAccessToAboutFlagsInMicrosoftEdge allowed values.
+// String returns the LockdownFavoritesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e LockdownFavoritesValue) String() string {
+	switch e {
+	case LockdownFavoritesAllowedNotLockedDown:
+		return "LockdownFavoritesAllowedNotLockedDown"
+	case LockdownFavoritesPreventedLockedDown:
+		return "LockdownFavoritesPreventedLockedDown"
+	default:
+		return fmt.Sprintf("LockdownFavoritesValue(%d)", int64(e))
+	}
+}
+
+// PreventAccessToAboutFlagsInMicrosoftEdgeValue — allowed values for the PreventAccessToAboutFlagsInMicrosoftEdge node.
+type PreventAccessToAboutFlagsInMicrosoftEdgeValue int64
+
 const (
 	// Allowed.
-	PreventAccessToAboutFlagsInMicrosoftEdgeAllowed int64 = 0
+	PreventAccessToAboutFlagsInMicrosoftEdgeAllowed PreventAccessToAboutFlagsInMicrosoftEdgeValue = 0
 	// Prevents users from accessing the about:flags page.
-	PreventAccessToAboutFlagsInMicrosoftEdgePreventsUsersFromAccessingTheAbout int64 = 1
+	PreventAccessToAboutFlagsInMicrosoftEdgePreventsUsersFromAccessingTheAbout PreventAccessToAboutFlagsInMicrosoftEdgeValue = 1
 )
 
-// PreventCertErrorOverrides allowed values.
+// String returns the PreventAccessToAboutFlagsInMicrosoftEdgeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PreventAccessToAboutFlagsInMicrosoftEdgeValue) String() string {
+	switch e {
+	case PreventAccessToAboutFlagsInMicrosoftEdgeAllowed:
+		return "PreventAccessToAboutFlagsInMicrosoftEdgeAllowed"
+	case PreventAccessToAboutFlagsInMicrosoftEdgePreventsUsersFromAccessingTheAbout:
+		return "PreventAccessToAboutFlagsInMicrosoftEdgePreventsUsersFromAccessingTheAbout"
+	default:
+		return fmt.Sprintf("PreventAccessToAboutFlagsInMicrosoftEdgeValue(%d)", int64(e))
+	}
+}
+
+// PreventCertErrorOverridesValue — allowed values for the PreventCertErrorOverrides node.
+type PreventCertErrorOverridesValue int64
+
 const (
 	// Allowed/turned on. Override the security warning to sites that have SSL errors.
-	PreventCertErrorOverridesAllowedTurnedOn int64 = 0
+	PreventCertErrorOverridesAllowedTurnedOn PreventCertErrorOverridesValue = 0
 	// Prevented/turned on.
-	PreventCertErrorOverridesPreventedTurnedOn int64 = 1
+	PreventCertErrorOverridesPreventedTurnedOn PreventCertErrorOverridesValue = 1
 )
 
-// PreventFirstRunPage allowed values.
+// String returns the PreventCertErrorOverridesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PreventCertErrorOverridesValue) String() string {
+	switch e {
+	case PreventCertErrorOverridesAllowedTurnedOn:
+		return "PreventCertErrorOverridesAllowedTurnedOn"
+	case PreventCertErrorOverridesPreventedTurnedOn:
+		return "PreventCertErrorOverridesPreventedTurnedOn"
+	default:
+		return fmt.Sprintf("PreventCertErrorOverridesValue(%d)", int64(e))
+	}
+}
+
+// PreventFirstRunPageValue — allowed values for the PreventFirstRunPage node.
+type PreventFirstRunPageValue int64
+
 const (
 	// Allowed. Load the First Run webpage.
-	PreventFirstRunPageAllowed int64 = 0
+	PreventFirstRunPageAllowed PreventFirstRunPageValue = 0
 	// Prevented/Not allowed.
-	PreventFirstRunPagePreventedNotAllowed int64 = 1
+	PreventFirstRunPagePreventedNotAllowed PreventFirstRunPageValue = 1
 )
 
-// PreventLiveTileDataCollection allowed values.
+// String returns the PreventFirstRunPageValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PreventFirstRunPageValue) String() string {
+	switch e {
+	case PreventFirstRunPageAllowed:
+		return "PreventFirstRunPageAllowed"
+	case PreventFirstRunPagePreventedNotAllowed:
+		return "PreventFirstRunPagePreventedNotAllowed"
+	default:
+		return fmt.Sprintf("PreventFirstRunPageValue(%d)", int64(e))
+	}
+}
+
+// PreventLiveTileDataCollectionValue — allowed values for the PreventLiveTileDataCollection node.
+type PreventLiveTileDataCollectionValue int64
+
 const (
 	// Collect and send Live Tile metadata.
-	PreventLiveTileDataCollectionCollectAndSendLiveTileMetadata int64 = 0
+	PreventLiveTileDataCollectionCollectAndSendLiveTileMetadata PreventLiveTileDataCollectionValue = 0
 	// No data collected.
-	PreventLiveTileDataCollectionNoDataCollected int64 = 1
+	PreventLiveTileDataCollectionNoDataCollected PreventLiveTileDataCollectionValue = 1
 )
 
-// PreventSmartScreenPromptOverride allowed values.
+// String returns the PreventLiveTileDataCollectionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PreventLiveTileDataCollectionValue) String() string {
+	switch e {
+	case PreventLiveTileDataCollectionCollectAndSendLiveTileMetadata:
+		return "PreventLiveTileDataCollectionCollectAndSendLiveTileMetadata"
+	case PreventLiveTileDataCollectionNoDataCollected:
+		return "PreventLiveTileDataCollectionNoDataCollected"
+	default:
+		return fmt.Sprintf("PreventLiveTileDataCollectionValue(%d)", int64(e))
+	}
+}
+
+// PreventSmartScreenPromptOverrideValue — allowed values for the PreventSmartScreenPromptOverride node.
+type PreventSmartScreenPromptOverrideValue int64
+
 const (
 	// Allowed/turned off. Users can ignore the warning and continue to the site.
-	PreventSmartScreenPromptOverrideAllowedTurnedOff int64 = 0
+	PreventSmartScreenPromptOverrideAllowedTurnedOff PreventSmartScreenPromptOverrideValue = 0
 	// Prevented/turned on.
-	PreventSmartScreenPromptOverridePreventedTurnedOn int64 = 1
+	PreventSmartScreenPromptOverridePreventedTurnedOn PreventSmartScreenPromptOverrideValue = 1
 )
 
-// PreventSmartScreenPromptOverrideForFiles allowed values.
+// String returns the PreventSmartScreenPromptOverrideValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PreventSmartScreenPromptOverrideValue) String() string {
+	switch e {
+	case PreventSmartScreenPromptOverrideAllowedTurnedOff:
+		return "PreventSmartScreenPromptOverrideAllowedTurnedOff"
+	case PreventSmartScreenPromptOverridePreventedTurnedOn:
+		return "PreventSmartScreenPromptOverridePreventedTurnedOn"
+	default:
+		return fmt.Sprintf("PreventSmartScreenPromptOverrideValue(%d)", int64(e))
+	}
+}
+
+// PreventSmartScreenPromptOverrideForFilesValue — allowed values for the PreventSmartScreenPromptOverrideForFiles node.
+type PreventSmartScreenPromptOverrideForFilesValue int64
+
 const (
 	// Allowed/turned off. Users can ignore the warning and continue to download the unverified
 	// file(s).
-	PreventSmartScreenPromptOverrideForFilesAllowedTurnedOff int64 = 0
+	PreventSmartScreenPromptOverrideForFilesAllowedTurnedOff PreventSmartScreenPromptOverrideForFilesValue = 0
 	// Prevented/turned on.
-	PreventSmartScreenPromptOverrideForFilesPreventedTurnedOn int64 = 1
+	PreventSmartScreenPromptOverrideForFilesPreventedTurnedOn PreventSmartScreenPromptOverrideForFilesValue = 1
 )
 
-// PreventUsingLocalHostIPAddressForWebRTC allowed values.
+// String returns the PreventSmartScreenPromptOverrideForFilesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PreventSmartScreenPromptOverrideForFilesValue) String() string {
+	switch e {
+	case PreventSmartScreenPromptOverrideForFilesAllowedTurnedOff:
+		return "PreventSmartScreenPromptOverrideForFilesAllowedTurnedOff"
+	case PreventSmartScreenPromptOverrideForFilesPreventedTurnedOn:
+		return "PreventSmartScreenPromptOverrideForFilesPreventedTurnedOn"
+	default:
+		return fmt.Sprintf("PreventSmartScreenPromptOverrideForFilesValue(%d)", int64(e))
+	}
+}
+
+// PreventUsingLocalHostIPAddressForWebRTCValue — allowed values for the PreventUsingLocalHostIPAddressForWebRTC node.
+type PreventUsingLocalHostIPAddressForWebRTCValue int64
+
 const (
 	// Allowed. Show localhost IP addresses.
-	PreventUsingLocalHostIPAddressForWebRTCAllowed int64 = 0
+	PreventUsingLocalHostIPAddressForWebRTCAllowed PreventUsingLocalHostIPAddressForWebRTCValue = 0
 	// Prevented/Not allowed.
-	PreventUsingLocalHostIPAddressForWebRTCPreventedNotAllowed int64 = 1
+	PreventUsingLocalHostIPAddressForWebRTCPreventedNotAllowed PreventUsingLocalHostIPAddressForWebRTCValue = 1
 )
 
-// SendIntranetTraffictoInternetExplorer allowed values.
+// String returns the PreventUsingLocalHostIPAddressForWebRTCValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PreventUsingLocalHostIPAddressForWebRTCValue) String() string {
+	switch e {
+	case PreventUsingLocalHostIPAddressForWebRTCAllowed:
+		return "PreventUsingLocalHostIPAddressForWebRTCAllowed"
+	case PreventUsingLocalHostIPAddressForWebRTCPreventedNotAllowed:
+		return "PreventUsingLocalHostIPAddressForWebRTCPreventedNotAllowed"
+	default:
+		return fmt.Sprintf("PreventUsingLocalHostIPAddressForWebRTCValue(%d)", int64(e))
+	}
+}
+
+// SendIntranetTraffictoInternetExplorerValue — allowed values for the SendIntranetTraffictoInternetExplorer node.
+type SendIntranetTraffictoInternetExplorerValue int64
+
 const (
 	// All sites, including intranet sites, open in Microsoft Edge automatically.
-	SendIntranetTraffictoInternetExplorerAllSitesIncludingIntranetSitesOpen int64 = 0
+	SendIntranetTraffictoInternetExplorerAllSitesIncludingIntranetSitesOpen SendIntranetTraffictoInternetExplorerValue = 0
 	// Only intranet sites open in Internet Explorer 11 automatically.
-	SendIntranetTraffictoInternetExplorerOnlyIntranetSitesOpenInInternet int64 = 1
+	SendIntranetTraffictoInternetExplorerOnlyIntranetSitesOpenInInternet SendIntranetTraffictoInternetExplorerValue = 1
 )
 
-// ShowMessageWhenOpeningSitesInInternetExplorer allowed values.
+// String returns the SendIntranetTraffictoInternetExplorerValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SendIntranetTraffictoInternetExplorerValue) String() string {
+	switch e {
+	case SendIntranetTraffictoInternetExplorerAllSitesIncludingIntranetSitesOpen:
+		return "SendIntranetTraffictoInternetExplorerAllSitesIncludingIntranetSitesOpen"
+	case SendIntranetTraffictoInternetExplorerOnlyIntranetSitesOpenInInternet:
+		return "SendIntranetTraffictoInternetExplorerOnlyIntranetSitesOpenInInternet"
+	default:
+		return fmt.Sprintf("SendIntranetTraffictoInternetExplorerValue(%d)", int64(e))
+	}
+}
+
+// ShowMessageWhenOpeningSitesInInternetExplorerValue — allowed values for the ShowMessageWhenOpeningSitesInInternetExplorer node.
+type ShowMessageWhenOpeningSitesInInternetExplorerValue int64
+
 const (
 	// No additional message displays.
-	ShowMessageWhenOpeningSitesInInternetExplorerNoAdditionalMessageDisplays int64 = 0
+	ShowMessageWhenOpeningSitesInInternetExplorerNoAdditionalMessageDisplays ShowMessageWhenOpeningSitesInInternetExplorerValue = 0
 	// Show an additional message stating that a site has opened in IE11.
-	ShowMessageWhenOpeningSitesInInternetExplorerShowAnAdditionalMessageStatingThat int64 = 1
+	ShowMessageWhenOpeningSitesInInternetExplorerShowAnAdditionalMessageStatingThat ShowMessageWhenOpeningSitesInInternetExplorerValue = 1
 	// Show an additional message with a "Keep going in Microsoft Edge" link.
-	ShowMessageWhenOpeningSitesInInternetExplorerShowAnAdditionalMessageWithA int64 = 2
+	ShowMessageWhenOpeningSitesInInternetExplorerShowAnAdditionalMessageWithA ShowMessageWhenOpeningSitesInInternetExplorerValue = 2
 )
 
-// SyncFavoritesBetweenIEAndMicrosoftEdge allowed values.
+// String returns the ShowMessageWhenOpeningSitesInInternetExplorerValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ShowMessageWhenOpeningSitesInInternetExplorerValue) String() string {
+	switch e {
+	case ShowMessageWhenOpeningSitesInInternetExplorerNoAdditionalMessageDisplays:
+		return "ShowMessageWhenOpeningSitesInInternetExplorerNoAdditionalMessageDisplays"
+	case ShowMessageWhenOpeningSitesInInternetExplorerShowAnAdditionalMessageStatingThat:
+		return "ShowMessageWhenOpeningSitesInInternetExplorerShowAnAdditionalMessageStatingThat"
+	case ShowMessageWhenOpeningSitesInInternetExplorerShowAnAdditionalMessageWithA:
+		return "ShowMessageWhenOpeningSitesInInternetExplorerShowAnAdditionalMessageWithA"
+	default:
+		return fmt.Sprintf("ShowMessageWhenOpeningSitesInInternetExplorerValue(%d)", int64(e))
+	}
+}
+
+// SyncFavoritesBetweenIEAndMicrosoftEdgeValue — allowed values for the SyncFavoritesBetweenIEAndMicrosoftEdge node.
+type SyncFavoritesBetweenIEAndMicrosoftEdgeValue int64
+
 const (
 	// Turned off/not syncing.
-	SyncFavoritesBetweenIEAndMicrosoftEdgeTurnedOffNotSyncing int64 = 0
+	SyncFavoritesBetweenIEAndMicrosoftEdgeTurnedOffNotSyncing SyncFavoritesBetweenIEAndMicrosoftEdgeValue = 0
 	// Turned on/syncing.
-	SyncFavoritesBetweenIEAndMicrosoftEdgeTurnedOnSyncing int64 = 1
+	SyncFavoritesBetweenIEAndMicrosoftEdgeTurnedOnSyncing SyncFavoritesBetweenIEAndMicrosoftEdgeValue = 1
 )
 
-// UnlockHomeButton allowed values.
+// String returns the SyncFavoritesBetweenIEAndMicrosoftEdgeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SyncFavoritesBetweenIEAndMicrosoftEdgeValue) String() string {
+	switch e {
+	case SyncFavoritesBetweenIEAndMicrosoftEdgeTurnedOffNotSyncing:
+		return "SyncFavoritesBetweenIEAndMicrosoftEdgeTurnedOffNotSyncing"
+	case SyncFavoritesBetweenIEAndMicrosoftEdgeTurnedOnSyncing:
+		return "SyncFavoritesBetweenIEAndMicrosoftEdgeTurnedOnSyncing"
+	default:
+		return fmt.Sprintf("SyncFavoritesBetweenIEAndMicrosoftEdgeValue(%d)", int64(e))
+	}
+}
+
+// UnlockHomeButtonValue — allowed values for the UnlockHomeButton node.
+type UnlockHomeButtonValue int64
+
 const (
 	// Lock down and prevent users from making changes to the settings.
-	UnlockHomeButtonLockDownAndPreventUsersFrom int64 = 0
+	UnlockHomeButtonLockDownAndPreventUsersFrom UnlockHomeButtonValue = 0
 	// Let users make changes.
-	UnlockHomeButtonLetUsersMakeChanges int64 = 1
+	UnlockHomeButtonLetUsersMakeChanges UnlockHomeButtonValue = 1
 )
 
-// UseSharedFolderForBooks allowed values.
+// String returns the UnlockHomeButtonValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e UnlockHomeButtonValue) String() string {
+	switch e {
+	case UnlockHomeButtonLockDownAndPreventUsersFrom:
+		return "UnlockHomeButtonLockDownAndPreventUsersFrom"
+	case UnlockHomeButtonLetUsersMakeChanges:
+		return "UnlockHomeButtonLetUsersMakeChanges"
+	default:
+		return fmt.Sprintf("UnlockHomeButtonValue(%d)", int64(e))
+	}
+}
+
+// UseSharedFolderForBooksValue — allowed values for the UseSharedFolderForBooks node.
+type UseSharedFolderForBooksValue int64
+
 const (
 	// Prevented/not allowed, but Microsoft Edge downloads book files to a per-user folder for each
 	// user.
-	UseSharedFolderForBooksPreventedNotAllowedButMicrosoftEdgeDownloads int64 = 0
+	UseSharedFolderForBooksPreventedNotAllowedButMicrosoftEdgeDownloads UseSharedFolderForBooksValue = 0
 	// Allowed. Microsoft Edge downloads book files to a shared folder. For this policy to work
 	// correctly, you must also enable the Allow a Windows app to share application data between users
 	// group policy. Also, the users must be signed in with a school or work account.
-	UseSharedFolderForBooksAllowed int64 = 1
+	UseSharedFolderForBooksAllowed UseSharedFolderForBooksValue = 1
 )
+
+// String returns the UseSharedFolderForBooksValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e UseSharedFolderForBooksValue) String() string {
+	switch e {
+	case UseSharedFolderForBooksPreventedNotAllowedButMicrosoftEdgeDownloads:
+		return "UseSharedFolderForBooksPreventedNotAllowedButMicrosoftEdgeDownloads"
+	case UseSharedFolderForBooksAllowed:
+		return "UseSharedFolderForBooksAllowed"
+	default:
+		return fmt.Sprintf("UseSharedFolderForBooksValue(%d)", int64(e))
+	}
+}

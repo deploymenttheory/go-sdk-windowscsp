@@ -2,26 +2,75 @@
 
 package secureassessment
 
-// AllowScreenMonitoring allowed values.
+import (
+	"fmt"
+)
+
+// AllowScreenMonitoringValue — allowed values for the AllowScreenMonitoring node.
+type AllowScreenMonitoringValue int64
+
 const (
 	// Screen monitoring is allowed
-	AllowScreenMonitoringScreenMonitoringIsAllowed int64 = 1
+	AllowScreenMonitoringScreenMonitoringIsAllowed AllowScreenMonitoringValue = 1
 	// Screen monitoring is not allowed
-	AllowScreenMonitoringScreenMonitoringIsNotAllowed int64 = 0
+	AllowScreenMonitoringScreenMonitoringIsNotAllowed AllowScreenMonitoringValue = 0
 )
 
-// AllowTextSuggestions allowed values.
+// String returns the AllowScreenMonitoringValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowScreenMonitoringValue) String() string {
+	switch e {
+	case AllowScreenMonitoringScreenMonitoringIsAllowed:
+		return "AllowScreenMonitoringScreenMonitoringIsAllowed"
+	case AllowScreenMonitoringScreenMonitoringIsNotAllowed:
+		return "AllowScreenMonitoringScreenMonitoringIsNotAllowed"
+	default:
+		return fmt.Sprintf("AllowScreenMonitoringValue(%d)", int64(e))
+	}
+}
+
+// AllowTextSuggestionsValue — allowed values for the AllowTextSuggestions node.
+type AllowTextSuggestionsValue int64
+
 const (
 	// Keyboard text suggestions are allowed
-	AllowTextSuggestionsKeyboardTextSuggestionsAreAllowed int64 = 1
+	AllowTextSuggestionsKeyboardTextSuggestionsAreAllowed AllowTextSuggestionsValue = 1
 	// Keyboard text suggestions are not allowed
-	AllowTextSuggestionsKeyboardTextSuggestionsAreNotAllowed int64 = 0
+	AllowTextSuggestionsKeyboardTextSuggestionsAreNotAllowed AllowTextSuggestionsValue = 0
 )
 
-// RequirePrinting allowed values.
+// String returns the AllowTextSuggestionsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowTextSuggestionsValue) String() string {
+	switch e {
+	case AllowTextSuggestionsKeyboardTextSuggestionsAreAllowed:
+		return "AllowTextSuggestionsKeyboardTextSuggestionsAreAllowed"
+	case AllowTextSuggestionsKeyboardTextSuggestionsAreNotAllowed:
+		return "AllowTextSuggestionsKeyboardTextSuggestionsAreNotAllowed"
+	default:
+		return fmt.Sprintf("AllowTextSuggestionsValue(%d)", int64(e))
+	}
+}
+
+// RequirePrintingValue — allowed values for the RequirePrinting node.
+type RequirePrintingValue int64
+
 const (
 	// Printing is allowed
-	RequirePrintingPrintingIsAllowed int64 = 1
+	RequirePrintingPrintingIsAllowed RequirePrintingValue = 1
 	// Printing is not allowed
-	RequirePrintingPrintingIsNotAllowed int64 = 0
+	RequirePrintingPrintingIsNotAllowed RequirePrintingValue = 0
 )
+
+// String returns the RequirePrintingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e RequirePrintingValue) String() string {
+	switch e {
+	case RequirePrintingPrintingIsAllowed:
+		return "RequirePrintingPrintingIsAllowed"
+	case RequirePrintingPrintingIsNotAllowed:
+		return "RequirePrintingPrintingIsNotAllowed"
+	default:
+		return fmt.Sprintf("RequirePrintingValue(%d)", int64(e))
+	}
+}

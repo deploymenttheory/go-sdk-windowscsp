@@ -16,12 +16,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Education) GetEnableEduThemes(ctx context.Context) (int64, error) {
+func (s *Education) GetEnableEduThemes(ctx context.Context) (EnableEduThemesValue, error) {
 	v, err := s.c.Get(ctx, URIEnableEduThemes)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableEduThemesValue(n), err
 }
 
 // CreateEnableEduThemes creates ./Device/Vendor/MSFT/Policy/Config/Education/EnableEduThemes.
@@ -32,8 +33,8 @@ func (s *Education) GetEnableEduThemes(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Education) CreateEnableEduThemes(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableEduThemes, client.Int(value))
+func (s *Education) CreateEnableEduThemes(ctx context.Context, value EnableEduThemesValue) error {
+	return s.c.Add(ctx, URIEnableEduThemes, client.Int(int64(value)))
 }
 
 // UpdateEnableEduThemes updates ./Device/Vendor/MSFT/Policy/Config/Education/EnableEduThemes.
@@ -44,8 +45,8 @@ func (s *Education) CreateEnableEduThemes(ctx context.Context, value int64) erro
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Education) UpdateEnableEduThemes(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableEduThemes, client.Int(value))
+func (s *Education) UpdateEnableEduThemes(ctx context.Context, value EnableEduThemesValue) error {
+	return s.c.Replace(ctx, URIEnableEduThemes, client.Int(int64(value)))
 }
 
 // DeleteEnableEduThemes deletes ./Device/Vendor/MSFT/Policy/Config/Education/EnableEduThemes.
@@ -66,12 +67,13 @@ func (s *Education) DeleteEnableEduThemes(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Education) GetIsEducationEnvironment(ctx context.Context) (int64, error) {
+func (s *Education) GetIsEducationEnvironment(ctx context.Context) (IsEducationEnvironmentValue, error) {
 	v, err := s.c.Get(ctx, URIIsEducationEnvironment)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return IsEducationEnvironmentValue(n), err
 }
 
 // CreateIsEducationEnvironment creates ./Device/Vendor/MSFT/Policy/Config/Education/IsEducationEnvironment.
@@ -80,8 +82,8 @@ func (s *Education) GetIsEducationEnvironment(ctx context.Context) (int64, error
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Education) CreateIsEducationEnvironment(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIIsEducationEnvironment, client.Int(value))
+func (s *Education) CreateIsEducationEnvironment(ctx context.Context, value IsEducationEnvironmentValue) error {
+	return s.c.Add(ctx, URIIsEducationEnvironment, client.Int(int64(value)))
 }
 
 // UpdateIsEducationEnvironment updates ./Device/Vendor/MSFT/Policy/Config/Education/IsEducationEnvironment.
@@ -90,8 +92,8 @@ func (s *Education) CreateIsEducationEnvironment(ctx context.Context, value int6
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Education) UpdateIsEducationEnvironment(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIIsEducationEnvironment, client.Int(value))
+func (s *Education) UpdateIsEducationEnvironment(ctx context.Context, value IsEducationEnvironmentValue) error {
+	return s.c.Replace(ctx, URIIsEducationEnvironment, client.Int(int64(value)))
 }
 
 // DeleteIsEducationEnvironment deletes ./Device/Vendor/MSFT/Policy/Config/Education/IsEducationEnvironment.

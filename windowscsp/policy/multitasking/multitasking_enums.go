@@ -2,14 +2,37 @@
 
 package multitasking
 
-// BrowserAltTabBlowout allowed values.
+import (
+	"fmt"
+)
+
+// BrowserAltTabBlowoutValue — allowed values for the BrowserAltTabBlowout node.
+type BrowserAltTabBlowoutValue int64
+
 const (
 	// Open windows and all tabs in Microsoft Edge
-	BrowserAltTabBlowoutOpenWindowsAndAllTabsIn int64 = 1
+	BrowserAltTabBlowoutOpenWindowsAndAllTabsIn BrowserAltTabBlowoutValue = 1
 	// Open windows and 5 most recent tabs in Microsoft Edge
-	BrowserAltTabBlowoutOpenWindowsAnd5MostRecent int64 = 2
+	BrowserAltTabBlowoutOpenWindowsAnd5MostRecent BrowserAltTabBlowoutValue = 2
 	// Open windows and 3 most recent tabs in Microsoft Edge
-	BrowserAltTabBlowoutOpenWindowsAnd3MostRecent int64 = 3
+	BrowserAltTabBlowoutOpenWindowsAnd3MostRecent BrowserAltTabBlowoutValue = 3
 	// Open windows only
-	BrowserAltTabBlowoutOpenWindowsOnly int64 = 4
+	BrowserAltTabBlowoutOpenWindowsOnly BrowserAltTabBlowoutValue = 4
 )
+
+// String returns the BrowserAltTabBlowoutValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e BrowserAltTabBlowoutValue) String() string {
+	switch e {
+	case BrowserAltTabBlowoutOpenWindowsAndAllTabsIn:
+		return "BrowserAltTabBlowoutOpenWindowsAndAllTabsIn"
+	case BrowserAltTabBlowoutOpenWindowsAnd5MostRecent:
+		return "BrowserAltTabBlowoutOpenWindowsAnd5MostRecent"
+	case BrowserAltTabBlowoutOpenWindowsAnd3MostRecent:
+		return "BrowserAltTabBlowoutOpenWindowsAnd3MostRecent"
+	case BrowserAltTabBlowoutOpenWindowsOnly:
+		return "BrowserAltTabBlowoutOpenWindowsOnly"
+	default:
+		return fmt.Sprintf("BrowserAltTabBlowoutValue(%d)", int64(e))
+	}
+}

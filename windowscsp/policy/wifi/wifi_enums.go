@@ -2,61 +2,172 @@
 
 package wifi
 
-// AllowAutoConnectToWiFiSenseHotspots allowed values.
-const (
-	// Not allowed.
-	AllowAutoConnectToWiFiSenseHotspotsNotAllowed int64 = 0
-	// Allowed.
-	AllowAutoConnectToWiFiSenseHotspotsAllowed int64 = 1
+import (
+	"fmt"
 )
 
-// AllowInternetSharing allowed values.
+// AllowAutoConnectToWiFiSenseHotspotsValue — allowed values for the AllowAutoConnectToWiFiSenseHotspots node.
+type AllowAutoConnectToWiFiSenseHotspotsValue int64
+
 const (
 	// Not allowed.
-	AllowInternetSharingNotAllowed int64 = 0
+	AllowAutoConnectToWiFiSenseHotspotsNotAllowed AllowAutoConnectToWiFiSenseHotspotsValue = 0
 	// Allowed.
-	AllowInternetSharingAllowed int64 = 1
+	AllowAutoConnectToWiFiSenseHotspotsAllowed AllowAutoConnectToWiFiSenseHotspotsValue = 1
 )
 
-// AllowManualWiFiConfiguration allowed values.
+// String returns the AllowAutoConnectToWiFiSenseHotspotsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowAutoConnectToWiFiSenseHotspotsValue) String() string {
+	switch e {
+	case AllowAutoConnectToWiFiSenseHotspotsNotAllowed:
+		return "AllowAutoConnectToWiFiSenseHotspotsNotAllowed"
+	case AllowAutoConnectToWiFiSenseHotspotsAllowed:
+		return "AllowAutoConnectToWiFiSenseHotspotsAllowed"
+	default:
+		return fmt.Sprintf("AllowAutoConnectToWiFiSenseHotspotsValue(%d)", int64(e))
+	}
+}
+
+// AllowInternetSharingValue — allowed values for the AllowInternetSharing node.
+type AllowInternetSharingValue int64
+
+const (
+	// Not allowed.
+	AllowInternetSharingNotAllowed AllowInternetSharingValue = 0
+	// Allowed.
+	AllowInternetSharingAllowed AllowInternetSharingValue = 1
+)
+
+// String returns the AllowInternetSharingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowInternetSharingValue) String() string {
+	switch e {
+	case AllowInternetSharingNotAllowed:
+		return "AllowInternetSharingNotAllowed"
+	case AllowInternetSharingAllowed:
+		return "AllowInternetSharingAllowed"
+	default:
+		return fmt.Sprintf("AllowInternetSharingValue(%d)", int64(e))
+	}
+}
+
+// AllowManualWiFiConfigurationValue — allowed values for the AllowManualWiFiConfiguration node.
+type AllowManualWiFiConfigurationValue int64
+
 const (
 	// No Wi-Fi connection outside of MDM provisioned network is allowed.
-	AllowManualWiFiConfigurationNoWiFiConnectionOutsideOfMDM int64 = 0
+	AllowManualWiFiConfigurationNoWiFiConnectionOutsideOfMDM AllowManualWiFiConfigurationValue = 0
 	// Adding new network SSIDs beyond the already MDM provisioned ones is allowed.
-	AllowManualWiFiConfigurationAddingNewNetworkSSIDsBeyondThe int64 = 1
+	AllowManualWiFiConfigurationAddingNewNetworkSSIDsBeyondThe AllowManualWiFiConfigurationValue = 1
 )
 
-// AllowWFAQosManagementDSCPToUPMapping allowed values.
+// String returns the AllowManualWiFiConfigurationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowManualWiFiConfigurationValue) String() string {
+	switch e {
+	case AllowManualWiFiConfigurationNoWiFiConnectionOutsideOfMDM:
+		return "AllowManualWiFiConfigurationNoWiFiConnectionOutsideOfMDM"
+	case AllowManualWiFiConfigurationAddingNewNetworkSSIDsBeyondThe:
+		return "AllowManualWiFiConfigurationAddingNewNetworkSSIDsBeyondThe"
+	default:
+		return fmt.Sprintf("AllowManualWiFiConfigurationValue(%d)", int64(e))
+	}
+}
+
+// AllowWFAQosManagementDSCPToUPMappingValue — allowed values for the AllowWFAQosManagementDSCPToUPMapping node.
+type AllowWFAQosManagementDSCPToUPMappingValue int64
+
 const (
 	// DSCP to UP Mapping will be disabled.
-	AllowWFAQosManagementDSCPToUPMappingDSCPToUPMappingWillBe int64 = 0
+	AllowWFAQosManagementDSCPToUPMappingDSCPToUPMappingWillBe AllowWFAQosManagementDSCPToUPMappingValue = 0
 	// DSCP to UP Mapping will be enabled.
-	AllowWFAQosManagementDSCPToUPMappingDSCPToUPMappingWillBe2 int64 = 1
+	AllowWFAQosManagementDSCPToUPMappingDSCPToUPMappingWillBe2 AllowWFAQosManagementDSCPToUPMappingValue = 1
 	// DSCP to UP Mapping will be enabled only if it is enabled in the network profile.
-	AllowWFAQosManagementDSCPToUPMappingDSCPToUPMappingWillBe3 int64 = 2
+	AllowWFAQosManagementDSCPToUPMappingDSCPToUPMappingWillBe3 AllowWFAQosManagementDSCPToUPMappingValue = 2
 )
 
-// AllowWFAQosManagementMSCS allowed values.
+// String returns the AllowWFAQosManagementDSCPToUPMappingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowWFAQosManagementDSCPToUPMappingValue) String() string {
+	switch e {
+	case AllowWFAQosManagementDSCPToUPMappingDSCPToUPMappingWillBe:
+		return "AllowWFAQosManagementDSCPToUPMappingDSCPToUPMappingWillBe"
+	case AllowWFAQosManagementDSCPToUPMappingDSCPToUPMappingWillBe2:
+		return "AllowWFAQosManagementDSCPToUPMappingDSCPToUPMappingWillBe2"
+	case AllowWFAQosManagementDSCPToUPMappingDSCPToUPMappingWillBe3:
+		return "AllowWFAQosManagementDSCPToUPMappingDSCPToUPMappingWillBe3"
+	default:
+		return fmt.Sprintf("AllowWFAQosManagementDSCPToUPMappingValue(%d)", int64(e))
+	}
+}
+
+// AllowWFAQosManagementMSCSValue — allowed values for the AllowWFAQosManagementMSCS node.
+type AllowWFAQosManagementMSCSValue int64
+
 const (
 	// The device will not automatically request to enable MSCS when connecting to a MSCS capable
 	// network.
-	AllowWFAQosManagementMSCSTheDeviceWillNotAutomaticallyRequest int64 = 0
+	AllowWFAQosManagementMSCSTheDeviceWillNotAutomaticallyRequest AllowWFAQosManagementMSCSValue = 0
 	// The device will automatically request to enable MSCS when connecting to a MSCS capable network.
-	AllowWFAQosManagementMSCSTheDeviceWillAutomaticallyRequestTo int64 = 1
+	AllowWFAQosManagementMSCSTheDeviceWillAutomaticallyRequestTo AllowWFAQosManagementMSCSValue = 1
 )
 
-// AllowWiFi allowed values.
+// String returns the AllowWFAQosManagementMSCSValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowWFAQosManagementMSCSValue) String() string {
+	switch e {
+	case AllowWFAQosManagementMSCSTheDeviceWillNotAutomaticallyRequest:
+		return "AllowWFAQosManagementMSCSTheDeviceWillNotAutomaticallyRequest"
+	case AllowWFAQosManagementMSCSTheDeviceWillAutomaticallyRequestTo:
+		return "AllowWFAQosManagementMSCSTheDeviceWillAutomaticallyRequestTo"
+	default:
+		return fmt.Sprintf("AllowWFAQosManagementMSCSValue(%d)", int64(e))
+	}
+}
+
+// AllowWiFiValue — allowed values for the AllowWiFi node.
+type AllowWiFiValue int64
+
 const (
 	// Not allowed.
-	AllowWiFiNotAllowed int64 = 0
+	AllowWiFiNotAllowed AllowWiFiValue = 0
 	// Allowed.
-	AllowWiFiAllowed int64 = 1
+	AllowWiFiAllowed AllowWiFiValue = 1
 )
 
-// AllowWiFiDirect allowed values.
+// String returns the AllowWiFiValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowWiFiValue) String() string {
+	switch e {
+	case AllowWiFiNotAllowed:
+		return "AllowWiFiNotAllowed"
+	case AllowWiFiAllowed:
+		return "AllowWiFiAllowed"
+	default:
+		return fmt.Sprintf("AllowWiFiValue(%d)", int64(e))
+	}
+}
+
+// AllowWiFiDirectValue — allowed values for the AllowWiFiDirect node.
+type AllowWiFiDirectValue int64
+
 const (
 	// Not allowed.
-	AllowWiFiDirectNotAllowed int64 = 0
+	AllowWiFiDirectNotAllowed AllowWiFiDirectValue = 0
 	// Allowed.
-	AllowWiFiDirectAllowed int64 = 1
+	AllowWiFiDirectAllowed AllowWiFiDirectValue = 1
 )
+
+// String returns the AllowWiFiDirectValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowWiFiDirectValue) String() string {
+	switch e {
+	case AllowWiFiDirectNotAllowed:
+		return "AllowWiFiDirectNotAllowed"
+	case AllowWiFiDirectAllowed:
+		return "AllowWiFiDirectAllowed"
+	default:
+		return fmt.Sprintf("AllowWiFiDirectValue(%d)", int64(e))
+	}
+}

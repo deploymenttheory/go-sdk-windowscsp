@@ -14,12 +14,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Handwriting) GetPanelDefaultModeDocked(ctx context.Context) (int64, error) {
+func (s *Handwriting) GetPanelDefaultModeDocked(ctx context.Context) (PanelDefaultModeDockedValue, error) {
 	v, err := s.c.Get(ctx, URIPanelDefaultModeDocked)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PanelDefaultModeDockedValue(n), err
 }
 
 // CreatePanelDefaultModeDocked creates ./Device/Vendor/MSFT/Policy/Config/Handwriting/PanelDefaultModeDocked.
@@ -28,8 +29,8 @@ func (s *Handwriting) GetPanelDefaultModeDocked(ctx context.Context) (int64, err
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Handwriting) CreatePanelDefaultModeDocked(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPanelDefaultModeDocked, client.Int(value))
+func (s *Handwriting) CreatePanelDefaultModeDocked(ctx context.Context, value PanelDefaultModeDockedValue) error {
+	return s.c.Add(ctx, URIPanelDefaultModeDocked, client.Int(int64(value)))
 }
 
 // UpdatePanelDefaultModeDocked updates ./Device/Vendor/MSFT/Policy/Config/Handwriting/PanelDefaultModeDocked.
@@ -38,8 +39,8 @@ func (s *Handwriting) CreatePanelDefaultModeDocked(ctx context.Context, value in
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Handwriting) UpdatePanelDefaultModeDocked(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPanelDefaultModeDocked, client.Int(value))
+func (s *Handwriting) UpdatePanelDefaultModeDocked(ctx context.Context, value PanelDefaultModeDockedValue) error {
+	return s.c.Replace(ctx, URIPanelDefaultModeDocked, client.Int(int64(value)))
 }
 
 // DeletePanelDefaultModeDocked deletes ./Device/Vendor/MSFT/Policy/Config/Handwriting/PanelDefaultModeDocked.

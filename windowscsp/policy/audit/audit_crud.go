@@ -17,12 +17,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetAccountLogonLogoffAuditAccountLockout(ctx context.Context) (int64, error) {
+func (s *Audit) GetAccountLogonLogoffAuditAccountLockout(ctx context.Context) (AccountLogonLogoffAuditAccountLockoutValue, error) {
 	v, err := s.c.Get(ctx, URIAccountLogonLogoffAuditAccountLockout)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AccountLogonLogoffAuditAccountLockoutValue(n), err
 }
 
 // CreateAccountLogonLogoffAuditAccountLockout creates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogonLogoff_AuditAccountLockout.
@@ -34,8 +35,8 @@ func (s *Audit) GetAccountLogonLogoffAuditAccountLockout(ctx context.Context) (i
 //
 // Default: 1.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateAccountLogonLogoffAuditAccountLockout(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAccountLogonLogoffAuditAccountLockout, client.Int(value))
+func (s *Audit) CreateAccountLogonLogoffAuditAccountLockout(ctx context.Context, value AccountLogonLogoffAuditAccountLockoutValue) error {
+	return s.c.Add(ctx, URIAccountLogonLogoffAuditAccountLockout, client.Int(int64(value)))
 }
 
 // UpdateAccountLogonLogoffAuditAccountLockout updates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogonLogoff_AuditAccountLockout.
@@ -47,8 +48,8 @@ func (s *Audit) CreateAccountLogonLogoffAuditAccountLockout(ctx context.Context,
 //
 // Default: 1.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateAccountLogonLogoffAuditAccountLockout(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAccountLogonLogoffAuditAccountLockout, client.Int(value))
+func (s *Audit) UpdateAccountLogonLogoffAuditAccountLockout(ctx context.Context, value AccountLogonLogoffAuditAccountLockoutValue) error {
+	return s.c.Replace(ctx, URIAccountLogonLogoffAuditAccountLockout, client.Int(int64(value)))
 }
 
 // DeleteAccountLogonLogoffAuditAccountLockout deletes ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogonLogoff_AuditAccountLockout.
@@ -77,12 +78,13 @@ func (s *Audit) DeleteAccountLogonLogoffAuditAccountLockout(ctx context.Context)
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetAccountLogonLogoffAuditGroupMembership(ctx context.Context) (int64, error) {
+func (s *Audit) GetAccountLogonLogoffAuditGroupMembership(ctx context.Context) (AccountLogonLogoffAuditGroupMembershipValue, error) {
 	v, err := s.c.Get(ctx, URIAccountLogonLogoffAuditGroupMembership)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AccountLogonLogoffAuditGroupMembershipValue(n), err
 }
 
 // CreateAccountLogonLogoffAuditGroupMembership creates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogonLogoff_AuditGroupMembership.
@@ -98,8 +100,8 @@ func (s *Audit) GetAccountLogonLogoffAuditGroupMembership(ctx context.Context) (
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateAccountLogonLogoffAuditGroupMembership(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAccountLogonLogoffAuditGroupMembership, client.Int(value))
+func (s *Audit) CreateAccountLogonLogoffAuditGroupMembership(ctx context.Context, value AccountLogonLogoffAuditGroupMembershipValue) error {
+	return s.c.Add(ctx, URIAccountLogonLogoffAuditGroupMembership, client.Int(int64(value)))
 }
 
 // UpdateAccountLogonLogoffAuditGroupMembership updates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogonLogoff_AuditGroupMembership.
@@ -115,8 +117,8 @@ func (s *Audit) CreateAccountLogonLogoffAuditGroupMembership(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateAccountLogonLogoffAuditGroupMembership(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAccountLogonLogoffAuditGroupMembership, client.Int(value))
+func (s *Audit) UpdateAccountLogonLogoffAuditGroupMembership(ctx context.Context, value AccountLogonLogoffAuditGroupMembershipValue) error {
+	return s.c.Replace(ctx, URIAccountLogonLogoffAuditGroupMembership, client.Int(int64(value)))
 }
 
 // DeleteAccountLogonLogoffAuditGroupMembership deletes ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogonLogoff_AuditGroupMembership.
@@ -146,12 +148,13 @@ func (s *Audit) DeleteAccountLogonLogoffAuditGroupMembership(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetAccountLogonLogoffAuditIPsecExtendedMode(ctx context.Context) (int64, error) {
+func (s *Audit) GetAccountLogonLogoffAuditIPsecExtendedMode(ctx context.Context) (AccountLogonLogoffAuditIPsecExtendedModeValue, error) {
 	v, err := s.c.Get(ctx, URIAccountLogonLogoffAuditIPsecExtendedMode)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AccountLogonLogoffAuditIPsecExtendedModeValue(n), err
 }
 
 // CreateAccountLogonLogoffAuditIPsecExtendedMode creates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogonLogoff_AuditIPsecExtendedMode.
@@ -164,8 +167,8 @@ func (s *Audit) GetAccountLogonLogoffAuditIPsecExtendedMode(ctx context.Context)
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateAccountLogonLogoffAuditIPsecExtendedMode(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAccountLogonLogoffAuditIPsecExtendedMode, client.Int(value))
+func (s *Audit) CreateAccountLogonLogoffAuditIPsecExtendedMode(ctx context.Context, value AccountLogonLogoffAuditIPsecExtendedModeValue) error {
+	return s.c.Add(ctx, URIAccountLogonLogoffAuditIPsecExtendedMode, client.Int(int64(value)))
 }
 
 // UpdateAccountLogonLogoffAuditIPsecExtendedMode updates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogonLogoff_AuditIPsecExtendedMode.
@@ -178,8 +181,8 @@ func (s *Audit) CreateAccountLogonLogoffAuditIPsecExtendedMode(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateAccountLogonLogoffAuditIPsecExtendedMode(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAccountLogonLogoffAuditIPsecExtendedMode, client.Int(value))
+func (s *Audit) UpdateAccountLogonLogoffAuditIPsecExtendedMode(ctx context.Context, value AccountLogonLogoffAuditIPsecExtendedModeValue) error {
+	return s.c.Replace(ctx, URIAccountLogonLogoffAuditIPsecExtendedMode, client.Int(int64(value)))
 }
 
 // DeleteAccountLogonLogoffAuditIPsecExtendedMode deletes ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogonLogoff_AuditIPsecExtendedMode.
@@ -206,12 +209,13 @@ func (s *Audit) DeleteAccountLogonLogoffAuditIPsecExtendedMode(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetAccountLogonLogoffAuditIPsecMainMode(ctx context.Context) (int64, error) {
+func (s *Audit) GetAccountLogonLogoffAuditIPsecMainMode(ctx context.Context) (AccountLogonLogoffAuditIPsecMainModeValue, error) {
 	v, err := s.c.Get(ctx, URIAccountLogonLogoffAuditIPsecMainMode)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AccountLogonLogoffAuditIPsecMainModeValue(n), err
 }
 
 // CreateAccountLogonLogoffAuditIPsecMainMode creates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogonLogoff_AuditIPsecMainMode.
@@ -224,8 +228,8 @@ func (s *Audit) GetAccountLogonLogoffAuditIPsecMainMode(ctx context.Context) (in
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateAccountLogonLogoffAuditIPsecMainMode(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAccountLogonLogoffAuditIPsecMainMode, client.Int(value))
+func (s *Audit) CreateAccountLogonLogoffAuditIPsecMainMode(ctx context.Context, value AccountLogonLogoffAuditIPsecMainModeValue) error {
+	return s.c.Add(ctx, URIAccountLogonLogoffAuditIPsecMainMode, client.Int(int64(value)))
 }
 
 // UpdateAccountLogonLogoffAuditIPsecMainMode updates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogonLogoff_AuditIPsecMainMode.
@@ -238,8 +242,8 @@ func (s *Audit) CreateAccountLogonLogoffAuditIPsecMainMode(ctx context.Context, 
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateAccountLogonLogoffAuditIPsecMainMode(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAccountLogonLogoffAuditIPsecMainMode, client.Int(value))
+func (s *Audit) UpdateAccountLogonLogoffAuditIPsecMainMode(ctx context.Context, value AccountLogonLogoffAuditIPsecMainModeValue) error {
+	return s.c.Replace(ctx, URIAccountLogonLogoffAuditIPsecMainMode, client.Int(int64(value)))
 }
 
 // DeleteAccountLogonLogoffAuditIPsecMainMode deletes ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogonLogoff_AuditIPsecMainMode.
@@ -266,12 +270,13 @@ func (s *Audit) DeleteAccountLogonLogoffAuditIPsecMainMode(ctx context.Context) 
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetAccountLogonLogoffAuditIPsecQuickMode(ctx context.Context) (int64, error) {
+func (s *Audit) GetAccountLogonLogoffAuditIPsecQuickMode(ctx context.Context) (AccountLogonLogoffAuditIPsecQuickModeValue, error) {
 	v, err := s.c.Get(ctx, URIAccountLogonLogoffAuditIPsecQuickMode)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AccountLogonLogoffAuditIPsecQuickModeValue(n), err
 }
 
 // CreateAccountLogonLogoffAuditIPsecQuickMode creates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogonLogoff_AuditIPsecQuickMode.
@@ -284,8 +289,8 @@ func (s *Audit) GetAccountLogonLogoffAuditIPsecQuickMode(ctx context.Context) (i
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateAccountLogonLogoffAuditIPsecQuickMode(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAccountLogonLogoffAuditIPsecQuickMode, client.Int(value))
+func (s *Audit) CreateAccountLogonLogoffAuditIPsecQuickMode(ctx context.Context, value AccountLogonLogoffAuditIPsecQuickModeValue) error {
+	return s.c.Add(ctx, URIAccountLogonLogoffAuditIPsecQuickMode, client.Int(int64(value)))
 }
 
 // UpdateAccountLogonLogoffAuditIPsecQuickMode updates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogonLogoff_AuditIPsecQuickMode.
@@ -298,8 +303,8 @@ func (s *Audit) CreateAccountLogonLogoffAuditIPsecQuickMode(ctx context.Context,
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateAccountLogonLogoffAuditIPsecQuickMode(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAccountLogonLogoffAuditIPsecQuickMode, client.Int(value))
+func (s *Audit) UpdateAccountLogonLogoffAuditIPsecQuickMode(ctx context.Context, value AccountLogonLogoffAuditIPsecQuickModeValue) error {
+	return s.c.Replace(ctx, URIAccountLogonLogoffAuditIPsecQuickMode, client.Int(int64(value)))
 }
 
 // DeleteAccountLogonLogoffAuditIPsecQuickMode deletes ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogonLogoff_AuditIPsecQuickMode.
@@ -327,12 +332,13 @@ func (s *Audit) DeleteAccountLogonLogoffAuditIPsecQuickMode(ctx context.Context)
 //
 // Default: 1.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetAccountLogonLogoffAuditLogoff(ctx context.Context) (int64, error) {
+func (s *Audit) GetAccountLogonLogoffAuditLogoff(ctx context.Context) (AccountLogonLogoffAuditLogoffValue, error) {
 	v, err := s.c.Get(ctx, URIAccountLogonLogoffAuditLogoff)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AccountLogonLogoffAuditLogoffValue(n), err
 }
 
 // CreateAccountLogonLogoffAuditLogoff creates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogonLogoff_AuditLogoff.
@@ -346,8 +352,8 @@ func (s *Audit) GetAccountLogonLogoffAuditLogoff(ctx context.Context) (int64, er
 //
 // Default: 1.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateAccountLogonLogoffAuditLogoff(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAccountLogonLogoffAuditLogoff, client.Int(value))
+func (s *Audit) CreateAccountLogonLogoffAuditLogoff(ctx context.Context, value AccountLogonLogoffAuditLogoffValue) error {
+	return s.c.Add(ctx, URIAccountLogonLogoffAuditLogoff, client.Int(int64(value)))
 }
 
 // UpdateAccountLogonLogoffAuditLogoff updates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogonLogoff_AuditLogoff.
@@ -361,8 +367,8 @@ func (s *Audit) CreateAccountLogonLogoffAuditLogoff(ctx context.Context, value i
 //
 // Default: 1.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateAccountLogonLogoffAuditLogoff(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAccountLogonLogoffAuditLogoff, client.Int(value))
+func (s *Audit) UpdateAccountLogonLogoffAuditLogoff(ctx context.Context, value AccountLogonLogoffAuditLogoffValue) error {
+	return s.c.Replace(ctx, URIAccountLogonLogoffAuditLogoff, client.Int(int64(value)))
 }
 
 // DeleteAccountLogonLogoffAuditLogoff deletes ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogonLogoff_AuditLogoff.
@@ -394,12 +400,13 @@ func (s *Audit) DeleteAccountLogonLogoffAuditLogoff(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetAccountLogonLogoffAuditLogon(ctx context.Context) (int64, error) {
+func (s *Audit) GetAccountLogonLogoffAuditLogon(ctx context.Context) (AccountLogonLogoffAuditLogonValue, error) {
 	v, err := s.c.Get(ctx, URIAccountLogonLogoffAuditLogon)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AccountLogonLogoffAuditLogonValue(n), err
 }
 
 // CreateAccountLogonLogoffAuditLogon creates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogonLogoff_AuditLogon.
@@ -416,8 +423,8 @@ func (s *Audit) GetAccountLogonLogoffAuditLogon(ctx context.Context) (int64, err
 //
 // Default: 1.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateAccountLogonLogoffAuditLogon(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAccountLogonLogoffAuditLogon, client.Int(value))
+func (s *Audit) CreateAccountLogonLogoffAuditLogon(ctx context.Context, value AccountLogonLogoffAuditLogonValue) error {
+	return s.c.Add(ctx, URIAccountLogonLogoffAuditLogon, client.Int(int64(value)))
 }
 
 // UpdateAccountLogonLogoffAuditLogon updates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogonLogoff_AuditLogon.
@@ -434,8 +441,8 @@ func (s *Audit) CreateAccountLogonLogoffAuditLogon(ctx context.Context, value in
 //
 // Default: 1.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateAccountLogonLogoffAuditLogon(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAccountLogonLogoffAuditLogon, client.Int(value))
+func (s *Audit) UpdateAccountLogonLogoffAuditLogon(ctx context.Context, value AccountLogonLogoffAuditLogonValue) error {
+	return s.c.Replace(ctx, URIAccountLogonLogoffAuditLogon, client.Int(int64(value)))
 }
 
 // DeleteAccountLogonLogoffAuditLogon deletes ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogonLogoff_AuditLogon.
@@ -466,12 +473,13 @@ func (s *Audit) DeleteAccountLogonLogoffAuditLogon(ctx context.Context) error {
 //
 // Default: 3.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetAccountLogonLogoffAuditNetworkPolicyServer(ctx context.Context) (int64, error) {
+func (s *Audit) GetAccountLogonLogoffAuditNetworkPolicyServer(ctx context.Context) (AccountLogonLogoffAuditNetworkPolicyServerValue, error) {
 	v, err := s.c.Get(ctx, URIAccountLogonLogoffAuditNetworkPolicyServer)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AccountLogonLogoffAuditNetworkPolicyServerValue(n), err
 }
 
 // CreateAccountLogonLogoffAuditNetworkPolicyServer creates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogonLogoff_AuditNetworkPolicyServer.
@@ -484,8 +492,8 @@ func (s *Audit) GetAccountLogonLogoffAuditNetworkPolicyServer(ctx context.Contex
 //
 // Default: 3.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateAccountLogonLogoffAuditNetworkPolicyServer(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAccountLogonLogoffAuditNetworkPolicyServer, client.Int(value))
+func (s *Audit) CreateAccountLogonLogoffAuditNetworkPolicyServer(ctx context.Context, value AccountLogonLogoffAuditNetworkPolicyServerValue) error {
+	return s.c.Add(ctx, URIAccountLogonLogoffAuditNetworkPolicyServer, client.Int(int64(value)))
 }
 
 // UpdateAccountLogonLogoffAuditNetworkPolicyServer updates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogonLogoff_AuditNetworkPolicyServer.
@@ -498,8 +506,8 @@ func (s *Audit) CreateAccountLogonLogoffAuditNetworkPolicyServer(ctx context.Con
 //
 // Default: 3.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateAccountLogonLogoffAuditNetworkPolicyServer(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAccountLogonLogoffAuditNetworkPolicyServer, client.Int(value))
+func (s *Audit) UpdateAccountLogonLogoffAuditNetworkPolicyServer(ctx context.Context, value AccountLogonLogoffAuditNetworkPolicyServerValue) error {
+	return s.c.Replace(ctx, URIAccountLogonLogoffAuditNetworkPolicyServer, client.Int(int64(value)))
 }
 
 // DeleteAccountLogonLogoffAuditNetworkPolicyServer deletes ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogonLogoff_AuditNetworkPolicyServer.
@@ -527,12 +535,13 @@ func (s *Audit) DeleteAccountLogonLogoffAuditNetworkPolicyServer(ctx context.Con
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetAccountLogonLogoffAuditOtherLogonLogoffEvents(ctx context.Context) (int64, error) {
+func (s *Audit) GetAccountLogonLogoffAuditOtherLogonLogoffEvents(ctx context.Context) (AccountLogonLogoffAuditOtherLogonLogoffEventsValue, error) {
 	v, err := s.c.Get(ctx, URIAccountLogonLogoffAuditOtherLogonLogoffEvents)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AccountLogonLogoffAuditOtherLogonLogoffEventsValue(n), err
 }
 
 // CreateAccountLogonLogoffAuditOtherLogonLogoffEvents creates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogonLogoff_AuditOtherLogonLogoffEvents.
@@ -546,8 +555,8 @@ func (s *Audit) GetAccountLogonLogoffAuditOtherLogonLogoffEvents(ctx context.Con
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateAccountLogonLogoffAuditOtherLogonLogoffEvents(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAccountLogonLogoffAuditOtherLogonLogoffEvents, client.Int(value))
+func (s *Audit) CreateAccountLogonLogoffAuditOtherLogonLogoffEvents(ctx context.Context, value AccountLogonLogoffAuditOtherLogonLogoffEventsValue) error {
+	return s.c.Add(ctx, URIAccountLogonLogoffAuditOtherLogonLogoffEvents, client.Int(int64(value)))
 }
 
 // UpdateAccountLogonLogoffAuditOtherLogonLogoffEvents updates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogonLogoff_AuditOtherLogonLogoffEvents.
@@ -561,8 +570,8 @@ func (s *Audit) CreateAccountLogonLogoffAuditOtherLogonLogoffEvents(ctx context.
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateAccountLogonLogoffAuditOtherLogonLogoffEvents(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAccountLogonLogoffAuditOtherLogonLogoffEvents, client.Int(value))
+func (s *Audit) UpdateAccountLogonLogoffAuditOtherLogonLogoffEvents(ctx context.Context, value AccountLogonLogoffAuditOtherLogonLogoffEventsValue) error {
+	return s.c.Replace(ctx, URIAccountLogonLogoffAuditOtherLogonLogoffEvents, client.Int(int64(value)))
 }
 
 // DeleteAccountLogonLogoffAuditOtherLogonLogoffEvents deletes ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogonLogoff_AuditOtherLogonLogoffEvents.
@@ -592,12 +601,13 @@ func (s *Audit) DeleteAccountLogonLogoffAuditOtherLogonLogoffEvents(ctx context.
 //
 // Default: 1.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetAccountLogonLogoffAuditSpecialLogon(ctx context.Context) (int64, error) {
+func (s *Audit) GetAccountLogonLogoffAuditSpecialLogon(ctx context.Context) (AccountLogonLogoffAuditSpecialLogonValue, error) {
 	v, err := s.c.Get(ctx, URIAccountLogonLogoffAuditSpecialLogon)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AccountLogonLogoffAuditSpecialLogonValue(n), err
 }
 
 // CreateAccountLogonLogoffAuditSpecialLogon creates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogonLogoff_AuditSpecialLogon.
@@ -612,8 +622,8 @@ func (s *Audit) GetAccountLogonLogoffAuditSpecialLogon(ctx context.Context) (int
 //
 // Default: 1.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateAccountLogonLogoffAuditSpecialLogon(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAccountLogonLogoffAuditSpecialLogon, client.Int(value))
+func (s *Audit) CreateAccountLogonLogoffAuditSpecialLogon(ctx context.Context, value AccountLogonLogoffAuditSpecialLogonValue) error {
+	return s.c.Add(ctx, URIAccountLogonLogoffAuditSpecialLogon, client.Int(int64(value)))
 }
 
 // UpdateAccountLogonLogoffAuditSpecialLogon updates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogonLogoff_AuditSpecialLogon.
@@ -628,8 +638,8 @@ func (s *Audit) CreateAccountLogonLogoffAuditSpecialLogon(ctx context.Context, v
 //
 // Default: 1.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateAccountLogonLogoffAuditSpecialLogon(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAccountLogonLogoffAuditSpecialLogon, client.Int(value))
+func (s *Audit) UpdateAccountLogonLogoffAuditSpecialLogon(ctx context.Context, value AccountLogonLogoffAuditSpecialLogonValue) error {
+	return s.c.Replace(ctx, URIAccountLogonLogoffAuditSpecialLogon, client.Int(int64(value)))
 }
 
 // DeleteAccountLogonLogoffAuditSpecialLogon deletes ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogonLogoff_AuditSpecialLogon.
@@ -665,12 +675,13 @@ func (s *Audit) DeleteAccountLogonLogoffAuditSpecialLogon(ctx context.Context) e
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetAccountLogonLogoffAuditUserDeviceClaims(ctx context.Context) (int64, error) {
+func (s *Audit) GetAccountLogonLogoffAuditUserDeviceClaims(ctx context.Context) (AccountLogonLogoffAuditUserDeviceClaimsValue, error) {
 	v, err := s.c.Get(ctx, URIAccountLogonLogoffAuditUserDeviceClaims)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AccountLogonLogoffAuditUserDeviceClaimsValue(n), err
 }
 
 // CreateAccountLogonLogoffAuditUserDeviceClaims creates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogonLogoff_AuditUserDeviceClaims.
@@ -690,8 +701,8 @@ func (s *Audit) GetAccountLogonLogoffAuditUserDeviceClaims(ctx context.Context) 
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateAccountLogonLogoffAuditUserDeviceClaims(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAccountLogonLogoffAuditUserDeviceClaims, client.Int(value))
+func (s *Audit) CreateAccountLogonLogoffAuditUserDeviceClaims(ctx context.Context, value AccountLogonLogoffAuditUserDeviceClaimsValue) error {
+	return s.c.Add(ctx, URIAccountLogonLogoffAuditUserDeviceClaims, client.Int(int64(value)))
 }
 
 // UpdateAccountLogonLogoffAuditUserDeviceClaims updates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogonLogoff_AuditUserDeviceClaims.
@@ -711,8 +722,8 @@ func (s *Audit) CreateAccountLogonLogoffAuditUserDeviceClaims(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateAccountLogonLogoffAuditUserDeviceClaims(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAccountLogonLogoffAuditUserDeviceClaims, client.Int(value))
+func (s *Audit) UpdateAccountLogonLogoffAuditUserDeviceClaims(ctx context.Context, value AccountLogonLogoffAuditUserDeviceClaimsValue) error {
+	return s.c.Replace(ctx, URIAccountLogonLogoffAuditUserDeviceClaims, client.Int(int64(value)))
 }
 
 // DeleteAccountLogonLogoffAuditUserDeviceClaims deletes ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogonLogoff_AuditUserDeviceClaims.
@@ -744,12 +755,13 @@ func (s *Audit) DeleteAccountLogonLogoffAuditUserDeviceClaims(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetAccountLogonAuditCredentialValidation(ctx context.Context) (int64, error) {
+func (s *Audit) GetAccountLogonAuditCredentialValidation(ctx context.Context) (AccountLogonAuditCredentialValidationValue, error) {
 	v, err := s.c.Get(ctx, URIAccountLogonAuditCredentialValidation)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AccountLogonAuditCredentialValidationValue(n), err
 }
 
 // CreateAccountLogonAuditCredentialValidation creates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogon_AuditCredentialValidation.
@@ -760,8 +772,8 @@ func (s *Audit) GetAccountLogonAuditCredentialValidation(ctx context.Context) (i
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateAccountLogonAuditCredentialValidation(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAccountLogonAuditCredentialValidation, client.Int(value))
+func (s *Audit) CreateAccountLogonAuditCredentialValidation(ctx context.Context, value AccountLogonAuditCredentialValidationValue) error {
+	return s.c.Add(ctx, URIAccountLogonAuditCredentialValidation, client.Int(int64(value)))
 }
 
 // UpdateAccountLogonAuditCredentialValidation updates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogon_AuditCredentialValidation.
@@ -772,8 +784,8 @@ func (s *Audit) CreateAccountLogonAuditCredentialValidation(ctx context.Context,
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateAccountLogonAuditCredentialValidation(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAccountLogonAuditCredentialValidation, client.Int(value))
+func (s *Audit) UpdateAccountLogonAuditCredentialValidation(ctx context.Context, value AccountLogonAuditCredentialValidationValue) error {
+	return s.c.Replace(ctx, URIAccountLogonAuditCredentialValidation, client.Int(int64(value)))
 }
 
 // DeleteAccountLogonAuditCredentialValidation deletes ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogon_AuditCredentialValidation.
@@ -797,12 +809,13 @@ func (s *Audit) DeleteAccountLogonAuditCredentialValidation(ctx context.Context)
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetAccountLogonAuditKerberosAuthenticationService(ctx context.Context) (int64, error) {
+func (s *Audit) GetAccountLogonAuditKerberosAuthenticationService(ctx context.Context) (AccountLogonAuditKerberosAuthenticationServiceValue, error) {
 	v, err := s.c.Get(ctx, URIAccountLogonAuditKerberosAuthenticationService)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AccountLogonAuditKerberosAuthenticationServiceValue(n), err
 }
 
 // CreateAccountLogonAuditKerberosAuthenticationService creates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogon_AuditKerberosAuthenticationService.
@@ -814,8 +827,8 @@ func (s *Audit) GetAccountLogonAuditKerberosAuthenticationService(ctx context.Co
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateAccountLogonAuditKerberosAuthenticationService(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAccountLogonAuditKerberosAuthenticationService, client.Int(value))
+func (s *Audit) CreateAccountLogonAuditKerberosAuthenticationService(ctx context.Context, value AccountLogonAuditKerberosAuthenticationServiceValue) error {
+	return s.c.Add(ctx, URIAccountLogonAuditKerberosAuthenticationService, client.Int(int64(value)))
 }
 
 // UpdateAccountLogonAuditKerberosAuthenticationService updates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogon_AuditKerberosAuthenticationService.
@@ -827,8 +840,8 @@ func (s *Audit) CreateAccountLogonAuditKerberosAuthenticationService(ctx context
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateAccountLogonAuditKerberosAuthenticationService(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAccountLogonAuditKerberosAuthenticationService, client.Int(value))
+func (s *Audit) UpdateAccountLogonAuditKerberosAuthenticationService(ctx context.Context, value AccountLogonAuditKerberosAuthenticationServiceValue) error {
+	return s.c.Replace(ctx, URIAccountLogonAuditKerberosAuthenticationService, client.Int(int64(value)))
 }
 
 // DeleteAccountLogonAuditKerberosAuthenticationService deletes ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogon_AuditKerberosAuthenticationService.
@@ -854,12 +867,13 @@ func (s *Audit) DeleteAccountLogonAuditKerberosAuthenticationService(ctx context
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetAccountLogonAuditKerberosServiceTicketOperations(ctx context.Context) (int64, error) {
+func (s *Audit) GetAccountLogonAuditKerberosServiceTicketOperations(ctx context.Context) (AccountLogonAuditKerberosServiceTicketOperationsValue, error) {
 	v, err := s.c.Get(ctx, URIAccountLogonAuditKerberosServiceTicketOperations)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AccountLogonAuditKerberosServiceTicketOperationsValue(n), err
 }
 
 // CreateAccountLogonAuditKerberosServiceTicketOperations creates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogon_AuditKerberosServiceTicketOperations.
@@ -872,8 +886,8 @@ func (s *Audit) GetAccountLogonAuditKerberosServiceTicketOperations(ctx context.
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateAccountLogonAuditKerberosServiceTicketOperations(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAccountLogonAuditKerberosServiceTicketOperations, client.Int(value))
+func (s *Audit) CreateAccountLogonAuditKerberosServiceTicketOperations(ctx context.Context, value AccountLogonAuditKerberosServiceTicketOperationsValue) error {
+	return s.c.Add(ctx, URIAccountLogonAuditKerberosServiceTicketOperations, client.Int(int64(value)))
 }
 
 // UpdateAccountLogonAuditKerberosServiceTicketOperations updates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogon_AuditKerberosServiceTicketOperations.
@@ -886,8 +900,8 @@ func (s *Audit) CreateAccountLogonAuditKerberosServiceTicketOperations(ctx conte
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateAccountLogonAuditKerberosServiceTicketOperations(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAccountLogonAuditKerberosServiceTicketOperations, client.Int(value))
+func (s *Audit) UpdateAccountLogonAuditKerberosServiceTicketOperations(ctx context.Context, value AccountLogonAuditKerberosServiceTicketOperationsValue) error {
+	return s.c.Replace(ctx, URIAccountLogonAuditKerberosServiceTicketOperations, client.Int(int64(value)))
 }
 
 // DeleteAccountLogonAuditKerberosServiceTicketOperations deletes ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogon_AuditKerberosServiceTicketOperations.
@@ -911,12 +925,13 @@ func (s *Audit) DeleteAccountLogonAuditKerberosServiceTicketOperations(ctx conte
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetAccountLogonAuditOtherAccountLogonEvents(ctx context.Context) (int64, error) {
+func (s *Audit) GetAccountLogonAuditOtherAccountLogonEvents(ctx context.Context) (AccountLogonAuditOtherAccountLogonEventsValue, error) {
 	v, err := s.c.Get(ctx, URIAccountLogonAuditOtherAccountLogonEvents)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AccountLogonAuditOtherAccountLogonEventsValue(n), err
 }
 
 // CreateAccountLogonAuditOtherAccountLogonEvents creates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogon_AuditOtherAccountLogonEvents.
@@ -926,8 +941,8 @@ func (s *Audit) GetAccountLogonAuditOtherAccountLogonEvents(ctx context.Context)
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateAccountLogonAuditOtherAccountLogonEvents(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAccountLogonAuditOtherAccountLogonEvents, client.Int(value))
+func (s *Audit) CreateAccountLogonAuditOtherAccountLogonEvents(ctx context.Context, value AccountLogonAuditOtherAccountLogonEventsValue) error {
+	return s.c.Add(ctx, URIAccountLogonAuditOtherAccountLogonEvents, client.Int(int64(value)))
 }
 
 // UpdateAccountLogonAuditOtherAccountLogonEvents updates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogon_AuditOtherAccountLogonEvents.
@@ -937,8 +952,8 @@ func (s *Audit) CreateAccountLogonAuditOtherAccountLogonEvents(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateAccountLogonAuditOtherAccountLogonEvents(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAccountLogonAuditOtherAccountLogonEvents, client.Int(value))
+func (s *Audit) UpdateAccountLogonAuditOtherAccountLogonEvents(ctx context.Context, value AccountLogonAuditOtherAccountLogonEventsValue) error {
+	return s.c.Replace(ctx, URIAccountLogonAuditOtherAccountLogonEvents, client.Int(int64(value)))
 }
 
 // DeleteAccountLogonAuditOtherAccountLogonEvents deletes ./Device/Vendor/MSFT/Policy/Config/Audit/AccountLogon_AuditOtherAccountLogonEvents.
@@ -962,12 +977,13 @@ func (s *Audit) DeleteAccountLogonAuditOtherAccountLogonEvents(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetAccountManagementAuditApplicationGroupManagement(ctx context.Context) (int64, error) {
+func (s *Audit) GetAccountManagementAuditApplicationGroupManagement(ctx context.Context) (AccountManagementAuditApplicationGroupManagementValue, error) {
 	v, err := s.c.Get(ctx, URIAccountManagementAuditApplicationGroupManagement)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AccountManagementAuditApplicationGroupManagementValue(n), err
 }
 
 // CreateAccountManagementAuditApplicationGroupManagement creates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountManagement_AuditApplicationGroupManagement.
@@ -980,8 +996,8 @@ func (s *Audit) GetAccountManagementAuditApplicationGroupManagement(ctx context.
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateAccountManagementAuditApplicationGroupManagement(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAccountManagementAuditApplicationGroupManagement, client.Int(value))
+func (s *Audit) CreateAccountManagementAuditApplicationGroupManagement(ctx context.Context, value AccountManagementAuditApplicationGroupManagementValue) error {
+	return s.c.Add(ctx, URIAccountManagementAuditApplicationGroupManagement, client.Int(int64(value)))
 }
 
 // UpdateAccountManagementAuditApplicationGroupManagement updates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountManagement_AuditApplicationGroupManagement.
@@ -994,8 +1010,8 @@ func (s *Audit) CreateAccountManagementAuditApplicationGroupManagement(ctx conte
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateAccountManagementAuditApplicationGroupManagement(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAccountManagementAuditApplicationGroupManagement, client.Int(value))
+func (s *Audit) UpdateAccountManagementAuditApplicationGroupManagement(ctx context.Context, value AccountManagementAuditApplicationGroupManagementValue) error {
+	return s.c.Replace(ctx, URIAccountManagementAuditApplicationGroupManagement, client.Int(int64(value)))
 }
 
 // DeleteAccountManagementAuditApplicationGroupManagement deletes ./Device/Vendor/MSFT/Policy/Config/Audit/AccountManagement_AuditApplicationGroupManagement.
@@ -1021,12 +1037,13 @@ func (s *Audit) DeleteAccountManagementAuditApplicationGroupManagement(ctx conte
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetAccountManagementAuditComputerAccountManagement(ctx context.Context) (int64, error) {
+func (s *Audit) GetAccountManagementAuditComputerAccountManagement(ctx context.Context) (AccountManagementAuditComputerAccountManagementValue, error) {
 	v, err := s.c.Get(ctx, URIAccountManagementAuditComputerAccountManagement)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AccountManagementAuditComputerAccountManagementValue(n), err
 }
 
 // CreateAccountManagementAuditComputerAccountManagement creates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountManagement_AuditComputerAccountManagement.
@@ -1038,8 +1055,8 @@ func (s *Audit) GetAccountManagementAuditComputerAccountManagement(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateAccountManagementAuditComputerAccountManagement(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAccountManagementAuditComputerAccountManagement, client.Int(value))
+func (s *Audit) CreateAccountManagementAuditComputerAccountManagement(ctx context.Context, value AccountManagementAuditComputerAccountManagementValue) error {
+	return s.c.Add(ctx, URIAccountManagementAuditComputerAccountManagement, client.Int(int64(value)))
 }
 
 // UpdateAccountManagementAuditComputerAccountManagement updates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountManagement_AuditComputerAccountManagement.
@@ -1051,8 +1068,8 @@ func (s *Audit) CreateAccountManagementAuditComputerAccountManagement(ctx contex
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateAccountManagementAuditComputerAccountManagement(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAccountManagementAuditComputerAccountManagement, client.Int(value))
+func (s *Audit) UpdateAccountManagementAuditComputerAccountManagement(ctx context.Context, value AccountManagementAuditComputerAccountManagementValue) error {
+	return s.c.Replace(ctx, URIAccountManagementAuditComputerAccountManagement, client.Int(int64(value)))
 }
 
 // DeleteAccountManagementAuditComputerAccountManagement deletes ./Device/Vendor/MSFT/Policy/Config/Audit/AccountManagement_AuditComputerAccountManagement.
@@ -1079,12 +1096,13 @@ func (s *Audit) DeleteAccountManagementAuditComputerAccountManagement(ctx contex
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetAccountManagementAuditDistributionGroupManagement(ctx context.Context) (int64, error) {
+func (s *Audit) GetAccountManagementAuditDistributionGroupManagement(ctx context.Context) (AccountManagementAuditDistributionGroupManagementValue, error) {
 	v, err := s.c.Get(ctx, URIAccountManagementAuditDistributionGroupManagement)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AccountManagementAuditDistributionGroupManagementValue(n), err
 }
 
 // CreateAccountManagementAuditDistributionGroupManagement creates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountManagement_AuditDistributionGroupManagement.
@@ -1098,8 +1116,8 @@ func (s *Audit) GetAccountManagementAuditDistributionGroupManagement(ctx context
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateAccountManagementAuditDistributionGroupManagement(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAccountManagementAuditDistributionGroupManagement, client.Int(value))
+func (s *Audit) CreateAccountManagementAuditDistributionGroupManagement(ctx context.Context, value AccountManagementAuditDistributionGroupManagementValue) error {
+	return s.c.Add(ctx, URIAccountManagementAuditDistributionGroupManagement, client.Int(int64(value)))
 }
 
 // UpdateAccountManagementAuditDistributionGroupManagement updates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountManagement_AuditDistributionGroupManagement.
@@ -1113,8 +1131,8 @@ func (s *Audit) CreateAccountManagementAuditDistributionGroupManagement(ctx cont
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateAccountManagementAuditDistributionGroupManagement(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAccountManagementAuditDistributionGroupManagement, client.Int(value))
+func (s *Audit) UpdateAccountManagementAuditDistributionGroupManagement(ctx context.Context, value AccountManagementAuditDistributionGroupManagementValue) error {
+	return s.c.Replace(ctx, URIAccountManagementAuditDistributionGroupManagement, client.Int(int64(value)))
 }
 
 // DeleteAccountManagementAuditDistributionGroupManagement deletes ./Device/Vendor/MSFT/Policy/Config/Audit/AccountManagement_AuditDistributionGroupManagement.
@@ -1145,12 +1163,13 @@ func (s *Audit) DeleteAccountManagementAuditDistributionGroupManagement(ctx cont
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetAccountManagementAuditOtherAccountManagementEvents(ctx context.Context) (int64, error) {
+func (s *Audit) GetAccountManagementAuditOtherAccountManagementEvents(ctx context.Context) (AccountManagementAuditOtherAccountManagementEventsValue, error) {
 	v, err := s.c.Get(ctx, URIAccountManagementAuditOtherAccountManagementEvents)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AccountManagementAuditOtherAccountManagementEventsValue(n), err
 }
 
 // CreateAccountManagementAuditOtherAccountManagementEvents creates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountManagement_AuditOtherAccountManagementEvents.
@@ -1166,8 +1185,8 @@ func (s *Audit) GetAccountManagementAuditOtherAccountManagementEvents(ctx contex
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateAccountManagementAuditOtherAccountManagementEvents(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAccountManagementAuditOtherAccountManagementEvents, client.Int(value))
+func (s *Audit) CreateAccountManagementAuditOtherAccountManagementEvents(ctx context.Context, value AccountManagementAuditOtherAccountManagementEventsValue) error {
+	return s.c.Add(ctx, URIAccountManagementAuditOtherAccountManagementEvents, client.Int(int64(value)))
 }
 
 // UpdateAccountManagementAuditOtherAccountManagementEvents updates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountManagement_AuditOtherAccountManagementEvents.
@@ -1183,8 +1202,8 @@ func (s *Audit) CreateAccountManagementAuditOtherAccountManagementEvents(ctx con
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateAccountManagementAuditOtherAccountManagementEvents(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAccountManagementAuditOtherAccountManagementEvents, client.Int(value))
+func (s *Audit) UpdateAccountManagementAuditOtherAccountManagementEvents(ctx context.Context, value AccountManagementAuditOtherAccountManagementEventsValue) error {
+	return s.c.Replace(ctx, URIAccountManagementAuditOtherAccountManagementEvents, client.Int(int64(value)))
 }
 
 // DeleteAccountManagementAuditOtherAccountManagementEvents deletes ./Device/Vendor/MSFT/Policy/Config/Audit/AccountManagement_AuditOtherAccountManagementEvents.
@@ -1214,12 +1233,13 @@ func (s *Audit) DeleteAccountManagementAuditOtherAccountManagementEvents(ctx con
 //
 // Default: 1.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetAccountManagementAuditSecurityGroupManagement(ctx context.Context) (int64, error) {
+func (s *Audit) GetAccountManagementAuditSecurityGroupManagement(ctx context.Context) (AccountManagementAuditSecurityGroupManagementValue, error) {
 	v, err := s.c.Get(ctx, URIAccountManagementAuditSecurityGroupManagement)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AccountManagementAuditSecurityGroupManagementValue(n), err
 }
 
 // CreateAccountManagementAuditSecurityGroupManagement creates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountManagement_AuditSecurityGroupManagement.
@@ -1232,8 +1252,8 @@ func (s *Audit) GetAccountManagementAuditSecurityGroupManagement(ctx context.Con
 //
 // Default: 1.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateAccountManagementAuditSecurityGroupManagement(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAccountManagementAuditSecurityGroupManagement, client.Int(value))
+func (s *Audit) CreateAccountManagementAuditSecurityGroupManagement(ctx context.Context, value AccountManagementAuditSecurityGroupManagementValue) error {
+	return s.c.Add(ctx, URIAccountManagementAuditSecurityGroupManagement, client.Int(int64(value)))
 }
 
 // UpdateAccountManagementAuditSecurityGroupManagement updates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountManagement_AuditSecurityGroupManagement.
@@ -1246,8 +1266,8 @@ func (s *Audit) CreateAccountManagementAuditSecurityGroupManagement(ctx context.
 //
 // Default: 1.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateAccountManagementAuditSecurityGroupManagement(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAccountManagementAuditSecurityGroupManagement, client.Int(value))
+func (s *Audit) UpdateAccountManagementAuditSecurityGroupManagement(ctx context.Context, value AccountManagementAuditSecurityGroupManagementValue) error {
+	return s.c.Replace(ctx, URIAccountManagementAuditSecurityGroupManagement, client.Int(int64(value)))
 }
 
 // DeleteAccountManagementAuditSecurityGroupManagement deletes ./Device/Vendor/MSFT/Policy/Config/Audit/AccountManagement_AuditSecurityGroupManagement.
@@ -1277,12 +1297,13 @@ func (s *Audit) DeleteAccountManagementAuditSecurityGroupManagement(ctx context.
 //
 // Default: 1.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetAccountManagementAuditUserAccountManagement(ctx context.Context) (int64, error) {
+func (s *Audit) GetAccountManagementAuditUserAccountManagement(ctx context.Context) (AccountManagementAuditUserAccountManagementValue, error) {
 	v, err := s.c.Get(ctx, URIAccountManagementAuditUserAccountManagement)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AccountManagementAuditUserAccountManagementValue(n), err
 }
 
 // CreateAccountManagementAuditUserAccountManagement creates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountManagement_AuditUserAccountManagement.
@@ -1298,8 +1319,8 @@ func (s *Audit) GetAccountManagementAuditUserAccountManagement(ctx context.Conte
 //
 // Default: 1.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateAccountManagementAuditUserAccountManagement(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAccountManagementAuditUserAccountManagement, client.Int(value))
+func (s *Audit) CreateAccountManagementAuditUserAccountManagement(ctx context.Context, value AccountManagementAuditUserAccountManagementValue) error {
+	return s.c.Add(ctx, URIAccountManagementAuditUserAccountManagement, client.Int(int64(value)))
 }
 
 // UpdateAccountManagementAuditUserAccountManagement updates ./Device/Vendor/MSFT/Policy/Config/Audit/AccountManagement_AuditUserAccountManagement.
@@ -1315,8 +1336,8 @@ func (s *Audit) CreateAccountManagementAuditUserAccountManagement(ctx context.Co
 //
 // Default: 1.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateAccountManagementAuditUserAccountManagement(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAccountManagementAuditUserAccountManagement, client.Int(value))
+func (s *Audit) UpdateAccountManagementAuditUserAccountManagement(ctx context.Context, value AccountManagementAuditUserAccountManagementValue) error {
+	return s.c.Replace(ctx, URIAccountManagementAuditUserAccountManagement, client.Int(int64(value)))
 }
 
 // DeleteAccountManagementAuditUserAccountManagement deletes ./Device/Vendor/MSFT/Policy/Config/Audit/AccountManagement_AuditUserAccountManagement.
@@ -1342,12 +1363,13 @@ func (s *Audit) DeleteAccountManagementAuditUserAccountManagement(ctx context.Co
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetDSAccessAuditDetailedDirectoryServiceReplication(ctx context.Context) (int64, error) {
+func (s *Audit) GetDSAccessAuditDetailedDirectoryServiceReplication(ctx context.Context) (DSAccessAuditDetailedDirectoryServiceReplicationValue, error) {
 	v, err := s.c.Get(ctx, URIDSAccessAuditDetailedDirectoryServiceReplication)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DSAccessAuditDetailedDirectoryServiceReplicationValue(n), err
 }
 
 // CreateDSAccessAuditDetailedDirectoryServiceReplication creates ./Device/Vendor/MSFT/Policy/Config/Audit/DSAccess_AuditDetailedDirectoryServiceReplication.
@@ -1356,8 +1378,8 @@ func (s *Audit) GetDSAccessAuditDetailedDirectoryServiceReplication(ctx context.
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateDSAccessAuditDetailedDirectoryServiceReplication(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDSAccessAuditDetailedDirectoryServiceReplication, client.Int(value))
+func (s *Audit) CreateDSAccessAuditDetailedDirectoryServiceReplication(ctx context.Context, value DSAccessAuditDetailedDirectoryServiceReplicationValue) error {
+	return s.c.Add(ctx, URIDSAccessAuditDetailedDirectoryServiceReplication, client.Int(int64(value)))
 }
 
 // UpdateDSAccessAuditDetailedDirectoryServiceReplication updates ./Device/Vendor/MSFT/Policy/Config/Audit/DSAccess_AuditDetailedDirectoryServiceReplication.
@@ -1366,8 +1388,8 @@ func (s *Audit) CreateDSAccessAuditDetailedDirectoryServiceReplication(ctx conte
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateDSAccessAuditDetailedDirectoryServiceReplication(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDSAccessAuditDetailedDirectoryServiceReplication, client.Int(value))
+func (s *Audit) UpdateDSAccessAuditDetailedDirectoryServiceReplication(ctx context.Context, value DSAccessAuditDetailedDirectoryServiceReplicationValue) error {
+	return s.c.Replace(ctx, URIDSAccessAuditDetailedDirectoryServiceReplication, client.Int(int64(value)))
 }
 
 // DeleteDSAccessAuditDetailedDirectoryServiceReplication deletes ./Device/Vendor/MSFT/Policy/Config/Audit/DSAccess_AuditDetailedDirectoryServiceReplication.
@@ -1388,12 +1410,13 @@ func (s *Audit) DeleteDSAccessAuditDetailedDirectoryServiceReplication(ctx conte
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetDSAccessAuditDirectoryServiceAccess(ctx context.Context) (int64, error) {
+func (s *Audit) GetDSAccessAuditDirectoryServiceAccess(ctx context.Context) (DSAccessAuditDirectoryServiceAccessValue, error) {
 	v, err := s.c.Get(ctx, URIDSAccessAuditDirectoryServiceAccess)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DSAccessAuditDirectoryServiceAccessValue(n), err
 }
 
 // CreateDSAccessAuditDirectoryServiceAccess creates ./Device/Vendor/MSFT/Policy/Config/Audit/DSAccess_AuditDirectoryServiceAccess.
@@ -1404,8 +1427,8 @@ func (s *Audit) GetDSAccessAuditDirectoryServiceAccess(ctx context.Context) (int
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateDSAccessAuditDirectoryServiceAccess(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDSAccessAuditDirectoryServiceAccess, client.Int(value))
+func (s *Audit) CreateDSAccessAuditDirectoryServiceAccess(ctx context.Context, value DSAccessAuditDirectoryServiceAccessValue) error {
+	return s.c.Add(ctx, URIDSAccessAuditDirectoryServiceAccess, client.Int(int64(value)))
 }
 
 // UpdateDSAccessAuditDirectoryServiceAccess updates ./Device/Vendor/MSFT/Policy/Config/Audit/DSAccess_AuditDirectoryServiceAccess.
@@ -1416,8 +1439,8 @@ func (s *Audit) CreateDSAccessAuditDirectoryServiceAccess(ctx context.Context, v
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateDSAccessAuditDirectoryServiceAccess(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDSAccessAuditDirectoryServiceAccess, client.Int(value))
+func (s *Audit) UpdateDSAccessAuditDirectoryServiceAccess(ctx context.Context, value DSAccessAuditDirectoryServiceAccessValue) error {
+	return s.c.Replace(ctx, URIDSAccessAuditDirectoryServiceAccess, client.Int(int64(value)))
 }
 
 // DeleteDSAccessAuditDirectoryServiceAccess deletes ./Device/Vendor/MSFT/Policy/Config/Audit/DSAccess_AuditDirectoryServiceAccess.
@@ -1447,12 +1470,13 @@ func (s *Audit) DeleteDSAccessAuditDirectoryServiceAccess(ctx context.Context) e
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetDSAccessAuditDirectoryServiceChanges(ctx context.Context) (int64, error) {
+func (s *Audit) GetDSAccessAuditDirectoryServiceChanges(ctx context.Context) (DSAccessAuditDirectoryServiceChangesValue, error) {
 	v, err := s.c.Get(ctx, URIDSAccessAuditDirectoryServiceChanges)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DSAccessAuditDirectoryServiceChangesValue(n), err
 }
 
 // CreateDSAccessAuditDirectoryServiceChanges creates ./Device/Vendor/MSFT/Policy/Config/Audit/DSAccess_AuditDirectoryServiceChanges.
@@ -1470,8 +1494,8 @@ func (s *Audit) GetDSAccessAuditDirectoryServiceChanges(ctx context.Context) (in
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateDSAccessAuditDirectoryServiceChanges(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDSAccessAuditDirectoryServiceChanges, client.Int(value))
+func (s *Audit) CreateDSAccessAuditDirectoryServiceChanges(ctx context.Context, value DSAccessAuditDirectoryServiceChangesValue) error {
+	return s.c.Add(ctx, URIDSAccessAuditDirectoryServiceChanges, client.Int(int64(value)))
 }
 
 // UpdateDSAccessAuditDirectoryServiceChanges updates ./Device/Vendor/MSFT/Policy/Config/Audit/DSAccess_AuditDirectoryServiceChanges.
@@ -1489,8 +1513,8 @@ func (s *Audit) CreateDSAccessAuditDirectoryServiceChanges(ctx context.Context, 
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateDSAccessAuditDirectoryServiceChanges(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDSAccessAuditDirectoryServiceChanges, client.Int(value))
+func (s *Audit) UpdateDSAccessAuditDirectoryServiceChanges(ctx context.Context, value DSAccessAuditDirectoryServiceChangesValue) error {
+	return s.c.Replace(ctx, URIDSAccessAuditDirectoryServiceChanges, client.Int(int64(value)))
 }
 
 // DeleteDSAccessAuditDirectoryServiceChanges deletes ./Device/Vendor/MSFT/Policy/Config/Audit/DSAccess_AuditDirectoryServiceChanges.
@@ -1521,12 +1545,13 @@ func (s *Audit) DeleteDSAccessAuditDirectoryServiceChanges(ctx context.Context) 
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetDSAccessAuditDirectoryServiceReplication(ctx context.Context) (int64, error) {
+func (s *Audit) GetDSAccessAuditDirectoryServiceReplication(ctx context.Context) (DSAccessAuditDirectoryServiceReplicationValue, error) {
 	v, err := s.c.Get(ctx, URIDSAccessAuditDirectoryServiceReplication)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DSAccessAuditDirectoryServiceReplicationValue(n), err
 }
 
 // CreateDSAccessAuditDirectoryServiceReplication creates ./Device/Vendor/MSFT/Policy/Config/Audit/DSAccess_AuditDirectoryServiceReplication.
@@ -1538,8 +1563,8 @@ func (s *Audit) GetDSAccessAuditDirectoryServiceReplication(ctx context.Context)
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateDSAccessAuditDirectoryServiceReplication(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDSAccessAuditDirectoryServiceReplication, client.Int(value))
+func (s *Audit) CreateDSAccessAuditDirectoryServiceReplication(ctx context.Context, value DSAccessAuditDirectoryServiceReplicationValue) error {
+	return s.c.Add(ctx, URIDSAccessAuditDirectoryServiceReplication, client.Int(int64(value)))
 }
 
 // UpdateDSAccessAuditDirectoryServiceReplication updates ./Device/Vendor/MSFT/Policy/Config/Audit/DSAccess_AuditDirectoryServiceReplication.
@@ -1551,8 +1576,8 @@ func (s *Audit) CreateDSAccessAuditDirectoryServiceReplication(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateDSAccessAuditDirectoryServiceReplication(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDSAccessAuditDirectoryServiceReplication, client.Int(value))
+func (s *Audit) UpdateDSAccessAuditDirectoryServiceReplication(ctx context.Context, value DSAccessAuditDirectoryServiceReplicationValue) error {
+	return s.c.Replace(ctx, URIDSAccessAuditDirectoryServiceReplication, client.Int(int64(value)))
 }
 
 // DeleteDSAccessAuditDirectoryServiceReplication deletes ./Device/Vendor/MSFT/Policy/Config/Audit/DSAccess_AuditDirectoryServiceReplication.
@@ -1580,12 +1605,13 @@ func (s *Audit) DeleteDSAccessAuditDirectoryServiceReplication(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetDetailedTrackingAuditDPAPIActivity(ctx context.Context) (int64, error) {
+func (s *Audit) GetDetailedTrackingAuditDPAPIActivity(ctx context.Context) (DetailedTrackingAuditDPAPIActivityValue, error) {
 	v, err := s.c.Get(ctx, URIDetailedTrackingAuditDPAPIActivity)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DetailedTrackingAuditDPAPIActivityValue(n), err
 }
 
 // CreateDetailedTrackingAuditDPAPIActivity creates ./Device/Vendor/MSFT/Policy/Config/Audit/DetailedTracking_AuditDPAPIActivity.
@@ -1600,8 +1626,8 @@ func (s *Audit) GetDetailedTrackingAuditDPAPIActivity(ctx context.Context) (int6
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateDetailedTrackingAuditDPAPIActivity(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDetailedTrackingAuditDPAPIActivity, client.Int(value))
+func (s *Audit) CreateDetailedTrackingAuditDPAPIActivity(ctx context.Context, value DetailedTrackingAuditDPAPIActivityValue) error {
+	return s.c.Add(ctx, URIDetailedTrackingAuditDPAPIActivity, client.Int(int64(value)))
 }
 
 // UpdateDetailedTrackingAuditDPAPIActivity updates ./Device/Vendor/MSFT/Policy/Config/Audit/DetailedTracking_AuditDPAPIActivity.
@@ -1616,8 +1642,8 @@ func (s *Audit) CreateDetailedTrackingAuditDPAPIActivity(ctx context.Context, va
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateDetailedTrackingAuditDPAPIActivity(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDetailedTrackingAuditDPAPIActivity, client.Int(value))
+func (s *Audit) UpdateDetailedTrackingAuditDPAPIActivity(ctx context.Context, value DetailedTrackingAuditDPAPIActivityValue) error {
+	return s.c.Replace(ctx, URIDetailedTrackingAuditDPAPIActivity, client.Int(int64(value)))
 }
 
 // DeleteDetailedTrackingAuditDPAPIActivity deletes ./Device/Vendor/MSFT/Policy/Config/Audit/DetailedTracking_AuditDPAPIActivity.
@@ -1645,12 +1671,13 @@ func (s *Audit) DeleteDetailedTrackingAuditDPAPIActivity(ctx context.Context) er
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetDetailedTrackingAuditPNPActivity(ctx context.Context) (int64, error) {
+func (s *Audit) GetDetailedTrackingAuditPNPActivity(ctx context.Context) (DetailedTrackingAuditPNPActivityValue, error) {
 	v, err := s.c.Get(ctx, URIDetailedTrackingAuditPNPActivity)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DetailedTrackingAuditPNPActivityValue(n), err
 }
 
 // CreateDetailedTrackingAuditPNPActivity creates ./Device/Vendor/MSFT/Policy/Config/Audit/DetailedTracking_AuditPNPActivity.
@@ -1662,8 +1689,8 @@ func (s *Audit) GetDetailedTrackingAuditPNPActivity(ctx context.Context) (int64,
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateDetailedTrackingAuditPNPActivity(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDetailedTrackingAuditPNPActivity, client.Int(value))
+func (s *Audit) CreateDetailedTrackingAuditPNPActivity(ctx context.Context, value DetailedTrackingAuditPNPActivityValue) error {
+	return s.c.Add(ctx, URIDetailedTrackingAuditPNPActivity, client.Int(int64(value)))
 }
 
 // UpdateDetailedTrackingAuditPNPActivity updates ./Device/Vendor/MSFT/Policy/Config/Audit/DetailedTracking_AuditPNPActivity.
@@ -1675,8 +1702,8 @@ func (s *Audit) CreateDetailedTrackingAuditPNPActivity(ctx context.Context, valu
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateDetailedTrackingAuditPNPActivity(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDetailedTrackingAuditPNPActivity, client.Int(value))
+func (s *Audit) UpdateDetailedTrackingAuditPNPActivity(ctx context.Context, value DetailedTrackingAuditPNPActivityValue) error {
+	return s.c.Replace(ctx, URIDetailedTrackingAuditPNPActivity, client.Int(int64(value)))
 }
 
 // DeleteDetailedTrackingAuditPNPActivity deletes ./Device/Vendor/MSFT/Policy/Config/Audit/DetailedTracking_AuditPNPActivity.
@@ -1701,12 +1728,13 @@ func (s *Audit) DeleteDetailedTrackingAuditPNPActivity(ctx context.Context) erro
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetDetailedTrackingAuditProcessCreation(ctx context.Context) (int64, error) {
+func (s *Audit) GetDetailedTrackingAuditProcessCreation(ctx context.Context) (DetailedTrackingAuditProcessCreationValue, error) {
 	v, err := s.c.Get(ctx, URIDetailedTrackingAuditProcessCreation)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DetailedTrackingAuditProcessCreationValue(n), err
 }
 
 // CreateDetailedTrackingAuditProcessCreation creates ./Device/Vendor/MSFT/Policy/Config/Audit/DetailedTracking_AuditProcessCreation.
@@ -1718,8 +1746,8 @@ func (s *Audit) GetDetailedTrackingAuditProcessCreation(ctx context.Context) (in
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateDetailedTrackingAuditProcessCreation(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDetailedTrackingAuditProcessCreation, client.Int(value))
+func (s *Audit) CreateDetailedTrackingAuditProcessCreation(ctx context.Context, value DetailedTrackingAuditProcessCreationValue) error {
+	return s.c.Add(ctx, URIDetailedTrackingAuditProcessCreation, client.Int(int64(value)))
 }
 
 // UpdateDetailedTrackingAuditProcessCreation updates ./Device/Vendor/MSFT/Policy/Config/Audit/DetailedTracking_AuditProcessCreation.
@@ -1731,8 +1759,8 @@ func (s *Audit) CreateDetailedTrackingAuditProcessCreation(ctx context.Context, 
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateDetailedTrackingAuditProcessCreation(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDetailedTrackingAuditProcessCreation, client.Int(value))
+func (s *Audit) UpdateDetailedTrackingAuditProcessCreation(ctx context.Context, value DetailedTrackingAuditProcessCreationValue) error {
+	return s.c.Replace(ctx, URIDetailedTrackingAuditProcessCreation, client.Int(int64(value)))
 }
 
 // DeleteDetailedTrackingAuditProcessCreation deletes ./Device/Vendor/MSFT/Policy/Config/Audit/DetailedTracking_AuditProcessCreation.
@@ -1756,12 +1784,13 @@ func (s *Audit) DeleteDetailedTrackingAuditProcessCreation(ctx context.Context) 
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetDetailedTrackingAuditProcessTermination(ctx context.Context) (int64, error) {
+func (s *Audit) GetDetailedTrackingAuditProcessTermination(ctx context.Context) (DetailedTrackingAuditProcessTerminationValue, error) {
 	v, err := s.c.Get(ctx, URIDetailedTrackingAuditProcessTermination)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DetailedTrackingAuditProcessTerminationValue(n), err
 }
 
 // CreateDetailedTrackingAuditProcessTermination creates ./Device/Vendor/MSFT/Policy/Config/Audit/DetailedTracking_AuditProcessTermination.
@@ -1772,8 +1801,8 @@ func (s *Audit) GetDetailedTrackingAuditProcessTermination(ctx context.Context) 
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateDetailedTrackingAuditProcessTermination(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDetailedTrackingAuditProcessTermination, client.Int(value))
+func (s *Audit) CreateDetailedTrackingAuditProcessTermination(ctx context.Context, value DetailedTrackingAuditProcessTerminationValue) error {
+	return s.c.Add(ctx, URIDetailedTrackingAuditProcessTermination, client.Int(int64(value)))
 }
 
 // UpdateDetailedTrackingAuditProcessTermination updates ./Device/Vendor/MSFT/Policy/Config/Audit/DetailedTracking_AuditProcessTermination.
@@ -1784,8 +1813,8 @@ func (s *Audit) CreateDetailedTrackingAuditProcessTermination(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateDetailedTrackingAuditProcessTermination(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDetailedTrackingAuditProcessTermination, client.Int(value))
+func (s *Audit) UpdateDetailedTrackingAuditProcessTermination(ctx context.Context, value DetailedTrackingAuditProcessTerminationValue) error {
+	return s.c.Replace(ctx, URIDetailedTrackingAuditProcessTermination, client.Int(int64(value)))
 }
 
 // DeleteDetailedTrackingAuditProcessTermination deletes ./Device/Vendor/MSFT/Policy/Config/Audit/DetailedTracking_AuditProcessTermination.
@@ -1809,12 +1838,13 @@ func (s *Audit) DeleteDetailedTrackingAuditProcessTermination(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetDetailedTrackingAuditRPCEvents(ctx context.Context) (int64, error) {
+func (s *Audit) GetDetailedTrackingAuditRPCEvents(ctx context.Context) (DetailedTrackingAuditRPCEventsValue, error) {
 	v, err := s.c.Get(ctx, URIDetailedTrackingAuditRPCEvents)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DetailedTrackingAuditRPCEventsValue(n), err
 }
 
 // CreateDetailedTrackingAuditRPCEvents creates ./Device/Vendor/MSFT/Policy/Config/Audit/DetailedTracking_AuditRPCEvents.
@@ -1826,8 +1856,8 @@ func (s *Audit) GetDetailedTrackingAuditRPCEvents(ctx context.Context) (int64, e
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateDetailedTrackingAuditRPCEvents(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDetailedTrackingAuditRPCEvents, client.Int(value))
+func (s *Audit) CreateDetailedTrackingAuditRPCEvents(ctx context.Context, value DetailedTrackingAuditRPCEventsValue) error {
+	return s.c.Add(ctx, URIDetailedTrackingAuditRPCEvents, client.Int(int64(value)))
 }
 
 // UpdateDetailedTrackingAuditRPCEvents updates ./Device/Vendor/MSFT/Policy/Config/Audit/DetailedTracking_AuditRPCEvents.
@@ -1839,8 +1869,8 @@ func (s *Audit) CreateDetailedTrackingAuditRPCEvents(ctx context.Context, value 
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateDetailedTrackingAuditRPCEvents(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDetailedTrackingAuditRPCEvents, client.Int(value))
+func (s *Audit) UpdateDetailedTrackingAuditRPCEvents(ctx context.Context, value DetailedTrackingAuditRPCEventsValue) error {
+	return s.c.Replace(ctx, URIDetailedTrackingAuditRPCEvents, client.Int(int64(value)))
 }
 
 // DeleteDetailedTrackingAuditRPCEvents deletes ./Device/Vendor/MSFT/Policy/Config/Audit/DetailedTracking_AuditRPCEvents.
@@ -1861,12 +1891,13 @@ func (s *Audit) DeleteDetailedTrackingAuditRPCEvents(ctx context.Context) error 
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetDetailedTrackingAuditTokenRightAdjusted(ctx context.Context) (int64, error) {
+func (s *Audit) GetDetailedTrackingAuditTokenRightAdjusted(ctx context.Context) (DetailedTrackingAuditTokenRightAdjustedValue, error) {
 	v, err := s.c.Get(ctx, URIDetailedTrackingAuditTokenRightAdjusted)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DetailedTrackingAuditTokenRightAdjustedValue(n), err
 }
 
 // CreateDetailedTrackingAuditTokenRightAdjusted creates ./Device/Vendor/MSFT/Policy/Config/Audit/DetailedTracking_AuditTokenRightAdjusted.
@@ -1874,8 +1905,8 @@ func (s *Audit) GetDetailedTrackingAuditTokenRightAdjusted(ctx context.Context) 
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateDetailedTrackingAuditTokenRightAdjusted(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDetailedTrackingAuditTokenRightAdjusted, client.Int(value))
+func (s *Audit) CreateDetailedTrackingAuditTokenRightAdjusted(ctx context.Context, value DetailedTrackingAuditTokenRightAdjustedValue) error {
+	return s.c.Add(ctx, URIDetailedTrackingAuditTokenRightAdjusted, client.Int(int64(value)))
 }
 
 // UpdateDetailedTrackingAuditTokenRightAdjusted updates ./Device/Vendor/MSFT/Policy/Config/Audit/DetailedTracking_AuditTokenRightAdjusted.
@@ -1883,8 +1914,8 @@ func (s *Audit) CreateDetailedTrackingAuditTokenRightAdjusted(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateDetailedTrackingAuditTokenRightAdjusted(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDetailedTrackingAuditTokenRightAdjusted, client.Int(value))
+func (s *Audit) UpdateDetailedTrackingAuditTokenRightAdjusted(ctx context.Context, value DetailedTrackingAuditTokenRightAdjustedValue) error {
+	return s.c.Replace(ctx, URIDetailedTrackingAuditTokenRightAdjusted, client.Int(int64(value)))
 }
 
 // DeleteDetailedTrackingAuditTokenRightAdjusted deletes ./Device/Vendor/MSFT/Policy/Config/Audit/DetailedTracking_AuditTokenRightAdjusted.
@@ -1906,12 +1937,13 @@ func (s *Audit) DeleteDetailedTrackingAuditTokenRightAdjusted(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetObjectAccessAuditApplicationGenerated(ctx context.Context) (int64, error) {
+func (s *Audit) GetObjectAccessAuditApplicationGenerated(ctx context.Context) (ObjectAccessAuditApplicationGeneratedValue, error) {
 	v, err := s.c.Get(ctx, URIObjectAccessAuditApplicationGenerated)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ObjectAccessAuditApplicationGeneratedValue(n), err
 }
 
 // CreateObjectAccessAuditApplicationGenerated creates ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditApplicationGenerated.
@@ -1924,8 +1956,8 @@ func (s *Audit) GetObjectAccessAuditApplicationGenerated(ctx context.Context) (i
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateObjectAccessAuditApplicationGenerated(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIObjectAccessAuditApplicationGenerated, client.Int(value))
+func (s *Audit) CreateObjectAccessAuditApplicationGenerated(ctx context.Context, value ObjectAccessAuditApplicationGeneratedValue) error {
+	return s.c.Add(ctx, URIObjectAccessAuditApplicationGenerated, client.Int(int64(value)))
 }
 
 // UpdateObjectAccessAuditApplicationGenerated updates ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditApplicationGenerated.
@@ -1938,8 +1970,8 @@ func (s *Audit) CreateObjectAccessAuditApplicationGenerated(ctx context.Context,
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateObjectAccessAuditApplicationGenerated(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIObjectAccessAuditApplicationGenerated, client.Int(value))
+func (s *Audit) UpdateObjectAccessAuditApplicationGenerated(ctx context.Context, value ObjectAccessAuditApplicationGeneratedValue) error {
+	return s.c.Replace(ctx, URIObjectAccessAuditApplicationGenerated, client.Int(int64(value)))
 }
 
 // DeleteObjectAccessAuditApplicationGenerated deletes ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditApplicationGenerated.
@@ -1972,12 +2004,13 @@ func (s *Audit) DeleteObjectAccessAuditApplicationGenerated(ctx context.Context)
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetObjectAccessAuditCentralAccessPolicyStaging(ctx context.Context) (int64, error) {
+func (s *Audit) GetObjectAccessAuditCentralAccessPolicyStaging(ctx context.Context) (ObjectAccessAuditCentralAccessPolicyStagingValue, error) {
 	v, err := s.c.Get(ctx, URIObjectAccessAuditCentralAccessPolicyStaging)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ObjectAccessAuditCentralAccessPolicyStagingValue(n), err
 }
 
 // CreateObjectAccessAuditCentralAccessPolicyStaging creates ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditCentralAccessPolicyStaging.
@@ -1996,8 +2029,8 @@ func (s *Audit) GetObjectAccessAuditCentralAccessPolicyStaging(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateObjectAccessAuditCentralAccessPolicyStaging(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIObjectAccessAuditCentralAccessPolicyStaging, client.Int(value))
+func (s *Audit) CreateObjectAccessAuditCentralAccessPolicyStaging(ctx context.Context, value ObjectAccessAuditCentralAccessPolicyStagingValue) error {
+	return s.c.Add(ctx, URIObjectAccessAuditCentralAccessPolicyStaging, client.Int(int64(value)))
 }
 
 // UpdateObjectAccessAuditCentralAccessPolicyStaging updates ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditCentralAccessPolicyStaging.
@@ -2016,8 +2049,8 @@ func (s *Audit) CreateObjectAccessAuditCentralAccessPolicyStaging(ctx context.Co
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateObjectAccessAuditCentralAccessPolicyStaging(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIObjectAccessAuditCentralAccessPolicyStaging, client.Int(value))
+func (s *Audit) UpdateObjectAccessAuditCentralAccessPolicyStaging(ctx context.Context, value ObjectAccessAuditCentralAccessPolicyStagingValue) error {
+	return s.c.Replace(ctx, URIObjectAccessAuditCentralAccessPolicyStaging, client.Int(int64(value)))
 }
 
 // DeleteObjectAccessAuditCentralAccessPolicyStaging deletes ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditCentralAccessPolicyStaging.
@@ -2053,12 +2086,13 @@ func (s *Audit) DeleteObjectAccessAuditCentralAccessPolicyStaging(ctx context.Co
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetObjectAccessAuditCertificationServices(ctx context.Context) (int64, error) {
+func (s *Audit) GetObjectAccessAuditCertificationServices(ctx context.Context) (ObjectAccessAuditCertificationServicesValue, error) {
 	v, err := s.c.Get(ctx, URIObjectAccessAuditCertificationServices)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ObjectAccessAuditCertificationServicesValue(n), err
 }
 
 // CreateObjectAccessAuditCertificationServices creates ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditCertificationServices.
@@ -2074,8 +2108,8 @@ func (s *Audit) GetObjectAccessAuditCertificationServices(ctx context.Context) (
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateObjectAccessAuditCertificationServices(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIObjectAccessAuditCertificationServices, client.Int(value))
+func (s *Audit) CreateObjectAccessAuditCertificationServices(ctx context.Context, value ObjectAccessAuditCertificationServicesValue) error {
+	return s.c.Add(ctx, URIObjectAccessAuditCertificationServices, client.Int(int64(value)))
 }
 
 // UpdateObjectAccessAuditCertificationServices updates ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditCertificationServices.
@@ -2091,8 +2125,8 @@ func (s *Audit) CreateObjectAccessAuditCertificationServices(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateObjectAccessAuditCertificationServices(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIObjectAccessAuditCertificationServices, client.Int(value))
+func (s *Audit) UpdateObjectAccessAuditCertificationServices(ctx context.Context, value ObjectAccessAuditCertificationServicesValue) error {
+	return s.c.Replace(ctx, URIObjectAccessAuditCertificationServices, client.Int(int64(value)))
 }
 
 // DeleteObjectAccessAuditCertificationServices deletes ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditCertificationServices.
@@ -2126,12 +2160,13 @@ func (s *Audit) DeleteObjectAccessAuditCertificationServices(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetObjectAccessAuditDetailedFileShare(ctx context.Context) (int64, error) {
+func (s *Audit) GetObjectAccessAuditDetailedFileShare(ctx context.Context) (ObjectAccessAuditDetailedFileShareValue, error) {
 	v, err := s.c.Get(ctx, URIObjectAccessAuditDetailedFileShare)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ObjectAccessAuditDetailedFileShareValue(n), err
 }
 
 // CreateObjectAccessAuditDetailedFileShare creates ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditDetailedFileShare.
@@ -2148,8 +2183,8 @@ func (s *Audit) GetObjectAccessAuditDetailedFileShare(ctx context.Context) (int6
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateObjectAccessAuditDetailedFileShare(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIObjectAccessAuditDetailedFileShare, client.Int(value))
+func (s *Audit) CreateObjectAccessAuditDetailedFileShare(ctx context.Context, value ObjectAccessAuditDetailedFileShareValue) error {
+	return s.c.Add(ctx, URIObjectAccessAuditDetailedFileShare, client.Int(int64(value)))
 }
 
 // UpdateObjectAccessAuditDetailedFileShare updates ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditDetailedFileShare.
@@ -2166,8 +2201,8 @@ func (s *Audit) CreateObjectAccessAuditDetailedFileShare(ctx context.Context, va
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateObjectAccessAuditDetailedFileShare(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIObjectAccessAuditDetailedFileShare, client.Int(value))
+func (s *Audit) UpdateObjectAccessAuditDetailedFileShare(ctx context.Context, value ObjectAccessAuditDetailedFileShareValue) error {
+	return s.c.Replace(ctx, URIObjectAccessAuditDetailedFileShare, client.Int(int64(value)))
 }
 
 // DeleteObjectAccessAuditDetailedFileShare deletes ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditDetailedFileShare.
@@ -2198,12 +2233,13 @@ func (s *Audit) DeleteObjectAccessAuditDetailedFileShare(ctx context.Context) er
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetObjectAccessAuditFileShare(ctx context.Context) (int64, error) {
+func (s *Audit) GetObjectAccessAuditFileShare(ctx context.Context) (ObjectAccessAuditFileShareValue, error) {
 	v, err := s.c.Get(ctx, URIObjectAccessAuditFileShare)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ObjectAccessAuditFileShareValue(n), err
 }
 
 // CreateObjectAccessAuditFileShare creates ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditFileShare.
@@ -2216,8 +2252,8 @@ func (s *Audit) GetObjectAccessAuditFileShare(ctx context.Context) (int64, error
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateObjectAccessAuditFileShare(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIObjectAccessAuditFileShare, client.Int(value))
+func (s *Audit) CreateObjectAccessAuditFileShare(ctx context.Context, value ObjectAccessAuditFileShareValue) error {
+	return s.c.Add(ctx, URIObjectAccessAuditFileShare, client.Int(int64(value)))
 }
 
 // UpdateObjectAccessAuditFileShare updates ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditFileShare.
@@ -2230,8 +2266,8 @@ func (s *Audit) CreateObjectAccessAuditFileShare(ctx context.Context, value int6
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateObjectAccessAuditFileShare(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIObjectAccessAuditFileShare, client.Int(value))
+func (s *Audit) UpdateObjectAccessAuditFileShare(ctx context.Context, value ObjectAccessAuditFileShareValue) error {
+	return s.c.Replace(ctx, URIObjectAccessAuditFileShare, client.Int(int64(value)))
 }
 
 // DeleteObjectAccessAuditFileShare deletes ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditFileShare.
@@ -2262,12 +2298,13 @@ func (s *Audit) DeleteObjectAccessAuditFileShare(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetObjectAccessAuditFileSystem(ctx context.Context) (int64, error) {
+func (s *Audit) GetObjectAccessAuditFileSystem(ctx context.Context) (ObjectAccessAuditFileSystemValue, error) {
 	v, err := s.c.Get(ctx, URIObjectAccessAuditFileSystem)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ObjectAccessAuditFileSystemValue(n), err
 }
 
 // CreateObjectAccessAuditFileSystem creates ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditFileSystem.
@@ -2284,8 +2321,8 @@ func (s *Audit) GetObjectAccessAuditFileSystem(ctx context.Context) (int64, erro
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateObjectAccessAuditFileSystem(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIObjectAccessAuditFileSystem, client.Int(value))
+func (s *Audit) CreateObjectAccessAuditFileSystem(ctx context.Context, value ObjectAccessAuditFileSystemValue) error {
+	return s.c.Add(ctx, URIObjectAccessAuditFileSystem, client.Int(int64(value)))
 }
 
 // UpdateObjectAccessAuditFileSystem updates ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditFileSystem.
@@ -2302,8 +2339,8 @@ func (s *Audit) CreateObjectAccessAuditFileSystem(ctx context.Context, value int
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateObjectAccessAuditFileSystem(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIObjectAccessAuditFileSystem, client.Int(value))
+func (s *Audit) UpdateObjectAccessAuditFileSystem(ctx context.Context, value ObjectAccessAuditFileSystemValue) error {
+	return s.c.Replace(ctx, URIObjectAccessAuditFileSystem, client.Int(int64(value)))
 }
 
 // DeleteObjectAccessAuditFileSystem deletes ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditFileSystem.
@@ -2339,12 +2376,13 @@ func (s *Audit) DeleteObjectAccessAuditFileSystem(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetObjectAccessAuditFilteringPlatformConnection(ctx context.Context) (int64, error) {
+func (s *Audit) GetObjectAccessAuditFilteringPlatformConnection(ctx context.Context) (ObjectAccessAuditFilteringPlatformConnectionValue, error) {
 	v, err := s.c.Get(ctx, URIObjectAccessAuditFilteringPlatformConnection)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ObjectAccessAuditFilteringPlatformConnectionValue(n), err
 }
 
 // CreateObjectAccessAuditFilteringPlatformConnection creates ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditFilteringPlatformConnection.
@@ -2362,8 +2400,8 @@ func (s *Audit) GetObjectAccessAuditFilteringPlatformConnection(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateObjectAccessAuditFilteringPlatformConnection(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIObjectAccessAuditFilteringPlatformConnection, client.Int(value))
+func (s *Audit) CreateObjectAccessAuditFilteringPlatformConnection(ctx context.Context, value ObjectAccessAuditFilteringPlatformConnectionValue) error {
+	return s.c.Add(ctx, URIObjectAccessAuditFilteringPlatformConnection, client.Int(int64(value)))
 }
 
 // UpdateObjectAccessAuditFilteringPlatformConnection updates ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditFilteringPlatformConnection.
@@ -2381,8 +2419,8 @@ func (s *Audit) CreateObjectAccessAuditFilteringPlatformConnection(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateObjectAccessAuditFilteringPlatformConnection(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIObjectAccessAuditFilteringPlatformConnection, client.Int(value))
+func (s *Audit) UpdateObjectAccessAuditFilteringPlatformConnection(ctx context.Context, value ObjectAccessAuditFilteringPlatformConnectionValue) error {
+	return s.c.Replace(ctx, URIObjectAccessAuditFilteringPlatformConnection, client.Int(int64(value)))
 }
 
 // DeleteObjectAccessAuditFilteringPlatformConnection deletes ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditFilteringPlatformConnection.
@@ -2410,12 +2448,13 @@ func (s *Audit) DeleteObjectAccessAuditFilteringPlatformConnection(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetObjectAccessAuditFilteringPlatformPacketDrop(ctx context.Context) (int64, error) {
+func (s *Audit) GetObjectAccessAuditFilteringPlatformPacketDrop(ctx context.Context) (ObjectAccessAuditFilteringPlatformPacketDropValue, error) {
 	v, err := s.c.Get(ctx, URIObjectAccessAuditFilteringPlatformPacketDrop)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ObjectAccessAuditFilteringPlatformPacketDropValue(n), err
 }
 
 // CreateObjectAccessAuditFilteringPlatformPacketDrop creates ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditFilteringPlatformPacketDrop.
@@ -2424,8 +2463,8 @@ func (s *Audit) GetObjectAccessAuditFilteringPlatformPacketDrop(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateObjectAccessAuditFilteringPlatformPacketDrop(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIObjectAccessAuditFilteringPlatformPacketDrop, client.Int(value))
+func (s *Audit) CreateObjectAccessAuditFilteringPlatformPacketDrop(ctx context.Context, value ObjectAccessAuditFilteringPlatformPacketDropValue) error {
+	return s.c.Add(ctx, URIObjectAccessAuditFilteringPlatformPacketDrop, client.Int(int64(value)))
 }
 
 // UpdateObjectAccessAuditFilteringPlatformPacketDrop updates ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditFilteringPlatformPacketDrop.
@@ -2434,8 +2473,8 @@ func (s *Audit) CreateObjectAccessAuditFilteringPlatformPacketDrop(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateObjectAccessAuditFilteringPlatformPacketDrop(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIObjectAccessAuditFilteringPlatformPacketDrop, client.Int(value))
+func (s *Audit) UpdateObjectAccessAuditFilteringPlatformPacketDrop(ctx context.Context, value ObjectAccessAuditFilteringPlatformPacketDropValue) error {
+	return s.c.Replace(ctx, URIObjectAccessAuditFilteringPlatformPacketDrop, client.Int(int64(value)))
 }
 
 // DeleteObjectAccessAuditFilteringPlatformPacketDrop deletes ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditFilteringPlatformPacketDrop.
@@ -2461,12 +2500,13 @@ func (s *Audit) DeleteObjectAccessAuditFilteringPlatformPacketDrop(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetObjectAccessAuditHandleManipulation(ctx context.Context) (int64, error) {
+func (s *Audit) GetObjectAccessAuditHandleManipulation(ctx context.Context) (ObjectAccessAuditHandleManipulationValue, error) {
 	v, err := s.c.Get(ctx, URIObjectAccessAuditHandleManipulation)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ObjectAccessAuditHandleManipulationValue(n), err
 }
 
 // CreateObjectAccessAuditHandleManipulation creates ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditHandleManipulation.
@@ -2482,8 +2522,8 @@ func (s *Audit) GetObjectAccessAuditHandleManipulation(ctx context.Context) (int
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateObjectAccessAuditHandleManipulation(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIObjectAccessAuditHandleManipulation, client.Int(value))
+func (s *Audit) CreateObjectAccessAuditHandleManipulation(ctx context.Context, value ObjectAccessAuditHandleManipulationValue) error {
+	return s.c.Add(ctx, URIObjectAccessAuditHandleManipulation, client.Int(int64(value)))
 }
 
 // UpdateObjectAccessAuditHandleManipulation updates ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditHandleManipulation.
@@ -2499,8 +2539,8 @@ func (s *Audit) CreateObjectAccessAuditHandleManipulation(ctx context.Context, v
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateObjectAccessAuditHandleManipulation(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIObjectAccessAuditHandleManipulation, client.Int(value))
+func (s *Audit) UpdateObjectAccessAuditHandleManipulation(ctx context.Context, value ObjectAccessAuditHandleManipulationValue) error {
+	return s.c.Replace(ctx, URIObjectAccessAuditHandleManipulation, client.Int(int64(value)))
 }
 
 // DeleteObjectAccessAuditHandleManipulation deletes ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditHandleManipulation.
@@ -2528,12 +2568,13 @@ func (s *Audit) DeleteObjectAccessAuditHandleManipulation(ctx context.Context) e
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetObjectAccessAuditKernelObject(ctx context.Context) (int64, error) {
+func (s *Audit) GetObjectAccessAuditKernelObject(ctx context.Context) (ObjectAccessAuditKernelObjectValue, error) {
 	v, err := s.c.Get(ctx, URIObjectAccessAuditKernelObject)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ObjectAccessAuditKernelObjectValue(n), err
 }
 
 // CreateObjectAccessAuditKernelObject creates ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditKernelObject.
@@ -2544,8 +2585,8 @@ func (s *Audit) GetObjectAccessAuditKernelObject(ctx context.Context) (int64, er
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateObjectAccessAuditKernelObject(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIObjectAccessAuditKernelObject, client.Int(value))
+func (s *Audit) CreateObjectAccessAuditKernelObject(ctx context.Context, value ObjectAccessAuditKernelObjectValue) error {
+	return s.c.Add(ctx, URIObjectAccessAuditKernelObject, client.Int(int64(value)))
 }
 
 // UpdateObjectAccessAuditKernelObject updates ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditKernelObject.
@@ -2556,8 +2597,8 @@ func (s *Audit) CreateObjectAccessAuditKernelObject(ctx context.Context, value i
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateObjectAccessAuditKernelObject(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIObjectAccessAuditKernelObject, client.Int(value))
+func (s *Audit) UpdateObjectAccessAuditKernelObject(ctx context.Context, value ObjectAccessAuditKernelObjectValue) error {
+	return s.c.Replace(ctx, URIObjectAccessAuditKernelObject, client.Int(int64(value)))
 }
 
 // DeleteObjectAccessAuditKernelObject deletes ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditKernelObject.
@@ -2580,12 +2621,13 @@ func (s *Audit) DeleteObjectAccessAuditKernelObject(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetObjectAccessAuditOtherObjectAccessEvents(ctx context.Context) (int64, error) {
+func (s *Audit) GetObjectAccessAuditOtherObjectAccessEvents(ctx context.Context) (ObjectAccessAuditOtherObjectAccessEventsValue, error) {
 	v, err := s.c.Get(ctx, URIObjectAccessAuditOtherObjectAccessEvents)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ObjectAccessAuditOtherObjectAccessEventsValue(n), err
 }
 
 // CreateObjectAccessAuditOtherObjectAccessEvents creates ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditOtherObjectAccessEvents.
@@ -2596,8 +2638,8 @@ func (s *Audit) GetObjectAccessAuditOtherObjectAccessEvents(ctx context.Context)
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateObjectAccessAuditOtherObjectAccessEvents(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIObjectAccessAuditOtherObjectAccessEvents, client.Int(value))
+func (s *Audit) CreateObjectAccessAuditOtherObjectAccessEvents(ctx context.Context, value ObjectAccessAuditOtherObjectAccessEventsValue) error {
+	return s.c.Add(ctx, URIObjectAccessAuditOtherObjectAccessEvents, client.Int(int64(value)))
 }
 
 // UpdateObjectAccessAuditOtherObjectAccessEvents updates ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditOtherObjectAccessEvents.
@@ -2608,8 +2650,8 @@ func (s *Audit) CreateObjectAccessAuditOtherObjectAccessEvents(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateObjectAccessAuditOtherObjectAccessEvents(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIObjectAccessAuditOtherObjectAccessEvents, client.Int(value))
+func (s *Audit) UpdateObjectAccessAuditOtherObjectAccessEvents(ctx context.Context, value ObjectAccessAuditOtherObjectAccessEventsValue) error {
+	return s.c.Replace(ctx, URIObjectAccessAuditOtherObjectAccessEvents, client.Int(int64(value)))
 }
 
 // DeleteObjectAccessAuditOtherObjectAccessEvents deletes ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditOtherObjectAccessEvents.
@@ -2637,12 +2679,13 @@ func (s *Audit) DeleteObjectAccessAuditOtherObjectAccessEvents(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetObjectAccessAuditRegistry(ctx context.Context) (int64, error) {
+func (s *Audit) GetObjectAccessAuditRegistry(ctx context.Context) (ObjectAccessAuditRegistryValue, error) {
 	v, err := s.c.Get(ctx, URIObjectAccessAuditRegistry)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ObjectAccessAuditRegistryValue(n), err
 }
 
 // CreateObjectAccessAuditRegistry creates ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditRegistry.
@@ -2658,8 +2701,8 @@ func (s *Audit) GetObjectAccessAuditRegistry(ctx context.Context) (int64, error)
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateObjectAccessAuditRegistry(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIObjectAccessAuditRegistry, client.Int(value))
+func (s *Audit) CreateObjectAccessAuditRegistry(ctx context.Context, value ObjectAccessAuditRegistryValue) error {
+	return s.c.Add(ctx, URIObjectAccessAuditRegistry, client.Int(int64(value)))
 }
 
 // UpdateObjectAccessAuditRegistry updates ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditRegistry.
@@ -2675,8 +2718,8 @@ func (s *Audit) CreateObjectAccessAuditRegistry(ctx context.Context, value int64
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateObjectAccessAuditRegistry(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIObjectAccessAuditRegistry, client.Int(value))
+func (s *Audit) UpdateObjectAccessAuditRegistry(ctx context.Context, value ObjectAccessAuditRegistryValue) error {
+	return s.c.Replace(ctx, URIObjectAccessAuditRegistry, client.Int(int64(value)))
 }
 
 // DeleteObjectAccessAuditRegistry deletes ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditRegistry.
@@ -2707,12 +2750,13 @@ func (s *Audit) DeleteObjectAccessAuditRegistry(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetObjectAccessAuditRemovableStorage(ctx context.Context) (int64, error) {
+func (s *Audit) GetObjectAccessAuditRemovableStorage(ctx context.Context) (ObjectAccessAuditRemovableStorageValue, error) {
 	v, err := s.c.Get(ctx, URIObjectAccessAuditRemovableStorage)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ObjectAccessAuditRemovableStorageValue(n), err
 }
 
 // CreateObjectAccessAuditRemovableStorage creates ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditRemovableStorage.
@@ -2726,8 +2770,8 @@ func (s *Audit) GetObjectAccessAuditRemovableStorage(ctx context.Context) (int64
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateObjectAccessAuditRemovableStorage(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIObjectAccessAuditRemovableStorage, client.Int(value))
+func (s *Audit) CreateObjectAccessAuditRemovableStorage(ctx context.Context, value ObjectAccessAuditRemovableStorageValue) error {
+	return s.c.Add(ctx, URIObjectAccessAuditRemovableStorage, client.Int(int64(value)))
 }
 
 // UpdateObjectAccessAuditRemovableStorage updates ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditRemovableStorage.
@@ -2741,8 +2785,8 @@ func (s *Audit) CreateObjectAccessAuditRemovableStorage(ctx context.Context, val
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateObjectAccessAuditRemovableStorage(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIObjectAccessAuditRemovableStorage, client.Int(value))
+func (s *Audit) UpdateObjectAccessAuditRemovableStorage(ctx context.Context, value ObjectAccessAuditRemovableStorageValue) error {
+	return s.c.Replace(ctx, URIObjectAccessAuditRemovableStorage, client.Int(int64(value)))
 }
 
 // DeleteObjectAccessAuditRemovableStorage deletes ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditRemovableStorage.
@@ -2775,12 +2819,13 @@ func (s *Audit) DeleteObjectAccessAuditRemovableStorage(ctx context.Context) err
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetObjectAccessAuditSAM(ctx context.Context) (int64, error) {
+func (s *Audit) GetObjectAccessAuditSAM(ctx context.Context) (ObjectAccessAuditSAMValue, error) {
 	v, err := s.c.Get(ctx, URIObjectAccessAuditSAM)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ObjectAccessAuditSAMValue(n), err
 }
 
 // CreateObjectAccessAuditSAM creates ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditSAM.
@@ -2798,8 +2843,8 @@ func (s *Audit) GetObjectAccessAuditSAM(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateObjectAccessAuditSAM(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIObjectAccessAuditSAM, client.Int(value))
+func (s *Audit) CreateObjectAccessAuditSAM(ctx context.Context, value ObjectAccessAuditSAMValue) error {
+	return s.c.Add(ctx, URIObjectAccessAuditSAM, client.Int(int64(value)))
 }
 
 // UpdateObjectAccessAuditSAM updates ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditSAM.
@@ -2817,8 +2862,8 @@ func (s *Audit) CreateObjectAccessAuditSAM(ctx context.Context, value int64) err
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateObjectAccessAuditSAM(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIObjectAccessAuditSAM, client.Int(value))
+func (s *Audit) UpdateObjectAccessAuditSAM(ctx context.Context, value ObjectAccessAuditSAMValue) error {
+	return s.c.Replace(ctx, URIObjectAccessAuditSAM, client.Int(int64(value)))
 }
 
 // DeleteObjectAccessAuditSAM deletes ./Device/Vendor/MSFT/Policy/Config/Audit/ObjectAccess_AuditSAM.
@@ -2857,12 +2902,13 @@ func (s *Audit) DeleteObjectAccessAuditSAM(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetPolicyChangeAuditAuthenticationPolicyChange(ctx context.Context) (int64, error) {
+func (s *Audit) GetPolicyChangeAuditAuthenticationPolicyChange(ctx context.Context) (PolicyChangeAuditAuthenticationPolicyChangeValue, error) {
 	v, err := s.c.Get(ctx, URIPolicyChangeAuditAuthenticationPolicyChange)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PolicyChangeAuditAuthenticationPolicyChangeValue(n), err
 }
 
 // CreatePolicyChangeAuditAuthenticationPolicyChange creates ./Device/Vendor/MSFT/Policy/Config/Audit/PolicyChange_AuditAuthenticationPolicyChange.
@@ -2882,8 +2928,8 @@ func (s *Audit) GetPolicyChangeAuditAuthenticationPolicyChange(ctx context.Conte
 //
 // Default: 1.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreatePolicyChangeAuditAuthenticationPolicyChange(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPolicyChangeAuditAuthenticationPolicyChange, client.Int(value))
+func (s *Audit) CreatePolicyChangeAuditAuthenticationPolicyChange(ctx context.Context, value PolicyChangeAuditAuthenticationPolicyChangeValue) error {
+	return s.c.Add(ctx, URIPolicyChangeAuditAuthenticationPolicyChange, client.Int(int64(value)))
 }
 
 // UpdatePolicyChangeAuditAuthenticationPolicyChange updates ./Device/Vendor/MSFT/Policy/Config/Audit/PolicyChange_AuditAuthenticationPolicyChange.
@@ -2903,8 +2949,8 @@ func (s *Audit) CreatePolicyChangeAuditAuthenticationPolicyChange(ctx context.Co
 //
 // Default: 1.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdatePolicyChangeAuditAuthenticationPolicyChange(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPolicyChangeAuditAuthenticationPolicyChange, client.Int(value))
+func (s *Audit) UpdatePolicyChangeAuditAuthenticationPolicyChange(ctx context.Context, value PolicyChangeAuditAuthenticationPolicyChangeValue) error {
+	return s.c.Replace(ctx, URIPolicyChangeAuditAuthenticationPolicyChange, client.Int(int64(value)))
 }
 
 // DeletePolicyChangeAuditAuthenticationPolicyChange deletes ./Device/Vendor/MSFT/Policy/Config/Audit/PolicyChange_AuditAuthenticationPolicyChange.
@@ -2942,12 +2988,13 @@ func (s *Audit) DeletePolicyChangeAuditAuthenticationPolicyChange(ctx context.Co
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetPolicyChangeAuditAuthorizationPolicyChange(ctx context.Context) (int64, error) {
+func (s *Audit) GetPolicyChangeAuditAuthorizationPolicyChange(ctx context.Context) (PolicyChangeAuditAuthorizationPolicyChangeValue, error) {
 	v, err := s.c.Get(ctx, URIPolicyChangeAuditAuthorizationPolicyChange)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PolicyChangeAuditAuthorizationPolicyChangeValue(n), err
 }
 
 // CreatePolicyChangeAuditAuthorizationPolicyChange creates ./Device/Vendor/MSFT/Policy/Config/Audit/PolicyChange_AuditAuthorizationPolicyChange.
@@ -2964,8 +3011,8 @@ func (s *Audit) GetPolicyChangeAuditAuthorizationPolicyChange(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreatePolicyChangeAuditAuthorizationPolicyChange(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPolicyChangeAuditAuthorizationPolicyChange, client.Int(value))
+func (s *Audit) CreatePolicyChangeAuditAuthorizationPolicyChange(ctx context.Context, value PolicyChangeAuditAuthorizationPolicyChangeValue) error {
+	return s.c.Add(ctx, URIPolicyChangeAuditAuthorizationPolicyChange, client.Int(int64(value)))
 }
 
 // UpdatePolicyChangeAuditAuthorizationPolicyChange updates ./Device/Vendor/MSFT/Policy/Config/Audit/PolicyChange_AuditAuthorizationPolicyChange.
@@ -2982,8 +3029,8 @@ func (s *Audit) CreatePolicyChangeAuditAuthorizationPolicyChange(ctx context.Con
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdatePolicyChangeAuditAuthorizationPolicyChange(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPolicyChangeAuditAuthorizationPolicyChange, client.Int(value))
+func (s *Audit) UpdatePolicyChangeAuditAuthorizationPolicyChange(ctx context.Context, value PolicyChangeAuditAuthorizationPolicyChangeValue) error {
+	return s.c.Replace(ctx, URIPolicyChangeAuditAuthorizationPolicyChange, client.Int(int64(value)))
 }
 
 // DeletePolicyChangeAuditAuthorizationPolicyChange deletes ./Device/Vendor/MSFT/Policy/Config/Audit/PolicyChange_AuditAuthorizationPolicyChange.
@@ -3015,12 +3062,13 @@ func (s *Audit) DeletePolicyChangeAuditAuthorizationPolicyChange(ctx context.Con
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetPolicyChangeAuditFilteringPlatformPolicyChange(ctx context.Context) (int64, error) {
+func (s *Audit) GetPolicyChangeAuditFilteringPlatformPolicyChange(ctx context.Context) (PolicyChangeAuditFilteringPlatformPolicyChangeValue, error) {
 	v, err := s.c.Get(ctx, URIPolicyChangeAuditFilteringPlatformPolicyChange)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PolicyChangeAuditFilteringPlatformPolicyChangeValue(n), err
 }
 
 // CreatePolicyChangeAuditFilteringPlatformPolicyChange creates ./Device/Vendor/MSFT/Policy/Config/Audit/PolicyChange_AuditFilteringPlatformPolicyChange.
@@ -3034,8 +3082,8 @@ func (s *Audit) GetPolicyChangeAuditFilteringPlatformPolicyChange(ctx context.Co
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreatePolicyChangeAuditFilteringPlatformPolicyChange(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPolicyChangeAuditFilteringPlatformPolicyChange, client.Int(value))
+func (s *Audit) CreatePolicyChangeAuditFilteringPlatformPolicyChange(ctx context.Context, value PolicyChangeAuditFilteringPlatformPolicyChangeValue) error {
+	return s.c.Add(ctx, URIPolicyChangeAuditFilteringPlatformPolicyChange, client.Int(int64(value)))
 }
 
 // UpdatePolicyChangeAuditFilteringPlatformPolicyChange updates ./Device/Vendor/MSFT/Policy/Config/Audit/PolicyChange_AuditFilteringPlatformPolicyChange.
@@ -3049,8 +3097,8 @@ func (s *Audit) CreatePolicyChangeAuditFilteringPlatformPolicyChange(ctx context
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdatePolicyChangeAuditFilteringPlatformPolicyChange(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPolicyChangeAuditFilteringPlatformPolicyChange, client.Int(value))
+func (s *Audit) UpdatePolicyChangeAuditFilteringPlatformPolicyChange(ctx context.Context, value PolicyChangeAuditFilteringPlatformPolicyChangeValue) error {
+	return s.c.Replace(ctx, URIPolicyChangeAuditFilteringPlatformPolicyChange, client.Int(int64(value)))
 }
 
 // DeletePolicyChangeAuditFilteringPlatformPolicyChange deletes ./Device/Vendor/MSFT/Policy/Config/Audit/PolicyChange_AuditFilteringPlatformPolicyChange.
@@ -3081,12 +3129,13 @@ func (s *Audit) DeletePolicyChangeAuditFilteringPlatformPolicyChange(ctx context
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetPolicyChangeAuditMPSSVCRuleLevelPolicyChange(ctx context.Context) (int64, error) {
+func (s *Audit) GetPolicyChangeAuditMPSSVCRuleLevelPolicyChange(ctx context.Context) (PolicyChangeAuditMPSSVCRuleLevelPolicyChangeValue, error) {
 	v, err := s.c.Get(ctx, URIPolicyChangeAuditMPSSVCRuleLevelPolicyChange)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PolicyChangeAuditMPSSVCRuleLevelPolicyChangeValue(n), err
 }
 
 // CreatePolicyChangeAuditMPSSVCRuleLevelPolicyChange creates ./Device/Vendor/MSFT/Policy/Config/Audit/PolicyChange_AuditMPSSVCRuleLevelPolicyChange.
@@ -3102,8 +3151,8 @@ func (s *Audit) GetPolicyChangeAuditMPSSVCRuleLevelPolicyChange(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreatePolicyChangeAuditMPSSVCRuleLevelPolicyChange(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPolicyChangeAuditMPSSVCRuleLevelPolicyChange, client.Int(value))
+func (s *Audit) CreatePolicyChangeAuditMPSSVCRuleLevelPolicyChange(ctx context.Context, value PolicyChangeAuditMPSSVCRuleLevelPolicyChangeValue) error {
+	return s.c.Add(ctx, URIPolicyChangeAuditMPSSVCRuleLevelPolicyChange, client.Int(int64(value)))
 }
 
 // UpdatePolicyChangeAuditMPSSVCRuleLevelPolicyChange updates ./Device/Vendor/MSFT/Policy/Config/Audit/PolicyChange_AuditMPSSVCRuleLevelPolicyChange.
@@ -3119,8 +3168,8 @@ func (s *Audit) CreatePolicyChangeAuditMPSSVCRuleLevelPolicyChange(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdatePolicyChangeAuditMPSSVCRuleLevelPolicyChange(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPolicyChangeAuditMPSSVCRuleLevelPolicyChange, client.Int(value))
+func (s *Audit) UpdatePolicyChangeAuditMPSSVCRuleLevelPolicyChange(ctx context.Context, value PolicyChangeAuditMPSSVCRuleLevelPolicyChangeValue) error {
+	return s.c.Replace(ctx, URIPolicyChangeAuditMPSSVCRuleLevelPolicyChange, client.Int(int64(value)))
 }
 
 // DeletePolicyChangeAuditMPSSVCRuleLevelPolicyChange deletes ./Device/Vendor/MSFT/Policy/Config/Audit/PolicyChange_AuditMPSSVCRuleLevelPolicyChange.
@@ -3149,12 +3198,13 @@ func (s *Audit) DeletePolicyChangeAuditMPSSVCRuleLevelPolicyChange(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetPolicyChangeAuditOtherPolicyChangeEvents(ctx context.Context) (int64, error) {
+func (s *Audit) GetPolicyChangeAuditOtherPolicyChangeEvents(ctx context.Context) (PolicyChangeAuditOtherPolicyChangeEventsValue, error) {
 	v, err := s.c.Get(ctx, URIPolicyChangeAuditOtherPolicyChangeEvents)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PolicyChangeAuditOtherPolicyChangeEventsValue(n), err
 }
 
 // CreatePolicyChangeAuditOtherPolicyChangeEvents creates ./Device/Vendor/MSFT/Policy/Config/Audit/PolicyChange_AuditOtherPolicyChangeEvents.
@@ -3166,8 +3216,8 @@ func (s *Audit) GetPolicyChangeAuditOtherPolicyChangeEvents(ctx context.Context)
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreatePolicyChangeAuditOtherPolicyChangeEvents(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPolicyChangeAuditOtherPolicyChangeEvents, client.Int(value))
+func (s *Audit) CreatePolicyChangeAuditOtherPolicyChangeEvents(ctx context.Context, value PolicyChangeAuditOtherPolicyChangeEventsValue) error {
+	return s.c.Add(ctx, URIPolicyChangeAuditOtherPolicyChangeEvents, client.Int(int64(value)))
 }
 
 // UpdatePolicyChangeAuditOtherPolicyChangeEvents updates ./Device/Vendor/MSFT/Policy/Config/Audit/PolicyChange_AuditOtherPolicyChangeEvents.
@@ -3179,8 +3229,8 @@ func (s *Audit) CreatePolicyChangeAuditOtherPolicyChangeEvents(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdatePolicyChangeAuditOtherPolicyChangeEvents(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPolicyChangeAuditOtherPolicyChangeEvents, client.Int(value))
+func (s *Audit) UpdatePolicyChangeAuditOtherPolicyChangeEvents(ctx context.Context, value PolicyChangeAuditOtherPolicyChangeEventsValue) error {
+	return s.c.Replace(ctx, URIPolicyChangeAuditOtherPolicyChangeEvents, client.Int(int64(value)))
 }
 
 // DeletePolicyChangeAuditOtherPolicyChangeEvents deletes ./Device/Vendor/MSFT/Policy/Config/Audit/PolicyChange_AuditOtherPolicyChangeEvents.
@@ -3209,12 +3259,13 @@ func (s *Audit) DeletePolicyChangeAuditOtherPolicyChangeEvents(ctx context.Conte
 //
 // Default: 1.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetPolicyChangeAuditPolicyChange(ctx context.Context) (int64, error) {
+func (s *Audit) GetPolicyChangeAuditPolicyChange(ctx context.Context) (PolicyChangeAuditPolicyChangeValue, error) {
 	v, err := s.c.Get(ctx, URIPolicyChangeAuditPolicyChange)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PolicyChangeAuditPolicyChangeValue(n), err
 }
 
 // CreatePolicyChangeAuditPolicyChange creates ./Device/Vendor/MSFT/Policy/Config/Audit/PolicyChange_AuditPolicyChange.
@@ -3230,8 +3281,8 @@ func (s *Audit) GetPolicyChangeAuditPolicyChange(ctx context.Context) (int64, er
 //
 // Default: 1.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreatePolicyChangeAuditPolicyChange(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPolicyChangeAuditPolicyChange, client.Int(value))
+func (s *Audit) CreatePolicyChangeAuditPolicyChange(ctx context.Context, value PolicyChangeAuditPolicyChangeValue) error {
+	return s.c.Add(ctx, URIPolicyChangeAuditPolicyChange, client.Int(int64(value)))
 }
 
 // UpdatePolicyChangeAuditPolicyChange updates ./Device/Vendor/MSFT/Policy/Config/Audit/PolicyChange_AuditPolicyChange.
@@ -3247,8 +3298,8 @@ func (s *Audit) CreatePolicyChangeAuditPolicyChange(ctx context.Context, value i
 //
 // Default: 1.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdatePolicyChangeAuditPolicyChange(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPolicyChangeAuditPolicyChange, client.Int(value))
+func (s *Audit) UpdatePolicyChangeAuditPolicyChange(ctx context.Context, value PolicyChangeAuditPolicyChangeValue) error {
+	return s.c.Replace(ctx, URIPolicyChangeAuditPolicyChange, client.Int(int64(value)))
 }
 
 // DeletePolicyChangeAuditPolicyChange deletes ./Device/Vendor/MSFT/Policy/Config/Audit/PolicyChange_AuditPolicyChange.
@@ -3287,12 +3338,13 @@ func (s *Audit) DeletePolicyChangeAuditPolicyChange(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetPrivilegeUseAuditNonSensitivePrivilegeUse(ctx context.Context) (int64, error) {
+func (s *Audit) GetPrivilegeUseAuditNonSensitivePrivilegeUse(ctx context.Context) (PrivilegeUseAuditNonSensitivePrivilegeUseValue, error) {
 	v, err := s.c.Get(ctx, URIPrivilegeUseAuditNonSensitivePrivilegeUse)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PrivilegeUseAuditNonSensitivePrivilegeUseValue(n), err
 }
 
 // CreatePrivilegeUseAuditNonSensitivePrivilegeUse creates ./Device/Vendor/MSFT/Policy/Config/Audit/PrivilegeUse_AuditNonSensitivePrivilegeUse.
@@ -3314,8 +3366,8 @@ func (s *Audit) GetPrivilegeUseAuditNonSensitivePrivilegeUse(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreatePrivilegeUseAuditNonSensitivePrivilegeUse(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPrivilegeUseAuditNonSensitivePrivilegeUse, client.Int(value))
+func (s *Audit) CreatePrivilegeUseAuditNonSensitivePrivilegeUse(ctx context.Context, value PrivilegeUseAuditNonSensitivePrivilegeUseValue) error {
+	return s.c.Add(ctx, URIPrivilegeUseAuditNonSensitivePrivilegeUse, client.Int(int64(value)))
 }
 
 // UpdatePrivilegeUseAuditNonSensitivePrivilegeUse updates ./Device/Vendor/MSFT/Policy/Config/Audit/PrivilegeUse_AuditNonSensitivePrivilegeUse.
@@ -3337,8 +3389,8 @@ func (s *Audit) CreatePrivilegeUseAuditNonSensitivePrivilegeUse(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdatePrivilegeUseAuditNonSensitivePrivilegeUse(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPrivilegeUseAuditNonSensitivePrivilegeUse, client.Int(value))
+func (s *Audit) UpdatePrivilegeUseAuditNonSensitivePrivilegeUse(ctx context.Context, value PrivilegeUseAuditNonSensitivePrivilegeUseValue) error {
+	return s.c.Replace(ctx, URIPrivilegeUseAuditNonSensitivePrivilegeUse, client.Int(int64(value)))
 }
 
 // DeletePrivilegeUseAuditNonSensitivePrivilegeUse deletes ./Device/Vendor/MSFT/Policy/Config/Audit/PrivilegeUse_AuditNonSensitivePrivilegeUse.
@@ -3369,12 +3421,13 @@ func (s *Audit) DeletePrivilegeUseAuditNonSensitivePrivilegeUse(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetPrivilegeUseAuditOtherPrivilegeUseEvents(ctx context.Context) (int64, error) {
+func (s *Audit) GetPrivilegeUseAuditOtherPrivilegeUseEvents(ctx context.Context) (PrivilegeUseAuditOtherPrivilegeUseEventsValue, error) {
 	v, err := s.c.Get(ctx, URIPrivilegeUseAuditOtherPrivilegeUseEvents)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PrivilegeUseAuditOtherPrivilegeUseEventsValue(n), err
 }
 
 // CreatePrivilegeUseAuditOtherPrivilegeUseEvents creates ./Device/Vendor/MSFT/Policy/Config/Audit/PrivilegeUse_AuditOtherPrivilegeUseEvents.
@@ -3382,8 +3435,8 @@ func (s *Audit) GetPrivilegeUseAuditOtherPrivilegeUseEvents(ctx context.Context)
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreatePrivilegeUseAuditOtherPrivilegeUseEvents(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPrivilegeUseAuditOtherPrivilegeUseEvents, client.Int(value))
+func (s *Audit) CreatePrivilegeUseAuditOtherPrivilegeUseEvents(ctx context.Context, value PrivilegeUseAuditOtherPrivilegeUseEventsValue) error {
+	return s.c.Add(ctx, URIPrivilegeUseAuditOtherPrivilegeUseEvents, client.Int(int64(value)))
 }
 
 // UpdatePrivilegeUseAuditOtherPrivilegeUseEvents updates ./Device/Vendor/MSFT/Policy/Config/Audit/PrivilegeUse_AuditOtherPrivilegeUseEvents.
@@ -3391,8 +3444,8 @@ func (s *Audit) CreatePrivilegeUseAuditOtherPrivilegeUseEvents(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdatePrivilegeUseAuditOtherPrivilegeUseEvents(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPrivilegeUseAuditOtherPrivilegeUseEvents, client.Int(value))
+func (s *Audit) UpdatePrivilegeUseAuditOtherPrivilegeUseEvents(ctx context.Context, value PrivilegeUseAuditOtherPrivilegeUseEventsValue) error {
+	return s.c.Replace(ctx, URIPrivilegeUseAuditOtherPrivilegeUseEvents, client.Int(int64(value)))
 }
 
 // DeletePrivilegeUseAuditOtherPrivilegeUseEvents deletes ./Device/Vendor/MSFT/Policy/Config/Audit/PrivilegeUse_AuditOtherPrivilegeUseEvents.
@@ -3419,12 +3472,13 @@ func (s *Audit) DeletePrivilegeUseAuditOtherPrivilegeUseEvents(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetPrivilegeUseAuditSensitivePrivilegeUse(ctx context.Context) (int64, error) {
+func (s *Audit) GetPrivilegeUseAuditSensitivePrivilegeUse(ctx context.Context) (PrivilegeUseAuditSensitivePrivilegeUseValue, error) {
 	v, err := s.c.Get(ctx, URIPrivilegeUseAuditSensitivePrivilegeUse)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PrivilegeUseAuditSensitivePrivilegeUseValue(n), err
 }
 
 // CreatePrivilegeUseAuditSensitivePrivilegeUse creates ./Device/Vendor/MSFT/Policy/Config/Audit/PrivilegeUse_AuditSensitivePrivilegeUse.
@@ -3442,8 +3496,8 @@ func (s *Audit) GetPrivilegeUseAuditSensitivePrivilegeUse(ctx context.Context) (
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreatePrivilegeUseAuditSensitivePrivilegeUse(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPrivilegeUseAuditSensitivePrivilegeUse, client.Int(value))
+func (s *Audit) CreatePrivilegeUseAuditSensitivePrivilegeUse(ctx context.Context, value PrivilegeUseAuditSensitivePrivilegeUseValue) error {
+	return s.c.Add(ctx, URIPrivilegeUseAuditSensitivePrivilegeUse, client.Int(int64(value)))
 }
 
 // UpdatePrivilegeUseAuditSensitivePrivilegeUse updates ./Device/Vendor/MSFT/Policy/Config/Audit/PrivilegeUse_AuditSensitivePrivilegeUse.
@@ -3461,8 +3515,8 @@ func (s *Audit) CreatePrivilegeUseAuditSensitivePrivilegeUse(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdatePrivilegeUseAuditSensitivePrivilegeUse(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPrivilegeUseAuditSensitivePrivilegeUse, client.Int(value))
+func (s *Audit) UpdatePrivilegeUseAuditSensitivePrivilegeUse(ctx context.Context, value PrivilegeUseAuditSensitivePrivilegeUseValue) error {
+	return s.c.Replace(ctx, URIPrivilegeUseAuditSensitivePrivilegeUse, client.Int(int64(value)))
 }
 
 // DeletePrivilegeUseAuditSensitivePrivilegeUse deletes ./Device/Vendor/MSFT/Policy/Config/Audit/PrivilegeUse_AuditSensitivePrivilegeUse.
@@ -3497,12 +3551,13 @@ func (s *Audit) DeletePrivilegeUseAuditSensitivePrivilegeUse(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetSystemAuditIPsecDriver(ctx context.Context) (int64, error) {
+func (s *Audit) GetSystemAuditIPsecDriver(ctx context.Context) (SystemAuditIPsecDriverValue, error) {
 	v, err := s.c.Get(ctx, URISystemAuditIPsecDriver)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SystemAuditIPsecDriverValue(n), err
 }
 
 // CreateSystemAuditIPsecDriver creates ./Device/Vendor/MSFT/Policy/Config/Audit/System_AuditIPsecDriver.
@@ -3518,8 +3573,8 @@ func (s *Audit) GetSystemAuditIPsecDriver(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateSystemAuditIPsecDriver(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISystemAuditIPsecDriver, client.Int(value))
+func (s *Audit) CreateSystemAuditIPsecDriver(ctx context.Context, value SystemAuditIPsecDriverValue) error {
+	return s.c.Add(ctx, URISystemAuditIPsecDriver, client.Int(int64(value)))
 }
 
 // UpdateSystemAuditIPsecDriver updates ./Device/Vendor/MSFT/Policy/Config/Audit/System_AuditIPsecDriver.
@@ -3535,8 +3590,8 @@ func (s *Audit) CreateSystemAuditIPsecDriver(ctx context.Context, value int64) e
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateSystemAuditIPsecDriver(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISystemAuditIPsecDriver, client.Int(value))
+func (s *Audit) UpdateSystemAuditIPsecDriver(ctx context.Context, value SystemAuditIPsecDriverValue) error {
+	return s.c.Replace(ctx, URISystemAuditIPsecDriver, client.Int(int64(value)))
 }
 
 // DeleteSystemAuditIPsecDriver deletes ./Device/Vendor/MSFT/Policy/Config/Audit/System_AuditIPsecDriver.
@@ -3563,12 +3618,13 @@ func (s *Audit) DeleteSystemAuditIPsecDriver(ctx context.Context) error {
 //
 // Default: 3.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetSystemAuditOtherSystemEvents(ctx context.Context) (int64, error) {
+func (s *Audit) GetSystemAuditOtherSystemEvents(ctx context.Context) (SystemAuditOtherSystemEventsValue, error) {
 	v, err := s.c.Get(ctx, URISystemAuditOtherSystemEvents)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SystemAuditOtherSystemEventsValue(n), err
 }
 
 // CreateSystemAuditOtherSystemEvents creates ./Device/Vendor/MSFT/Policy/Config/Audit/System_AuditOtherSystemEvents.
@@ -3578,8 +3634,8 @@ func (s *Audit) GetSystemAuditOtherSystemEvents(ctx context.Context) (int64, err
 //
 // Default: 3.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateSystemAuditOtherSystemEvents(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISystemAuditOtherSystemEvents, client.Int(value))
+func (s *Audit) CreateSystemAuditOtherSystemEvents(ctx context.Context, value SystemAuditOtherSystemEventsValue) error {
+	return s.c.Add(ctx, URISystemAuditOtherSystemEvents, client.Int(int64(value)))
 }
 
 // UpdateSystemAuditOtherSystemEvents updates ./Device/Vendor/MSFT/Policy/Config/Audit/System_AuditOtherSystemEvents.
@@ -3589,8 +3645,8 @@ func (s *Audit) CreateSystemAuditOtherSystemEvents(ctx context.Context, value in
 //
 // Default: 3.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateSystemAuditOtherSystemEvents(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISystemAuditOtherSystemEvents, client.Int(value))
+func (s *Audit) UpdateSystemAuditOtherSystemEvents(ctx context.Context, value SystemAuditOtherSystemEventsValue) error {
+	return s.c.Replace(ctx, URISystemAuditOtherSystemEvents, client.Int(int64(value)))
 }
 
 // DeleteSystemAuditOtherSystemEvents deletes ./Device/Vendor/MSFT/Policy/Config/Audit/System_AuditOtherSystemEvents.
@@ -3612,12 +3668,13 @@ func (s *Audit) DeleteSystemAuditOtherSystemEvents(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetSystemAuditSecurityStateChange(ctx context.Context) (int64, error) {
+func (s *Audit) GetSystemAuditSecurityStateChange(ctx context.Context) (SystemAuditSecurityStateChangeValue, error) {
 	v, err := s.c.Get(ctx, URISystemAuditSecurityStateChange)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SystemAuditSecurityStateChangeValue(n), err
 }
 
 // CreateSystemAuditSecurityStateChange creates ./Device/Vendor/MSFT/Policy/Config/Audit/System_AuditSecurityStateChange.
@@ -3628,8 +3685,8 @@ func (s *Audit) GetSystemAuditSecurityStateChange(ctx context.Context) (int64, e
 //
 // Default: 1.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateSystemAuditSecurityStateChange(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISystemAuditSecurityStateChange, client.Int(value))
+func (s *Audit) CreateSystemAuditSecurityStateChange(ctx context.Context, value SystemAuditSecurityStateChangeValue) error {
+	return s.c.Add(ctx, URISystemAuditSecurityStateChange, client.Int(int64(value)))
 }
 
 // UpdateSystemAuditSecurityStateChange updates ./Device/Vendor/MSFT/Policy/Config/Audit/System_AuditSecurityStateChange.
@@ -3640,8 +3697,8 @@ func (s *Audit) CreateSystemAuditSecurityStateChange(ctx context.Context, value 
 //
 // Default: 1.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateSystemAuditSecurityStateChange(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISystemAuditSecurityStateChange, client.Int(value))
+func (s *Audit) UpdateSystemAuditSecurityStateChange(ctx context.Context, value SystemAuditSecurityStateChangeValue) error {
+	return s.c.Replace(ctx, URISystemAuditSecurityStateChange, client.Int(int64(value)))
 }
 
 // DeleteSystemAuditSecurityStateChange deletes ./Device/Vendor/MSFT/Policy/Config/Audit/System_AuditSecurityStateChange.
@@ -3671,12 +3728,13 @@ func (s *Audit) DeleteSystemAuditSecurityStateChange(ctx context.Context) error 
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetSystemAuditSecuritySystemExtension(ctx context.Context) (int64, error) {
+func (s *Audit) GetSystemAuditSecuritySystemExtension(ctx context.Context) (SystemAuditSecuritySystemExtensionValue, error) {
 	v, err := s.c.Get(ctx, URISystemAuditSecuritySystemExtension)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SystemAuditSecuritySystemExtensionValue(n), err
 }
 
 // CreateSystemAuditSecuritySystemExtension creates ./Device/Vendor/MSFT/Policy/Config/Audit/System_AuditSecuritySystemExtension.
@@ -3694,8 +3752,8 @@ func (s *Audit) GetSystemAuditSecuritySystemExtension(ctx context.Context) (int6
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateSystemAuditSecuritySystemExtension(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISystemAuditSecuritySystemExtension, client.Int(value))
+func (s *Audit) CreateSystemAuditSecuritySystemExtension(ctx context.Context, value SystemAuditSecuritySystemExtensionValue) error {
+	return s.c.Add(ctx, URISystemAuditSecuritySystemExtension, client.Int(int64(value)))
 }
 
 // UpdateSystemAuditSecuritySystemExtension updates ./Device/Vendor/MSFT/Policy/Config/Audit/System_AuditSecuritySystemExtension.
@@ -3713,8 +3771,8 @@ func (s *Audit) CreateSystemAuditSecuritySystemExtension(ctx context.Context, va
 //
 // Default: 0.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateSystemAuditSecuritySystemExtension(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISystemAuditSecuritySystemExtension, client.Int(value))
+func (s *Audit) UpdateSystemAuditSecuritySystemExtension(ctx context.Context, value SystemAuditSecuritySystemExtensionValue) error {
+	return s.c.Replace(ctx, URISystemAuditSecuritySystemExtension, client.Int(int64(value)))
 }
 
 // DeleteSystemAuditSecuritySystemExtension deletes ./Device/Vendor/MSFT/Policy/Config/Audit/System_AuditSecuritySystemExtension.
@@ -3747,12 +3805,13 @@ func (s *Audit) DeleteSystemAuditSecuritySystemExtension(ctx context.Context) er
 //
 // Default: 3.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) GetSystemAuditSystemIntegrity(ctx context.Context) (int64, error) {
+func (s *Audit) GetSystemAuditSystemIntegrity(ctx context.Context) (SystemAuditSystemIntegrityValue, error) {
 	v, err := s.c.Get(ctx, URISystemAuditSystemIntegrity)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SystemAuditSystemIntegrityValue(n), err
 }
 
 // CreateSystemAuditSystemIntegrity creates ./Device/Vendor/MSFT/Policy/Config/Audit/System_AuditSystemIntegrity.
@@ -3766,8 +3825,8 @@ func (s *Audit) GetSystemAuditSystemIntegrity(ctx context.Context) (int64, error
 //
 // Default: 3.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) CreateSystemAuditSystemIntegrity(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISystemAuditSystemIntegrity, client.Int(value))
+func (s *Audit) CreateSystemAuditSystemIntegrity(ctx context.Context, value SystemAuditSystemIntegrityValue) error {
+	return s.c.Add(ctx, URISystemAuditSystemIntegrity, client.Int(int64(value)))
 }
 
 // UpdateSystemAuditSystemIntegrity updates ./Device/Vendor/MSFT/Policy/Config/Audit/System_AuditSystemIntegrity.
@@ -3781,8 +3840,8 @@ func (s *Audit) CreateSystemAuditSystemIntegrity(ctx context.Context, value int6
 //
 // Default: 3.
 // Supported from OS build 10.0.19041, 10.0.18362.329, 10.0.17763.774, 10.0.17134.1039 (CSP v7.0).
-func (s *Audit) UpdateSystemAuditSystemIntegrity(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISystemAuditSystemIntegrity, client.Int(value))
+func (s *Audit) UpdateSystemAuditSystemIntegrity(ctx context.Context, value SystemAuditSystemIntegrityValue) error {
+	return s.c.Replace(ctx, URISystemAuditSystemIntegrity, client.Int(int64(value)))
 }
 
 // DeleteSystemAuditSystemIntegrity deletes ./Device/Vendor/MSFT/Policy/Config/Audit/System_AuditSystemIntegrity.

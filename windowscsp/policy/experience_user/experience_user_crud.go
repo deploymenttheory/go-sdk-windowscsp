@@ -16,12 +16,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *ExperienceUser) GetAllowScreenRecorder(ctx context.Context) (int64, error) {
+func (s *ExperienceUser) GetAllowScreenRecorder(ctx context.Context) (AllowScreenRecorderValue, error) {
 	v, err := s.c.Get(ctx, URIAllowScreenRecorder)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowScreenRecorderValue(n), err
 }
 
 // CreateAllowScreenRecorder creates ./User/Vendor/MSFT/Policy/Config/Experience/AllowScreenRecorder.
@@ -32,8 +33,8 @@ func (s *ExperienceUser) GetAllowScreenRecorder(ctx context.Context) (int64, err
 //
 // Default: 1.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *ExperienceUser) CreateAllowScreenRecorder(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowScreenRecorder, client.Int(value))
+func (s *ExperienceUser) CreateAllowScreenRecorder(ctx context.Context, value AllowScreenRecorderValue) error {
+	return s.c.Add(ctx, URIAllowScreenRecorder, client.Int(int64(value)))
 }
 
 // UpdateAllowScreenRecorder updates ./User/Vendor/MSFT/Policy/Config/Experience/AllowScreenRecorder.
@@ -44,8 +45,8 @@ func (s *ExperienceUser) CreateAllowScreenRecorder(ctx context.Context, value in
 //
 // Default: 1.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *ExperienceUser) UpdateAllowScreenRecorder(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowScreenRecorder, client.Int(value))
+func (s *ExperienceUser) UpdateAllowScreenRecorder(ctx context.Context, value AllowScreenRecorderValue) error {
+	return s.c.Replace(ctx, URIAllowScreenRecorder, client.Int(int64(value)))
 }
 
 // DeleteAllowScreenRecorder deletes ./User/Vendor/MSFT/Policy/Config/Experience/AllowScreenRecorder.
@@ -134,12 +135,13 @@ func (s *ExperienceUser) DeleteAllowSpotlightCollection(ctx context.Context) err
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *ExperienceUser) GetAllowTailoredExperiencesWithDiagnosticData(ctx context.Context) (int64, error) {
+func (s *ExperienceUser) GetAllowTailoredExperiencesWithDiagnosticData(ctx context.Context) (AllowTailoredExperiencesWithDiagnosticDataValue, error) {
 	v, err := s.c.Get(ctx, URIAllowTailoredExperiencesWithDiagnosticData)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowTailoredExperiencesWithDiagnosticDataValue(n), err
 }
 
 // CreateAllowTailoredExperiencesWithDiagnosticData creates ./User/Vendor/MSFT/Policy/Config/Experience/AllowTailoredExperiencesWithDiagnosticData.
@@ -156,8 +158,8 @@ func (s *ExperienceUser) GetAllowTailoredExperiencesWithDiagnosticData(ctx conte
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *ExperienceUser) CreateAllowTailoredExperiencesWithDiagnosticData(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowTailoredExperiencesWithDiagnosticData, client.Int(value))
+func (s *ExperienceUser) CreateAllowTailoredExperiencesWithDiagnosticData(ctx context.Context, value AllowTailoredExperiencesWithDiagnosticDataValue) error {
+	return s.c.Add(ctx, URIAllowTailoredExperiencesWithDiagnosticData, client.Int(int64(value)))
 }
 
 // UpdateAllowTailoredExperiencesWithDiagnosticData updates ./User/Vendor/MSFT/Policy/Config/Experience/AllowTailoredExperiencesWithDiagnosticData.
@@ -174,8 +176,8 @@ func (s *ExperienceUser) CreateAllowTailoredExperiencesWithDiagnosticData(ctx co
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *ExperienceUser) UpdateAllowTailoredExperiencesWithDiagnosticData(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowTailoredExperiencesWithDiagnosticData, client.Int(value))
+func (s *ExperienceUser) UpdateAllowTailoredExperiencesWithDiagnosticData(ctx context.Context, value AllowTailoredExperiencesWithDiagnosticDataValue) error {
+	return s.c.Replace(ctx, URIAllowTailoredExperiencesWithDiagnosticData, client.Int(int64(value)))
 }
 
 // DeleteAllowTailoredExperiencesWithDiagnosticData deletes ./User/Vendor/MSFT/Policy/Config/Experience/AllowTailoredExperiencesWithDiagnosticData.
@@ -203,12 +205,13 @@ func (s *ExperienceUser) DeleteAllowTailoredExperiencesWithDiagnosticData(ctx co
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *ExperienceUser) GetAllowThirdPartySuggestionsInWindowsSpotlight(ctx context.Context) (int64, error) {
+func (s *ExperienceUser) GetAllowThirdPartySuggestionsInWindowsSpotlight(ctx context.Context) (AllowThirdPartySuggestionsInWindowsSpotlightValue, error) {
 	v, err := s.c.Get(ctx, URIAllowThirdPartySuggestionsInWindowsSpotlight)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowThirdPartySuggestionsInWindowsSpotlightValue(n), err
 }
 
 // CreateAllowThirdPartySuggestionsInWindowsSpotlight creates ./User/Vendor/MSFT/Policy/Config/Experience/AllowThirdPartySuggestionsInWindowsSpotlight.
@@ -218,8 +221,8 @@ func (s *ExperienceUser) GetAllowThirdPartySuggestionsInWindowsSpotlight(ctx con
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *ExperienceUser) CreateAllowThirdPartySuggestionsInWindowsSpotlight(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowThirdPartySuggestionsInWindowsSpotlight, client.Int(value))
+func (s *ExperienceUser) CreateAllowThirdPartySuggestionsInWindowsSpotlight(ctx context.Context, value AllowThirdPartySuggestionsInWindowsSpotlightValue) error {
+	return s.c.Add(ctx, URIAllowThirdPartySuggestionsInWindowsSpotlight, client.Int(int64(value)))
 }
 
 // UpdateAllowThirdPartySuggestionsInWindowsSpotlight updates ./User/Vendor/MSFT/Policy/Config/Experience/AllowThirdPartySuggestionsInWindowsSpotlight.
@@ -229,8 +232,8 @@ func (s *ExperienceUser) CreateAllowThirdPartySuggestionsInWindowsSpotlight(ctx 
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *ExperienceUser) UpdateAllowThirdPartySuggestionsInWindowsSpotlight(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowThirdPartySuggestionsInWindowsSpotlight, client.Int(value))
+func (s *ExperienceUser) UpdateAllowThirdPartySuggestionsInWindowsSpotlight(ctx context.Context, value AllowThirdPartySuggestionsInWindowsSpotlightValue) error {
+	return s.c.Replace(ctx, URIAllowThirdPartySuggestionsInWindowsSpotlight, client.Int(int64(value)))
 }
 
 // DeleteAllowThirdPartySuggestionsInWindowsSpotlight deletes ./User/Vendor/MSFT/Policy/Config/Experience/AllowThirdPartySuggestionsInWindowsSpotlight.
@@ -254,12 +257,13 @@ func (s *ExperienceUser) DeleteAllowThirdPartySuggestionsInWindowsSpotlight(ctx 
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *ExperienceUser) GetAllowWindowsSpotlight(ctx context.Context) (int64, error) {
+func (s *ExperienceUser) GetAllowWindowsSpotlight(ctx context.Context) (AllowWindowsSpotlightValue, error) {
 	v, err := s.c.Get(ctx, URIAllowWindowsSpotlight)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowWindowsSpotlightValue(n), err
 }
 
 // CreateAllowWindowsSpotlight creates ./User/Vendor/MSFT/Policy/Config/Experience/AllowWindowsSpotlight.
@@ -272,8 +276,8 @@ func (s *ExperienceUser) GetAllowWindowsSpotlight(ctx context.Context) (int64, e
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *ExperienceUser) CreateAllowWindowsSpotlight(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowWindowsSpotlight, client.Int(value))
+func (s *ExperienceUser) CreateAllowWindowsSpotlight(ctx context.Context, value AllowWindowsSpotlightValue) error {
+	return s.c.Add(ctx, URIAllowWindowsSpotlight, client.Int(int64(value)))
 }
 
 // UpdateAllowWindowsSpotlight updates ./User/Vendor/MSFT/Policy/Config/Experience/AllowWindowsSpotlight.
@@ -286,8 +290,8 @@ func (s *ExperienceUser) CreateAllowWindowsSpotlight(ctx context.Context, value 
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *ExperienceUser) UpdateAllowWindowsSpotlight(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowWindowsSpotlight, client.Int(value))
+func (s *ExperienceUser) UpdateAllowWindowsSpotlight(ctx context.Context, value AllowWindowsSpotlightValue) error {
+	return s.c.Replace(ctx, URIAllowWindowsSpotlight, client.Int(int64(value)))
 }
 
 // DeleteAllowWindowsSpotlight deletes ./User/Vendor/MSFT/Policy/Config/Experience/AllowWindowsSpotlight.
@@ -313,12 +317,13 @@ func (s *ExperienceUser) DeleteAllowWindowsSpotlight(ctx context.Context) error 
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *ExperienceUser) GetAllowWindowsSpotlightOnActionCenter(ctx context.Context) (int64, error) {
+func (s *ExperienceUser) GetAllowWindowsSpotlightOnActionCenter(ctx context.Context) (AllowWindowsSpotlightOnActionCenterValue, error) {
 	v, err := s.c.Get(ctx, URIAllowWindowsSpotlightOnActionCenter)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowWindowsSpotlightOnActionCenterValue(n), err
 }
 
 // CreateAllowWindowsSpotlightOnActionCenter creates ./User/Vendor/MSFT/Policy/Config/Experience/AllowWindowsSpotlightOnActionCenter.
@@ -330,8 +335,8 @@ func (s *ExperienceUser) GetAllowWindowsSpotlightOnActionCenter(ctx context.Cont
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *ExperienceUser) CreateAllowWindowsSpotlightOnActionCenter(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowWindowsSpotlightOnActionCenter, client.Int(value))
+func (s *ExperienceUser) CreateAllowWindowsSpotlightOnActionCenter(ctx context.Context, value AllowWindowsSpotlightOnActionCenterValue) error {
+	return s.c.Add(ctx, URIAllowWindowsSpotlightOnActionCenter, client.Int(int64(value)))
 }
 
 // UpdateAllowWindowsSpotlightOnActionCenter updates ./User/Vendor/MSFT/Policy/Config/Experience/AllowWindowsSpotlightOnActionCenter.
@@ -343,8 +348,8 @@ func (s *ExperienceUser) CreateAllowWindowsSpotlightOnActionCenter(ctx context.C
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *ExperienceUser) UpdateAllowWindowsSpotlightOnActionCenter(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowWindowsSpotlightOnActionCenter, client.Int(value))
+func (s *ExperienceUser) UpdateAllowWindowsSpotlightOnActionCenter(ctx context.Context, value AllowWindowsSpotlightOnActionCenterValue) error {
+	return s.c.Replace(ctx, URIAllowWindowsSpotlightOnActionCenter, client.Int(int64(value)))
 }
 
 // DeleteAllowWindowsSpotlightOnActionCenter deletes ./User/Vendor/MSFT/Policy/Config/Experience/AllowWindowsSpotlightOnActionCenter.
@@ -370,12 +375,13 @@ func (s *ExperienceUser) DeleteAllowWindowsSpotlightOnActionCenter(ctx context.C
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *ExperienceUser) GetAllowWindowsSpotlightOnSettings(ctx context.Context) (int64, error) {
+func (s *ExperienceUser) GetAllowWindowsSpotlightOnSettings(ctx context.Context) (AllowWindowsSpotlightOnSettingsValue, error) {
 	v, err := s.c.Get(ctx, URIAllowWindowsSpotlightOnSettings)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowWindowsSpotlightOnSettingsValue(n), err
 }
 
 // CreateAllowWindowsSpotlightOnSettings creates ./User/Vendor/MSFT/Policy/Config/Experience/AllowWindowsSpotlightOnSettings.
@@ -388,8 +394,8 @@ func (s *ExperienceUser) GetAllowWindowsSpotlightOnSettings(ctx context.Context)
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *ExperienceUser) CreateAllowWindowsSpotlightOnSettings(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowWindowsSpotlightOnSettings, client.Int(value))
+func (s *ExperienceUser) CreateAllowWindowsSpotlightOnSettings(ctx context.Context, value AllowWindowsSpotlightOnSettingsValue) error {
+	return s.c.Add(ctx, URIAllowWindowsSpotlightOnSettings, client.Int(int64(value)))
 }
 
 // UpdateAllowWindowsSpotlightOnSettings updates ./User/Vendor/MSFT/Policy/Config/Experience/AllowWindowsSpotlightOnSettings.
@@ -402,8 +408,8 @@ func (s *ExperienceUser) CreateAllowWindowsSpotlightOnSettings(ctx context.Conte
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *ExperienceUser) UpdateAllowWindowsSpotlightOnSettings(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowWindowsSpotlightOnSettings, client.Int(value))
+func (s *ExperienceUser) UpdateAllowWindowsSpotlightOnSettings(ctx context.Context, value AllowWindowsSpotlightOnSettingsValue) error {
+	return s.c.Replace(ctx, URIAllowWindowsSpotlightOnSettings, client.Int(int64(value)))
 }
 
 // DeleteAllowWindowsSpotlightOnSettings deletes ./User/Vendor/MSFT/Policy/Config/Experience/AllowWindowsSpotlightOnSettings.
@@ -431,12 +437,13 @@ func (s *ExperienceUser) DeleteAllowWindowsSpotlightOnSettings(ctx context.Conte
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *ExperienceUser) GetAllowWindowsSpotlightWindowsWelcomeExperience(ctx context.Context) (int64, error) {
+func (s *ExperienceUser) GetAllowWindowsSpotlightWindowsWelcomeExperience(ctx context.Context) (AllowWindowsSpotlightWindowsWelcomeExperienceValue, error) {
 	v, err := s.c.Get(ctx, URIAllowWindowsSpotlightWindowsWelcomeExperience)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowWindowsSpotlightWindowsWelcomeExperienceValue(n), err
 }
 
 // CreateAllowWindowsSpotlightWindowsWelcomeExperience creates ./User/Vendor/MSFT/Policy/Config/Experience/AllowWindowsSpotlightWindowsWelcomeExperience.
@@ -450,8 +457,8 @@ func (s *ExperienceUser) GetAllowWindowsSpotlightWindowsWelcomeExperience(ctx co
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *ExperienceUser) CreateAllowWindowsSpotlightWindowsWelcomeExperience(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowWindowsSpotlightWindowsWelcomeExperience, client.Int(value))
+func (s *ExperienceUser) CreateAllowWindowsSpotlightWindowsWelcomeExperience(ctx context.Context, value AllowWindowsSpotlightWindowsWelcomeExperienceValue) error {
+	return s.c.Add(ctx, URIAllowWindowsSpotlightWindowsWelcomeExperience, client.Int(int64(value)))
 }
 
 // UpdateAllowWindowsSpotlightWindowsWelcomeExperience updates ./User/Vendor/MSFT/Policy/Config/Experience/AllowWindowsSpotlightWindowsWelcomeExperience.
@@ -465,8 +472,8 @@ func (s *ExperienceUser) CreateAllowWindowsSpotlightWindowsWelcomeExperience(ctx
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *ExperienceUser) UpdateAllowWindowsSpotlightWindowsWelcomeExperience(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowWindowsSpotlightWindowsWelcomeExperience, client.Int(value))
+func (s *ExperienceUser) UpdateAllowWindowsSpotlightWindowsWelcomeExperience(ctx context.Context, value AllowWindowsSpotlightWindowsWelcomeExperienceValue) error {
+	return s.c.Replace(ctx, URIAllowWindowsSpotlightWindowsWelcomeExperience, client.Int(int64(value)))
 }
 
 // DeleteAllowWindowsSpotlightWindowsWelcomeExperience deletes ./User/Vendor/MSFT/Policy/Config/Experience/AllowWindowsSpotlightWindowsWelcomeExperience.
@@ -491,12 +498,13 @@ func (s *ExperienceUser) DeleteAllowWindowsSpotlightWindowsWelcomeExperience(ctx
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *ExperienceUser) GetConfigureWindowsSpotlightOnLockScreen(ctx context.Context) (int64, error) {
+func (s *ExperienceUser) GetConfigureWindowsSpotlightOnLockScreen(ctx context.Context) (ConfigureWindowsSpotlightOnLockScreenValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureWindowsSpotlightOnLockScreen)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureWindowsSpotlightOnLockScreenValue(n), err
 }
 
 // CreateConfigureWindowsSpotlightOnLockScreen creates ./User/Vendor/MSFT/Policy/Config/Experience/ConfigureWindowsSpotlightOnLockScreen.
@@ -506,8 +514,8 @@ func (s *ExperienceUser) GetConfigureWindowsSpotlightOnLockScreen(ctx context.Co
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *ExperienceUser) CreateConfigureWindowsSpotlightOnLockScreen(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureWindowsSpotlightOnLockScreen, client.Int(value))
+func (s *ExperienceUser) CreateConfigureWindowsSpotlightOnLockScreen(ctx context.Context, value ConfigureWindowsSpotlightOnLockScreenValue) error {
+	return s.c.Add(ctx, URIConfigureWindowsSpotlightOnLockScreen, client.Int(int64(value)))
 }
 
 // UpdateConfigureWindowsSpotlightOnLockScreen updates ./User/Vendor/MSFT/Policy/Config/Experience/ConfigureWindowsSpotlightOnLockScreen.
@@ -517,8 +525,8 @@ func (s *ExperienceUser) CreateConfigureWindowsSpotlightOnLockScreen(ctx context
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *ExperienceUser) UpdateConfigureWindowsSpotlightOnLockScreen(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureWindowsSpotlightOnLockScreen, client.Int(value))
+func (s *ExperienceUser) UpdateConfigureWindowsSpotlightOnLockScreen(ctx context.Context, value ConfigureWindowsSpotlightOnLockScreenValue) error {
+	return s.c.Replace(ctx, URIConfigureWindowsSpotlightOnLockScreen, client.Int(int64(value)))
 }
 
 // DeleteConfigureWindowsSpotlightOnLockScreen deletes ./User/Vendor/MSFT/Policy/Config/Experience/ConfigureWindowsSpotlightOnLockScreen.
@@ -542,12 +550,13 @@ func (s *ExperienceUser) DeleteConfigureWindowsSpotlightOnLockScreen(ctx context
 //
 // Default: 0.
 // Supported from OS build 10.0.26100, 10.0.22621.900, 10.0.19045.4842 (CSP v10.0).
-func (s *ExperienceUser) GetEnableOrganizationalMessages(ctx context.Context) (int64, error) {
+func (s *ExperienceUser) GetEnableOrganizationalMessages(ctx context.Context) (EnableOrganizationalMessagesValue, error) {
 	v, err := s.c.Get(ctx, URIEnableOrganizationalMessages)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableOrganizationalMessagesValue(n), err
 }
 
 // CreateEnableOrganizationalMessages creates ./User/Vendor/MSFT/Policy/Config/Experience/EnableOrganizationalMessages.
@@ -560,8 +569,8 @@ func (s *ExperienceUser) GetEnableOrganizationalMessages(ctx context.Context) (i
 //
 // Default: 0.
 // Supported from OS build 10.0.26100, 10.0.22621.900, 10.0.19045.4842 (CSP v10.0).
-func (s *ExperienceUser) CreateEnableOrganizationalMessages(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableOrganizationalMessages, client.Int(value))
+func (s *ExperienceUser) CreateEnableOrganizationalMessages(ctx context.Context, value EnableOrganizationalMessagesValue) error {
+	return s.c.Add(ctx, URIEnableOrganizationalMessages, client.Int(int64(value)))
 }
 
 // UpdateEnableOrganizationalMessages updates ./User/Vendor/MSFT/Policy/Config/Experience/EnableOrganizationalMessages.
@@ -574,8 +583,8 @@ func (s *ExperienceUser) CreateEnableOrganizationalMessages(ctx context.Context,
 //
 // Default: 0.
 // Supported from OS build 10.0.26100, 10.0.22621.900, 10.0.19045.4842 (CSP v10.0).
-func (s *ExperienceUser) UpdateEnableOrganizationalMessages(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableOrganizationalMessages, client.Int(value))
+func (s *ExperienceUser) UpdateEnableOrganizationalMessages(ctx context.Context, value EnableOrganizationalMessagesValue) error {
+	return s.c.Replace(ctx, URIEnableOrganizationalMessages, client.Int(int64(value)))
 }
 
 // DeleteEnableOrganizationalMessages deletes ./User/Vendor/MSFT/Policy/Config/Experience/EnableOrganizationalMessages.

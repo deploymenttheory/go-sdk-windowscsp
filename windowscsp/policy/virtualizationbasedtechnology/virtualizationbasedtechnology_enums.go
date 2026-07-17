@@ -2,21 +2,57 @@
 
 package virtualizationbasedtechnology
 
-// HypervisorEnforcedCodeIntegrity allowed values.
+import (
+	"fmt"
+)
+
+// HypervisorEnforcedCodeIntegrityValue — allowed values for the HypervisorEnforcedCodeIntegrity node.
+type HypervisorEnforcedCodeIntegrityValue int64
+
 const (
 	// (Disabled) Turns off Hypervisor-Protected Code Integrity remotely if configured previously
 	// without UEFI Lock.
-	HypervisorEnforcedCodeIntegrityDisabledTurnsOffHypervisorProtectedCodeIntegrity int64 = 0
+	HypervisorEnforcedCodeIntegrityDisabledTurnsOffHypervisorProtectedCodeIntegrity HypervisorEnforcedCodeIntegrityValue = 0
 	// (Enabled with UEFI lock) Turns on Hypervisor-Protected Code Integrity with UEFI lock.
-	HypervisorEnforcedCodeIntegrityEnabledWithUEFILockTurnsOn int64 = 1
+	HypervisorEnforcedCodeIntegrityEnabledWithUEFILockTurnsOn HypervisorEnforcedCodeIntegrityValue = 1
 	// (Enabled without lock) Turns on Hypervisor-Protected Code Integrity without UEFI lock.
-	HypervisorEnforcedCodeIntegrityEnabledWithoutLockTurnsOnHypervisorProtected int64 = 2
+	HypervisorEnforcedCodeIntegrityEnabledWithoutLockTurnsOnHypervisorProtected HypervisorEnforcedCodeIntegrityValue = 2
 )
 
-// RequireUEFIMemoryAttributesTable allowed values.
+// String returns the HypervisorEnforcedCodeIntegrityValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e HypervisorEnforcedCodeIntegrityValue) String() string {
+	switch e {
+	case HypervisorEnforcedCodeIntegrityDisabledTurnsOffHypervisorProtectedCodeIntegrity:
+		return "HypervisorEnforcedCodeIntegrityDisabledTurnsOffHypervisorProtectedCodeIntegrity"
+	case HypervisorEnforcedCodeIntegrityEnabledWithUEFILockTurnsOn:
+		return "HypervisorEnforcedCodeIntegrityEnabledWithUEFILockTurnsOn"
+	case HypervisorEnforcedCodeIntegrityEnabledWithoutLockTurnsOnHypervisorProtected:
+		return "HypervisorEnforcedCodeIntegrityEnabledWithoutLockTurnsOnHypervisorProtected"
+	default:
+		return fmt.Sprintf("HypervisorEnforcedCodeIntegrityValue(%d)", int64(e))
+	}
+}
+
+// RequireUEFIMemoryAttributesTableValue — allowed values for the RequireUEFIMemoryAttributesTable node.
+type RequireUEFIMemoryAttributesTableValue int64
+
 const (
 	// Do not require UEFI Memory Attributes Table
-	RequireUEFIMemoryAttributesTableDoNotRequireUEFIMemoryAttributes int64 = 0
+	RequireUEFIMemoryAttributesTableDoNotRequireUEFIMemoryAttributes RequireUEFIMemoryAttributesTableValue = 0
 	// Require UEFI Memory Attributes Table
-	RequireUEFIMemoryAttributesTableRequireUEFIMemoryAttributesTable int64 = 1
+	RequireUEFIMemoryAttributesTableRequireUEFIMemoryAttributesTable RequireUEFIMemoryAttributesTableValue = 1
 )
+
+// String returns the RequireUEFIMemoryAttributesTableValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e RequireUEFIMemoryAttributesTableValue) String() string {
+	switch e {
+	case RequireUEFIMemoryAttributesTableDoNotRequireUEFIMemoryAttributes:
+		return "RequireUEFIMemoryAttributesTableDoNotRequireUEFIMemoryAttributes"
+	case RequireUEFIMemoryAttributesTableRequireUEFIMemoryAttributesTable:
+		return "RequireUEFIMemoryAttributesTableRequireUEFIMemoryAttributesTable"
+	default:
+		return fmt.Sprintf("RequireUEFIMemoryAttributesTableValue(%d)", int64(e))
+	}
+}

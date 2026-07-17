@@ -73,12 +73,13 @@ func (s *SUPL) UpdateSUPL1ExtMicrosoftFullVersion(ctx context.Context, value str
 // will continue processing the rest of the parameters.
 //
 // Default: 0.
-func (s *SUPL) GetSUPL1ExtMicrosoftHighAccPositioningMethod(ctx context.Context) (int64, error) {
+func (s *SUPL) GetSUPL1ExtMicrosoftHighAccPositioningMethod(ctx context.Context) (SUPL1ExtMicrosoftHighAccPositioningMethodValue, error) {
 	v, err := s.c.Get(ctx, URISUPL1ExtMicrosoftHighAccPositioningMethod)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SUPL1ExtMicrosoftHighAccPositioningMethodValue(n), err
 }
 
 // UpdateSUPL1ExtMicrosoftHighAccPositioningMethod updates ./Vendor/MSFT/SUPL/SUPL1/Ext/Microsoft/HighAccPositioningMethod.
@@ -90,8 +91,8 @@ func (s *SUPL) GetSUPL1ExtMicrosoftHighAccPositioningMethod(ctx context.Context)
 // will continue processing the rest of the parameters.
 //
 // Default: 0.
-func (s *SUPL) UpdateSUPL1ExtMicrosoftHighAccPositioningMethod(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISUPL1ExtMicrosoftHighAccPositioningMethod, client.Int(value))
+func (s *SUPL) UpdateSUPL1ExtMicrosoftHighAccPositioningMethod(ctx context.Context, value SUPL1ExtMicrosoftHighAccPositioningMethodValue) error {
+	return s.c.Replace(ctx, URISUPL1ExtMicrosoftHighAccPositioningMethod, client.Int(int64(value)))
 }
 
 // GetSUPL1ExtMicrosoftLocMasterSwitchDependencyNII reads ./Vendor/MSFT/SUPL/SUPL1/Ext/Microsoft/LocMasterSwitchDependencyNII.
@@ -510,12 +511,13 @@ func (s *SUPL) UpdateV2UPL1PDE(ctx context.Context, value string) error {
 // provider will continue processing the rest of the parameters.
 //
 // Default: 0.
-func (s *SUPL) GetV2UPL1PositioningMethodMR(ctx context.Context) (int64, error) {
+func (s *SUPL) GetV2UPL1PositioningMethodMR(ctx context.Context) (V2UPL1PositioningMethodMRValue, error) {
 	v, err := s.c.Get(ctx, URIV2UPL1PositioningMethodMR)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return V2UPL1PositioningMethodMRValue(n), err
 }
 
 // UpdateV2UPL1PositioningMethodMR updates ./Vendor/MSFT/SUPL/V2UPL1 /PositioningMethod_MR.
@@ -528,8 +530,8 @@ func (s *SUPL) GetV2UPL1PositioningMethodMR(ctx context.Context) (int64, error) 
 // provider will continue processing the rest of the parameters.
 //
 // Default: 0.
-func (s *SUPL) UpdateV2UPL1PositioningMethodMR(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIV2UPL1PositioningMethodMR, client.Int(value))
+func (s *SUPL) UpdateV2UPL1PositioningMethodMR(ctx context.Context, value V2UPL1PositioningMethodMRValue) error {
+	return s.c.Replace(ctx, URIV2UPL1PositioningMethodMR, client.Int(int64(value)))
 }
 
 // GetV2UPL1ServerAccessInterval reads ./Vendor/MSFT/SUPL/V2UPL1 /ServerAccessInterval.

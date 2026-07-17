@@ -2,12 +2,33 @@
 
 package cellular
 
-// LetAppsAccessCellularData allowed values.
+import (
+	"fmt"
+)
+
+// LetAppsAccessCellularDataValue — allowed values for the LetAppsAccessCellularData node.
+type LetAppsAccessCellularDataValue int64
+
 const (
 	// User is in control
-	LetAppsAccessCellularDataUserIsInControl int64 = 0
+	LetAppsAccessCellularDataUserIsInControl LetAppsAccessCellularDataValue = 0
 	// Force Allow
-	LetAppsAccessCellularDataForceAllow int64 = 1
+	LetAppsAccessCellularDataForceAllow LetAppsAccessCellularDataValue = 1
 	// Force Deny
-	LetAppsAccessCellularDataForceDeny int64 = 2
+	LetAppsAccessCellularDataForceDeny LetAppsAccessCellularDataValue = 2
 )
+
+// String returns the LetAppsAccessCellularDataValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e LetAppsAccessCellularDataValue) String() string {
+	switch e {
+	case LetAppsAccessCellularDataUserIsInControl:
+		return "LetAppsAccessCellularDataUserIsInControl"
+	case LetAppsAccessCellularDataForceAllow:
+		return "LetAppsAccessCellularDataForceAllow"
+	case LetAppsAccessCellularDataForceDeny:
+		return "LetAppsAccessCellularDataForceDeny"
+	default:
+		return fmt.Sprintf("LetAppsAccessCellularDataValue(%d)", int64(e))
+	}
+}

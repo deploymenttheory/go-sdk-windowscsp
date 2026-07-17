@@ -13,12 +13,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *RemoteDesktop) GetLoadAadCredKeyFromProfile(ctx context.Context) (int64, error) {
+func (s *RemoteDesktop) GetLoadAadCredKeyFromProfile(ctx context.Context) (LoadAadCredKeyFromProfileValue, error) {
 	v, err := s.c.Get(ctx, URILoadAadCredKeyFromProfile)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return LoadAadCredKeyFromProfileValue(n), err
 }
 
 // CreateLoadAadCredKeyFromProfile creates ./Device/Vendor/MSFT/Policy/Config/RemoteDesktop/LoadAadCredKeyFromProfile.
@@ -26,8 +27,8 @@ func (s *RemoteDesktop) GetLoadAadCredKeyFromProfile(ctx context.Context) (int64
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *RemoteDesktop) CreateLoadAadCredKeyFromProfile(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URILoadAadCredKeyFromProfile, client.Int(value))
+func (s *RemoteDesktop) CreateLoadAadCredKeyFromProfile(ctx context.Context, value LoadAadCredKeyFromProfileValue) error {
+	return s.c.Add(ctx, URILoadAadCredKeyFromProfile, client.Int(int64(value)))
 }
 
 // UpdateLoadAadCredKeyFromProfile updates ./Device/Vendor/MSFT/Policy/Config/RemoteDesktop/LoadAadCredKeyFromProfile.
@@ -35,8 +36,8 @@ func (s *RemoteDesktop) CreateLoadAadCredKeyFromProfile(ctx context.Context, val
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *RemoteDesktop) UpdateLoadAadCredKeyFromProfile(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URILoadAadCredKeyFromProfile, client.Int(value))
+func (s *RemoteDesktop) UpdateLoadAadCredKeyFromProfile(ctx context.Context, value LoadAadCredKeyFromProfileValue) error {
+	return s.c.Replace(ctx, URILoadAadCredKeyFromProfile, client.Int(int64(value)))
 }
 
 // DeleteLoadAadCredKeyFromProfile deletes ./Device/Vendor/MSFT/Policy/Config/RemoteDesktop/LoadAadCredKeyFromProfile.

@@ -133,12 +133,13 @@ func (s *KioskBrowserUser) DeleteDefaultURL(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *KioskBrowserUser) GetEnableEndSessionButton(ctx context.Context) (int64, error) {
+func (s *KioskBrowserUser) GetEnableEndSessionButton(ctx context.Context) (EnableEndSessionButtonValue, error) {
 	v, err := s.c.Get(ctx, URIEnableEndSessionButton)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableEndSessionButtonValue(n), err
 }
 
 // CreateEnableEndSessionButton creates ./User/Vendor/MSFT/Policy/Config/KioskBrowser/EnableEndSessionButton.
@@ -146,8 +147,8 @@ func (s *KioskBrowserUser) GetEnableEndSessionButton(ctx context.Context) (int64
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *KioskBrowserUser) CreateEnableEndSessionButton(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableEndSessionButton, client.Int(value))
+func (s *KioskBrowserUser) CreateEnableEndSessionButton(ctx context.Context, value EnableEndSessionButtonValue) error {
+	return s.c.Add(ctx, URIEnableEndSessionButton, client.Int(int64(value)))
 }
 
 // UpdateEnableEndSessionButton updates ./User/Vendor/MSFT/Policy/Config/KioskBrowser/EnableEndSessionButton.
@@ -155,8 +156,8 @@ func (s *KioskBrowserUser) CreateEnableEndSessionButton(ctx context.Context, val
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *KioskBrowserUser) UpdateEnableEndSessionButton(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableEndSessionButton, client.Int(value))
+func (s *KioskBrowserUser) UpdateEnableEndSessionButton(ctx context.Context, value EnableEndSessionButtonValue) error {
+	return s.c.Replace(ctx, URIEnableEndSessionButton, client.Int(int64(value)))
 }
 
 // DeleteEnableEndSessionButton deletes ./User/Vendor/MSFT/Policy/Config/KioskBrowser/EnableEndSessionButton.
@@ -173,12 +174,13 @@ func (s *KioskBrowserUser) DeleteEnableEndSessionButton(ctx context.Context) err
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *KioskBrowserUser) GetEnableHomeButton(ctx context.Context) (int64, error) {
+func (s *KioskBrowserUser) GetEnableHomeButton(ctx context.Context) (EnableHomeButtonValue, error) {
 	v, err := s.c.Get(ctx, URIEnableHomeButton)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableHomeButtonValue(n), err
 }
 
 // CreateEnableHomeButton creates ./User/Vendor/MSFT/Policy/Config/KioskBrowser/EnableHomeButton.
@@ -186,8 +188,8 @@ func (s *KioskBrowserUser) GetEnableHomeButton(ctx context.Context) (int64, erro
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *KioskBrowserUser) CreateEnableHomeButton(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableHomeButton, client.Int(value))
+func (s *KioskBrowserUser) CreateEnableHomeButton(ctx context.Context, value EnableHomeButtonValue) error {
+	return s.c.Add(ctx, URIEnableHomeButton, client.Int(int64(value)))
 }
 
 // UpdateEnableHomeButton updates ./User/Vendor/MSFT/Policy/Config/KioskBrowser/EnableHomeButton.
@@ -195,8 +197,8 @@ func (s *KioskBrowserUser) CreateEnableHomeButton(ctx context.Context, value int
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *KioskBrowserUser) UpdateEnableHomeButton(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableHomeButton, client.Int(value))
+func (s *KioskBrowserUser) UpdateEnableHomeButton(ctx context.Context, value EnableHomeButtonValue) error {
+	return s.c.Replace(ctx, URIEnableHomeButton, client.Int(int64(value)))
 }
 
 // DeleteEnableHomeButton deletes ./User/Vendor/MSFT/Policy/Config/KioskBrowser/EnableHomeButton.
@@ -213,12 +215,13 @@ func (s *KioskBrowserUser) DeleteEnableHomeButton(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *KioskBrowserUser) GetEnableNavigationButtons(ctx context.Context) (int64, error) {
+func (s *KioskBrowserUser) GetEnableNavigationButtons(ctx context.Context) (EnableNavigationButtonsValue, error) {
 	v, err := s.c.Get(ctx, URIEnableNavigationButtons)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableNavigationButtonsValue(n), err
 }
 
 // CreateEnableNavigationButtons creates ./User/Vendor/MSFT/Policy/Config/KioskBrowser/EnableNavigationButtons.
@@ -226,8 +229,8 @@ func (s *KioskBrowserUser) GetEnableNavigationButtons(ctx context.Context) (int6
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *KioskBrowserUser) CreateEnableNavigationButtons(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableNavigationButtons, client.Int(value))
+func (s *KioskBrowserUser) CreateEnableNavigationButtons(ctx context.Context, value EnableNavigationButtonsValue) error {
+	return s.c.Add(ctx, URIEnableNavigationButtons, client.Int(int64(value)))
 }
 
 // UpdateEnableNavigationButtons updates ./User/Vendor/MSFT/Policy/Config/KioskBrowser/EnableNavigationButtons.
@@ -235,8 +238,8 @@ func (s *KioskBrowserUser) CreateEnableNavigationButtons(ctx context.Context, va
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *KioskBrowserUser) UpdateEnableNavigationButtons(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableNavigationButtons, client.Int(value))
+func (s *KioskBrowserUser) UpdateEnableNavigationButtons(ctx context.Context, value EnableNavigationButtonsValue) error {
+	return s.c.Replace(ctx, URIEnableNavigationButtons, client.Int(int64(value)))
 }
 
 // DeleteEnableNavigationButtons deletes ./User/Vendor/MSFT/Policy/Config/KioskBrowser/EnableNavigationButtons.

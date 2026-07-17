@@ -17,12 +17,13 @@ import (
 //
 // Default: 65535.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) GetAllowPinnedFolderDocuments(ctx context.Context) (int64, error) {
+func (s *Start) GetAllowPinnedFolderDocuments(ctx context.Context) (AllowPinnedFolderDocumentsValue, error) {
 	v, err := s.c.Get(ctx, URIAllowPinnedFolderDocuments)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowPinnedFolderDocumentsValue(n), err
 }
 
 // CreateAllowPinnedFolderDocuments creates ./Device/Vendor/MSFT/Policy/Config/Start/AllowPinnedFolderDocuments.
@@ -34,8 +35,8 @@ func (s *Start) GetAllowPinnedFolderDocuments(ctx context.Context) (int64, error
 //
 // Default: 65535.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) CreateAllowPinnedFolderDocuments(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowPinnedFolderDocuments, client.Int(value))
+func (s *Start) CreateAllowPinnedFolderDocuments(ctx context.Context, value AllowPinnedFolderDocumentsValue) error {
+	return s.c.Add(ctx, URIAllowPinnedFolderDocuments, client.Int(int64(value)))
 }
 
 // UpdateAllowPinnedFolderDocuments updates ./Device/Vendor/MSFT/Policy/Config/Start/AllowPinnedFolderDocuments.
@@ -47,8 +48,8 @@ func (s *Start) CreateAllowPinnedFolderDocuments(ctx context.Context, value int6
 //
 // Default: 65535.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) UpdateAllowPinnedFolderDocuments(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowPinnedFolderDocuments, client.Int(value))
+func (s *Start) UpdateAllowPinnedFolderDocuments(ctx context.Context, value AllowPinnedFolderDocumentsValue) error {
+	return s.c.Replace(ctx, URIAllowPinnedFolderDocuments, client.Int(int64(value)))
 }
 
 // DeleteAllowPinnedFolderDocuments deletes ./Device/Vendor/MSFT/Policy/Config/Start/AllowPinnedFolderDocuments.
@@ -73,12 +74,13 @@ func (s *Start) DeleteAllowPinnedFolderDocuments(ctx context.Context) error {
 //
 // Default: 65535.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) GetAllowPinnedFolderDownloads(ctx context.Context) (int64, error) {
+func (s *Start) GetAllowPinnedFolderDownloads(ctx context.Context) (AllowPinnedFolderDownloadsValue, error) {
 	v, err := s.c.Get(ctx, URIAllowPinnedFolderDownloads)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowPinnedFolderDownloadsValue(n), err
 }
 
 // CreateAllowPinnedFolderDownloads creates ./Device/Vendor/MSFT/Policy/Config/Start/AllowPinnedFolderDownloads.
@@ -90,8 +92,8 @@ func (s *Start) GetAllowPinnedFolderDownloads(ctx context.Context) (int64, error
 //
 // Default: 65535.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) CreateAllowPinnedFolderDownloads(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowPinnedFolderDownloads, client.Int(value))
+func (s *Start) CreateAllowPinnedFolderDownloads(ctx context.Context, value AllowPinnedFolderDownloadsValue) error {
+	return s.c.Add(ctx, URIAllowPinnedFolderDownloads, client.Int(int64(value)))
 }
 
 // UpdateAllowPinnedFolderDownloads updates ./Device/Vendor/MSFT/Policy/Config/Start/AllowPinnedFolderDownloads.
@@ -103,8 +105,8 @@ func (s *Start) CreateAllowPinnedFolderDownloads(ctx context.Context, value int6
 //
 // Default: 65535.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) UpdateAllowPinnedFolderDownloads(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowPinnedFolderDownloads, client.Int(value))
+func (s *Start) UpdateAllowPinnedFolderDownloads(ctx context.Context, value AllowPinnedFolderDownloadsValue) error {
+	return s.c.Replace(ctx, URIAllowPinnedFolderDownloads, client.Int(int64(value)))
 }
 
 // DeleteAllowPinnedFolderDownloads deletes ./Device/Vendor/MSFT/Policy/Config/Start/AllowPinnedFolderDownloads.
@@ -129,12 +131,13 @@ func (s *Start) DeleteAllowPinnedFolderDownloads(ctx context.Context) error {
 //
 // Default: 65535.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) GetAllowPinnedFolderFileExplorer(ctx context.Context) (int64, error) {
+func (s *Start) GetAllowPinnedFolderFileExplorer(ctx context.Context) (AllowPinnedFolderFileExplorerValue, error) {
 	v, err := s.c.Get(ctx, URIAllowPinnedFolderFileExplorer)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowPinnedFolderFileExplorerValue(n), err
 }
 
 // CreateAllowPinnedFolderFileExplorer creates ./Device/Vendor/MSFT/Policy/Config/Start/AllowPinnedFolderFileExplorer.
@@ -146,8 +149,8 @@ func (s *Start) GetAllowPinnedFolderFileExplorer(ctx context.Context) (int64, er
 //
 // Default: 65535.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) CreateAllowPinnedFolderFileExplorer(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowPinnedFolderFileExplorer, client.Int(value))
+func (s *Start) CreateAllowPinnedFolderFileExplorer(ctx context.Context, value AllowPinnedFolderFileExplorerValue) error {
+	return s.c.Add(ctx, URIAllowPinnedFolderFileExplorer, client.Int(int64(value)))
 }
 
 // UpdateAllowPinnedFolderFileExplorer updates ./Device/Vendor/MSFT/Policy/Config/Start/AllowPinnedFolderFileExplorer.
@@ -159,8 +162,8 @@ func (s *Start) CreateAllowPinnedFolderFileExplorer(ctx context.Context, value i
 //
 // Default: 65535.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) UpdateAllowPinnedFolderFileExplorer(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowPinnedFolderFileExplorer, client.Int(value))
+func (s *Start) UpdateAllowPinnedFolderFileExplorer(ctx context.Context, value AllowPinnedFolderFileExplorerValue) error {
+	return s.c.Replace(ctx, URIAllowPinnedFolderFileExplorer, client.Int(int64(value)))
 }
 
 // DeleteAllowPinnedFolderFileExplorer deletes ./Device/Vendor/MSFT/Policy/Config/Start/AllowPinnedFolderFileExplorer.
@@ -185,12 +188,13 @@ func (s *Start) DeleteAllowPinnedFolderFileExplorer(ctx context.Context) error {
 //
 // Default: 65535.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) GetAllowPinnedFolderHomeGroup(ctx context.Context) (int64, error) {
+func (s *Start) GetAllowPinnedFolderHomeGroup(ctx context.Context) (AllowPinnedFolderHomeGroupValue, error) {
 	v, err := s.c.Get(ctx, URIAllowPinnedFolderHomeGroup)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowPinnedFolderHomeGroupValue(n), err
 }
 
 // CreateAllowPinnedFolderHomeGroup creates ./Device/Vendor/MSFT/Policy/Config/Start/AllowPinnedFolderHomeGroup.
@@ -202,8 +206,8 @@ func (s *Start) GetAllowPinnedFolderHomeGroup(ctx context.Context) (int64, error
 //
 // Default: 65535.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) CreateAllowPinnedFolderHomeGroup(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowPinnedFolderHomeGroup, client.Int(value))
+func (s *Start) CreateAllowPinnedFolderHomeGroup(ctx context.Context, value AllowPinnedFolderHomeGroupValue) error {
+	return s.c.Add(ctx, URIAllowPinnedFolderHomeGroup, client.Int(int64(value)))
 }
 
 // UpdateAllowPinnedFolderHomeGroup updates ./Device/Vendor/MSFT/Policy/Config/Start/AllowPinnedFolderHomeGroup.
@@ -215,8 +219,8 @@ func (s *Start) CreateAllowPinnedFolderHomeGroup(ctx context.Context, value int6
 //
 // Default: 65535.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) UpdateAllowPinnedFolderHomeGroup(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowPinnedFolderHomeGroup, client.Int(value))
+func (s *Start) UpdateAllowPinnedFolderHomeGroup(ctx context.Context, value AllowPinnedFolderHomeGroupValue) error {
+	return s.c.Replace(ctx, URIAllowPinnedFolderHomeGroup, client.Int(int64(value)))
 }
 
 // DeleteAllowPinnedFolderHomeGroup deletes ./Device/Vendor/MSFT/Policy/Config/Start/AllowPinnedFolderHomeGroup.
@@ -241,12 +245,13 @@ func (s *Start) DeleteAllowPinnedFolderHomeGroup(ctx context.Context) error {
 //
 // Default: 65535.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) GetAllowPinnedFolderMusic(ctx context.Context) (int64, error) {
+func (s *Start) GetAllowPinnedFolderMusic(ctx context.Context) (AllowPinnedFolderMusicValue, error) {
 	v, err := s.c.Get(ctx, URIAllowPinnedFolderMusic)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowPinnedFolderMusicValue(n), err
 }
 
 // CreateAllowPinnedFolderMusic creates ./Device/Vendor/MSFT/Policy/Config/Start/AllowPinnedFolderMusic.
@@ -258,8 +263,8 @@ func (s *Start) GetAllowPinnedFolderMusic(ctx context.Context) (int64, error) {
 //
 // Default: 65535.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) CreateAllowPinnedFolderMusic(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowPinnedFolderMusic, client.Int(value))
+func (s *Start) CreateAllowPinnedFolderMusic(ctx context.Context, value AllowPinnedFolderMusicValue) error {
+	return s.c.Add(ctx, URIAllowPinnedFolderMusic, client.Int(int64(value)))
 }
 
 // UpdateAllowPinnedFolderMusic updates ./Device/Vendor/MSFT/Policy/Config/Start/AllowPinnedFolderMusic.
@@ -271,8 +276,8 @@ func (s *Start) CreateAllowPinnedFolderMusic(ctx context.Context, value int64) e
 //
 // Default: 65535.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) UpdateAllowPinnedFolderMusic(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowPinnedFolderMusic, client.Int(value))
+func (s *Start) UpdateAllowPinnedFolderMusic(ctx context.Context, value AllowPinnedFolderMusicValue) error {
+	return s.c.Replace(ctx, URIAllowPinnedFolderMusic, client.Int(int64(value)))
 }
 
 // DeleteAllowPinnedFolderMusic deletes ./Device/Vendor/MSFT/Policy/Config/Start/AllowPinnedFolderMusic.
@@ -297,12 +302,13 @@ func (s *Start) DeleteAllowPinnedFolderMusic(ctx context.Context) error {
 //
 // Default: 65535.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) GetAllowPinnedFolderNetwork(ctx context.Context) (int64, error) {
+func (s *Start) GetAllowPinnedFolderNetwork(ctx context.Context) (AllowPinnedFolderNetworkValue, error) {
 	v, err := s.c.Get(ctx, URIAllowPinnedFolderNetwork)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowPinnedFolderNetworkValue(n), err
 }
 
 // CreateAllowPinnedFolderNetwork creates ./Device/Vendor/MSFT/Policy/Config/Start/AllowPinnedFolderNetwork.
@@ -314,8 +320,8 @@ func (s *Start) GetAllowPinnedFolderNetwork(ctx context.Context) (int64, error) 
 //
 // Default: 65535.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) CreateAllowPinnedFolderNetwork(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowPinnedFolderNetwork, client.Int(value))
+func (s *Start) CreateAllowPinnedFolderNetwork(ctx context.Context, value AllowPinnedFolderNetworkValue) error {
+	return s.c.Add(ctx, URIAllowPinnedFolderNetwork, client.Int(int64(value)))
 }
 
 // UpdateAllowPinnedFolderNetwork updates ./Device/Vendor/MSFT/Policy/Config/Start/AllowPinnedFolderNetwork.
@@ -327,8 +333,8 @@ func (s *Start) CreateAllowPinnedFolderNetwork(ctx context.Context, value int64)
 //
 // Default: 65535.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) UpdateAllowPinnedFolderNetwork(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowPinnedFolderNetwork, client.Int(value))
+func (s *Start) UpdateAllowPinnedFolderNetwork(ctx context.Context, value AllowPinnedFolderNetworkValue) error {
+	return s.c.Replace(ctx, URIAllowPinnedFolderNetwork, client.Int(int64(value)))
 }
 
 // DeleteAllowPinnedFolderNetwork deletes ./Device/Vendor/MSFT/Policy/Config/Start/AllowPinnedFolderNetwork.
@@ -353,12 +359,13 @@ func (s *Start) DeleteAllowPinnedFolderNetwork(ctx context.Context) error {
 //
 // Default: 65535.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) GetAllowPinnedFolderPersonalFolder(ctx context.Context) (int64, error) {
+func (s *Start) GetAllowPinnedFolderPersonalFolder(ctx context.Context) (AllowPinnedFolderPersonalFolderValue, error) {
 	v, err := s.c.Get(ctx, URIAllowPinnedFolderPersonalFolder)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowPinnedFolderPersonalFolderValue(n), err
 }
 
 // CreateAllowPinnedFolderPersonalFolder creates ./Device/Vendor/MSFT/Policy/Config/Start/AllowPinnedFolderPersonalFolder.
@@ -370,8 +377,8 @@ func (s *Start) GetAllowPinnedFolderPersonalFolder(ctx context.Context) (int64, 
 //
 // Default: 65535.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) CreateAllowPinnedFolderPersonalFolder(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowPinnedFolderPersonalFolder, client.Int(value))
+func (s *Start) CreateAllowPinnedFolderPersonalFolder(ctx context.Context, value AllowPinnedFolderPersonalFolderValue) error {
+	return s.c.Add(ctx, URIAllowPinnedFolderPersonalFolder, client.Int(int64(value)))
 }
 
 // UpdateAllowPinnedFolderPersonalFolder updates ./Device/Vendor/MSFT/Policy/Config/Start/AllowPinnedFolderPersonalFolder.
@@ -383,8 +390,8 @@ func (s *Start) CreateAllowPinnedFolderPersonalFolder(ctx context.Context, value
 //
 // Default: 65535.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) UpdateAllowPinnedFolderPersonalFolder(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowPinnedFolderPersonalFolder, client.Int(value))
+func (s *Start) UpdateAllowPinnedFolderPersonalFolder(ctx context.Context, value AllowPinnedFolderPersonalFolderValue) error {
+	return s.c.Replace(ctx, URIAllowPinnedFolderPersonalFolder, client.Int(int64(value)))
 }
 
 // DeleteAllowPinnedFolderPersonalFolder deletes ./Device/Vendor/MSFT/Policy/Config/Start/AllowPinnedFolderPersonalFolder.
@@ -409,12 +416,13 @@ func (s *Start) DeleteAllowPinnedFolderPersonalFolder(ctx context.Context) error
 //
 // Default: 65535.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) GetAllowPinnedFolderPictures(ctx context.Context) (int64, error) {
+func (s *Start) GetAllowPinnedFolderPictures(ctx context.Context) (AllowPinnedFolderPicturesValue, error) {
 	v, err := s.c.Get(ctx, URIAllowPinnedFolderPictures)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowPinnedFolderPicturesValue(n), err
 }
 
 // CreateAllowPinnedFolderPictures creates ./Device/Vendor/MSFT/Policy/Config/Start/AllowPinnedFolderPictures.
@@ -426,8 +434,8 @@ func (s *Start) GetAllowPinnedFolderPictures(ctx context.Context) (int64, error)
 //
 // Default: 65535.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) CreateAllowPinnedFolderPictures(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowPinnedFolderPictures, client.Int(value))
+func (s *Start) CreateAllowPinnedFolderPictures(ctx context.Context, value AllowPinnedFolderPicturesValue) error {
+	return s.c.Add(ctx, URIAllowPinnedFolderPictures, client.Int(int64(value)))
 }
 
 // UpdateAllowPinnedFolderPictures updates ./Device/Vendor/MSFT/Policy/Config/Start/AllowPinnedFolderPictures.
@@ -439,8 +447,8 @@ func (s *Start) CreateAllowPinnedFolderPictures(ctx context.Context, value int64
 //
 // Default: 65535.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) UpdateAllowPinnedFolderPictures(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowPinnedFolderPictures, client.Int(value))
+func (s *Start) UpdateAllowPinnedFolderPictures(ctx context.Context, value AllowPinnedFolderPicturesValue) error {
+	return s.c.Replace(ctx, URIAllowPinnedFolderPictures, client.Int(int64(value)))
 }
 
 // DeleteAllowPinnedFolderPictures deletes ./Device/Vendor/MSFT/Policy/Config/Start/AllowPinnedFolderPictures.
@@ -465,12 +473,13 @@ func (s *Start) DeleteAllowPinnedFolderPictures(ctx context.Context) error {
 //
 // Default: 65535.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) GetAllowPinnedFolderSettings(ctx context.Context) (int64, error) {
+func (s *Start) GetAllowPinnedFolderSettings(ctx context.Context) (AllowPinnedFolderSettingsValue, error) {
 	v, err := s.c.Get(ctx, URIAllowPinnedFolderSettings)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowPinnedFolderSettingsValue(n), err
 }
 
 // CreateAllowPinnedFolderSettings creates ./Device/Vendor/MSFT/Policy/Config/Start/AllowPinnedFolderSettings.
@@ -482,8 +491,8 @@ func (s *Start) GetAllowPinnedFolderSettings(ctx context.Context) (int64, error)
 //
 // Default: 65535.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) CreateAllowPinnedFolderSettings(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowPinnedFolderSettings, client.Int(value))
+func (s *Start) CreateAllowPinnedFolderSettings(ctx context.Context, value AllowPinnedFolderSettingsValue) error {
+	return s.c.Add(ctx, URIAllowPinnedFolderSettings, client.Int(int64(value)))
 }
 
 // UpdateAllowPinnedFolderSettings updates ./Device/Vendor/MSFT/Policy/Config/Start/AllowPinnedFolderSettings.
@@ -495,8 +504,8 @@ func (s *Start) CreateAllowPinnedFolderSettings(ctx context.Context, value int64
 //
 // Default: 65535.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) UpdateAllowPinnedFolderSettings(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowPinnedFolderSettings, client.Int(value))
+func (s *Start) UpdateAllowPinnedFolderSettings(ctx context.Context, value AllowPinnedFolderSettingsValue) error {
+	return s.c.Replace(ctx, URIAllowPinnedFolderSettings, client.Int(int64(value)))
 }
 
 // DeleteAllowPinnedFolderSettings deletes ./Device/Vendor/MSFT/Policy/Config/Start/AllowPinnedFolderSettings.
@@ -521,12 +530,13 @@ func (s *Start) DeleteAllowPinnedFolderSettings(ctx context.Context) error {
 //
 // Default: 65535.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) GetAllowPinnedFolderVideos(ctx context.Context) (int64, error) {
+func (s *Start) GetAllowPinnedFolderVideos(ctx context.Context) (AllowPinnedFolderVideosValue, error) {
 	v, err := s.c.Get(ctx, URIAllowPinnedFolderVideos)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowPinnedFolderVideosValue(n), err
 }
 
 // CreateAllowPinnedFolderVideos creates ./Device/Vendor/MSFT/Policy/Config/Start/AllowPinnedFolderVideos.
@@ -538,8 +548,8 @@ func (s *Start) GetAllowPinnedFolderVideos(ctx context.Context) (int64, error) {
 //
 // Default: 65535.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) CreateAllowPinnedFolderVideos(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowPinnedFolderVideos, client.Int(value))
+func (s *Start) CreateAllowPinnedFolderVideos(ctx context.Context, value AllowPinnedFolderVideosValue) error {
+	return s.c.Add(ctx, URIAllowPinnedFolderVideos, client.Int(int64(value)))
 }
 
 // UpdateAllowPinnedFolderVideos updates ./Device/Vendor/MSFT/Policy/Config/Start/AllowPinnedFolderVideos.
@@ -551,8 +561,8 @@ func (s *Start) CreateAllowPinnedFolderVideos(ctx context.Context, value int64) 
 //
 // Default: 65535.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) UpdateAllowPinnedFolderVideos(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowPinnedFolderVideos, client.Int(value))
+func (s *Start) UpdateAllowPinnedFolderVideos(ctx context.Context, value AllowPinnedFolderVideosValue) error {
+	return s.c.Replace(ctx, URIAllowPinnedFolderVideos, client.Int(int64(value)))
 }
 
 // DeleteAllowPinnedFolderVideos deletes ./Device/Vendor/MSFT/Policy/Config/Start/AllowPinnedFolderVideos.
@@ -614,12 +624,13 @@ func (s *Start) DeleteConfigureStartPins(ctx context.Context) error {
 //
 // Default: 65535.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Start) GetConfigureTaskbarSmallButtonBehavior(ctx context.Context) (int64, error) {
+func (s *Start) GetConfigureTaskbarSmallButtonBehavior(ctx context.Context) (ConfigureTaskbarSmallButtonBehaviorValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureTaskbarSmallButtonBehavior)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureTaskbarSmallButtonBehaviorValue(n), err
 }
 
 // CreateConfigureTaskbarSmallButtonBehavior creates ./Device/Vendor/MSFT/Policy/Config/Start/ConfigureTaskbarSmallButtonBehavior.
@@ -632,8 +643,8 @@ func (s *Start) GetConfigureTaskbarSmallButtonBehavior(ctx context.Context) (int
 //
 // Default: 65535.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Start) CreateConfigureTaskbarSmallButtonBehavior(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureTaskbarSmallButtonBehavior, client.Int(value))
+func (s *Start) CreateConfigureTaskbarSmallButtonBehavior(ctx context.Context, value ConfigureTaskbarSmallButtonBehaviorValue) error {
+	return s.c.Add(ctx, URIConfigureTaskbarSmallButtonBehavior, client.Int(int64(value)))
 }
 
 // UpdateConfigureTaskbarSmallButtonBehavior updates ./Device/Vendor/MSFT/Policy/Config/Start/ConfigureTaskbarSmallButtonBehavior.
@@ -646,8 +657,8 @@ func (s *Start) CreateConfigureTaskbarSmallButtonBehavior(ctx context.Context, v
 //
 // Default: 65535.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Start) UpdateConfigureTaskbarSmallButtonBehavior(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureTaskbarSmallButtonBehavior, client.Int(value))
+func (s *Start) UpdateConfigureTaskbarSmallButtonBehavior(ctx context.Context, value ConfigureTaskbarSmallButtonBehaviorValue) error {
+	return s.c.Replace(ctx, URIConfigureTaskbarSmallButtonBehavior, client.Int(int64(value)))
 }
 
 // DeleteConfigureTaskbarSmallButtonBehavior deletes ./Device/Vendor/MSFT/Policy/Config/Start/ConfigureTaskbarSmallButtonBehavior.
@@ -669,12 +680,13 @@ func (s *Start) DeleteConfigureTaskbarSmallButtonBehavior(ctx context.Context) e
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Start) GetDisableContextMenus(ctx context.Context) (int64, error) {
+func (s *Start) GetDisableContextMenus(ctx context.Context) (DisableContextMenusValue, error) {
 	v, err := s.c.Get(ctx, URIDisableContextMenus)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableContextMenusValue(n), err
 }
 
 // CreateDisableContextMenus creates ./Device/Vendor/MSFT/Policy/Config/Start/DisableContextMenus.
@@ -682,8 +694,8 @@ func (s *Start) GetDisableContextMenus(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Start) CreateDisableContextMenus(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableContextMenus, client.Int(value))
+func (s *Start) CreateDisableContextMenus(ctx context.Context, value DisableContextMenusValue) error {
+	return s.c.Add(ctx, URIDisableContextMenus, client.Int(int64(value)))
 }
 
 // UpdateDisableContextMenus updates ./Device/Vendor/MSFT/Policy/Config/Start/DisableContextMenus.
@@ -691,8 +703,8 @@ func (s *Start) CreateDisableContextMenus(ctx context.Context, value int64) erro
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Start) UpdateDisableContextMenus(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableContextMenus, client.Int(value))
+func (s *Start) UpdateDisableContextMenus(ctx context.Context, value DisableContextMenusValue) error {
+	return s.c.Replace(ctx, URIDisableContextMenus, client.Int(int64(value)))
 }
 
 // DeleteDisableContextMenus deletes ./Device/Vendor/MSFT/Policy/Config/Start/DisableContextMenus.
@@ -710,12 +722,13 @@ func (s *Start) DeleteDisableContextMenus(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Start) GetDisableEditingQuickSettings(ctx context.Context) (int64, error) {
+func (s *Start) GetDisableEditingQuickSettings(ctx context.Context) (DisableEditingQuickSettingsValue, error) {
 	v, err := s.c.Get(ctx, URIDisableEditingQuickSettings)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableEditingQuickSettingsValue(n), err
 }
 
 // CreateDisableEditingQuickSettings creates ./Device/Vendor/MSFT/Policy/Config/Start/DisableEditingQuickSettings.
@@ -724,8 +737,8 @@ func (s *Start) GetDisableEditingQuickSettings(ctx context.Context) (int64, erro
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Start) CreateDisableEditingQuickSettings(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableEditingQuickSettings, client.Int(value))
+func (s *Start) CreateDisableEditingQuickSettings(ctx context.Context, value DisableEditingQuickSettingsValue) error {
+	return s.c.Add(ctx, URIDisableEditingQuickSettings, client.Int(int64(value)))
 }
 
 // UpdateDisableEditingQuickSettings updates ./Device/Vendor/MSFT/Policy/Config/Start/DisableEditingQuickSettings.
@@ -734,8 +747,8 @@ func (s *Start) CreateDisableEditingQuickSettings(ctx context.Context, value int
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Start) UpdateDisableEditingQuickSettings(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableEditingQuickSettings, client.Int(value))
+func (s *Start) UpdateDisableEditingQuickSettings(ctx context.Context, value DisableEditingQuickSettingsValue) error {
+	return s.c.Replace(ctx, URIDisableEditingQuickSettings, client.Int(int64(value)))
 }
 
 // DeleteDisableEditingQuickSettings deletes ./Device/Vendor/MSFT/Policy/Config/Start/DisableEditingQuickSettings.
@@ -754,12 +767,13 @@ func (s *Start) DeleteDisableEditingQuickSettings(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Start) GetForceStartSize(ctx context.Context) (int64, error) {
+func (s *Start) GetForceStartSize(ctx context.Context) (ForceStartSizeValue, error) {
 	v, err := s.c.Get(ctx, URIForceStartSize)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ForceStartSizeValue(n), err
 }
 
 // CreateForceStartSize creates ./Device/Vendor/MSFT/Policy/Config/Start/ForceStartSize.
@@ -768,8 +782,8 @@ func (s *Start) GetForceStartSize(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Start) CreateForceStartSize(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIForceStartSize, client.Int(value))
+func (s *Start) CreateForceStartSize(ctx context.Context, value ForceStartSizeValue) error {
+	return s.c.Add(ctx, URIForceStartSize, client.Int(int64(value)))
 }
 
 // UpdateForceStartSize updates ./Device/Vendor/MSFT/Policy/Config/Start/ForceStartSize.
@@ -778,8 +792,8 @@ func (s *Start) CreateForceStartSize(ctx context.Context, value int64) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Start) UpdateForceStartSize(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIForceStartSize, client.Int(value))
+func (s *Start) UpdateForceStartSize(ctx context.Context, value ForceStartSizeValue) error {
+	return s.c.Replace(ctx, URIForceStartSize, client.Int(int64(value)))
 }
 
 // DeleteForceStartSize deletes ./Device/Vendor/MSFT/Policy/Config/Start/ForceStartSize.
@@ -799,12 +813,13 @@ func (s *Start) DeleteForceStartSize(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) GetHideAppList(ctx context.Context) (int64, error) {
+func (s *Start) GetHideAppList(ctx context.Context) (HideAppListValue, error) {
 	v, err := s.c.Get(ctx, URIHideAppList)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HideAppListValue(n), err
 }
 
 // CreateHideAppList creates ./Device/Vendor/MSFT/Policy/Config/Start/HideAppList.
@@ -814,8 +829,8 @@ func (s *Start) GetHideAppList(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) CreateHideAppList(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHideAppList, client.Int(value))
+func (s *Start) CreateHideAppList(ctx context.Context, value HideAppListValue) error {
+	return s.c.Add(ctx, URIHideAppList, client.Int(int64(value)))
 }
 
 // UpdateHideAppList updates ./Device/Vendor/MSFT/Policy/Config/Start/HideAppList.
@@ -825,8 +840,8 @@ func (s *Start) CreateHideAppList(ctx context.Context, value int64) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) UpdateHideAppList(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHideAppList, client.Int(value))
+func (s *Start) UpdateHideAppList(ctx context.Context, value HideAppListValue) error {
+	return s.c.Replace(ctx, URIHideAppList, client.Int(int64(value)))
 }
 
 // DeleteHideAppList deletes ./Device/Vendor/MSFT/Policy/Config/Start/HideAppList.
@@ -847,12 +862,13 @@ func (s *Start) DeleteHideAppList(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v11.0).
-func (s *Start) GetHideCategoryView(ctx context.Context) (int64, error) {
+func (s *Start) GetHideCategoryView(ctx context.Context) (HideCategoryViewValue, error) {
 	v, err := s.c.Get(ctx, URIHideCategoryView)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HideCategoryViewValue(n), err
 }
 
 // CreateHideCategoryView creates ./Device/Vendor/MSFT/Policy/Config/Start/HideCategoryView.
@@ -862,8 +878,8 @@ func (s *Start) GetHideCategoryView(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v11.0).
-func (s *Start) CreateHideCategoryView(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHideCategoryView, client.Int(value))
+func (s *Start) CreateHideCategoryView(ctx context.Context, value HideCategoryViewValue) error {
+	return s.c.Add(ctx, URIHideCategoryView, client.Int(int64(value)))
 }
 
 // UpdateHideCategoryView updates ./Device/Vendor/MSFT/Policy/Config/Start/HideCategoryView.
@@ -873,8 +889,8 @@ func (s *Start) CreateHideCategoryView(ctx context.Context, value int64) error {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v11.0).
-func (s *Start) UpdateHideCategoryView(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHideCategoryView, client.Int(value))
+func (s *Start) UpdateHideCategoryView(ctx context.Context, value HideCategoryViewValue) error {
+	return s.c.Replace(ctx, URIHideCategoryView, client.Int(int64(value)))
 }
 
 // DeleteHideCategoryView deletes ./Device/Vendor/MSFT/Policy/Config/Start/HideCategoryView.
@@ -894,12 +910,13 @@ func (s *Start) DeleteHideCategoryView(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) GetHideChangeAccountSettings(ctx context.Context) (int64, error) {
+func (s *Start) GetHideChangeAccountSettings(ctx context.Context) (HideChangeAccountSettingsValue, error) {
 	v, err := s.c.Get(ctx, URIHideChangeAccountSettings)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HideChangeAccountSettingsValue(n), err
 }
 
 // CreateHideChangeAccountSettings creates ./Device/Vendor/MSFT/Policy/Config/Start/HideChangeAccountSettings.
@@ -908,8 +925,8 @@ func (s *Start) GetHideChangeAccountSettings(ctx context.Context) (int64, error)
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) CreateHideChangeAccountSettings(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHideChangeAccountSettings, client.Int(value))
+func (s *Start) CreateHideChangeAccountSettings(ctx context.Context, value HideChangeAccountSettingsValue) error {
+	return s.c.Add(ctx, URIHideChangeAccountSettings, client.Int(int64(value)))
 }
 
 // UpdateHideChangeAccountSettings updates ./Device/Vendor/MSFT/Policy/Config/Start/HideChangeAccountSettings.
@@ -918,8 +935,8 @@ func (s *Start) CreateHideChangeAccountSettings(ctx context.Context, value int64
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) UpdateHideChangeAccountSettings(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHideChangeAccountSettings, client.Int(value))
+func (s *Start) UpdateHideChangeAccountSettings(ctx context.Context, value HideChangeAccountSettingsValue) error {
+	return s.c.Replace(ctx, URIHideChangeAccountSettings, client.Int(int64(value)))
 }
 
 // DeleteHideChangeAccountSettings deletes ./Device/Vendor/MSFT/Policy/Config/Start/HideChangeAccountSettings.
@@ -938,12 +955,13 @@ func (s *Start) DeleteHideChangeAccountSettings(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) GetHideFrequentlyUsedApps(ctx context.Context) (int64, error) {
+func (s *Start) GetHideFrequentlyUsedApps(ctx context.Context) (HideFrequentlyUsedAppsValue, error) {
 	v, err := s.c.Get(ctx, URIHideFrequentlyUsedApps)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HideFrequentlyUsedAppsValue(n), err
 }
 
 // CreateHideFrequentlyUsedApps creates ./Device/Vendor/MSFT/Policy/Config/Start/HideFrequentlyUsedApps.
@@ -952,8 +970,8 @@ func (s *Start) GetHideFrequentlyUsedApps(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) CreateHideFrequentlyUsedApps(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHideFrequentlyUsedApps, client.Int(value))
+func (s *Start) CreateHideFrequentlyUsedApps(ctx context.Context, value HideFrequentlyUsedAppsValue) error {
+	return s.c.Add(ctx, URIHideFrequentlyUsedApps, client.Int(int64(value)))
 }
 
 // UpdateHideFrequentlyUsedApps updates ./Device/Vendor/MSFT/Policy/Config/Start/HideFrequentlyUsedApps.
@@ -962,8 +980,8 @@ func (s *Start) CreateHideFrequentlyUsedApps(ctx context.Context, value int64) e
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) UpdateHideFrequentlyUsedApps(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHideFrequentlyUsedApps, client.Int(value))
+func (s *Start) UpdateHideFrequentlyUsedApps(ctx context.Context, value HideFrequentlyUsedAppsValue) error {
+	return s.c.Replace(ctx, URIHideFrequentlyUsedApps, client.Int(int64(value)))
 }
 
 // DeleteHideFrequentlyUsedApps deletes ./Device/Vendor/MSFT/Policy/Config/Start/HideFrequentlyUsedApps.
@@ -981,12 +999,13 @@ func (s *Start) DeleteHideFrequentlyUsedApps(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) GetHideHibernate(ctx context.Context) (int64, error) {
+func (s *Start) GetHideHibernate(ctx context.Context) (HideHibernateValue, error) {
 	v, err := s.c.Get(ctx, URIHideHibernate)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HideHibernateValue(n), err
 }
 
 // CreateHideHibernate creates ./Device/Vendor/MSFT/Policy/Config/Start/HideHibernate.
@@ -994,8 +1013,8 @@ func (s *Start) GetHideHibernate(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) CreateHideHibernate(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHideHibernate, client.Int(value))
+func (s *Start) CreateHideHibernate(ctx context.Context, value HideHibernateValue) error {
+	return s.c.Add(ctx, URIHideHibernate, client.Int(int64(value)))
 }
 
 // UpdateHideHibernate updates ./Device/Vendor/MSFT/Policy/Config/Start/HideHibernate.
@@ -1003,8 +1022,8 @@ func (s *Start) CreateHideHibernate(ctx context.Context, value int64) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) UpdateHideHibernate(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHideHibernate, client.Int(value))
+func (s *Start) UpdateHideHibernate(ctx context.Context, value HideHibernateValue) error {
+	return s.c.Replace(ctx, URIHideHibernate, client.Int(int64(value)))
 }
 
 // DeleteHideHibernate deletes ./Device/Vendor/MSFT/Policy/Config/Start/HideHibernate.
@@ -1021,12 +1040,13 @@ func (s *Start) DeleteHideHibernate(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) GetHideLock(ctx context.Context) (int64, error) {
+func (s *Start) GetHideLock(ctx context.Context) (HideLockValue, error) {
 	v, err := s.c.Get(ctx, URIHideLock)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HideLockValue(n), err
 }
 
 // CreateHideLock creates ./Device/Vendor/MSFT/Policy/Config/Start/HideLock.
@@ -1034,8 +1054,8 @@ func (s *Start) GetHideLock(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) CreateHideLock(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHideLock, client.Int(value))
+func (s *Start) CreateHideLock(ctx context.Context, value HideLockValue) error {
+	return s.c.Add(ctx, URIHideLock, client.Int(int64(value)))
 }
 
 // UpdateHideLock updates ./Device/Vendor/MSFT/Policy/Config/Start/HideLock.
@@ -1043,8 +1063,8 @@ func (s *Start) CreateHideLock(ctx context.Context, value int64) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) UpdateHideLock(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHideLock, client.Int(value))
+func (s *Start) UpdateHideLock(ctx context.Context, value HideLockValue) error {
+	return s.c.Replace(ctx, URIHideLock, client.Int(int64(value)))
 }
 
 // DeleteHideLock deletes ./Device/Vendor/MSFT/Policy/Config/Start/HideLock.
@@ -1061,12 +1081,13 @@ func (s *Start) DeleteHideLock(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) GetHidePowerButton(ctx context.Context) (int64, error) {
+func (s *Start) GetHidePowerButton(ctx context.Context) (HidePowerButtonValue, error) {
 	v, err := s.c.Get(ctx, URIHidePowerButton)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HidePowerButtonValue(n), err
 }
 
 // CreateHidePowerButton creates ./Device/Vendor/MSFT/Policy/Config/Start/HidePowerButton.
@@ -1074,8 +1095,8 @@ func (s *Start) GetHidePowerButton(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) CreateHidePowerButton(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHidePowerButton, client.Int(value))
+func (s *Start) CreateHidePowerButton(ctx context.Context, value HidePowerButtonValue) error {
+	return s.c.Add(ctx, URIHidePowerButton, client.Int(int64(value)))
 }
 
 // UpdateHidePowerButton updates ./Device/Vendor/MSFT/Policy/Config/Start/HidePowerButton.
@@ -1083,8 +1104,8 @@ func (s *Start) CreateHidePowerButton(ctx context.Context, value int64) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) UpdateHidePowerButton(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHidePowerButton, client.Int(value))
+func (s *Start) UpdateHidePowerButton(ctx context.Context, value HidePowerButtonValue) error {
+	return s.c.Replace(ctx, URIHidePowerButton, client.Int(int64(value)))
 }
 
 // DeleteHidePowerButton deletes ./Device/Vendor/MSFT/Policy/Config/Start/HidePowerButton.
@@ -1102,12 +1123,13 @@ func (s *Start) DeleteHidePowerButton(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) GetHideRecentJumplists(ctx context.Context) (int64, error) {
+func (s *Start) GetHideRecentJumplists(ctx context.Context) (HideRecentJumplistsValue, error) {
 	v, err := s.c.Get(ctx, URIHideRecentJumplists)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HideRecentJumplistsValue(n), err
 }
 
 // CreateHideRecentJumplists creates ./Device/Vendor/MSFT/Policy/Config/Start/HideRecentJumplists.
@@ -1116,8 +1138,8 @@ func (s *Start) GetHideRecentJumplists(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) CreateHideRecentJumplists(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHideRecentJumplists, client.Int(value))
+func (s *Start) CreateHideRecentJumplists(ctx context.Context, value HideRecentJumplistsValue) error {
+	return s.c.Add(ctx, URIHideRecentJumplists, client.Int(int64(value)))
 }
 
 // UpdateHideRecentJumplists updates ./Device/Vendor/MSFT/Policy/Config/Start/HideRecentJumplists.
@@ -1126,8 +1148,8 @@ func (s *Start) CreateHideRecentJumplists(ctx context.Context, value int64) erro
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) UpdateHideRecentJumplists(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHideRecentJumplists, client.Int(value))
+func (s *Start) UpdateHideRecentJumplists(ctx context.Context, value HideRecentJumplistsValue) error {
+	return s.c.Replace(ctx, URIHideRecentJumplists, client.Int(int64(value)))
 }
 
 // DeleteHideRecentJumplists deletes ./Device/Vendor/MSFT/Policy/Config/Start/HideRecentJumplists.
@@ -1146,12 +1168,13 @@ func (s *Start) DeleteHideRecentJumplists(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) GetHideRecentlyAddedApps(ctx context.Context) (int64, error) {
+func (s *Start) GetHideRecentlyAddedApps(ctx context.Context) (HideRecentlyAddedAppsValue, error) {
 	v, err := s.c.Get(ctx, URIHideRecentlyAddedApps)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HideRecentlyAddedAppsValue(n), err
 }
 
 // CreateHideRecentlyAddedApps creates ./Device/Vendor/MSFT/Policy/Config/Start/HideRecentlyAddedApps.
@@ -1160,8 +1183,8 @@ func (s *Start) GetHideRecentlyAddedApps(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) CreateHideRecentlyAddedApps(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHideRecentlyAddedApps, client.Int(value))
+func (s *Start) CreateHideRecentlyAddedApps(ctx context.Context, value HideRecentlyAddedAppsValue) error {
+	return s.c.Add(ctx, URIHideRecentlyAddedApps, client.Int(int64(value)))
 }
 
 // UpdateHideRecentlyAddedApps updates ./Device/Vendor/MSFT/Policy/Config/Start/HideRecentlyAddedApps.
@@ -1170,8 +1193,8 @@ func (s *Start) CreateHideRecentlyAddedApps(ctx context.Context, value int64) er
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) UpdateHideRecentlyAddedApps(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHideRecentlyAddedApps, client.Int(value))
+func (s *Start) UpdateHideRecentlyAddedApps(ctx context.Context, value HideRecentlyAddedAppsValue) error {
+	return s.c.Replace(ctx, URIHideRecentlyAddedApps, client.Int(int64(value)))
 }
 
 // DeleteHideRecentlyAddedApps deletes ./Device/Vendor/MSFT/Policy/Config/Start/HideRecentlyAddedApps.
@@ -1191,12 +1214,13 @@ func (s *Start) DeleteHideRecentlyAddedApps(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.22621.1928 (CSP v11.0).
-func (s *Start) GetHideRecommendedPersonalizedSites(ctx context.Context) (int64, error) {
+func (s *Start) GetHideRecommendedPersonalizedSites(ctx context.Context) (HideRecommendedPersonalizedSitesValue, error) {
 	v, err := s.c.Get(ctx, URIHideRecommendedPersonalizedSites)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HideRecommendedPersonalizedSitesValue(n), err
 }
 
 // CreateHideRecommendedPersonalizedSites creates ./Device/Vendor/MSFT/Policy/Config/Start/HideRecommendedPersonalizedSites.
@@ -1206,8 +1230,8 @@ func (s *Start) GetHideRecommendedPersonalizedSites(ctx context.Context) (int64,
 //
 // Default: 0.
 // Supported from OS build 10.0.22621.1928 (CSP v11.0).
-func (s *Start) CreateHideRecommendedPersonalizedSites(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHideRecommendedPersonalizedSites, client.Int(value))
+func (s *Start) CreateHideRecommendedPersonalizedSites(ctx context.Context, value HideRecommendedPersonalizedSitesValue) error {
+	return s.c.Add(ctx, URIHideRecommendedPersonalizedSites, client.Int(int64(value)))
 }
 
 // UpdateHideRecommendedPersonalizedSites updates ./Device/Vendor/MSFT/Policy/Config/Start/HideRecommendedPersonalizedSites.
@@ -1217,8 +1241,8 @@ func (s *Start) CreateHideRecommendedPersonalizedSites(ctx context.Context, valu
 //
 // Default: 0.
 // Supported from OS build 10.0.22621.1928 (CSP v11.0).
-func (s *Start) UpdateHideRecommendedPersonalizedSites(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHideRecommendedPersonalizedSites, client.Int(value))
+func (s *Start) UpdateHideRecommendedPersonalizedSites(ctx context.Context, value HideRecommendedPersonalizedSitesValue) error {
+	return s.c.Replace(ctx, URIHideRecommendedPersonalizedSites, client.Int(int64(value)))
 }
 
 // DeleteHideRecommendedPersonalizedSites deletes ./Device/Vendor/MSFT/Policy/Config/Start/HideRecommendedPersonalizedSites.
@@ -1239,12 +1263,13 @@ func (s *Start) DeleteHideRecommendedPersonalizedSites(ctx context.Context) erro
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Start) GetHideRecommendedSection(ctx context.Context) (int64, error) {
+func (s *Start) GetHideRecommendedSection(ctx context.Context) (HideRecommendedSectionValue, error) {
 	v, err := s.c.Get(ctx, URIHideRecommendedSection)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HideRecommendedSectionValue(n), err
 }
 
 // CreateHideRecommendedSection creates ./Device/Vendor/MSFT/Policy/Config/Start/HideRecommendedSection.
@@ -1254,8 +1279,8 @@ func (s *Start) GetHideRecommendedSection(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Start) CreateHideRecommendedSection(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHideRecommendedSection, client.Int(value))
+func (s *Start) CreateHideRecommendedSection(ctx context.Context, value HideRecommendedSectionValue) error {
+	return s.c.Add(ctx, URIHideRecommendedSection, client.Int(int64(value)))
 }
 
 // UpdateHideRecommendedSection updates ./Device/Vendor/MSFT/Policy/Config/Start/HideRecommendedSection.
@@ -1265,8 +1290,8 @@ func (s *Start) CreateHideRecommendedSection(ctx context.Context, value int64) e
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Start) UpdateHideRecommendedSection(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHideRecommendedSection, client.Int(value))
+func (s *Start) UpdateHideRecommendedSection(ctx context.Context, value HideRecommendedSectionValue) error {
+	return s.c.Replace(ctx, URIHideRecommendedSection, client.Int(int64(value)))
 }
 
 // DeleteHideRecommendedSection deletes ./Device/Vendor/MSFT/Policy/Config/Start/HideRecommendedSection.
@@ -1286,12 +1311,13 @@ func (s *Start) DeleteHideRecommendedSection(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) GetHideRestart(ctx context.Context) (int64, error) {
+func (s *Start) GetHideRestart(ctx context.Context) (HideRestartValue, error) {
 	v, err := s.c.Get(ctx, URIHideRestart)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HideRestartValue(n), err
 }
 
 // CreateHideRestart creates ./Device/Vendor/MSFT/Policy/Config/Start/HideRestart.
@@ -1300,8 +1326,8 @@ func (s *Start) GetHideRestart(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) CreateHideRestart(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHideRestart, client.Int(value))
+func (s *Start) CreateHideRestart(ctx context.Context, value HideRestartValue) error {
+	return s.c.Add(ctx, URIHideRestart, client.Int(int64(value)))
 }
 
 // UpdateHideRestart updates ./Device/Vendor/MSFT/Policy/Config/Start/HideRestart.
@@ -1310,8 +1336,8 @@ func (s *Start) CreateHideRestart(ctx context.Context, value int64) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) UpdateHideRestart(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHideRestart, client.Int(value))
+func (s *Start) UpdateHideRestart(ctx context.Context, value HideRestartValue) error {
+	return s.c.Replace(ctx, URIHideRestart, client.Int(int64(value)))
 }
 
 // DeleteHideRestart deletes ./Device/Vendor/MSFT/Policy/Config/Start/HideRestart.
@@ -1330,12 +1356,13 @@ func (s *Start) DeleteHideRestart(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) GetHideShutDown(ctx context.Context) (int64, error) {
+func (s *Start) GetHideShutDown(ctx context.Context) (HideShutDownValue, error) {
 	v, err := s.c.Get(ctx, URIHideShutDown)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HideShutDownValue(n), err
 }
 
 // CreateHideShutDown creates ./Device/Vendor/MSFT/Policy/Config/Start/HideShutDown.
@@ -1344,8 +1371,8 @@ func (s *Start) GetHideShutDown(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) CreateHideShutDown(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHideShutDown, client.Int(value))
+func (s *Start) CreateHideShutDown(ctx context.Context, value HideShutDownValue) error {
+	return s.c.Add(ctx, URIHideShutDown, client.Int(int64(value)))
 }
 
 // UpdateHideShutDown updates ./Device/Vendor/MSFT/Policy/Config/Start/HideShutDown.
@@ -1354,8 +1381,8 @@ func (s *Start) CreateHideShutDown(ctx context.Context, value int64) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) UpdateHideShutDown(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHideShutDown, client.Int(value))
+func (s *Start) UpdateHideShutDown(ctx context.Context, value HideShutDownValue) error {
+	return s.c.Replace(ctx, URIHideShutDown, client.Int(int64(value)))
 }
 
 // DeleteHideShutDown deletes ./Device/Vendor/MSFT/Policy/Config/Start/HideShutDown.
@@ -1373,12 +1400,13 @@ func (s *Start) DeleteHideShutDown(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) GetHideSignOut(ctx context.Context) (int64, error) {
+func (s *Start) GetHideSignOut(ctx context.Context) (HideSignOutValue, error) {
 	v, err := s.c.Get(ctx, URIHideSignOut)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HideSignOutValue(n), err
 }
 
 // CreateHideSignOut creates ./Device/Vendor/MSFT/Policy/Config/Start/HideSignOut.
@@ -1386,8 +1414,8 @@ func (s *Start) GetHideSignOut(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) CreateHideSignOut(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHideSignOut, client.Int(value))
+func (s *Start) CreateHideSignOut(ctx context.Context, value HideSignOutValue) error {
+	return s.c.Add(ctx, URIHideSignOut, client.Int(int64(value)))
 }
 
 // UpdateHideSignOut updates ./Device/Vendor/MSFT/Policy/Config/Start/HideSignOut.
@@ -1395,8 +1423,8 @@ func (s *Start) CreateHideSignOut(ctx context.Context, value int64) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) UpdateHideSignOut(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHideSignOut, client.Int(value))
+func (s *Start) UpdateHideSignOut(ctx context.Context, value HideSignOutValue) error {
+	return s.c.Replace(ctx, URIHideSignOut, client.Int(int64(value)))
 }
 
 // DeleteHideSignOut deletes ./Device/Vendor/MSFT/Policy/Config/Start/HideSignOut.
@@ -1413,12 +1441,13 @@ func (s *Start) DeleteHideSignOut(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) GetHideSleep(ctx context.Context) (int64, error) {
+func (s *Start) GetHideSleep(ctx context.Context) (HideSleepValue, error) {
 	v, err := s.c.Get(ctx, URIHideSleep)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HideSleepValue(n), err
 }
 
 // CreateHideSleep creates ./Device/Vendor/MSFT/Policy/Config/Start/HideSleep.
@@ -1426,8 +1455,8 @@ func (s *Start) GetHideSleep(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) CreateHideSleep(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHideSleep, client.Int(value))
+func (s *Start) CreateHideSleep(ctx context.Context, value HideSleepValue) error {
+	return s.c.Add(ctx, URIHideSleep, client.Int(int64(value)))
 }
 
 // UpdateHideSleep updates ./Device/Vendor/MSFT/Policy/Config/Start/HideSleep.
@@ -1435,8 +1464,8 @@ func (s *Start) CreateHideSleep(ctx context.Context, value int64) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) UpdateHideSleep(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHideSleep, client.Int(value))
+func (s *Start) UpdateHideSleep(ctx context.Context, value HideSleepValue) error {
+	return s.c.Replace(ctx, URIHideSleep, client.Int(int64(value)))
 }
 
 // DeleteHideSleep deletes ./Device/Vendor/MSFT/Policy/Config/Start/HideSleep.
@@ -1453,12 +1482,13 @@ func (s *Start) DeleteHideSleep(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) GetHideSwitchAccount(ctx context.Context) (int64, error) {
+func (s *Start) GetHideSwitchAccount(ctx context.Context) (HideSwitchAccountValue, error) {
 	v, err := s.c.Get(ctx, URIHideSwitchAccount)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HideSwitchAccountValue(n), err
 }
 
 // CreateHideSwitchAccount creates ./Device/Vendor/MSFT/Policy/Config/Start/HideSwitchAccount.
@@ -1466,8 +1496,8 @@ func (s *Start) GetHideSwitchAccount(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) CreateHideSwitchAccount(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHideSwitchAccount, client.Int(value))
+func (s *Start) CreateHideSwitchAccount(ctx context.Context, value HideSwitchAccountValue) error {
+	return s.c.Add(ctx, URIHideSwitchAccount, client.Int(int64(value)))
 }
 
 // UpdateHideSwitchAccount updates ./Device/Vendor/MSFT/Policy/Config/Start/HideSwitchAccount.
@@ -1475,8 +1505,8 @@ func (s *Start) CreateHideSwitchAccount(ctx context.Context, value int64) error 
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) UpdateHideSwitchAccount(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHideSwitchAccount, client.Int(value))
+func (s *Start) UpdateHideSwitchAccount(ctx context.Context, value HideSwitchAccountValue) error {
+	return s.c.Replace(ctx, URIHideSwitchAccount, client.Int(int64(value)))
 }
 
 // DeleteHideSwitchAccount deletes ./Device/Vendor/MSFT/Policy/Config/Start/HideSwitchAccount.
@@ -1494,12 +1524,13 @@ func (s *Start) DeleteHideSwitchAccount(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Start) GetHideTaskViewButton(ctx context.Context) (int64, error) {
+func (s *Start) GetHideTaskViewButton(ctx context.Context) (HideTaskViewButtonValue, error) {
 	v, err := s.c.Get(ctx, URIHideTaskViewButton)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HideTaskViewButtonValue(n), err
 }
 
 // CreateHideTaskViewButton creates ./Device/Vendor/MSFT/Policy/Config/Start/HideTaskViewButton.
@@ -1508,8 +1539,8 @@ func (s *Start) GetHideTaskViewButton(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Start) CreateHideTaskViewButton(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHideTaskViewButton, client.Int(value))
+func (s *Start) CreateHideTaskViewButton(ctx context.Context, value HideTaskViewButtonValue) error {
+	return s.c.Add(ctx, URIHideTaskViewButton, client.Int(int64(value)))
 }
 
 // UpdateHideTaskViewButton updates ./Device/Vendor/MSFT/Policy/Config/Start/HideTaskViewButton.
@@ -1518,8 +1549,8 @@ func (s *Start) CreateHideTaskViewButton(ctx context.Context, value int64) error
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Start) UpdateHideTaskViewButton(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHideTaskViewButton, client.Int(value))
+func (s *Start) UpdateHideTaskViewButton(ctx context.Context, value HideTaskViewButtonValue) error {
+	return s.c.Replace(ctx, URIHideTaskViewButton, client.Int(int64(value)))
 }
 
 // DeleteHideTaskViewButton deletes ./Device/Vendor/MSFT/Policy/Config/Start/HideTaskViewButton.
@@ -1537,12 +1568,13 @@ func (s *Start) DeleteHideTaskViewButton(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) GetHideUserTile(ctx context.Context) (int64, error) {
+func (s *Start) GetHideUserTile(ctx context.Context) (HideUserTileValue, error) {
 	v, err := s.c.Get(ctx, URIHideUserTile)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HideUserTileValue(n), err
 }
 
 // CreateHideUserTile creates ./Device/Vendor/MSFT/Policy/Config/Start/HideUserTile.
@@ -1550,8 +1582,8 @@ func (s *Start) GetHideUserTile(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) CreateHideUserTile(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHideUserTile, client.Int(value))
+func (s *Start) CreateHideUserTile(ctx context.Context, value HideUserTileValue) error {
+	return s.c.Add(ctx, URIHideUserTile, client.Int(int64(value)))
 }
 
 // UpdateHideUserTile updates ./Device/Vendor/MSFT/Policy/Config/Start/HideUserTile.
@@ -1559,8 +1591,8 @@ func (s *Start) CreateHideUserTile(ctx context.Context, value int64) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) UpdateHideUserTile(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHideUserTile, client.Int(value))
+func (s *Start) UpdateHideUserTile(ctx context.Context, value HideUserTileValue) error {
+	return s.c.Replace(ctx, URIHideUserTile, client.Int(int64(value)))
 }
 
 // DeleteHideUserTile deletes ./Device/Vendor/MSFT/Policy/Config/Start/HideUserTile.
@@ -1630,12 +1662,13 @@ func (s *Start) DeleteImportEdgeAssets(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) GetNoPinningToTaskbar(ctx context.Context) (int64, error) {
+func (s *Start) GetNoPinningToTaskbar(ctx context.Context) (NoPinningToTaskbarValue, error) {
 	v, err := s.c.Get(ctx, URINoPinningToTaskbar)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return NoPinningToTaskbarValue(n), err
 }
 
 // CreateNoPinningToTaskbar creates ./Device/Vendor/MSFT/Policy/Config/Start/NoPinningToTaskbar.
@@ -1648,8 +1681,8 @@ func (s *Start) GetNoPinningToTaskbar(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) CreateNoPinningToTaskbar(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URINoPinningToTaskbar, client.Int(value))
+func (s *Start) CreateNoPinningToTaskbar(ctx context.Context, value NoPinningToTaskbarValue) error {
+	return s.c.Add(ctx, URINoPinningToTaskbar, client.Int(int64(value)))
 }
 
 // UpdateNoPinningToTaskbar updates ./Device/Vendor/MSFT/Policy/Config/Start/NoPinningToTaskbar.
@@ -1662,8 +1695,8 @@ func (s *Start) CreateNoPinningToTaskbar(ctx context.Context, value int64) error
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Start) UpdateNoPinningToTaskbar(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URINoPinningToTaskbar, client.Int(value))
+func (s *Start) UpdateNoPinningToTaskbar(ctx context.Context, value NoPinningToTaskbarValue) error {
+	return s.c.Replace(ctx, URINoPinningToTaskbar, client.Int(int64(value)))
 }
 
 // DeleteNoPinningToTaskbar deletes ./Device/Vendor/MSFT/Policy/Config/Start/NoPinningToTaskbar.
@@ -1691,12 +1724,13 @@ func (s *Start) DeleteNoPinningToTaskbar(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *Start) GetShowOrHideMostUsedApps(ctx context.Context) (int64, error) {
+func (s *Start) GetShowOrHideMostUsedApps(ctx context.Context) (ShowOrHideMostUsedAppsValue, error) {
 	v, err := s.c.Get(ctx, URIShowOrHideMostUsedApps)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ShowOrHideMostUsedAppsValue(n), err
 }
 
 // CreateShowOrHideMostUsedApps creates ./Device/Vendor/MSFT/Policy/Config/Start/ShowOrHideMostUsedApps.
@@ -1710,8 +1744,8 @@ func (s *Start) GetShowOrHideMostUsedApps(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *Start) CreateShowOrHideMostUsedApps(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIShowOrHideMostUsedApps, client.Int(value))
+func (s *Start) CreateShowOrHideMostUsedApps(ctx context.Context, value ShowOrHideMostUsedAppsValue) error {
+	return s.c.Add(ctx, URIShowOrHideMostUsedApps, client.Int(int64(value)))
 }
 
 // UpdateShowOrHideMostUsedApps updates ./Device/Vendor/MSFT/Policy/Config/Start/ShowOrHideMostUsedApps.
@@ -1725,8 +1759,8 @@ func (s *Start) CreateShowOrHideMostUsedApps(ctx context.Context, value int64) e
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *Start) UpdateShowOrHideMostUsedApps(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIShowOrHideMostUsedApps, client.Int(value))
+func (s *Start) UpdateShowOrHideMostUsedApps(ctx context.Context, value ShowOrHideMostUsedAppsValue) error {
+	return s.c.Replace(ctx, URIShowOrHideMostUsedApps, client.Int(int64(value)))
 }
 
 // DeleteShowOrHideMostUsedApps deletes ./Device/Vendor/MSFT/Policy/Config/Start/ShowOrHideMostUsedApps.
@@ -1751,12 +1785,13 @@ func (s *Start) DeleteShowOrHideMostUsedApps(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Start) GetSimplifyQuickSettings(ctx context.Context) (int64, error) {
+func (s *Start) GetSimplifyQuickSettings(ctx context.Context) (SimplifyQuickSettingsValue, error) {
 	v, err := s.c.Get(ctx, URISimplifyQuickSettings)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SimplifyQuickSettingsValue(n), err
 }
 
 // CreateSimplifyQuickSettings creates ./Device/Vendor/MSFT/Policy/Config/Start/SimplifyQuickSettings.
@@ -1766,8 +1801,8 @@ func (s *Start) GetSimplifyQuickSettings(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Start) CreateSimplifyQuickSettings(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISimplifyQuickSettings, client.Int(value))
+func (s *Start) CreateSimplifyQuickSettings(ctx context.Context, value SimplifyQuickSettingsValue) error {
+	return s.c.Add(ctx, URISimplifyQuickSettings, client.Int(int64(value)))
 }
 
 // UpdateSimplifyQuickSettings updates ./Device/Vendor/MSFT/Policy/Config/Start/SimplifyQuickSettings.
@@ -1777,8 +1812,8 @@ func (s *Start) CreateSimplifyQuickSettings(ctx context.Context, value int64) er
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Start) UpdateSimplifyQuickSettings(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISimplifyQuickSettings, client.Int(value))
+func (s *Start) UpdateSimplifyQuickSettings(ctx context.Context, value SimplifyQuickSettingsValue) error {
+	return s.c.Replace(ctx, URISimplifyQuickSettings, client.Int(int64(value)))
 }
 
 // DeleteSimplifyQuickSettings deletes ./Device/Vendor/MSFT/Policy/Config/Start/SimplifyQuickSettings.

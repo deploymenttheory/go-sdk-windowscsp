@@ -101,12 +101,13 @@ func (s *WirelessNetworkPreference) DeleteConnectionProfilesConnectionProfileIDP
 // network.
 //
 // Default: 0.
-func (s *WirelessNetworkPreference) GetConnectionProfilesConnectionProfileIDStayConnected(ctx context.Context, connectionProfileID string) (int64, error) {
+func (s *WirelessNetworkPreference) GetConnectionProfilesConnectionProfileIDStayConnected(ctx context.Context, connectionProfileID string) (ConnectionProfilesConnectionProfileIDStayConnectedValue, error) {
 	v, err := s.c.Get(ctx, URIConnectionProfilesConnectionProfileIDStayConnected(connectionProfileID))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConnectionProfilesConnectionProfileIDStayConnectedValue(n), err
 }
 
 // CreateConnectionProfilesConnectionProfileIDStayConnected creates ./Vendor/MSFT/WirelessNetworkPreference/ConnectionProfiles/{connectionProfileID}/StayConnected.
@@ -116,8 +117,8 @@ func (s *WirelessNetworkPreference) GetConnectionProfilesConnectionProfileIDStay
 // network.
 //
 // Default: 0.
-func (s *WirelessNetworkPreference) CreateConnectionProfilesConnectionProfileIDStayConnected(ctx context.Context, connectionProfileID string, value int64) error {
-	return s.c.Add(ctx, URIConnectionProfilesConnectionProfileIDStayConnected(connectionProfileID), client.Int(value))
+func (s *WirelessNetworkPreference) CreateConnectionProfilesConnectionProfileIDStayConnected(ctx context.Context, connectionProfileID string, value ConnectionProfilesConnectionProfileIDStayConnectedValue) error {
+	return s.c.Add(ctx, URIConnectionProfilesConnectionProfileIDStayConnected(connectionProfileID), client.Int(int64(value)))
 }
 
 // UpdateConnectionProfilesConnectionProfileIDStayConnected updates ./Vendor/MSFT/WirelessNetworkPreference/ConnectionProfiles/{connectionProfileID}/StayConnected.
@@ -127,8 +128,8 @@ func (s *WirelessNetworkPreference) CreateConnectionProfilesConnectionProfileIDS
 // network.
 //
 // Default: 0.
-func (s *WirelessNetworkPreference) UpdateConnectionProfilesConnectionProfileIDStayConnected(ctx context.Context, connectionProfileID string, value int64) error {
-	return s.c.Replace(ctx, URIConnectionProfilesConnectionProfileIDStayConnected(connectionProfileID), client.Int(value))
+func (s *WirelessNetworkPreference) UpdateConnectionProfilesConnectionProfileIDStayConnected(ctx context.Context, connectionProfileID string, value ConnectionProfilesConnectionProfileIDStayConnectedValue) error {
+	return s.c.Replace(ctx, URIConnectionProfilesConnectionProfileIDStayConnected(connectionProfileID), client.Int(int64(value)))
 }
 
 // DeleteConnectionProfilesConnectionProfileIDStayConnected deletes ./Vendor/MSFT/WirelessNetworkPreference/ConnectionProfiles/{connectionProfileID}/StayConnected.
@@ -147,12 +148,13 @@ func (s *WirelessNetworkPreference) DeleteConnectionProfilesConnectionProfileIDS
 // Wi-Fi. Currently only cellular is supported.
 //
 // Default: 0.
-func (s *WirelessNetworkPreference) GetConnectionProfilesConnectionProfileIDWirelessType(ctx context.Context, connectionProfileID string) (int64, error) {
+func (s *WirelessNetworkPreference) GetConnectionProfilesConnectionProfileIDWirelessType(ctx context.Context, connectionProfileID string) (ConnectionProfilesConnectionProfileIDWirelessTypeValue, error) {
 	v, err := s.c.Get(ctx, URIConnectionProfilesConnectionProfileIDWirelessType(connectionProfileID))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConnectionProfilesConnectionProfileIDWirelessTypeValue(n), err
 }
 
 // CreateConnectionProfilesConnectionProfileIDWirelessType creates ./Vendor/MSFT/WirelessNetworkPreference/ConnectionProfiles/{connectionProfileID}/WirelessType.
@@ -160,8 +162,8 @@ func (s *WirelessNetworkPreference) GetConnectionProfilesConnectionProfileIDWire
 // Wi-Fi. Currently only cellular is supported.
 //
 // Default: 0.
-func (s *WirelessNetworkPreference) CreateConnectionProfilesConnectionProfileIDWirelessType(ctx context.Context, connectionProfileID string, value int64) error {
-	return s.c.Add(ctx, URIConnectionProfilesConnectionProfileIDWirelessType(connectionProfileID), client.Int(value))
+func (s *WirelessNetworkPreference) CreateConnectionProfilesConnectionProfileIDWirelessType(ctx context.Context, connectionProfileID string, value ConnectionProfilesConnectionProfileIDWirelessTypeValue) error {
+	return s.c.Add(ctx, URIConnectionProfilesConnectionProfileIDWirelessType(connectionProfileID), client.Int(int64(value)))
 }
 
 // UpdateConnectionProfilesConnectionProfileIDWirelessType updates ./Vendor/MSFT/WirelessNetworkPreference/ConnectionProfiles/{connectionProfileID}/WirelessType.
@@ -169,8 +171,8 @@ func (s *WirelessNetworkPreference) CreateConnectionProfilesConnectionProfileIDW
 // Wi-Fi. Currently only cellular is supported.
 //
 // Default: 0.
-func (s *WirelessNetworkPreference) UpdateConnectionProfilesConnectionProfileIDWirelessType(ctx context.Context, connectionProfileID string, value int64) error {
-	return s.c.Replace(ctx, URIConnectionProfilesConnectionProfileIDWirelessType(connectionProfileID), client.Int(value))
+func (s *WirelessNetworkPreference) UpdateConnectionProfilesConnectionProfileIDWirelessType(ctx context.Context, connectionProfileID string, value ConnectionProfilesConnectionProfileIDWirelessTypeValue) error {
+	return s.c.Replace(ctx, URIConnectionProfilesConnectionProfileIDWirelessType(connectionProfileID), client.Int(int64(value)))
 }
 
 // DeleteConnectionProfilesConnectionProfileIDWirelessType deletes ./Vendor/MSFT/WirelessNetworkPreference/ConnectionProfiles/{connectionProfileID}/WirelessType.
@@ -239,12 +241,13 @@ func (s *WirelessNetworkPreference) UpdateParametersCellularParametersMaxRescanI
 // eSIM profile is active.
 //
 // Default: 0.
-func (s *WirelessNetworkPreference) GetParametersCellularParametersNetworkDiscoveryOption(ctx context.Context) (int64, error) {
+func (s *WirelessNetworkPreference) GetParametersCellularParametersNetworkDiscoveryOption(ctx context.Context) (ParametersCellularParametersNetworkDiscoveryOptionValue, error) {
 	v, err := s.c.Get(ctx, URIParametersCellularParametersNetworkDiscoveryOption)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ParametersCellularParametersNetworkDiscoveryOptionValue(n), err
 }
 
 // UpdateParametersCellularParametersNetworkDiscoveryOption updates ./Vendor/MSFT/WirelessNetworkPreference/Parameters/CellularParameters/NetworkDiscoveryOption.
@@ -256,8 +259,8 @@ func (s *WirelessNetworkPreference) GetParametersCellularParametersNetworkDiscov
 // eSIM profile is active.
 //
 // Default: 0.
-func (s *WirelessNetworkPreference) UpdateParametersCellularParametersNetworkDiscoveryOption(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIParametersCellularParametersNetworkDiscoveryOption, client.Int(value))
+func (s *WirelessNetworkPreference) UpdateParametersCellularParametersNetworkDiscoveryOption(ctx context.Context, value ParametersCellularParametersNetworkDiscoveryOptionValue) error {
+	return s.c.Replace(ctx, URIParametersCellularParametersNetworkDiscoveryOption, client.Int(int64(value)))
 }
 
 // GetParametersCellularParametersPreferredProfileWakeConnectionTimerInSeconds reads ./Vendor/MSFT/WirelessNetworkPreference/Parameters/CellularParameters/PreferredProfileWakeConnectionTimerInSeconds.

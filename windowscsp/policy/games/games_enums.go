@@ -2,18 +2,52 @@
 
 package games
 
-// AllowAdvancedGamingServices allowed values.
-const (
-	// Not allowed.
-	AllowAdvancedGamingServicesNotAllowed int64 = 0
-	// Allowed.
-	AllowAdvancedGamingServicesAllowed int64 = 1
+import (
+	"fmt"
 )
 
-// DisableGamingFullScreenExperience allowed values.
+// AllowAdvancedGamingServicesValue — allowed values for the AllowAdvancedGamingServices node.
+type AllowAdvancedGamingServicesValue int64
+
+const (
+	// Not allowed.
+	AllowAdvancedGamingServicesNotAllowed AllowAdvancedGamingServicesValue = 0
+	// Allowed.
+	AllowAdvancedGamingServicesAllowed AllowAdvancedGamingServicesValue = 1
+)
+
+// String returns the AllowAdvancedGamingServicesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowAdvancedGamingServicesValue) String() string {
+	switch e {
+	case AllowAdvancedGamingServicesNotAllowed:
+		return "AllowAdvancedGamingServicesNotAllowed"
+	case AllowAdvancedGamingServicesAllowed:
+		return "AllowAdvancedGamingServicesAllowed"
+	default:
+		return fmt.Sprintf("AllowAdvancedGamingServicesValue(%d)", int64(e))
+	}
+}
+
+// DisableGamingFullScreenExperienceValue — allowed values for the DisableGamingFullScreenExperience node.
+type DisableGamingFullScreenExperienceValue int64
+
 const (
 	// Gaming full screen experience allowed.
-	DisableGamingFullScreenExperienceGamingFullScreenExperienceAllowed int64 = 0
+	DisableGamingFullScreenExperienceGamingFullScreenExperienceAllowed DisableGamingFullScreenExperienceValue = 0
 	// Gaming full screen experience disabled.
-	DisableGamingFullScreenExperienceGamingFullScreenExperienceDisabled int64 = 1
+	DisableGamingFullScreenExperienceGamingFullScreenExperienceDisabled DisableGamingFullScreenExperienceValue = 1
 )
+
+// String returns the DisableGamingFullScreenExperienceValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableGamingFullScreenExperienceValue) String() string {
+	switch e {
+	case DisableGamingFullScreenExperienceGamingFullScreenExperienceAllowed:
+		return "DisableGamingFullScreenExperienceGamingFullScreenExperienceAllowed"
+	case DisableGamingFullScreenExperienceGamingFullScreenExperienceDisabled:
+		return "DisableGamingFullScreenExperienceGamingFullScreenExperienceDisabled"
+	default:
+		return fmt.Sprintf("DisableGamingFullScreenExperienceValue(%d)", int64(e))
+	}
+}

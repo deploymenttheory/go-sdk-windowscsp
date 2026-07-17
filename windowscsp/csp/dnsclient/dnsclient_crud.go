@@ -41,12 +41,13 @@ func (s *DnsClient) UpdateDynamicDNSOverwrite(ctx context.Context, value bool) e
 // these queries.
 //
 // Default: 0.
-func (s *DnsClient) GetEncryptionDoHStatus(ctx context.Context) (int64, error) {
+func (s *DnsClient) GetEncryptionDoHStatus(ctx context.Context) (EncryptionDoHStatusValue, error) {
 	v, err := s.c.Get(ctx, URIEncryptionDoHStatus)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EncryptionDoHStatusValue(n), err
 }
 
 // UpdateEncryptionDoHStatus updates ./Device/Vendor/MSFT/DnsClient/Encryption/DoH/Status.
@@ -54,8 +55,8 @@ func (s *DnsClient) GetEncryptionDoHStatus(ctx context.Context) (int64, error) {
 // these queries.
 //
 // Default: 0.
-func (s *DnsClient) UpdateEncryptionDoHStatus(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEncryptionDoHStatus, client.Int(value))
+func (s *DnsClient) UpdateEncryptionDoHStatus(ctx context.Context, value EncryptionDoHStatusValue) error {
+	return s.c.Replace(ctx, URIEncryptionDoHStatus, client.Int(int64(value)))
 }
 
 // GetEncryptionDoTStatus reads ./Device/Vendor/MSFT/DnsClient/Encryption/DoT/Status.
@@ -63,12 +64,13 @@ func (s *DnsClient) UpdateEncryptionDoHStatus(ctx context.Context, value int64) 
 // these queries.
 //
 // Default: 0.
-func (s *DnsClient) GetEncryptionDoTStatus(ctx context.Context) (int64, error) {
+func (s *DnsClient) GetEncryptionDoTStatus(ctx context.Context) (EncryptionDoTStatusValue, error) {
 	v, err := s.c.Get(ctx, URIEncryptionDoTStatus)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EncryptionDoTStatusValue(n), err
 }
 
 // UpdateEncryptionDoTStatus updates ./Device/Vendor/MSFT/DnsClient/Encryption/DoT/Status.
@@ -76,8 +78,8 @@ func (s *DnsClient) GetEncryptionDoTStatus(ctx context.Context) (int64, error) {
 // these queries.
 //
 // Default: 0.
-func (s *DnsClient) UpdateEncryptionDoTStatus(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEncryptionDoTStatus, client.Int(value))
+func (s *DnsClient) UpdateEncryptionDoTStatus(ctx context.Context, value EncryptionDoTStatusValue) error {
+	return s.c.Replace(ctx, URIEncryptionDoTStatus, client.Int(int64(value)))
 }
 
 // GetEncryptionStatus reads ./Device/Vendor/MSFT/DnsClient/Encryption/Status.
@@ -85,12 +87,13 @@ func (s *DnsClient) UpdateEncryptionDoTStatus(ctx context.Context, value int64) 
 // through the client, Allowed offers both unencrypted requests, as well as encrypted requests when
 // possible, and Enforced blocks any lookups that would be sent via an unencrypted configuration.
 // The default value is
-func (s *DnsClient) GetEncryptionStatus(ctx context.Context) (int64, error) {
+func (s *DnsClient) GetEncryptionStatus(ctx context.Context) (EncryptionStatusValue, error) {
 	v, err := s.c.Get(ctx, URIEncryptionStatus)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EncryptionStatusValue(n), err
 }
 
 // UpdateEncryptionStatus updates ./Device/Vendor/MSFT/DnsClient/Encryption/Status.
@@ -98,8 +101,8 @@ func (s *DnsClient) GetEncryptionStatus(ctx context.Context) (int64, error) {
 // through the client, Allowed offers both unencrypted requests, as well as encrypted requests when
 // possible, and Enforced blocks any lookups that would be sent via an unencrypted configuration.
 // The default value is
-func (s *DnsClient) UpdateEncryptionStatus(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEncryptionStatus, client.Int(value))
+func (s *DnsClient) UpdateEncryptionStatus(ctx context.Context, value EncryptionStatusValue) error {
+	return s.c.Replace(ctx, URIEncryptionStatus, client.Int(int64(value)))
 }
 
 // GetIDNEncoded reads ./Device/Vendor/MSFT/DnsClient/IDN/Encoded.
@@ -161,19 +164,20 @@ func (s *DnsClient) UpdateLinkLocalNetBIOSAllowFQDN(ctx context.Context, value b
 // GetLinkLocalNetBIOSEnable reads ./Device/Vendor/MSFT/DnsClient/LinkLocal/NetBIOS/Enable.
 // NetBIOS can be fully disabled, disabled only on public networks, enabled in learning mode, or
 // enabled entirely. By default, it runs in Learning Mode.
-func (s *DnsClient) GetLinkLocalNetBIOSEnable(ctx context.Context) (int64, error) {
+func (s *DnsClient) GetLinkLocalNetBIOSEnable(ctx context.Context) (LinkLocalNetBIOSEnableValue, error) {
 	v, err := s.c.Get(ctx, URILinkLocalNetBIOSEnable)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return LinkLocalNetBIOSEnableValue(n), err
 }
 
 // UpdateLinkLocalNetBIOSEnable updates ./Device/Vendor/MSFT/DnsClient/LinkLocal/NetBIOS/Enable.
 // NetBIOS can be fully disabled, disabled only on public networks, enabled in learning mode, or
 // enabled entirely. By default, it runs in Learning Mode.
-func (s *DnsClient) UpdateLinkLocalNetBIOSEnable(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URILinkLocalNetBIOSEnable, client.Int(value))
+func (s *DnsClient) UpdateLinkLocalNetBIOSEnable(ctx context.Context, value LinkLocalNetBIOSEnableValue) error {
+	return s.c.Replace(ctx, URILinkLocalNetBIOSEnable, client.Int(int64(value)))
 }
 
 // GetLinkLocalMDNSEnabled reads ./Device/Vendor/MSFT/DnsClient/LinkLocal/mDNS/Enabled.
@@ -248,17 +252,17 @@ func (s *DnsClient) UpdateNRPTPolicyTableEntryNamespace(ctx context.Context, pol
 // GetNRPTPolicyTableEntryNamespaceType reads ./Device/Vendor/MSFT/DnsClient/NRPT/{policyTableEntry}/NamespaceType.
 // The type of the namespace declared by this table entry. This defines the scope that this policy
 // applies to.
-func (s *DnsClient) GetNRPTPolicyTableEntryNamespaceType(ctx context.Context, policyTableEntry string) (string, error) {
+func (s *DnsClient) GetNRPTPolicyTableEntryNamespaceType(ctx context.Context, policyTableEntry string) (NRPTPolicyTableEntryNamespaceTypeValue, error) {
 	v, err := s.c.Get(ctx, URINRPTPolicyTableEntryNamespaceType(policyTableEntry))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return NRPTPolicyTableEntryNamespaceTypeValue(v.Str()), nil
 }
 
 // UpdateNRPTPolicyTableEntryNamespaceType updates ./Device/Vendor/MSFT/DnsClient/NRPT/{policyTableEntry}/NamespaceType.
 // The type of the namespace declared by this table entry. This defines the scope that this policy
 // applies to.
-func (s *DnsClient) UpdateNRPTPolicyTableEntryNamespaceType(ctx context.Context, policyTableEntry string, value string) error {
-	return s.c.Replace(ctx, URINRPTPolicyTableEntryNamespaceType(policyTableEntry), client.Chr(value))
+func (s *DnsClient) UpdateNRPTPolicyTableEntryNamespaceType(ctx context.Context, policyTableEntry string, value NRPTPolicyTableEntryNamespaceTypeValue) error {
+	return s.c.Replace(ctx, URINRPTPolicyTableEntryNamespaceType(policyTableEntry), client.Chr(string(value)))
 }

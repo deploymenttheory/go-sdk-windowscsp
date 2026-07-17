@@ -2,42 +2,114 @@
 
 package passportforwork_user
 
-// TenantIdPoliciesPINComplexityDigits allowed values.
+import (
+	"fmt"
+)
+
+// TenantIdPoliciesPINComplexityDigitsValue — allowed values for the Digits node.
+type TenantIdPoliciesPINComplexityDigitsValue int64
+
 const (
 	// Allows the use of digits in PIN.
-	TenantIdPoliciesPINComplexityDigitsAllowsTheUseOfDigitsIn int64 = 0
+	TenantIdPoliciesPINComplexityDigitsAllowsTheUseOfDigitsIn TenantIdPoliciesPINComplexityDigitsValue = 0
 	// Requires the use of at least one digits in PIN.
-	TenantIdPoliciesPINComplexityDigitsRequiresTheUseOfAtLeast int64 = 1
+	TenantIdPoliciesPINComplexityDigitsRequiresTheUseOfAtLeast TenantIdPoliciesPINComplexityDigitsValue = 1
 	// Does not allow the use of digits in PIN.
-	TenantIdPoliciesPINComplexityDigitsDoesNotAllowTheUseOf int64 = 2
+	TenantIdPoliciesPINComplexityDigitsDoesNotAllowTheUseOf TenantIdPoliciesPINComplexityDigitsValue = 2
 )
 
-// TenantIdPoliciesPINComplexityLowercaseLetters allowed values.
+// String returns the TenantIdPoliciesPINComplexityDigitsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e TenantIdPoliciesPINComplexityDigitsValue) String() string {
+	switch e {
+	case TenantIdPoliciesPINComplexityDigitsAllowsTheUseOfDigitsIn:
+		return "TenantIdPoliciesPINComplexityDigitsAllowsTheUseOfDigitsIn"
+	case TenantIdPoliciesPINComplexityDigitsRequiresTheUseOfAtLeast:
+		return "TenantIdPoliciesPINComplexityDigitsRequiresTheUseOfAtLeast"
+	case TenantIdPoliciesPINComplexityDigitsDoesNotAllowTheUseOf:
+		return "TenantIdPoliciesPINComplexityDigitsDoesNotAllowTheUseOf"
+	default:
+		return fmt.Sprintf("TenantIdPoliciesPINComplexityDigitsValue(%d)", int64(e))
+	}
+}
+
+// TenantIdPoliciesPINComplexityLowercaseLettersValue — allowed values for the LowercaseLetters node.
+type TenantIdPoliciesPINComplexityLowercaseLettersValue int64
+
 const (
 	// Allows the use of lowercase letters in PIN.
-	TenantIdPoliciesPINComplexityLowercaseLettersAllowsTheUseOfLowercaseLetters int64 = 0
+	TenantIdPoliciesPINComplexityLowercaseLettersAllowsTheUseOfLowercaseLetters TenantIdPoliciesPINComplexityLowercaseLettersValue = 0
 	// Requires the use of at least one lowercase letters in PIN.
-	TenantIdPoliciesPINComplexityLowercaseLettersRequiresTheUseOfAtLeast int64 = 1
+	TenantIdPoliciesPINComplexityLowercaseLettersRequiresTheUseOfAtLeast TenantIdPoliciesPINComplexityLowercaseLettersValue = 1
 	// Does not allow the use of lowercase letters in PIN.
-	TenantIdPoliciesPINComplexityLowercaseLettersDoesNotAllowTheUseOf int64 = 2
+	TenantIdPoliciesPINComplexityLowercaseLettersDoesNotAllowTheUseOf TenantIdPoliciesPINComplexityLowercaseLettersValue = 2
 )
 
-// TenantIdPoliciesPINComplexitySpecialCharacters allowed values.
+// String returns the TenantIdPoliciesPINComplexityLowercaseLettersValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e TenantIdPoliciesPINComplexityLowercaseLettersValue) String() string {
+	switch e {
+	case TenantIdPoliciesPINComplexityLowercaseLettersAllowsTheUseOfLowercaseLetters:
+		return "TenantIdPoliciesPINComplexityLowercaseLettersAllowsTheUseOfLowercaseLetters"
+	case TenantIdPoliciesPINComplexityLowercaseLettersRequiresTheUseOfAtLeast:
+		return "TenantIdPoliciesPINComplexityLowercaseLettersRequiresTheUseOfAtLeast"
+	case TenantIdPoliciesPINComplexityLowercaseLettersDoesNotAllowTheUseOf:
+		return "TenantIdPoliciesPINComplexityLowercaseLettersDoesNotAllowTheUseOf"
+	default:
+		return fmt.Sprintf("TenantIdPoliciesPINComplexityLowercaseLettersValue(%d)", int64(e))
+	}
+}
+
+// TenantIdPoliciesPINComplexitySpecialCharactersValue — allowed values for the SpecialCharacters node.
+type TenantIdPoliciesPINComplexitySpecialCharactersValue int64
+
 const (
 	// Allows the use of special characters in PIN.
-	TenantIdPoliciesPINComplexitySpecialCharactersAllowsTheUseOfSpecialCharacters int64 = 0
+	TenantIdPoliciesPINComplexitySpecialCharactersAllowsTheUseOfSpecialCharacters TenantIdPoliciesPINComplexitySpecialCharactersValue = 0
 	// Requires the use of at least one special characters in PIN.
-	TenantIdPoliciesPINComplexitySpecialCharactersRequiresTheUseOfAtLeast int64 = 1
+	TenantIdPoliciesPINComplexitySpecialCharactersRequiresTheUseOfAtLeast TenantIdPoliciesPINComplexitySpecialCharactersValue = 1
 	// Does not allow the use of special characters in PIN.
-	TenantIdPoliciesPINComplexitySpecialCharactersDoesNotAllowTheUseOf int64 = 2
+	TenantIdPoliciesPINComplexitySpecialCharactersDoesNotAllowTheUseOf TenantIdPoliciesPINComplexitySpecialCharactersValue = 2
 )
 
-// TenantIdPoliciesPINComplexityUppercaseLetters allowed values.
+// String returns the TenantIdPoliciesPINComplexitySpecialCharactersValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e TenantIdPoliciesPINComplexitySpecialCharactersValue) String() string {
+	switch e {
+	case TenantIdPoliciesPINComplexitySpecialCharactersAllowsTheUseOfSpecialCharacters:
+		return "TenantIdPoliciesPINComplexitySpecialCharactersAllowsTheUseOfSpecialCharacters"
+	case TenantIdPoliciesPINComplexitySpecialCharactersRequiresTheUseOfAtLeast:
+		return "TenantIdPoliciesPINComplexitySpecialCharactersRequiresTheUseOfAtLeast"
+	case TenantIdPoliciesPINComplexitySpecialCharactersDoesNotAllowTheUseOf:
+		return "TenantIdPoliciesPINComplexitySpecialCharactersDoesNotAllowTheUseOf"
+	default:
+		return fmt.Sprintf("TenantIdPoliciesPINComplexitySpecialCharactersValue(%d)", int64(e))
+	}
+}
+
+// TenantIdPoliciesPINComplexityUppercaseLettersValue — allowed values for the UppercaseLetters node.
+type TenantIdPoliciesPINComplexityUppercaseLettersValue int64
+
 const (
 	// Allows the use of uppercase letters in PIN.
-	TenantIdPoliciesPINComplexityUppercaseLettersAllowsTheUseOfUppercaseLetters int64 = 0
+	TenantIdPoliciesPINComplexityUppercaseLettersAllowsTheUseOfUppercaseLetters TenantIdPoliciesPINComplexityUppercaseLettersValue = 0
 	// Requires the use of at least one uppercase letters in PIN.
-	TenantIdPoliciesPINComplexityUppercaseLettersRequiresTheUseOfAtLeast int64 = 1
+	TenantIdPoliciesPINComplexityUppercaseLettersRequiresTheUseOfAtLeast TenantIdPoliciesPINComplexityUppercaseLettersValue = 1
 	// Does not allow the use of uppercase letters in PIN.
-	TenantIdPoliciesPINComplexityUppercaseLettersDoesNotAllowTheUseOf int64 = 2
+	TenantIdPoliciesPINComplexityUppercaseLettersDoesNotAllowTheUseOf TenantIdPoliciesPINComplexityUppercaseLettersValue = 2
 )
+
+// String returns the TenantIdPoliciesPINComplexityUppercaseLettersValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e TenantIdPoliciesPINComplexityUppercaseLettersValue) String() string {
+	switch e {
+	case TenantIdPoliciesPINComplexityUppercaseLettersAllowsTheUseOfUppercaseLetters:
+		return "TenantIdPoliciesPINComplexityUppercaseLettersAllowsTheUseOfUppercaseLetters"
+	case TenantIdPoliciesPINComplexityUppercaseLettersRequiresTheUseOfAtLeast:
+		return "TenantIdPoliciesPINComplexityUppercaseLettersRequiresTheUseOfAtLeast"
+	case TenantIdPoliciesPINComplexityUppercaseLettersDoesNotAllowTheUseOf:
+		return "TenantIdPoliciesPINComplexityUppercaseLettersDoesNotAllowTheUseOf"
+	default:
+		return fmt.Sprintf("TenantIdPoliciesPINComplexityUppercaseLettersValue(%d)", int64(e))
+	}
+}

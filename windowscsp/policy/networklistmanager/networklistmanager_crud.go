@@ -14,12 +14,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.26100, 10.0.22621.5126 (CSP v11.0).
-func (s *NetworkListManager) GetAllNetworksNetworkIcon(ctx context.Context) (int64, error) {
+func (s *NetworkListManager) GetAllNetworksNetworkIcon(ctx context.Context) (AllNetworksNetworkIconValue, error) {
 	v, err := s.c.Get(ctx, URIAllNetworksNetworkIcon)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllNetworksNetworkIconValue(n), err
 }
 
 // CreateAllNetworksNetworkIcon creates ./Device/Vendor/MSFT/Policy/Config/NetworkListManager/AllNetworks_NetworkIcon.
@@ -28,8 +29,8 @@ func (s *NetworkListManager) GetAllNetworksNetworkIcon(ctx context.Context) (int
 //
 // Default: 0.
 // Supported from OS build 10.0.26100, 10.0.22621.5126 (CSP v11.0).
-func (s *NetworkListManager) CreateAllNetworksNetworkIcon(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllNetworksNetworkIcon, client.Int(value))
+func (s *NetworkListManager) CreateAllNetworksNetworkIcon(ctx context.Context, value AllNetworksNetworkIconValue) error {
+	return s.c.Add(ctx, URIAllNetworksNetworkIcon, client.Int(int64(value)))
 }
 
 // UpdateAllNetworksNetworkIcon updates ./Device/Vendor/MSFT/Policy/Config/NetworkListManager/AllNetworks_NetworkIcon.
@@ -38,8 +39,8 @@ func (s *NetworkListManager) CreateAllNetworksNetworkIcon(ctx context.Context, v
 //
 // Default: 0.
 // Supported from OS build 10.0.26100, 10.0.22621.5126 (CSP v11.0).
-func (s *NetworkListManager) UpdateAllNetworksNetworkIcon(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllNetworksNetworkIcon, client.Int(value))
+func (s *NetworkListManager) UpdateAllNetworksNetworkIcon(ctx context.Context, value AllNetworksNetworkIconValue) error {
+	return s.c.Replace(ctx, URIAllNetworksNetworkIcon, client.Int(int64(value)))
 }
 
 // DeleteAllNetworksNetworkIcon deletes ./Device/Vendor/MSFT/Policy/Config/NetworkListManager/AllNetworks_NetworkIcon.
@@ -58,12 +59,13 @@ func (s *NetworkListManager) DeleteAllNetworksNetworkIcon(ctx context.Context) e
 //
 // Default: 0.
 // Supported from OS build 10.0.26100, 10.0.22621.5126 (CSP v11.0).
-func (s *NetworkListManager) GetAllNetworksNetworkLocation(ctx context.Context) (int64, error) {
+func (s *NetworkListManager) GetAllNetworksNetworkLocation(ctx context.Context) (AllNetworksNetworkLocationValue, error) {
 	v, err := s.c.Get(ctx, URIAllNetworksNetworkLocation)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllNetworksNetworkLocationValue(n), err
 }
 
 // CreateAllNetworksNetworkLocation creates ./Device/Vendor/MSFT/Policy/Config/NetworkListManager/AllNetworks_NetworkLocation.
@@ -72,8 +74,8 @@ func (s *NetworkListManager) GetAllNetworksNetworkLocation(ctx context.Context) 
 //
 // Default: 0.
 // Supported from OS build 10.0.26100, 10.0.22621.5126 (CSP v11.0).
-func (s *NetworkListManager) CreateAllNetworksNetworkLocation(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllNetworksNetworkLocation, client.Int(value))
+func (s *NetworkListManager) CreateAllNetworksNetworkLocation(ctx context.Context, value AllNetworksNetworkLocationValue) error {
+	return s.c.Add(ctx, URIAllNetworksNetworkLocation, client.Int(int64(value)))
 }
 
 // UpdateAllNetworksNetworkLocation updates ./Device/Vendor/MSFT/Policy/Config/NetworkListManager/AllNetworks_NetworkLocation.
@@ -82,8 +84,8 @@ func (s *NetworkListManager) CreateAllNetworksNetworkLocation(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.26100, 10.0.22621.5126 (CSP v11.0).
-func (s *NetworkListManager) UpdateAllNetworksNetworkLocation(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllNetworksNetworkLocation, client.Int(value))
+func (s *NetworkListManager) UpdateAllNetworksNetworkLocation(ctx context.Context, value AllNetworksNetworkLocationValue) error {
+	return s.c.Replace(ctx, URIAllNetworksNetworkLocation, client.Int(int64(value)))
 }
 
 // DeleteAllNetworksNetworkLocation deletes ./Device/Vendor/MSFT/Policy/Config/NetworkListManager/AllNetworks_NetworkLocation.
@@ -102,12 +104,13 @@ func (s *NetworkListManager) DeleteAllNetworksNetworkLocation(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.26100, 10.0.22621.5126 (CSP v11.0).
-func (s *NetworkListManager) GetAllNetworksNetworkName(ctx context.Context) (int64, error) {
+func (s *NetworkListManager) GetAllNetworksNetworkName(ctx context.Context) (AllNetworksNetworkNameValue, error) {
 	v, err := s.c.Get(ctx, URIAllNetworksNetworkName)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllNetworksNetworkNameValue(n), err
 }
 
 // CreateAllNetworksNetworkName creates ./Device/Vendor/MSFT/Policy/Config/NetworkListManager/AllNetworks_NetworkName.
@@ -116,8 +119,8 @@ func (s *NetworkListManager) GetAllNetworksNetworkName(ctx context.Context) (int
 //
 // Default: 0.
 // Supported from OS build 10.0.26100, 10.0.22621.5126 (CSP v11.0).
-func (s *NetworkListManager) CreateAllNetworksNetworkName(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllNetworksNetworkName, client.Int(value))
+func (s *NetworkListManager) CreateAllNetworksNetworkName(ctx context.Context, value AllNetworksNetworkNameValue) error {
+	return s.c.Add(ctx, URIAllNetworksNetworkName, client.Int(int64(value)))
 }
 
 // UpdateAllNetworksNetworkName updates ./Device/Vendor/MSFT/Policy/Config/NetworkListManager/AllNetworks_NetworkName.
@@ -126,8 +129,8 @@ func (s *NetworkListManager) CreateAllNetworksNetworkName(ctx context.Context, v
 //
 // Default: 0.
 // Supported from OS build 10.0.26100, 10.0.22621.5126 (CSP v11.0).
-func (s *NetworkListManager) UpdateAllNetworksNetworkName(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllNetworksNetworkName, client.Int(value))
+func (s *NetworkListManager) UpdateAllNetworksNetworkName(ctx context.Context, value AllNetworksNetworkNameValue) error {
+	return s.c.Replace(ctx, URIAllNetworksNetworkName, client.Int(int64(value)))
 }
 
 // DeleteAllNetworksNetworkName deletes ./Device/Vendor/MSFT/Policy/Config/NetworkListManager/AllNetworks_NetworkName.
@@ -232,12 +235,13 @@ func (s *NetworkListManager) DeleteConfiguredTlsAuthenticationNetworkName(ctx co
 //
 // Default: 0.
 // Supported from OS build 10.0.26100, 10.0.22621.5126 (CSP v11.0).
-func (s *NetworkListManager) GetIdentifyingNetworksLocationType(ctx context.Context) (int64, error) {
+func (s *NetworkListManager) GetIdentifyingNetworksLocationType(ctx context.Context) (IdentifyingNetworksLocationTypeValue, error) {
 	v, err := s.c.Get(ctx, URIIdentifyingNetworksLocationType)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return IdentifyingNetworksLocationTypeValue(n), err
 }
 
 // CreateIdentifyingNetworksLocationType creates ./Device/Vendor/MSFT/Policy/Config/NetworkListManager/IdentifyingNetworks_LocationType.
@@ -248,8 +252,8 @@ func (s *NetworkListManager) GetIdentifyingNetworksLocationType(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 10.0.26100, 10.0.22621.5126 (CSP v11.0).
-func (s *NetworkListManager) CreateIdentifyingNetworksLocationType(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIIdentifyingNetworksLocationType, client.Int(value))
+func (s *NetworkListManager) CreateIdentifyingNetworksLocationType(ctx context.Context, value IdentifyingNetworksLocationTypeValue) error {
+	return s.c.Add(ctx, URIIdentifyingNetworksLocationType, client.Int(int64(value)))
 }
 
 // UpdateIdentifyingNetworksLocationType updates ./Device/Vendor/MSFT/Policy/Config/NetworkListManager/IdentifyingNetworks_LocationType.
@@ -260,8 +264,8 @@ func (s *NetworkListManager) CreateIdentifyingNetworksLocationType(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.26100, 10.0.22621.5126 (CSP v11.0).
-func (s *NetworkListManager) UpdateIdentifyingNetworksLocationType(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIIdentifyingNetworksLocationType, client.Int(value))
+func (s *NetworkListManager) UpdateIdentifyingNetworksLocationType(ctx context.Context, value IdentifyingNetworksLocationTypeValue) error {
+	return s.c.Replace(ctx, URIIdentifyingNetworksLocationType, client.Int(int64(value)))
 }
 
 // DeleteIdentifyingNetworksLocationType deletes ./Device/Vendor/MSFT/Policy/Config/NetworkListManager/IdentifyingNetworks_LocationType.
@@ -285,12 +289,13 @@ func (s *NetworkListManager) DeleteIdentifyingNetworksLocationType(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.26100, 10.0.22621.5126 (CSP v11.0).
-func (s *NetworkListManager) GetUnidentifiedNetworksLocationType(ctx context.Context) (int64, error) {
+func (s *NetworkListManager) GetUnidentifiedNetworksLocationType(ctx context.Context) (UnidentifiedNetworksLocationTypeValue, error) {
 	v, err := s.c.Get(ctx, URIUnidentifiedNetworksLocationType)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return UnidentifiedNetworksLocationTypeValue(n), err
 }
 
 // CreateUnidentifiedNetworksLocationType creates ./Device/Vendor/MSFT/Policy/Config/NetworkListManager/UnidentifiedNetworks_LocationType.
@@ -302,8 +307,8 @@ func (s *NetworkListManager) GetUnidentifiedNetworksLocationType(ctx context.Con
 //
 // Default: 0.
 // Supported from OS build 10.0.26100, 10.0.22621.5126 (CSP v11.0).
-func (s *NetworkListManager) CreateUnidentifiedNetworksLocationType(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIUnidentifiedNetworksLocationType, client.Int(value))
+func (s *NetworkListManager) CreateUnidentifiedNetworksLocationType(ctx context.Context, value UnidentifiedNetworksLocationTypeValue) error {
+	return s.c.Add(ctx, URIUnidentifiedNetworksLocationType, client.Int(int64(value)))
 }
 
 // UpdateUnidentifiedNetworksLocationType updates ./Device/Vendor/MSFT/Policy/Config/NetworkListManager/UnidentifiedNetworks_LocationType.
@@ -315,8 +320,8 @@ func (s *NetworkListManager) CreateUnidentifiedNetworksLocationType(ctx context.
 //
 // Default: 0.
 // Supported from OS build 10.0.26100, 10.0.22621.5126 (CSP v11.0).
-func (s *NetworkListManager) UpdateUnidentifiedNetworksLocationType(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIUnidentifiedNetworksLocationType, client.Int(value))
+func (s *NetworkListManager) UpdateUnidentifiedNetworksLocationType(ctx context.Context, value UnidentifiedNetworksLocationTypeValue) error {
+	return s.c.Replace(ctx, URIUnidentifiedNetworksLocationType, client.Int(int64(value)))
 }
 
 // DeleteUnidentifiedNetworksLocationType deletes ./Device/Vendor/MSFT/Policy/Config/NetworkListManager/UnidentifiedNetworks_LocationType.
@@ -339,12 +344,13 @@ func (s *NetworkListManager) DeleteUnidentifiedNetworksLocationType(ctx context.
 //
 // Default: 0.
 // Supported from OS build 10.0.26100, 10.0.22621.5126 (CSP v11.0).
-func (s *NetworkListManager) GetUnidentifiedNetworksUserPermissions(ctx context.Context) (int64, error) {
+func (s *NetworkListManager) GetUnidentifiedNetworksUserPermissions(ctx context.Context) (UnidentifiedNetworksUserPermissionsValue, error) {
 	v, err := s.c.Get(ctx, URIUnidentifiedNetworksUserPermissions)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return UnidentifiedNetworksUserPermissionsValue(n), err
 }
 
 // CreateUnidentifiedNetworksUserPermissions creates ./Device/Vendor/MSFT/Policy/Config/NetworkListManager/UnidentifiedNetworks_UserPermissions.
@@ -354,8 +360,8 @@ func (s *NetworkListManager) GetUnidentifiedNetworksUserPermissions(ctx context.
 //
 // Default: 0.
 // Supported from OS build 10.0.26100, 10.0.22621.5126 (CSP v11.0).
-func (s *NetworkListManager) CreateUnidentifiedNetworksUserPermissions(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIUnidentifiedNetworksUserPermissions, client.Int(value))
+func (s *NetworkListManager) CreateUnidentifiedNetworksUserPermissions(ctx context.Context, value UnidentifiedNetworksUserPermissionsValue) error {
+	return s.c.Add(ctx, URIUnidentifiedNetworksUserPermissions, client.Int(int64(value)))
 }
 
 // UpdateUnidentifiedNetworksUserPermissions updates ./Device/Vendor/MSFT/Policy/Config/NetworkListManager/UnidentifiedNetworks_UserPermissions.
@@ -365,8 +371,8 @@ func (s *NetworkListManager) CreateUnidentifiedNetworksUserPermissions(ctx conte
 //
 // Default: 0.
 // Supported from OS build 10.0.26100, 10.0.22621.5126 (CSP v11.0).
-func (s *NetworkListManager) UpdateUnidentifiedNetworksUserPermissions(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIUnidentifiedNetworksUserPermissions, client.Int(value))
+func (s *NetworkListManager) UpdateUnidentifiedNetworksUserPermissions(ctx context.Context, value UnidentifiedNetworksUserPermissionsValue) error {
+	return s.c.Replace(ctx, URIUnidentifiedNetworksUserPermissions, client.Int(int64(value)))
 }
 
 // DeleteUnidentifiedNetworksUserPermissions deletes ./Device/Vendor/MSFT/Policy/Config/NetworkListManager/UnidentifiedNetworks_UserPermissions.

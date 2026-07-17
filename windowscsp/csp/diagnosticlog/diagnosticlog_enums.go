@@ -2,47 +2,97 @@
 
 package diagnosticlog
 
-// EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevel allowed values.
+import (
+	"fmt"
+)
+
+// EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevelValue — allowed values for the TraceLevel node.
+type EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevelValue int64
+
 const (
 	// TRACE_LEVEL_CRITICAL - Abnormal exit or termination events
-	EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevelTRACELEVELCRITICALAbnormalExitOrTermination int64 = 1
+	EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevelTRACELEVELCRITICALAbnormalExitOrTermination EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevelValue = 1
 	// TRACE_LEVEL_ERROR - Severe error events
-	EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevelTRACELEVELERRORSevereErrorEvents int64 = 2
+	EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevelTRACELEVELERRORSevereErrorEvents EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevelValue = 2
 	// TRACE_LEVEL_WARNING - Warning events such as allocation failures
-	EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevelTRACELEVELWARNINGWarningEventsSuchAs int64 = 3
+	EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevelTRACELEVELWARNINGWarningEventsSuchAs EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevelValue = 3
 	// TRACE_LEVEL_INFORMATION - Non-error events, such as entry or exit events
-	EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevelTRACELEVELINFORMATIONNonErrorEventsSuchAs int64 = 4
+	EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevelTRACELEVELINFORMATIONNonErrorEventsSuchAs EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevelValue = 4
 	// TRACE_LEVEL_VERBOSE - Detailed information
-	EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevelTRACELEVELVERBOSEDetailedInformation int64 = 5
+	EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevelTRACELEVELVERBOSEDetailedInformation EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevelValue = 5
 )
 
-// EtwLogCollectorsCollectorNameTraceControl allowed values.
+// String returns the EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevelValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevelValue) String() string {
+	switch e {
+	case EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevelTRACELEVELCRITICALAbnormalExitOrTermination:
+		return "EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevelTRACELEVELCRITICALAbnormalExitOrTermination"
+	case EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevelTRACELEVELERRORSevereErrorEvents:
+		return "EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevelTRACELEVELERRORSevereErrorEvents"
+	case EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevelTRACELEVELWARNINGWarningEventsSuchAs:
+		return "EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevelTRACELEVELWARNINGWarningEventsSuchAs"
+	case EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevelTRACELEVELINFORMATIONNonErrorEventsSuchAs:
+		return "EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevelTRACELEVELINFORMATIONNonErrorEventsSuchAs"
+	case EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevelTRACELEVELVERBOSEDetailedInformation:
+		return "EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevelTRACELEVELVERBOSEDetailedInformation"
+	default:
+		return fmt.Sprintf("EtwLogCollectorsCollectorNameProvidersProviderGuidTraceLevelValue(%d)", int64(e))
+	}
+}
+
+// EtwLogCollectorsCollectorNameTraceControlValue — allowed values for the TraceControl node.
+type EtwLogCollectorsCollectorNameTraceControlValue string
+
 const (
 	// Start log tracing.
-	EtwLogCollectorsCollectorNameTraceControlStartLogTracing = "START"
+	EtwLogCollectorsCollectorNameTraceControlStartLogTracing EtwLogCollectorsCollectorNameTraceControlValue = "START"
 	// Stop log tracing
-	EtwLogCollectorsCollectorNameTraceControlStopLogTracing = "STOP"
+	EtwLogCollectorsCollectorNameTraceControlStopLogTracing EtwLogCollectorsCollectorNameTraceControlValue = "STOP"
 )
 
-// EtwLogCollectorsCollectorNameTraceLogFileMode allowed values.
+// String returns the EtwLogCollectorsCollectorNameTraceControlValue value as a plain string.
+func (e EtwLogCollectorsCollectorNameTraceControlValue) String() string { return string(e) }
+
+// EtwLogCollectorsCollectorNameTraceLogFileModeValue — allowed values for the TraceLogFileMode node.
+type EtwLogCollectorsCollectorNameTraceLogFileModeValue int64
+
 const (
 	// EVENT_TRACE_FILE_MODE_SEQUENTIAL-Writes events to a log file sequentially. It stops when the
 	// file reaches its maximum size.
-	EtwLogCollectorsCollectorNameTraceLogFileModeEVENTTRACEFILEMODESEQUENTIALWritesEventsToALogFile int64 = 1
+	EtwLogCollectorsCollectorNameTraceLogFileModeEVENTTRACEFILEMODESEQUENTIALWritesEventsToALogFile EtwLogCollectorsCollectorNameTraceLogFileModeValue = 1
 	// EVENT_TRACE_FILE_MODE_CIRCULAR-Writes events to a log file. After the file reaches the maximum
 	// size, the oldest events are replaced with incoming events.
-	EtwLogCollectorsCollectorNameTraceLogFileModeEVENTTRACEFILEMODECIRCULARWritesEventsToALogFile int64 = 2
+	EtwLogCollectorsCollectorNameTraceLogFileModeEVENTTRACEFILEMODECIRCULARWritesEventsToALogFile EtwLogCollectorsCollectorNameTraceLogFileModeValue = 2
 )
 
-// PolicyChannelsChannelNameActionWhenFull allowed values.
+// String returns the EtwLogCollectorsCollectorNameTraceLogFileModeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EtwLogCollectorsCollectorNameTraceLogFileModeValue) String() string {
+	switch e {
+	case EtwLogCollectorsCollectorNameTraceLogFileModeEVENTTRACEFILEMODESEQUENTIALWritesEventsToALogFile:
+		return "EtwLogCollectorsCollectorNameTraceLogFileModeEVENTTRACEFILEMODESEQUENTIALWritesEventsToALogFile"
+	case EtwLogCollectorsCollectorNameTraceLogFileModeEVENTTRACEFILEMODECIRCULARWritesEventsToALogFile:
+		return "EtwLogCollectorsCollectorNameTraceLogFileModeEVENTTRACEFILEMODECIRCULARWritesEventsToALogFile"
+	default:
+		return fmt.Sprintf("EtwLogCollectorsCollectorNameTraceLogFileModeValue(%d)", int64(e))
+	}
+}
+
+// PolicyChannelsChannelNameActionWhenFullValue — allowed values for the ActionWhenFull node.
+type PolicyChannelsChannelNameActionWhenFullValue string
+
 const (
 	// When the log file reaches its maximum file size, new events are not written to the log and are
 	// lost.
-	PolicyChannelsChannelNameActionWhenFullWhenTheLogFileReachesIts = "Truncate"
+	PolicyChannelsChannelNameActionWhenFullWhenTheLogFileReachesIts PolicyChannelsChannelNameActionWhenFullValue = "Truncate"
 	// When the log file reaches its maximum file size, new events overwrite old events.
-	PolicyChannelsChannelNameActionWhenFullWhenTheLogFileReachesIts2 = "Overwrite"
+	PolicyChannelsChannelNameActionWhenFullWhenTheLogFileReachesIts2 PolicyChannelsChannelNameActionWhenFullValue = "Overwrite"
 	// When the log file reaches its maximum size, the log file is saved to the location specified by
 	// the "Archive Location" policy setting. If archive location value is not set, the new file is
 	// saved in the same directory as current log file.
-	PolicyChannelsChannelNameActionWhenFullWhenTheLogFileReachesIts3 = "Archive"
+	PolicyChannelsChannelNameActionWhenFullWhenTheLogFileReachesIts3 PolicyChannelsChannelNameActionWhenFullValue = "Archive"
 )
+
+// String returns the PolicyChannelsChannelNameActionWhenFullValue value as a plain string.
+func (e PolicyChannelsChannelNameActionWhenFullValue) String() string { return string(e) }

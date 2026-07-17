@@ -81,28 +81,29 @@ func (s *PassportForWorkUser) DeleteTenantIdPoliciesEnablePinRecovery(ctx contex
 // Use this policy setting to configure the use of digits in the Windows Hello for Business PIN.
 //
 // Default: 0.
-func (s *PassportForWorkUser) GetTenantIdPoliciesPINComplexityDigits(ctx context.Context, tenantId string) (int64, error) {
+func (s *PassportForWorkUser) GetTenantIdPoliciesPINComplexityDigits(ctx context.Context, tenantId string) (TenantIdPoliciesPINComplexityDigitsValue, error) {
 	v, err := s.c.Get(ctx, URITenantIdPoliciesPINComplexityDigits(tenantId))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return TenantIdPoliciesPINComplexityDigitsValue(n), err
 }
 
 // CreateTenantIdPoliciesPINComplexityDigits creates ./User/Vendor/MSFT/PassportForWork/{tenantId}/Policies/PINComplexity/Digits.
 // Use this policy setting to configure the use of digits in the Windows Hello for Business PIN.
 //
 // Default: 0.
-func (s *PassportForWorkUser) CreateTenantIdPoliciesPINComplexityDigits(ctx context.Context, tenantId string, value int64) error {
-	return s.c.Add(ctx, URITenantIdPoliciesPINComplexityDigits(tenantId), client.Int(value))
+func (s *PassportForWorkUser) CreateTenantIdPoliciesPINComplexityDigits(ctx context.Context, tenantId string, value TenantIdPoliciesPINComplexityDigitsValue) error {
+	return s.c.Add(ctx, URITenantIdPoliciesPINComplexityDigits(tenantId), client.Int(int64(value)))
 }
 
 // UpdateTenantIdPoliciesPINComplexityDigits updates ./User/Vendor/MSFT/PassportForWork/{tenantId}/Policies/PINComplexity/Digits.
 // Use this policy setting to configure the use of digits in the Windows Hello for Business PIN.
 //
 // Default: 0.
-func (s *PassportForWorkUser) UpdateTenantIdPoliciesPINComplexityDigits(ctx context.Context, tenantId string, value int64) error {
-	return s.c.Replace(ctx, URITenantIdPoliciesPINComplexityDigits(tenantId), client.Int(value))
+func (s *PassportForWorkUser) UpdateTenantIdPoliciesPINComplexityDigits(ctx context.Context, tenantId string, value TenantIdPoliciesPINComplexityDigitsValue) error {
+	return s.c.Replace(ctx, URITenantIdPoliciesPINComplexityDigits(tenantId), client.Int(int64(value)))
 }
 
 // DeleteTenantIdPoliciesPINComplexityDigits deletes ./User/Vendor/MSFT/PassportForWork/{tenantId}/Policies/PINComplexity/Digits.
@@ -202,12 +203,13 @@ func (s *PassportForWorkUser) DeleteTenantIdPoliciesPINComplexityHistory(ctx con
 // Business PIN.
 //
 // Default: 0.
-func (s *PassportForWorkUser) GetTenantIdPoliciesPINComplexityLowercaseLetters(ctx context.Context, tenantId string) (int64, error) {
+func (s *PassportForWorkUser) GetTenantIdPoliciesPINComplexityLowercaseLetters(ctx context.Context, tenantId string) (TenantIdPoliciesPINComplexityLowercaseLettersValue, error) {
 	v, err := s.c.Get(ctx, URITenantIdPoliciesPINComplexityLowercaseLetters(tenantId))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return TenantIdPoliciesPINComplexityLowercaseLettersValue(n), err
 }
 
 // CreateTenantIdPoliciesPINComplexityLowercaseLetters creates ./User/Vendor/MSFT/PassportForWork/{tenantId}/Policies/PINComplexity/LowercaseLetters.
@@ -215,8 +217,8 @@ func (s *PassportForWorkUser) GetTenantIdPoliciesPINComplexityLowercaseLetters(c
 // Business PIN.
 //
 // Default: 0.
-func (s *PassportForWorkUser) CreateTenantIdPoliciesPINComplexityLowercaseLetters(ctx context.Context, tenantId string, value int64) error {
-	return s.c.Add(ctx, URITenantIdPoliciesPINComplexityLowercaseLetters(tenantId), client.Int(value))
+func (s *PassportForWorkUser) CreateTenantIdPoliciesPINComplexityLowercaseLetters(ctx context.Context, tenantId string, value TenantIdPoliciesPINComplexityLowercaseLettersValue) error {
+	return s.c.Add(ctx, URITenantIdPoliciesPINComplexityLowercaseLetters(tenantId), client.Int(int64(value)))
 }
 
 // UpdateTenantIdPoliciesPINComplexityLowercaseLetters updates ./User/Vendor/MSFT/PassportForWork/{tenantId}/Policies/PINComplexity/LowercaseLetters.
@@ -224,8 +226,8 @@ func (s *PassportForWorkUser) CreateTenantIdPoliciesPINComplexityLowercaseLetter
 // Business PIN.
 //
 // Default: 0.
-func (s *PassportForWorkUser) UpdateTenantIdPoliciesPINComplexityLowercaseLetters(ctx context.Context, tenantId string, value int64) error {
-	return s.c.Replace(ctx, URITenantIdPoliciesPINComplexityLowercaseLetters(tenantId), client.Int(value))
+func (s *PassportForWorkUser) UpdateTenantIdPoliciesPINComplexityLowercaseLetters(ctx context.Context, tenantId string, value TenantIdPoliciesPINComplexityLowercaseLettersValue) error {
+	return s.c.Replace(ctx, URITenantIdPoliciesPINComplexityLowercaseLetters(tenantId), client.Int(int64(value)))
 }
 
 // DeleteTenantIdPoliciesPINComplexityLowercaseLetters deletes ./User/Vendor/MSFT/PassportForWork/{tenantId}/Policies/PINComplexity/LowercaseLetters.
@@ -339,12 +341,13 @@ func (s *PassportForWorkUser) DeleteTenantIdPoliciesPINComplexityMinimumPINLengt
 // include: ! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~ .
 //
 // Default: 0.
-func (s *PassportForWorkUser) GetTenantIdPoliciesPINComplexitySpecialCharacters(ctx context.Context, tenantId string) (int64, error) {
+func (s *PassportForWorkUser) GetTenantIdPoliciesPINComplexitySpecialCharacters(ctx context.Context, tenantId string) (TenantIdPoliciesPINComplexitySpecialCharactersValue, error) {
 	v, err := s.c.Get(ctx, URITenantIdPoliciesPINComplexitySpecialCharacters(tenantId))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return TenantIdPoliciesPINComplexitySpecialCharactersValue(n), err
 }
 
 // CreateTenantIdPoliciesPINComplexitySpecialCharacters creates ./User/Vendor/MSFT/PassportForWork/{tenantId}/Policies/PINComplexity/SpecialCharacters.
@@ -353,8 +356,8 @@ func (s *PassportForWorkUser) GetTenantIdPoliciesPINComplexitySpecialCharacters(
 // include: ! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~ .
 //
 // Default: 0.
-func (s *PassportForWorkUser) CreateTenantIdPoliciesPINComplexitySpecialCharacters(ctx context.Context, tenantId string, value int64) error {
-	return s.c.Add(ctx, URITenantIdPoliciesPINComplexitySpecialCharacters(tenantId), client.Int(value))
+func (s *PassportForWorkUser) CreateTenantIdPoliciesPINComplexitySpecialCharacters(ctx context.Context, tenantId string, value TenantIdPoliciesPINComplexitySpecialCharactersValue) error {
+	return s.c.Add(ctx, URITenantIdPoliciesPINComplexitySpecialCharacters(tenantId), client.Int(int64(value)))
 }
 
 // UpdateTenantIdPoliciesPINComplexitySpecialCharacters updates ./User/Vendor/MSFT/PassportForWork/{tenantId}/Policies/PINComplexity/SpecialCharacters.
@@ -363,8 +366,8 @@ func (s *PassportForWorkUser) CreateTenantIdPoliciesPINComplexitySpecialCharacte
 // include: ! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~ .
 //
 // Default: 0.
-func (s *PassportForWorkUser) UpdateTenantIdPoliciesPINComplexitySpecialCharacters(ctx context.Context, tenantId string, value int64) error {
-	return s.c.Replace(ctx, URITenantIdPoliciesPINComplexitySpecialCharacters(tenantId), client.Int(value))
+func (s *PassportForWorkUser) UpdateTenantIdPoliciesPINComplexitySpecialCharacters(ctx context.Context, tenantId string, value TenantIdPoliciesPINComplexitySpecialCharactersValue) error {
+	return s.c.Replace(ctx, URITenantIdPoliciesPINComplexitySpecialCharacters(tenantId), client.Int(int64(value)))
 }
 
 // DeleteTenantIdPoliciesPINComplexitySpecialCharacters deletes ./User/Vendor/MSFT/PassportForWork/{tenantId}/Policies/PINComplexity/SpecialCharacters.
@@ -382,12 +385,13 @@ func (s *PassportForWorkUser) DeleteTenantIdPoliciesPINComplexitySpecialCharacte
 // Business PIN.
 //
 // Default: 0.
-func (s *PassportForWorkUser) GetTenantIdPoliciesPINComplexityUppercaseLetters(ctx context.Context, tenantId string) (int64, error) {
+func (s *PassportForWorkUser) GetTenantIdPoliciesPINComplexityUppercaseLetters(ctx context.Context, tenantId string) (TenantIdPoliciesPINComplexityUppercaseLettersValue, error) {
 	v, err := s.c.Get(ctx, URITenantIdPoliciesPINComplexityUppercaseLetters(tenantId))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return TenantIdPoliciesPINComplexityUppercaseLettersValue(n), err
 }
 
 // CreateTenantIdPoliciesPINComplexityUppercaseLetters creates ./User/Vendor/MSFT/PassportForWork/{tenantId}/Policies/PINComplexity/UppercaseLetters.
@@ -395,8 +399,8 @@ func (s *PassportForWorkUser) GetTenantIdPoliciesPINComplexityUppercaseLetters(c
 // Business PIN.
 //
 // Default: 0.
-func (s *PassportForWorkUser) CreateTenantIdPoliciesPINComplexityUppercaseLetters(ctx context.Context, tenantId string, value int64) error {
-	return s.c.Add(ctx, URITenantIdPoliciesPINComplexityUppercaseLetters(tenantId), client.Int(value))
+func (s *PassportForWorkUser) CreateTenantIdPoliciesPINComplexityUppercaseLetters(ctx context.Context, tenantId string, value TenantIdPoliciesPINComplexityUppercaseLettersValue) error {
+	return s.c.Add(ctx, URITenantIdPoliciesPINComplexityUppercaseLetters(tenantId), client.Int(int64(value)))
 }
 
 // UpdateTenantIdPoliciesPINComplexityUppercaseLetters updates ./User/Vendor/MSFT/PassportForWork/{tenantId}/Policies/PINComplexity/UppercaseLetters.
@@ -404,8 +408,8 @@ func (s *PassportForWorkUser) CreateTenantIdPoliciesPINComplexityUppercaseLetter
 // Business PIN.
 //
 // Default: 0.
-func (s *PassportForWorkUser) UpdateTenantIdPoliciesPINComplexityUppercaseLetters(ctx context.Context, tenantId string, value int64) error {
-	return s.c.Replace(ctx, URITenantIdPoliciesPINComplexityUppercaseLetters(tenantId), client.Int(value))
+func (s *PassportForWorkUser) UpdateTenantIdPoliciesPINComplexityUppercaseLetters(ctx context.Context, tenantId string, value TenantIdPoliciesPINComplexityUppercaseLettersValue) error {
+	return s.c.Replace(ctx, URITenantIdPoliciesPINComplexityUppercaseLetters(tenantId), client.Int(int64(value)))
 }
 
 // DeleteTenantIdPoliciesPINComplexityUppercaseLetters deletes ./User/Vendor/MSFT/PassportForWork/{tenantId}/Policies/PINComplexity/UppercaseLetters.

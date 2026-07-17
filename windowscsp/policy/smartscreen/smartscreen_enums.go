@@ -2,33 +2,86 @@
 
 package smartscreen
 
-// EnableAppInstallControl allowed values.
+import (
+	"fmt"
+)
+
+// EnableAppInstallControlValue — allowed values for the EnableAppInstallControl node.
+type EnableAppInstallControlValue int64
+
 const (
 	// Turns off Application Installation Control, allowing users to download and install files from
 	// anywhere on the web.
-	EnableAppInstallControlTurnsOffApplicationInstallationControlAllowing int64 = 0
+	EnableAppInstallControlTurnsOffApplicationInstallationControlAllowing EnableAppInstallControlValue = 0
 	// Turns on Application Installation Control, allowing users to only install apps from the Store.
-	EnableAppInstallControlTurnsOnApplicationInstallationControlAllowing int64 = 1
+	EnableAppInstallControlTurnsOnApplicationInstallationControlAllowing EnableAppInstallControlValue = 1
 	// Turns on Application Installation Control, letting users know that there's a comparable app in
 	// the Store
-	EnableAppInstallControlTurnsOnApplicationInstallationControlLetting int64 = 2
+	EnableAppInstallControlTurnsOnApplicationInstallationControlLetting EnableAppInstallControlValue = 2
 	// Turns on Application Installation Control, warning users before installing apps from outside the
 	// Store
-	EnableAppInstallControlTurnsOnApplicationInstallationControlWarning int64 = 3
+	EnableAppInstallControlTurnsOnApplicationInstallationControlWarning EnableAppInstallControlValue = 3
 )
 
-// EnableSmartScreenInShell allowed values.
+// String returns the EnableAppInstallControlValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableAppInstallControlValue) String() string {
+	switch e {
+	case EnableAppInstallControlTurnsOffApplicationInstallationControlAllowing:
+		return "EnableAppInstallControlTurnsOffApplicationInstallationControlAllowing"
+	case EnableAppInstallControlTurnsOnApplicationInstallationControlAllowing:
+		return "EnableAppInstallControlTurnsOnApplicationInstallationControlAllowing"
+	case EnableAppInstallControlTurnsOnApplicationInstallationControlLetting:
+		return "EnableAppInstallControlTurnsOnApplicationInstallationControlLetting"
+	case EnableAppInstallControlTurnsOnApplicationInstallationControlWarning:
+		return "EnableAppInstallControlTurnsOnApplicationInstallationControlWarning"
+	default:
+		return fmt.Sprintf("EnableAppInstallControlValue(%d)", int64(e))
+	}
+}
+
+// EnableSmartScreenInShellValue — allowed values for the EnableSmartScreenInShell node.
+type EnableSmartScreenInShellValue int64
+
 const (
 	// Disabled.
-	EnableSmartScreenInShellDisabled int64 = 0
+	EnableSmartScreenInShellDisabled EnableSmartScreenInShellValue = 0
 	// Enabled.
-	EnableSmartScreenInShellEnabled int64 = 1
+	EnableSmartScreenInShellEnabled EnableSmartScreenInShellValue = 1
 )
 
-// PreventOverrideForFilesInShell allowed values.
+// String returns the EnableSmartScreenInShellValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableSmartScreenInShellValue) String() string {
+	switch e {
+	case EnableSmartScreenInShellDisabled:
+		return "EnableSmartScreenInShellDisabled"
+	case EnableSmartScreenInShellEnabled:
+		return "EnableSmartScreenInShellEnabled"
+	default:
+		return fmt.Sprintf("EnableSmartScreenInShellValue(%d)", int64(e))
+	}
+}
+
+// PreventOverrideForFilesInShellValue — allowed values for the PreventOverrideForFilesInShell node.
+type PreventOverrideForFilesInShellValue int64
+
 const (
 	// Do not prevent override.
-	PreventOverrideForFilesInShellDoNotPreventOverride int64 = 0
+	PreventOverrideForFilesInShellDoNotPreventOverride PreventOverrideForFilesInShellValue = 0
 	// Prevent override.
-	PreventOverrideForFilesInShellPreventOverride int64 = 1
+	PreventOverrideForFilesInShellPreventOverride PreventOverrideForFilesInShellValue = 1
 )
+
+// String returns the PreventOverrideForFilesInShellValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PreventOverrideForFilesInShellValue) String() string {
+	switch e {
+	case PreventOverrideForFilesInShellDoNotPreventOverride:
+		return "PreventOverrideForFilesInShellDoNotPreventOverride"
+	case PreventOverrideForFilesInShellPreventOverride:
+		return "PreventOverrideForFilesInShellPreventOverride"
+	default:
+		return fmt.Sprintf("PreventOverrideForFilesInShellValue(%d)", int64(e))
+	}
+}

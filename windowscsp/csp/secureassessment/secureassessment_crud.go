@@ -12,40 +12,42 @@ import (
 // Indicates if screen monitoring is allowed by the app.
 //
 // Default: 0.
-func (s *SecureAssessment) GetAllowScreenMonitoring(ctx context.Context) (int64, error) {
+func (s *SecureAssessment) GetAllowScreenMonitoring(ctx context.Context) (AllowScreenMonitoringValue, error) {
 	v, err := s.c.Get(ctx, URIAllowScreenMonitoring)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowScreenMonitoringValue(n), err
 }
 
 // UpdateAllowScreenMonitoring updates ./Vendor/MSFT/SecureAssessment/AllowScreenMonitoring.
 // Indicates if screen monitoring is allowed by the app.
 //
 // Default: 0.
-func (s *SecureAssessment) UpdateAllowScreenMonitoring(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowScreenMonitoring, client.Int(value))
+func (s *SecureAssessment) UpdateAllowScreenMonitoring(ctx context.Context, value AllowScreenMonitoringValue) error {
+	return s.c.Replace(ctx, URIAllowScreenMonitoring, client.Int(int64(value)))
 }
 
 // GetAllowTextSuggestions reads ./Vendor/MSFT/SecureAssessment/AllowTextSuggestions.
 // Indicates if keyboard text suggestions are allowed by the app.
 //
 // Default: 0.
-func (s *SecureAssessment) GetAllowTextSuggestions(ctx context.Context) (int64, error) {
+func (s *SecureAssessment) GetAllowTextSuggestions(ctx context.Context) (AllowTextSuggestionsValue, error) {
 	v, err := s.c.Get(ctx, URIAllowTextSuggestions)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowTextSuggestionsValue(n), err
 }
 
 // UpdateAllowTextSuggestions updates ./Vendor/MSFT/SecureAssessment/AllowTextSuggestions.
 // Indicates if keyboard text suggestions are allowed by the app.
 //
 // Default: 0.
-func (s *SecureAssessment) UpdateAllowTextSuggestions(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowTextSuggestions, client.Int(value))
+func (s *SecureAssessment) UpdateAllowTextSuggestions(ctx context.Context, value AllowTextSuggestionsValue) error {
+	return s.c.Replace(ctx, URIAllowTextSuggestions, client.Int(int64(value)))
 }
 
 // GetAssessments reads ./Vendor/MSFT/SecureAssessment/Assessments.
@@ -124,20 +126,21 @@ func (s *SecureAssessment) DeleteLaunchURI(ctx context.Context) error {
 // Indicates if printing is required by the app.
 //
 // Default: 1.
-func (s *SecureAssessment) GetRequirePrinting(ctx context.Context) (int64, error) {
+func (s *SecureAssessment) GetRequirePrinting(ctx context.Context) (RequirePrintingValue, error) {
 	v, err := s.c.Get(ctx, URIRequirePrinting)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return RequirePrintingValue(n), err
 }
 
 // UpdateRequirePrinting updates ./Vendor/MSFT/SecureAssessment/RequirePrinting.
 // Indicates if printing is required by the app.
 //
 // Default: 1.
-func (s *SecureAssessment) UpdateRequirePrinting(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIRequirePrinting, client.Int(value))
+func (s *SecureAssessment) UpdateRequirePrinting(ctx context.Context, value RequirePrintingValue) error {
+	return s.c.Replace(ctx, URIRequirePrinting, client.Int(int64(value)))
 }
 
 // GetTesterAccount reads ./Vendor/MSFT/SecureAssessment/TesterAccount.

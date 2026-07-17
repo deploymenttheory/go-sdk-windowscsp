@@ -2,57 +2,134 @@
 
 package dnsclient
 
-// EncryptionDoHStatus allowed values.
-const (
-	// Allowed
-	EncryptionDoHStatusAllowed int64 = 0
-	// Blocked
-	EncryptionDoHStatusBlocked int64 = 1
+import (
+	"fmt"
 )
 
-// EncryptionDoTStatus allowed values.
+// EncryptionDoHStatusValue — allowed values for the Status node.
+type EncryptionDoHStatusValue int64
+
 const (
 	// Allowed
-	EncryptionDoTStatusAllowed int64 = 0
+	EncryptionDoHStatusAllowed EncryptionDoHStatusValue = 0
 	// Blocked
-	EncryptionDoTStatusBlocked int64 = 1
+	EncryptionDoHStatusBlocked EncryptionDoHStatusValue = 1
 )
 
-// EncryptionStatus allowed values.
+// String returns the EncryptionDoHStatusValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EncryptionDoHStatusValue) String() string {
+	switch e {
+	case EncryptionDoHStatusAllowed:
+		return "EncryptionDoHStatusAllowed"
+	case EncryptionDoHStatusBlocked:
+		return "EncryptionDoHStatusBlocked"
+	default:
+		return fmt.Sprintf("EncryptionDoHStatusValue(%d)", int64(e))
+	}
+}
+
+// EncryptionDoTStatusValue — allowed values for the Status node.
+type EncryptionDoTStatusValue int64
+
+const (
+	// Allowed
+	EncryptionDoTStatusAllowed EncryptionDoTStatusValue = 0
+	// Blocked
+	EncryptionDoTStatusBlocked EncryptionDoTStatusValue = 1
+)
+
+// String returns the EncryptionDoTStatusValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EncryptionDoTStatusValue) String() string {
+	switch e {
+	case EncryptionDoTStatusAllowed:
+		return "EncryptionDoTStatusAllowed"
+	case EncryptionDoTStatusBlocked:
+		return "EncryptionDoTStatusBlocked"
+	default:
+		return fmt.Sprintf("EncryptionDoTStatusValue(%d)", int64(e))
+	}
+}
+
+// EncryptionStatusValue — allowed values for the Status node.
+type EncryptionStatusValue int64
+
 const (
 	// Unconfigured
-	EncryptionStatusUnconfigured int64 = 0
+	EncryptionStatusUnconfigured EncryptionStatusValue = 0
 	// Disabled
-	EncryptionStatusDisabled int64 = 1
+	EncryptionStatusDisabled EncryptionStatusValue = 1
 	// Allowed
-	EncryptionStatusAllowed int64 = 2
+	EncryptionStatusAllowed EncryptionStatusValue = 2
 	// Enforced
-	EncryptionStatusEnforced int64 = 3
+	EncryptionStatusEnforced EncryptionStatusValue = 3
 )
 
-// LinkLocalNetBIOSEnable allowed values.
+// String returns the EncryptionStatusValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EncryptionStatusValue) String() string {
+	switch e {
+	case EncryptionStatusUnconfigured:
+		return "EncryptionStatusUnconfigured"
+	case EncryptionStatusDisabled:
+		return "EncryptionStatusDisabled"
+	case EncryptionStatusAllowed:
+		return "EncryptionStatusAllowed"
+	case EncryptionStatusEnforced:
+		return "EncryptionStatusEnforced"
+	default:
+		return fmt.Sprintf("EncryptionStatusValue(%d)", int64(e))
+	}
+}
+
+// LinkLocalNetBIOSEnableValue — allowed values for the Enable node.
+type LinkLocalNetBIOSEnableValue int64
+
 const (
 	// Disable NetBIOS
-	LinkLocalNetBIOSEnableDisableNetBIOS int64 = 0
+	LinkLocalNetBIOSEnableDisableNetBIOS LinkLocalNetBIOSEnableValue = 0
 	// Allow NetBIOS
-	LinkLocalNetBIOSEnableAllowNetBIOS int64 = 1
+	LinkLocalNetBIOSEnableAllowNetBIOS LinkLocalNetBIOSEnableValue = 1
 	// Disable NetBIOS on Public Networks
-	LinkLocalNetBIOSEnableDisableNetBIOSOnPublicNetworks int64 = 2
+	LinkLocalNetBIOSEnableDisableNetBIOSOnPublicNetworks LinkLocalNetBIOSEnableValue = 2
 	// Run NetBIOS in Learning Mode
-	LinkLocalNetBIOSEnableRunNetBIOSInLearningMode int64 = 3
+	LinkLocalNetBIOSEnableRunNetBIOSInLearningMode LinkLocalNetBIOSEnableValue = 3
 )
 
-// NRPTPolicyTableEntryNamespaceType allowed values.
+// String returns the LinkLocalNetBIOSEnableValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e LinkLocalNetBIOSEnableValue) String() string {
+	switch e {
+	case LinkLocalNetBIOSEnableDisableNetBIOS:
+		return "LinkLocalNetBIOSEnableDisableNetBIOS"
+	case LinkLocalNetBIOSEnableAllowNetBIOS:
+		return "LinkLocalNetBIOSEnableAllowNetBIOS"
+	case LinkLocalNetBIOSEnableDisableNetBIOSOnPublicNetworks:
+		return "LinkLocalNetBIOSEnableDisableNetBIOSOnPublicNetworks"
+	case LinkLocalNetBIOSEnableRunNetBIOSInLearningMode:
+		return "LinkLocalNetBIOSEnableRunNetBIOSInLearningMode"
+	default:
+		return fmt.Sprintf("LinkLocalNetBIOSEnableValue(%d)", int64(e))
+	}
+}
+
+// NRPTPolicyTableEntryNamespaceTypeValue — allowed values for the NamespaceType node.
+type NRPTPolicyTableEntryNamespaceTypeValue string
+
 const (
 	// Fully-qualified domain name of a specific host
-	NRPTPolicyTableEntryNamespaceTypeFullyQualifiedDomainNameOfASpecific = "FQDN"
+	NRPTPolicyTableEntryNamespaceTypeFullyQualifiedDomainNameOfASpecific NRPTPolicyTableEntryNamespaceTypeValue = "FQDN"
 	// A domain name consisting of one or more labels. Defines a scope consisting of all hosts and
 	// subdomains of the given domain.
-	NRPTPolicyTableEntryNamespaceTypeADomainNameConsistingOfOne = "Suffix"
+	NRPTPolicyTableEntryNamespaceTypeADomainNameConsistingOfOne NRPTPolicyTableEntryNamespaceTypeValue = "Suffix"
 	// A specific hostname, on any given domain.
-	NRPTPolicyTableEntryNamespaceTypeASpecificHostnameOnAnyGiven = "Prefix"
+	NRPTPolicyTableEntryNamespaceTypeASpecificHostnameOnAnyGiven NRPTPolicyTableEntryNamespaceTypeValue = "Prefix"
 	// An IPv4 subnet for reverse lookup
-	NRPTPolicyTableEntryNamespaceTypeAnIPv4SubnetForReverseLookup = "v4Subnet"
+	NRPTPolicyTableEntryNamespaceTypeAnIPv4SubnetForReverseLookup NRPTPolicyTableEntryNamespaceTypeValue = "v4Subnet"
 	// An IPv6 subnet for reverse lookup
-	NRPTPolicyTableEntryNamespaceTypeAnIPv6SubnetForReverseLookup = "v6Subnet"
+	NRPTPolicyTableEntryNamespaceTypeAnIPv6SubnetForReverseLookup NRPTPolicyTableEntryNamespaceTypeValue = "v6Subnet"
 )
+
+// String returns the NRPTPolicyTableEntryNamespaceTypeValue value as a plain string.
+func (e NRPTPolicyTableEntryNamespaceTypeValue) String() string { return string(e) }

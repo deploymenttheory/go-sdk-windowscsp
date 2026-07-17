@@ -17,12 +17,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v11.0).
-func (s *MixedRealityUser) GetAutoUnlock(ctx context.Context) (int64, error) {
+func (s *MixedRealityUser) GetAutoUnlock(ctx context.Context) (AutoUnlockValue, error) {
 	v, err := s.c.Get(ctx, URIAutoUnlock)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AutoUnlockValue(n), err
 }
 
 // CreateAutoUnlock creates ./User/Vendor/MSFT/Policy/Config/MixedReality/AutoUnlock.
@@ -34,8 +35,8 @@ func (s *MixedRealityUser) GetAutoUnlock(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v11.0).
-func (s *MixedRealityUser) CreateAutoUnlock(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAutoUnlock, client.Int(value))
+func (s *MixedRealityUser) CreateAutoUnlock(ctx context.Context, value AutoUnlockValue) error {
+	return s.c.Add(ctx, URIAutoUnlock, client.Int(int64(value)))
 }
 
 // UpdateAutoUnlock updates ./User/Vendor/MSFT/Policy/Config/MixedReality/AutoUnlock.
@@ -47,8 +48,8 @@ func (s *MixedRealityUser) CreateAutoUnlock(ctx context.Context, value int64) er
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v11.0).
-func (s *MixedRealityUser) UpdateAutoUnlock(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAutoUnlock, client.Int(value))
+func (s *MixedRealityUser) UpdateAutoUnlock(ctx context.Context, value AutoUnlockValue) error {
+	return s.c.Replace(ctx, URIAutoUnlock, client.Int(int64(value)))
 }
 
 // DeleteAutoUnlock deletes ./User/Vendor/MSFT/Policy/Config/MixedReality/AutoUnlock.

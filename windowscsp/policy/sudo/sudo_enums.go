@@ -2,14 +2,37 @@
 
 package sudo
 
-// EnableSudo allowed values.
+import (
+	"fmt"
+)
+
+// EnableSudoValue — allowed values for the EnableSudo node.
+type EnableSudoValue int64
+
 const (
 	// Sudo is disabled.
-	EnableSudoSudoIsDisabled int64 = 0
+	EnableSudoSudoIsDisabled EnableSudoValue = 0
 	// Sudo is allowed in 'force new window' mode.
-	EnableSudoSudoIsAllowedInForceNew int64 = 1
+	EnableSudoSudoIsAllowedInForceNew EnableSudoValue = 1
 	// Sudo is allowed in 'disable input' mode.
-	EnableSudoSudoIsAllowedInDisableInput int64 = 2
+	EnableSudoSudoIsAllowedInDisableInput EnableSudoValue = 2
 	// Sudo is allowed in 'inline' mode.
-	EnableSudoSudoIsAllowedInInlineMode int64 = 3
+	EnableSudoSudoIsAllowedInInlineMode EnableSudoValue = 3
 )
+
+// String returns the EnableSudoValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableSudoValue) String() string {
+	switch e {
+	case EnableSudoSudoIsDisabled:
+		return "EnableSudoSudoIsDisabled"
+	case EnableSudoSudoIsAllowedInForceNew:
+		return "EnableSudoSudoIsAllowedInForceNew"
+	case EnableSudoSudoIsAllowedInDisableInput:
+		return "EnableSudoSudoIsAllowedInDisableInput"
+	case EnableSudoSudoIsAllowedInInlineMode:
+		return "EnableSudoSudoIsAllowedInInlineMode"
+	default:
+		return fmt.Sprintf("EnableSudoValue(%d)", int64(e))
+	}
+}

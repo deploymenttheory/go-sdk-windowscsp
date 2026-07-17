@@ -2,94 +2,265 @@
 
 package wirelessdisplay
 
-// AllowMdnsAdvertisement allowed values.
-const (
-	// Not allowed.
-	AllowMdnsAdvertisementNotAllowed int64 = 0
-	// Allowed.
-	AllowMdnsAdvertisementAllowed int64 = 1
+import (
+	"fmt"
 )
 
-// AllowMdnsDiscovery allowed values.
+// AllowMdnsAdvertisementValue — allowed values for the AllowMdnsAdvertisement node.
+type AllowMdnsAdvertisementValue int64
+
 const (
 	// Not allowed.
-	AllowMdnsDiscoveryNotAllowed int64 = 0
+	AllowMdnsAdvertisementNotAllowed AllowMdnsAdvertisementValue = 0
 	// Allowed.
-	AllowMdnsDiscoveryAllowed int64 = 1
+	AllowMdnsAdvertisementAllowed AllowMdnsAdvertisementValue = 1
 )
 
-// AllowMovementDetectionOnInfrastructure allowed values.
+// String returns the AllowMdnsAdvertisementValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowMdnsAdvertisementValue) String() string {
+	switch e {
+	case AllowMdnsAdvertisementNotAllowed:
+		return "AllowMdnsAdvertisementNotAllowed"
+	case AllowMdnsAdvertisementAllowed:
+		return "AllowMdnsAdvertisementAllowed"
+	default:
+		return fmt.Sprintf("AllowMdnsAdvertisementValue(%d)", int64(e))
+	}
+}
+
+// AllowMdnsDiscoveryValue — allowed values for the AllowMdnsDiscovery node.
+type AllowMdnsDiscoveryValue int64
+
 const (
 	// Not allowed.
-	AllowMovementDetectionOnInfrastructureNotAllowed int64 = 0
+	AllowMdnsDiscoveryNotAllowed AllowMdnsDiscoveryValue = 0
 	// Allowed.
-	AllowMovementDetectionOnInfrastructureAllowed int64 = 1
+	AllowMdnsDiscoveryAllowed AllowMdnsDiscoveryValue = 1
 )
 
-// AllowPCReceiverToBeTCPServer allowed values.
+// String returns the AllowMdnsDiscoveryValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowMdnsDiscoveryValue) String() string {
+	switch e {
+	case AllowMdnsDiscoveryNotAllowed:
+		return "AllowMdnsDiscoveryNotAllowed"
+	case AllowMdnsDiscoveryAllowed:
+		return "AllowMdnsDiscoveryAllowed"
+	default:
+		return fmt.Sprintf("AllowMdnsDiscoveryValue(%d)", int64(e))
+	}
+}
+
+// AllowMovementDetectionOnInfrastructureValue — allowed values for the AllowMovementDetectionOnInfrastructure node.
+type AllowMovementDetectionOnInfrastructureValue int64
+
 const (
 	// Not allowed.
-	AllowPCReceiverToBeTCPServerNotAllowed int64 = 0
+	AllowMovementDetectionOnInfrastructureNotAllowed AllowMovementDetectionOnInfrastructureValue = 0
 	// Allowed.
-	AllowPCReceiverToBeTCPServerAllowed int64 = 1
+	AllowMovementDetectionOnInfrastructureAllowed AllowMovementDetectionOnInfrastructureValue = 1
 )
 
-// AllowPCSenderToBeTCPClient allowed values.
+// String returns the AllowMovementDetectionOnInfrastructureValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowMovementDetectionOnInfrastructureValue) String() string {
+	switch e {
+	case AllowMovementDetectionOnInfrastructureNotAllowed:
+		return "AllowMovementDetectionOnInfrastructureNotAllowed"
+	case AllowMovementDetectionOnInfrastructureAllowed:
+		return "AllowMovementDetectionOnInfrastructureAllowed"
+	default:
+		return fmt.Sprintf("AllowMovementDetectionOnInfrastructureValue(%d)", int64(e))
+	}
+}
+
+// AllowPCReceiverToBeTCPServerValue — allowed values for the AllowPCReceiverToBeTCPServer node.
+type AllowPCReceiverToBeTCPServerValue int64
+
 const (
 	// Not allowed.
-	AllowPCSenderToBeTCPClientNotAllowed int64 = 0
+	AllowPCReceiverToBeTCPServerNotAllowed AllowPCReceiverToBeTCPServerValue = 0
 	// Allowed.
-	AllowPCSenderToBeTCPClientAllowed int64 = 1
+	AllowPCReceiverToBeTCPServerAllowed AllowPCReceiverToBeTCPServerValue = 1
 )
 
-// AllowProjectionFromPC allowed values.
+// String returns the AllowPCReceiverToBeTCPServerValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowPCReceiverToBeTCPServerValue) String() string {
+	switch e {
+	case AllowPCReceiverToBeTCPServerNotAllowed:
+		return "AllowPCReceiverToBeTCPServerNotAllowed"
+	case AllowPCReceiverToBeTCPServerAllowed:
+		return "AllowPCReceiverToBeTCPServerAllowed"
+	default:
+		return fmt.Sprintf("AllowPCReceiverToBeTCPServerValue(%d)", int64(e))
+	}
+}
+
+// AllowPCSenderToBeTCPClientValue — allowed values for the AllowPCSenderToBeTCPClient node.
+type AllowPCSenderToBeTCPClientValue int64
+
+const (
+	// Not allowed.
+	AllowPCSenderToBeTCPClientNotAllowed AllowPCSenderToBeTCPClientValue = 0
+	// Allowed.
+	AllowPCSenderToBeTCPClientAllowed AllowPCSenderToBeTCPClientValue = 1
+)
+
+// String returns the AllowPCSenderToBeTCPClientValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowPCSenderToBeTCPClientValue) String() string {
+	switch e {
+	case AllowPCSenderToBeTCPClientNotAllowed:
+		return "AllowPCSenderToBeTCPClientNotAllowed"
+	case AllowPCSenderToBeTCPClientAllowed:
+		return "AllowPCSenderToBeTCPClientAllowed"
+	default:
+		return fmt.Sprintf("AllowPCSenderToBeTCPClientValue(%d)", int64(e))
+	}
+}
+
+// AllowProjectionFromPCValue — allowed values for the AllowProjectionFromPC node.
+type AllowProjectionFromPCValue int64
+
 const (
 	// Your PC cannot discover or project to other devices.
-	AllowProjectionFromPCYourPCCannotDiscoverOrProject int64 = 0
+	AllowProjectionFromPCYourPCCannotDiscoverOrProject AllowProjectionFromPCValue = 0
 	// Your PC can discover and project to other devices.
-	AllowProjectionFromPCYourPCCanDiscoverAndProject int64 = 1
+	AllowProjectionFromPCYourPCCanDiscoverAndProject AllowProjectionFromPCValue = 1
 )
 
-// AllowProjectionFromPCOverInfrastructure allowed values.
+// String returns the AllowProjectionFromPCValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowProjectionFromPCValue) String() string {
+	switch e {
+	case AllowProjectionFromPCYourPCCannotDiscoverOrProject:
+		return "AllowProjectionFromPCYourPCCannotDiscoverOrProject"
+	case AllowProjectionFromPCYourPCCanDiscoverAndProject:
+		return "AllowProjectionFromPCYourPCCanDiscoverAndProject"
+	default:
+		return fmt.Sprintf("AllowProjectionFromPCValue(%d)", int64(e))
+	}
+}
+
+// AllowProjectionFromPCOverInfrastructureValue — allowed values for the AllowProjectionFromPCOverInfrastructure node.
+type AllowProjectionFromPCOverInfrastructureValue int64
+
 const (
 	// Your PC cannot discover or project to other infrastructure devices, although it is possible to
 	// discover and project over WiFi Direct.
-	AllowProjectionFromPCOverInfrastructureYourPCCannotDiscoverOrProject int64 = 0
+	AllowProjectionFromPCOverInfrastructureYourPCCannotDiscoverOrProject AllowProjectionFromPCOverInfrastructureValue = 0
 	// Your PC can discover and project to other devices over infrastructure.
-	AllowProjectionFromPCOverInfrastructureYourPCCanDiscoverAndProject int64 = 1
+	AllowProjectionFromPCOverInfrastructureYourPCCanDiscoverAndProject AllowProjectionFromPCOverInfrastructureValue = 1
 )
 
-// AllowProjectionToPC allowed values.
+// String returns the AllowProjectionFromPCOverInfrastructureValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowProjectionFromPCOverInfrastructureValue) String() string {
+	switch e {
+	case AllowProjectionFromPCOverInfrastructureYourPCCannotDiscoverOrProject:
+		return "AllowProjectionFromPCOverInfrastructureYourPCCannotDiscoverOrProject"
+	case AllowProjectionFromPCOverInfrastructureYourPCCanDiscoverAndProject:
+		return "AllowProjectionFromPCOverInfrastructureYourPCCanDiscoverAndProject"
+	default:
+		return fmt.Sprintf("AllowProjectionFromPCOverInfrastructureValue(%d)", int64(e))
+	}
+}
+
+// AllowProjectionToPCValue — allowed values for the AllowProjectionToPC node.
+type AllowProjectionToPCValue int64
+
 const (
 	// Projection to PC is not allowed. Always off and the user cannot enable it.
-	AllowProjectionToPCProjectionToPCIsNotAllowed int64 = 0
+	AllowProjectionToPCProjectionToPCIsNotAllowed AllowProjectionToPCValue = 0
 	// Projection to PC is allowed. Enabled only above the lock screen.
-	AllowProjectionToPCProjectionToPCIsAllowed int64 = 1
+	AllowProjectionToPCProjectionToPCIsAllowed AllowProjectionToPCValue = 1
 )
 
-// AllowProjectionToPCOverInfrastructure allowed values.
+// String returns the AllowProjectionToPCValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowProjectionToPCValue) String() string {
+	switch e {
+	case AllowProjectionToPCProjectionToPCIsNotAllowed:
+		return "AllowProjectionToPCProjectionToPCIsNotAllowed"
+	case AllowProjectionToPCProjectionToPCIsAllowed:
+		return "AllowProjectionToPCProjectionToPCIsAllowed"
+	default:
+		return fmt.Sprintf("AllowProjectionToPCValue(%d)", int64(e))
+	}
+}
+
+// AllowProjectionToPCOverInfrastructureValue — allowed values for the AllowProjectionToPCOverInfrastructure node.
+type AllowProjectionToPCOverInfrastructureValue int64
+
 const (
 	// Your PC is not discoverable and other devices cannot project to it over infrastructure, although
 	// it is possible to project to it over WiFi Direct.
-	AllowProjectionToPCOverInfrastructureYourPCIsNotDiscoverableAnd int64 = 0
+	AllowProjectionToPCOverInfrastructureYourPCIsNotDiscoverableAnd AllowProjectionToPCOverInfrastructureValue = 0
 	// Your PC is discoverable and other devices can project to it over infrastructure.
-	AllowProjectionToPCOverInfrastructureYourPCIsDiscoverableAndOther int64 = 1
+	AllowProjectionToPCOverInfrastructureYourPCIsDiscoverableAndOther AllowProjectionToPCOverInfrastructureValue = 1
 )
 
-// AllowUserInputFromWirelessDisplayReceiver allowed values.
+// String returns the AllowProjectionToPCOverInfrastructureValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowProjectionToPCOverInfrastructureValue) String() string {
+	switch e {
+	case AllowProjectionToPCOverInfrastructureYourPCIsNotDiscoverableAnd:
+		return "AllowProjectionToPCOverInfrastructureYourPCIsNotDiscoverableAnd"
+	case AllowProjectionToPCOverInfrastructureYourPCIsDiscoverableAndOther:
+		return "AllowProjectionToPCOverInfrastructureYourPCIsDiscoverableAndOther"
+	default:
+		return fmt.Sprintf("AllowProjectionToPCOverInfrastructureValue(%d)", int64(e))
+	}
+}
+
+// AllowUserInputFromWirelessDisplayReceiverValue — allowed values for the AllowUserInputFromWirelessDisplayReceiver node.
+type AllowUserInputFromWirelessDisplayReceiverValue int64
+
 const (
 	// Wireless display input disabled.
-	AllowUserInputFromWirelessDisplayReceiverWirelessDisplayInputDisabled int64 = 0
+	AllowUserInputFromWirelessDisplayReceiverWirelessDisplayInputDisabled AllowUserInputFromWirelessDisplayReceiverValue = 0
 	// Wireless display input enabled.
-	AllowUserInputFromWirelessDisplayReceiverWirelessDisplayInputEnabled int64 = 1
+	AllowUserInputFromWirelessDisplayReceiverWirelessDisplayInputEnabled AllowUserInputFromWirelessDisplayReceiverValue = 1
 )
 
-// RequirePinForPairing allowed values.
+// String returns the AllowUserInputFromWirelessDisplayReceiverValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowUserInputFromWirelessDisplayReceiverValue) String() string {
+	switch e {
+	case AllowUserInputFromWirelessDisplayReceiverWirelessDisplayInputDisabled:
+		return "AllowUserInputFromWirelessDisplayReceiverWirelessDisplayInputDisabled"
+	case AllowUserInputFromWirelessDisplayReceiverWirelessDisplayInputEnabled:
+		return "AllowUserInputFromWirelessDisplayReceiverWirelessDisplayInputEnabled"
+	default:
+		return fmt.Sprintf("AllowUserInputFromWirelessDisplayReceiverValue(%d)", int64(e))
+	}
+}
+
+// RequirePinForPairingValue — allowed values for the RequirePinForPairing node.
+type RequirePinForPairingValue int64
+
 const (
 	// PIN is not required.
-	RequirePinForPairingPINIsNotRequired int64 = 0
+	RequirePinForPairingPINIsNotRequired RequirePinForPairingValue = 0
 	// Pairing ceremony for new devices will always require a PIN
-	RequirePinForPairingPairingCeremonyForNewDevicesWill int64 = 1
+	RequirePinForPairingPairingCeremonyForNewDevicesWill RequirePinForPairingValue = 1
 	// All pairings will require PIN
-	RequirePinForPairingAllPairingsWillRequirePIN int64 = 2
+	RequirePinForPairingAllPairingsWillRequirePIN RequirePinForPairingValue = 2
 )
+
+// String returns the RequirePinForPairingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e RequirePinForPairingValue) String() string {
+	switch e {
+	case RequirePinForPairingPINIsNotRequired:
+		return "RequirePinForPairingPINIsNotRequired"
+	case RequirePinForPairingPairingCeremonyForNewDevicesWill:
+		return "RequirePinForPairingPairingCeremonyForNewDevicesWill"
+	case RequirePinForPairingAllPairingsWillRequirePIN:
+		return "RequirePinForPairingAllPairingsWillRequirePIN"
+	default:
+		return fmt.Sprintf("RequirePinForPairingValue(%d)", int64(e))
+	}
+}

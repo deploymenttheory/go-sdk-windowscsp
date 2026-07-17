@@ -12,28 +12,29 @@ import (
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *StartUser) GetAlwaysShowNotificationIcon(ctx context.Context) (int64, error) {
+func (s *StartUser) GetAlwaysShowNotificationIcon(ctx context.Context) (AlwaysShowNotificationIconValue, error) {
 	v, err := s.c.Get(ctx, URIAlwaysShowNotificationIcon)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AlwaysShowNotificationIconValue(n), err
 }
 
 // CreateAlwaysShowNotificationIcon creates ./User/Vendor/MSFT/Policy/Config/Start/AlwaysShowNotificationIcon.
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *StartUser) CreateAlwaysShowNotificationIcon(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAlwaysShowNotificationIcon, client.Int(value))
+func (s *StartUser) CreateAlwaysShowNotificationIcon(ctx context.Context, value AlwaysShowNotificationIconValue) error {
+	return s.c.Add(ctx, URIAlwaysShowNotificationIcon, client.Int(int64(value)))
 }
 
 // UpdateAlwaysShowNotificationIcon updates ./User/Vendor/MSFT/Policy/Config/Start/AlwaysShowNotificationIcon.
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *StartUser) UpdateAlwaysShowNotificationIcon(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAlwaysShowNotificationIcon, client.Int(value))
+func (s *StartUser) UpdateAlwaysShowNotificationIcon(ctx context.Context, value AlwaysShowNotificationIconValue) error {
+	return s.c.Replace(ctx, URIAlwaysShowNotificationIcon, client.Int(int64(value)))
 }
 
 // DeleteAlwaysShowNotificationIcon deletes ./User/Vendor/MSFT/Policy/Config/Start/AlwaysShowNotificationIcon.
@@ -90,12 +91,13 @@ func (s *StartUser) DeleteConfigureStartPins(ctx context.Context) error {
 //
 // Default: 65535.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *StartUser) GetConfigureTaskbarSmallButtonBehavior(ctx context.Context) (int64, error) {
+func (s *StartUser) GetConfigureTaskbarSmallButtonBehavior(ctx context.Context) (ConfigureTaskbarSmallButtonBehaviorValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureTaskbarSmallButtonBehavior)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureTaskbarSmallButtonBehaviorValue(n), err
 }
 
 // CreateConfigureTaskbarSmallButtonBehavior creates ./User/Vendor/MSFT/Policy/Config/Start/ConfigureTaskbarSmallButtonBehavior.
@@ -108,8 +110,8 @@ func (s *StartUser) GetConfigureTaskbarSmallButtonBehavior(ctx context.Context) 
 //
 // Default: 65535.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *StartUser) CreateConfigureTaskbarSmallButtonBehavior(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureTaskbarSmallButtonBehavior, client.Int(value))
+func (s *StartUser) CreateConfigureTaskbarSmallButtonBehavior(ctx context.Context, value ConfigureTaskbarSmallButtonBehaviorValue) error {
+	return s.c.Add(ctx, URIConfigureTaskbarSmallButtonBehavior, client.Int(int64(value)))
 }
 
 // UpdateConfigureTaskbarSmallButtonBehavior updates ./User/Vendor/MSFT/Policy/Config/Start/ConfigureTaskbarSmallButtonBehavior.
@@ -122,8 +124,8 @@ func (s *StartUser) CreateConfigureTaskbarSmallButtonBehavior(ctx context.Contex
 //
 // Default: 65535.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *StartUser) UpdateConfigureTaskbarSmallButtonBehavior(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureTaskbarSmallButtonBehavior, client.Int(value))
+func (s *StartUser) UpdateConfigureTaskbarSmallButtonBehavior(ctx context.Context, value ConfigureTaskbarSmallButtonBehaviorValue) error {
+	return s.c.Replace(ctx, URIConfigureTaskbarSmallButtonBehavior, client.Int(int64(value)))
 }
 
 // DeleteConfigureTaskbarSmallButtonBehavior deletes ./User/Vendor/MSFT/Policy/Config/Start/ConfigureTaskbarSmallButtonBehavior.
@@ -145,12 +147,13 @@ func (s *StartUser) DeleteConfigureTaskbarSmallButtonBehavior(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *StartUser) GetDisableContextMenus(ctx context.Context) (int64, error) {
+func (s *StartUser) GetDisableContextMenus(ctx context.Context) (DisableContextMenusValue, error) {
 	v, err := s.c.Get(ctx, URIDisableContextMenus)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableContextMenusValue(n), err
 }
 
 // CreateDisableContextMenus creates ./User/Vendor/MSFT/Policy/Config/Start/DisableContextMenus.
@@ -158,8 +161,8 @@ func (s *StartUser) GetDisableContextMenus(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *StartUser) CreateDisableContextMenus(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableContextMenus, client.Int(value))
+func (s *StartUser) CreateDisableContextMenus(ctx context.Context, value DisableContextMenusValue) error {
+	return s.c.Add(ctx, URIDisableContextMenus, client.Int(int64(value)))
 }
 
 // UpdateDisableContextMenus updates ./User/Vendor/MSFT/Policy/Config/Start/DisableContextMenus.
@@ -167,8 +170,8 @@ func (s *StartUser) CreateDisableContextMenus(ctx context.Context, value int64) 
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *StartUser) UpdateDisableContextMenus(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableContextMenus, client.Int(value))
+func (s *StartUser) UpdateDisableContextMenus(ctx context.Context, value DisableContextMenusValue) error {
+	return s.c.Replace(ctx, URIDisableContextMenus, client.Int(int64(value)))
 }
 
 // DeleteDisableContextMenus deletes ./User/Vendor/MSFT/Policy/Config/Start/DisableContextMenus.
@@ -183,26 +186,26 @@ func (s *StartUser) DeleteDisableContextMenus(ctx context.Context) error {
 // GetDisableControlCenter reads ./User/Vendor/MSFT/Policy/Config/Start/DisableControlCenter.
 //
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *StartUser) GetDisableControlCenter(ctx context.Context) (string, error) {
+func (s *StartUser) GetDisableControlCenter(ctx context.Context) (DisableControlCenterValue, error) {
 	v, err := s.c.Get(ctx, URIDisableControlCenter)
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return DisableControlCenterValue(v.Str()), nil
 }
 
 // CreateDisableControlCenter creates ./User/Vendor/MSFT/Policy/Config/Start/DisableControlCenter.
 //
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *StartUser) CreateDisableControlCenter(ctx context.Context, value string) error {
-	return s.c.Add(ctx, URIDisableControlCenter, client.Chr(value))
+func (s *StartUser) CreateDisableControlCenter(ctx context.Context, value DisableControlCenterValue) error {
+	return s.c.Add(ctx, URIDisableControlCenter, client.Chr(string(value)))
 }
 
 // UpdateDisableControlCenter updates ./User/Vendor/MSFT/Policy/Config/Start/DisableControlCenter.
 //
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *StartUser) UpdateDisableControlCenter(ctx context.Context, value string) error {
-	return s.c.Replace(ctx, URIDisableControlCenter, client.Chr(value))
+func (s *StartUser) UpdateDisableControlCenter(ctx context.Context, value DisableControlCenterValue) error {
+	return s.c.Replace(ctx, URIDisableControlCenter, client.Chr(string(value)))
 }
 
 // DeleteDisableControlCenter deletes ./User/Vendor/MSFT/Policy/Config/Start/DisableControlCenter.
@@ -218,12 +221,13 @@ func (s *StartUser) DeleteDisableControlCenter(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *StartUser) GetForceStartSize(ctx context.Context) (int64, error) {
+func (s *StartUser) GetForceStartSize(ctx context.Context) (ForceStartSizeValue, error) {
 	v, err := s.c.Get(ctx, URIForceStartSize)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ForceStartSizeValue(n), err
 }
 
 // CreateForceStartSize creates ./User/Vendor/MSFT/Policy/Config/Start/ForceStartSize.
@@ -232,8 +236,8 @@ func (s *StartUser) GetForceStartSize(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *StartUser) CreateForceStartSize(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIForceStartSize, client.Int(value))
+func (s *StartUser) CreateForceStartSize(ctx context.Context, value ForceStartSizeValue) error {
+	return s.c.Add(ctx, URIForceStartSize, client.Int(int64(value)))
 }
 
 // UpdateForceStartSize updates ./User/Vendor/MSFT/Policy/Config/Start/ForceStartSize.
@@ -242,8 +246,8 @@ func (s *StartUser) CreateForceStartSize(ctx context.Context, value int64) error
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *StartUser) UpdateForceStartSize(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIForceStartSize, client.Int(value))
+func (s *StartUser) UpdateForceStartSize(ctx context.Context, value ForceStartSizeValue) error {
+	return s.c.Replace(ctx, URIForceStartSize, client.Int(int64(value)))
 }
 
 // DeleteForceStartSize deletes ./User/Vendor/MSFT/Policy/Config/Start/ForceStartSize.
@@ -263,12 +267,13 @@ func (s *StartUser) DeleteForceStartSize(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *StartUser) GetHideAppList(ctx context.Context) (int64, error) {
+func (s *StartUser) GetHideAppList(ctx context.Context) (HideAppListValue, error) {
 	v, err := s.c.Get(ctx, URIHideAppList)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HideAppListValue(n), err
 }
 
 // CreateHideAppList creates ./User/Vendor/MSFT/Policy/Config/Start/HideAppList.
@@ -278,8 +283,8 @@ func (s *StartUser) GetHideAppList(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *StartUser) CreateHideAppList(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHideAppList, client.Int(value))
+func (s *StartUser) CreateHideAppList(ctx context.Context, value HideAppListValue) error {
+	return s.c.Add(ctx, URIHideAppList, client.Int(int64(value)))
 }
 
 // UpdateHideAppList updates ./User/Vendor/MSFT/Policy/Config/Start/HideAppList.
@@ -289,8 +294,8 @@ func (s *StartUser) CreateHideAppList(ctx context.Context, value int64) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *StartUser) UpdateHideAppList(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHideAppList, client.Int(value))
+func (s *StartUser) UpdateHideAppList(ctx context.Context, value HideAppListValue) error {
+	return s.c.Replace(ctx, URIHideAppList, client.Int(int64(value)))
 }
 
 // DeleteHideAppList deletes ./User/Vendor/MSFT/Policy/Config/Start/HideAppList.
@@ -311,12 +316,13 @@ func (s *StartUser) DeleteHideAppList(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v11.0).
-func (s *StartUser) GetHideCategoryView(ctx context.Context) (int64, error) {
+func (s *StartUser) GetHideCategoryView(ctx context.Context) (HideCategoryViewValue, error) {
 	v, err := s.c.Get(ctx, URIHideCategoryView)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HideCategoryViewValue(n), err
 }
 
 // CreateHideCategoryView creates ./User/Vendor/MSFT/Policy/Config/Start/HideCategoryView.
@@ -326,8 +332,8 @@ func (s *StartUser) GetHideCategoryView(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v11.0).
-func (s *StartUser) CreateHideCategoryView(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHideCategoryView, client.Int(value))
+func (s *StartUser) CreateHideCategoryView(ctx context.Context, value HideCategoryViewValue) error {
+	return s.c.Add(ctx, URIHideCategoryView, client.Int(int64(value)))
 }
 
 // UpdateHideCategoryView updates ./User/Vendor/MSFT/Policy/Config/Start/HideCategoryView.
@@ -337,8 +343,8 @@ func (s *StartUser) CreateHideCategoryView(ctx context.Context, value int64) err
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v11.0).
-func (s *StartUser) UpdateHideCategoryView(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHideCategoryView, client.Int(value))
+func (s *StartUser) UpdateHideCategoryView(ctx context.Context, value HideCategoryViewValue) error {
+	return s.c.Replace(ctx, URIHideCategoryView, client.Int(int64(value)))
 }
 
 // DeleteHideCategoryView deletes ./User/Vendor/MSFT/Policy/Config/Start/HideCategoryView.
@@ -358,12 +364,13 @@ func (s *StartUser) DeleteHideCategoryView(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *StartUser) GetHideFrequentlyUsedApps(ctx context.Context) (int64, error) {
+func (s *StartUser) GetHideFrequentlyUsedApps(ctx context.Context) (HideFrequentlyUsedAppsValue, error) {
 	v, err := s.c.Get(ctx, URIHideFrequentlyUsedApps)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HideFrequentlyUsedAppsValue(n), err
 }
 
 // CreateHideFrequentlyUsedApps creates ./User/Vendor/MSFT/Policy/Config/Start/HideFrequentlyUsedApps.
@@ -372,8 +379,8 @@ func (s *StartUser) GetHideFrequentlyUsedApps(ctx context.Context) (int64, error
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *StartUser) CreateHideFrequentlyUsedApps(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHideFrequentlyUsedApps, client.Int(value))
+func (s *StartUser) CreateHideFrequentlyUsedApps(ctx context.Context, value HideFrequentlyUsedAppsValue) error {
+	return s.c.Add(ctx, URIHideFrequentlyUsedApps, client.Int(int64(value)))
 }
 
 // UpdateHideFrequentlyUsedApps updates ./User/Vendor/MSFT/Policy/Config/Start/HideFrequentlyUsedApps.
@@ -382,8 +389,8 @@ func (s *StartUser) CreateHideFrequentlyUsedApps(ctx context.Context, value int6
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *StartUser) UpdateHideFrequentlyUsedApps(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHideFrequentlyUsedApps, client.Int(value))
+func (s *StartUser) UpdateHideFrequentlyUsedApps(ctx context.Context, value HideFrequentlyUsedAppsValue) error {
+	return s.c.Replace(ctx, URIHideFrequentlyUsedApps, client.Int(int64(value)))
 }
 
 // DeleteHideFrequentlyUsedApps deletes ./User/Vendor/MSFT/Policy/Config/Start/HideFrequentlyUsedApps.
@@ -402,12 +409,13 @@ func (s *StartUser) DeleteHideFrequentlyUsedApps(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *StartUser) GetHidePeopleBar(ctx context.Context) (int64, error) {
+func (s *StartUser) GetHidePeopleBar(ctx context.Context) (HidePeopleBarValue, error) {
 	v, err := s.c.Get(ctx, URIHidePeopleBar)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HidePeopleBarValue(n), err
 }
 
 // CreateHidePeopleBar creates ./User/Vendor/MSFT/Policy/Config/Start/HidePeopleBar.
@@ -416,8 +424,8 @@ func (s *StartUser) GetHidePeopleBar(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *StartUser) CreateHidePeopleBar(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHidePeopleBar, client.Int(value))
+func (s *StartUser) CreateHidePeopleBar(ctx context.Context, value HidePeopleBarValue) error {
+	return s.c.Add(ctx, URIHidePeopleBar, client.Int(int64(value)))
 }
 
 // UpdateHidePeopleBar updates ./User/Vendor/MSFT/Policy/Config/Start/HidePeopleBar.
@@ -426,8 +434,8 @@ func (s *StartUser) CreateHidePeopleBar(ctx context.Context, value int64) error 
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *StartUser) UpdateHidePeopleBar(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHidePeopleBar, client.Int(value))
+func (s *StartUser) UpdateHidePeopleBar(ctx context.Context, value HidePeopleBarValue) error {
+	return s.c.Replace(ctx, URIHidePeopleBar, client.Int(int64(value)))
 }
 
 // DeleteHidePeopleBar deletes ./User/Vendor/MSFT/Policy/Config/Start/HidePeopleBar.
@@ -446,12 +454,13 @@ func (s *StartUser) DeleteHidePeopleBar(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *StartUser) GetHideRecentJumplists(ctx context.Context) (int64, error) {
+func (s *StartUser) GetHideRecentJumplists(ctx context.Context) (HideRecentJumplistsValue, error) {
 	v, err := s.c.Get(ctx, URIHideRecentJumplists)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HideRecentJumplistsValue(n), err
 }
 
 // CreateHideRecentJumplists creates ./User/Vendor/MSFT/Policy/Config/Start/HideRecentJumplists.
@@ -460,8 +469,8 @@ func (s *StartUser) GetHideRecentJumplists(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *StartUser) CreateHideRecentJumplists(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHideRecentJumplists, client.Int(value))
+func (s *StartUser) CreateHideRecentJumplists(ctx context.Context, value HideRecentJumplistsValue) error {
+	return s.c.Add(ctx, URIHideRecentJumplists, client.Int(int64(value)))
 }
 
 // UpdateHideRecentJumplists updates ./User/Vendor/MSFT/Policy/Config/Start/HideRecentJumplists.
@@ -470,8 +479,8 @@ func (s *StartUser) CreateHideRecentJumplists(ctx context.Context, value int64) 
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *StartUser) UpdateHideRecentJumplists(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHideRecentJumplists, client.Int(value))
+func (s *StartUser) UpdateHideRecentJumplists(ctx context.Context, value HideRecentJumplistsValue) error {
+	return s.c.Replace(ctx, URIHideRecentJumplists, client.Int(int64(value)))
 }
 
 // DeleteHideRecentJumplists deletes ./User/Vendor/MSFT/Policy/Config/Start/HideRecentJumplists.
@@ -490,12 +499,13 @@ func (s *StartUser) DeleteHideRecentJumplists(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *StartUser) GetHideRecentlyAddedApps(ctx context.Context) (int64, error) {
+func (s *StartUser) GetHideRecentlyAddedApps(ctx context.Context) (HideRecentlyAddedAppsValue, error) {
 	v, err := s.c.Get(ctx, URIHideRecentlyAddedApps)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HideRecentlyAddedAppsValue(n), err
 }
 
 // CreateHideRecentlyAddedApps creates ./User/Vendor/MSFT/Policy/Config/Start/HideRecentlyAddedApps.
@@ -504,8 +514,8 @@ func (s *StartUser) GetHideRecentlyAddedApps(ctx context.Context) (int64, error)
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *StartUser) CreateHideRecentlyAddedApps(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHideRecentlyAddedApps, client.Int(value))
+func (s *StartUser) CreateHideRecentlyAddedApps(ctx context.Context, value HideRecentlyAddedAppsValue) error {
+	return s.c.Add(ctx, URIHideRecentlyAddedApps, client.Int(int64(value)))
 }
 
 // UpdateHideRecentlyAddedApps updates ./User/Vendor/MSFT/Policy/Config/Start/HideRecentlyAddedApps.
@@ -514,8 +524,8 @@ func (s *StartUser) CreateHideRecentlyAddedApps(ctx context.Context, value int64
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *StartUser) UpdateHideRecentlyAddedApps(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHideRecentlyAddedApps, client.Int(value))
+func (s *StartUser) UpdateHideRecentlyAddedApps(ctx context.Context, value HideRecentlyAddedAppsValue) error {
+	return s.c.Replace(ctx, URIHideRecentlyAddedApps, client.Int(int64(value)))
 }
 
 // DeleteHideRecentlyAddedApps deletes ./User/Vendor/MSFT/Policy/Config/Start/HideRecentlyAddedApps.
@@ -535,12 +545,13 @@ func (s *StartUser) DeleteHideRecentlyAddedApps(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.22621.1928 (CSP v11.0).
-func (s *StartUser) GetHideRecommendedPersonalizedSites(ctx context.Context) (int64, error) {
+func (s *StartUser) GetHideRecommendedPersonalizedSites(ctx context.Context) (HideRecommendedPersonalizedSitesValue, error) {
 	v, err := s.c.Get(ctx, URIHideRecommendedPersonalizedSites)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HideRecommendedPersonalizedSitesValue(n), err
 }
 
 // CreateHideRecommendedPersonalizedSites creates ./User/Vendor/MSFT/Policy/Config/Start/HideRecommendedPersonalizedSites.
@@ -550,8 +561,8 @@ func (s *StartUser) GetHideRecommendedPersonalizedSites(ctx context.Context) (in
 //
 // Default: 0.
 // Supported from OS build 10.0.22621.1928 (CSP v11.0).
-func (s *StartUser) CreateHideRecommendedPersonalizedSites(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHideRecommendedPersonalizedSites, client.Int(value))
+func (s *StartUser) CreateHideRecommendedPersonalizedSites(ctx context.Context, value HideRecommendedPersonalizedSitesValue) error {
+	return s.c.Add(ctx, URIHideRecommendedPersonalizedSites, client.Int(int64(value)))
 }
 
 // UpdateHideRecommendedPersonalizedSites updates ./User/Vendor/MSFT/Policy/Config/Start/HideRecommendedPersonalizedSites.
@@ -561,8 +572,8 @@ func (s *StartUser) CreateHideRecommendedPersonalizedSites(ctx context.Context, 
 //
 // Default: 0.
 // Supported from OS build 10.0.22621.1928 (CSP v11.0).
-func (s *StartUser) UpdateHideRecommendedPersonalizedSites(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHideRecommendedPersonalizedSites, client.Int(value))
+func (s *StartUser) UpdateHideRecommendedPersonalizedSites(ctx context.Context, value HideRecommendedPersonalizedSitesValue) error {
+	return s.c.Replace(ctx, URIHideRecommendedPersonalizedSites, client.Int(int64(value)))
 }
 
 // DeleteHideRecommendedPersonalizedSites deletes ./User/Vendor/MSFT/Policy/Config/Start/HideRecommendedPersonalizedSites.
@@ -583,12 +594,13 @@ func (s *StartUser) DeleteHideRecommendedPersonalizedSites(ctx context.Context) 
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *StartUser) GetHideRecommendedSection(ctx context.Context) (int64, error) {
+func (s *StartUser) GetHideRecommendedSection(ctx context.Context) (HideRecommendedSectionValue, error) {
 	v, err := s.c.Get(ctx, URIHideRecommendedSection)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HideRecommendedSectionValue(n), err
 }
 
 // CreateHideRecommendedSection creates ./User/Vendor/MSFT/Policy/Config/Start/HideRecommendedSection.
@@ -598,8 +610,8 @@ func (s *StartUser) GetHideRecommendedSection(ctx context.Context) (int64, error
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *StartUser) CreateHideRecommendedSection(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHideRecommendedSection, client.Int(value))
+func (s *StartUser) CreateHideRecommendedSection(ctx context.Context, value HideRecommendedSectionValue) error {
+	return s.c.Add(ctx, URIHideRecommendedSection, client.Int(int64(value)))
 }
 
 // UpdateHideRecommendedSection updates ./User/Vendor/MSFT/Policy/Config/Start/HideRecommendedSection.
@@ -609,8 +621,8 @@ func (s *StartUser) CreateHideRecommendedSection(ctx context.Context, value int6
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *StartUser) UpdateHideRecommendedSection(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHideRecommendedSection, client.Int(value))
+func (s *StartUser) UpdateHideRecommendedSection(ctx context.Context, value HideRecommendedSectionValue) error {
+	return s.c.Replace(ctx, URIHideRecommendedSection, client.Int(int64(value)))
 }
 
 // DeleteHideRecommendedSection deletes ./User/Vendor/MSFT/Policy/Config/Start/HideRecommendedSection.
@@ -630,12 +642,13 @@ func (s *StartUser) DeleteHideRecommendedSection(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *StartUser) GetHideTaskViewButton(ctx context.Context) (int64, error) {
+func (s *StartUser) GetHideTaskViewButton(ctx context.Context) (HideTaskViewButtonValue, error) {
 	v, err := s.c.Get(ctx, URIHideTaskViewButton)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HideTaskViewButtonValue(n), err
 }
 
 // CreateHideTaskViewButton creates ./User/Vendor/MSFT/Policy/Config/Start/HideTaskViewButton.
@@ -644,8 +657,8 @@ func (s *StartUser) GetHideTaskViewButton(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *StartUser) CreateHideTaskViewButton(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHideTaskViewButton, client.Int(value))
+func (s *StartUser) CreateHideTaskViewButton(ctx context.Context, value HideTaskViewButtonValue) error {
+	return s.c.Add(ctx, URIHideTaskViewButton, client.Int(int64(value)))
 }
 
 // UpdateHideTaskViewButton updates ./User/Vendor/MSFT/Policy/Config/Start/HideTaskViewButton.
@@ -654,8 +667,8 @@ func (s *StartUser) CreateHideTaskViewButton(ctx context.Context, value int64) e
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *StartUser) UpdateHideTaskViewButton(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHideTaskViewButton, client.Int(value))
+func (s *StartUser) UpdateHideTaskViewButton(ctx context.Context, value HideTaskViewButtonValue) error {
+	return s.c.Replace(ctx, URIHideTaskViewButton, client.Int(int64(value)))
 }
 
 // DeleteHideTaskViewButton deletes ./User/Vendor/MSFT/Policy/Config/Start/HideTaskViewButton.
@@ -679,12 +692,13 @@ func (s *StartUser) DeleteHideTaskViewButton(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *StartUser) GetShowOrHideMostUsedApps(ctx context.Context) (int64, error) {
+func (s *StartUser) GetShowOrHideMostUsedApps(ctx context.Context) (ShowOrHideMostUsedAppsValue, error) {
 	v, err := s.c.Get(ctx, URIShowOrHideMostUsedApps)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ShowOrHideMostUsedAppsValue(n), err
 }
 
 // CreateShowOrHideMostUsedApps creates ./User/Vendor/MSFT/Policy/Config/Start/ShowOrHideMostUsedApps.
@@ -698,8 +712,8 @@ func (s *StartUser) GetShowOrHideMostUsedApps(ctx context.Context) (int64, error
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *StartUser) CreateShowOrHideMostUsedApps(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIShowOrHideMostUsedApps, client.Int(value))
+func (s *StartUser) CreateShowOrHideMostUsedApps(ctx context.Context, value ShowOrHideMostUsedAppsValue) error {
+	return s.c.Add(ctx, URIShowOrHideMostUsedApps, client.Int(int64(value)))
 }
 
 // UpdateShowOrHideMostUsedApps updates ./User/Vendor/MSFT/Policy/Config/Start/ShowOrHideMostUsedApps.
@@ -713,8 +727,8 @@ func (s *StartUser) CreateShowOrHideMostUsedApps(ctx context.Context, value int6
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *StartUser) UpdateShowOrHideMostUsedApps(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIShowOrHideMostUsedApps, client.Int(value))
+func (s *StartUser) UpdateShowOrHideMostUsedApps(ctx context.Context, value ShowOrHideMostUsedAppsValue) error {
+	return s.c.Replace(ctx, URIShowOrHideMostUsedApps, client.Int(int64(value)))
 }
 
 // DeleteShowOrHideMostUsedApps deletes ./User/Vendor/MSFT/Policy/Config/Start/ShowOrHideMostUsedApps.
@@ -788,28 +802,29 @@ func (s *StartUser) DeleteStartLayout(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *StartUser) GetTurnOffAbbreviatedDateTimeFormat(ctx context.Context) (int64, error) {
+func (s *StartUser) GetTurnOffAbbreviatedDateTimeFormat(ctx context.Context) (TurnOffAbbreviatedDateTimeFormatValue, error) {
 	v, err := s.c.Get(ctx, URITurnOffAbbreviatedDateTimeFormat)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return TurnOffAbbreviatedDateTimeFormatValue(n), err
 }
 
 // CreateTurnOffAbbreviatedDateTimeFormat creates ./User/Vendor/MSFT/Policy/Config/Start/TurnOffAbbreviatedDateTimeFormat.
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *StartUser) CreateTurnOffAbbreviatedDateTimeFormat(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URITurnOffAbbreviatedDateTimeFormat, client.Int(value))
+func (s *StartUser) CreateTurnOffAbbreviatedDateTimeFormat(ctx context.Context, value TurnOffAbbreviatedDateTimeFormatValue) error {
+	return s.c.Add(ctx, URITurnOffAbbreviatedDateTimeFormat, client.Int(int64(value)))
 }
 
 // UpdateTurnOffAbbreviatedDateTimeFormat updates ./User/Vendor/MSFT/Policy/Config/Start/TurnOffAbbreviatedDateTimeFormat.
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *StartUser) UpdateTurnOffAbbreviatedDateTimeFormat(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URITurnOffAbbreviatedDateTimeFormat, client.Int(value))
+func (s *StartUser) UpdateTurnOffAbbreviatedDateTimeFormat(ctx context.Context, value TurnOffAbbreviatedDateTimeFormatValue) error {
+	return s.c.Replace(ctx, URITurnOffAbbreviatedDateTimeFormat, client.Int(int64(value)))
 }
 
 // DeleteTurnOffAbbreviatedDateTimeFormat deletes ./User/Vendor/MSFT/Policy/Config/Start/TurnOffAbbreviatedDateTimeFormat.

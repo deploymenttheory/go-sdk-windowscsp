@@ -14,12 +14,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *TaskScheduler) GetEnableXboxGameSaveTask(ctx context.Context) (int64, error) {
+func (s *TaskScheduler) GetEnableXboxGameSaveTask(ctx context.Context) (EnableXboxGameSaveTaskValue, error) {
 	v, err := s.c.Get(ctx, URIEnableXboxGameSaveTask)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableXboxGameSaveTaskValue(n), err
 }
 
 // CreateEnableXboxGameSaveTask creates ./Device/Vendor/MSFT/Policy/Config/TaskScheduler/EnableXboxGameSaveTask.
@@ -28,8 +29,8 @@ func (s *TaskScheduler) GetEnableXboxGameSaveTask(ctx context.Context) (int64, e
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *TaskScheduler) CreateEnableXboxGameSaveTask(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableXboxGameSaveTask, client.Int(value))
+func (s *TaskScheduler) CreateEnableXboxGameSaveTask(ctx context.Context, value EnableXboxGameSaveTaskValue) error {
+	return s.c.Add(ctx, URIEnableXboxGameSaveTask, client.Int(int64(value)))
 }
 
 // UpdateEnableXboxGameSaveTask updates ./Device/Vendor/MSFT/Policy/Config/TaskScheduler/EnableXboxGameSaveTask.
@@ -38,8 +39,8 @@ func (s *TaskScheduler) CreateEnableXboxGameSaveTask(ctx context.Context, value 
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *TaskScheduler) UpdateEnableXboxGameSaveTask(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableXboxGameSaveTask, client.Int(value))
+func (s *TaskScheduler) UpdateEnableXboxGameSaveTask(ctx context.Context, value EnableXboxGameSaveTaskValue) error {
+	return s.c.Replace(ctx, URIEnableXboxGameSaveTask, client.Int(int64(value)))
 }
 
 // DeleteEnableXboxGameSaveTask deletes ./Device/Vendor/MSFT/Policy/Config/TaskScheduler/EnableXboxGameSaveTask.

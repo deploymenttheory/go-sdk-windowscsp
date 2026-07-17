@@ -52,12 +52,13 @@ func (s *LocalSecurityAuthority) DeleteAllowCustomSSPsAPs(ctx context.Context) e
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *LocalSecurityAuthority) GetConfigureLsaProtectedProcess(ctx context.Context) (int64, error) {
+func (s *LocalSecurityAuthority) GetConfigureLsaProtectedProcess(ctx context.Context) (ConfigureLsaProtectedProcessValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureLsaProtectedProcess)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureLsaProtectedProcessValue(n), err
 }
 
 // CreateConfigureLsaProtectedProcess creates ./Device/Vendor/MSFT/Policy/Config/LocalSecurityAuthority/ConfigureLsaProtectedProcess.
@@ -72,8 +73,8 @@ func (s *LocalSecurityAuthority) GetConfigureLsaProtectedProcess(ctx context.Con
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *LocalSecurityAuthority) CreateConfigureLsaProtectedProcess(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureLsaProtectedProcess, client.Int(value))
+func (s *LocalSecurityAuthority) CreateConfigureLsaProtectedProcess(ctx context.Context, value ConfigureLsaProtectedProcessValue) error {
+	return s.c.Add(ctx, URIConfigureLsaProtectedProcess, client.Int(int64(value)))
 }
 
 // UpdateConfigureLsaProtectedProcess updates ./Device/Vendor/MSFT/Policy/Config/LocalSecurityAuthority/ConfigureLsaProtectedProcess.
@@ -88,8 +89,8 @@ func (s *LocalSecurityAuthority) CreateConfigureLsaProtectedProcess(ctx context.
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *LocalSecurityAuthority) UpdateConfigureLsaProtectedProcess(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureLsaProtectedProcess, client.Int(value))
+func (s *LocalSecurityAuthority) UpdateConfigureLsaProtectedProcess(ctx context.Context, value ConfigureLsaProtectedProcessValue) error {
+	return s.c.Replace(ctx, URIConfigureLsaProtectedProcess, client.Int(int64(value)))
 }
 
 // DeleteConfigureLsaProtectedProcess deletes ./Device/Vendor/MSFT/Policy/Config/LocalSecurityAuthority/ConfigureLsaProtectedProcess.

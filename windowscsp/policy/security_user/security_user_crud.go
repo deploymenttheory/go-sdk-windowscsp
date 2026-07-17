@@ -13,12 +13,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *SecurityUser) GetRecoveryEnvironmentAuthentication(ctx context.Context) (int64, error) {
+func (s *SecurityUser) GetRecoveryEnvironmentAuthentication(ctx context.Context) (RecoveryEnvironmentAuthenticationValue, error) {
 	v, err := s.c.Get(ctx, URIRecoveryEnvironmentAuthentication)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return RecoveryEnvironmentAuthenticationValue(n), err
 }
 
 // CreateRecoveryEnvironmentAuthentication creates ./User/Vendor/MSFT/Policy/Config/Security/RecoveryEnvironmentAuthentication.
@@ -26,8 +27,8 @@ func (s *SecurityUser) GetRecoveryEnvironmentAuthentication(ctx context.Context)
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *SecurityUser) CreateRecoveryEnvironmentAuthentication(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIRecoveryEnvironmentAuthentication, client.Int(value))
+func (s *SecurityUser) CreateRecoveryEnvironmentAuthentication(ctx context.Context, value RecoveryEnvironmentAuthenticationValue) error {
+	return s.c.Add(ctx, URIRecoveryEnvironmentAuthentication, client.Int(int64(value)))
 }
 
 // UpdateRecoveryEnvironmentAuthentication updates ./User/Vendor/MSFT/Policy/Config/Security/RecoveryEnvironmentAuthentication.
@@ -35,8 +36,8 @@ func (s *SecurityUser) CreateRecoveryEnvironmentAuthentication(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *SecurityUser) UpdateRecoveryEnvironmentAuthentication(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIRecoveryEnvironmentAuthentication, client.Int(value))
+func (s *SecurityUser) UpdateRecoveryEnvironmentAuthentication(ctx context.Context, value RecoveryEnvironmentAuthenticationValue) error {
+	return s.c.Replace(ctx, URIRecoveryEnvironmentAuthentication, client.Int(int64(value)))
 }
 
 // DeleteRecoveryEnvironmentAuthentication deletes ./User/Vendor/MSFT/Policy/Config/Security/RecoveryEnvironmentAuthentication.

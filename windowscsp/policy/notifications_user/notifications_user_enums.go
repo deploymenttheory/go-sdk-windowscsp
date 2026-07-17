@@ -2,34 +2,98 @@
 
 package notifications_user
 
-// DisableAccountNotifications allowed values.
-const (
-	// Disabled.
-	DisableAccountNotificationsDisabled int64 = 0
-	// Enabled.
-	DisableAccountNotificationsEnabled int64 = 1
+import (
+	"fmt"
 )
 
-// DisallowNotificationMirroring allowed values.
+// DisableAccountNotificationsValue — allowed values for the DisableAccountNotifications node.
+type DisableAccountNotificationsValue int64
+
+const (
+	// Disabled.
+	DisableAccountNotificationsDisabled DisableAccountNotificationsValue = 0
+	// Enabled.
+	DisableAccountNotificationsEnabled DisableAccountNotificationsValue = 1
+)
+
+// String returns the DisableAccountNotificationsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableAccountNotificationsValue) String() string {
+	switch e {
+	case DisableAccountNotificationsDisabled:
+		return "DisableAccountNotificationsDisabled"
+	case DisableAccountNotificationsEnabled:
+		return "DisableAccountNotificationsEnabled"
+	default:
+		return fmt.Sprintf("DisableAccountNotificationsValue(%d)", int64(e))
+	}
+}
+
+// DisallowNotificationMirroringValue — allowed values for the DisallowNotificationMirroring node.
+type DisallowNotificationMirroringValue int64
+
 const (
 	// Enable notification mirroring.
-	DisallowNotificationMirroringEnableNotificationMirroring int64 = 0
+	DisallowNotificationMirroringEnableNotificationMirroring DisallowNotificationMirroringValue = 0
 	// Disable notification mirroring.
-	DisallowNotificationMirroringDisableNotificationMirroring int64 = 1
+	DisallowNotificationMirroringDisableNotificationMirroring DisallowNotificationMirroringValue = 1
 )
 
-// DisallowTileNotification allowed values.
+// String returns the DisallowNotificationMirroringValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisallowNotificationMirroringValue) String() string {
+	switch e {
+	case DisallowNotificationMirroringEnableNotificationMirroring:
+		return "DisallowNotificationMirroringEnableNotificationMirroring"
+	case DisallowNotificationMirroringDisableNotificationMirroring:
+		return "DisallowNotificationMirroringDisableNotificationMirroring"
+	default:
+		return fmt.Sprintf("DisallowNotificationMirroringValue(%d)", int64(e))
+	}
+}
+
+// DisallowTileNotificationValue — allowed values for the DisallowTileNotification node.
+type DisallowTileNotificationValue int64
+
 const (
 	// Disabled.
-	DisallowTileNotificationDisabled int64 = 0
+	DisallowTileNotificationDisabled DisallowTileNotificationValue = 0
 	// Enabled.
-	DisallowTileNotificationEnabled int64 = 1
+	DisallowTileNotificationEnabled DisallowTileNotificationValue = 1
 )
 
-// EnableExpandedToastNotifications allowed values.
+// String returns the DisallowTileNotificationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisallowTileNotificationValue) String() string {
+	switch e {
+	case DisallowTileNotificationDisabled:
+		return "DisallowTileNotificationDisabled"
+	case DisallowTileNotificationEnabled:
+		return "DisallowTileNotificationEnabled"
+	default:
+		return fmt.Sprintf("DisallowTileNotificationValue(%d)", int64(e))
+	}
+}
+
+// EnableExpandedToastNotificationsValue — allowed values for the EnableExpandedToastNotifications node.
+type EnableExpandedToastNotificationsValue int64
+
 const (
 	// Disable multiple expanded toasts in action center.
-	EnableExpandedToastNotificationsDisableMultipleExpandedToastsInAction int64 = 0
+	EnableExpandedToastNotificationsDisableMultipleExpandedToastsInAction EnableExpandedToastNotificationsValue = 0
 	// Enable multiple expanded toasts in action center.
-	EnableExpandedToastNotificationsEnableMultipleExpandedToastsInAction int64 = 1
+	EnableExpandedToastNotificationsEnableMultipleExpandedToastsInAction EnableExpandedToastNotificationsValue = 1
 )
+
+// String returns the EnableExpandedToastNotificationsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableExpandedToastNotificationsValue) String() string {
+	switch e {
+	case EnableExpandedToastNotificationsDisableMultipleExpandedToastsInAction:
+		return "EnableExpandedToastNotificationsDisableMultipleExpandedToastsInAction"
+	case EnableExpandedToastNotificationsEnableMultipleExpandedToastsInAction:
+		return "EnableExpandedToastNotificationsEnableMultipleExpandedToastsInAction"
+	default:
+		return fmt.Sprintf("EnableExpandedToastNotificationsValue(%d)", int64(e))
+	}
+}

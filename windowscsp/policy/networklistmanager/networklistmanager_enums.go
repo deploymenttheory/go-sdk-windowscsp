@@ -2,50 +2,144 @@
 
 package networklistmanager
 
-// AllNetworksNetworkIcon allowed values.
+import (
+	"fmt"
+)
+
+// AllNetworksNetworkIconValue — allowed values for the AllNetworks_NetworkIcon node.
+type AllNetworksNetworkIconValue int64
+
 const (
 	// User can change icon
-	AllNetworksNetworkIconUserCanChangeIcon int64 = 0
+	AllNetworksNetworkIconUserCanChangeIcon AllNetworksNetworkIconValue = 0
 	// User cannot change icon
-	AllNetworksNetworkIconUserCannotChangeIcon int64 = 1
+	AllNetworksNetworkIconUserCannotChangeIcon AllNetworksNetworkIconValue = 1
 )
 
-// AllNetworksNetworkLocation allowed values.
+// String returns the AllNetworksNetworkIconValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllNetworksNetworkIconValue) String() string {
+	switch e {
+	case AllNetworksNetworkIconUserCanChangeIcon:
+		return "AllNetworksNetworkIconUserCanChangeIcon"
+	case AllNetworksNetworkIconUserCannotChangeIcon:
+		return "AllNetworksNetworkIconUserCannotChangeIcon"
+	default:
+		return fmt.Sprintf("AllNetworksNetworkIconValue(%d)", int64(e))
+	}
+}
+
+// AllNetworksNetworkLocationValue — allowed values for the AllNetworks_NetworkLocation node.
+type AllNetworksNetworkLocationValue int64
+
 const (
 	// User can change location
-	AllNetworksNetworkLocationUserCanChangeLocation int64 = 0
+	AllNetworksNetworkLocationUserCanChangeLocation AllNetworksNetworkLocationValue = 0
 	// User cannot change location
-	AllNetworksNetworkLocationUserCannotChangeLocation int64 = 1
+	AllNetworksNetworkLocationUserCannotChangeLocation AllNetworksNetworkLocationValue = 1
 )
 
-// AllNetworksNetworkName allowed values.
+// String returns the AllNetworksNetworkLocationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllNetworksNetworkLocationValue) String() string {
+	switch e {
+	case AllNetworksNetworkLocationUserCanChangeLocation:
+		return "AllNetworksNetworkLocationUserCanChangeLocation"
+	case AllNetworksNetworkLocationUserCannotChangeLocation:
+		return "AllNetworksNetworkLocationUserCannotChangeLocation"
+	default:
+		return fmt.Sprintf("AllNetworksNetworkLocationValue(%d)", int64(e))
+	}
+}
+
+// AllNetworksNetworkNameValue — allowed values for the AllNetworks_NetworkName node.
+type AllNetworksNetworkNameValue int64
+
 const (
 	// User can change name
-	AllNetworksNetworkNameUserCanChangeName int64 = 0
+	AllNetworksNetworkNameUserCanChangeName AllNetworksNetworkNameValue = 0
 	// User cannot change name
-	AllNetworksNetworkNameUserCannotChangeName int64 = 1
+	AllNetworksNetworkNameUserCannotChangeName AllNetworksNetworkNameValue = 1
 )
 
-// IdentifyingNetworksLocationType allowed values.
+// String returns the AllNetworksNetworkNameValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllNetworksNetworkNameValue) String() string {
+	switch e {
+	case AllNetworksNetworkNameUserCanChangeName:
+		return "AllNetworksNetworkNameUserCanChangeName"
+	case AllNetworksNetworkNameUserCannotChangeName:
+		return "AllNetworksNetworkNameUserCannotChangeName"
+	default:
+		return fmt.Sprintf("AllNetworksNetworkNameValue(%d)", int64(e))
+	}
+}
+
+// IdentifyingNetworksLocationTypeValue — allowed values for the IdentifyingNetworks_LocationType node.
+type IdentifyingNetworksLocationTypeValue int64
+
 const (
 	// Public
-	IdentifyingNetworksLocationTypePublic int64 = 0
+	IdentifyingNetworksLocationTypePublic IdentifyingNetworksLocationTypeValue = 0
 	// Private
-	IdentifyingNetworksLocationTypePrivate int64 = 1
+	IdentifyingNetworksLocationTypePrivate IdentifyingNetworksLocationTypeValue = 1
 )
 
-// UnidentifiedNetworksLocationType allowed values.
+// String returns the IdentifyingNetworksLocationTypeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e IdentifyingNetworksLocationTypeValue) String() string {
+	switch e {
+	case IdentifyingNetworksLocationTypePublic:
+		return "IdentifyingNetworksLocationTypePublic"
+	case IdentifyingNetworksLocationTypePrivate:
+		return "IdentifyingNetworksLocationTypePrivate"
+	default:
+		return fmt.Sprintf("IdentifyingNetworksLocationTypeValue(%d)", int64(e))
+	}
+}
+
+// UnidentifiedNetworksLocationTypeValue — allowed values for the UnidentifiedNetworks_LocationType node.
+type UnidentifiedNetworksLocationTypeValue int64
+
 const (
 	// Public
-	UnidentifiedNetworksLocationTypePublic int64 = 0
+	UnidentifiedNetworksLocationTypePublic UnidentifiedNetworksLocationTypeValue = 0
 	// Private
-	UnidentifiedNetworksLocationTypePrivate int64 = 1
+	UnidentifiedNetworksLocationTypePrivate UnidentifiedNetworksLocationTypeValue = 1
 )
 
-// UnidentifiedNetworksUserPermissions allowed values.
+// String returns the UnidentifiedNetworksLocationTypeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e UnidentifiedNetworksLocationTypeValue) String() string {
+	switch e {
+	case UnidentifiedNetworksLocationTypePublic:
+		return "UnidentifiedNetworksLocationTypePublic"
+	case UnidentifiedNetworksLocationTypePrivate:
+		return "UnidentifiedNetworksLocationTypePrivate"
+	default:
+		return fmt.Sprintf("UnidentifiedNetworksLocationTypeValue(%d)", int64(e))
+	}
+}
+
+// UnidentifiedNetworksUserPermissionsValue — allowed values for the UnidentifiedNetworks_UserPermissions node.
+type UnidentifiedNetworksUserPermissionsValue int64
+
 const (
 	// User can change location
-	UnidentifiedNetworksUserPermissionsUserCanChangeLocation int64 = 0
+	UnidentifiedNetworksUserPermissionsUserCanChangeLocation UnidentifiedNetworksUserPermissionsValue = 0
 	// User cannot change location
-	UnidentifiedNetworksUserPermissionsUserCannotChangeLocation int64 = 1
+	UnidentifiedNetworksUserPermissionsUserCannotChangeLocation UnidentifiedNetworksUserPermissionsValue = 1
 )
+
+// String returns the UnidentifiedNetworksUserPermissionsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e UnidentifiedNetworksUserPermissionsValue) String() string {
+	switch e {
+	case UnidentifiedNetworksUserPermissionsUserCanChangeLocation:
+		return "UnidentifiedNetworksUserPermissionsUserCanChangeLocation"
+	case UnidentifiedNetworksUserPermissionsUserCannotChangeLocation:
+		return "UnidentifiedNetworksUserPermissionsUserCannotChangeLocation"
+	default:
+		return fmt.Sprintf("UnidentifiedNetworksUserPermissionsValue(%d)", int64(e))
+	}
+}

@@ -40,20 +40,28 @@ type Method struct {
 	Accessor     string // Get only: Int, Bool, Float, Str, Bytes
 	AccessorErr  bool   // Get only: accessor returns (T, error)
 	Zero         string // Get only: zero literal for the error path
+	// Cast is the named allowed-values type the wire value converts
+	// to/from ("" when the node has no enum type).
+	Cast string
 }
 
-// EnumBlock is one const block of allowed values for a node.
+// EnumBlock is one allowed-values enum for a node: a named type, its typed
+// constants and a String method.
 type EnumBlock struct {
-	Comment string
-	Members []EnumMember
+	TypeName string
+	BaseType string // "int64" or "string"
+	Comment  string
+	Members  []EnumMember
 }
 
 // EnumMember is one allowed-value constant.
 type EnumMember struct {
 	Name         string
 	CommentLines []string
-	Typed        bool   // true: "Name int64 = Literal"; false: "Name = Literal"
 	Literal      string // rendered literal (already quoted for strings)
+	// Dup marks members whose literal repeats an earlier member's value;
+	// they are excluded from the String switch.
+	Dup bool
 }
 
 // Registry describes the generated root-client registry file.

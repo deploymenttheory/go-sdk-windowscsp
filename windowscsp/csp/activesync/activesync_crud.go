@@ -232,28 +232,28 @@ func (s *ActiveSync) DeleteAccountsAccountGUIDOptionsContentTypesContentTypeGUID
 // Enables or disables Sync for Email, contacts, calendar, and Tasks.
 //
 // Default: 1.
-func (s *ActiveSync) GetAccountsAccountGUIDOptionsContentTypesContentTypeGUIDEnabled(ctx context.Context, accountGUID string, contentTypeGUID string) (string, error) {
+func (s *ActiveSync) GetAccountsAccountGUIDOptionsContentTypesContentTypeGUIDEnabled(ctx context.Context, accountGUID string, contentTypeGUID string) (AccountsAccountGUIDOptionsContentTypesContentTypeGUIDEnabledValue, error) {
 	v, err := s.c.Get(ctx, URIAccountsAccountGUIDOptionsContentTypesContentTypeGUIDEnabled(accountGUID, contentTypeGUID))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return AccountsAccountGUIDOptionsContentTypesContentTypeGUIDEnabledValue(v.Str()), nil
 }
 
 // CreateAccountsAccountGUIDOptionsContentTypesContentTypeGUIDEnabled creates ./User/Vendor/MSFT/ActiveSync/Accounts/{accountGUID}/Options/ContentTypes/{contentTypeGUID}/Enabled.
 // Enables or disables Sync for Email, contacts, calendar, and Tasks.
 //
 // Default: 1.
-func (s *ActiveSync) CreateAccountsAccountGUIDOptionsContentTypesContentTypeGUIDEnabled(ctx context.Context, accountGUID string, contentTypeGUID string, value string) error {
-	return s.c.Add(ctx, URIAccountsAccountGUIDOptionsContentTypesContentTypeGUIDEnabled(accountGUID, contentTypeGUID), client.Chr(value))
+func (s *ActiveSync) CreateAccountsAccountGUIDOptionsContentTypesContentTypeGUIDEnabled(ctx context.Context, accountGUID string, contentTypeGUID string, value AccountsAccountGUIDOptionsContentTypesContentTypeGUIDEnabledValue) error {
+	return s.c.Add(ctx, URIAccountsAccountGUIDOptionsContentTypesContentTypeGUIDEnabled(accountGUID, contentTypeGUID), client.Chr(string(value)))
 }
 
 // UpdateAccountsAccountGUIDOptionsContentTypesContentTypeGUIDEnabled updates ./User/Vendor/MSFT/ActiveSync/Accounts/{accountGUID}/Options/ContentTypes/{contentTypeGUID}/Enabled.
 // Enables or disables Sync for Email, contacts, calendar, and Tasks.
 //
 // Default: 1.
-func (s *ActiveSync) UpdateAccountsAccountGUIDOptionsContentTypesContentTypeGUIDEnabled(ctx context.Context, accountGUID string, contentTypeGUID string, value string) error {
-	return s.c.Replace(ctx, URIAccountsAccountGUIDOptionsContentTypesContentTypeGUIDEnabled(accountGUID, contentTypeGUID), client.Chr(value))
+func (s *ActiveSync) UpdateAccountsAccountGUIDOptionsContentTypesContentTypeGUIDEnabled(ctx context.Context, accountGUID string, contentTypeGUID string, value AccountsAccountGUIDOptionsContentTypesContentTypeGUIDEnabledValue) error {
+	return s.c.Replace(ctx, URIAccountsAccountGUIDOptionsContentTypesContentTypeGUIDEnabled(accountGUID, contentTypeGUID), client.Chr(string(value)))
 }
 
 // DeleteAccountsAccountGUIDOptionsContentTypesContentTypeGUIDEnabled deletes ./User/Vendor/MSFT/ActiveSync/Accounts/{accountGUID}/Options/ContentTypes/{contentTypeGUID}/Enabled.
@@ -296,28 +296,28 @@ func (s *ActiveSync) DeleteAccountsAccountGUIDOptionsContentTypesContentTypeGUID
 // Specifies whether diagnostic logging is enabled and at what level.
 //
 // Default: 0.
-func (s *ActiveSync) GetAccountsAccountGUIDOptionsLogging(ctx context.Context, accountGUID string) (string, error) {
+func (s *ActiveSync) GetAccountsAccountGUIDOptionsLogging(ctx context.Context, accountGUID string) (AccountsAccountGUIDOptionsLoggingValue, error) {
 	v, err := s.c.Get(ctx, URIAccountsAccountGUIDOptionsLogging(accountGUID))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return AccountsAccountGUIDOptionsLoggingValue(v.Str()), nil
 }
 
 // CreateAccountsAccountGUIDOptionsLogging creates ./User/Vendor/MSFT/ActiveSync/Accounts/{accountGUID}/Options/Logging.
 // Specifies whether diagnostic logging is enabled and at what level.
 //
 // Default: 0.
-func (s *ActiveSync) CreateAccountsAccountGUIDOptionsLogging(ctx context.Context, accountGUID string, value string) error {
-	return s.c.Add(ctx, URIAccountsAccountGUIDOptionsLogging(accountGUID), client.Chr(value))
+func (s *ActiveSync) CreateAccountsAccountGUIDOptionsLogging(ctx context.Context, accountGUID string, value AccountsAccountGUIDOptionsLoggingValue) error {
+	return s.c.Add(ctx, URIAccountsAccountGUIDOptionsLogging(accountGUID), client.Chr(string(value)))
 }
 
 // UpdateAccountsAccountGUIDOptionsLogging updates ./User/Vendor/MSFT/ActiveSync/Accounts/{accountGUID}/Options/Logging.
 // Specifies whether diagnostic logging is enabled and at what level.
 //
 // Default: 0.
-func (s *ActiveSync) UpdateAccountsAccountGUIDOptionsLogging(ctx context.Context, accountGUID string, value string) error {
-	return s.c.Replace(ctx, URIAccountsAccountGUIDOptionsLogging(accountGUID), client.Chr(value))
+func (s *ActiveSync) UpdateAccountsAccountGUIDOptionsLogging(ctx context.Context, accountGUID string, value AccountsAccountGUIDOptionsLoggingValue) error {
+	return s.c.Replace(ctx, URIAccountsAccountGUIDOptionsLogging(accountGUID), client.Chr(string(value)))
 }
 
 // DeleteAccountsAccountGUIDOptionsLogging deletes ./User/Vendor/MSFT/ActiveSync/Accounts/{accountGUID}/Options/Logging.
@@ -332,28 +332,28 @@ func (s *ActiveSync) DeleteAccountsAccountGUIDOptionsLogging(ctx context.Context
 // Specifies the time window used for syncing email items to the phone.
 //
 // Default: 3.
-func (s *ActiveSync) GetAccountsAccountGUIDOptionsMailAgeFilter(ctx context.Context, accountGUID string) (string, error) {
+func (s *ActiveSync) GetAccountsAccountGUIDOptionsMailAgeFilter(ctx context.Context, accountGUID string) (AccountsAccountGUIDOptionsMailAgeFilterValue, error) {
 	v, err := s.c.Get(ctx, URIAccountsAccountGUIDOptionsMailAgeFilter(accountGUID))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return AccountsAccountGUIDOptionsMailAgeFilterValue(v.Str()), nil
 }
 
 // CreateAccountsAccountGUIDOptionsMailAgeFilter creates ./User/Vendor/MSFT/ActiveSync/Accounts/{accountGUID}/Options/MailAgeFilter.
 // Specifies the time window used for syncing email items to the phone.
 //
 // Default: 3.
-func (s *ActiveSync) CreateAccountsAccountGUIDOptionsMailAgeFilter(ctx context.Context, accountGUID string, value string) error {
-	return s.c.Add(ctx, URIAccountsAccountGUIDOptionsMailAgeFilter(accountGUID), client.Chr(value))
+func (s *ActiveSync) CreateAccountsAccountGUIDOptionsMailAgeFilter(ctx context.Context, accountGUID string, value AccountsAccountGUIDOptionsMailAgeFilterValue) error {
+	return s.c.Add(ctx, URIAccountsAccountGUIDOptionsMailAgeFilter(accountGUID), client.Chr(string(value)))
 }
 
 // UpdateAccountsAccountGUIDOptionsMailAgeFilter updates ./User/Vendor/MSFT/ActiveSync/Accounts/{accountGUID}/Options/MailAgeFilter.
 // Specifies the time window used for syncing email items to the phone.
 //
 // Default: 3.
-func (s *ActiveSync) UpdateAccountsAccountGUIDOptionsMailAgeFilter(ctx context.Context, accountGUID string, value string) error {
-	return s.c.Replace(ctx, URIAccountsAccountGUIDOptionsMailAgeFilter(accountGUID), client.Chr(value))
+func (s *ActiveSync) UpdateAccountsAccountGUIDOptionsMailAgeFilter(ctx context.Context, accountGUID string, value AccountsAccountGUIDOptionsMailAgeFilterValue) error {
+	return s.c.Replace(ctx, URIAccountsAccountGUIDOptionsMailAgeFilter(accountGUID), client.Chr(string(value)))
 }
 
 // DeleteAccountsAccountGUIDOptionsMailAgeFilter deletes ./User/Vendor/MSFT/ActiveSync/Accounts/{accountGUID}/Options/MailAgeFilter.
@@ -367,26 +367,26 @@ func (s *ActiveSync) DeleteAccountsAccountGUIDOptionsMailAgeFilter(ctx context.C
 // GetAccountsAccountGUIDOptionsMailBodyType reads ./User/Vendor/MSFT/ActiveSync/Accounts/{accountGUID}/Options/MailBodyType.
 // Indicates format type of the Email. Supported values are 0 (none), 1 (text), 2 (HTML), 3 (RTF),
 // and 4 (MIME).
-func (s *ActiveSync) GetAccountsAccountGUIDOptionsMailBodyType(ctx context.Context, accountGUID string) (string, error) {
+func (s *ActiveSync) GetAccountsAccountGUIDOptionsMailBodyType(ctx context.Context, accountGUID string) (AccountsAccountGUIDOptionsMailBodyTypeValue, error) {
 	v, err := s.c.Get(ctx, URIAccountsAccountGUIDOptionsMailBodyType(accountGUID))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return AccountsAccountGUIDOptionsMailBodyTypeValue(v.Str()), nil
 }
 
 // CreateAccountsAccountGUIDOptionsMailBodyType creates ./User/Vendor/MSFT/ActiveSync/Accounts/{accountGUID}/Options/MailBodyType.
 // Indicates format type of the Email. Supported values are 0 (none), 1 (text), 2 (HTML), 3 (RTF),
 // and 4 (MIME).
-func (s *ActiveSync) CreateAccountsAccountGUIDOptionsMailBodyType(ctx context.Context, accountGUID string, value string) error {
-	return s.c.Add(ctx, URIAccountsAccountGUIDOptionsMailBodyType(accountGUID), client.Chr(value))
+func (s *ActiveSync) CreateAccountsAccountGUIDOptionsMailBodyType(ctx context.Context, accountGUID string, value AccountsAccountGUIDOptionsMailBodyTypeValue) error {
+	return s.c.Add(ctx, URIAccountsAccountGUIDOptionsMailBodyType(accountGUID), client.Chr(string(value)))
 }
 
 // UpdateAccountsAccountGUIDOptionsMailBodyType updates ./User/Vendor/MSFT/ActiveSync/Accounts/{accountGUID}/Options/MailBodyType.
 // Indicates format type of the Email. Supported values are 0 (none), 1 (text), 2 (HTML), 3 (RTF),
 // and 4 (MIME).
-func (s *ActiveSync) UpdateAccountsAccountGUIDOptionsMailBodyType(ctx context.Context, accountGUID string, value string) error {
-	return s.c.Replace(ctx, URIAccountsAccountGUIDOptionsMailBodyType(accountGUID), client.Chr(value))
+func (s *ActiveSync) UpdateAccountsAccountGUIDOptionsMailBodyType(ctx context.Context, accountGUID string, value AccountsAccountGUIDOptionsMailBodyTypeValue) error {
+	return s.c.Replace(ctx, URIAccountsAccountGUIDOptionsMailBodyType(accountGUID), client.Chr(string(value)))
 }
 
 // DeleteAccountsAccountGUIDOptionsMailBodyType deletes ./User/Vendor/MSFT/ActiveSync/Accounts/{accountGUID}/Options/MailBodyType.
@@ -512,28 +512,28 @@ func (s *ActiveSync) DeleteAccountsAccountGUIDOptionsSchedule(ctx context.Contex
 // Specifies whether SSL is used.
 //
 // Default: 1.
-func (s *ActiveSync) GetAccountsAccountGUIDOptionsUseSSL(ctx context.Context, accountGUID string) (string, error) {
+func (s *ActiveSync) GetAccountsAccountGUIDOptionsUseSSL(ctx context.Context, accountGUID string) (AccountsAccountGUIDOptionsUseSSLValue, error) {
 	v, err := s.c.Get(ctx, URIAccountsAccountGUIDOptionsUseSSL(accountGUID))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return AccountsAccountGUIDOptionsUseSSLValue(v.Str()), nil
 }
 
 // CreateAccountsAccountGUIDOptionsUseSSL creates ./User/Vendor/MSFT/ActiveSync/Accounts/{accountGUID}/Options/UseSSL.
 // Specifies whether SSL is used.
 //
 // Default: 1.
-func (s *ActiveSync) CreateAccountsAccountGUIDOptionsUseSSL(ctx context.Context, accountGUID string, value string) error {
-	return s.c.Add(ctx, URIAccountsAccountGUIDOptionsUseSSL(accountGUID), client.Chr(value))
+func (s *ActiveSync) CreateAccountsAccountGUIDOptionsUseSSL(ctx context.Context, accountGUID string, value AccountsAccountGUIDOptionsUseSSLValue) error {
+	return s.c.Add(ctx, URIAccountsAccountGUIDOptionsUseSSL(accountGUID), client.Chr(string(value)))
 }
 
 // UpdateAccountsAccountGUIDOptionsUseSSL updates ./User/Vendor/MSFT/ActiveSync/Accounts/{accountGUID}/Options/UseSSL.
 // Specifies whether SSL is used.
 //
 // Default: 1.
-func (s *ActiveSync) UpdateAccountsAccountGUIDOptionsUseSSL(ctx context.Context, accountGUID string, value string) error {
-	return s.c.Replace(ctx, URIAccountsAccountGUIDOptionsUseSSL(accountGUID), client.Chr(value))
+func (s *ActiveSync) UpdateAccountsAccountGUIDOptionsUseSSL(ctx context.Context, accountGUID string, value AccountsAccountGUIDOptionsUseSSLValue) error {
+	return s.c.Replace(ctx, URIAccountsAccountGUIDOptionsUseSSL(accountGUID), client.Chr(string(value)))
 }
 
 // DeleteAccountsAccountGUIDOptionsUseSSL deletes ./User/Vendor/MSFT/ActiveSync/Accounts/{accountGUID}/Options/UseSSL.
@@ -578,24 +578,24 @@ func (s *ActiveSync) DeleteAccountsAccountGUIDPassword(ctx context.Context, acco
 
 // GetAccountsAccountGUIDPoliciesMailBodyType reads ./User/Vendor/MSFT/ActiveSync/Accounts/{accountGUID}/Policies/MailBodyType.
 // Specifies the email body type. HTML or plain
-func (s *ActiveSync) GetAccountsAccountGUIDPoliciesMailBodyType(ctx context.Context, accountGUID string) (string, error) {
+func (s *ActiveSync) GetAccountsAccountGUIDPoliciesMailBodyType(ctx context.Context, accountGUID string) (AccountsAccountGUIDPoliciesMailBodyTypeValue, error) {
 	v, err := s.c.Get(ctx, URIAccountsAccountGUIDPoliciesMailBodyType(accountGUID))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return AccountsAccountGUIDPoliciesMailBodyTypeValue(v.Str()), nil
 }
 
 // CreateAccountsAccountGUIDPoliciesMailBodyType creates ./User/Vendor/MSFT/ActiveSync/Accounts/{accountGUID}/Policies/MailBodyType.
 // Specifies the email body type. HTML or plain
-func (s *ActiveSync) CreateAccountsAccountGUIDPoliciesMailBodyType(ctx context.Context, accountGUID string, value string) error {
-	return s.c.Add(ctx, URIAccountsAccountGUIDPoliciesMailBodyType(accountGUID), client.Chr(value))
+func (s *ActiveSync) CreateAccountsAccountGUIDPoliciesMailBodyType(ctx context.Context, accountGUID string, value AccountsAccountGUIDPoliciesMailBodyTypeValue) error {
+	return s.c.Add(ctx, URIAccountsAccountGUIDPoliciesMailBodyType(accountGUID), client.Chr(string(value)))
 }
 
 // UpdateAccountsAccountGUIDPoliciesMailBodyType updates ./User/Vendor/MSFT/ActiveSync/Accounts/{accountGUID}/Policies/MailBodyType.
 // Specifies the email body type. HTML or plain
-func (s *ActiveSync) UpdateAccountsAccountGUIDPoliciesMailBodyType(ctx context.Context, accountGUID string, value string) error {
-	return s.c.Replace(ctx, URIAccountsAccountGUIDPoliciesMailBodyType(accountGUID), client.Chr(value))
+func (s *ActiveSync) UpdateAccountsAccountGUIDPoliciesMailBodyType(ctx context.Context, accountGUID string, value AccountsAccountGUIDPoliciesMailBodyTypeValue) error {
+	return s.c.Replace(ctx, URIAccountsAccountGUIDPoliciesMailBodyType(accountGUID), client.Chr(string(value)))
 }
 
 // DeleteAccountsAccountGUIDPoliciesMailBodyType deletes ./User/Vendor/MSFT/ActiveSync/Accounts/{accountGUID}/Policies/MailBodyType.

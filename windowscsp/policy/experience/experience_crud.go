@@ -13,12 +13,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Experience) GetAllowClipboardHistory(ctx context.Context) (int64, error) {
+func (s *Experience) GetAllowClipboardHistory(ctx context.Context) (AllowClipboardHistoryValue, error) {
 	v, err := s.c.Get(ctx, URIAllowClipboardHistory)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowClipboardHistoryValue(n), err
 }
 
 // CreateAllowClipboardHistory creates ./Device/Vendor/MSFT/Policy/Config/Experience/AllowClipboardHistory.
@@ -26,8 +27,8 @@ func (s *Experience) GetAllowClipboardHistory(ctx context.Context) (int64, error
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Experience) CreateAllowClipboardHistory(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowClipboardHistory, client.Int(value))
+func (s *Experience) CreateAllowClipboardHistory(ctx context.Context, value AllowClipboardHistoryValue) error {
+	return s.c.Add(ctx, URIAllowClipboardHistory, client.Int(int64(value)))
 }
 
 // UpdateAllowClipboardHistory updates ./Device/Vendor/MSFT/Policy/Config/Experience/AllowClipboardHistory.
@@ -35,8 +36,8 @@ func (s *Experience) CreateAllowClipboardHistory(ctx context.Context, value int6
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Experience) UpdateAllowClipboardHistory(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowClipboardHistory, client.Int(value))
+func (s *Experience) UpdateAllowClipboardHistory(ctx context.Context, value AllowClipboardHistoryValue) error {
+	return s.c.Replace(ctx, URIAllowClipboardHistory, client.Int(int64(value)))
 }
 
 // DeleteAllowClipboardHistory deletes ./Device/Vendor/MSFT/Policy/Config/Experience/AllowClipboardHistory.
@@ -55,12 +56,13 @@ func (s *Experience) DeleteAllowClipboardHistory(ctx context.Context) error {
 // Supported from OS build 10.0.10240 (CSP v1.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Experience) GetAllowCopyPaste(ctx context.Context) (int64, error) {
+func (s *Experience) GetAllowCopyPaste(ctx context.Context) (AllowCopyPasteValue, error) {
 	v, err := s.c.Get(ctx, URIAllowCopyPaste)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowCopyPasteValue(n), err
 }
 
 // CreateAllowCopyPaste creates ./Device/Vendor/MSFT/Policy/Config/Experience/AllowCopyPaste.
@@ -70,8 +72,8 @@ func (s *Experience) GetAllowCopyPaste(ctx context.Context) (int64, error) {
 // Supported from OS build 10.0.10240 (CSP v1.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Experience) CreateAllowCopyPaste(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowCopyPaste, client.Int(value))
+func (s *Experience) CreateAllowCopyPaste(ctx context.Context, value AllowCopyPasteValue) error {
+	return s.c.Add(ctx, URIAllowCopyPaste, client.Int(int64(value)))
 }
 
 // UpdateAllowCopyPaste updates ./Device/Vendor/MSFT/Policy/Config/Experience/AllowCopyPaste.
@@ -81,8 +83,8 @@ func (s *Experience) CreateAllowCopyPaste(ctx context.Context, value int64) erro
 // Supported from OS build 10.0.10240 (CSP v1.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Experience) UpdateAllowCopyPaste(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowCopyPaste, client.Int(value))
+func (s *Experience) UpdateAllowCopyPaste(ctx context.Context, value AllowCopyPasteValue) error {
+	return s.c.Replace(ctx, URIAllowCopyPaste, client.Int(int64(value)))
 }
 
 // DeleteAllowCopyPaste deletes ./Device/Vendor/MSFT/Policy/Config/Experience/AllowCopyPaste.
@@ -104,12 +106,13 @@ func (s *Experience) DeleteAllowCopyPaste(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Experience) GetAllowCortana(ctx context.Context) (int64, error) {
+func (s *Experience) GetAllowCortana(ctx context.Context) (AllowCortanaValue, error) {
 	v, err := s.c.Get(ctx, URIAllowCortana)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowCortanaValue(n), err
 }
 
 // CreateAllowCortana creates ./Device/Vendor/MSFT/Policy/Config/Experience/AllowCortana.
@@ -120,8 +123,8 @@ func (s *Experience) GetAllowCortana(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Experience) CreateAllowCortana(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowCortana, client.Int(value))
+func (s *Experience) CreateAllowCortana(ctx context.Context, value AllowCortanaValue) error {
+	return s.c.Add(ctx, URIAllowCortana, client.Int(int64(value)))
 }
 
 // UpdateAllowCortana updates ./Device/Vendor/MSFT/Policy/Config/Experience/AllowCortana.
@@ -132,8 +135,8 @@ func (s *Experience) CreateAllowCortana(ctx context.Context, value int64) error 
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Experience) UpdateAllowCortana(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowCortana, client.Int(value))
+func (s *Experience) UpdateAllowCortana(ctx context.Context, value AllowCortanaValue) error {
+	return s.c.Replace(ctx, URIAllowCortana, client.Int(int64(value)))
 }
 
 // DeleteAllowCortana deletes ./Device/Vendor/MSFT/Policy/Config/Experience/AllowCortana.
@@ -154,12 +157,13 @@ func (s *Experience) DeleteAllowCortana(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Experience) GetAllowDeviceDiscovery(ctx context.Context) (int64, error) {
+func (s *Experience) GetAllowDeviceDiscovery(ctx context.Context) (AllowDeviceDiscoveryValue, error) {
 	v, err := s.c.Get(ctx, URIAllowDeviceDiscovery)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowDeviceDiscoveryValue(n), err
 }
 
 // CreateAllowDeviceDiscovery creates ./Device/Vendor/MSFT/Policy/Config/Experience/AllowDeviceDiscovery.
@@ -168,8 +172,8 @@ func (s *Experience) GetAllowDeviceDiscovery(ctx context.Context) (int64, error)
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Experience) CreateAllowDeviceDiscovery(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowDeviceDiscovery, client.Int(value))
+func (s *Experience) CreateAllowDeviceDiscovery(ctx context.Context, value AllowDeviceDiscoveryValue) error {
+	return s.c.Add(ctx, URIAllowDeviceDiscovery, client.Int(int64(value)))
 }
 
 // UpdateAllowDeviceDiscovery updates ./Device/Vendor/MSFT/Policy/Config/Experience/AllowDeviceDiscovery.
@@ -178,8 +182,8 @@ func (s *Experience) CreateAllowDeviceDiscovery(ctx context.Context, value int64
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Experience) UpdateAllowDeviceDiscovery(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowDeviceDiscovery, client.Int(value))
+func (s *Experience) UpdateAllowDeviceDiscovery(ctx context.Context, value AllowDeviceDiscoveryValue) error {
+	return s.c.Replace(ctx, URIAllowDeviceDiscovery, client.Int(int64(value)))
 }
 
 // DeleteAllowDeviceDiscovery deletes ./Device/Vendor/MSFT/Policy/Config/Experience/AllowDeviceDiscovery.
@@ -205,12 +209,13 @@ func (s *Experience) DeleteAllowDeviceDiscovery(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Experience) GetAllowFindMyDevice(ctx context.Context) (int64, error) {
+func (s *Experience) GetAllowFindMyDevice(ctx context.Context) (AllowFindMyDeviceValue, error) {
 	v, err := s.c.Get(ctx, URIAllowFindMyDevice)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowFindMyDeviceValue(n), err
 }
 
 // CreateAllowFindMyDevice creates ./Device/Vendor/MSFT/Policy/Config/Experience/AllowFindMyDevice.
@@ -226,8 +231,8 @@ func (s *Experience) GetAllowFindMyDevice(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Experience) CreateAllowFindMyDevice(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowFindMyDevice, client.Int(value))
+func (s *Experience) CreateAllowFindMyDevice(ctx context.Context, value AllowFindMyDeviceValue) error {
+	return s.c.Add(ctx, URIAllowFindMyDevice, client.Int(int64(value)))
 }
 
 // UpdateAllowFindMyDevice updates ./Device/Vendor/MSFT/Policy/Config/Experience/AllowFindMyDevice.
@@ -243,8 +248,8 @@ func (s *Experience) CreateAllowFindMyDevice(ctx context.Context, value int64) e
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Experience) UpdateAllowFindMyDevice(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowFindMyDevice, client.Int(value))
+func (s *Experience) UpdateAllowFindMyDevice(ctx context.Context, value AllowFindMyDeviceValue) error {
+	return s.c.Replace(ctx, URIAllowFindMyDevice, client.Int(int64(value)))
 }
 
 // DeleteAllowFindMyDevice deletes ./Device/Vendor/MSFT/Policy/Config/Experience/AllowFindMyDevice.
@@ -272,12 +277,13 @@ func (s *Experience) DeleteAllowFindMyDevice(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Experience) GetAllowManualMDMUnenrollment(ctx context.Context) (int64, error) {
+func (s *Experience) GetAllowManualMDMUnenrollment(ctx context.Context) (AllowManualMDMUnenrollmentValue, error) {
 	v, err := s.c.Get(ctx, URIAllowManualMDMUnenrollment)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowManualMDMUnenrollmentValue(n), err
 }
 
 // CreateAllowManualMDMUnenrollment creates ./Device/Vendor/MSFT/Policy/Config/Experience/AllowManualMDMUnenrollment.
@@ -288,8 +294,8 @@ func (s *Experience) GetAllowManualMDMUnenrollment(ctx context.Context) (int64, 
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Experience) CreateAllowManualMDMUnenrollment(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowManualMDMUnenrollment, client.Int(value))
+func (s *Experience) CreateAllowManualMDMUnenrollment(ctx context.Context, value AllowManualMDMUnenrollmentValue) error {
+	return s.c.Add(ctx, URIAllowManualMDMUnenrollment, client.Int(int64(value)))
 }
 
 // UpdateAllowManualMDMUnenrollment updates ./Device/Vendor/MSFT/Policy/Config/Experience/AllowManualMDMUnenrollment.
@@ -300,8 +306,8 @@ func (s *Experience) CreateAllowManualMDMUnenrollment(ctx context.Context, value
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Experience) UpdateAllowManualMDMUnenrollment(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowManualMDMUnenrollment, client.Int(value))
+func (s *Experience) UpdateAllowManualMDMUnenrollment(ctx context.Context, value AllowManualMDMUnenrollmentValue) error {
+	return s.c.Replace(ctx, URIAllowManualMDMUnenrollment, client.Int(int64(value)))
 }
 
 // DeleteAllowManualMDMUnenrollment deletes ./Device/Vendor/MSFT/Policy/Config/Experience/AllowManualMDMUnenrollment.
@@ -321,12 +327,13 @@ func (s *Experience) DeleteAllowManualMDMUnenrollment(ctx context.Context) error
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Experience) GetAllowSIMErrorDialogPromptWhenNoSIM(ctx context.Context) (int64, error) {
+func (s *Experience) GetAllowSIMErrorDialogPromptWhenNoSIM(ctx context.Context) (AllowSIMErrorDialogPromptWhenNoSIMValue, error) {
 	v, err := s.c.Get(ctx, URIAllowSIMErrorDialogPromptWhenNoSIM)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowSIMErrorDialogPromptWhenNoSIMValue(n), err
 }
 
 // CreateAllowSIMErrorDialogPromptWhenNoSIM creates ./Device/Vendor/MSFT/Policy/Config/Experience/AllowSIMErrorDialogPromptWhenNoSIM.
@@ -334,8 +341,8 @@ func (s *Experience) GetAllowSIMErrorDialogPromptWhenNoSIM(ctx context.Context) 
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Experience) CreateAllowSIMErrorDialogPromptWhenNoSIM(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowSIMErrorDialogPromptWhenNoSIM, client.Int(value))
+func (s *Experience) CreateAllowSIMErrorDialogPromptWhenNoSIM(ctx context.Context, value AllowSIMErrorDialogPromptWhenNoSIMValue) error {
+	return s.c.Add(ctx, URIAllowSIMErrorDialogPromptWhenNoSIM, client.Int(int64(value)))
 }
 
 // UpdateAllowSIMErrorDialogPromptWhenNoSIM updates ./Device/Vendor/MSFT/Policy/Config/Experience/AllowSIMErrorDialogPromptWhenNoSIM.
@@ -343,8 +350,8 @@ func (s *Experience) CreateAllowSIMErrorDialogPromptWhenNoSIM(ctx context.Contex
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Experience) UpdateAllowSIMErrorDialogPromptWhenNoSIM(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowSIMErrorDialogPromptWhenNoSIM, client.Int(value))
+func (s *Experience) UpdateAllowSIMErrorDialogPromptWhenNoSIM(ctx context.Context, value AllowSIMErrorDialogPromptWhenNoSIMValue) error {
+	return s.c.Replace(ctx, URIAllowSIMErrorDialogPromptWhenNoSIM, client.Int(int64(value)))
 }
 
 // DeleteAllowSIMErrorDialogPromptWhenNoSIM deletes ./Device/Vendor/MSFT/Policy/Config/Experience/AllowSIMErrorDialogPromptWhenNoSIM.
@@ -361,12 +368,13 @@ func (s *Experience) DeleteAllowSIMErrorDialogPromptWhenNoSIM(ctx context.Contex
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Experience) GetAllowSaveAsOfOfficeFiles(ctx context.Context) (int64, error) {
+func (s *Experience) GetAllowSaveAsOfOfficeFiles(ctx context.Context) (AllowSaveAsOfOfficeFilesValue, error) {
 	v, err := s.c.Get(ctx, URIAllowSaveAsOfOfficeFiles)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowSaveAsOfOfficeFilesValue(n), err
 }
 
 // CreateAllowSaveAsOfOfficeFiles creates ./Device/Vendor/MSFT/Policy/Config/Experience/AllowSaveAsOfOfficeFiles.
@@ -374,8 +382,8 @@ func (s *Experience) GetAllowSaveAsOfOfficeFiles(ctx context.Context) (int64, er
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Experience) CreateAllowSaveAsOfOfficeFiles(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowSaveAsOfOfficeFiles, client.Int(value))
+func (s *Experience) CreateAllowSaveAsOfOfficeFiles(ctx context.Context, value AllowSaveAsOfOfficeFilesValue) error {
+	return s.c.Add(ctx, URIAllowSaveAsOfOfficeFiles, client.Int(int64(value)))
 }
 
 // UpdateAllowSaveAsOfOfficeFiles updates ./Device/Vendor/MSFT/Policy/Config/Experience/AllowSaveAsOfOfficeFiles.
@@ -383,8 +391,8 @@ func (s *Experience) CreateAllowSaveAsOfOfficeFiles(ctx context.Context, value i
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Experience) UpdateAllowSaveAsOfOfficeFiles(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowSaveAsOfOfficeFiles, client.Int(value))
+func (s *Experience) UpdateAllowSaveAsOfOfficeFiles(ctx context.Context, value AllowSaveAsOfOfficeFilesValue) error {
+	return s.c.Replace(ctx, URIAllowSaveAsOfOfficeFiles, client.Int(int64(value)))
 }
 
 // DeleteAllowSaveAsOfOfficeFiles deletes ./Device/Vendor/MSFT/Policy/Config/Experience/AllowSaveAsOfOfficeFiles.
@@ -401,12 +409,13 @@ func (s *Experience) DeleteAllowSaveAsOfOfficeFiles(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Experience) GetAllowScreenCapture(ctx context.Context) (int64, error) {
+func (s *Experience) GetAllowScreenCapture(ctx context.Context) (AllowScreenCaptureValue, error) {
 	v, err := s.c.Get(ctx, URIAllowScreenCapture)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowScreenCaptureValue(n), err
 }
 
 // CreateAllowScreenCapture creates ./Device/Vendor/MSFT/Policy/Config/Experience/AllowScreenCapture.
@@ -414,8 +423,8 @@ func (s *Experience) GetAllowScreenCapture(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Experience) CreateAllowScreenCapture(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowScreenCapture, client.Int(value))
+func (s *Experience) CreateAllowScreenCapture(ctx context.Context, value AllowScreenCaptureValue) error {
+	return s.c.Add(ctx, URIAllowScreenCapture, client.Int(int64(value)))
 }
 
 // UpdateAllowScreenCapture updates ./Device/Vendor/MSFT/Policy/Config/Experience/AllowScreenCapture.
@@ -423,8 +432,8 @@ func (s *Experience) CreateAllowScreenCapture(ctx context.Context, value int64) 
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Experience) UpdateAllowScreenCapture(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowScreenCapture, client.Int(value))
+func (s *Experience) UpdateAllowScreenCapture(ctx context.Context, value AllowScreenCaptureValue) error {
+	return s.c.Replace(ctx, URIAllowScreenCapture, client.Int(int64(value)))
 }
 
 // DeleteAllowScreenCapture deletes ./Device/Vendor/MSFT/Policy/Config/Experience/AllowScreenCapture.
@@ -443,12 +452,13 @@ func (s *Experience) DeleteAllowScreenCapture(ctx context.Context) error {
 // Supported from OS build 10.0.14393 (CSP v4.1).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Experience) GetAllowSharingOfOfficeFiles(ctx context.Context) (int64, error) {
+func (s *Experience) GetAllowSharingOfOfficeFiles(ctx context.Context) (AllowSharingOfOfficeFilesValue, error) {
 	v, err := s.c.Get(ctx, URIAllowSharingOfOfficeFiles)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowSharingOfOfficeFilesValue(n), err
 }
 
 // CreateAllowSharingOfOfficeFiles creates ./Device/Vendor/MSFT/Policy/Config/Experience/AllowSharingOfOfficeFiles.
@@ -458,8 +468,8 @@ func (s *Experience) GetAllowSharingOfOfficeFiles(ctx context.Context) (int64, e
 // Supported from OS build 10.0.14393 (CSP v4.1).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Experience) CreateAllowSharingOfOfficeFiles(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowSharingOfOfficeFiles, client.Int(value))
+func (s *Experience) CreateAllowSharingOfOfficeFiles(ctx context.Context, value AllowSharingOfOfficeFilesValue) error {
+	return s.c.Add(ctx, URIAllowSharingOfOfficeFiles, client.Int(int64(value)))
 }
 
 // UpdateAllowSharingOfOfficeFiles updates ./Device/Vendor/MSFT/Policy/Config/Experience/AllowSharingOfOfficeFiles.
@@ -469,8 +479,8 @@ func (s *Experience) CreateAllowSharingOfOfficeFiles(ctx context.Context, value 
 // Supported from OS build 10.0.14393 (CSP v4.1).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Experience) UpdateAllowSharingOfOfficeFiles(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowSharingOfOfficeFiles, client.Int(value))
+func (s *Experience) UpdateAllowSharingOfOfficeFiles(ctx context.Context, value AllowSharingOfOfficeFilesValue) error {
+	return s.c.Replace(ctx, URIAllowSharingOfOfficeFiles, client.Int(int64(value)))
 }
 
 // DeleteAllowSharingOfOfficeFiles deletes ./Device/Vendor/MSFT/Policy/Config/Experience/AllowSharingOfOfficeFiles.
@@ -490,12 +500,13 @@ func (s *Experience) DeleteAllowSharingOfOfficeFiles(ctx context.Context) error 
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Experience) GetAllowSyncMySettings(ctx context.Context) (int64, error) {
+func (s *Experience) GetAllowSyncMySettings(ctx context.Context) (AllowSyncMySettingsValue, error) {
 	v, err := s.c.Get(ctx, URIAllowSyncMySettings)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowSyncMySettingsValue(n), err
 }
 
 // CreateAllowSyncMySettings creates ./Device/Vendor/MSFT/Policy/Config/Experience/AllowSyncMySettings.
@@ -504,8 +515,8 @@ func (s *Experience) GetAllowSyncMySettings(ctx context.Context) (int64, error) 
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Experience) CreateAllowSyncMySettings(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowSyncMySettings, client.Int(value))
+func (s *Experience) CreateAllowSyncMySettings(ctx context.Context, value AllowSyncMySettingsValue) error {
+	return s.c.Add(ctx, URIAllowSyncMySettings, client.Int(int64(value)))
 }
 
 // UpdateAllowSyncMySettings updates ./Device/Vendor/MSFT/Policy/Config/Experience/AllowSyncMySettings.
@@ -514,8 +525,8 @@ func (s *Experience) CreateAllowSyncMySettings(ctx context.Context, value int64)
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Experience) UpdateAllowSyncMySettings(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowSyncMySettings, client.Int(value))
+func (s *Experience) UpdateAllowSyncMySettings(ctx context.Context, value AllowSyncMySettingsValue) error {
+	return s.c.Replace(ctx, URIAllowSyncMySettings, client.Int(int64(value)))
 }
 
 // DeleteAllowSyncMySettings deletes ./Device/Vendor/MSFT/Policy/Config/Experience/AllowSyncMySettings.
@@ -535,12 +546,13 @@ func (s *Experience) DeleteAllowSyncMySettings(ctx context.Context) error {
 // Supported from OS build 10.0.10240 (CSP v1.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Experience) GetAllowTaskSwitcher(ctx context.Context) (int64, error) {
+func (s *Experience) GetAllowTaskSwitcher(ctx context.Context) (AllowTaskSwitcherValue, error) {
 	v, err := s.c.Get(ctx, URIAllowTaskSwitcher)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowTaskSwitcherValue(n), err
 }
 
 // CreateAllowTaskSwitcher creates ./Device/Vendor/MSFT/Policy/Config/Experience/AllowTaskSwitcher.
@@ -550,8 +562,8 @@ func (s *Experience) GetAllowTaskSwitcher(ctx context.Context) (int64, error) {
 // Supported from OS build 10.0.10240 (CSP v1.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Experience) CreateAllowTaskSwitcher(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowTaskSwitcher, client.Int(value))
+func (s *Experience) CreateAllowTaskSwitcher(ctx context.Context, value AllowTaskSwitcherValue) error {
+	return s.c.Add(ctx, URIAllowTaskSwitcher, client.Int(int64(value)))
 }
 
 // UpdateAllowTaskSwitcher updates ./Device/Vendor/MSFT/Policy/Config/Experience/AllowTaskSwitcher.
@@ -561,8 +573,8 @@ func (s *Experience) CreateAllowTaskSwitcher(ctx context.Context, value int64) e
 // Supported from OS build 10.0.10240 (CSP v1.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Experience) UpdateAllowTaskSwitcher(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowTaskSwitcher, client.Int(value))
+func (s *Experience) UpdateAllowTaskSwitcher(ctx context.Context, value AllowTaskSwitcherValue) error {
+	return s.c.Replace(ctx, URIAllowTaskSwitcher, client.Int(int64(value)))
 }
 
 // DeleteAllowTaskSwitcher deletes ./Device/Vendor/MSFT/Policy/Config/Experience/AllowTaskSwitcher.
@@ -583,12 +595,13 @@ func (s *Experience) DeleteAllowTaskSwitcher(ctx context.Context) error {
 // Supported from OS build 10.0.10240 (CSP v1.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Experience) GetAllowVoiceRecording(ctx context.Context) (int64, error) {
+func (s *Experience) GetAllowVoiceRecording(ctx context.Context) (AllowVoiceRecordingValue, error) {
 	v, err := s.c.Get(ctx, URIAllowVoiceRecording)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowVoiceRecordingValue(n), err
 }
 
 // CreateAllowVoiceRecording creates ./Device/Vendor/MSFT/Policy/Config/Experience/AllowVoiceRecording.
@@ -598,8 +611,8 @@ func (s *Experience) GetAllowVoiceRecording(ctx context.Context) (int64, error) 
 // Supported from OS build 10.0.10240 (CSP v1.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Experience) CreateAllowVoiceRecording(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowVoiceRecording, client.Int(value))
+func (s *Experience) CreateAllowVoiceRecording(ctx context.Context, value AllowVoiceRecordingValue) error {
+	return s.c.Add(ctx, URIAllowVoiceRecording, client.Int(int64(value)))
 }
 
 // UpdateAllowVoiceRecording updates ./Device/Vendor/MSFT/Policy/Config/Experience/AllowVoiceRecording.
@@ -609,8 +622,8 @@ func (s *Experience) CreateAllowVoiceRecording(ctx context.Context, value int64)
 // Supported from OS build 10.0.10240 (CSP v1.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Experience) UpdateAllowVoiceRecording(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowVoiceRecording, client.Int(value))
+func (s *Experience) UpdateAllowVoiceRecording(ctx context.Context, value AllowVoiceRecordingValue) error {
+	return s.c.Replace(ctx, URIAllowVoiceRecording, client.Int(int64(value)))
 }
 
 // DeleteAllowVoiceRecording deletes ./Device/Vendor/MSFT/Policy/Config/Experience/AllowVoiceRecording.
@@ -631,12 +644,13 @@ func (s *Experience) DeleteAllowVoiceRecording(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Experience) GetAllowWindowsConsumerFeatures(ctx context.Context) (int64, error) {
+func (s *Experience) GetAllowWindowsConsumerFeatures(ctx context.Context) (AllowWindowsConsumerFeaturesValue, error) {
 	v, err := s.c.Get(ctx, URIAllowWindowsConsumerFeatures)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowWindowsConsumerFeaturesValue(n), err
 }
 
 // CreateAllowWindowsConsumerFeatures creates ./Device/Vendor/MSFT/Policy/Config/Experience/AllowWindowsConsumerFeatures.
@@ -646,8 +660,8 @@ func (s *Experience) GetAllowWindowsConsumerFeatures(ctx context.Context) (int64
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Experience) CreateAllowWindowsConsumerFeatures(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowWindowsConsumerFeatures, client.Int(value))
+func (s *Experience) CreateAllowWindowsConsumerFeatures(ctx context.Context, value AllowWindowsConsumerFeaturesValue) error {
+	return s.c.Add(ctx, URIAllowWindowsConsumerFeatures, client.Int(int64(value)))
 }
 
 // UpdateAllowWindowsConsumerFeatures updates ./Device/Vendor/MSFT/Policy/Config/Experience/AllowWindowsConsumerFeatures.
@@ -657,8 +671,8 @@ func (s *Experience) CreateAllowWindowsConsumerFeatures(ctx context.Context, val
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Experience) UpdateAllowWindowsConsumerFeatures(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowWindowsConsumerFeatures, client.Int(value))
+func (s *Experience) UpdateAllowWindowsConsumerFeatures(ctx context.Context, value AllowWindowsConsumerFeaturesValue) error {
+	return s.c.Replace(ctx, URIAllowWindowsConsumerFeatures, client.Int(int64(value)))
 }
 
 // DeleteAllowWindowsConsumerFeatures deletes ./Device/Vendor/MSFT/Policy/Config/Experience/AllowWindowsConsumerFeatures.
@@ -677,12 +691,13 @@ func (s *Experience) DeleteAllowWindowsConsumerFeatures(ctx context.Context) err
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Experience) GetAllowWindowsTips(ctx context.Context) (int64, error) {
+func (s *Experience) GetAllowWindowsTips(ctx context.Context) (AllowWindowsTipsValue, error) {
 	v, err := s.c.Get(ctx, URIAllowWindowsTips)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowWindowsTipsValue(n), err
 }
 
 // CreateAllowWindowsTips creates ./Device/Vendor/MSFT/Policy/Config/Experience/AllowWindowsTips.
@@ -690,8 +705,8 @@ func (s *Experience) GetAllowWindowsTips(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Experience) CreateAllowWindowsTips(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowWindowsTips, client.Int(value))
+func (s *Experience) CreateAllowWindowsTips(ctx context.Context, value AllowWindowsTipsValue) error {
+	return s.c.Add(ctx, URIAllowWindowsTips, client.Int(int64(value)))
 }
 
 // UpdateAllowWindowsTips updates ./Device/Vendor/MSFT/Policy/Config/Experience/AllowWindowsTips.
@@ -699,8 +714,8 @@ func (s *Experience) CreateAllowWindowsTips(ctx context.Context, value int64) er
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Experience) UpdateAllowWindowsTips(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowWindowsTips, client.Int(value))
+func (s *Experience) UpdateAllowWindowsTips(ctx context.Context, value AllowWindowsTipsValue) error {
+	return s.c.Replace(ctx, URIAllowWindowsTips, client.Int(int64(value)))
 }
 
 // DeleteAllowWindowsTips deletes ./Device/Vendor/MSFT/Policy/Config/Experience/AllowWindowsTips.
@@ -719,12 +734,13 @@ func (s *Experience) DeleteAllowWindowsTips(ctx context.Context) error {
 // Supported from OS build 10.0.22000 (CSP v11.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22631.2361.
-func (s *Experience) GetConfigureChatIcon(ctx context.Context) (int64, error) {
+func (s *Experience) GetConfigureChatIcon(ctx context.Context) (ConfigureChatIconValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureChatIcon)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureChatIconValue(n), err
 }
 
 // CreateConfigureChatIcon creates ./Device/Vendor/MSFT/Policy/Config/Experience/ConfigureChatIcon.
@@ -734,8 +750,8 @@ func (s *Experience) GetConfigureChatIcon(ctx context.Context) (int64, error) {
 // Supported from OS build 10.0.22000 (CSP v11.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22631.2361.
-func (s *Experience) CreateConfigureChatIcon(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureChatIcon, client.Int(value))
+func (s *Experience) CreateConfigureChatIcon(ctx context.Context, value ConfigureChatIconValue) error {
+	return s.c.Add(ctx, URIConfigureChatIcon, client.Int(int64(value)))
 }
 
 // UpdateConfigureChatIcon updates ./Device/Vendor/MSFT/Policy/Config/Experience/ConfigureChatIcon.
@@ -745,8 +761,8 @@ func (s *Experience) CreateConfigureChatIcon(ctx context.Context, value int64) e
 // Supported from OS build 10.0.22000 (CSP v11.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22631.2361.
-func (s *Experience) UpdateConfigureChatIcon(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureChatIcon, client.Int(value))
+func (s *Experience) UpdateConfigureChatIcon(ctx context.Context, value ConfigureChatIconValue) error {
+	return s.c.Replace(ctx, URIConfigureChatIcon, client.Int(int64(value)))
 }
 
 // DeleteConfigureChatIcon deletes ./Device/Vendor/MSFT/Policy/Config/Experience/ConfigureChatIcon.
@@ -767,12 +783,13 @@ func (s *Experience) DeleteConfigureChatIcon(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *Experience) GetDisableCloudOptimizedContent(ctx context.Context) (int64, error) {
+func (s *Experience) GetDisableCloudOptimizedContent(ctx context.Context) (DisableCloudOptimizedContentValue, error) {
 	v, err := s.c.Get(ctx, URIDisableCloudOptimizedContent)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableCloudOptimizedContentValue(n), err
 }
 
 // CreateDisableCloudOptimizedContent creates ./Device/Vendor/MSFT/Policy/Config/Experience/DisableCloudOptimizedContent.
@@ -782,8 +799,8 @@ func (s *Experience) GetDisableCloudOptimizedContent(ctx context.Context) (int64
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *Experience) CreateDisableCloudOptimizedContent(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableCloudOptimizedContent, client.Int(value))
+func (s *Experience) CreateDisableCloudOptimizedContent(ctx context.Context, value DisableCloudOptimizedContentValue) error {
+	return s.c.Add(ctx, URIDisableCloudOptimizedContent, client.Int(int64(value)))
 }
 
 // UpdateDisableCloudOptimizedContent updates ./Device/Vendor/MSFT/Policy/Config/Experience/DisableCloudOptimizedContent.
@@ -793,8 +810,8 @@ func (s *Experience) CreateDisableCloudOptimizedContent(ctx context.Context, val
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *Experience) UpdateDisableCloudOptimizedContent(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableCloudOptimizedContent, client.Int(value))
+func (s *Experience) UpdateDisableCloudOptimizedContent(ctx context.Context, value DisableCloudOptimizedContentValue) error {
+	return s.c.Replace(ctx, URIDisableCloudOptimizedContent, client.Int(int64(value)))
 }
 
 // DeleteDisableCloudOptimizedContent deletes ./Device/Vendor/MSFT/Policy/Config/Experience/DisableCloudOptimizedContent.
@@ -815,12 +832,13 @@ func (s *Experience) DeleteDisableCloudOptimizedContent(ctx context.Context) err
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *Experience) GetDisableConsumerAccountStateContent(ctx context.Context) (int64, error) {
+func (s *Experience) GetDisableConsumerAccountStateContent(ctx context.Context) (DisableConsumerAccountStateContentValue, error) {
 	v, err := s.c.Get(ctx, URIDisableConsumerAccountStateContent)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableConsumerAccountStateContentValue(n), err
 }
 
 // CreateDisableConsumerAccountStateContent creates ./Device/Vendor/MSFT/Policy/Config/Experience/DisableConsumerAccountStateContent.
@@ -830,8 +848,8 @@ func (s *Experience) GetDisableConsumerAccountStateContent(ctx context.Context) 
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *Experience) CreateDisableConsumerAccountStateContent(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableConsumerAccountStateContent, client.Int(value))
+func (s *Experience) CreateDisableConsumerAccountStateContent(ctx context.Context, value DisableConsumerAccountStateContentValue) error {
+	return s.c.Add(ctx, URIDisableConsumerAccountStateContent, client.Int(int64(value)))
 }
 
 // UpdateDisableConsumerAccountStateContent updates ./Device/Vendor/MSFT/Policy/Config/Experience/DisableConsumerAccountStateContent.
@@ -841,8 +859,8 @@ func (s *Experience) CreateDisableConsumerAccountStateContent(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *Experience) UpdateDisableConsumerAccountStateContent(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableConsumerAccountStateContent, client.Int(value))
+func (s *Experience) UpdateDisableConsumerAccountStateContent(ctx context.Context, value DisableConsumerAccountStateContentValue) error {
+	return s.c.Replace(ctx, URIDisableConsumerAccountStateContent, client.Int(int64(value)))
 }
 
 // DeleteDisableConsumerAccountStateContent deletes ./Device/Vendor/MSFT/Policy/Config/Experience/DisableConsumerAccountStateContent.
@@ -864,12 +882,13 @@ func (s *Experience) DeleteDisableConsumerAccountStateContent(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Experience) GetDisableInlineCompose(ctx context.Context) (int64, error) {
+func (s *Experience) GetDisableInlineCompose(ctx context.Context) (DisableInlineComposeValue, error) {
 	v, err := s.c.Get(ctx, URIDisableInlineCompose)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableInlineComposeValue(n), err
 }
 
 // CreateDisableInlineCompose creates ./Device/Vendor/MSFT/Policy/Config/Experience/DisableInlineCompose.
@@ -880,8 +899,8 @@ func (s *Experience) GetDisableInlineCompose(ctx context.Context) (int64, error)
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Experience) CreateDisableInlineCompose(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableInlineCompose, client.Int(value))
+func (s *Experience) CreateDisableInlineCompose(ctx context.Context, value DisableInlineComposeValue) error {
+	return s.c.Add(ctx, URIDisableInlineCompose, client.Int(int64(value)))
 }
 
 // UpdateDisableInlineCompose updates ./Device/Vendor/MSFT/Policy/Config/Experience/DisableInlineCompose.
@@ -892,8 +911,8 @@ func (s *Experience) CreateDisableInlineCompose(ctx context.Context, value int64
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Experience) UpdateDisableInlineCompose(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableInlineCompose, client.Int(value))
+func (s *Experience) UpdateDisableInlineCompose(ctx context.Context, value DisableInlineComposeValue) error {
+	return s.c.Replace(ctx, URIDisableInlineCompose, client.Int(int64(value)))
 }
 
 // DeleteDisableInlineCompose deletes ./Device/Vendor/MSFT/Policy/Config/Experience/DisableInlineCompose.
@@ -916,12 +935,13 @@ func (s *Experience) DeleteDisableInlineCompose(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *Experience) GetDisableShareAppPromotions(ctx context.Context) (int64, error) {
+func (s *Experience) GetDisableShareAppPromotions(ctx context.Context) (DisableShareAppPromotionsValue, error) {
 	v, err := s.c.Get(ctx, URIDisableShareAppPromotions)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableShareAppPromotionsValue(n), err
 }
 
 // CreateDisableShareAppPromotions creates ./Device/Vendor/MSFT/Policy/Config/Experience/DisableShareAppPromotions.
@@ -932,8 +952,8 @@ func (s *Experience) GetDisableShareAppPromotions(ctx context.Context) (int64, e
 //
 // Default: 0.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *Experience) CreateDisableShareAppPromotions(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableShareAppPromotions, client.Int(value))
+func (s *Experience) CreateDisableShareAppPromotions(ctx context.Context, value DisableShareAppPromotionsValue) error {
+	return s.c.Add(ctx, URIDisableShareAppPromotions, client.Int(int64(value)))
 }
 
 // UpdateDisableShareAppPromotions updates ./Device/Vendor/MSFT/Policy/Config/Experience/DisableShareAppPromotions.
@@ -944,8 +964,8 @@ func (s *Experience) CreateDisableShareAppPromotions(ctx context.Context, value 
 //
 // Default: 0.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *Experience) UpdateDisableShareAppPromotions(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableShareAppPromotions, client.Int(value))
+func (s *Experience) UpdateDisableShareAppPromotions(ctx context.Context, value DisableShareAppPromotionsValue) error {
+	return s.c.Replace(ctx, URIDisableShareAppPromotions, client.Int(int64(value)))
 }
 
 // DeleteDisableShareAppPromotions deletes ./Device/Vendor/MSFT/Policy/Config/Experience/DisableShareAppPromotions.
@@ -965,12 +985,13 @@ func (s *Experience) DeleteDisableShareAppPromotions(ctx context.Context) error 
 //
 // Default: 0.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *Experience) GetDisableTextTranslation(ctx context.Context) (int64, error) {
+func (s *Experience) GetDisableTextTranslation(ctx context.Context) (DisableTextTranslationValue, error) {
 	v, err := s.c.Get(ctx, URIDisableTextTranslation)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableTextTranslationValue(n), err
 }
 
 // CreateDisableTextTranslation creates ./Device/Vendor/MSFT/Policy/Config/Experience/DisableTextTranslation.
@@ -978,8 +999,8 @@ func (s *Experience) GetDisableTextTranslation(ctx context.Context) (int64, erro
 //
 // Default: 0.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *Experience) CreateDisableTextTranslation(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableTextTranslation, client.Int(value))
+func (s *Experience) CreateDisableTextTranslation(ctx context.Context, value DisableTextTranslationValue) error {
+	return s.c.Add(ctx, URIDisableTextTranslation, client.Int(int64(value)))
 }
 
 // UpdateDisableTextTranslation updates ./Device/Vendor/MSFT/Policy/Config/Experience/DisableTextTranslation.
@@ -987,8 +1008,8 @@ func (s *Experience) CreateDisableTextTranslation(ctx context.Context, value int
 //
 // Default: 0.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *Experience) UpdateDisableTextTranslation(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableTextTranslation, client.Int(value))
+func (s *Experience) UpdateDisableTextTranslation(ctx context.Context, value DisableTextTranslationValue) error {
+	return s.c.Replace(ctx, URIDisableTextTranslation, client.Int(int64(value)))
 }
 
 // DeleteDisableTextTranslation deletes ./Device/Vendor/MSFT/Policy/Config/Experience/DisableTextTranslation.
@@ -1009,12 +1030,13 @@ func (s *Experience) DeleteDisableTextTranslation(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Experience) GetDoNotShowFeedbackNotifications(ctx context.Context) (int64, error) {
+func (s *Experience) GetDoNotShowFeedbackNotifications(ctx context.Context) (DoNotShowFeedbackNotificationsValue, error) {
 	v, err := s.c.Get(ctx, URIDoNotShowFeedbackNotifications)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DoNotShowFeedbackNotificationsValue(n), err
 }
 
 // CreateDoNotShowFeedbackNotifications creates ./Device/Vendor/MSFT/Policy/Config/Experience/DoNotShowFeedbackNotifications.
@@ -1026,8 +1048,8 @@ func (s *Experience) GetDoNotShowFeedbackNotifications(ctx context.Context) (int
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Experience) CreateDoNotShowFeedbackNotifications(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDoNotShowFeedbackNotifications, client.Int(value))
+func (s *Experience) CreateDoNotShowFeedbackNotifications(ctx context.Context, value DoNotShowFeedbackNotificationsValue) error {
+	return s.c.Add(ctx, URIDoNotShowFeedbackNotifications, client.Int(int64(value)))
 }
 
 // UpdateDoNotShowFeedbackNotifications updates ./Device/Vendor/MSFT/Policy/Config/Experience/DoNotShowFeedbackNotifications.
@@ -1039,8 +1061,8 @@ func (s *Experience) CreateDoNotShowFeedbackNotifications(ctx context.Context, v
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Experience) UpdateDoNotShowFeedbackNotifications(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDoNotShowFeedbackNotifications, client.Int(value))
+func (s *Experience) UpdateDoNotShowFeedbackNotifications(ctx context.Context, value DoNotShowFeedbackNotificationsValue) error {
+	return s.c.Replace(ctx, URIDoNotShowFeedbackNotifications, client.Int(int64(value)))
 }
 
 // DeleteDoNotShowFeedbackNotifications deletes ./Device/Vendor/MSFT/Policy/Config/Experience/DoNotShowFeedbackNotifications.
@@ -1067,12 +1089,13 @@ func (s *Experience) DeleteDoNotShowFeedbackNotifications(ctx context.Context) e
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Experience) GetDoNotSyncBrowserSettings(ctx context.Context) (int64, error) {
+func (s *Experience) GetDoNotSyncBrowserSettings(ctx context.Context) (DoNotSyncBrowserSettingsValue, error) {
 	v, err := s.c.Get(ctx, URIDoNotSyncBrowserSettings)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DoNotSyncBrowserSettingsValue(n), err
 }
 
 // CreateDoNotSyncBrowserSettings creates ./Device/Vendor/MSFT/Policy/Config/Experience/DoNotSyncBrowserSettings.
@@ -1086,8 +1109,8 @@ func (s *Experience) GetDoNotSyncBrowserSettings(ctx context.Context) (int64, er
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Experience) CreateDoNotSyncBrowserSettings(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDoNotSyncBrowserSettings, client.Int(value))
+func (s *Experience) CreateDoNotSyncBrowserSettings(ctx context.Context, value DoNotSyncBrowserSettingsValue) error {
+	return s.c.Add(ctx, URIDoNotSyncBrowserSettings, client.Int(int64(value)))
 }
 
 // UpdateDoNotSyncBrowserSettings updates ./Device/Vendor/MSFT/Policy/Config/Experience/DoNotSyncBrowserSettings.
@@ -1101,8 +1124,8 @@ func (s *Experience) CreateDoNotSyncBrowserSettings(ctx context.Context, value i
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Experience) UpdateDoNotSyncBrowserSettings(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDoNotSyncBrowserSettings, client.Int(value))
+func (s *Experience) UpdateDoNotSyncBrowserSettings(ctx context.Context, value DoNotSyncBrowserSettingsValue) error {
+	return s.c.Replace(ctx, URIDoNotSyncBrowserSettings, client.Int(int64(value)))
 }
 
 // DeleteDoNotSyncBrowserSettings deletes ./Device/Vendor/MSFT/Policy/Config/Experience/DoNotSyncBrowserSettings.
@@ -1129,12 +1152,13 @@ func (s *Experience) DeleteDoNotSyncBrowserSettings(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Experience) GetPreventUsersFromTurningOnBrowserSyncing(ctx context.Context) (int64, error) {
+func (s *Experience) GetPreventUsersFromTurningOnBrowserSyncing(ctx context.Context) (PreventUsersFromTurningOnBrowserSyncingValue, error) {
 	v, err := s.c.Get(ctx, URIPreventUsersFromTurningOnBrowserSyncing)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PreventUsersFromTurningOnBrowserSyncingValue(n), err
 }
 
 // CreatePreventUsersFromTurningOnBrowserSyncing creates ./Device/Vendor/MSFT/Policy/Config/Experience/PreventUsersFromTurningOnBrowserSyncing.
@@ -1146,8 +1170,8 @@ func (s *Experience) GetPreventUsersFromTurningOnBrowserSyncing(ctx context.Cont
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Experience) CreatePreventUsersFromTurningOnBrowserSyncing(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPreventUsersFromTurningOnBrowserSyncing, client.Int(value))
+func (s *Experience) CreatePreventUsersFromTurningOnBrowserSyncing(ctx context.Context, value PreventUsersFromTurningOnBrowserSyncingValue) error {
+	return s.c.Add(ctx, URIPreventUsersFromTurningOnBrowserSyncing, client.Int(int64(value)))
 }
 
 // UpdatePreventUsersFromTurningOnBrowserSyncing updates ./Device/Vendor/MSFT/Policy/Config/Experience/PreventUsersFromTurningOnBrowserSyncing.
@@ -1159,8 +1183,8 @@ func (s *Experience) CreatePreventUsersFromTurningOnBrowserSyncing(ctx context.C
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Experience) UpdatePreventUsersFromTurningOnBrowserSyncing(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPreventUsersFromTurningOnBrowserSyncing, client.Int(value))
+func (s *Experience) UpdatePreventUsersFromTurningOnBrowserSyncing(ctx context.Context, value PreventUsersFromTurningOnBrowserSyncingValue) error {
+	return s.c.Replace(ctx, URIPreventUsersFromTurningOnBrowserSyncing, client.Int(int64(value)))
 }
 
 // DeletePreventUsersFromTurningOnBrowserSyncing deletes ./Device/Vendor/MSFT/Policy/Config/Experience/PreventUsersFromTurningOnBrowserSyncing.
@@ -1184,12 +1208,13 @@ func (s *Experience) DeletePreventUsersFromTurningOnBrowserSyncing(ctx context.C
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Experience) GetShowLockOnUserTile(ctx context.Context) (int64, error) {
+func (s *Experience) GetShowLockOnUserTile(ctx context.Context) (ShowLockOnUserTileValue, error) {
 	v, err := s.c.Get(ctx, URIShowLockOnUserTile)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ShowLockOnUserTileValue(n), err
 }
 
 // CreateShowLockOnUserTile creates ./Device/Vendor/MSFT/Policy/Config/Experience/ShowLockOnUserTile.
@@ -1200,8 +1225,8 @@ func (s *Experience) GetShowLockOnUserTile(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Experience) CreateShowLockOnUserTile(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIShowLockOnUserTile, client.Int(value))
+func (s *Experience) CreateShowLockOnUserTile(ctx context.Context, value ShowLockOnUserTileValue) error {
+	return s.c.Add(ctx, URIShowLockOnUserTile, client.Int(int64(value)))
 }
 
 // UpdateShowLockOnUserTile updates ./Device/Vendor/MSFT/Policy/Config/Experience/ShowLockOnUserTile.
@@ -1212,8 +1237,8 @@ func (s *Experience) CreateShowLockOnUserTile(ctx context.Context, value int64) 
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Experience) UpdateShowLockOnUserTile(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIShowLockOnUserTile, client.Int(value))
+func (s *Experience) UpdateShowLockOnUserTile(ctx context.Context, value ShowLockOnUserTileValue) error {
+	return s.c.Replace(ctx, URIShowLockOnUserTile, client.Int(int64(value)))
 }
 
 // DeleteShowLockOnUserTile deletes ./Device/Vendor/MSFT/Policy/Config/Experience/ShowLockOnUserTile.

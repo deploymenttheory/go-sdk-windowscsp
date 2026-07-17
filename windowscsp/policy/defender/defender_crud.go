@@ -13,12 +13,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Defender) GetAllowArchiveScanning(ctx context.Context) (int64, error) {
+func (s *Defender) GetAllowArchiveScanning(ctx context.Context) (AllowArchiveScanningValue, error) {
 	v, err := s.c.Get(ctx, URIAllowArchiveScanning)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowArchiveScanningValue(n), err
 }
 
 // CreateAllowArchiveScanning creates ./Device/Vendor/MSFT/Policy/Config/Defender/AllowArchiveScanning.
@@ -26,8 +27,8 @@ func (s *Defender) GetAllowArchiveScanning(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Defender) CreateAllowArchiveScanning(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowArchiveScanning, client.Int(value))
+func (s *Defender) CreateAllowArchiveScanning(ctx context.Context, value AllowArchiveScanningValue) error {
+	return s.c.Add(ctx, URIAllowArchiveScanning, client.Int(int64(value)))
 }
 
 // UpdateAllowArchiveScanning updates ./Device/Vendor/MSFT/Policy/Config/Defender/AllowArchiveScanning.
@@ -35,8 +36,8 @@ func (s *Defender) CreateAllowArchiveScanning(ctx context.Context, value int64) 
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Defender) UpdateAllowArchiveScanning(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowArchiveScanning, client.Int(value))
+func (s *Defender) UpdateAllowArchiveScanning(ctx context.Context, value AllowArchiveScanningValue) error {
+	return s.c.Replace(ctx, URIAllowArchiveScanning, client.Int(int64(value)))
 }
 
 // DeleteAllowArchiveScanning deletes ./Device/Vendor/MSFT/Policy/Config/Defender/AllowArchiveScanning.
@@ -53,12 +54,13 @@ func (s *Defender) DeleteAllowArchiveScanning(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Defender) GetAllowBehaviorMonitoring(ctx context.Context) (int64, error) {
+func (s *Defender) GetAllowBehaviorMonitoring(ctx context.Context) (AllowBehaviorMonitoringValue, error) {
 	v, err := s.c.Get(ctx, URIAllowBehaviorMonitoring)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowBehaviorMonitoringValue(n), err
 }
 
 // CreateAllowBehaviorMonitoring creates ./Device/Vendor/MSFT/Policy/Config/Defender/AllowBehaviorMonitoring.
@@ -66,8 +68,8 @@ func (s *Defender) GetAllowBehaviorMonitoring(ctx context.Context) (int64, error
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Defender) CreateAllowBehaviorMonitoring(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowBehaviorMonitoring, client.Int(value))
+func (s *Defender) CreateAllowBehaviorMonitoring(ctx context.Context, value AllowBehaviorMonitoringValue) error {
+	return s.c.Add(ctx, URIAllowBehaviorMonitoring, client.Int(int64(value)))
 }
 
 // UpdateAllowBehaviorMonitoring updates ./Device/Vendor/MSFT/Policy/Config/Defender/AllowBehaviorMonitoring.
@@ -75,8 +77,8 @@ func (s *Defender) CreateAllowBehaviorMonitoring(ctx context.Context, value int6
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Defender) UpdateAllowBehaviorMonitoring(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowBehaviorMonitoring, client.Int(value))
+func (s *Defender) UpdateAllowBehaviorMonitoring(ctx context.Context, value AllowBehaviorMonitoringValue) error {
+	return s.c.Replace(ctx, URIAllowBehaviorMonitoring, client.Int(int64(value)))
 }
 
 // DeleteAllowBehaviorMonitoring deletes ./Device/Vendor/MSFT/Policy/Config/Defender/AllowBehaviorMonitoring.
@@ -95,12 +97,13 @@ func (s *Defender) DeleteAllowBehaviorMonitoring(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Defender) GetAllowCloudProtection(ctx context.Context) (int64, error) {
+func (s *Defender) GetAllowCloudProtection(ctx context.Context) (AllowCloudProtectionValue, error) {
 	v, err := s.c.Get(ctx, URIAllowCloudProtection)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowCloudProtectionValue(n), err
 }
 
 // CreateAllowCloudProtection creates ./Device/Vendor/MSFT/Policy/Config/Defender/AllowCloudProtection.
@@ -110,8 +113,8 @@ func (s *Defender) GetAllowCloudProtection(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Defender) CreateAllowCloudProtection(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowCloudProtection, client.Int(value))
+func (s *Defender) CreateAllowCloudProtection(ctx context.Context, value AllowCloudProtectionValue) error {
+	return s.c.Add(ctx, URIAllowCloudProtection, client.Int(int64(value)))
 }
 
 // UpdateAllowCloudProtection updates ./Device/Vendor/MSFT/Policy/Config/Defender/AllowCloudProtection.
@@ -121,8 +124,8 @@ func (s *Defender) CreateAllowCloudProtection(ctx context.Context, value int64) 
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Defender) UpdateAllowCloudProtection(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowCloudProtection, client.Int(value))
+func (s *Defender) UpdateAllowCloudProtection(ctx context.Context, value AllowCloudProtectionValue) error {
+	return s.c.Replace(ctx, URIAllowCloudProtection, client.Int(int64(value)))
 }
 
 // DeleteAllowCloudProtection deletes ./Device/Vendor/MSFT/Policy/Config/Defender/AllowCloudProtection.
@@ -141,12 +144,13 @@ func (s *Defender) DeleteAllowCloudProtection(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Defender) GetAllowEmailScanning(ctx context.Context) (int64, error) {
+func (s *Defender) GetAllowEmailScanning(ctx context.Context) (AllowEmailScanningValue, error) {
 	v, err := s.c.Get(ctx, URIAllowEmailScanning)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowEmailScanningValue(n), err
 }
 
 // CreateAllowEmailScanning creates ./Device/Vendor/MSFT/Policy/Config/Defender/AllowEmailScanning.
@@ -154,8 +158,8 @@ func (s *Defender) GetAllowEmailScanning(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Defender) CreateAllowEmailScanning(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowEmailScanning, client.Int(value))
+func (s *Defender) CreateAllowEmailScanning(ctx context.Context, value AllowEmailScanningValue) error {
+	return s.c.Add(ctx, URIAllowEmailScanning, client.Int(int64(value)))
 }
 
 // UpdateAllowEmailScanning updates ./Device/Vendor/MSFT/Policy/Config/Defender/AllowEmailScanning.
@@ -163,8 +167,8 @@ func (s *Defender) CreateAllowEmailScanning(ctx context.Context, value int64) er
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Defender) UpdateAllowEmailScanning(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowEmailScanning, client.Int(value))
+func (s *Defender) UpdateAllowEmailScanning(ctx context.Context, value AllowEmailScanningValue) error {
+	return s.c.Replace(ctx, URIAllowEmailScanning, client.Int(int64(value)))
 }
 
 // DeleteAllowEmailScanning deletes ./Device/Vendor/MSFT/Policy/Config/Defender/AllowEmailScanning.
@@ -181,12 +185,13 @@ func (s *Defender) DeleteAllowEmailScanning(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Defender) GetAllowFullScanOnMappedNetworkDrives(ctx context.Context) (int64, error) {
+func (s *Defender) GetAllowFullScanOnMappedNetworkDrives(ctx context.Context) (AllowFullScanOnMappedNetworkDrivesValue, error) {
 	v, err := s.c.Get(ctx, URIAllowFullScanOnMappedNetworkDrives)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowFullScanOnMappedNetworkDrivesValue(n), err
 }
 
 // CreateAllowFullScanOnMappedNetworkDrives creates ./Device/Vendor/MSFT/Policy/Config/Defender/AllowFullScanOnMappedNetworkDrives.
@@ -194,8 +199,8 @@ func (s *Defender) GetAllowFullScanOnMappedNetworkDrives(ctx context.Context) (i
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Defender) CreateAllowFullScanOnMappedNetworkDrives(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowFullScanOnMappedNetworkDrives, client.Int(value))
+func (s *Defender) CreateAllowFullScanOnMappedNetworkDrives(ctx context.Context, value AllowFullScanOnMappedNetworkDrivesValue) error {
+	return s.c.Add(ctx, URIAllowFullScanOnMappedNetworkDrives, client.Int(int64(value)))
 }
 
 // UpdateAllowFullScanOnMappedNetworkDrives updates ./Device/Vendor/MSFT/Policy/Config/Defender/AllowFullScanOnMappedNetworkDrives.
@@ -203,8 +208,8 @@ func (s *Defender) CreateAllowFullScanOnMappedNetworkDrives(ctx context.Context,
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Defender) UpdateAllowFullScanOnMappedNetworkDrives(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowFullScanOnMappedNetworkDrives, client.Int(value))
+func (s *Defender) UpdateAllowFullScanOnMappedNetworkDrives(ctx context.Context, value AllowFullScanOnMappedNetworkDrivesValue) error {
+	return s.c.Replace(ctx, URIAllowFullScanOnMappedNetworkDrives, client.Int(int64(value)))
 }
 
 // DeleteAllowFullScanOnMappedNetworkDrives deletes ./Device/Vendor/MSFT/Policy/Config/Defender/AllowFullScanOnMappedNetworkDrives.
@@ -222,12 +227,13 @@ func (s *Defender) DeleteAllowFullScanOnMappedNetworkDrives(ctx context.Context)
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Defender) GetAllowFullScanRemovableDriveScanning(ctx context.Context) (int64, error) {
+func (s *Defender) GetAllowFullScanRemovableDriveScanning(ctx context.Context) (AllowFullScanRemovableDriveScanningValue, error) {
 	v, err := s.c.Get(ctx, URIAllowFullScanRemovableDriveScanning)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowFullScanRemovableDriveScanningValue(n), err
 }
 
 // CreateAllowFullScanRemovableDriveScanning creates ./Device/Vendor/MSFT/Policy/Config/Defender/AllowFullScanRemovableDriveScanning.
@@ -236,8 +242,8 @@ func (s *Defender) GetAllowFullScanRemovableDriveScanning(ctx context.Context) (
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Defender) CreateAllowFullScanRemovableDriveScanning(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowFullScanRemovableDriveScanning, client.Int(value))
+func (s *Defender) CreateAllowFullScanRemovableDriveScanning(ctx context.Context, value AllowFullScanRemovableDriveScanningValue) error {
+	return s.c.Add(ctx, URIAllowFullScanRemovableDriveScanning, client.Int(int64(value)))
 }
 
 // UpdateAllowFullScanRemovableDriveScanning updates ./Device/Vendor/MSFT/Policy/Config/Defender/AllowFullScanRemovableDriveScanning.
@@ -246,8 +252,8 @@ func (s *Defender) CreateAllowFullScanRemovableDriveScanning(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Defender) UpdateAllowFullScanRemovableDriveScanning(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowFullScanRemovableDriveScanning, client.Int(value))
+func (s *Defender) UpdateAllowFullScanRemovableDriveScanning(ctx context.Context, value AllowFullScanRemovableDriveScanningValue) error {
+	return s.c.Replace(ctx, URIAllowFullScanRemovableDriveScanning, client.Int(int64(value)))
 }
 
 // DeleteAllowFullScanRemovableDriveScanning deletes ./Device/Vendor/MSFT/Policy/Config/Defender/AllowFullScanRemovableDriveScanning.
@@ -265,12 +271,13 @@ func (s *Defender) DeleteAllowFullScanRemovableDriveScanning(ctx context.Context
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Defender) GetAllowIOAVProtection(ctx context.Context) (int64, error) {
+func (s *Defender) GetAllowIOAVProtection(ctx context.Context) (AllowIOAVProtectionValue, error) {
 	v, err := s.c.Get(ctx, URIAllowIOAVProtection)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowIOAVProtectionValue(n), err
 }
 
 // CreateAllowIOAVProtection creates ./Device/Vendor/MSFT/Policy/Config/Defender/AllowIOAVProtection.
@@ -278,8 +285,8 @@ func (s *Defender) GetAllowIOAVProtection(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Defender) CreateAllowIOAVProtection(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowIOAVProtection, client.Int(value))
+func (s *Defender) CreateAllowIOAVProtection(ctx context.Context, value AllowIOAVProtectionValue) error {
+	return s.c.Add(ctx, URIAllowIOAVProtection, client.Int(int64(value)))
 }
 
 // UpdateAllowIOAVProtection updates ./Device/Vendor/MSFT/Policy/Config/Defender/AllowIOAVProtection.
@@ -287,8 +294,8 @@ func (s *Defender) CreateAllowIOAVProtection(ctx context.Context, value int64) e
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Defender) UpdateAllowIOAVProtection(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowIOAVProtection, client.Int(value))
+func (s *Defender) UpdateAllowIOAVProtection(ctx context.Context, value AllowIOAVProtectionValue) error {
+	return s.c.Replace(ctx, URIAllowIOAVProtection, client.Int(int64(value)))
 }
 
 // DeleteAllowIOAVProtection deletes ./Device/Vendor/MSFT/Policy/Config/Defender/AllowIOAVProtection.
@@ -307,12 +314,13 @@ func (s *Defender) DeleteAllowIOAVProtection(ctx context.Context) error {
 // Supported from OS build 10.0.14393 (CSP v4.1).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Defender) GetAllowIntrusionPreventionSystem(ctx context.Context) (int64, error) {
+func (s *Defender) GetAllowIntrusionPreventionSystem(ctx context.Context) (AllowIntrusionPreventionSystemValue, error) {
 	v, err := s.c.Get(ctx, URIAllowIntrusionPreventionSystem)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowIntrusionPreventionSystemValue(n), err
 }
 
 // CreateAllowIntrusionPreventionSystem creates ./Device/Vendor/MSFT/Policy/Config/Defender/AllowIntrusionPreventionSystem.
@@ -322,8 +330,8 @@ func (s *Defender) GetAllowIntrusionPreventionSystem(ctx context.Context) (int64
 // Supported from OS build 10.0.14393 (CSP v4.1).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Defender) CreateAllowIntrusionPreventionSystem(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowIntrusionPreventionSystem, client.Int(value))
+func (s *Defender) CreateAllowIntrusionPreventionSystem(ctx context.Context, value AllowIntrusionPreventionSystemValue) error {
+	return s.c.Add(ctx, URIAllowIntrusionPreventionSystem, client.Int(int64(value)))
 }
 
 // UpdateAllowIntrusionPreventionSystem updates ./Device/Vendor/MSFT/Policy/Config/Defender/AllowIntrusionPreventionSystem.
@@ -333,8 +341,8 @@ func (s *Defender) CreateAllowIntrusionPreventionSystem(ctx context.Context, val
 // Supported from OS build 10.0.14393 (CSP v4.1).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *Defender) UpdateAllowIntrusionPreventionSystem(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowIntrusionPreventionSystem, client.Int(value))
+func (s *Defender) UpdateAllowIntrusionPreventionSystem(ctx context.Context, value AllowIntrusionPreventionSystemValue) error {
+	return s.c.Replace(ctx, URIAllowIntrusionPreventionSystem, client.Int(int64(value)))
 }
 
 // DeleteAllowIntrusionPreventionSystem deletes ./Device/Vendor/MSFT/Policy/Config/Defender/AllowIntrusionPreventionSystem.
@@ -353,12 +361,13 @@ func (s *Defender) DeleteAllowIntrusionPreventionSystem(ctx context.Context) err
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Defender) GetAllowOnAccessProtection(ctx context.Context) (int64, error) {
+func (s *Defender) GetAllowOnAccessProtection(ctx context.Context) (AllowOnAccessProtectionValue, error) {
 	v, err := s.c.Get(ctx, URIAllowOnAccessProtection)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowOnAccessProtectionValue(n), err
 }
 
 // CreateAllowOnAccessProtection creates ./Device/Vendor/MSFT/Policy/Config/Defender/AllowOnAccessProtection.
@@ -366,8 +375,8 @@ func (s *Defender) GetAllowOnAccessProtection(ctx context.Context) (int64, error
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Defender) CreateAllowOnAccessProtection(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowOnAccessProtection, client.Int(value))
+func (s *Defender) CreateAllowOnAccessProtection(ctx context.Context, value AllowOnAccessProtectionValue) error {
+	return s.c.Add(ctx, URIAllowOnAccessProtection, client.Int(int64(value)))
 }
 
 // UpdateAllowOnAccessProtection updates ./Device/Vendor/MSFT/Policy/Config/Defender/AllowOnAccessProtection.
@@ -375,8 +384,8 @@ func (s *Defender) CreateAllowOnAccessProtection(ctx context.Context, value int6
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Defender) UpdateAllowOnAccessProtection(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowOnAccessProtection, client.Int(value))
+func (s *Defender) UpdateAllowOnAccessProtection(ctx context.Context, value AllowOnAccessProtectionValue) error {
+	return s.c.Replace(ctx, URIAllowOnAccessProtection, client.Int(int64(value)))
 }
 
 // DeleteAllowOnAccessProtection deletes ./Device/Vendor/MSFT/Policy/Config/Defender/AllowOnAccessProtection.
@@ -393,12 +402,13 @@ func (s *Defender) DeleteAllowOnAccessProtection(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Defender) GetAllowRealtimeMonitoring(ctx context.Context) (int64, error) {
+func (s *Defender) GetAllowRealtimeMonitoring(ctx context.Context) (AllowRealtimeMonitoringValue, error) {
 	v, err := s.c.Get(ctx, URIAllowRealtimeMonitoring)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowRealtimeMonitoringValue(n), err
 }
 
 // CreateAllowRealtimeMonitoring creates ./Device/Vendor/MSFT/Policy/Config/Defender/AllowRealtimeMonitoring.
@@ -406,8 +416,8 @@ func (s *Defender) GetAllowRealtimeMonitoring(ctx context.Context) (int64, error
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Defender) CreateAllowRealtimeMonitoring(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowRealtimeMonitoring, client.Int(value))
+func (s *Defender) CreateAllowRealtimeMonitoring(ctx context.Context, value AllowRealtimeMonitoringValue) error {
+	return s.c.Add(ctx, URIAllowRealtimeMonitoring, client.Int(int64(value)))
 }
 
 // UpdateAllowRealtimeMonitoring updates ./Device/Vendor/MSFT/Policy/Config/Defender/AllowRealtimeMonitoring.
@@ -415,8 +425,8 @@ func (s *Defender) CreateAllowRealtimeMonitoring(ctx context.Context, value int6
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Defender) UpdateAllowRealtimeMonitoring(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowRealtimeMonitoring, client.Int(value))
+func (s *Defender) UpdateAllowRealtimeMonitoring(ctx context.Context, value AllowRealtimeMonitoringValue) error {
+	return s.c.Replace(ctx, URIAllowRealtimeMonitoring, client.Int(int64(value)))
 }
 
 // DeleteAllowRealtimeMonitoring deletes ./Device/Vendor/MSFT/Policy/Config/Defender/AllowRealtimeMonitoring.
@@ -433,12 +443,13 @@ func (s *Defender) DeleteAllowRealtimeMonitoring(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Defender) GetAllowScanningNetworkFiles(ctx context.Context) (int64, error) {
+func (s *Defender) GetAllowScanningNetworkFiles(ctx context.Context) (AllowScanningNetworkFilesValue, error) {
 	v, err := s.c.Get(ctx, URIAllowScanningNetworkFiles)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowScanningNetworkFilesValue(n), err
 }
 
 // CreateAllowScanningNetworkFiles creates ./Device/Vendor/MSFT/Policy/Config/Defender/AllowScanningNetworkFiles.
@@ -446,8 +457,8 @@ func (s *Defender) GetAllowScanningNetworkFiles(ctx context.Context) (int64, err
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Defender) CreateAllowScanningNetworkFiles(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowScanningNetworkFiles, client.Int(value))
+func (s *Defender) CreateAllowScanningNetworkFiles(ctx context.Context, value AllowScanningNetworkFilesValue) error {
+	return s.c.Add(ctx, URIAllowScanningNetworkFiles, client.Int(int64(value)))
 }
 
 // UpdateAllowScanningNetworkFiles updates ./Device/Vendor/MSFT/Policy/Config/Defender/AllowScanningNetworkFiles.
@@ -455,8 +466,8 @@ func (s *Defender) CreateAllowScanningNetworkFiles(ctx context.Context, value in
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Defender) UpdateAllowScanningNetworkFiles(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowScanningNetworkFiles, client.Int(value))
+func (s *Defender) UpdateAllowScanningNetworkFiles(ctx context.Context, value AllowScanningNetworkFilesValue) error {
+	return s.c.Replace(ctx, URIAllowScanningNetworkFiles, client.Int(int64(value)))
 }
 
 // DeleteAllowScanningNetworkFiles deletes ./Device/Vendor/MSFT/Policy/Config/Defender/AllowScanningNetworkFiles.
@@ -473,12 +484,13 @@ func (s *Defender) DeleteAllowScanningNetworkFiles(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Defender) GetAllowScriptScanning(ctx context.Context) (int64, error) {
+func (s *Defender) GetAllowScriptScanning(ctx context.Context) (AllowScriptScanningValue, error) {
 	v, err := s.c.Get(ctx, URIAllowScriptScanning)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowScriptScanningValue(n), err
 }
 
 // CreateAllowScriptScanning creates ./Device/Vendor/MSFT/Policy/Config/Defender/AllowScriptScanning.
@@ -486,8 +498,8 @@ func (s *Defender) GetAllowScriptScanning(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Defender) CreateAllowScriptScanning(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowScriptScanning, client.Int(value))
+func (s *Defender) CreateAllowScriptScanning(ctx context.Context, value AllowScriptScanningValue) error {
+	return s.c.Add(ctx, URIAllowScriptScanning, client.Int(int64(value)))
 }
 
 // UpdateAllowScriptScanning updates ./Device/Vendor/MSFT/Policy/Config/Defender/AllowScriptScanning.
@@ -495,8 +507,8 @@ func (s *Defender) CreateAllowScriptScanning(ctx context.Context, value int64) e
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Defender) UpdateAllowScriptScanning(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowScriptScanning, client.Int(value))
+func (s *Defender) UpdateAllowScriptScanning(ctx context.Context, value AllowScriptScanningValue) error {
+	return s.c.Replace(ctx, URIAllowScriptScanning, client.Int(int64(value)))
 }
 
 // DeleteAllowScriptScanning deletes ./Device/Vendor/MSFT/Policy/Config/Defender/AllowScriptScanning.
@@ -514,12 +526,13 @@ func (s *Defender) DeleteAllowScriptScanning(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Defender) GetAllowUserUIAccess(ctx context.Context) (int64, error) {
+func (s *Defender) GetAllowUserUIAccess(ctx context.Context) (AllowUserUIAccessValue, error) {
 	v, err := s.c.Get(ctx, URIAllowUserUIAccess)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowUserUIAccessValue(n), err
 }
 
 // CreateAllowUserUIAccess creates ./Device/Vendor/MSFT/Policy/Config/Defender/AllowUserUIAccess.
@@ -528,8 +541,8 @@ func (s *Defender) GetAllowUserUIAccess(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Defender) CreateAllowUserUIAccess(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowUserUIAccess, client.Int(value))
+func (s *Defender) CreateAllowUserUIAccess(ctx context.Context, value AllowUserUIAccessValue) error {
+	return s.c.Add(ctx, URIAllowUserUIAccess, client.Int(int64(value)))
 }
 
 // UpdateAllowUserUIAccess updates ./Device/Vendor/MSFT/Policy/Config/Defender/AllowUserUIAccess.
@@ -538,8 +551,8 @@ func (s *Defender) CreateAllowUserUIAccess(ctx context.Context, value int64) err
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Defender) UpdateAllowUserUIAccess(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowUserUIAccess, client.Int(value))
+func (s *Defender) UpdateAllowUserUIAccess(ctx context.Context, value AllowUserUIAccessValue) error {
+	return s.c.Replace(ctx, URIAllowUserUIAccess, client.Int(int64(value)))
 }
 
 // DeleteAllowUserUIAccess deletes ./Device/Vendor/MSFT/Policy/Config/Defender/AllowUserUIAccess.
@@ -719,12 +732,13 @@ func (s *Defender) DeleteAvgCPULoadFactor(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Defender) GetCheckForSignaturesBeforeRunningScan(ctx context.Context) (int64, error) {
+func (s *Defender) GetCheckForSignaturesBeforeRunningScan(ctx context.Context) (CheckForSignaturesBeforeRunningScanValue, error) {
 	v, err := s.c.Get(ctx, URICheckForSignaturesBeforeRunningScan)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return CheckForSignaturesBeforeRunningScanValue(n), err
 }
 
 // CreateCheckForSignaturesBeforeRunningScan creates ./Device/Vendor/MSFT/Policy/Config/Defender/CheckForSignaturesBeforeRunningScan.
@@ -738,8 +752,8 @@ func (s *Defender) GetCheckForSignaturesBeforeRunningScan(ctx context.Context) (
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Defender) CreateCheckForSignaturesBeforeRunningScan(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URICheckForSignaturesBeforeRunningScan, client.Int(value))
+func (s *Defender) CreateCheckForSignaturesBeforeRunningScan(ctx context.Context, value CheckForSignaturesBeforeRunningScanValue) error {
+	return s.c.Add(ctx, URICheckForSignaturesBeforeRunningScan, client.Int(int64(value)))
 }
 
 // UpdateCheckForSignaturesBeforeRunningScan updates ./Device/Vendor/MSFT/Policy/Config/Defender/CheckForSignaturesBeforeRunningScan.
@@ -753,8 +767,8 @@ func (s *Defender) CreateCheckForSignaturesBeforeRunningScan(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Defender) UpdateCheckForSignaturesBeforeRunningScan(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URICheckForSignaturesBeforeRunningScan, client.Int(value))
+func (s *Defender) UpdateCheckForSignaturesBeforeRunningScan(ctx context.Context, value CheckForSignaturesBeforeRunningScanValue) error {
+	return s.c.Replace(ctx, URICheckForSignaturesBeforeRunningScan, client.Int(int64(value)))
 }
 
 // DeleteCheckForSignaturesBeforeRunningScan deletes ./Device/Vendor/MSFT/Policy/Config/Defender/CheckForSignaturesBeforeRunningScan.
@@ -783,12 +797,13 @@ func (s *Defender) DeleteCheckForSignaturesBeforeRunningScan(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Defender) GetCloudBlockLevel(ctx context.Context) (int64, error) {
+func (s *Defender) GetCloudBlockLevel(ctx context.Context) (CloudBlockLevelValue, error) {
 	v, err := s.c.Get(ctx, URICloudBlockLevel)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return CloudBlockLevelValue(n), err
 }
 
 // CreateCloudBlockLevel creates ./Device/Vendor/MSFT/Policy/Config/Defender/CloudBlockLevel.
@@ -802,8 +817,8 @@ func (s *Defender) GetCloudBlockLevel(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Defender) CreateCloudBlockLevel(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URICloudBlockLevel, client.Int(value))
+func (s *Defender) CreateCloudBlockLevel(ctx context.Context, value CloudBlockLevelValue) error {
+	return s.c.Add(ctx, URICloudBlockLevel, client.Int(int64(value)))
 }
 
 // UpdateCloudBlockLevel updates ./Device/Vendor/MSFT/Policy/Config/Defender/CloudBlockLevel.
@@ -817,8 +832,8 @@ func (s *Defender) CreateCloudBlockLevel(ctx context.Context, value int64) error
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Defender) UpdateCloudBlockLevel(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URICloudBlockLevel, client.Int(value))
+func (s *Defender) UpdateCloudBlockLevel(ctx context.Context, value CloudBlockLevelValue) error {
+	return s.c.Replace(ctx, URICloudBlockLevel, client.Int(int64(value)))
 }
 
 // DeleteCloudBlockLevel deletes ./Device/Vendor/MSFT/Policy/Config/Defender/CloudBlockLevel.
@@ -1073,12 +1088,13 @@ func (s *Defender) DeleteDaysToRetainCleanedMalware(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Defender) GetDisableCatchupFullScan(ctx context.Context) (int64, error) {
+func (s *Defender) GetDisableCatchupFullScan(ctx context.Context) (DisableCatchupFullScanValue, error) {
 	v, err := s.c.Get(ctx, URIDisableCatchupFullScan)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableCatchupFullScanValue(n), err
 }
 
 // CreateDisableCatchupFullScan creates ./Device/Vendor/MSFT/Policy/Config/Defender/DisableCatchupFullScan.
@@ -1094,8 +1110,8 @@ func (s *Defender) GetDisableCatchupFullScan(ctx context.Context) (int64, error)
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Defender) CreateDisableCatchupFullScan(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableCatchupFullScan, client.Int(value))
+func (s *Defender) CreateDisableCatchupFullScan(ctx context.Context, value DisableCatchupFullScanValue) error {
+	return s.c.Add(ctx, URIDisableCatchupFullScan, client.Int(int64(value)))
 }
 
 // UpdateDisableCatchupFullScan updates ./Device/Vendor/MSFT/Policy/Config/Defender/DisableCatchupFullScan.
@@ -1111,8 +1127,8 @@ func (s *Defender) CreateDisableCatchupFullScan(ctx context.Context, value int64
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Defender) UpdateDisableCatchupFullScan(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableCatchupFullScan, client.Int(value))
+func (s *Defender) UpdateDisableCatchupFullScan(ctx context.Context, value DisableCatchupFullScanValue) error {
+	return s.c.Replace(ctx, URIDisableCatchupFullScan, client.Int(int64(value)))
 }
 
 // DeleteDisableCatchupFullScan deletes ./Device/Vendor/MSFT/Policy/Config/Defender/DisableCatchupFullScan.
@@ -1144,12 +1160,13 @@ func (s *Defender) DeleteDisableCatchupFullScan(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Defender) GetDisableCatchupQuickScan(ctx context.Context) (int64, error) {
+func (s *Defender) GetDisableCatchupQuickScan(ctx context.Context) (DisableCatchupQuickScanValue, error) {
 	v, err := s.c.Get(ctx, URIDisableCatchupQuickScan)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableCatchupQuickScanValue(n), err
 }
 
 // CreateDisableCatchupQuickScan creates ./Device/Vendor/MSFT/Policy/Config/Defender/DisableCatchupQuickScan.
@@ -1164,8 +1181,8 @@ func (s *Defender) GetDisableCatchupQuickScan(ctx context.Context) (int64, error
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Defender) CreateDisableCatchupQuickScan(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableCatchupQuickScan, client.Int(value))
+func (s *Defender) CreateDisableCatchupQuickScan(ctx context.Context, value DisableCatchupQuickScanValue) error {
+	return s.c.Add(ctx, URIDisableCatchupQuickScan, client.Int(int64(value)))
 }
 
 // UpdateDisableCatchupQuickScan updates ./Device/Vendor/MSFT/Policy/Config/Defender/DisableCatchupQuickScan.
@@ -1180,8 +1197,8 @@ func (s *Defender) CreateDisableCatchupQuickScan(ctx context.Context, value int6
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Defender) UpdateDisableCatchupQuickScan(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableCatchupQuickScan, client.Int(value))
+func (s *Defender) UpdateDisableCatchupQuickScan(ctx context.Context, value DisableCatchupQuickScanValue) error {
+	return s.c.Replace(ctx, URIDisableCatchupQuickScan, client.Int(int64(value)))
 }
 
 // DeleteDisableCatchupQuickScan deletes ./Device/Vendor/MSFT/Policy/Config/Defender/DisableCatchupQuickScan.
@@ -1209,12 +1226,13 @@ func (s *Defender) DeleteDisableCatchupQuickScan(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Defender) GetEnableControlledFolderAccess(ctx context.Context) (int64, error) {
+func (s *Defender) GetEnableControlledFolderAccess(ctx context.Context) (EnableControlledFolderAccessValue, error) {
 	v, err := s.c.Get(ctx, URIEnableControlledFolderAccess)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableControlledFolderAccessValue(n), err
 }
 
 // CreateEnableControlledFolderAccess creates ./Device/Vendor/MSFT/Policy/Config/Defender/EnableControlledFolderAccess.
@@ -1226,8 +1244,8 @@ func (s *Defender) GetEnableControlledFolderAccess(ctx context.Context) (int64, 
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Defender) CreateEnableControlledFolderAccess(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableControlledFolderAccess, client.Int(value))
+func (s *Defender) CreateEnableControlledFolderAccess(ctx context.Context, value EnableControlledFolderAccessValue) error {
+	return s.c.Add(ctx, URIEnableControlledFolderAccess, client.Int(int64(value)))
 }
 
 // UpdateEnableControlledFolderAccess updates ./Device/Vendor/MSFT/Policy/Config/Defender/EnableControlledFolderAccess.
@@ -1239,8 +1257,8 @@ func (s *Defender) CreateEnableControlledFolderAccess(ctx context.Context, value
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Defender) UpdateEnableControlledFolderAccess(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableControlledFolderAccess, client.Int(value))
+func (s *Defender) UpdateEnableControlledFolderAccess(ctx context.Context, value EnableControlledFolderAccessValue) error {
+	return s.c.Replace(ctx, URIEnableControlledFolderAccess, client.Int(int64(value)))
 }
 
 // DeleteEnableControlledFolderAccess deletes ./Device/Vendor/MSFT/Policy/Config/Defender/EnableControlledFolderAccess.
@@ -1264,12 +1282,13 @@ func (s *Defender) DeleteEnableControlledFolderAccess(ctx context.Context) error
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Defender) GetEnableLowCPUPriority(ctx context.Context) (int64, error) {
+func (s *Defender) GetEnableLowCPUPriority(ctx context.Context) (EnableLowCPUPriorityValue, error) {
 	v, err := s.c.Get(ctx, URIEnableLowCPUPriority)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableLowCPUPriorityValue(n), err
 }
 
 // CreateEnableLowCPUPriority creates ./Device/Vendor/MSFT/Policy/Config/Defender/EnableLowCPUPriority.
@@ -1280,8 +1299,8 @@ func (s *Defender) GetEnableLowCPUPriority(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Defender) CreateEnableLowCPUPriority(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableLowCPUPriority, client.Int(value))
+func (s *Defender) CreateEnableLowCPUPriority(ctx context.Context, value EnableLowCPUPriorityValue) error {
+	return s.c.Add(ctx, URIEnableLowCPUPriority, client.Int(int64(value)))
 }
 
 // UpdateEnableLowCPUPriority updates ./Device/Vendor/MSFT/Policy/Config/Defender/EnableLowCPUPriority.
@@ -1292,8 +1311,8 @@ func (s *Defender) CreateEnableLowCPUPriority(ctx context.Context, value int64) 
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Defender) UpdateEnableLowCPUPriority(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableLowCPUPriority, client.Int(value))
+func (s *Defender) UpdateEnableLowCPUPriority(ctx context.Context, value EnableLowCPUPriorityValue) error {
+	return s.c.Replace(ctx, URIEnableLowCPUPriority, client.Int(int64(value)))
 }
 
 // DeleteEnableLowCPUPriority deletes ./Device/Vendor/MSFT/Policy/Config/Defender/EnableLowCPUPriority.
@@ -1325,12 +1344,13 @@ func (s *Defender) DeleteEnableLowCPUPriority(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Defender) GetEnableNetworkProtection(ctx context.Context) (int64, error) {
+func (s *Defender) GetEnableNetworkProtection(ctx context.Context) (EnableNetworkProtectionValue, error) {
 	v, err := s.c.Get(ctx, URIEnableNetworkProtection)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableNetworkProtectionValue(n), err
 }
 
 // CreateEnableNetworkProtection creates ./Device/Vendor/MSFT/Policy/Config/Defender/EnableNetworkProtection.
@@ -1350,8 +1370,8 @@ func (s *Defender) GetEnableNetworkProtection(ctx context.Context) (int64, error
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Defender) CreateEnableNetworkProtection(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableNetworkProtection, client.Int(value))
+func (s *Defender) CreateEnableNetworkProtection(ctx context.Context, value EnableNetworkProtectionValue) error {
+	return s.c.Add(ctx, URIEnableNetworkProtection, client.Int(int64(value)))
 }
 
 // UpdateEnableNetworkProtection updates ./Device/Vendor/MSFT/Policy/Config/Defender/EnableNetworkProtection.
@@ -1371,8 +1391,8 @@ func (s *Defender) CreateEnableNetworkProtection(ctx context.Context, value int6
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Defender) UpdateEnableNetworkProtection(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableNetworkProtection, client.Int(value))
+func (s *Defender) UpdateEnableNetworkProtection(ctx context.Context, value EnableNetworkProtectionValue) error {
+	return s.c.Replace(ctx, URIEnableNetworkProtection, client.Int(int64(value)))
 }
 
 // DeleteEnableNetworkProtection deletes ./Device/Vendor/MSFT/Policy/Config/Defender/EnableNetworkProtection.
@@ -1531,12 +1551,13 @@ func (s *Defender) DeleteExcludedProcesses(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Defender) GetPUAProtection(ctx context.Context) (int64, error) {
+func (s *Defender) GetPUAProtection(ctx context.Context) (PUAProtectionValue, error) {
 	v, err := s.c.Get(ctx, URIPUAProtection)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PUAProtectionValue(n), err
 }
 
 // CreatePUAProtection creates ./Device/Vendor/MSFT/Policy/Config/Defender/PUAProtection.
@@ -1546,8 +1567,8 @@ func (s *Defender) GetPUAProtection(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Defender) CreatePUAProtection(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPUAProtection, client.Int(value))
+func (s *Defender) CreatePUAProtection(ctx context.Context, value PUAProtectionValue) error {
+	return s.c.Add(ctx, URIPUAProtection, client.Int(int64(value)))
 }
 
 // UpdatePUAProtection updates ./Device/Vendor/MSFT/Policy/Config/Defender/PUAProtection.
@@ -1557,8 +1578,8 @@ func (s *Defender) CreatePUAProtection(ctx context.Context, value int64) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Defender) UpdatePUAProtection(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPUAProtection, client.Int(value))
+func (s *Defender) UpdatePUAProtection(ctx context.Context, value PUAProtectionValue) error {
+	return s.c.Replace(ctx, URIPUAProtection, client.Int(int64(value)))
 }
 
 // DeletePUAProtection deletes ./Device/Vendor/MSFT/Policy/Config/Defender/PUAProtection.
@@ -1578,12 +1599,13 @@ func (s *Defender) DeletePUAProtection(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Defender) GetRealTimeScanDirection(ctx context.Context) (int64, error) {
+func (s *Defender) GetRealTimeScanDirection(ctx context.Context) (RealTimeScanDirectionValue, error) {
 	v, err := s.c.Get(ctx, URIRealTimeScanDirection)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return RealTimeScanDirectionValue(n), err
 }
 
 // CreateRealTimeScanDirection creates ./Device/Vendor/MSFT/Policy/Config/Defender/RealTimeScanDirection.
@@ -1592,8 +1614,8 @@ func (s *Defender) GetRealTimeScanDirection(ctx context.Context) (int64, error) 
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Defender) CreateRealTimeScanDirection(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIRealTimeScanDirection, client.Int(value))
+func (s *Defender) CreateRealTimeScanDirection(ctx context.Context, value RealTimeScanDirectionValue) error {
+	return s.c.Add(ctx, URIRealTimeScanDirection, client.Int(int64(value)))
 }
 
 // UpdateRealTimeScanDirection updates ./Device/Vendor/MSFT/Policy/Config/Defender/RealTimeScanDirection.
@@ -1602,8 +1624,8 @@ func (s *Defender) CreateRealTimeScanDirection(ctx context.Context, value int64)
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Defender) UpdateRealTimeScanDirection(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIRealTimeScanDirection, client.Int(value))
+func (s *Defender) UpdateRealTimeScanDirection(ctx context.Context, value RealTimeScanDirectionValue) error {
+	return s.c.Replace(ctx, URIRealTimeScanDirection, client.Int(int64(value)))
 }
 
 // DeleteRealTimeScanDirection deletes ./Device/Vendor/MSFT/Policy/Config/Defender/RealTimeScanDirection.
@@ -1621,12 +1643,13 @@ func (s *Defender) DeleteRealTimeScanDirection(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Defender) GetScanParameter(ctx context.Context) (int64, error) {
+func (s *Defender) GetScanParameter(ctx context.Context) (ScanParameterValue, error) {
 	v, err := s.c.Get(ctx, URIScanParameter)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ScanParameterValue(n), err
 }
 
 // CreateScanParameter creates ./Device/Vendor/MSFT/Policy/Config/Defender/ScanParameter.
@@ -1634,8 +1657,8 @@ func (s *Defender) GetScanParameter(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Defender) CreateScanParameter(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIScanParameter, client.Int(value))
+func (s *Defender) CreateScanParameter(ctx context.Context, value ScanParameterValue) error {
+	return s.c.Add(ctx, URIScanParameter, client.Int(int64(value)))
 }
 
 // UpdateScanParameter updates ./Device/Vendor/MSFT/Policy/Config/Defender/ScanParameter.
@@ -1643,8 +1666,8 @@ func (s *Defender) CreateScanParameter(ctx context.Context, value int64) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Defender) UpdateScanParameter(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIScanParameter, client.Int(value))
+func (s *Defender) UpdateScanParameter(ctx context.Context, value ScanParameterValue) error {
+	return s.c.Replace(ctx, URIScanParameter, client.Int(int64(value)))
 }
 
 // DeleteScanParameter deletes ./Device/Vendor/MSFT/Policy/Config/Defender/ScanParameter.
@@ -1710,12 +1733,13 @@ func (s *Defender) DeleteScheduleQuickScanTime(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Defender) GetScheduleScanDay(ctx context.Context) (int64, error) {
+func (s *Defender) GetScheduleScanDay(ctx context.Context) (ScheduleScanDayValue, error) {
 	v, err := s.c.Get(ctx, URIScheduleScanDay)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ScheduleScanDayValue(n), err
 }
 
 // CreateScheduleScanDay creates ./Device/Vendor/MSFT/Policy/Config/Defender/ScheduleScanDay.
@@ -1724,8 +1748,8 @@ func (s *Defender) GetScheduleScanDay(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Defender) CreateScheduleScanDay(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIScheduleScanDay, client.Int(value))
+func (s *Defender) CreateScheduleScanDay(ctx context.Context, value ScheduleScanDayValue) error {
+	return s.c.Add(ctx, URIScheduleScanDay, client.Int(int64(value)))
 }
 
 // UpdateScheduleScanDay updates ./Device/Vendor/MSFT/Policy/Config/Defender/ScheduleScanDay.
@@ -1734,8 +1758,8 @@ func (s *Defender) CreateScheduleScanDay(ctx context.Context, value int64) error
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Defender) UpdateScheduleScanDay(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIScheduleScanDay, client.Int(value))
+func (s *Defender) UpdateScheduleScanDay(ctx context.Context, value ScheduleScanDayValue) error {
+	return s.c.Replace(ctx, URIScheduleScanDay, client.Int(int64(value)))
 }
 
 // DeleteScheduleScanDay deletes ./Device/Vendor/MSFT/Policy/Config/Defender/ScheduleScanDay.
@@ -2040,12 +2064,13 @@ func (s *Defender) DeleteSignatureUpdateInterval(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Defender) GetSubmitSamplesConsent(ctx context.Context) (int64, error) {
+func (s *Defender) GetSubmitSamplesConsent(ctx context.Context) (SubmitSamplesConsentValue, error) {
 	v, err := s.c.Get(ctx, URISubmitSamplesConsent)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SubmitSamplesConsentValue(n), err
 }
 
 // CreateSubmitSamplesConsent creates ./Device/Vendor/MSFT/Policy/Config/Defender/SubmitSamplesConsent.
@@ -2056,8 +2081,8 @@ func (s *Defender) GetSubmitSamplesConsent(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Defender) CreateSubmitSamplesConsent(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISubmitSamplesConsent, client.Int(value))
+func (s *Defender) CreateSubmitSamplesConsent(ctx context.Context, value SubmitSamplesConsentValue) error {
+	return s.c.Add(ctx, URISubmitSamplesConsent, client.Int(int64(value)))
 }
 
 // UpdateSubmitSamplesConsent updates ./Device/Vendor/MSFT/Policy/Config/Defender/SubmitSamplesConsent.
@@ -2068,8 +2093,8 @@ func (s *Defender) CreateSubmitSamplesConsent(ctx context.Context, value int64) 
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Defender) UpdateSubmitSamplesConsent(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISubmitSamplesConsent, client.Int(value))
+func (s *Defender) UpdateSubmitSamplesConsent(ctx context.Context, value SubmitSamplesConsentValue) error {
+	return s.c.Replace(ctx, URISubmitSamplesConsent, client.Int(int64(value)))
 }
 
 // DeleteSubmitSamplesConsent deletes ./Device/Vendor/MSFT/Policy/Config/Defender/SubmitSamplesConsent.

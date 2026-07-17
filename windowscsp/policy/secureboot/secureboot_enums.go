@@ -2,27 +2,76 @@
 
 package secureboot
 
-// ConfigureHighConfidenceOptOut allowed values.
+import (
+	"fmt"
+)
+
+// ConfigureHighConfidenceOptOutValue — allowed values for the ConfigureHighConfidenceOptOut node.
+type ConfigureHighConfidenceOptOutValue int64
+
 const (
 	// Disabled.
-	ConfigureHighConfidenceOptOutDisabled int64 = 0
+	ConfigureHighConfidenceOptOutDisabled ConfigureHighConfidenceOptOutValue = 0
 	// (Enabled) Opt out of high confidence buckets that will automatically be applied as part of the
 	// LCU
-	ConfigureHighConfidenceOptOutEnabledOptOutOfHighConfidence int64 = 1
+	ConfigureHighConfidenceOptOutEnabledOptOutOfHighConfidence ConfigureHighConfidenceOptOutValue = 1
 )
 
-// ConfigureMicrosoftUpdateManagedOptIn allowed values.
+// String returns the ConfigureHighConfidenceOptOutValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureHighConfidenceOptOutValue) String() string {
+	switch e {
+	case ConfigureHighConfidenceOptOutDisabled:
+		return "ConfigureHighConfidenceOptOutDisabled"
+	case ConfigureHighConfidenceOptOutEnabledOptOutOfHighConfidence:
+		return "ConfigureHighConfidenceOptOutEnabledOptOutOfHighConfidence"
+	default:
+		return fmt.Sprintf("ConfigureHighConfidenceOptOutValue(%d)", int64(e))
+	}
+}
+
+// ConfigureMicrosoftUpdateManagedOptInValue — allowed values for the ConfigureMicrosoftUpdateManagedOptIn node.
+type ConfigureMicrosoftUpdateManagedOptInValue int64
+
 const (
 	// Disabled
-	ConfigureMicrosoftUpdateManagedOptInDisabled int64 = 0
+	ConfigureMicrosoftUpdateManagedOptInDisabled ConfigureMicrosoftUpdateManagedOptInValue = 0
 	// Enabled
-	ConfigureMicrosoftUpdateManagedOptInEnabled int64 = 1
+	ConfigureMicrosoftUpdateManagedOptInEnabled ConfigureMicrosoftUpdateManagedOptInValue = 1
 )
 
-// EnableSecurebootCertificateUpdates allowed values.
+// String returns the ConfigureMicrosoftUpdateManagedOptInValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureMicrosoftUpdateManagedOptInValue) String() string {
+	switch e {
+	case ConfigureMicrosoftUpdateManagedOptInDisabled:
+		return "ConfigureMicrosoftUpdateManagedOptInDisabled"
+	case ConfigureMicrosoftUpdateManagedOptInEnabled:
+		return "ConfigureMicrosoftUpdateManagedOptInEnabled"
+	default:
+		return fmt.Sprintf("ConfigureMicrosoftUpdateManagedOptInValue(%d)", int64(e))
+	}
+}
+
+// EnableSecurebootCertificateUpdatesValue — allowed values for the EnableSecurebootCertificateUpdates node.
+type EnableSecurebootCertificateUpdatesValue int64
+
 const (
 	// Disabled
-	EnableSecurebootCertificateUpdatesDisabled int64 = 0
+	EnableSecurebootCertificateUpdatesDisabled EnableSecurebootCertificateUpdatesValue = 0
 	// (Enabled) Initiates the deployment of new secure boot certificates and related updates.
-	EnableSecurebootCertificateUpdatesEnabledInitiatesTheDeploymentOfNew int64 = 22852
+	EnableSecurebootCertificateUpdatesEnabledInitiatesTheDeploymentOfNew EnableSecurebootCertificateUpdatesValue = 22852
 )
+
+// String returns the EnableSecurebootCertificateUpdatesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableSecurebootCertificateUpdatesValue) String() string {
+	switch e {
+	case EnableSecurebootCertificateUpdatesDisabled:
+		return "EnableSecurebootCertificateUpdatesDisabled"
+	case EnableSecurebootCertificateUpdatesEnabledInitiatesTheDeploymentOfNew:
+		return "EnableSecurebootCertificateUpdatesEnabledInitiatesTheDeploymentOfNew"
+	default:
+		return fmt.Sprintf("EnableSecurebootCertificateUpdatesValue(%d)", int64(e))
+	}
+}

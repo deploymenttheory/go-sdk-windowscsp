@@ -385,12 +385,13 @@ func (s *DMClientUser) UpdateProviderProviderIDFirstSyncStatusServerHasFinishedP
 // force a failure or success message to appear on the device by setting this value and then
 // setting the IsSyncDone node to true. This node only applies to the user MDM status page (on a
 // per user basis).
-func (s *DMClientUser) GetProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisioned(ctx context.Context, providerID string) (int64, error) {
+func (s *DMClientUser) GetProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisioned(ctx context.Context, providerID string) (ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedValue, error) {
 	v, err := s.c.Get(ctx, URIProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisioned(providerID))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedValue(n), err
 }
 
 // UpdateProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisioned updates ./User/Vendor/MSFT/DMClient/Provider/{providerID}/FirstSyncStatus/WasDeviceSuccessfullyProvisioned.
@@ -400,6 +401,6 @@ func (s *DMClientUser) GetProviderProviderIDFirstSyncStatusWasDeviceSuccessfully
 // force a failure or success message to appear on the device by setting this value and then
 // setting the IsSyncDone node to true. This node only applies to the user MDM status page (on a
 // per user basis).
-func (s *DMClientUser) UpdateProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisioned(ctx context.Context, providerID string, value int64) error {
-	return s.c.Replace(ctx, URIProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisioned(providerID), client.Int(value))
+func (s *DMClientUser) UpdateProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisioned(ctx context.Context, providerID string, value ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedValue) error {
+	return s.c.Replace(ctx, URIProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisioned(providerID), client.Int(int64(value)))
 }

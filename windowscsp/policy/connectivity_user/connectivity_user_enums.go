@@ -2,10 +2,29 @@
 
 package connectivity_user
 
-// DisableCrossDeviceResume allowed values.
+import (
+	"fmt"
+)
+
+// DisableCrossDeviceResumeValue — allowed values for the DisableCrossDeviceResume node.
+type DisableCrossDeviceResumeValue int64
+
 const (
 	// CrossDeviceResume is Enabled.
-	DisableCrossDeviceResumeCrossDeviceResumeIsEnabled int64 = 0
+	DisableCrossDeviceResumeCrossDeviceResumeIsEnabled DisableCrossDeviceResumeValue = 0
 	// CrossDeviceResume is Disabled.
-	DisableCrossDeviceResumeCrossDeviceResumeIsDisabled int64 = 1
+	DisableCrossDeviceResumeCrossDeviceResumeIsDisabled DisableCrossDeviceResumeValue = 1
 )
+
+// String returns the DisableCrossDeviceResumeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableCrossDeviceResumeValue) String() string {
+	switch e {
+	case DisableCrossDeviceResumeCrossDeviceResumeIsEnabled:
+		return "DisableCrossDeviceResumeCrossDeviceResumeIsEnabled"
+	case DisableCrossDeviceResumeCrossDeviceResumeIsDisabled:
+		return "DisableCrossDeviceResumeCrossDeviceResumeIsDisabled"
+	default:
+		return fmt.Sprintf("DisableCrossDeviceResumeValue(%d)", int64(e))
+	}
+}

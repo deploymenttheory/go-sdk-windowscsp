@@ -2,66 +2,190 @@
 
 package windowssandbox
 
-// AllowAudioInput allowed values.
-const (
-	// Not allowed.
-	AllowAudioInputNotAllowed int64 = 0
-	// Allowed.
-	AllowAudioInputAllowed int64 = 1
+import (
+	"fmt"
 )
 
-// AllowClipboardRedirection allowed values.
+// AllowAudioInputValue — allowed values for the AllowAudioInput node.
+type AllowAudioInputValue int64
+
 const (
 	// Not allowed.
-	AllowClipboardRedirectionNotAllowed int64 = 0
+	AllowAudioInputNotAllowed AllowAudioInputValue = 0
 	// Allowed.
-	AllowClipboardRedirectionAllowed int64 = 1
+	AllowAudioInputAllowed AllowAudioInputValue = 1
 )
 
-// AllowMappedFolders allowed values.
+// String returns the AllowAudioInputValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowAudioInputValue) String() string {
+	switch e {
+	case AllowAudioInputNotAllowed:
+		return "AllowAudioInputNotAllowed"
+	case AllowAudioInputAllowed:
+		return "AllowAudioInputAllowed"
+	default:
+		return fmt.Sprintf("AllowAudioInputValue(%d)", int64(e))
+	}
+}
+
+// AllowClipboardRedirectionValue — allowed values for the AllowClipboardRedirection node.
+type AllowClipboardRedirectionValue int64
+
 const (
 	// Not allowed.
-	AllowMappedFoldersNotAllowed int64 = 0
+	AllowClipboardRedirectionNotAllowed AllowClipboardRedirectionValue = 0
 	// Allowed.
-	AllowMappedFoldersAllowed int64 = 1
+	AllowClipboardRedirectionAllowed AllowClipboardRedirectionValue = 1
 )
 
-// AllowNetworking allowed values.
+// String returns the AllowClipboardRedirectionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowClipboardRedirectionValue) String() string {
+	switch e {
+	case AllowClipboardRedirectionNotAllowed:
+		return "AllowClipboardRedirectionNotAllowed"
+	case AllowClipboardRedirectionAllowed:
+		return "AllowClipboardRedirectionAllowed"
+	default:
+		return fmt.Sprintf("AllowClipboardRedirectionValue(%d)", int64(e))
+	}
+}
+
+// AllowMappedFoldersValue — allowed values for the AllowMappedFolders node.
+type AllowMappedFoldersValue int64
+
 const (
 	// Not allowed.
-	AllowNetworkingNotAllowed int64 = 0
+	AllowMappedFoldersNotAllowed AllowMappedFoldersValue = 0
 	// Allowed.
-	AllowNetworkingAllowed int64 = 1
+	AllowMappedFoldersAllowed AllowMappedFoldersValue = 1
 )
 
-// AllowPrinterRedirection allowed values.
+// String returns the AllowMappedFoldersValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowMappedFoldersValue) String() string {
+	switch e {
+	case AllowMappedFoldersNotAllowed:
+		return "AllowMappedFoldersNotAllowed"
+	case AllowMappedFoldersAllowed:
+		return "AllowMappedFoldersAllowed"
+	default:
+		return fmt.Sprintf("AllowMappedFoldersValue(%d)", int64(e))
+	}
+}
+
+// AllowNetworkingValue — allowed values for the AllowNetworking node.
+type AllowNetworkingValue int64
+
 const (
 	// Not allowed.
-	AllowPrinterRedirectionNotAllowed int64 = 0
+	AllowNetworkingNotAllowed AllowNetworkingValue = 0
 	// Allowed.
-	AllowPrinterRedirectionAllowed int64 = 1
+	AllowNetworkingAllowed AllowNetworkingValue = 1
 )
 
-// AllowVGPU allowed values.
+// String returns the AllowNetworkingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowNetworkingValue) String() string {
+	switch e {
+	case AllowNetworkingNotAllowed:
+		return "AllowNetworkingNotAllowed"
+	case AllowNetworkingAllowed:
+		return "AllowNetworkingAllowed"
+	default:
+		return fmt.Sprintf("AllowNetworkingValue(%d)", int64(e))
+	}
+}
+
+// AllowPrinterRedirectionValue — allowed values for the AllowPrinterRedirection node.
+type AllowPrinterRedirectionValue int64
+
 const (
 	// Not allowed.
-	AllowVGPUNotAllowed int64 = 0
+	AllowPrinterRedirectionNotAllowed AllowPrinterRedirectionValue = 0
 	// Allowed.
-	AllowVGPUAllowed int64 = 1
+	AllowPrinterRedirectionAllowed AllowPrinterRedirectionValue = 1
 )
 
-// AllowVideoInput allowed values.
+// String returns the AllowPrinterRedirectionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowPrinterRedirectionValue) String() string {
+	switch e {
+	case AllowPrinterRedirectionNotAllowed:
+		return "AllowPrinterRedirectionNotAllowed"
+	case AllowPrinterRedirectionAllowed:
+		return "AllowPrinterRedirectionAllowed"
+	default:
+		return fmt.Sprintf("AllowPrinterRedirectionValue(%d)", int64(e))
+	}
+}
+
+// AllowVGPUValue — allowed values for the AllowVGPU node.
+type AllowVGPUValue int64
+
 const (
 	// Not allowed.
-	AllowVideoInputNotAllowed int64 = 0
+	AllowVGPUNotAllowed AllowVGPUValue = 0
 	// Allowed.
-	AllowVideoInputAllowed int64 = 1
+	AllowVGPUAllowed AllowVGPUValue = 1
 )
 
-// AllowWriteToMappedFolders allowed values.
+// String returns the AllowVGPUValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowVGPUValue) String() string {
+	switch e {
+	case AllowVGPUNotAllowed:
+		return "AllowVGPUNotAllowed"
+	case AllowVGPUAllowed:
+		return "AllowVGPUAllowed"
+	default:
+		return fmt.Sprintf("AllowVGPUValue(%d)", int64(e))
+	}
+}
+
+// AllowVideoInputValue — allowed values for the AllowVideoInput node.
+type AllowVideoInputValue int64
+
 const (
 	// Not allowed.
-	AllowWriteToMappedFoldersNotAllowed int64 = 0
+	AllowVideoInputNotAllowed AllowVideoInputValue = 0
 	// Allowed.
-	AllowWriteToMappedFoldersAllowed int64 = 1
+	AllowVideoInputAllowed AllowVideoInputValue = 1
 )
+
+// String returns the AllowVideoInputValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowVideoInputValue) String() string {
+	switch e {
+	case AllowVideoInputNotAllowed:
+		return "AllowVideoInputNotAllowed"
+	case AllowVideoInputAllowed:
+		return "AllowVideoInputAllowed"
+	default:
+		return fmt.Sprintf("AllowVideoInputValue(%d)", int64(e))
+	}
+}
+
+// AllowWriteToMappedFoldersValue — allowed values for the AllowWriteToMappedFolders node.
+type AllowWriteToMappedFoldersValue int64
+
+const (
+	// Not allowed.
+	AllowWriteToMappedFoldersNotAllowed AllowWriteToMappedFoldersValue = 0
+	// Allowed.
+	AllowWriteToMappedFoldersAllowed AllowWriteToMappedFoldersValue = 1
+)
+
+// String returns the AllowWriteToMappedFoldersValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowWriteToMappedFoldersValue) String() string {
+	switch e {
+	case AllowWriteToMappedFoldersNotAllowed:
+		return "AllowWriteToMappedFoldersNotAllowed"
+	case AllowWriteToMappedFoldersAllowed:
+		return "AllowWriteToMappedFoldersAllowed"
+	default:
+		return fmt.Sprintf("AllowWriteToMappedFoldersValue(%d)", int64(e))
+	}
+}

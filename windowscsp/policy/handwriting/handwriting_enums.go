@@ -2,10 +2,29 @@
 
 package handwriting
 
-// PanelDefaultModeDocked allowed values.
+import (
+	"fmt"
+)
+
+// PanelDefaultModeDockedValue — allowed values for the PanelDefaultModeDocked node.
+type PanelDefaultModeDockedValue int64
+
 const (
 	// Disabled.
-	PanelDefaultModeDockedDisabled int64 = 0
+	PanelDefaultModeDockedDisabled PanelDefaultModeDockedValue = 0
 	// Enabled.
-	PanelDefaultModeDockedEnabled int64 = 1
+	PanelDefaultModeDockedEnabled PanelDefaultModeDockedValue = 1
 )
+
+// String returns the PanelDefaultModeDockedValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PanelDefaultModeDockedValue) String() string {
+	switch e {
+	case PanelDefaultModeDockedDisabled:
+		return "PanelDefaultModeDockedDisabled"
+	case PanelDefaultModeDockedEnabled:
+		return "PanelDefaultModeDockedEnabled"
+	default:
+		return fmt.Sprintf("PanelDefaultModeDockedValue(%d)", int64(e))
+	}
+}

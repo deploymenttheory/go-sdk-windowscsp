@@ -21,12 +21,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3915 (CSP v11.0).
-func (s *WindowsAIUser) GetDisableAIDataAnalysis(ctx context.Context) (int64, error) {
+func (s *WindowsAIUser) GetDisableAIDataAnalysis(ctx context.Context) (DisableAIDataAnalysisValue, error) {
 	v, err := s.c.Get(ctx, URIDisableAIDataAnalysis)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableAIDataAnalysisValue(n), err
 }
 
 // CreateDisableAIDataAnalysis creates ./User/Vendor/MSFT/Policy/Config/WindowsAI/DisableAIDataAnalysis.
@@ -42,8 +43,8 @@ func (s *WindowsAIUser) GetDisableAIDataAnalysis(ctx context.Context) (int64, er
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3915 (CSP v11.0).
-func (s *WindowsAIUser) CreateDisableAIDataAnalysis(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableAIDataAnalysis, client.Int(value))
+func (s *WindowsAIUser) CreateDisableAIDataAnalysis(ctx context.Context, value DisableAIDataAnalysisValue) error {
+	return s.c.Add(ctx, URIDisableAIDataAnalysis, client.Int(int64(value)))
 }
 
 // UpdateDisableAIDataAnalysis updates ./User/Vendor/MSFT/Policy/Config/WindowsAI/DisableAIDataAnalysis.
@@ -59,8 +60,8 @@ func (s *WindowsAIUser) CreateDisableAIDataAnalysis(ctx context.Context, value i
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3915 (CSP v11.0).
-func (s *WindowsAIUser) UpdateDisableAIDataAnalysis(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableAIDataAnalysis, client.Int(value))
+func (s *WindowsAIUser) UpdateDisableAIDataAnalysis(ctx context.Context, value DisableAIDataAnalysisValue) error {
+	return s.c.Replace(ctx, URIDisableAIDataAnalysis, client.Int(int64(value)))
 }
 
 // DeleteDisableAIDataAnalysis deletes ./User/Vendor/MSFT/Policy/Config/WindowsAI/DisableAIDataAnalysis.
@@ -91,12 +92,13 @@ func (s *WindowsAIUser) DeleteDisableAIDataAnalysis(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsAIUser) GetDisableClickToDo(ctx context.Context) (int64, error) {
+func (s *WindowsAIUser) GetDisableClickToDo(ctx context.Context) (DisableClickToDoValue, error) {
 	v, err := s.c.Get(ctx, URIDisableClickToDo)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableClickToDoValue(n), err
 }
 
 // CreateDisableClickToDo creates ./User/Vendor/MSFT/Policy/Config/WindowsAI/DisableClickToDo.
@@ -110,8 +112,8 @@ func (s *WindowsAIUser) GetDisableClickToDo(ctx context.Context) (int64, error) 
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsAIUser) CreateDisableClickToDo(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableClickToDo, client.Int(value))
+func (s *WindowsAIUser) CreateDisableClickToDo(ctx context.Context, value DisableClickToDoValue) error {
+	return s.c.Add(ctx, URIDisableClickToDo, client.Int(int64(value)))
 }
 
 // UpdateDisableClickToDo updates ./User/Vendor/MSFT/Policy/Config/WindowsAI/DisableClickToDo.
@@ -125,8 +127,8 @@ func (s *WindowsAIUser) CreateDisableClickToDo(ctx context.Context, value int64)
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsAIUser) UpdateDisableClickToDo(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableClickToDo, client.Int(value))
+func (s *WindowsAIUser) UpdateDisableClickToDo(ctx context.Context, value DisableClickToDoValue) error {
+	return s.c.Replace(ctx, URIDisableClickToDo, client.Int(int64(value)))
 }
 
 // DeleteDisableClickToDo deletes ./User/Vendor/MSFT/Policy/Config/WindowsAI/DisableClickToDo.
@@ -159,12 +161,13 @@ func (s *WindowsAIUser) DeleteDisableClickToDo(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsAIUser) GetDisableRecallDataProviders(ctx context.Context) (int64, error) {
+func (s *WindowsAIUser) GetDisableRecallDataProviders(ctx context.Context) (DisableRecallDataProvidersValue, error) {
 	v, err := s.c.Get(ctx, URIDisableRecallDataProviders)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableRecallDataProvidersValue(n), err
 }
 
 // CreateDisableRecallDataProviders creates ./User/Vendor/MSFT/Policy/Config/WindowsAI/DisableRecallDataProviders.
@@ -182,8 +185,8 @@ func (s *WindowsAIUser) GetDisableRecallDataProviders(ctx context.Context) (int6
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsAIUser) CreateDisableRecallDataProviders(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableRecallDataProviders, client.Int(value))
+func (s *WindowsAIUser) CreateDisableRecallDataProviders(ctx context.Context, value DisableRecallDataProvidersValue) error {
+	return s.c.Add(ctx, URIDisableRecallDataProviders, client.Int(int64(value)))
 }
 
 // UpdateDisableRecallDataProviders updates ./User/Vendor/MSFT/Policy/Config/WindowsAI/DisableRecallDataProviders.
@@ -201,8 +204,8 @@ func (s *WindowsAIUser) CreateDisableRecallDataProviders(ctx context.Context, va
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsAIUser) UpdateDisableRecallDataProviders(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableRecallDataProviders, client.Int(value))
+func (s *WindowsAIUser) UpdateDisableRecallDataProviders(ctx context.Context, value DisableRecallDataProvidersValue) error {
+	return s.c.Replace(ctx, URIDisableRecallDataProviders, client.Int(int64(value)))
 }
 
 // DeleteDisableRecallDataProviders deletes ./User/Vendor/MSFT/Policy/Config/WindowsAI/DisableRecallDataProviders.
@@ -233,12 +236,13 @@ func (s *WindowsAIUser) DeleteDisableRecallDataProviders(ctx context.Context) er
 // setting applies to Enterprise, Professional and Education client SKUs only.
 //
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsAIUser) GetRemoveMicrosoftCopilotApp(ctx context.Context) (int64, error) {
+func (s *WindowsAIUser) GetRemoveMicrosoftCopilotApp(ctx context.Context) (RemoveMicrosoftCopilotAppValue, error) {
 	v, err := s.c.Get(ctx, URIRemoveMicrosoftCopilotApp)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return RemoveMicrosoftCopilotAppValue(n), err
 }
 
 // CreateRemoveMicrosoftCopilotApp creates ./User/Vendor/MSFT/Policy/Config/WindowsAI/RemoveMicrosoftCopilotApp.
@@ -250,8 +254,8 @@ func (s *WindowsAIUser) GetRemoveMicrosoftCopilotApp(ctx context.Context) (int64
 // setting applies to Enterprise, Professional and Education client SKUs only.
 //
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsAIUser) CreateRemoveMicrosoftCopilotApp(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIRemoveMicrosoftCopilotApp, client.Int(value))
+func (s *WindowsAIUser) CreateRemoveMicrosoftCopilotApp(ctx context.Context, value RemoveMicrosoftCopilotAppValue) error {
+	return s.c.Add(ctx, URIRemoveMicrosoftCopilotApp, client.Int(int64(value)))
 }
 
 // UpdateRemoveMicrosoftCopilotApp updates ./User/Vendor/MSFT/Policy/Config/WindowsAI/RemoveMicrosoftCopilotApp.
@@ -263,8 +267,8 @@ func (s *WindowsAIUser) CreateRemoveMicrosoftCopilotApp(ctx context.Context, val
 // setting applies to Enterprise, Professional and Education client SKUs only.
 //
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *WindowsAIUser) UpdateRemoveMicrosoftCopilotApp(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIRemoveMicrosoftCopilotApp, client.Int(value))
+func (s *WindowsAIUser) UpdateRemoveMicrosoftCopilotApp(ctx context.Context, value RemoveMicrosoftCopilotAppValue) error {
+	return s.c.Replace(ctx, URIRemoveMicrosoftCopilotApp, client.Int(int64(value)))
 }
 
 // DeleteRemoveMicrosoftCopilotApp deletes ./User/Vendor/MSFT/Policy/Config/WindowsAI/RemoveMicrosoftCopilotApp.
@@ -455,12 +459,13 @@ func (s *WindowsAIUser) DeleteSetDenyUriListForRecall(ctx context.Context) error
 //
 // Default: 90.
 // Supported from OS build 99.9.99999, 10.0.26100.3915 (CSP v11.0).
-func (s *WindowsAIUser) GetSetMaximumStorageDurationForRecallSnapshots(ctx context.Context) (int64, error) {
+func (s *WindowsAIUser) GetSetMaximumStorageDurationForRecallSnapshots(ctx context.Context) (SetMaximumStorageDurationForRecallSnapshotsValue, error) {
 	v, err := s.c.Get(ctx, URISetMaximumStorageDurationForRecallSnapshots)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SetMaximumStorageDurationForRecallSnapshotsValue(n), err
 }
 
 // CreateSetMaximumStorageDurationForRecallSnapshots creates ./User/Vendor/MSFT/Policy/Config/WindowsAI/SetMaximumStorageDurationForRecallSnapshots.
@@ -474,8 +479,8 @@ func (s *WindowsAIUser) GetSetMaximumStorageDurationForRecallSnapshots(ctx conte
 //
 // Default: 90.
 // Supported from OS build 99.9.99999, 10.0.26100.3915 (CSP v11.0).
-func (s *WindowsAIUser) CreateSetMaximumStorageDurationForRecallSnapshots(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISetMaximumStorageDurationForRecallSnapshots, client.Int(value))
+func (s *WindowsAIUser) CreateSetMaximumStorageDurationForRecallSnapshots(ctx context.Context, value SetMaximumStorageDurationForRecallSnapshotsValue) error {
+	return s.c.Add(ctx, URISetMaximumStorageDurationForRecallSnapshots, client.Int(int64(value)))
 }
 
 // UpdateSetMaximumStorageDurationForRecallSnapshots updates ./User/Vendor/MSFT/Policy/Config/WindowsAI/SetMaximumStorageDurationForRecallSnapshots.
@@ -489,8 +494,8 @@ func (s *WindowsAIUser) CreateSetMaximumStorageDurationForRecallSnapshots(ctx co
 //
 // Default: 90.
 // Supported from OS build 99.9.99999, 10.0.26100.3915 (CSP v11.0).
-func (s *WindowsAIUser) UpdateSetMaximumStorageDurationForRecallSnapshots(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISetMaximumStorageDurationForRecallSnapshots, client.Int(value))
+func (s *WindowsAIUser) UpdateSetMaximumStorageDurationForRecallSnapshots(ctx context.Context, value SetMaximumStorageDurationForRecallSnapshotsValue) error {
+	return s.c.Replace(ctx, URISetMaximumStorageDurationForRecallSnapshots, client.Int(int64(value)))
 }
 
 // DeleteSetMaximumStorageDurationForRecallSnapshots deletes ./User/Vendor/MSFT/Policy/Config/WindowsAI/SetMaximumStorageDurationForRecallSnapshots.
@@ -521,12 +526,13 @@ func (s *WindowsAIUser) DeleteSetMaximumStorageDurationForRecallSnapshots(ctx co
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3915 (CSP v11.0).
-func (s *WindowsAIUser) GetSetMaximumStorageSpaceForRecallSnapshots(ctx context.Context) (int64, error) {
+func (s *WindowsAIUser) GetSetMaximumStorageSpaceForRecallSnapshots(ctx context.Context) (SetMaximumStorageSpaceForRecallSnapshotsValue, error) {
 	v, err := s.c.Get(ctx, URISetMaximumStorageSpaceForRecallSnapshots)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SetMaximumStorageSpaceForRecallSnapshotsValue(n), err
 }
 
 // CreateSetMaximumStorageSpaceForRecallSnapshots creates ./User/Vendor/MSFT/Policy/Config/WindowsAI/SetMaximumStorageSpaceForRecallSnapshots.
@@ -542,8 +548,8 @@ func (s *WindowsAIUser) GetSetMaximumStorageSpaceForRecallSnapshots(ctx context.
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3915 (CSP v11.0).
-func (s *WindowsAIUser) CreateSetMaximumStorageSpaceForRecallSnapshots(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISetMaximumStorageSpaceForRecallSnapshots, client.Int(value))
+func (s *WindowsAIUser) CreateSetMaximumStorageSpaceForRecallSnapshots(ctx context.Context, value SetMaximumStorageSpaceForRecallSnapshotsValue) error {
+	return s.c.Add(ctx, URISetMaximumStorageSpaceForRecallSnapshots, client.Int(int64(value)))
 }
 
 // UpdateSetMaximumStorageSpaceForRecallSnapshots updates ./User/Vendor/MSFT/Policy/Config/WindowsAI/SetMaximumStorageSpaceForRecallSnapshots.
@@ -559,8 +565,8 @@ func (s *WindowsAIUser) CreateSetMaximumStorageSpaceForRecallSnapshots(ctx conte
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3915 (CSP v11.0).
-func (s *WindowsAIUser) UpdateSetMaximumStorageSpaceForRecallSnapshots(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISetMaximumStorageSpaceForRecallSnapshots, client.Int(value))
+func (s *WindowsAIUser) UpdateSetMaximumStorageSpaceForRecallSnapshots(ctx context.Context, value SetMaximumStorageSpaceForRecallSnapshotsValue) error {
+	return s.c.Replace(ctx, URISetMaximumStorageSpaceForRecallSnapshots, client.Int(int64(value)))
 }
 
 // DeleteSetMaximumStorageSpaceForRecallSnapshots deletes ./User/Vendor/MSFT/Policy/Config/WindowsAI/SetMaximumStorageSpaceForRecallSnapshots.
@@ -590,12 +596,13 @@ func (s *WindowsAIUser) DeleteSetMaximumStorageSpaceForRecallSnapshots(ctx conte
 // Supported from OS build 10.0.19044.3758, 10.0.19045.3758, 10.0.22621.2361, 10.0.22631 (CSP v10.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.26100.712.
-func (s *WindowsAIUser) GetTurnOffWindowsCopilot(ctx context.Context) (int64, error) {
+func (s *WindowsAIUser) GetTurnOffWindowsCopilot(ctx context.Context) (TurnOffWindowsCopilotValue, error) {
 	v, err := s.c.Get(ctx, URITurnOffWindowsCopilot)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return TurnOffWindowsCopilotValue(n), err
 }
 
 // CreateTurnOffWindowsCopilot creates ./User/Vendor/MSFT/Policy/Config/WindowsAI/TurnOffWindowsCopilot.
@@ -608,8 +615,8 @@ func (s *WindowsAIUser) GetTurnOffWindowsCopilot(ctx context.Context) (int64, er
 // Supported from OS build 10.0.19044.3758, 10.0.19045.3758, 10.0.22621.2361, 10.0.22631 (CSP v10.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.26100.712.
-func (s *WindowsAIUser) CreateTurnOffWindowsCopilot(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URITurnOffWindowsCopilot, client.Int(value))
+func (s *WindowsAIUser) CreateTurnOffWindowsCopilot(ctx context.Context, value TurnOffWindowsCopilotValue) error {
+	return s.c.Add(ctx, URITurnOffWindowsCopilot, client.Int(int64(value)))
 }
 
 // UpdateTurnOffWindowsCopilot updates ./User/Vendor/MSFT/Policy/Config/WindowsAI/TurnOffWindowsCopilot.
@@ -622,8 +629,8 @@ func (s *WindowsAIUser) CreateTurnOffWindowsCopilot(ctx context.Context, value i
 // Supported from OS build 10.0.19044.3758, 10.0.19045.3758, 10.0.22621.2361, 10.0.22631 (CSP v10.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.26100.712.
-func (s *WindowsAIUser) UpdateTurnOffWindowsCopilot(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URITurnOffWindowsCopilot, client.Int(value))
+func (s *WindowsAIUser) UpdateTurnOffWindowsCopilot(ctx context.Context, value TurnOffWindowsCopilotValue) error {
+	return s.c.Replace(ctx, URITurnOffWindowsCopilot, client.Int(int64(value)))
 }
 
 // DeleteTurnOffWindowsCopilot deletes ./User/Vendor/MSFT/Policy/Config/WindowsAI/TurnOffWindowsCopilot.

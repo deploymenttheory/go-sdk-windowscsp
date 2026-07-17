@@ -14,12 +14,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *Power) GetAllowHibernate(ctx context.Context) (int64, error) {
+func (s *Power) GetAllowHibernate(ctx context.Context) (AllowHibernateValue, error) {
 	v, err := s.c.Get(ctx, URIAllowHibernate)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowHibernateValue(n), err
 }
 
 // CreateAllowHibernate creates ./Device/Vendor/MSFT/Policy/Config/Power/AllowHibernate.
@@ -28,8 +29,8 @@ func (s *Power) GetAllowHibernate(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *Power) CreateAllowHibernate(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowHibernate, client.Int(value))
+func (s *Power) CreateAllowHibernate(ctx context.Context, value AllowHibernateValue) error {
+	return s.c.Add(ctx, URIAllowHibernate, client.Int(int64(value)))
 }
 
 // UpdateAllowHibernate updates ./Device/Vendor/MSFT/Policy/Config/Power/AllowHibernate.
@@ -38,8 +39,8 @@ func (s *Power) CreateAllowHibernate(ctx context.Context, value int64) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *Power) UpdateAllowHibernate(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowHibernate, client.Int(value))
+func (s *Power) UpdateAllowHibernate(ctx context.Context, value AllowHibernateValue) error {
+	return s.c.Replace(ctx, URIAllowHibernate, client.Int(int64(value)))
 }
 
 // DeleteAllowHibernate deletes ./Device/Vendor/MSFT/Policy/Config/Power/AllowHibernate.
@@ -188,12 +189,13 @@ func (s *Power) DeleteDisplayOffTimeoutPluggedIn(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Power) GetEnableEnergySaver(ctx context.Context) (int64, error) {
+func (s *Power) GetEnableEnergySaver(ctx context.Context) (EnableEnergySaverValue, error) {
 	v, err := s.c.Get(ctx, URIEnableEnergySaver)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableEnergySaverValue(n), err
 }
 
 // CreateEnableEnergySaver creates ./Device/Vendor/MSFT/Policy/Config/Power/EnableEnergySaver.
@@ -204,8 +206,8 @@ func (s *Power) GetEnableEnergySaver(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Power) CreateEnableEnergySaver(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableEnergySaver, client.Int(value))
+func (s *Power) CreateEnableEnergySaver(ctx context.Context, value EnableEnergySaverValue) error {
+	return s.c.Add(ctx, URIEnableEnergySaver, client.Int(int64(value)))
 }
 
 // UpdateEnableEnergySaver updates ./Device/Vendor/MSFT/Policy/Config/Power/EnableEnergySaver.
@@ -216,8 +218,8 @@ func (s *Power) CreateEnableEnergySaver(ctx context.Context, value int64) error 
 //
 // Default: 1.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Power) UpdateEnableEnergySaver(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableEnergySaver, client.Int(value))
+func (s *Power) UpdateEnableEnergySaver(ctx context.Context, value EnableEnergySaverValue) error {
+	return s.c.Replace(ctx, URIEnableEnergySaver, client.Int(int64(value)))
 }
 
 // DeleteEnableEnergySaver deletes ./Device/Vendor/MSFT/Policy/Config/Power/EnableEnergySaver.
@@ -472,12 +474,13 @@ func (s *Power) DeleteRequirePasswordWhenComputerWakesPluggedIn(ctx context.Cont
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Power) GetSelectLidCloseActionOnBattery(ctx context.Context) (int64, error) {
+func (s *Power) GetSelectLidCloseActionOnBattery(ctx context.Context) (SelectLidCloseActionOnBatteryValue, error) {
 	v, err := s.c.Get(ctx, URISelectLidCloseActionOnBattery)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SelectLidCloseActionOnBatteryValue(n), err
 }
 
 // CreateSelectLidCloseActionOnBattery creates ./Device/Vendor/MSFT/Policy/Config/Power/SelectLidCloseActionOnBattery.
@@ -488,8 +491,8 @@ func (s *Power) GetSelectLidCloseActionOnBattery(ctx context.Context) (int64, er
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Power) CreateSelectLidCloseActionOnBattery(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISelectLidCloseActionOnBattery, client.Int(value))
+func (s *Power) CreateSelectLidCloseActionOnBattery(ctx context.Context, value SelectLidCloseActionOnBatteryValue) error {
+	return s.c.Add(ctx, URISelectLidCloseActionOnBattery, client.Int(int64(value)))
 }
 
 // UpdateSelectLidCloseActionOnBattery updates ./Device/Vendor/MSFT/Policy/Config/Power/SelectLidCloseActionOnBattery.
@@ -500,8 +503,8 @@ func (s *Power) CreateSelectLidCloseActionOnBattery(ctx context.Context, value i
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Power) UpdateSelectLidCloseActionOnBattery(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISelectLidCloseActionOnBattery, client.Int(value))
+func (s *Power) UpdateSelectLidCloseActionOnBattery(ctx context.Context, value SelectLidCloseActionOnBatteryValue) error {
+	return s.c.Replace(ctx, URISelectLidCloseActionOnBattery, client.Int(int64(value)))
 }
 
 // DeleteSelectLidCloseActionOnBattery deletes ./Device/Vendor/MSFT/Policy/Config/Power/SelectLidCloseActionOnBattery.
@@ -524,12 +527,13 @@ func (s *Power) DeleteSelectLidCloseActionOnBattery(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Power) GetSelectLidCloseActionPluggedIn(ctx context.Context) (int64, error) {
+func (s *Power) GetSelectLidCloseActionPluggedIn(ctx context.Context) (SelectLidCloseActionPluggedInValue, error) {
 	v, err := s.c.Get(ctx, URISelectLidCloseActionPluggedIn)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SelectLidCloseActionPluggedInValue(n), err
 }
 
 // CreateSelectLidCloseActionPluggedIn creates ./Device/Vendor/MSFT/Policy/Config/Power/SelectLidCloseActionPluggedIn.
@@ -540,8 +544,8 @@ func (s *Power) GetSelectLidCloseActionPluggedIn(ctx context.Context) (int64, er
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Power) CreateSelectLidCloseActionPluggedIn(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISelectLidCloseActionPluggedIn, client.Int(value))
+func (s *Power) CreateSelectLidCloseActionPluggedIn(ctx context.Context, value SelectLidCloseActionPluggedInValue) error {
+	return s.c.Add(ctx, URISelectLidCloseActionPluggedIn, client.Int(int64(value)))
 }
 
 // UpdateSelectLidCloseActionPluggedIn updates ./Device/Vendor/MSFT/Policy/Config/Power/SelectLidCloseActionPluggedIn.
@@ -552,8 +556,8 @@ func (s *Power) CreateSelectLidCloseActionPluggedIn(ctx context.Context, value i
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Power) UpdateSelectLidCloseActionPluggedIn(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISelectLidCloseActionPluggedIn, client.Int(value))
+func (s *Power) UpdateSelectLidCloseActionPluggedIn(ctx context.Context, value SelectLidCloseActionPluggedInValue) error {
+	return s.c.Replace(ctx, URISelectLidCloseActionPluggedIn, client.Int(int64(value)))
 }
 
 // DeleteSelectLidCloseActionPluggedIn deletes ./Device/Vendor/MSFT/Policy/Config/Power/SelectLidCloseActionPluggedIn.
@@ -576,12 +580,13 @@ func (s *Power) DeleteSelectLidCloseActionPluggedIn(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Power) GetSelectPowerButtonActionOnBattery(ctx context.Context) (int64, error) {
+func (s *Power) GetSelectPowerButtonActionOnBattery(ctx context.Context) (SelectPowerButtonActionOnBatteryValue, error) {
 	v, err := s.c.Get(ctx, URISelectPowerButtonActionOnBattery)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SelectPowerButtonActionOnBatteryValue(n), err
 }
 
 // CreateSelectPowerButtonActionOnBattery creates ./Device/Vendor/MSFT/Policy/Config/Power/SelectPowerButtonActionOnBattery.
@@ -592,8 +597,8 @@ func (s *Power) GetSelectPowerButtonActionOnBattery(ctx context.Context) (int64,
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Power) CreateSelectPowerButtonActionOnBattery(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISelectPowerButtonActionOnBattery, client.Int(value))
+func (s *Power) CreateSelectPowerButtonActionOnBattery(ctx context.Context, value SelectPowerButtonActionOnBatteryValue) error {
+	return s.c.Add(ctx, URISelectPowerButtonActionOnBattery, client.Int(int64(value)))
 }
 
 // UpdateSelectPowerButtonActionOnBattery updates ./Device/Vendor/MSFT/Policy/Config/Power/SelectPowerButtonActionOnBattery.
@@ -604,8 +609,8 @@ func (s *Power) CreateSelectPowerButtonActionOnBattery(ctx context.Context, valu
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Power) UpdateSelectPowerButtonActionOnBattery(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISelectPowerButtonActionOnBattery, client.Int(value))
+func (s *Power) UpdateSelectPowerButtonActionOnBattery(ctx context.Context, value SelectPowerButtonActionOnBatteryValue) error {
+	return s.c.Replace(ctx, URISelectPowerButtonActionOnBattery, client.Int(int64(value)))
 }
 
 // DeleteSelectPowerButtonActionOnBattery deletes ./Device/Vendor/MSFT/Policy/Config/Power/SelectPowerButtonActionOnBattery.
@@ -628,12 +633,13 @@ func (s *Power) DeleteSelectPowerButtonActionOnBattery(ctx context.Context) erro
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Power) GetSelectPowerButtonActionPluggedIn(ctx context.Context) (int64, error) {
+func (s *Power) GetSelectPowerButtonActionPluggedIn(ctx context.Context) (SelectPowerButtonActionPluggedInValue, error) {
 	v, err := s.c.Get(ctx, URISelectPowerButtonActionPluggedIn)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SelectPowerButtonActionPluggedInValue(n), err
 }
 
 // CreateSelectPowerButtonActionPluggedIn creates ./Device/Vendor/MSFT/Policy/Config/Power/SelectPowerButtonActionPluggedIn.
@@ -644,8 +650,8 @@ func (s *Power) GetSelectPowerButtonActionPluggedIn(ctx context.Context) (int64,
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Power) CreateSelectPowerButtonActionPluggedIn(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISelectPowerButtonActionPluggedIn, client.Int(value))
+func (s *Power) CreateSelectPowerButtonActionPluggedIn(ctx context.Context, value SelectPowerButtonActionPluggedInValue) error {
+	return s.c.Add(ctx, URISelectPowerButtonActionPluggedIn, client.Int(int64(value)))
 }
 
 // UpdateSelectPowerButtonActionPluggedIn updates ./Device/Vendor/MSFT/Policy/Config/Power/SelectPowerButtonActionPluggedIn.
@@ -656,8 +662,8 @@ func (s *Power) CreateSelectPowerButtonActionPluggedIn(ctx context.Context, valu
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Power) UpdateSelectPowerButtonActionPluggedIn(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISelectPowerButtonActionPluggedIn, client.Int(value))
+func (s *Power) UpdateSelectPowerButtonActionPluggedIn(ctx context.Context, value SelectPowerButtonActionPluggedInValue) error {
+	return s.c.Replace(ctx, URISelectPowerButtonActionPluggedIn, client.Int(int64(value)))
 }
 
 // DeleteSelectPowerButtonActionPluggedIn deletes ./Device/Vendor/MSFT/Policy/Config/Power/SelectPowerButtonActionPluggedIn.
@@ -680,12 +686,13 @@ func (s *Power) DeleteSelectPowerButtonActionPluggedIn(ctx context.Context) erro
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Power) GetSelectSleepButtonActionOnBattery(ctx context.Context) (int64, error) {
+func (s *Power) GetSelectSleepButtonActionOnBattery(ctx context.Context) (SelectSleepButtonActionOnBatteryValue, error) {
 	v, err := s.c.Get(ctx, URISelectSleepButtonActionOnBattery)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SelectSleepButtonActionOnBatteryValue(n), err
 }
 
 // CreateSelectSleepButtonActionOnBattery creates ./Device/Vendor/MSFT/Policy/Config/Power/SelectSleepButtonActionOnBattery.
@@ -696,8 +703,8 @@ func (s *Power) GetSelectSleepButtonActionOnBattery(ctx context.Context) (int64,
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Power) CreateSelectSleepButtonActionOnBattery(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISelectSleepButtonActionOnBattery, client.Int(value))
+func (s *Power) CreateSelectSleepButtonActionOnBattery(ctx context.Context, value SelectSleepButtonActionOnBatteryValue) error {
+	return s.c.Add(ctx, URISelectSleepButtonActionOnBattery, client.Int(int64(value)))
 }
 
 // UpdateSelectSleepButtonActionOnBattery updates ./Device/Vendor/MSFT/Policy/Config/Power/SelectSleepButtonActionOnBattery.
@@ -708,8 +715,8 @@ func (s *Power) CreateSelectSleepButtonActionOnBattery(ctx context.Context, valu
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Power) UpdateSelectSleepButtonActionOnBattery(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISelectSleepButtonActionOnBattery, client.Int(value))
+func (s *Power) UpdateSelectSleepButtonActionOnBattery(ctx context.Context, value SelectSleepButtonActionOnBatteryValue) error {
+	return s.c.Replace(ctx, URISelectSleepButtonActionOnBattery, client.Int(int64(value)))
 }
 
 // DeleteSelectSleepButtonActionOnBattery deletes ./Device/Vendor/MSFT/Policy/Config/Power/SelectSleepButtonActionOnBattery.
@@ -732,12 +739,13 @@ func (s *Power) DeleteSelectSleepButtonActionOnBattery(ctx context.Context) erro
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Power) GetSelectSleepButtonActionPluggedIn(ctx context.Context) (int64, error) {
+func (s *Power) GetSelectSleepButtonActionPluggedIn(ctx context.Context) (SelectSleepButtonActionPluggedInValue, error) {
 	v, err := s.c.Get(ctx, URISelectSleepButtonActionPluggedIn)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SelectSleepButtonActionPluggedInValue(n), err
 }
 
 // CreateSelectSleepButtonActionPluggedIn creates ./Device/Vendor/MSFT/Policy/Config/Power/SelectSleepButtonActionPluggedIn.
@@ -748,8 +756,8 @@ func (s *Power) GetSelectSleepButtonActionPluggedIn(ctx context.Context) (int64,
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Power) CreateSelectSleepButtonActionPluggedIn(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISelectSleepButtonActionPluggedIn, client.Int(value))
+func (s *Power) CreateSelectSleepButtonActionPluggedIn(ctx context.Context, value SelectSleepButtonActionPluggedInValue) error {
+	return s.c.Add(ctx, URISelectSleepButtonActionPluggedIn, client.Int(int64(value)))
 }
 
 // UpdateSelectSleepButtonActionPluggedIn updates ./Device/Vendor/MSFT/Policy/Config/Power/SelectSleepButtonActionPluggedIn.
@@ -760,8 +768,8 @@ func (s *Power) CreateSelectSleepButtonActionPluggedIn(ctx context.Context, valu
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Power) UpdateSelectSleepButtonActionPluggedIn(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISelectSleepButtonActionPluggedIn, client.Int(value))
+func (s *Power) UpdateSelectSleepButtonActionPluggedIn(ctx context.Context, value SelectSleepButtonActionPluggedInValue) error {
+	return s.c.Replace(ctx, URISelectSleepButtonActionPluggedIn, client.Int(int64(value)))
 }
 
 // DeleteSelectSleepButtonActionPluggedIn deletes ./Device/Vendor/MSFT/Policy/Config/Power/SelectSleepButtonActionPluggedIn.
@@ -847,12 +855,13 @@ func (s *Power) DeleteStandbyTimeoutPluggedIn(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Power) GetTurnOffHybridSleepOnBattery(ctx context.Context) (int64, error) {
+func (s *Power) GetTurnOffHybridSleepOnBattery(ctx context.Context) (TurnOffHybridSleepOnBatteryValue, error) {
 	v, err := s.c.Get(ctx, URITurnOffHybridSleepOnBattery)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return TurnOffHybridSleepOnBatteryValue(n), err
 }
 
 // CreateTurnOffHybridSleepOnBattery creates ./Device/Vendor/MSFT/Policy/Config/Power/TurnOffHybridSleepOnBattery.
@@ -862,8 +871,8 @@ func (s *Power) GetTurnOffHybridSleepOnBattery(ctx context.Context) (int64, erro
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Power) CreateTurnOffHybridSleepOnBattery(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URITurnOffHybridSleepOnBattery, client.Int(value))
+func (s *Power) CreateTurnOffHybridSleepOnBattery(ctx context.Context, value TurnOffHybridSleepOnBatteryValue) error {
+	return s.c.Add(ctx, URITurnOffHybridSleepOnBattery, client.Int(int64(value)))
 }
 
 // UpdateTurnOffHybridSleepOnBattery updates ./Device/Vendor/MSFT/Policy/Config/Power/TurnOffHybridSleepOnBattery.
@@ -873,8 +882,8 @@ func (s *Power) CreateTurnOffHybridSleepOnBattery(ctx context.Context, value int
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Power) UpdateTurnOffHybridSleepOnBattery(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URITurnOffHybridSleepOnBattery, client.Int(value))
+func (s *Power) UpdateTurnOffHybridSleepOnBattery(ctx context.Context, value TurnOffHybridSleepOnBatteryValue) error {
+	return s.c.Replace(ctx, URITurnOffHybridSleepOnBattery, client.Int(int64(value)))
 }
 
 // DeleteTurnOffHybridSleepOnBattery deletes ./Device/Vendor/MSFT/Policy/Config/Power/TurnOffHybridSleepOnBattery.
@@ -895,12 +904,13 @@ func (s *Power) DeleteTurnOffHybridSleepOnBattery(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Power) GetTurnOffHybridSleepPluggedIn(ctx context.Context) (int64, error) {
+func (s *Power) GetTurnOffHybridSleepPluggedIn(ctx context.Context) (TurnOffHybridSleepPluggedInValue, error) {
 	v, err := s.c.Get(ctx, URITurnOffHybridSleepPluggedIn)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return TurnOffHybridSleepPluggedInValue(n), err
 }
 
 // CreateTurnOffHybridSleepPluggedIn creates ./Device/Vendor/MSFT/Policy/Config/Power/TurnOffHybridSleepPluggedIn.
@@ -910,8 +920,8 @@ func (s *Power) GetTurnOffHybridSleepPluggedIn(ctx context.Context) (int64, erro
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Power) CreateTurnOffHybridSleepPluggedIn(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URITurnOffHybridSleepPluggedIn, client.Int(value))
+func (s *Power) CreateTurnOffHybridSleepPluggedIn(ctx context.Context, value TurnOffHybridSleepPluggedInValue) error {
+	return s.c.Add(ctx, URITurnOffHybridSleepPluggedIn, client.Int(int64(value)))
 }
 
 // UpdateTurnOffHybridSleepPluggedIn updates ./Device/Vendor/MSFT/Policy/Config/Power/TurnOffHybridSleepPluggedIn.
@@ -921,8 +931,8 @@ func (s *Power) CreateTurnOffHybridSleepPluggedIn(ctx context.Context, value int
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Power) UpdateTurnOffHybridSleepPluggedIn(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URITurnOffHybridSleepPluggedIn, client.Int(value))
+func (s *Power) UpdateTurnOffHybridSleepPluggedIn(ctx context.Context, value TurnOffHybridSleepPluggedInValue) error {
+	return s.c.Replace(ctx, URITurnOffHybridSleepPluggedIn, client.Int(int64(value)))
 }
 
 // DeleteTurnOffHybridSleepPluggedIn deletes ./Device/Vendor/MSFT/Policy/Config/Power/TurnOffHybridSleepPluggedIn.

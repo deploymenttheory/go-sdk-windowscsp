@@ -15,12 +15,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Accounts) GetAllowAddingNonMicrosoftAccountsManually(ctx context.Context) (int64, error) {
+func (s *Accounts) GetAllowAddingNonMicrosoftAccountsManually(ctx context.Context) (AllowAddingNonMicrosoftAccountsManuallyValue, error) {
 	v, err := s.c.Get(ctx, URIAllowAddingNonMicrosoftAccountsManually)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowAddingNonMicrosoftAccountsManuallyValue(n), err
 }
 
 // CreateAllowAddingNonMicrosoftAccountsManually creates ./Device/Vendor/MSFT/Policy/Config/Accounts/AllowAddingNonMicrosoftAccountsManually.
@@ -30,8 +31,8 @@ func (s *Accounts) GetAllowAddingNonMicrosoftAccountsManually(ctx context.Contex
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Accounts) CreateAllowAddingNonMicrosoftAccountsManually(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowAddingNonMicrosoftAccountsManually, client.Int(value))
+func (s *Accounts) CreateAllowAddingNonMicrosoftAccountsManually(ctx context.Context, value AllowAddingNonMicrosoftAccountsManuallyValue) error {
+	return s.c.Add(ctx, URIAllowAddingNonMicrosoftAccountsManually, client.Int(int64(value)))
 }
 
 // UpdateAllowAddingNonMicrosoftAccountsManually updates ./Device/Vendor/MSFT/Policy/Config/Accounts/AllowAddingNonMicrosoftAccountsManually.
@@ -41,8 +42,8 @@ func (s *Accounts) CreateAllowAddingNonMicrosoftAccountsManually(ctx context.Con
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Accounts) UpdateAllowAddingNonMicrosoftAccountsManually(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowAddingNonMicrosoftAccountsManually, client.Int(value))
+func (s *Accounts) UpdateAllowAddingNonMicrosoftAccountsManually(ctx context.Context, value AllowAddingNonMicrosoftAccountsManuallyValue) error {
+	return s.c.Replace(ctx, URIAllowAddingNonMicrosoftAccountsManually, client.Int(int64(value)))
 }
 
 // DeleteAllowAddingNonMicrosoftAccountsManually deletes ./Device/Vendor/MSFT/Policy/Config/Accounts/AllowAddingNonMicrosoftAccountsManually.
@@ -62,12 +63,13 @@ func (s *Accounts) DeleteAllowAddingNonMicrosoftAccountsManually(ctx context.Con
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Accounts) GetAllowMicrosoftAccountConnection(ctx context.Context) (int64, error) {
+func (s *Accounts) GetAllowMicrosoftAccountConnection(ctx context.Context) (AllowMicrosoftAccountConnectionValue, error) {
 	v, err := s.c.Get(ctx, URIAllowMicrosoftAccountConnection)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowMicrosoftAccountConnectionValue(n), err
 }
 
 // CreateAllowMicrosoftAccountConnection creates ./Device/Vendor/MSFT/Policy/Config/Accounts/AllowMicrosoftAccountConnection.
@@ -76,8 +78,8 @@ func (s *Accounts) GetAllowMicrosoftAccountConnection(ctx context.Context) (int6
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Accounts) CreateAllowMicrosoftAccountConnection(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowMicrosoftAccountConnection, client.Int(value))
+func (s *Accounts) CreateAllowMicrosoftAccountConnection(ctx context.Context, value AllowMicrosoftAccountConnectionValue) error {
+	return s.c.Add(ctx, URIAllowMicrosoftAccountConnection, client.Int(int64(value)))
 }
 
 // UpdateAllowMicrosoftAccountConnection updates ./Device/Vendor/MSFT/Policy/Config/Accounts/AllowMicrosoftAccountConnection.
@@ -86,8 +88,8 @@ func (s *Accounts) CreateAllowMicrosoftAccountConnection(ctx context.Context, va
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Accounts) UpdateAllowMicrosoftAccountConnection(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowMicrosoftAccountConnection, client.Int(value))
+func (s *Accounts) UpdateAllowMicrosoftAccountConnection(ctx context.Context, value AllowMicrosoftAccountConnectionValue) error {
+	return s.c.Replace(ctx, URIAllowMicrosoftAccountConnection, client.Int(int64(value)))
 }
 
 // DeleteAllowMicrosoftAccountConnection deletes ./Device/Vendor/MSFT/Policy/Config/Accounts/AllowMicrosoftAccountConnection.
@@ -112,12 +114,13 @@ func (s *Accounts) DeleteAllowMicrosoftAccountConnection(ctx context.Context) er
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Accounts) GetAllowMicrosoftAccountSignInAssistant(ctx context.Context) (int64, error) {
+func (s *Accounts) GetAllowMicrosoftAccountSignInAssistant(ctx context.Context) (AllowMicrosoftAccountSignInAssistantValue, error) {
 	v, err := s.c.Get(ctx, URIAllowMicrosoftAccountSignInAssistant)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowMicrosoftAccountSignInAssistantValue(n), err
 }
 
 // CreateAllowMicrosoftAccountSignInAssistant creates ./Device/Vendor/MSFT/Policy/Config/Accounts/AllowMicrosoftAccountSignInAssistant.
@@ -132,8 +135,8 @@ func (s *Accounts) GetAllowMicrosoftAccountSignInAssistant(ctx context.Context) 
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Accounts) CreateAllowMicrosoftAccountSignInAssistant(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowMicrosoftAccountSignInAssistant, client.Int(value))
+func (s *Accounts) CreateAllowMicrosoftAccountSignInAssistant(ctx context.Context, value AllowMicrosoftAccountSignInAssistantValue) error {
+	return s.c.Add(ctx, URIAllowMicrosoftAccountSignInAssistant, client.Int(int64(value)))
 }
 
 // UpdateAllowMicrosoftAccountSignInAssistant updates ./Device/Vendor/MSFT/Policy/Config/Accounts/AllowMicrosoftAccountSignInAssistant.
@@ -148,8 +151,8 @@ func (s *Accounts) CreateAllowMicrosoftAccountSignInAssistant(ctx context.Contex
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Accounts) UpdateAllowMicrosoftAccountSignInAssistant(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowMicrosoftAccountSignInAssistant, client.Int(value))
+func (s *Accounts) UpdateAllowMicrosoftAccountSignInAssistant(ctx context.Context, value AllowMicrosoftAccountSignInAssistantValue) error {
+	return s.c.Replace(ctx, URIAllowMicrosoftAccountSignInAssistant, client.Int(int64(value)))
 }
 
 // DeleteAllowMicrosoftAccountSignInAssistant deletes ./Device/Vendor/MSFT/Policy/Config/Accounts/AllowMicrosoftAccountSignInAssistant.
@@ -208,12 +211,13 @@ func (s *Accounts) DeleteDomainNamesForEmailSync(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Accounts) GetRestrictToEnterpriseDeviceAuthenticationOnly(ctx context.Context) (int64, error) {
+func (s *Accounts) GetRestrictToEnterpriseDeviceAuthenticationOnly(ctx context.Context) (RestrictToEnterpriseDeviceAuthenticationOnlyValue, error) {
 	v, err := s.c.Get(ctx, URIRestrictToEnterpriseDeviceAuthenticationOnly)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return RestrictToEnterpriseDeviceAuthenticationOnlyValue(n), err
 }
 
 // CreateRestrictToEnterpriseDeviceAuthenticationOnly creates ./Device/Vendor/MSFT/Policy/Config/Accounts/RestrictToEnterpriseDeviceAuthenticationOnly.
@@ -224,8 +228,8 @@ func (s *Accounts) GetRestrictToEnterpriseDeviceAuthenticationOnly(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Accounts) CreateRestrictToEnterpriseDeviceAuthenticationOnly(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIRestrictToEnterpriseDeviceAuthenticationOnly, client.Int(value))
+func (s *Accounts) CreateRestrictToEnterpriseDeviceAuthenticationOnly(ctx context.Context, value RestrictToEnterpriseDeviceAuthenticationOnlyValue) error {
+	return s.c.Add(ctx, URIRestrictToEnterpriseDeviceAuthenticationOnly, client.Int(int64(value)))
 }
 
 // UpdateRestrictToEnterpriseDeviceAuthenticationOnly updates ./Device/Vendor/MSFT/Policy/Config/Accounts/RestrictToEnterpriseDeviceAuthenticationOnly.
@@ -236,8 +240,8 @@ func (s *Accounts) CreateRestrictToEnterpriseDeviceAuthenticationOnly(ctx contex
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Accounts) UpdateRestrictToEnterpriseDeviceAuthenticationOnly(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIRestrictToEnterpriseDeviceAuthenticationOnly, client.Int(value))
+func (s *Accounts) UpdateRestrictToEnterpriseDeviceAuthenticationOnly(ctx context.Context, value RestrictToEnterpriseDeviceAuthenticationOnlyValue) error {
+	return s.c.Replace(ctx, URIRestrictToEnterpriseDeviceAuthenticationOnly, client.Int(int64(value)))
 }
 
 // DeleteRestrictToEnterpriseDeviceAuthenticationOnly deletes ./Device/Vendor/MSFT/Policy/Config/Accounts/RestrictToEnterpriseDeviceAuthenticationOnly.

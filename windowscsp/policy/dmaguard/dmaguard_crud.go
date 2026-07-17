@@ -30,12 +30,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *DmaGuard) GetDeviceEnumerationPolicy(ctx context.Context) (int64, error) {
+func (s *DmaGuard) GetDeviceEnumerationPolicy(ctx context.Context) (DeviceEnumerationPolicyValue, error) {
 	v, err := s.c.Get(ctx, URIDeviceEnumerationPolicy)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DeviceEnumerationPolicyValue(n), err
 }
 
 // CreateDeviceEnumerationPolicy creates ./Device/Vendor/MSFT/Policy/Config/DmaGuard/DeviceEnumerationPolicy.
@@ -60,8 +61,8 @@ func (s *DmaGuard) GetDeviceEnumerationPolicy(ctx context.Context) (int64, error
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *DmaGuard) CreateDeviceEnumerationPolicy(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDeviceEnumerationPolicy, client.Int(value))
+func (s *DmaGuard) CreateDeviceEnumerationPolicy(ctx context.Context, value DeviceEnumerationPolicyValue) error {
+	return s.c.Add(ctx, URIDeviceEnumerationPolicy, client.Int(int64(value)))
 }
 
 // UpdateDeviceEnumerationPolicy updates ./Device/Vendor/MSFT/Policy/Config/DmaGuard/DeviceEnumerationPolicy.
@@ -86,8 +87,8 @@ func (s *DmaGuard) CreateDeviceEnumerationPolicy(ctx context.Context, value int6
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *DmaGuard) UpdateDeviceEnumerationPolicy(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDeviceEnumerationPolicy, client.Int(value))
+func (s *DmaGuard) UpdateDeviceEnumerationPolicy(ctx context.Context, value DeviceEnumerationPolicyValue) error {
+	return s.c.Replace(ctx, URIDeviceEnumerationPolicy, client.Int(int64(value)))
 }
 
 // DeleteDeviceEnumerationPolicy deletes ./Device/Vendor/MSFT/Policy/Config/DmaGuard/DeviceEnumerationPolicy.

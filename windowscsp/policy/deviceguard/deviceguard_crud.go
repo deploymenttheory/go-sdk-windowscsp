@@ -14,12 +14,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *DeviceGuard) GetConfigureSystemGuardLaunch(ctx context.Context) (int64, error) {
+func (s *DeviceGuard) GetConfigureSystemGuardLaunch(ctx context.Context) (ConfigureSystemGuardLaunchValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureSystemGuardLaunch)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureSystemGuardLaunchValue(n), err
 }
 
 // CreateConfigureSystemGuardLaunch creates ./Device/Vendor/MSFT/Policy/Config/DeviceGuard/ConfigureSystemGuardLaunch.
@@ -28,8 +29,8 @@ func (s *DeviceGuard) GetConfigureSystemGuardLaunch(ctx context.Context) (int64,
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *DeviceGuard) CreateConfigureSystemGuardLaunch(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureSystemGuardLaunch, client.Int(value))
+func (s *DeviceGuard) CreateConfigureSystemGuardLaunch(ctx context.Context, value ConfigureSystemGuardLaunchValue) error {
+	return s.c.Add(ctx, URIConfigureSystemGuardLaunch, client.Int(int64(value)))
 }
 
 // UpdateConfigureSystemGuardLaunch updates ./Device/Vendor/MSFT/Policy/Config/DeviceGuard/ConfigureSystemGuardLaunch.
@@ -38,8 +39,8 @@ func (s *DeviceGuard) CreateConfigureSystemGuardLaunch(ctx context.Context, valu
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *DeviceGuard) UpdateConfigureSystemGuardLaunch(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureSystemGuardLaunch, client.Int(value))
+func (s *DeviceGuard) UpdateConfigureSystemGuardLaunch(ctx context.Context, value ConfigureSystemGuardLaunchValue) error {
+	return s.c.Replace(ctx, URIConfigureSystemGuardLaunch, client.Int(int64(value)))
 }
 
 // DeleteConfigureSystemGuardLaunch deletes ./Device/Vendor/MSFT/Policy/Config/DeviceGuard/ConfigureSystemGuardLaunch.
@@ -57,12 +58,13 @@ func (s *DeviceGuard) DeleteConfigureSystemGuardLaunch(ctx context.Context) erro
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *DeviceGuard) GetEnableVirtualizationBasedSecurity(ctx context.Context) (int64, error) {
+func (s *DeviceGuard) GetEnableVirtualizationBasedSecurity(ctx context.Context) (EnableVirtualizationBasedSecurityValue, error) {
 	v, err := s.c.Get(ctx, URIEnableVirtualizationBasedSecurity)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableVirtualizationBasedSecurityValue(n), err
 }
 
 // CreateEnableVirtualizationBasedSecurity creates ./Device/Vendor/MSFT/Policy/Config/DeviceGuard/EnableVirtualizationBasedSecurity.
@@ -70,8 +72,8 @@ func (s *DeviceGuard) GetEnableVirtualizationBasedSecurity(ctx context.Context) 
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *DeviceGuard) CreateEnableVirtualizationBasedSecurity(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableVirtualizationBasedSecurity, client.Int(value))
+func (s *DeviceGuard) CreateEnableVirtualizationBasedSecurity(ctx context.Context, value EnableVirtualizationBasedSecurityValue) error {
+	return s.c.Add(ctx, URIEnableVirtualizationBasedSecurity, client.Int(int64(value)))
 }
 
 // UpdateEnableVirtualizationBasedSecurity updates ./Device/Vendor/MSFT/Policy/Config/DeviceGuard/EnableVirtualizationBasedSecurity.
@@ -79,8 +81,8 @@ func (s *DeviceGuard) CreateEnableVirtualizationBasedSecurity(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *DeviceGuard) UpdateEnableVirtualizationBasedSecurity(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableVirtualizationBasedSecurity, client.Int(value))
+func (s *DeviceGuard) UpdateEnableVirtualizationBasedSecurity(ctx context.Context, value EnableVirtualizationBasedSecurityValue) error {
+	return s.c.Replace(ctx, URIEnableVirtualizationBasedSecurity, client.Int(int64(value)))
 }
 
 // DeleteEnableVirtualizationBasedSecurity deletes ./Device/Vendor/MSFT/Policy/Config/DeviceGuard/EnableVirtualizationBasedSecurity.
@@ -99,12 +101,13 @@ func (s *DeviceGuard) DeleteEnableVirtualizationBasedSecurity(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *DeviceGuard) GetLsaCfgFlags(ctx context.Context) (int64, error) {
+func (s *DeviceGuard) GetLsaCfgFlags(ctx context.Context) (LsaCfgFlagsValue, error) {
 	v, err := s.c.Get(ctx, URILsaCfgFlags)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return LsaCfgFlagsValue(n), err
 }
 
 // CreateLsaCfgFlags creates ./Device/Vendor/MSFT/Policy/Config/DeviceGuard/LsaCfgFlags.
@@ -114,8 +117,8 @@ func (s *DeviceGuard) GetLsaCfgFlags(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *DeviceGuard) CreateLsaCfgFlags(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URILsaCfgFlags, client.Int(value))
+func (s *DeviceGuard) CreateLsaCfgFlags(ctx context.Context, value LsaCfgFlagsValue) error {
+	return s.c.Add(ctx, URILsaCfgFlags, client.Int(int64(value)))
 }
 
 // UpdateLsaCfgFlags updates ./Device/Vendor/MSFT/Policy/Config/DeviceGuard/LsaCfgFlags.
@@ -125,8 +128,8 @@ func (s *DeviceGuard) CreateLsaCfgFlags(ctx context.Context, value int64) error 
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *DeviceGuard) UpdateLsaCfgFlags(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URILsaCfgFlags, client.Int(value))
+func (s *DeviceGuard) UpdateLsaCfgFlags(ctx context.Context, value LsaCfgFlagsValue) error {
+	return s.c.Replace(ctx, URILsaCfgFlags, client.Int(int64(value)))
 }
 
 // DeleteLsaCfgFlags deletes ./Device/Vendor/MSFT/Policy/Config/DeviceGuard/LsaCfgFlags.
@@ -148,12 +151,13 @@ func (s *DeviceGuard) DeleteLsaCfgFlags(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *DeviceGuard) GetMachineIdentityIsolation(ctx context.Context) (int64, error) {
+func (s *DeviceGuard) GetMachineIdentityIsolation(ctx context.Context) (MachineIdentityIsolationValue, error) {
 	v, err := s.c.Get(ctx, URIMachineIdentityIsolation)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MachineIdentityIsolationValue(n), err
 }
 
 // CreateMachineIdentityIsolation creates ./Device/Vendor/MSFT/Policy/Config/DeviceGuard/MachineIdentityIsolation.
@@ -164,8 +168,8 @@ func (s *DeviceGuard) GetMachineIdentityIsolation(ctx context.Context) (int64, e
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *DeviceGuard) CreateMachineIdentityIsolation(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIMachineIdentityIsolation, client.Int(value))
+func (s *DeviceGuard) CreateMachineIdentityIsolation(ctx context.Context, value MachineIdentityIsolationValue) error {
+	return s.c.Add(ctx, URIMachineIdentityIsolation, client.Int(int64(value)))
 }
 
 // UpdateMachineIdentityIsolation updates ./Device/Vendor/MSFT/Policy/Config/DeviceGuard/MachineIdentityIsolation.
@@ -176,8 +180,8 @@ func (s *DeviceGuard) CreateMachineIdentityIsolation(ctx context.Context, value 
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *DeviceGuard) UpdateMachineIdentityIsolation(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIMachineIdentityIsolation, client.Int(value))
+func (s *DeviceGuard) UpdateMachineIdentityIsolation(ctx context.Context, value MachineIdentityIsolationValue) error {
+	return s.c.Replace(ctx, URIMachineIdentityIsolation, client.Int(int64(value)))
 }
 
 // DeleteMachineIdentityIsolation deletes ./Device/Vendor/MSFT/Policy/Config/DeviceGuard/MachineIdentityIsolation.
@@ -197,12 +201,13 @@ func (s *DeviceGuard) DeleteMachineIdentityIsolation(ctx context.Context) error 
 //
 // Default: 1.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *DeviceGuard) GetRequireMicrosoftSignedBootChain(ctx context.Context) (int64, error) {
+func (s *DeviceGuard) GetRequireMicrosoftSignedBootChain(ctx context.Context) (RequireMicrosoftSignedBootChainValue, error) {
 	v, err := s.c.Get(ctx, URIRequireMicrosoftSignedBootChain)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return RequireMicrosoftSignedBootChainValue(n), err
 }
 
 // CreateRequireMicrosoftSignedBootChain creates ./Device/Vendor/MSFT/Policy/Config/DeviceGuard/RequireMicrosoftSignedBootChain.
@@ -210,8 +215,8 @@ func (s *DeviceGuard) GetRequireMicrosoftSignedBootChain(ctx context.Context) (i
 //
 // Default: 1.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *DeviceGuard) CreateRequireMicrosoftSignedBootChain(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIRequireMicrosoftSignedBootChain, client.Int(value))
+func (s *DeviceGuard) CreateRequireMicrosoftSignedBootChain(ctx context.Context, value RequireMicrosoftSignedBootChainValue) error {
+	return s.c.Add(ctx, URIRequireMicrosoftSignedBootChain, client.Int(int64(value)))
 }
 
 // UpdateRequireMicrosoftSignedBootChain updates ./Device/Vendor/MSFT/Policy/Config/DeviceGuard/RequireMicrosoftSignedBootChain.
@@ -219,8 +224,8 @@ func (s *DeviceGuard) CreateRequireMicrosoftSignedBootChain(ctx context.Context,
 //
 // Default: 1.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *DeviceGuard) UpdateRequireMicrosoftSignedBootChain(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIRequireMicrosoftSignedBootChain, client.Int(value))
+func (s *DeviceGuard) UpdateRequireMicrosoftSignedBootChain(ctx context.Context, value RequireMicrosoftSignedBootChainValue) error {
+	return s.c.Replace(ctx, URIRequireMicrosoftSignedBootChain, client.Int(int64(value)))
 }
 
 // DeleteRequireMicrosoftSignedBootChain deletes ./Device/Vendor/MSFT/Policy/Config/DeviceGuard/RequireMicrosoftSignedBootChain.
@@ -238,12 +243,13 @@ func (s *DeviceGuard) DeleteRequireMicrosoftSignedBootChain(ctx context.Context)
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *DeviceGuard) GetRequirePlatformSecurityFeatures(ctx context.Context) (int64, error) {
+func (s *DeviceGuard) GetRequirePlatformSecurityFeatures(ctx context.Context) (RequirePlatformSecurityFeaturesValue, error) {
 	v, err := s.c.Get(ctx, URIRequirePlatformSecurityFeatures)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return RequirePlatformSecurityFeaturesValue(n), err
 }
 
 // CreateRequirePlatformSecurityFeatures creates ./Device/Vendor/MSFT/Policy/Config/DeviceGuard/RequirePlatformSecurityFeatures.
@@ -252,8 +258,8 @@ func (s *DeviceGuard) GetRequirePlatformSecurityFeatures(ctx context.Context) (i
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *DeviceGuard) CreateRequirePlatformSecurityFeatures(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIRequirePlatformSecurityFeatures, client.Int(value))
+func (s *DeviceGuard) CreateRequirePlatformSecurityFeatures(ctx context.Context, value RequirePlatformSecurityFeaturesValue) error {
+	return s.c.Add(ctx, URIRequirePlatformSecurityFeatures, client.Int(int64(value)))
 }
 
 // UpdateRequirePlatformSecurityFeatures updates ./Device/Vendor/MSFT/Policy/Config/DeviceGuard/RequirePlatformSecurityFeatures.
@@ -262,8 +268,8 @@ func (s *DeviceGuard) CreateRequirePlatformSecurityFeatures(ctx context.Context,
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *DeviceGuard) UpdateRequirePlatformSecurityFeatures(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIRequirePlatformSecurityFeatures, client.Int(value))
+func (s *DeviceGuard) UpdateRequirePlatformSecurityFeatures(ctx context.Context, value RequirePlatformSecurityFeaturesValue) error {
+	return s.c.Replace(ctx, URIRequirePlatformSecurityFeatures, client.Int(int64(value)))
 }
 
 // DeleteRequirePlatformSecurityFeatures deletes ./Device/Vendor/MSFT/Policy/Config/DeviceGuard/RequirePlatformSecurityFeatures.

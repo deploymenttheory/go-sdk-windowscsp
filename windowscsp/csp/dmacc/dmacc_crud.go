@@ -35,12 +35,12 @@ func (s *DMAcc) DeleteAccountUID(ctx context.Context, accountUID string) error {
 // previous session if one exists. If the value is empty, no previous session exists, and MD5
 // credentials exist, clients try MD5 authorization first. If the criteria are not met then the
 // client tries BASIC authorization first.
-func (s *DMAcc) GetAccountUIDAAuthPref(ctx context.Context, accountUID string) (string, error) {
+func (s *DMAcc) GetAccountUIDAAuthPref(ctx context.Context, accountUID string) (AccountUIDAAuthPrefValue, error) {
 	v, err := s.c.Get(ctx, URIAccountUIDAAuthPref(accountUID))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return AccountUIDAAuthPrefValue(v.Str()), nil
 }
 
 // CreateAccountUIDAAuthPref creates ./SyncML/DMAcc/{accountUID}/AAuthPref.
@@ -49,8 +49,8 @@ func (s *DMAcc) GetAccountUIDAAuthPref(ctx context.Context, accountUID string) (
 // previous session if one exists. If the value is empty, no previous session exists, and MD5
 // credentials exist, clients try MD5 authorization first. If the criteria are not met then the
 // client tries BASIC authorization first.
-func (s *DMAcc) CreateAccountUIDAAuthPref(ctx context.Context, accountUID string, value string) error {
-	return s.c.Add(ctx, URIAccountUIDAAuthPref(accountUID), client.Chr(value))
+func (s *DMAcc) CreateAccountUIDAAuthPref(ctx context.Context, accountUID string, value AccountUIDAAuthPrefValue) error {
+	return s.c.Add(ctx, URIAccountUIDAAuthPref(accountUID), client.Chr(string(value)))
 }
 
 // UpdateAccountUIDAAuthPref updates ./SyncML/DMAcc/{accountUID}/AAuthPref.
@@ -59,8 +59,8 @@ func (s *DMAcc) CreateAccountUIDAAuthPref(ctx context.Context, accountUID string
 // previous session if one exists. If the value is empty, no previous session exists, and MD5
 // credentials exist, clients try MD5 authorization first. If the criteria are not met then the
 // client tries BASIC authorization first.
-func (s *DMAcc) UpdateAccountUIDAAuthPref(ctx context.Context, accountUID string, value string) error {
-	return s.c.Replace(ctx, URIAccountUIDAAuthPref(accountUID), client.Chr(value))
+func (s *DMAcc) UpdateAccountUIDAAuthPref(ctx context.Context, accountUID string, value AccountUIDAAuthPrefValue) error {
+	return s.c.Replace(ctx, URIAccountUIDAAuthPref(accountUID), client.Chr(string(value)))
 }
 
 // ListAccountUIDAppAddr lists the children of ./SyncML/DMAcc/{accountUID}/AppAddr.
@@ -109,12 +109,12 @@ func (s *DMAcc) UpdateAccountUIDAppAddrObjectNameAddr(ctx context.Context, accou
 // value of "IPv4" specifies that the OMA DM account address in Addr is an IP address.
 //
 // Default: URI.
-func (s *DMAcc) GetAccountUIDAppAddrObjectNameAddrType(ctx context.Context, accountUID string, objectName string) (string, error) {
+func (s *DMAcc) GetAccountUIDAppAddrObjectNameAddrType(ctx context.Context, accountUID string, objectName string) (AccountUIDAppAddrObjectNameAddrTypeValue, error) {
 	v, err := s.c.Get(ctx, URIAccountUIDAppAddrObjectNameAddrType(accountUID, objectName))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return AccountUIDAppAddrObjectNameAddrTypeValue(v.Str()), nil
 }
 
 // CreateAccountUIDAppAddrObjectNameAddrType creates ./SyncML/DMAcc/{accountUID}/AppAddr/{objectName}/AddrType.
@@ -123,8 +123,8 @@ func (s *DMAcc) GetAccountUIDAppAddrObjectNameAddrType(ctx context.Context, acco
 // value of "IPv4" specifies that the OMA DM account address in Addr is an IP address.
 //
 // Default: URI.
-func (s *DMAcc) CreateAccountUIDAppAddrObjectNameAddrType(ctx context.Context, accountUID string, objectName string, value string) error {
-	return s.c.Add(ctx, URIAccountUIDAppAddrObjectNameAddrType(accountUID, objectName), client.Chr(value))
+func (s *DMAcc) CreateAccountUIDAppAddrObjectNameAddrType(ctx context.Context, accountUID string, objectName string, value AccountUIDAppAddrObjectNameAddrTypeValue) error {
+	return s.c.Add(ctx, URIAccountUIDAppAddrObjectNameAddrType(accountUID, objectName), client.Chr(string(value)))
 }
 
 // UpdateAccountUIDAppAddrObjectNameAddrType updates ./SyncML/DMAcc/{accountUID}/AppAddr/{objectName}/AddrType.
@@ -133,8 +133,8 @@ func (s *DMAcc) CreateAccountUIDAppAddrObjectNameAddrType(ctx context.Context, a
 // value of "IPv4" specifies that the OMA DM account address in Addr is an IP address.
 //
 // Default: URI.
-func (s *DMAcc) UpdateAccountUIDAppAddrObjectNameAddrType(ctx context.Context, accountUID string, objectName string, value string) error {
-	return s.c.Replace(ctx, URIAccountUIDAppAddrObjectNameAddrType(accountUID, objectName), client.Chr(value))
+func (s *DMAcc) UpdateAccountUIDAppAddrObjectNameAddrType(ctx context.Context, accountUID string, objectName string, value AccountUIDAppAddrObjectNameAddrTypeValue) error {
+	return s.c.Replace(ctx, URIAccountUIDAppAddrObjectNameAddrType(accountUID, objectName), client.Chr(string(value)))
 }
 
 // ListAccountUIDAppAddrObjectNamePort lists the children of ./SyncML/DMAcc/{accountUID}/AppAddr/{objectName}/Port.
@@ -210,12 +210,12 @@ func (s *DMAcc) UpdateAccountUIDAppAuthObjectNameAAuthData(ctx context.Context, 
 // credentials client will authenticate itself to the OMA DM server at the OMA DM protocol level. A
 // value of "SRVCRED" indicates that the credentials server will authenticate itself to the OMA DM
 // Client at the OMA DM protocol level.
-func (s *DMAcc) GetAccountUIDAppAuthObjectNameAAuthLevel(ctx context.Context, accountUID string, objectName string) (string, error) {
+func (s *DMAcc) GetAccountUIDAppAuthObjectNameAAuthLevel(ctx context.Context, accountUID string, objectName string) (AccountUIDAppAuthObjectNameAAuthLevelValue, error) {
 	v, err := s.c.Get(ctx, URIAccountUIDAppAuthObjectNameAAuthLevel(accountUID, objectName))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return AccountUIDAppAuthObjectNameAAuthLevelValue(v.Str()), nil
 }
 
 // CreateAccountUIDAppAuthObjectNameAAuthLevel creates ./SyncML/DMAcc/{accountUID}/AppAuth/{objectName}/AAuthLevel.
@@ -223,8 +223,8 @@ func (s *DMAcc) GetAccountUIDAppAuthObjectNameAAuthLevel(ctx context.Context, ac
 // credentials client will authenticate itself to the OMA DM server at the OMA DM protocol level. A
 // value of "SRVCRED" indicates that the credentials server will authenticate itself to the OMA DM
 // Client at the OMA DM protocol level.
-func (s *DMAcc) CreateAccountUIDAppAuthObjectNameAAuthLevel(ctx context.Context, accountUID string, objectName string, value string) error {
-	return s.c.Add(ctx, URIAccountUIDAppAuthObjectNameAAuthLevel(accountUID, objectName), client.Chr(value))
+func (s *DMAcc) CreateAccountUIDAppAuthObjectNameAAuthLevel(ctx context.Context, accountUID string, objectName string, value AccountUIDAppAuthObjectNameAAuthLevelValue) error {
+	return s.c.Add(ctx, URIAccountUIDAppAuthObjectNameAAuthLevel(accountUID, objectName), client.Chr(string(value)))
 }
 
 // UpdateAccountUIDAppAuthObjectNameAAuthLevel updates ./SyncML/DMAcc/{accountUID}/AppAuth/{objectName}/AAuthLevel.
@@ -232,8 +232,8 @@ func (s *DMAcc) CreateAccountUIDAppAuthObjectNameAAuthLevel(ctx context.Context,
 // credentials client will authenticate itself to the OMA DM server at the OMA DM protocol level. A
 // value of "SRVCRED" indicates that the credentials server will authenticate itself to the OMA DM
 // Client at the OMA DM protocol level.
-func (s *DMAcc) UpdateAccountUIDAppAuthObjectNameAAuthLevel(ctx context.Context, accountUID string, objectName string, value string) error {
-	return s.c.Replace(ctx, URIAccountUIDAppAuthObjectNameAAuthLevel(accountUID, objectName), client.Chr(value))
+func (s *DMAcc) UpdateAccountUIDAppAuthObjectNameAAuthLevel(ctx context.Context, accountUID string, objectName string, value AccountUIDAppAuthObjectNameAAuthLevelValue) error {
+	return s.c.Replace(ctx, URIAccountUIDAppAuthObjectNameAAuthLevel(accountUID, objectName), client.Chr(string(value)))
 }
 
 // GetAccountUIDAppAuthObjectNameAAuthName reads ./SyncML/DMAcc/{accountUID}/AppAuth/{objectName}/AAuthName.
@@ -273,54 +273,54 @@ func (s *DMAcc) UpdateAccountUIDAppAuthObjectNameAAuthSecret(ctx context.Context
 // GetAccountUIDAppAuthObjectNameAAuthType reads ./SyncML/DMAcc/{accountUID}/AppAuth/{objectName}/AAuthType.
 // Specifies the authentication type. If AAuthLevel is CLCRED, the supported types include BASIC
 // and DIGEST. If AAuthLevel is SRVCRED, the only supported type is DIGEST.
-func (s *DMAcc) GetAccountUIDAppAuthObjectNameAAuthType(ctx context.Context, accountUID string, objectName string) (string, error) {
+func (s *DMAcc) GetAccountUIDAppAuthObjectNameAAuthType(ctx context.Context, accountUID string, objectName string) (AccountUIDAppAuthObjectNameAAuthTypeValue, error) {
 	v, err := s.c.Get(ctx, URIAccountUIDAppAuthObjectNameAAuthType(accountUID, objectName))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return AccountUIDAppAuthObjectNameAAuthTypeValue(v.Str()), nil
 }
 
 // CreateAccountUIDAppAuthObjectNameAAuthType creates ./SyncML/DMAcc/{accountUID}/AppAuth/{objectName}/AAuthType.
 // Specifies the authentication type. If AAuthLevel is CLCRED, the supported types include BASIC
 // and DIGEST. If AAuthLevel is SRVCRED, the only supported type is DIGEST.
-func (s *DMAcc) CreateAccountUIDAppAuthObjectNameAAuthType(ctx context.Context, accountUID string, objectName string, value string) error {
-	return s.c.Add(ctx, URIAccountUIDAppAuthObjectNameAAuthType(accountUID, objectName), client.Chr(value))
+func (s *DMAcc) CreateAccountUIDAppAuthObjectNameAAuthType(ctx context.Context, accountUID string, objectName string, value AccountUIDAppAuthObjectNameAAuthTypeValue) error {
+	return s.c.Add(ctx, URIAccountUIDAppAuthObjectNameAAuthType(accountUID, objectName), client.Chr(string(value)))
 }
 
 // UpdateAccountUIDAppAuthObjectNameAAuthType updates ./SyncML/DMAcc/{accountUID}/AppAuth/{objectName}/AAuthType.
 // Specifies the authentication type. If AAuthLevel is CLCRED, the supported types include BASIC
 // and DIGEST. If AAuthLevel is SRVCRED, the only supported type is DIGEST.
-func (s *DMAcc) UpdateAccountUIDAppAuthObjectNameAAuthType(ctx context.Context, accountUID string, objectName string, value string) error {
-	return s.c.Replace(ctx, URIAccountUIDAppAuthObjectNameAAuthType(accountUID, objectName), client.Chr(value))
+func (s *DMAcc) UpdateAccountUIDAppAuthObjectNameAAuthType(ctx context.Context, accountUID string, objectName string, value AccountUIDAppAuthObjectNameAAuthTypeValue) error {
+	return s.c.Replace(ctx, URIAccountUIDAppAuthObjectNameAAuthType(accountUID, objectName), client.Chr(string(value)))
 }
 
 // GetAccountUIDAppID reads ./SyncML/DMAcc/{accountUID}/AppID.
 // Specifies the application identifier for the OMA DM account.. The only supported value is w7.
 //
 // Default: w7.
-func (s *DMAcc) GetAccountUIDAppID(ctx context.Context, accountUID string) (string, error) {
+func (s *DMAcc) GetAccountUIDAppID(ctx context.Context, accountUID string) (AccountUIDAppIDValue, error) {
 	v, err := s.c.Get(ctx, URIAccountUIDAppID(accountUID))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return AccountUIDAppIDValue(v.Str()), nil
 }
 
 // CreateAccountUIDAppID creates ./SyncML/DMAcc/{accountUID}/AppID.
 // Specifies the application identifier for the OMA DM account.. The only supported value is w7.
 //
 // Default: w7.
-func (s *DMAcc) CreateAccountUIDAppID(ctx context.Context, accountUID string, value string) error {
-	return s.c.Add(ctx, URIAccountUIDAppID(accountUID), client.Chr(value))
+func (s *DMAcc) CreateAccountUIDAppID(ctx context.Context, accountUID string, value AccountUIDAppIDValue) error {
+	return s.c.Add(ctx, URIAccountUIDAppID(accountUID), client.Chr(string(value)))
 }
 
 // UpdateAccountUIDAppID updates ./SyncML/DMAcc/{accountUID}/AppID.
 // Specifies the application identifier for the OMA DM account.. The only supported value is w7.
 //
 // Default: w7.
-func (s *DMAcc) UpdateAccountUIDAppID(ctx context.Context, accountUID string, value string) error {
-	return s.c.Replace(ctx, URIAccountUIDAppID(accountUID), client.Chr(value))
+func (s *DMAcc) UpdateAccountUIDAppID(ctx context.Context, accountUID string, value AccountUIDAppIDValue) error {
+	return s.c.Replace(ctx, URIAccountUIDAppID(accountUID), client.Chr(string(value)))
 }
 
 // GetAccountUIDExtMicrosoftBackCompatRetryDisabled reads ./SyncML/DMAcc/{accountUID}/Ext/Microsoft/BackCompatRetryDisabled.
@@ -415,12 +415,12 @@ func (s *DMAcc) UpdateAccountUIDExtMicrosoftConnRetryFreq(ctx context.Context, a
 // Valid values include "application/vnd.syncml.dm+xml" (for XML) and
 // "application/vnd.syncml.dm+wbxml" (for WBXML). If this node is left unspecified, the OMA-DM
 // client defaults to "application/vnd.syncml.dm+xml".
-func (s *DMAcc) GetAccountUIDExtMicrosoftDefaultEncoding(ctx context.Context, accountUID string) (string, error) {
+func (s *DMAcc) GetAccountUIDExtMicrosoftDefaultEncoding(ctx context.Context, accountUID string) (AccountUIDExtMicrosoftDefaultEncodingValue, error) {
 	v, err := s.c.Get(ctx, URIAccountUIDExtMicrosoftDefaultEncoding(accountUID))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return AccountUIDExtMicrosoftDefaultEncodingValue(v.Str()), nil
 }
 
 // CreateAccountUIDExtMicrosoftDefaultEncoding creates ./SyncML/DMAcc/{accountUID}/Ext/Microsoft/DefaultEncoding.
@@ -428,8 +428,8 @@ func (s *DMAcc) GetAccountUIDExtMicrosoftDefaultEncoding(ctx context.Context, ac
 // Valid values include "application/vnd.syncml.dm+xml" (for XML) and
 // "application/vnd.syncml.dm+wbxml" (for WBXML). If this node is left unspecified, the OMA-DM
 // client defaults to "application/vnd.syncml.dm+xml".
-func (s *DMAcc) CreateAccountUIDExtMicrosoftDefaultEncoding(ctx context.Context, accountUID string, value string) error {
-	return s.c.Add(ctx, URIAccountUIDExtMicrosoftDefaultEncoding(accountUID), client.Chr(value))
+func (s *DMAcc) CreateAccountUIDExtMicrosoftDefaultEncoding(ctx context.Context, accountUID string, value AccountUIDExtMicrosoftDefaultEncodingValue) error {
+	return s.c.Add(ctx, URIAccountUIDExtMicrosoftDefaultEncoding(accountUID), client.Chr(string(value)))
 }
 
 // UpdateAccountUIDExtMicrosoftDefaultEncoding updates ./SyncML/DMAcc/{accountUID}/Ext/Microsoft/DefaultEncoding.
@@ -437,8 +437,8 @@ func (s *DMAcc) CreateAccountUIDExtMicrosoftDefaultEncoding(ctx context.Context,
 // Valid values include "application/vnd.syncml.dm+xml" (for XML) and
 // "application/vnd.syncml.dm+wbxml" (for WBXML). If this node is left unspecified, the OMA-DM
 // client defaults to "application/vnd.syncml.dm+xml".
-func (s *DMAcc) UpdateAccountUIDExtMicrosoftDefaultEncoding(ctx context.Context, accountUID string, value string) error {
-	return s.c.Replace(ctx, URIAccountUIDExtMicrosoftDefaultEncoding(accountUID), client.Chr(value))
+func (s *DMAcc) UpdateAccountUIDExtMicrosoftDefaultEncoding(ctx context.Context, accountUID string, value AccountUIDExtMicrosoftDefaultEncodingValue) error {
+	return s.c.Replace(ctx, URIAccountUIDExtMicrosoftDefaultEncoding(accountUID), client.Chr(string(value)))
 }
 
 // GetAccountUIDExtMicrosoftDisableOnRoaming reads ./SyncML/DMAcc/{accountUID}/Ext/Microsoft/DisableOnRoaming.
@@ -547,46 +547,47 @@ func (s *DMAcc) UpdateAccountUIDExtMicrosoftMaxBackOffTime(ctx context.Context, 
 // GetAccountUIDExtMicrosoftProtoVer reads ./SyncML/DMAcc/{accountUID}/Ext/Microsoft/ProtoVer.
 // This node value corresponds to what the client would put in the VerDTD element of an OMA-DM
 // package. No default value is assumed. The only valid value for this node is 1.1 or 1.2.
-func (s *DMAcc) GetAccountUIDExtMicrosoftProtoVer(ctx context.Context, accountUID string) (string, error) {
+func (s *DMAcc) GetAccountUIDExtMicrosoftProtoVer(ctx context.Context, accountUID string) (AccountUIDExtMicrosoftProtoVerValue, error) {
 	v, err := s.c.Get(ctx, URIAccountUIDExtMicrosoftProtoVer(accountUID))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return AccountUIDExtMicrosoftProtoVerValue(v.Str()), nil
 }
 
 // CreateAccountUIDExtMicrosoftProtoVer creates ./SyncML/DMAcc/{accountUID}/Ext/Microsoft/ProtoVer.
 // This node value corresponds to what the client would put in the VerDTD element of an OMA-DM
 // package. No default value is assumed. The only valid value for this node is 1.1 or 1.2.
-func (s *DMAcc) CreateAccountUIDExtMicrosoftProtoVer(ctx context.Context, accountUID string, value string) error {
-	return s.c.Add(ctx, URIAccountUIDExtMicrosoftProtoVer(accountUID), client.Chr(value))
+func (s *DMAcc) CreateAccountUIDExtMicrosoftProtoVer(ctx context.Context, accountUID string, value AccountUIDExtMicrosoftProtoVerValue) error {
+	return s.c.Add(ctx, URIAccountUIDExtMicrosoftProtoVer(accountUID), client.Chr(string(value)))
 }
 
 // UpdateAccountUIDExtMicrosoftProtoVer updates ./SyncML/DMAcc/{accountUID}/Ext/Microsoft/ProtoVer.
 // This node value corresponds to what the client would put in the VerDTD element of an OMA-DM
 // package. No default value is assumed. The only valid value for this node is 1.1 or 1.2.
-func (s *DMAcc) UpdateAccountUIDExtMicrosoftProtoVer(ctx context.Context, accountUID string, value string) error {
-	return s.c.Replace(ctx, URIAccountUIDExtMicrosoftProtoVer(accountUID), client.Chr(value))
+func (s *DMAcc) UpdateAccountUIDExtMicrosoftProtoVer(ctx context.Context, accountUID string, value AccountUIDExtMicrosoftProtoVerValue) error {
+	return s.c.Replace(ctx, URIAccountUIDExtMicrosoftProtoVer(accountUID), client.Chr(string(value)))
 }
 
 // GetAccountUIDExtMicrosoftRole reads ./SyncML/DMAcc/{accountUID}/Ext/Microsoft/Role.
 // If this node is unspecified, its default value is the access role of the session that created
 // the server account. The value for this node must be a subset of the roles used in creating this
 // server account.
-func (s *DMAcc) GetAccountUIDExtMicrosoftRole(ctx context.Context, accountUID string) (int64, error) {
+func (s *DMAcc) GetAccountUIDExtMicrosoftRole(ctx context.Context, accountUID string) (AccountUIDExtMicrosoftRoleValue, error) {
 	v, err := s.c.Get(ctx, URIAccountUIDExtMicrosoftRole(accountUID))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AccountUIDExtMicrosoftRoleValue(n), err
 }
 
 // UpdateAccountUIDExtMicrosoftRole updates ./SyncML/DMAcc/{accountUID}/Ext/Microsoft/Role.
 // If this node is unspecified, its default value is the access role of the session that created
 // the server account. The value for this node must be a subset of the roles used in creating this
 // server account.
-func (s *DMAcc) UpdateAccountUIDExtMicrosoftRole(ctx context.Context, accountUID string, value int64) error {
-	return s.c.Replace(ctx, URIAccountUIDExtMicrosoftRole(accountUID), client.Int(value))
+func (s *DMAcc) UpdateAccountUIDExtMicrosoftRole(ctx context.Context, accountUID string, value AccountUIDExtMicrosoftRoleValue) error {
+	return s.c.Replace(ctx, URIAccountUIDExtMicrosoftRole(accountUID), client.Int(int64(value)))
 }
 
 // GetAccountUIDExtMicrosoftSSLCLIENTCERTSEARCHCRITERIA reads ./SyncML/DMAcc/{accountUID}/Ext/Microsoft/SSLCLIENTCERTSEARCHCRITERIA.

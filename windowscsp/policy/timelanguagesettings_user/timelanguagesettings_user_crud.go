@@ -14,12 +14,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *TimeLanguageSettingsUser) GetRestrictLanguagePacksAndFeaturesInstall(ctx context.Context) (int64, error) {
+func (s *TimeLanguageSettingsUser) GetRestrictLanguagePacksAndFeaturesInstall(ctx context.Context) (RestrictLanguagePacksAndFeaturesInstallValue, error) {
 	v, err := s.c.Get(ctx, URIRestrictLanguagePacksAndFeaturesInstall)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return RestrictLanguagePacksAndFeaturesInstallValue(n), err
 }
 
 // CreateRestrictLanguagePacksAndFeaturesInstall creates ./User/Vendor/MSFT/Policy/Config/TimeLanguageSettings/RestrictLanguagePacksAndFeaturesInstall.
@@ -28,8 +29,8 @@ func (s *TimeLanguageSettingsUser) GetRestrictLanguagePacksAndFeaturesInstall(ct
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *TimeLanguageSettingsUser) CreateRestrictLanguagePacksAndFeaturesInstall(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIRestrictLanguagePacksAndFeaturesInstall, client.Int(value))
+func (s *TimeLanguageSettingsUser) CreateRestrictLanguagePacksAndFeaturesInstall(ctx context.Context, value RestrictLanguagePacksAndFeaturesInstallValue) error {
+	return s.c.Add(ctx, URIRestrictLanguagePacksAndFeaturesInstall, client.Int(int64(value)))
 }
 
 // UpdateRestrictLanguagePacksAndFeaturesInstall updates ./User/Vendor/MSFT/Policy/Config/TimeLanguageSettings/RestrictLanguagePacksAndFeaturesInstall.
@@ -38,8 +39,8 @@ func (s *TimeLanguageSettingsUser) CreateRestrictLanguagePacksAndFeaturesInstall
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *TimeLanguageSettingsUser) UpdateRestrictLanguagePacksAndFeaturesInstall(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIRestrictLanguagePacksAndFeaturesInstall, client.Int(value))
+func (s *TimeLanguageSettingsUser) UpdateRestrictLanguagePacksAndFeaturesInstall(ctx context.Context, value RestrictLanguagePacksAndFeaturesInstallValue) error {
+	return s.c.Replace(ctx, URIRestrictLanguagePacksAndFeaturesInstall, client.Int(int64(value)))
 }
 
 // DeleteRestrictLanguagePacksAndFeaturesInstall deletes ./User/Vendor/MSFT/Policy/Config/TimeLanguageSettings/RestrictLanguagePacksAndFeaturesInstall.

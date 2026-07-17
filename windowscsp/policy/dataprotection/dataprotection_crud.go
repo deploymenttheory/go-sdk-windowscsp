@@ -19,12 +19,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *DataProtection) GetAllowDirectMemoryAccess(ctx context.Context) (int64, error) {
+func (s *DataProtection) GetAllowDirectMemoryAccess(ctx context.Context) (AllowDirectMemoryAccessValue, error) {
 	v, err := s.c.Get(ctx, URIAllowDirectMemoryAccess)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowDirectMemoryAccessValue(n), err
 }
 
 // CreateAllowDirectMemoryAccess creates ./Device/Vendor/MSFT/Policy/Config/DataProtection/AllowDirectMemoryAccess.
@@ -38,8 +39,8 @@ func (s *DataProtection) GetAllowDirectMemoryAccess(ctx context.Context) (int64,
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *DataProtection) CreateAllowDirectMemoryAccess(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowDirectMemoryAccess, client.Int(value))
+func (s *DataProtection) CreateAllowDirectMemoryAccess(ctx context.Context, value AllowDirectMemoryAccessValue) error {
+	return s.c.Add(ctx, URIAllowDirectMemoryAccess, client.Int(int64(value)))
 }
 
 // UpdateAllowDirectMemoryAccess updates ./Device/Vendor/MSFT/Policy/Config/DataProtection/AllowDirectMemoryAccess.
@@ -53,8 +54,8 @@ func (s *DataProtection) CreateAllowDirectMemoryAccess(ctx context.Context, valu
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *DataProtection) UpdateAllowDirectMemoryAccess(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowDirectMemoryAccess, client.Int(value))
+func (s *DataProtection) UpdateAllowDirectMemoryAccess(ctx context.Context, value AllowDirectMemoryAccessValue) error {
+	return s.c.Replace(ctx, URIAllowDirectMemoryAccess, client.Int(int64(value)))
 }
 
 // DeleteAllowDirectMemoryAccess deletes ./Device/Vendor/MSFT/Policy/Config/DataProtection/AllowDirectMemoryAccess.

@@ -16,12 +16,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *EducationUser) GetAllowGraphingCalculator(ctx context.Context) (int64, error) {
+func (s *EducationUser) GetAllowGraphingCalculator(ctx context.Context) (AllowGraphingCalculatorValue, error) {
 	v, err := s.c.Get(ctx, URIAllowGraphingCalculator)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowGraphingCalculatorValue(n), err
 }
 
 // CreateAllowGraphingCalculator creates ./User/Vendor/MSFT/Policy/Config/Education/AllowGraphingCalculator.
@@ -32,8 +33,8 @@ func (s *EducationUser) GetAllowGraphingCalculator(ctx context.Context) (int64, 
 //
 // Default: 1.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *EducationUser) CreateAllowGraphingCalculator(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowGraphingCalculator, client.Int(value))
+func (s *EducationUser) CreateAllowGraphingCalculator(ctx context.Context, value AllowGraphingCalculatorValue) error {
+	return s.c.Add(ctx, URIAllowGraphingCalculator, client.Int(int64(value)))
 }
 
 // UpdateAllowGraphingCalculator updates ./User/Vendor/MSFT/Policy/Config/Education/AllowGraphingCalculator.
@@ -44,8 +45,8 @@ func (s *EducationUser) CreateAllowGraphingCalculator(ctx context.Context, value
 //
 // Default: 1.
 // Supported from OS build 10.0.19041 (CSP v10.0).
-func (s *EducationUser) UpdateAllowGraphingCalculator(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowGraphingCalculator, client.Int(value))
+func (s *EducationUser) UpdateAllowGraphingCalculator(ctx context.Context, value AllowGraphingCalculatorValue) error {
+	return s.c.Replace(ctx, URIAllowGraphingCalculator, client.Int(int64(value)))
 }
 
 // DeleteAllowGraphingCalculator deletes ./User/Vendor/MSFT/Policy/Config/Education/AllowGraphingCalculator.
@@ -101,12 +102,13 @@ func (s *EducationUser) DeleteDefaultPrinterName(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *EducationUser) GetPreventAddingNewPrinters(ctx context.Context) (int64, error) {
+func (s *EducationUser) GetPreventAddingNewPrinters(ctx context.Context) (PreventAddingNewPrintersValue, error) {
 	v, err := s.c.Get(ctx, URIPreventAddingNewPrinters)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PreventAddingNewPrintersValue(n), err
 }
 
 // CreatePreventAddingNewPrinters creates ./User/Vendor/MSFT/Policy/Config/Education/PreventAddingNewPrinters.
@@ -114,8 +116,8 @@ func (s *EducationUser) GetPreventAddingNewPrinters(ctx context.Context) (int64,
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *EducationUser) CreatePreventAddingNewPrinters(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPreventAddingNewPrinters, client.Int(value))
+func (s *EducationUser) CreatePreventAddingNewPrinters(ctx context.Context, value PreventAddingNewPrintersValue) error {
+	return s.c.Add(ctx, URIPreventAddingNewPrinters, client.Int(int64(value)))
 }
 
 // UpdatePreventAddingNewPrinters updates ./User/Vendor/MSFT/Policy/Config/Education/PreventAddingNewPrinters.
@@ -123,8 +125,8 @@ func (s *EducationUser) CreatePreventAddingNewPrinters(ctx context.Context, valu
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *EducationUser) UpdatePreventAddingNewPrinters(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPreventAddingNewPrinters, client.Int(value))
+func (s *EducationUser) UpdatePreventAddingNewPrinters(ctx context.Context, value PreventAddingNewPrintersValue) error {
+	return s.c.Replace(ctx, URIPreventAddingNewPrinters, client.Int(int64(value)))
 }
 
 // DeletePreventAddingNewPrinters deletes ./User/Vendor/MSFT/Policy/Config/Education/PreventAddingNewPrinters.

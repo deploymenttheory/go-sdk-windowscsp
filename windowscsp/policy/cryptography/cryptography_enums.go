@@ -2,21 +2,57 @@
 
 package cryptography
 
-// AllowFipsAlgorithmPolicy allowed values.
-const (
-	// Allow
-	AllowFipsAlgorithmPolicyAllow int64 = 1
-	// Block
-	AllowFipsAlgorithmPolicyBlock int64 = 0
+import (
+	"fmt"
 )
 
-// ConfigureSystemCryptographyForceStrongKeyProtection allowed values.
+// AllowFipsAlgorithmPolicyValue — allowed values for the AllowFipsAlgorithmPolicy node.
+type AllowFipsAlgorithmPolicyValue int64
+
+const (
+	// Allow
+	AllowFipsAlgorithmPolicyAllow AllowFipsAlgorithmPolicyValue = 1
+	// Block
+	AllowFipsAlgorithmPolicyBlock AllowFipsAlgorithmPolicyValue = 0
+)
+
+// String returns the AllowFipsAlgorithmPolicyValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowFipsAlgorithmPolicyValue) String() string {
+	switch e {
+	case AllowFipsAlgorithmPolicyAllow:
+		return "AllowFipsAlgorithmPolicyAllow"
+	case AllowFipsAlgorithmPolicyBlock:
+		return "AllowFipsAlgorithmPolicyBlock"
+	default:
+		return fmt.Sprintf("AllowFipsAlgorithmPolicyValue(%d)", int64(e))
+	}
+}
+
+// ConfigureSystemCryptographyForceStrongKeyProtectionValue — allowed values for the ConfigureSystemCryptographyForceStrongKeyProtection node.
+type ConfigureSystemCryptographyForceStrongKeyProtectionValue int64
+
 const (
 	// An app container has accessed a medium key that is not strongly protected. For example, a key
 	// that is for user consent only, or is password or fingerprint protected
-	ConfigureSystemCryptographyForceStrongKeyProtectionAnAppContainerHasAccessedA int64 = 8
+	ConfigureSystemCryptographyForceStrongKeyProtectionAnAppContainerHasAccessedA ConfigureSystemCryptographyForceStrongKeyProtectionValue = 8
 	// Force high protection
-	ConfigureSystemCryptographyForceStrongKeyProtectionForceHighProtection int64 = 2
+	ConfigureSystemCryptographyForceStrongKeyProtectionForceHighProtection ConfigureSystemCryptographyForceStrongKeyProtectionValue = 2
 	// Display the strong key user interface as needed
-	ConfigureSystemCryptographyForceStrongKeyProtectionDisplayTheStrongKeyUserInterface int64 = 1
+	ConfigureSystemCryptographyForceStrongKeyProtectionDisplayTheStrongKeyUserInterface ConfigureSystemCryptographyForceStrongKeyProtectionValue = 1
 )
+
+// String returns the ConfigureSystemCryptographyForceStrongKeyProtectionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureSystemCryptographyForceStrongKeyProtectionValue) String() string {
+	switch e {
+	case ConfigureSystemCryptographyForceStrongKeyProtectionAnAppContainerHasAccessedA:
+		return "ConfigureSystemCryptographyForceStrongKeyProtectionAnAppContainerHasAccessedA"
+	case ConfigureSystemCryptographyForceStrongKeyProtectionForceHighProtection:
+		return "ConfigureSystemCryptographyForceStrongKeyProtectionForceHighProtection"
+	case ConfigureSystemCryptographyForceStrongKeyProtectionDisplayTheStrongKeyUserInterface:
+		return "ConfigureSystemCryptographyForceStrongKeyProtectionDisplayTheStrongKeyUserInterface"
+	default:
+		return fmt.Sprintf("ConfigureSystemCryptographyForceStrongKeyProtectionValue(%d)", int64(e))
+	}
+}

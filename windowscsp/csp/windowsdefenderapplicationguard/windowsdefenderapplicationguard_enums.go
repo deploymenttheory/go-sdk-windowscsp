@@ -2,140 +2,337 @@
 
 package windowsdefenderapplicationguard
 
-// AuditAuditApplicationGuard allowed values.
+import (
+	"fmt"
+)
+
+// AuditAuditApplicationGuardValue — allowed values for the AuditApplicationGuard node.
+type AuditAuditApplicationGuardValue int64
+
 const (
 	// Audit event logs aren't collected for Application Guard.
-	AuditAuditApplicationGuardAuditEventLogsArenTCollectedFor int64 = 0
+	AuditAuditApplicationGuardAuditEventLogsArenTCollectedFor AuditAuditApplicationGuardValue = 0
 	// Application Guard inherits its auditing policies from system and starts to audit security events
 	// for Application Guard container.
-	AuditAuditApplicationGuardApplicationGuardInheritsItsAuditingPolicies int64 = 1
+	AuditAuditApplicationGuardApplicationGuardInheritsItsAuditingPolicies AuditAuditApplicationGuardValue = 1
 )
 
-// InstallWindowsDefenderApplicationGuard allowed values.
+// String returns the AuditAuditApplicationGuardValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AuditAuditApplicationGuardValue) String() string {
+	switch e {
+	case AuditAuditApplicationGuardAuditEventLogsArenTCollectedFor:
+		return "AuditAuditApplicationGuardAuditEventLogsArenTCollectedFor"
+	case AuditAuditApplicationGuardApplicationGuardInheritsItsAuditingPolicies:
+		return "AuditAuditApplicationGuardApplicationGuardInheritsItsAuditingPolicies"
+	default:
+		return fmt.Sprintf("AuditAuditApplicationGuardValue(%d)", int64(e))
+	}
+}
+
+// InstallWindowsDefenderApplicationGuardValue — allowed values for the InstallWindowsDefenderApplicationGuard node.
+type InstallWindowsDefenderApplicationGuardValue string
+
 const (
 	// Will initiate feature install.
-	InstallWindowsDefenderApplicationGuardWillInitiateFeatureInstall = "Install"
+	InstallWindowsDefenderApplicationGuardWillInitiateFeatureInstall InstallWindowsDefenderApplicationGuardValue = "Install"
 	// Will initiate feature uninstall.
-	InstallWindowsDefenderApplicationGuardWillInitiateFeatureUninstall = "Uninstall"
+	InstallWindowsDefenderApplicationGuardWillInitiateFeatureUninstall InstallWindowsDefenderApplicationGuardValue = "Uninstall"
 )
 
-// SettingsAllowCameraMicrophoneRedirection allowed values.
+// String returns the InstallWindowsDefenderApplicationGuardValue value as a plain string.
+func (e InstallWindowsDefenderApplicationGuardValue) String() string { return string(e) }
+
+// SettingsAllowCameraMicrophoneRedirectionValue — allowed values for the AllowCameraMicrophoneRedirection node.
+type SettingsAllowCameraMicrophoneRedirectionValue int64
+
 const (
 	// Microsoft Defender Application Guard cannot access the device’s camera and microphone. When
 	// the policy is not configured, it is the same as disabled (0).
-	SettingsAllowCameraMicrophoneRedirectionMicrosoftDefenderApplicationGuardCannotAccess int64 = 0
+	SettingsAllowCameraMicrophoneRedirectionMicrosoftDefenderApplicationGuardCannotAccess SettingsAllowCameraMicrophoneRedirectionValue = 0
 	// Turns on the functionality to allow Microsoft Defender Application Guard to access the
 	// device’s camera and microphone.
-	SettingsAllowCameraMicrophoneRedirectionTurnsOnTheFunctionalityToAllow int64 = 1
+	SettingsAllowCameraMicrophoneRedirectionTurnsOnTheFunctionalityToAllow SettingsAllowCameraMicrophoneRedirectionValue = 1
 )
 
-// SettingsAllowPersistence allowed values.
+// String returns the SettingsAllowCameraMicrophoneRedirectionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SettingsAllowCameraMicrophoneRedirectionValue) String() string {
+	switch e {
+	case SettingsAllowCameraMicrophoneRedirectionMicrosoftDefenderApplicationGuardCannotAccess:
+		return "SettingsAllowCameraMicrophoneRedirectionMicrosoftDefenderApplicationGuardCannotAccess"
+	case SettingsAllowCameraMicrophoneRedirectionTurnsOnTheFunctionalityToAllow:
+		return "SettingsAllowCameraMicrophoneRedirectionTurnsOnTheFunctionalityToAllow"
+	default:
+		return fmt.Sprintf("SettingsAllowCameraMicrophoneRedirectionValue(%d)", int64(e))
+	}
+}
+
+// SettingsAllowPersistenceValue — allowed values for the AllowPersistence node.
+type SettingsAllowPersistenceValue int64
+
 const (
 	// Application Guard discards user-downloaded files and other items (such as, cookies, Favorites,
 	// and so on) during machine restart or user log-off.
-	SettingsAllowPersistenceApplicationGuardDiscardsUserDownloadedFilesAnd int64 = 0
+	SettingsAllowPersistenceApplicationGuardDiscardsUserDownloadedFilesAnd SettingsAllowPersistenceValue = 0
 	// Application Guard saves user-downloaded files and other items (such as, cookies, Favorites, and
 	// so on) for use in future Application Guard sessions.
-	SettingsAllowPersistenceApplicationGuardSavesUserDownloadedFilesAnd int64 = 1
+	SettingsAllowPersistenceApplicationGuardSavesUserDownloadedFilesAnd SettingsAllowPersistenceValue = 1
 )
 
-// SettingsAllowVirtualGPU allowed values.
+// String returns the SettingsAllowPersistenceValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SettingsAllowPersistenceValue) String() string {
+	switch e {
+	case SettingsAllowPersistenceApplicationGuardDiscardsUserDownloadedFilesAnd:
+		return "SettingsAllowPersistenceApplicationGuardDiscardsUserDownloadedFilesAnd"
+	case SettingsAllowPersistenceApplicationGuardSavesUserDownloadedFilesAnd:
+		return "SettingsAllowPersistenceApplicationGuardSavesUserDownloadedFilesAnd"
+	default:
+		return fmt.Sprintf("SettingsAllowPersistenceValue(%d)", int64(e))
+	}
+}
+
+// SettingsAllowVirtualGPUValue — allowed values for the AllowVirtualGPU node.
+type SettingsAllowVirtualGPUValue int64
+
 const (
 	// Cannot access the vGPU and uses the CPU to support rendering graphics. When the policy is not
 	// configured, it is the same as disabled (0).
-	SettingsAllowVirtualGPUCannotAccessTheVGPUAndUses int64 = 0
+	SettingsAllowVirtualGPUCannotAccessTheVGPUAndUses SettingsAllowVirtualGPUValue = 0
 	// Turns on the functionality to access the vGPU offloading graphics rendering from the CPU. This
 	// can create a faster experience when working with graphics intense websites or watching video
 	// within the container.
-	SettingsAllowVirtualGPUTurnsOnTheFunctionalityToAccess int64 = 1
+	SettingsAllowVirtualGPUTurnsOnTheFunctionalityToAccess SettingsAllowVirtualGPUValue = 1
 )
 
-// SettingsAllowWindowsDefenderApplicationGuard allowed values.
+// String returns the SettingsAllowVirtualGPUValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SettingsAllowVirtualGPUValue) String() string {
+	switch e {
+	case SettingsAllowVirtualGPUCannotAccessTheVGPUAndUses:
+		return "SettingsAllowVirtualGPUCannotAccessTheVGPUAndUses"
+	case SettingsAllowVirtualGPUTurnsOnTheFunctionalityToAccess:
+		return "SettingsAllowVirtualGPUTurnsOnTheFunctionalityToAccess"
+	default:
+		return fmt.Sprintf("SettingsAllowVirtualGPUValue(%d)", int64(e))
+	}
+}
+
+// SettingsAllowWindowsDefenderApplicationGuardValue — allowed values for the AllowWindowsDefenderApplicationGuard node.
+type SettingsAllowWindowsDefenderApplicationGuardValue int64
+
 const (
 	// Disable Microsoft Defender Application Guard
-	SettingsAllowWindowsDefenderApplicationGuardDisableMicrosoftDefenderApplicationGuard int64 = 0
+	SettingsAllowWindowsDefenderApplicationGuardDisableMicrosoftDefenderApplicationGuard SettingsAllowWindowsDefenderApplicationGuardValue = 0
 	// Enable Microsoft Defender Application Guard for Microsoft Edge ONLY
-	SettingsAllowWindowsDefenderApplicationGuardEnableMicrosoftDefenderApplicationGuardFor int64 = 1
+	SettingsAllowWindowsDefenderApplicationGuardEnableMicrosoftDefenderApplicationGuardFor SettingsAllowWindowsDefenderApplicationGuardValue = 1
 	// Enable Microsoft Defender Application Guard for isolated Windows environments ONLY
-	SettingsAllowWindowsDefenderApplicationGuardEnableMicrosoftDefenderApplicationGuardFor2 int64 = 2
+	SettingsAllowWindowsDefenderApplicationGuardEnableMicrosoftDefenderApplicationGuardFor2 SettingsAllowWindowsDefenderApplicationGuardValue = 2
 	// Enable Microsoft Defender Application Guard for Microsoft Edge AND isolated Windows environments
-	SettingsAllowWindowsDefenderApplicationGuardEnableMicrosoftDefenderApplicationGuardFor3 int64 = 3
+	SettingsAllowWindowsDefenderApplicationGuardEnableMicrosoftDefenderApplicationGuardFor3 SettingsAllowWindowsDefenderApplicationGuardValue = 3
 )
 
-// SettingsBlockNonEnterpriseContent allowed values.
+// String returns the SettingsAllowWindowsDefenderApplicationGuardValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SettingsAllowWindowsDefenderApplicationGuardValue) String() string {
+	switch e {
+	case SettingsAllowWindowsDefenderApplicationGuardDisableMicrosoftDefenderApplicationGuard:
+		return "SettingsAllowWindowsDefenderApplicationGuardDisableMicrosoftDefenderApplicationGuard"
+	case SettingsAllowWindowsDefenderApplicationGuardEnableMicrosoftDefenderApplicationGuardFor:
+		return "SettingsAllowWindowsDefenderApplicationGuardEnableMicrosoftDefenderApplicationGuardFor"
+	case SettingsAllowWindowsDefenderApplicationGuardEnableMicrosoftDefenderApplicationGuardFor2:
+		return "SettingsAllowWindowsDefenderApplicationGuardEnableMicrosoftDefenderApplicationGuardFor2"
+	case SettingsAllowWindowsDefenderApplicationGuardEnableMicrosoftDefenderApplicationGuardFor3:
+		return "SettingsAllowWindowsDefenderApplicationGuardEnableMicrosoftDefenderApplicationGuardFor3"
+	default:
+		return fmt.Sprintf("SettingsAllowWindowsDefenderApplicationGuardValue(%d)", int64(e))
+	}
+}
+
+// SettingsBlockNonEnterpriseContentValue — allowed values for the BlockNonEnterpriseContent node.
+type SettingsBlockNonEnterpriseContentValue int64
+
 const (
 	// Non-enterprise content embedded in enterprise sites is allowed to open outside of the Microsoft
 	// Defender Application Guard container, directly in Internet Explorer and Microsoft Edge.
-	SettingsBlockNonEnterpriseContentNonEnterpriseContentEmbeddedInEnterpriseSites int64 = 0
+	SettingsBlockNonEnterpriseContentNonEnterpriseContentEmbeddedInEnterpriseSites SettingsBlockNonEnterpriseContentValue = 0
 	// Non-enterprise content embedded on enterprise sites are stopped from opening in Internet
 	// Explorer or Microsoft Edge outside of Microsoft Defender Application Guard.
-	SettingsBlockNonEnterpriseContentNonEnterpriseContentEmbeddedOnEnterpriseSites int64 = 1
+	SettingsBlockNonEnterpriseContentNonEnterpriseContentEmbeddedOnEnterpriseSites SettingsBlockNonEnterpriseContentValue = 1
 )
 
-// SettingsClipboardFileType allowed values.
+// String returns the SettingsBlockNonEnterpriseContentValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SettingsBlockNonEnterpriseContentValue) String() string {
+	switch e {
+	case SettingsBlockNonEnterpriseContentNonEnterpriseContentEmbeddedInEnterpriseSites:
+		return "SettingsBlockNonEnterpriseContentNonEnterpriseContentEmbeddedInEnterpriseSites"
+	case SettingsBlockNonEnterpriseContentNonEnterpriseContentEmbeddedOnEnterpriseSites:
+		return "SettingsBlockNonEnterpriseContentNonEnterpriseContentEmbeddedOnEnterpriseSites"
+	default:
+		return fmt.Sprintf("SettingsBlockNonEnterpriseContentValue(%d)", int64(e))
+	}
+}
+
+// SettingsClipboardFileTypeValue — allowed values for the ClipboardFileType node.
+type SettingsClipboardFileTypeValue int64
+
 const (
 	// Allow text copying.
-	SettingsClipboardFileTypeAllowTextCopying int64 = 1
+	SettingsClipboardFileTypeAllowTextCopying SettingsClipboardFileTypeValue = 1
 	// Allow image copying.
-	SettingsClipboardFileTypeAllowImageCopying int64 = 2
+	SettingsClipboardFileTypeAllowImageCopying SettingsClipboardFileTypeValue = 2
 	// Allow text and image copying.
-	SettingsClipboardFileTypeAllowTextAndImageCopying int64 = 3
+	SettingsClipboardFileTypeAllowTextAndImageCopying SettingsClipboardFileTypeValue = 3
 )
 
-// SettingsClipboardSettings allowed values.
+// String returns the SettingsClipboardFileTypeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SettingsClipboardFileTypeValue) String() string {
+	switch e {
+	case SettingsClipboardFileTypeAllowTextCopying:
+		return "SettingsClipboardFileTypeAllowTextCopying"
+	case SettingsClipboardFileTypeAllowImageCopying:
+		return "SettingsClipboardFileTypeAllowImageCopying"
+	case SettingsClipboardFileTypeAllowTextAndImageCopying:
+		return "SettingsClipboardFileTypeAllowTextAndImageCopying"
+	default:
+		return fmt.Sprintf("SettingsClipboardFileTypeValue(%d)", int64(e))
+	}
+}
+
+// SettingsClipboardSettingsValue — allowed values for the ClipboardSettings node.
+type SettingsClipboardSettingsValue int64
+
 const (
 	// Completely turns Off the clipboard functionality for the Application Guard.
-	SettingsClipboardSettingsCompletelyTurnsOffTheClipboardFunctionality int64 = 0
+	SettingsClipboardSettingsCompletelyTurnsOffTheClipboardFunctionality SettingsClipboardSettingsValue = 0
 	// Turns On clipboard operation from an isolated session to the host.
-	SettingsClipboardSettingsTurnsOnClipboardOperationFromAn int64 = 1
+	SettingsClipboardSettingsTurnsOnClipboardOperationFromAn SettingsClipboardSettingsValue = 1
 	// Turns On clipboard operation from the host to an isolated session.
-	SettingsClipboardSettingsTurnsOnClipboardOperationFromThe int64 = 2
+	SettingsClipboardSettingsTurnsOnClipboardOperationFromThe SettingsClipboardSettingsValue = 2
 	// Turns On clipboard operation in both the directions.
-	SettingsClipboardSettingsTurnsOnClipboardOperationInBoth int64 = 3
+	SettingsClipboardSettingsTurnsOnClipboardOperationInBoth SettingsClipboardSettingsValue = 3
 )
 
-// SettingsPrintingSettings allowed values.
+// String returns the SettingsClipboardSettingsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SettingsClipboardSettingsValue) String() string {
+	switch e {
+	case SettingsClipboardSettingsCompletelyTurnsOffTheClipboardFunctionality:
+		return "SettingsClipboardSettingsCompletelyTurnsOffTheClipboardFunctionality"
+	case SettingsClipboardSettingsTurnsOnClipboardOperationFromAn:
+		return "SettingsClipboardSettingsTurnsOnClipboardOperationFromAn"
+	case SettingsClipboardSettingsTurnsOnClipboardOperationFromThe:
+		return "SettingsClipboardSettingsTurnsOnClipboardOperationFromThe"
+	case SettingsClipboardSettingsTurnsOnClipboardOperationInBoth:
+		return "SettingsClipboardSettingsTurnsOnClipboardOperationInBoth"
+	default:
+		return fmt.Sprintf("SettingsClipboardSettingsValue(%d)", int64(e))
+	}
+}
+
+// SettingsPrintingSettingsValue — allowed values for the PrintingSettings node.
+type SettingsPrintingSettingsValue int64
+
 const (
 	// Disables all print functionality.
-	SettingsPrintingSettingsDisablesAllPrintFunctionality int64 = 0
+	SettingsPrintingSettingsDisablesAllPrintFunctionality SettingsPrintingSettingsValue = 0
 	// Enables only XPS printing.
-	SettingsPrintingSettingsEnablesOnlyXPSPrinting int64 = 1
+	SettingsPrintingSettingsEnablesOnlyXPSPrinting SettingsPrintingSettingsValue = 1
 	// Enables only PDF printing.
-	SettingsPrintingSettingsEnablesOnlyPDFPrinting int64 = 2
+	SettingsPrintingSettingsEnablesOnlyPDFPrinting SettingsPrintingSettingsValue = 2
 	// Enables both PDF and XPS printing.
-	SettingsPrintingSettingsEnablesBothPDFAndXPSPrinting int64 = 3
+	SettingsPrintingSettingsEnablesBothPDFAndXPSPrinting SettingsPrintingSettingsValue = 3
 	// Enables only local printing.
-	SettingsPrintingSettingsEnablesOnlyLocalPrinting int64 = 4
+	SettingsPrintingSettingsEnablesOnlyLocalPrinting SettingsPrintingSettingsValue = 4
 	// Enables both local and XPS printing.
-	SettingsPrintingSettingsEnablesBothLocalAndXPSPrinting int64 = 5
+	SettingsPrintingSettingsEnablesBothLocalAndXPSPrinting SettingsPrintingSettingsValue = 5
 	// Enables both local and PDF printing.
-	SettingsPrintingSettingsEnablesBothLocalAndPDFPrinting int64 = 6
+	SettingsPrintingSettingsEnablesBothLocalAndPDFPrinting SettingsPrintingSettingsValue = 6
 	// Enables local, PDF, and XPS printing.
-	SettingsPrintingSettingsEnablesLocalPDFAndXPSPrinting int64 = 7
+	SettingsPrintingSettingsEnablesLocalPDFAndXPSPrinting SettingsPrintingSettingsValue = 7
 	// Enables only network printing.
-	SettingsPrintingSettingsEnablesOnlyNetworkPrinting int64 = 8
+	SettingsPrintingSettingsEnablesOnlyNetworkPrinting SettingsPrintingSettingsValue = 8
 	// Enables both network and XPS printing.
-	SettingsPrintingSettingsEnablesBothNetworkAndXPSPrinting int64 = 9
+	SettingsPrintingSettingsEnablesBothNetworkAndXPSPrinting SettingsPrintingSettingsValue = 9
 	// Enables both network and PDF printing.
-	SettingsPrintingSettingsEnablesBothNetworkAndPDFPrinting int64 = 10
+	SettingsPrintingSettingsEnablesBothNetworkAndPDFPrinting SettingsPrintingSettingsValue = 10
 	// Enables network, PDF, and XPS printing.
-	SettingsPrintingSettingsEnablesNetworkPDFAndXPSPrinting int64 = 11
+	SettingsPrintingSettingsEnablesNetworkPDFAndXPSPrinting SettingsPrintingSettingsValue = 11
 	// Enables both network and local printing.
-	SettingsPrintingSettingsEnablesBothNetworkAndLocalPrinting int64 = 12
+	SettingsPrintingSettingsEnablesBothNetworkAndLocalPrinting SettingsPrintingSettingsValue = 12
 	// Enables network, local, and XPS printing.
-	SettingsPrintingSettingsEnablesNetworkLocalAndXPSPrinting int64 = 13
+	SettingsPrintingSettingsEnablesNetworkLocalAndXPSPrinting SettingsPrintingSettingsValue = 13
 	// Enables network, local, and PDF printing.
-	SettingsPrintingSettingsEnablesNetworkLocalAndPDFPrinting int64 = 14
+	SettingsPrintingSettingsEnablesNetworkLocalAndPDFPrinting SettingsPrintingSettingsValue = 14
 	// Enables all printing.
-	SettingsPrintingSettingsEnablesAllPrinting int64 = 15
+	SettingsPrintingSettingsEnablesAllPrinting SettingsPrintingSettingsValue = 15
 )
 
-// SettingsSaveFilesToHost allowed values.
+// String returns the SettingsPrintingSettingsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SettingsPrintingSettingsValue) String() string {
+	switch e {
+	case SettingsPrintingSettingsDisablesAllPrintFunctionality:
+		return "SettingsPrintingSettingsDisablesAllPrintFunctionality"
+	case SettingsPrintingSettingsEnablesOnlyXPSPrinting:
+		return "SettingsPrintingSettingsEnablesOnlyXPSPrinting"
+	case SettingsPrintingSettingsEnablesOnlyPDFPrinting:
+		return "SettingsPrintingSettingsEnablesOnlyPDFPrinting"
+	case SettingsPrintingSettingsEnablesBothPDFAndXPSPrinting:
+		return "SettingsPrintingSettingsEnablesBothPDFAndXPSPrinting"
+	case SettingsPrintingSettingsEnablesOnlyLocalPrinting:
+		return "SettingsPrintingSettingsEnablesOnlyLocalPrinting"
+	case SettingsPrintingSettingsEnablesBothLocalAndXPSPrinting:
+		return "SettingsPrintingSettingsEnablesBothLocalAndXPSPrinting"
+	case SettingsPrintingSettingsEnablesBothLocalAndPDFPrinting:
+		return "SettingsPrintingSettingsEnablesBothLocalAndPDFPrinting"
+	case SettingsPrintingSettingsEnablesLocalPDFAndXPSPrinting:
+		return "SettingsPrintingSettingsEnablesLocalPDFAndXPSPrinting"
+	case SettingsPrintingSettingsEnablesOnlyNetworkPrinting:
+		return "SettingsPrintingSettingsEnablesOnlyNetworkPrinting"
+	case SettingsPrintingSettingsEnablesBothNetworkAndXPSPrinting:
+		return "SettingsPrintingSettingsEnablesBothNetworkAndXPSPrinting"
+	case SettingsPrintingSettingsEnablesBothNetworkAndPDFPrinting:
+		return "SettingsPrintingSettingsEnablesBothNetworkAndPDFPrinting"
+	case SettingsPrintingSettingsEnablesNetworkPDFAndXPSPrinting:
+		return "SettingsPrintingSettingsEnablesNetworkPDFAndXPSPrinting"
+	case SettingsPrintingSettingsEnablesBothNetworkAndLocalPrinting:
+		return "SettingsPrintingSettingsEnablesBothNetworkAndLocalPrinting"
+	case SettingsPrintingSettingsEnablesNetworkLocalAndXPSPrinting:
+		return "SettingsPrintingSettingsEnablesNetworkLocalAndXPSPrinting"
+	case SettingsPrintingSettingsEnablesNetworkLocalAndPDFPrinting:
+		return "SettingsPrintingSettingsEnablesNetworkLocalAndPDFPrinting"
+	case SettingsPrintingSettingsEnablesAllPrinting:
+		return "SettingsPrintingSettingsEnablesAllPrinting"
+	default:
+		return fmt.Sprintf("SettingsPrintingSettingsValue(%d)", int64(e))
+	}
+}
+
+// SettingsSaveFilesToHostValue — allowed values for the SaveFilesToHost node.
+type SettingsSaveFilesToHostValue int64
+
 const (
 	// The user cannot download files from Edge in the container to the host file system. When the
 	// policy is not configured, it is the same as disabled (0).
-	SettingsSaveFilesToHostTheUserCannotDownloadFilesFrom int64 = 0
+	SettingsSaveFilesToHostTheUserCannotDownloadFilesFrom SettingsSaveFilesToHostValue = 0
 	// Turns on the functionality to allow users to download files from Edge in the container to the
 	// host file system.
-	SettingsSaveFilesToHostTurnsOnTheFunctionalityToAllow int64 = 1
+	SettingsSaveFilesToHostTurnsOnTheFunctionalityToAllow SettingsSaveFilesToHostValue = 1
 )
+
+// String returns the SettingsSaveFilesToHostValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SettingsSaveFilesToHostValue) String() string {
+	switch e {
+	case SettingsSaveFilesToHostTheUserCannotDownloadFilesFrom:
+		return "SettingsSaveFilesToHostTheUserCannotDownloadFilesFrom"
+	case SettingsSaveFilesToHostTurnsOnTheFunctionalityToAllow:
+		return "SettingsSaveFilesToHostTurnsOnTheFunctionalityToAllow"
+	default:
+		return fmt.Sprintf("SettingsSaveFilesToHostValue(%d)", int64(e))
+	}
+}

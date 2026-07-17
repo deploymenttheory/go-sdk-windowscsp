@@ -13,12 +13,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *DeviceHealthMonitoring) GetAllowDeviceHealthMonitoring(ctx context.Context) (int64, error) {
+func (s *DeviceHealthMonitoring) GetAllowDeviceHealthMonitoring(ctx context.Context) (AllowDeviceHealthMonitoringValue, error) {
 	v, err := s.c.Get(ctx, URIAllowDeviceHealthMonitoring)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowDeviceHealthMonitoringValue(n), err
 }
 
 // CreateAllowDeviceHealthMonitoring creates ./Device/Vendor/MSFT/Policy/Config/DeviceHealthMonitoring/AllowDeviceHealthMonitoring.
@@ -26,8 +27,8 @@ func (s *DeviceHealthMonitoring) GetAllowDeviceHealthMonitoring(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *DeviceHealthMonitoring) CreateAllowDeviceHealthMonitoring(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowDeviceHealthMonitoring, client.Int(value))
+func (s *DeviceHealthMonitoring) CreateAllowDeviceHealthMonitoring(ctx context.Context, value AllowDeviceHealthMonitoringValue) error {
+	return s.c.Add(ctx, URIAllowDeviceHealthMonitoring, client.Int(int64(value)))
 }
 
 // UpdateAllowDeviceHealthMonitoring updates ./Device/Vendor/MSFT/Policy/Config/DeviceHealthMonitoring/AllowDeviceHealthMonitoring.
@@ -35,8 +36,8 @@ func (s *DeviceHealthMonitoring) CreateAllowDeviceHealthMonitoring(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *DeviceHealthMonitoring) UpdateAllowDeviceHealthMonitoring(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowDeviceHealthMonitoring, client.Int(value))
+func (s *DeviceHealthMonitoring) UpdateAllowDeviceHealthMonitoring(ctx context.Context, value AllowDeviceHealthMonitoringValue) error {
+	return s.c.Replace(ctx, URIAllowDeviceHealthMonitoring, client.Int(int64(value)))
 }
 
 // DeleteAllowDeviceHealthMonitoring deletes ./Device/Vendor/MSFT/Policy/Config/DeviceHealthMonitoring/AllowDeviceHealthMonitoring.

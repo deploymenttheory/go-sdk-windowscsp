@@ -2,10 +2,29 @@
 
 package dataprotection
 
-// AllowDirectMemoryAccess allowed values.
+import (
+	"fmt"
+)
+
+// AllowDirectMemoryAccessValue — allowed values for the AllowDirectMemoryAccess node.
+type AllowDirectMemoryAccessValue int64
+
 const (
 	// Not allowed.
-	AllowDirectMemoryAccessNotAllowed int64 = 0
+	AllowDirectMemoryAccessNotAllowed AllowDirectMemoryAccessValue = 0
 	// Allowed.
-	AllowDirectMemoryAccessAllowed int64 = 1
+	AllowDirectMemoryAccessAllowed AllowDirectMemoryAccessValue = 1
 )
+
+// String returns the AllowDirectMemoryAccessValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowDirectMemoryAccessValue) String() string {
+	switch e {
+	case AllowDirectMemoryAccessNotAllowed:
+		return "AllowDirectMemoryAccessNotAllowed"
+	case AllowDirectMemoryAccessAllowed:
+		return "AllowDirectMemoryAccessAllowed"
+	default:
+		return fmt.Sprintf("AllowDirectMemoryAccessValue(%d)", int64(e))
+	}
+}

@@ -2,10 +2,29 @@
 
 package stickers
 
-// EnableStickers allowed values.
+import (
+	"fmt"
+)
+
+// EnableStickersValue — allowed values for the EnableStickers node.
+type EnableStickersValue int64
+
 const (
 	// Disabled.
-	EnableStickersDisabled int64 = 0
+	EnableStickersDisabled EnableStickersValue = 0
 	// Enabled.
-	EnableStickersEnabled int64 = 1
+	EnableStickersEnabled EnableStickersValue = 1
 )
+
+// String returns the EnableStickersValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableStickersValue) String() string {
+	switch e {
+	case EnableStickersDisabled:
+		return "EnableStickersDisabled"
+	case EnableStickersEnabled:
+		return "EnableStickersEnabled"
+	default:
+		return fmt.Sprintf("EnableStickersValue(%d)", int64(e))
+	}
+}

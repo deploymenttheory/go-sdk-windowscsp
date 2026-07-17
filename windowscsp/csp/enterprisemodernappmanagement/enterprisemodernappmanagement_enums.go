@@ -2,74 +2,213 @@
 
 package enterprisemodernappmanagement
 
-// AppManagementAppStorePackageFamilyNameDoNotUpdate allowed values.
-const (
-	// False
-	AppManagementAppStorePackageFamilyNameDoNotUpdateFalse int64 = 0
-	// True
-	AppManagementAppStorePackageFamilyNameDoNotUpdateTrue int64 = 1
+import (
+	"fmt"
 )
 
-// AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdate allowed values.
+// AppManagementAppStorePackageFamilyNameDoNotUpdateValue — allowed values for the DoNotUpdate node.
+type AppManagementAppStorePackageFamilyNameDoNotUpdateValue int64
+
 const (
 	// False
-	AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateFalse int64 = 0
+	AppManagementAppStorePackageFamilyNameDoNotUpdateFalse AppManagementAppStorePackageFamilyNameDoNotUpdateValue = 0
 	// True
-	AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateTrue int64 = 1
+	AppManagementAppStorePackageFamilyNameDoNotUpdateTrue AppManagementAppStorePackageFamilyNameDoNotUpdateValue = 1
 )
 
-// AppManagementAppStorePackageFamilyNameNonRemovable allowed values.
+// String returns the AppManagementAppStorePackageFamilyNameDoNotUpdateValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AppManagementAppStorePackageFamilyNameDoNotUpdateValue) String() string {
+	switch e {
+	case AppManagementAppStorePackageFamilyNameDoNotUpdateFalse:
+		return "AppManagementAppStorePackageFamilyNameDoNotUpdateFalse"
+	case AppManagementAppStorePackageFamilyNameDoNotUpdateTrue:
+		return "AppManagementAppStorePackageFamilyNameDoNotUpdateTrue"
+	default:
+		return fmt.Sprintf("AppManagementAppStorePackageFamilyNameDoNotUpdateValue(%d)", int64(e))
+	}
+}
+
+// AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue — allowed values for the MaintainProcessorArchitectureOnUpdate node.
+type AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue int64
+
+const (
+	// False
+	AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateFalse AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue = 0
+	// True
+	AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateTrue AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue = 1
+)
+
+// String returns the AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue) String() string {
+	switch e {
+	case AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateFalse:
+		return "AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateFalse"
+	case AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateTrue:
+		return "AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateTrue"
+	default:
+		return fmt.Sprintf("AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue(%d)", int64(e))
+	}
+}
+
+// AppManagementAppStorePackageFamilyNameNonRemovableValue — allowed values for the NonRemovable node.
+type AppManagementAppStorePackageFamilyNameNonRemovableValue int64
+
 const (
 	// app is not in the nonremovable app policy list
-	AppManagementAppStorePackageFamilyNameNonRemovableAppIsNotInTheNonremovable int64 = 0
+	AppManagementAppStorePackageFamilyNameNonRemovableAppIsNotInTheNonremovable AppManagementAppStorePackageFamilyNameNonRemovableValue = 0
 	// app is included in the nonremovable app policy list
-	AppManagementAppStorePackageFamilyNameNonRemovableAppIsIncludedInTheNonremovable int64 = 1
+	AppManagementAppStorePackageFamilyNameNonRemovableAppIsIncludedInTheNonremovable AppManagementAppStorePackageFamilyNameNonRemovableValue = 1
 )
 
-// AppManagementSystemPackageFamilyNameDoNotUpdate allowed values.
+// String returns the AppManagementAppStorePackageFamilyNameNonRemovableValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AppManagementAppStorePackageFamilyNameNonRemovableValue) String() string {
+	switch e {
+	case AppManagementAppStorePackageFamilyNameNonRemovableAppIsNotInTheNonremovable:
+		return "AppManagementAppStorePackageFamilyNameNonRemovableAppIsNotInTheNonremovable"
+	case AppManagementAppStorePackageFamilyNameNonRemovableAppIsIncludedInTheNonremovable:
+		return "AppManagementAppStorePackageFamilyNameNonRemovableAppIsIncludedInTheNonremovable"
+	default:
+		return fmt.Sprintf("AppManagementAppStorePackageFamilyNameNonRemovableValue(%d)", int64(e))
+	}
+}
+
+// AppManagementSystemPackageFamilyNameDoNotUpdateValue — allowed values for the DoNotUpdate node.
+type AppManagementSystemPackageFamilyNameDoNotUpdateValue int64
+
 const (
 	// False
-	AppManagementSystemPackageFamilyNameDoNotUpdateFalse int64 = 0
+	AppManagementSystemPackageFamilyNameDoNotUpdateFalse AppManagementSystemPackageFamilyNameDoNotUpdateValue = 0
 	// True
-	AppManagementSystemPackageFamilyNameDoNotUpdateTrue int64 = 1
+	AppManagementSystemPackageFamilyNameDoNotUpdateTrue AppManagementSystemPackageFamilyNameDoNotUpdateValue = 1
 )
 
-// AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdate allowed values.
+// String returns the AppManagementSystemPackageFamilyNameDoNotUpdateValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AppManagementSystemPackageFamilyNameDoNotUpdateValue) String() string {
+	switch e {
+	case AppManagementSystemPackageFamilyNameDoNotUpdateFalse:
+		return "AppManagementSystemPackageFamilyNameDoNotUpdateFalse"
+	case AppManagementSystemPackageFamilyNameDoNotUpdateTrue:
+		return "AppManagementSystemPackageFamilyNameDoNotUpdateTrue"
+	default:
+		return fmt.Sprintf("AppManagementSystemPackageFamilyNameDoNotUpdateValue(%d)", int64(e))
+	}
+}
+
+// AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateValue — allowed values for the MaintainProcessorArchitectureOnUpdate node.
+type AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateValue int64
+
 const (
 	// False
-	AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateFalse int64 = 0
+	AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateFalse AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateValue = 0
 	// True
-	AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateTrue int64 = 1
+	AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateTrue AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateValue = 1
 )
 
-// AppManagementSystemPackageFamilyNameNonRemovable allowed values.
+// String returns the AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateValue) String() string {
+	switch e {
+	case AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateFalse:
+		return "AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateFalse"
+	case AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateTrue:
+		return "AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateTrue"
+	default:
+		return fmt.Sprintf("AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateValue(%d)", int64(e))
+	}
+}
+
+// AppManagementSystemPackageFamilyNameNonRemovableValue — allowed values for the NonRemovable node.
+type AppManagementSystemPackageFamilyNameNonRemovableValue int64
+
 const (
 	// app is not in the nonremovable app policy list
-	AppManagementSystemPackageFamilyNameNonRemovableAppIsNotInTheNonremovable int64 = 0
+	AppManagementSystemPackageFamilyNameNonRemovableAppIsNotInTheNonremovable AppManagementSystemPackageFamilyNameNonRemovableValue = 0
 	// app is included in the nonremovable app policy list
-	AppManagementSystemPackageFamilyNameNonRemovableAppIsIncludedInTheNonremovable int64 = 1
+	AppManagementSystemPackageFamilyNameNonRemovableAppIsIncludedInTheNonremovable AppManagementSystemPackageFamilyNameNonRemovableValue = 1
 )
 
-// AppManagementNonStorePackageFamilyNameDoNotUpdate allowed values.
+// String returns the AppManagementSystemPackageFamilyNameNonRemovableValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AppManagementSystemPackageFamilyNameNonRemovableValue) String() string {
+	switch e {
+	case AppManagementSystemPackageFamilyNameNonRemovableAppIsNotInTheNonremovable:
+		return "AppManagementSystemPackageFamilyNameNonRemovableAppIsNotInTheNonremovable"
+	case AppManagementSystemPackageFamilyNameNonRemovableAppIsIncludedInTheNonremovable:
+		return "AppManagementSystemPackageFamilyNameNonRemovableAppIsIncludedInTheNonremovable"
+	default:
+		return fmt.Sprintf("AppManagementSystemPackageFamilyNameNonRemovableValue(%d)", int64(e))
+	}
+}
+
+// AppManagementNonStorePackageFamilyNameDoNotUpdateValue — allowed values for the DoNotUpdate node.
+type AppManagementNonStorePackageFamilyNameDoNotUpdateValue int64
+
 const (
 	// False
-	AppManagementNonStorePackageFamilyNameDoNotUpdateFalse int64 = 0
+	AppManagementNonStorePackageFamilyNameDoNotUpdateFalse AppManagementNonStorePackageFamilyNameDoNotUpdateValue = 0
 	// True
-	AppManagementNonStorePackageFamilyNameDoNotUpdateTrue int64 = 1
+	AppManagementNonStorePackageFamilyNameDoNotUpdateTrue AppManagementNonStorePackageFamilyNameDoNotUpdateValue = 1
 )
 
-// AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdate allowed values.
+// String returns the AppManagementNonStorePackageFamilyNameDoNotUpdateValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AppManagementNonStorePackageFamilyNameDoNotUpdateValue) String() string {
+	switch e {
+	case AppManagementNonStorePackageFamilyNameDoNotUpdateFalse:
+		return "AppManagementNonStorePackageFamilyNameDoNotUpdateFalse"
+	case AppManagementNonStorePackageFamilyNameDoNotUpdateTrue:
+		return "AppManagementNonStorePackageFamilyNameDoNotUpdateTrue"
+	default:
+		return fmt.Sprintf("AppManagementNonStorePackageFamilyNameDoNotUpdateValue(%d)", int64(e))
+	}
+}
+
+// AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue — allowed values for the MaintainProcessorArchitectureOnUpdate node.
+type AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue int64
+
 const (
 	// False
-	AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateFalse int64 = 0
+	AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateFalse AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue = 0
 	// True
-	AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateTrue int64 = 1
+	AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateTrue AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue = 1
 )
 
-// AppManagementNonStorePackageFamilyNameNonRemovable allowed values.
+// String returns the AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue) String() string {
+	switch e {
+	case AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateFalse:
+		return "AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateFalse"
+	case AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateTrue:
+		return "AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateTrue"
+	default:
+		return fmt.Sprintf("AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue(%d)", int64(e))
+	}
+}
+
+// AppManagementNonStorePackageFamilyNameNonRemovableValue — allowed values for the NonRemovable node.
+type AppManagementNonStorePackageFamilyNameNonRemovableValue int64
+
 const (
 	// app is not in the nonremovable app policy list
-	AppManagementNonStorePackageFamilyNameNonRemovableAppIsNotInTheNonremovable int64 = 0
+	AppManagementNonStorePackageFamilyNameNonRemovableAppIsNotInTheNonremovable AppManagementNonStorePackageFamilyNameNonRemovableValue = 0
 	// app is included in the nonremovable app policy list
-	AppManagementNonStorePackageFamilyNameNonRemovableAppIsIncludedInTheNonremovable int64 = 1
+	AppManagementNonStorePackageFamilyNameNonRemovableAppIsIncludedInTheNonremovable AppManagementNonStorePackageFamilyNameNonRemovableValue = 1
 )
+
+// String returns the AppManagementNonStorePackageFamilyNameNonRemovableValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AppManagementNonStorePackageFamilyNameNonRemovableValue) String() string {
+	switch e {
+	case AppManagementNonStorePackageFamilyNameNonRemovableAppIsNotInTheNonremovable:
+		return "AppManagementNonStorePackageFamilyNameNonRemovableAppIsNotInTheNonremovable"
+	case AppManagementNonStorePackageFamilyNameNonRemovableAppIsIncludedInTheNonremovable:
+		return "AppManagementNonStorePackageFamilyNameNonRemovableAppIsIncludedInTheNonremovable"
+	default:
+		return fmt.Sprintf("AppManagementNonStorePackageFamilyNameNonRemovableValue(%d)", int64(e))
+	}
+}

@@ -2,239 +2,652 @@
 
 package defender
 
-// AllowArchiveScanning allowed values.
+import (
+	"fmt"
+)
+
+// AllowArchiveScanningValue — allowed values for the AllowArchiveScanning node.
+type AllowArchiveScanningValue int64
+
 const (
 	// Not allowed. Turns off scanning on archived files.
-	AllowArchiveScanningNotAllowed int64 = 0
+	AllowArchiveScanningNotAllowed AllowArchiveScanningValue = 0
 	// Allowed. Scans the archive files.
-	AllowArchiveScanningAllowed int64 = 1
+	AllowArchiveScanningAllowed AllowArchiveScanningValue = 1
 )
 
-// AllowBehaviorMonitoring allowed values.
+// String returns the AllowArchiveScanningValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowArchiveScanningValue) String() string {
+	switch e {
+	case AllowArchiveScanningNotAllowed:
+		return "AllowArchiveScanningNotAllowed"
+	case AllowArchiveScanningAllowed:
+		return "AllowArchiveScanningAllowed"
+	default:
+		return fmt.Sprintf("AllowArchiveScanningValue(%d)", int64(e))
+	}
+}
+
+// AllowBehaviorMonitoringValue — allowed values for the AllowBehaviorMonitoring node.
+type AllowBehaviorMonitoringValue int64
+
 const (
 	// Not allowed. Turns off behavior monitoring.
-	AllowBehaviorMonitoringNotAllowed int64 = 0
+	AllowBehaviorMonitoringNotAllowed AllowBehaviorMonitoringValue = 0
 	// Allowed. Turns on real-time behavior monitoring.
-	AllowBehaviorMonitoringAllowed int64 = 1
+	AllowBehaviorMonitoringAllowed AllowBehaviorMonitoringValue = 1
 )
 
-// AllowCloudProtection allowed values.
+// String returns the AllowBehaviorMonitoringValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowBehaviorMonitoringValue) String() string {
+	switch e {
+	case AllowBehaviorMonitoringNotAllowed:
+		return "AllowBehaviorMonitoringNotAllowed"
+	case AllowBehaviorMonitoringAllowed:
+		return "AllowBehaviorMonitoringAllowed"
+	default:
+		return fmt.Sprintf("AllowBehaviorMonitoringValue(%d)", int64(e))
+	}
+}
+
+// AllowCloudProtectionValue — allowed values for the AllowCloudProtection node.
+type AllowCloudProtectionValue int64
+
 const (
 	// Not allowed. Turns off the Microsoft Active Protection Service.
-	AllowCloudProtectionNotAllowed int64 = 0
+	AllowCloudProtectionNotAllowed AllowCloudProtectionValue = 0
 	// Allowed. Turns on the Microsoft Active Protection Service.
-	AllowCloudProtectionAllowed int64 = 1
+	AllowCloudProtectionAllowed AllowCloudProtectionValue = 1
 )
 
-// AllowEmailScanning allowed values.
+// String returns the AllowCloudProtectionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowCloudProtectionValue) String() string {
+	switch e {
+	case AllowCloudProtectionNotAllowed:
+		return "AllowCloudProtectionNotAllowed"
+	case AllowCloudProtectionAllowed:
+		return "AllowCloudProtectionAllowed"
+	default:
+		return fmt.Sprintf("AllowCloudProtectionValue(%d)", int64(e))
+	}
+}
+
+// AllowEmailScanningValue — allowed values for the AllowEmailScanning node.
+type AllowEmailScanningValue int64
+
 const (
 	// Not allowed. Turns off email scanning.
-	AllowEmailScanningNotAllowed int64 = 0
+	AllowEmailScanningNotAllowed AllowEmailScanningValue = 0
 	// Allowed. Turns on email scanning.
-	AllowEmailScanningAllowed int64 = 1
+	AllowEmailScanningAllowed AllowEmailScanningValue = 1
 )
 
-// AllowFullScanOnMappedNetworkDrives allowed values.
+// String returns the AllowEmailScanningValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowEmailScanningValue) String() string {
+	switch e {
+	case AllowEmailScanningNotAllowed:
+		return "AllowEmailScanningNotAllowed"
+	case AllowEmailScanningAllowed:
+		return "AllowEmailScanningAllowed"
+	default:
+		return fmt.Sprintf("AllowEmailScanningValue(%d)", int64(e))
+	}
+}
+
+// AllowFullScanOnMappedNetworkDrivesValue — allowed values for the AllowFullScanOnMappedNetworkDrives node.
+type AllowFullScanOnMappedNetworkDrivesValue int64
+
 const (
 	// Not allowed. Disables scanning on mapped network drives.
-	AllowFullScanOnMappedNetworkDrivesNotAllowed int64 = 0
+	AllowFullScanOnMappedNetworkDrivesNotAllowed AllowFullScanOnMappedNetworkDrivesValue = 0
 	// Allowed. Scans mapped network drives.
-	AllowFullScanOnMappedNetworkDrivesAllowed int64 = 1
+	AllowFullScanOnMappedNetworkDrivesAllowed AllowFullScanOnMappedNetworkDrivesValue = 1
 )
 
-// AllowFullScanRemovableDriveScanning allowed values.
+// String returns the AllowFullScanOnMappedNetworkDrivesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowFullScanOnMappedNetworkDrivesValue) String() string {
+	switch e {
+	case AllowFullScanOnMappedNetworkDrivesNotAllowed:
+		return "AllowFullScanOnMappedNetworkDrivesNotAllowed"
+	case AllowFullScanOnMappedNetworkDrivesAllowed:
+		return "AllowFullScanOnMappedNetworkDrivesAllowed"
+	default:
+		return fmt.Sprintf("AllowFullScanOnMappedNetworkDrivesValue(%d)", int64(e))
+	}
+}
+
+// AllowFullScanRemovableDriveScanningValue — allowed values for the AllowFullScanRemovableDriveScanning node.
+type AllowFullScanRemovableDriveScanningValue int64
+
 const (
 	// Not allowed. Turns off scanning on removable drives.
-	AllowFullScanRemovableDriveScanningNotAllowed int64 = 0
+	AllowFullScanRemovableDriveScanningNotAllowed AllowFullScanRemovableDriveScanningValue = 0
 	// Allowed. Scans removable drives.
-	AllowFullScanRemovableDriveScanningAllowed int64 = 1
+	AllowFullScanRemovableDriveScanningAllowed AllowFullScanRemovableDriveScanningValue = 1
 )
 
-// AllowIOAVProtection allowed values.
+// String returns the AllowFullScanRemovableDriveScanningValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowFullScanRemovableDriveScanningValue) String() string {
+	switch e {
+	case AllowFullScanRemovableDriveScanningNotAllowed:
+		return "AllowFullScanRemovableDriveScanningNotAllowed"
+	case AllowFullScanRemovableDriveScanningAllowed:
+		return "AllowFullScanRemovableDriveScanningAllowed"
+	default:
+		return fmt.Sprintf("AllowFullScanRemovableDriveScanningValue(%d)", int64(e))
+	}
+}
+
+// AllowIOAVProtectionValue — allowed values for the AllowIOAVProtection node.
+type AllowIOAVProtectionValue int64
+
 const (
 	// Not allowed.
-	AllowIOAVProtectionNotAllowed int64 = 0
+	AllowIOAVProtectionNotAllowed AllowIOAVProtectionValue = 0
 	// Allowed.
-	AllowIOAVProtectionAllowed int64 = 1
+	AllowIOAVProtectionAllowed AllowIOAVProtectionValue = 1
 )
 
-// AllowIntrusionPreventionSystem allowed values.
+// String returns the AllowIOAVProtectionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowIOAVProtectionValue) String() string {
+	switch e {
+	case AllowIOAVProtectionNotAllowed:
+		return "AllowIOAVProtectionNotAllowed"
+	case AllowIOAVProtectionAllowed:
+		return "AllowIOAVProtectionAllowed"
+	default:
+		return fmt.Sprintf("AllowIOAVProtectionValue(%d)", int64(e))
+	}
+}
+
+// AllowIntrusionPreventionSystemValue — allowed values for the AllowIntrusionPreventionSystem node.
+type AllowIntrusionPreventionSystemValue int64
+
 const (
 	// Not allowed.
-	AllowIntrusionPreventionSystemNotAllowed int64 = 0
+	AllowIntrusionPreventionSystemNotAllowed AllowIntrusionPreventionSystemValue = 0
 	// Allowed.
-	AllowIntrusionPreventionSystemAllowed int64 = 1
+	AllowIntrusionPreventionSystemAllowed AllowIntrusionPreventionSystemValue = 1
 )
 
-// AllowOnAccessProtection allowed values.
+// String returns the AllowIntrusionPreventionSystemValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowIntrusionPreventionSystemValue) String() string {
+	switch e {
+	case AllowIntrusionPreventionSystemNotAllowed:
+		return "AllowIntrusionPreventionSystemNotAllowed"
+	case AllowIntrusionPreventionSystemAllowed:
+		return "AllowIntrusionPreventionSystemAllowed"
+	default:
+		return fmt.Sprintf("AllowIntrusionPreventionSystemValue(%d)", int64(e))
+	}
+}
+
+// AllowOnAccessProtectionValue — allowed values for the AllowOnAccessProtection node.
+type AllowOnAccessProtectionValue int64
+
 const (
 	// Not allowed.
-	AllowOnAccessProtectionNotAllowed int64 = 0
+	AllowOnAccessProtectionNotAllowed AllowOnAccessProtectionValue = 0
 	// Allowed.
-	AllowOnAccessProtectionAllowed int64 = 1
+	AllowOnAccessProtectionAllowed AllowOnAccessProtectionValue = 1
 )
 
-// AllowRealtimeMonitoring allowed values.
+// String returns the AllowOnAccessProtectionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowOnAccessProtectionValue) String() string {
+	switch e {
+	case AllowOnAccessProtectionNotAllowed:
+		return "AllowOnAccessProtectionNotAllowed"
+	case AllowOnAccessProtectionAllowed:
+		return "AllowOnAccessProtectionAllowed"
+	default:
+		return fmt.Sprintf("AllowOnAccessProtectionValue(%d)", int64(e))
+	}
+}
+
+// AllowRealtimeMonitoringValue — allowed values for the AllowRealtimeMonitoring node.
+type AllowRealtimeMonitoringValue int64
+
 const (
 	// Not allowed. Turns off the real-time monitoring service.
-	AllowRealtimeMonitoringNotAllowed int64 = 0
+	AllowRealtimeMonitoringNotAllowed AllowRealtimeMonitoringValue = 0
 	// Allowed. Turns on and runs the real-time monitoring service.
-	AllowRealtimeMonitoringAllowed int64 = 1
+	AllowRealtimeMonitoringAllowed AllowRealtimeMonitoringValue = 1
 )
 
-// AllowScanningNetworkFiles allowed values.
+// String returns the AllowRealtimeMonitoringValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowRealtimeMonitoringValue) String() string {
+	switch e {
+	case AllowRealtimeMonitoringNotAllowed:
+		return "AllowRealtimeMonitoringNotAllowed"
+	case AllowRealtimeMonitoringAllowed:
+		return "AllowRealtimeMonitoringAllowed"
+	default:
+		return fmt.Sprintf("AllowRealtimeMonitoringValue(%d)", int64(e))
+	}
+}
+
+// AllowScanningNetworkFilesValue — allowed values for the AllowScanningNetworkFiles node.
+type AllowScanningNetworkFilesValue int64
+
 const (
 	// Not allowed. Turns off scanning of network files.
-	AllowScanningNetworkFilesNotAllowed int64 = 0
+	AllowScanningNetworkFilesNotAllowed AllowScanningNetworkFilesValue = 0
 	// Allowed. Scans network files.
-	AllowScanningNetworkFilesAllowed int64 = 1
+	AllowScanningNetworkFilesAllowed AllowScanningNetworkFilesValue = 1
 )
 
-// AllowScriptScanning allowed values.
+// String returns the AllowScanningNetworkFilesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowScanningNetworkFilesValue) String() string {
+	switch e {
+	case AllowScanningNetworkFilesNotAllowed:
+		return "AllowScanningNetworkFilesNotAllowed"
+	case AllowScanningNetworkFilesAllowed:
+		return "AllowScanningNetworkFilesAllowed"
+	default:
+		return fmt.Sprintf("AllowScanningNetworkFilesValue(%d)", int64(e))
+	}
+}
+
+// AllowScriptScanningValue — allowed values for the AllowScriptScanning node.
+type AllowScriptScanningValue int64
+
 const (
 	// Not allowed.
-	AllowScriptScanningNotAllowed int64 = 0
+	AllowScriptScanningNotAllowed AllowScriptScanningValue = 0
 	// Allowed.
-	AllowScriptScanningAllowed int64 = 1
+	AllowScriptScanningAllowed AllowScriptScanningValue = 1
 )
 
-// AllowUserUIAccess allowed values.
+// String returns the AllowScriptScanningValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowScriptScanningValue) String() string {
+	switch e {
+	case AllowScriptScanningNotAllowed:
+		return "AllowScriptScanningNotAllowed"
+	case AllowScriptScanningAllowed:
+		return "AllowScriptScanningAllowed"
+	default:
+		return fmt.Sprintf("AllowScriptScanningValue(%d)", int64(e))
+	}
+}
+
+// AllowUserUIAccessValue — allowed values for the AllowUserUIAccess node.
+type AllowUserUIAccessValue int64
+
 const (
 	// Not allowed. Prevents users from accessing UI.
-	AllowUserUIAccessNotAllowed int64 = 0
+	AllowUserUIAccessNotAllowed AllowUserUIAccessValue = 0
 	// Allowed. Lets users access UI.
-	AllowUserUIAccessAllowed int64 = 1
+	AllowUserUIAccessAllowed AllowUserUIAccessValue = 1
 )
 
-// CheckForSignaturesBeforeRunningScan allowed values.
+// String returns the AllowUserUIAccessValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowUserUIAccessValue) String() string {
+	switch e {
+	case AllowUserUIAccessNotAllowed:
+		return "AllowUserUIAccessNotAllowed"
+	case AllowUserUIAccessAllowed:
+		return "AllowUserUIAccessAllowed"
+	default:
+		return fmt.Sprintf("AllowUserUIAccessValue(%d)", int64(e))
+	}
+}
+
+// CheckForSignaturesBeforeRunningScanValue — allowed values for the CheckForSignaturesBeforeRunningScan node.
+type CheckForSignaturesBeforeRunningScanValue int64
+
 const (
 	// Disabled
-	CheckForSignaturesBeforeRunningScanDisabled int64 = 0
+	CheckForSignaturesBeforeRunningScanDisabled CheckForSignaturesBeforeRunningScanValue = 0
 	// Enabled
-	CheckForSignaturesBeforeRunningScanEnabled int64 = 1
+	CheckForSignaturesBeforeRunningScanEnabled CheckForSignaturesBeforeRunningScanValue = 1
 )
 
-// CloudBlockLevel allowed values.
+// String returns the CheckForSignaturesBeforeRunningScanValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e CheckForSignaturesBeforeRunningScanValue) String() string {
+	switch e {
+	case CheckForSignaturesBeforeRunningScanDisabled:
+		return "CheckForSignaturesBeforeRunningScanDisabled"
+	case CheckForSignaturesBeforeRunningScanEnabled:
+		return "CheckForSignaturesBeforeRunningScanEnabled"
+	default:
+		return fmt.Sprintf("CheckForSignaturesBeforeRunningScanValue(%d)", int64(e))
+	}
+}
+
+// CloudBlockLevelValue — allowed values for the CloudBlockLevel node.
+type CloudBlockLevelValue int64
+
 const (
 	// NotConfigured
-	CloudBlockLevelNotConfigured int64 = 0
+	CloudBlockLevelNotConfigured CloudBlockLevelValue = 0
 	// High
-	CloudBlockLevelHigh int64 = 2
+	CloudBlockLevelHigh CloudBlockLevelValue = 2
 	// HighPlus
-	CloudBlockLevelHighPlus int64 = 4
+	CloudBlockLevelHighPlus CloudBlockLevelValue = 4
 	// ZeroTolerance
-	CloudBlockLevelZeroTolerance int64 = 6
+	CloudBlockLevelZeroTolerance CloudBlockLevelValue = 6
 )
 
-// DisableCatchupFullScan allowed values.
+// String returns the CloudBlockLevelValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e CloudBlockLevelValue) String() string {
+	switch e {
+	case CloudBlockLevelNotConfigured:
+		return "CloudBlockLevelNotConfigured"
+	case CloudBlockLevelHigh:
+		return "CloudBlockLevelHigh"
+	case CloudBlockLevelHighPlus:
+		return "CloudBlockLevelHighPlus"
+	case CloudBlockLevelZeroTolerance:
+		return "CloudBlockLevelZeroTolerance"
+	default:
+		return fmt.Sprintf("CloudBlockLevelValue(%d)", int64(e))
+	}
+}
+
+// DisableCatchupFullScanValue — allowed values for the DisableCatchupFullScan node.
+type DisableCatchupFullScanValue int64
+
 const (
 	// Enabled
-	DisableCatchupFullScanEnabled int64 = 0
+	DisableCatchupFullScanEnabled DisableCatchupFullScanValue = 0
 	// Disabled
-	DisableCatchupFullScanDisabled int64 = 1
+	DisableCatchupFullScanDisabled DisableCatchupFullScanValue = 1
 )
 
-// DisableCatchupQuickScan allowed values.
+// String returns the DisableCatchupFullScanValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableCatchupFullScanValue) String() string {
+	switch e {
+	case DisableCatchupFullScanEnabled:
+		return "DisableCatchupFullScanEnabled"
+	case DisableCatchupFullScanDisabled:
+		return "DisableCatchupFullScanDisabled"
+	default:
+		return fmt.Sprintf("DisableCatchupFullScanValue(%d)", int64(e))
+	}
+}
+
+// DisableCatchupQuickScanValue — allowed values for the DisableCatchupQuickScan node.
+type DisableCatchupQuickScanValue int64
+
 const (
 	// Enabled
-	DisableCatchupQuickScanEnabled int64 = 0
+	DisableCatchupQuickScanEnabled DisableCatchupQuickScanValue = 0
 	// Disabled
-	DisableCatchupQuickScanDisabled int64 = 1
+	DisableCatchupQuickScanDisabled DisableCatchupQuickScanValue = 1
 )
 
-// EnableControlledFolderAccess allowed values.
+// String returns the DisableCatchupQuickScanValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableCatchupQuickScanValue) String() string {
+	switch e {
+	case DisableCatchupQuickScanEnabled:
+		return "DisableCatchupQuickScanEnabled"
+	case DisableCatchupQuickScanDisabled:
+		return "DisableCatchupQuickScanDisabled"
+	default:
+		return fmt.Sprintf("DisableCatchupQuickScanValue(%d)", int64(e))
+	}
+}
+
+// EnableControlledFolderAccessValue — allowed values for the EnableControlledFolderAccess node.
+type EnableControlledFolderAccessValue int64
+
 const (
 	// Disabled
-	EnableControlledFolderAccessDisabled int64 = 0
+	EnableControlledFolderAccessDisabled EnableControlledFolderAccessValue = 0
 	// Enabled
-	EnableControlledFolderAccessEnabled int64 = 1
+	EnableControlledFolderAccessEnabled EnableControlledFolderAccessValue = 1
 	// Audit Mode
-	EnableControlledFolderAccessAuditMode int64 = 2
+	EnableControlledFolderAccessAuditMode EnableControlledFolderAccessValue = 2
 	// Block disk modification only
-	EnableControlledFolderAccessBlockDiskModificationOnly int64 = 3
+	EnableControlledFolderAccessBlockDiskModificationOnly EnableControlledFolderAccessValue = 3
 	// Audit disk modification only
-	EnableControlledFolderAccessAuditDiskModificationOnly int64 = 4
+	EnableControlledFolderAccessAuditDiskModificationOnly EnableControlledFolderAccessValue = 4
 )
 
-// EnableLowCPUPriority allowed values.
+// String returns the EnableControlledFolderAccessValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableControlledFolderAccessValue) String() string {
+	switch e {
+	case EnableControlledFolderAccessDisabled:
+		return "EnableControlledFolderAccessDisabled"
+	case EnableControlledFolderAccessEnabled:
+		return "EnableControlledFolderAccessEnabled"
+	case EnableControlledFolderAccessAuditMode:
+		return "EnableControlledFolderAccessAuditMode"
+	case EnableControlledFolderAccessBlockDiskModificationOnly:
+		return "EnableControlledFolderAccessBlockDiskModificationOnly"
+	case EnableControlledFolderAccessAuditDiskModificationOnly:
+		return "EnableControlledFolderAccessAuditDiskModificationOnly"
+	default:
+		return fmt.Sprintf("EnableControlledFolderAccessValue(%d)", int64(e))
+	}
+}
+
+// EnableLowCPUPriorityValue — allowed values for the EnableLowCPUPriority node.
+type EnableLowCPUPriorityValue int64
+
 const (
 	// Disabled
-	EnableLowCPUPriorityDisabled int64 = 0
+	EnableLowCPUPriorityDisabled EnableLowCPUPriorityValue = 0
 	// Enabled
-	EnableLowCPUPriorityEnabled int64 = 1
+	EnableLowCPUPriorityEnabled EnableLowCPUPriorityValue = 1
 )
 
-// EnableNetworkProtection allowed values.
+// String returns the EnableLowCPUPriorityValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableLowCPUPriorityValue) String() string {
+	switch e {
+	case EnableLowCPUPriorityDisabled:
+		return "EnableLowCPUPriorityDisabled"
+	case EnableLowCPUPriorityEnabled:
+		return "EnableLowCPUPriorityEnabled"
+	default:
+		return fmt.Sprintf("EnableLowCPUPriorityValue(%d)", int64(e))
+	}
+}
+
+// EnableNetworkProtectionValue — allowed values for the EnableNetworkProtection node.
+type EnableNetworkProtectionValue int64
+
 const (
 	// Disabled
-	EnableNetworkProtectionDisabled int64 = 0
+	EnableNetworkProtectionDisabled EnableNetworkProtectionValue = 0
 	// Enabled (block mode)
-	EnableNetworkProtectionEnabled int64 = 1
+	EnableNetworkProtectionEnabled EnableNetworkProtectionValue = 1
 	// Enabled (audit mode)
-	EnableNetworkProtectionEnabled2 int64 = 2
+	EnableNetworkProtectionEnabled2 EnableNetworkProtectionValue = 2
 )
 
-// PUAProtection allowed values.
+// String returns the EnableNetworkProtectionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableNetworkProtectionValue) String() string {
+	switch e {
+	case EnableNetworkProtectionDisabled:
+		return "EnableNetworkProtectionDisabled"
+	case EnableNetworkProtectionEnabled:
+		return "EnableNetworkProtectionEnabled"
+	case EnableNetworkProtectionEnabled2:
+		return "EnableNetworkProtectionEnabled2"
+	default:
+		return fmt.Sprintf("EnableNetworkProtectionValue(%d)", int64(e))
+	}
+}
+
+// PUAProtectionValue — allowed values for the PUAProtection node.
+type PUAProtectionValue int64
+
 const (
 	// PUA Protection off. Windows Defender will not protect against potentially unwanted applications.
-	PUAProtectionPUAProtectionOff int64 = 0
+	PUAProtectionPUAProtectionOff PUAProtectionValue = 0
 	// PUA Protection on. Detected items are blocked. They will show in history along with other
 	// threats.
-	PUAProtectionPUAProtectionOn int64 = 1
+	PUAProtectionPUAProtectionOn PUAProtectionValue = 1
 	// Audit mode. Windows Defender will detect potentially unwanted applications, but take no action.
 	// You can review information about the applications Windows Defender would have taken action
 	// against by searching for events created by Windows Defender in the Event Viewer.
-	PUAProtectionAuditMode int64 = 2
+	PUAProtectionAuditMode PUAProtectionValue = 2
 )
 
-// RealTimeScanDirection allowed values.
+// String returns the PUAProtectionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PUAProtectionValue) String() string {
+	switch e {
+	case PUAProtectionPUAProtectionOff:
+		return "PUAProtectionPUAProtectionOff"
+	case PUAProtectionPUAProtectionOn:
+		return "PUAProtectionPUAProtectionOn"
+	case PUAProtectionAuditMode:
+		return "PUAProtectionAuditMode"
+	default:
+		return fmt.Sprintf("PUAProtectionValue(%d)", int64(e))
+	}
+}
+
+// RealTimeScanDirectionValue — allowed values for the RealTimeScanDirection node.
+type RealTimeScanDirectionValue int64
+
 const (
 	// Monitor all files (bi-directional).
-	RealTimeScanDirectionMonitorAllFiles int64 = 0
+	RealTimeScanDirectionMonitorAllFiles RealTimeScanDirectionValue = 0
 	// Monitor incoming files.
-	RealTimeScanDirectionMonitorIncomingFiles int64 = 1
+	RealTimeScanDirectionMonitorIncomingFiles RealTimeScanDirectionValue = 1
 	// Monitor outgoing files.
-	RealTimeScanDirectionMonitorOutgoingFiles int64 = 2
+	RealTimeScanDirectionMonitorOutgoingFiles RealTimeScanDirectionValue = 2
 )
 
-// ScanParameter allowed values.
+// String returns the RealTimeScanDirectionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e RealTimeScanDirectionValue) String() string {
+	switch e {
+	case RealTimeScanDirectionMonitorAllFiles:
+		return "RealTimeScanDirectionMonitorAllFiles"
+	case RealTimeScanDirectionMonitorIncomingFiles:
+		return "RealTimeScanDirectionMonitorIncomingFiles"
+	case RealTimeScanDirectionMonitorOutgoingFiles:
+		return "RealTimeScanDirectionMonitorOutgoingFiles"
+	default:
+		return fmt.Sprintf("RealTimeScanDirectionValue(%d)", int64(e))
+	}
+}
+
+// ScanParameterValue — allowed values for the ScanParameter node.
+type ScanParameterValue int64
+
 const (
 	// Quick scan
-	ScanParameterQuickScan int64 = 1
+	ScanParameterQuickScan ScanParameterValue = 1
 	// Full scan
-	ScanParameterFullScan int64 = 2
+	ScanParameterFullScan ScanParameterValue = 2
 )
 
-// ScheduleScanDay allowed values.
+// String returns the ScanParameterValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ScanParameterValue) String() string {
+	switch e {
+	case ScanParameterQuickScan:
+		return "ScanParameterQuickScan"
+	case ScanParameterFullScan:
+		return "ScanParameterFullScan"
+	default:
+		return fmt.Sprintf("ScanParameterValue(%d)", int64(e))
+	}
+}
+
+// ScheduleScanDayValue — allowed values for the ScheduleScanDay node.
+type ScheduleScanDayValue int64
+
 const (
 	// Every day
-	ScheduleScanDayEveryDay int64 = 0
+	ScheduleScanDayEveryDay ScheduleScanDayValue = 0
 	// Sunday
-	ScheduleScanDaySunday int64 = 1
+	ScheduleScanDaySunday ScheduleScanDayValue = 1
 	// Monday
-	ScheduleScanDayMonday int64 = 2
+	ScheduleScanDayMonday ScheduleScanDayValue = 2
 	// Tuesday
-	ScheduleScanDayTuesday int64 = 3
+	ScheduleScanDayTuesday ScheduleScanDayValue = 3
 	// Wednesday
-	ScheduleScanDayWednesday int64 = 4
+	ScheduleScanDayWednesday ScheduleScanDayValue = 4
 	// Thursday
-	ScheduleScanDayThursday int64 = 5
+	ScheduleScanDayThursday ScheduleScanDayValue = 5
 	// Friday
-	ScheduleScanDayFriday int64 = 6
+	ScheduleScanDayFriday ScheduleScanDayValue = 6
 	// Saturday
-	ScheduleScanDaySaturday int64 = 7
+	ScheduleScanDaySaturday ScheduleScanDayValue = 7
 	// No scheduled scan
-	ScheduleScanDayNoScheduledScan int64 = 8
+	ScheduleScanDayNoScheduledScan ScheduleScanDayValue = 8
 )
 
-// SubmitSamplesConsent allowed values.
+// String returns the ScheduleScanDayValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ScheduleScanDayValue) String() string {
+	switch e {
+	case ScheduleScanDayEveryDay:
+		return "ScheduleScanDayEveryDay"
+	case ScheduleScanDaySunday:
+		return "ScheduleScanDaySunday"
+	case ScheduleScanDayMonday:
+		return "ScheduleScanDayMonday"
+	case ScheduleScanDayTuesday:
+		return "ScheduleScanDayTuesday"
+	case ScheduleScanDayWednesday:
+		return "ScheduleScanDayWednesday"
+	case ScheduleScanDayThursday:
+		return "ScheduleScanDayThursday"
+	case ScheduleScanDayFriday:
+		return "ScheduleScanDayFriday"
+	case ScheduleScanDaySaturday:
+		return "ScheduleScanDaySaturday"
+	case ScheduleScanDayNoScheduledScan:
+		return "ScheduleScanDayNoScheduledScan"
+	default:
+		return fmt.Sprintf("ScheduleScanDayValue(%d)", int64(e))
+	}
+}
+
+// SubmitSamplesConsentValue — allowed values for the SubmitSamplesConsent node.
+type SubmitSamplesConsentValue int64
+
 const (
 	// Always prompt.
-	SubmitSamplesConsentAlwaysPrompt int64 = 0
+	SubmitSamplesConsentAlwaysPrompt SubmitSamplesConsentValue = 0
 	// Send safe samples automatically.
-	SubmitSamplesConsentSendSafeSamplesAutomatically int64 = 1
+	SubmitSamplesConsentSendSafeSamplesAutomatically SubmitSamplesConsentValue = 1
 	// Never send.
-	SubmitSamplesConsentNeverSend int64 = 2
+	SubmitSamplesConsentNeverSend SubmitSamplesConsentValue = 2
 	// Send all samples automatically.
-	SubmitSamplesConsentSendAllSamplesAutomatically int64 = 3
+	SubmitSamplesConsentSendAllSamplesAutomatically SubmitSamplesConsentValue = 3
 )
+
+// String returns the SubmitSamplesConsentValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SubmitSamplesConsentValue) String() string {
+	switch e {
+	case SubmitSamplesConsentAlwaysPrompt:
+		return "SubmitSamplesConsentAlwaysPrompt"
+	case SubmitSamplesConsentSendSafeSamplesAutomatically:
+		return "SubmitSamplesConsentSendSafeSamplesAutomatically"
+	case SubmitSamplesConsentNeverSend:
+		return "SubmitSamplesConsentNeverSend"
+	case SubmitSamplesConsentSendAllSamplesAutomatically:
+		return "SubmitSamplesConsentSendAllSamplesAutomatically"
+	default:
+		return fmt.Sprintf("SubmitSamplesConsentValue(%d)", int64(e))
+	}
+}

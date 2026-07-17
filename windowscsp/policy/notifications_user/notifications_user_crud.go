@@ -17,12 +17,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *NotificationsUser) GetDisableAccountNotifications(ctx context.Context) (int64, error) {
+func (s *NotificationsUser) GetDisableAccountNotifications(ctx context.Context) (DisableAccountNotificationsValue, error) {
 	v, err := s.c.Get(ctx, URIDisableAccountNotifications)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableAccountNotificationsValue(n), err
 }
 
 // CreateDisableAccountNotifications creates ./User/Vendor/MSFT/Policy/Config/Notifications/DisableAccountNotifications.
@@ -34,8 +35,8 @@ func (s *NotificationsUser) GetDisableAccountNotifications(ctx context.Context) 
 //
 // Default: 0.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *NotificationsUser) CreateDisableAccountNotifications(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableAccountNotifications, client.Int(value))
+func (s *NotificationsUser) CreateDisableAccountNotifications(ctx context.Context, value DisableAccountNotificationsValue) error {
+	return s.c.Add(ctx, URIDisableAccountNotifications, client.Int(int64(value)))
 }
 
 // UpdateDisableAccountNotifications updates ./User/Vendor/MSFT/Policy/Config/Notifications/DisableAccountNotifications.
@@ -47,8 +48,8 @@ func (s *NotificationsUser) CreateDisableAccountNotifications(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *NotificationsUser) UpdateDisableAccountNotifications(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableAccountNotifications, client.Int(value))
+func (s *NotificationsUser) UpdateDisableAccountNotifications(ctx context.Context, value DisableAccountNotificationsValue) error {
+	return s.c.Replace(ctx, URIDisableAccountNotifications, client.Int(int64(value)))
 }
 
 // DeleteDisableAccountNotifications deletes ./User/Vendor/MSFT/Policy/Config/Notifications/DisableAccountNotifications.
@@ -76,12 +77,13 @@ func (s *NotificationsUser) DeleteDisableAccountNotifications(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *NotificationsUser) GetDisallowNotificationMirroring(ctx context.Context) (int64, error) {
+func (s *NotificationsUser) GetDisallowNotificationMirroring(ctx context.Context) (DisallowNotificationMirroringValue, error) {
 	v, err := s.c.Get(ctx, URIDisallowNotificationMirroring)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisallowNotificationMirroringValue(n), err
 }
 
 // CreateDisallowNotificationMirroring creates ./User/Vendor/MSFT/Policy/Config/Notifications/DisallowNotificationMirroring.
@@ -96,8 +98,8 @@ func (s *NotificationsUser) GetDisallowNotificationMirroring(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *NotificationsUser) CreateDisallowNotificationMirroring(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisallowNotificationMirroring, client.Int(value))
+func (s *NotificationsUser) CreateDisallowNotificationMirroring(ctx context.Context, value DisallowNotificationMirroringValue) error {
+	return s.c.Add(ctx, URIDisallowNotificationMirroring, client.Int(int64(value)))
 }
 
 // UpdateDisallowNotificationMirroring updates ./User/Vendor/MSFT/Policy/Config/Notifications/DisallowNotificationMirroring.
@@ -112,8 +114,8 @@ func (s *NotificationsUser) CreateDisallowNotificationMirroring(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *NotificationsUser) UpdateDisallowNotificationMirroring(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisallowNotificationMirroring, client.Int(value))
+func (s *NotificationsUser) UpdateDisallowNotificationMirroring(ctx context.Context, value DisallowNotificationMirroringValue) error {
+	return s.c.Replace(ctx, URIDisallowNotificationMirroring, client.Int(int64(value)))
 }
 
 // DeleteDisallowNotificationMirroring deletes ./User/Vendor/MSFT/Policy/Config/Notifications/DisallowNotificationMirroring.
@@ -141,12 +143,13 @@ func (s *NotificationsUser) DeleteDisallowNotificationMirroring(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *NotificationsUser) GetDisallowTileNotification(ctx context.Context) (int64, error) {
+func (s *NotificationsUser) GetDisallowTileNotification(ctx context.Context) (DisallowTileNotificationValue, error) {
 	v, err := s.c.Get(ctx, URIDisallowTileNotification)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisallowTileNotificationValue(n), err
 }
 
 // CreateDisallowTileNotification creates ./User/Vendor/MSFT/Policy/Config/Notifications/DisallowTileNotification.
@@ -158,8 +161,8 @@ func (s *NotificationsUser) GetDisallowTileNotification(ctx context.Context) (in
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *NotificationsUser) CreateDisallowTileNotification(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisallowTileNotification, client.Int(value))
+func (s *NotificationsUser) CreateDisallowTileNotification(ctx context.Context, value DisallowTileNotificationValue) error {
+	return s.c.Add(ctx, URIDisallowTileNotification, client.Int(int64(value)))
 }
 
 // UpdateDisallowTileNotification updates ./User/Vendor/MSFT/Policy/Config/Notifications/DisallowTileNotification.
@@ -171,8 +174,8 @@ func (s *NotificationsUser) CreateDisallowTileNotification(ctx context.Context, 
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *NotificationsUser) UpdateDisallowTileNotification(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisallowTileNotification, client.Int(value))
+func (s *NotificationsUser) UpdateDisallowTileNotification(ctx context.Context, value DisallowTileNotificationValue) error {
+	return s.c.Replace(ctx, URIDisallowTileNotification, client.Int(int64(value)))
 }
 
 // DeleteDisallowTileNotification deletes ./User/Vendor/MSFT/Policy/Config/Notifications/DisallowTileNotification.
@@ -198,12 +201,13 @@ func (s *NotificationsUser) DeleteDisallowTileNotification(ctx context.Context) 
 //
 // Default: 0.
 // Supported from OS build 10.0.19041.1620 (CSP v11.0).
-func (s *NotificationsUser) GetEnableExpandedToastNotifications(ctx context.Context) (int64, error) {
+func (s *NotificationsUser) GetEnableExpandedToastNotifications(ctx context.Context) (EnableExpandedToastNotificationsValue, error) {
 	v, err := s.c.Get(ctx, URIEnableExpandedToastNotifications)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableExpandedToastNotificationsValue(n), err
 }
 
 // CreateEnableExpandedToastNotifications creates ./User/Vendor/MSFT/Policy/Config/Notifications/EnableExpandedToastNotifications.
@@ -216,8 +220,8 @@ func (s *NotificationsUser) GetEnableExpandedToastNotifications(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 10.0.19041.1620 (CSP v11.0).
-func (s *NotificationsUser) CreateEnableExpandedToastNotifications(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableExpandedToastNotifications, client.Int(value))
+func (s *NotificationsUser) CreateEnableExpandedToastNotifications(ctx context.Context, value EnableExpandedToastNotificationsValue) error {
+	return s.c.Add(ctx, URIEnableExpandedToastNotifications, client.Int(int64(value)))
 }
 
 // UpdateEnableExpandedToastNotifications updates ./User/Vendor/MSFT/Policy/Config/Notifications/EnableExpandedToastNotifications.
@@ -230,8 +234,8 @@ func (s *NotificationsUser) CreateEnableExpandedToastNotifications(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.19041.1620 (CSP v11.0).
-func (s *NotificationsUser) UpdateEnableExpandedToastNotifications(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableExpandedToastNotifications, client.Int(value))
+func (s *NotificationsUser) UpdateEnableExpandedToastNotifications(ctx context.Context, value EnableExpandedToastNotificationsValue) error {
+	return s.c.Replace(ctx, URIEnableExpandedToastNotifications, client.Int(int64(value)))
 }
 
 // DeleteEnableExpandedToastNotifications deletes ./User/Vendor/MSFT/Policy/Config/Notifications/EnableExpandedToastNotifications.

@@ -2,49 +2,130 @@
 
 package bitlocker
 
-// AllowStandardUserEncryption allowed values.
+import (
+	"fmt"
+)
+
+// AllowStandardUserEncryptionValue — allowed values for the AllowStandardUserEncryption node.
+type AllowStandardUserEncryptionValue int64
+
 const (
 	// This is the default, when the policy is not set. If current logged on user is a standard user,
 	// "RequireDeviceEncryption" policy will not try to enable encryption on any drive.
-	AllowStandardUserEncryptionThisIsTheDefaultWhenThe int64 = 0
+	AllowStandardUserEncryptionThisIsTheDefaultWhenThe AllowStandardUserEncryptionValue = 0
 	// "RequireDeviceEncryption" policy will try to enable encryption on all fixed drives even if a
 	// current logged in user is standard user.
-	AllowStandardUserEncryptionRequireDeviceEncryptionPolicyWillTryToEnable int64 = 1
+	AllowStandardUserEncryptionRequireDeviceEncryptionPolicyWillTryToEnable AllowStandardUserEncryptionValue = 1
 )
 
-// AllowWarningForOtherDiskEncryption allowed values.
+// String returns the AllowStandardUserEncryptionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowStandardUserEncryptionValue) String() string {
+	switch e {
+	case AllowStandardUserEncryptionThisIsTheDefaultWhenThe:
+		return "AllowStandardUserEncryptionThisIsTheDefaultWhenThe"
+	case AllowStandardUserEncryptionRequireDeviceEncryptionPolicyWillTryToEnable:
+		return "AllowStandardUserEncryptionRequireDeviceEncryptionPolicyWillTryToEnable"
+	default:
+		return fmt.Sprintf("AllowStandardUserEncryptionValue(%d)", int64(e))
+	}
+}
+
+// AllowWarningForOtherDiskEncryptionValue — allowed values for the AllowWarningForOtherDiskEncryption node.
+type AllowWarningForOtherDiskEncryptionValue int64
+
 const (
 	// Disables the warning prompt. Starting in Windows 10, version 1803, the value 0 can only be set
 	// for Entra ID joined devices. Windows will attempt to silently enable BitLocker for value 0.
-	AllowWarningForOtherDiskEncryptionDisablesTheWarningPrompt int64 = 0
+	AllowWarningForOtherDiskEncryptionDisablesTheWarningPrompt AllowWarningForOtherDiskEncryptionValue = 0
 	// Warning prompt allowed.
-	AllowWarningForOtherDiskEncryptionWarningPromptAllowed int64 = 1
+	AllowWarningForOtherDiskEncryptionWarningPromptAllowed AllowWarningForOtherDiskEncryptionValue = 1
 )
 
-// ConfigureRecoveryPasswordRotation allowed values.
+// String returns the AllowWarningForOtherDiskEncryptionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowWarningForOtherDiskEncryptionValue) String() string {
+	switch e {
+	case AllowWarningForOtherDiskEncryptionDisablesTheWarningPrompt:
+		return "AllowWarningForOtherDiskEncryptionDisablesTheWarningPrompt"
+	case AllowWarningForOtherDiskEncryptionWarningPromptAllowed:
+		return "AllowWarningForOtherDiskEncryptionWarningPromptAllowed"
+	default:
+		return fmt.Sprintf("AllowWarningForOtherDiskEncryptionValue(%d)", int64(e))
+	}
+}
+
+// ConfigureRecoveryPasswordRotationValue — allowed values for the ConfigureRecoveryPasswordRotation node.
+type ConfigureRecoveryPasswordRotationValue int64
+
 const (
 	// Refresh off (default)
-	ConfigureRecoveryPasswordRotationRefreshOff int64 = 0
+	ConfigureRecoveryPasswordRotationRefreshOff ConfigureRecoveryPasswordRotationValue = 0
 	// Refresh on for Entra ID-joined devices
-	ConfigureRecoveryPasswordRotationRefreshOnForEntraIDJoinedDevices int64 = 1
+	ConfigureRecoveryPasswordRotationRefreshOnForEntraIDJoinedDevices ConfigureRecoveryPasswordRotationValue = 1
 	// Refresh on for both Entra ID-joined and hybrid-joined devices
-	ConfigureRecoveryPasswordRotationRefreshOnForBothEntraIDJoined int64 = 2
+	ConfigureRecoveryPasswordRotationRefreshOnForBothEntraIDJoined ConfigureRecoveryPasswordRotationValue = 2
 )
 
-// RequireDeviceEncryption allowed values.
+// String returns the ConfigureRecoveryPasswordRotationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureRecoveryPasswordRotationValue) String() string {
+	switch e {
+	case ConfigureRecoveryPasswordRotationRefreshOff:
+		return "ConfigureRecoveryPasswordRotationRefreshOff"
+	case ConfigureRecoveryPasswordRotationRefreshOnForEntraIDJoinedDevices:
+		return "ConfigureRecoveryPasswordRotationRefreshOnForEntraIDJoinedDevices"
+	case ConfigureRecoveryPasswordRotationRefreshOnForBothEntraIDJoined:
+		return "ConfigureRecoveryPasswordRotationRefreshOnForBothEntraIDJoined"
+	default:
+		return fmt.Sprintf("ConfigureRecoveryPasswordRotationValue(%d)", int64(e))
+	}
+}
+
+// RequireDeviceEncryptionValue — allowed values for the RequireDeviceEncryption node.
+type RequireDeviceEncryptionValue int64
+
 const (
 	// Disable. If the policy setting is not set or is set to 0, the device's enforcement status is not
 	// checked. The policy does not enforce encryption and it does not decrypt encrypted volumes.
-	RequireDeviceEncryptionDisable int64 = 0
+	RequireDeviceEncryptionDisable RequireDeviceEncryptionValue = 0
 	// Enable. The device's enforcement status is checked. Setting this policy to 1 triggers encryption
 	// of all drives (silently or non-silently based on AllowWarningForOtherDiskEncryption policy).
-	RequireDeviceEncryptionEnable int64 = 1
+	RequireDeviceEncryptionEnable RequireDeviceEncryptionValue = 1
 )
 
-// RequireStorageCardEncryption allowed values.
+// String returns the RequireDeviceEncryptionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e RequireDeviceEncryptionValue) String() string {
+	switch e {
+	case RequireDeviceEncryptionDisable:
+		return "RequireDeviceEncryptionDisable"
+	case RequireDeviceEncryptionEnable:
+		return "RequireDeviceEncryptionEnable"
+	default:
+		return fmt.Sprintf("RequireDeviceEncryptionValue(%d)", int64(e))
+	}
+}
+
+// RequireStorageCardEncryptionValue — allowed values for the RequireStorageCardEncryption node.
+type RequireStorageCardEncryptionValue int64
+
 const (
 	// Storage cards do not need to be encrypted.
-	RequireStorageCardEncryptionStorageCardsDoNotNeedTo int64 = 0
+	RequireStorageCardEncryptionStorageCardsDoNotNeedTo RequireStorageCardEncryptionValue = 0
 	// Require storage cards to be encrypted.
-	RequireStorageCardEncryptionRequireStorageCardsToBeEncrypted int64 = 1
+	RequireStorageCardEncryptionRequireStorageCardsToBeEncrypted RequireStorageCardEncryptionValue = 1
 )
+
+// String returns the RequireStorageCardEncryptionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e RequireStorageCardEncryptionValue) String() string {
+	switch e {
+	case RequireStorageCardEncryptionStorageCardsDoNotNeedTo:
+		return "RequireStorageCardEncryptionStorageCardsDoNotNeedTo"
+	case RequireStorageCardEncryptionRequireStorageCardsToBeEncrypted:
+		return "RequireStorageCardEncryptionRequireStorageCardsToBeEncrypted"
+	default:
+		return fmt.Sprintf("RequireStorageCardEncryptionValue(%d)", int64(e))
+	}
+}

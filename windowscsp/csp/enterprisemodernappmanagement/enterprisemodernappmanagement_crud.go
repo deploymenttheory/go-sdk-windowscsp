@@ -427,24 +427,25 @@ func (s *EnterpriseModernAppManagement) GetAppManagementAppStorePackageFamilyNam
 
 // GetAppManagementAppStorePackageFamilyNameDoNotUpdate reads ./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/{packageFamilyName}/DoNotUpdate.
 // Specifies whether you want to block a specific app from being updated via auto-updates.
-func (s *EnterpriseModernAppManagement) GetAppManagementAppStorePackageFamilyNameDoNotUpdate(ctx context.Context, packageFamilyName string) (int64, error) {
+func (s *EnterpriseModernAppManagement) GetAppManagementAppStorePackageFamilyNameDoNotUpdate(ctx context.Context, packageFamilyName string) (AppManagementAppStorePackageFamilyNameDoNotUpdateValue, error) {
 	v, err := s.c.Get(ctx, URIAppManagementAppStorePackageFamilyNameDoNotUpdate(packageFamilyName))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AppManagementAppStorePackageFamilyNameDoNotUpdateValue(n), err
 }
 
 // CreateAppManagementAppStorePackageFamilyNameDoNotUpdate creates ./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/{packageFamilyName}/DoNotUpdate.
 // Specifies whether you want to block a specific app from being updated via auto-updates.
-func (s *EnterpriseModernAppManagement) CreateAppManagementAppStorePackageFamilyNameDoNotUpdate(ctx context.Context, packageFamilyName string, value int64) error {
-	return s.c.Add(ctx, URIAppManagementAppStorePackageFamilyNameDoNotUpdate(packageFamilyName), client.Int(value))
+func (s *EnterpriseModernAppManagement) CreateAppManagementAppStorePackageFamilyNameDoNotUpdate(ctx context.Context, packageFamilyName string, value AppManagementAppStorePackageFamilyNameDoNotUpdateValue) error {
+	return s.c.Add(ctx, URIAppManagementAppStorePackageFamilyNameDoNotUpdate(packageFamilyName), client.Int(int64(value)))
 }
 
 // UpdateAppManagementAppStorePackageFamilyNameDoNotUpdate updates ./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/{packageFamilyName}/DoNotUpdate.
 // Specifies whether you want to block a specific app from being updated via auto-updates.
-func (s *EnterpriseModernAppManagement) UpdateAppManagementAppStorePackageFamilyNameDoNotUpdate(ctx context.Context, packageFamilyName string, value int64) error {
-	return s.c.Replace(ctx, URIAppManagementAppStorePackageFamilyNameDoNotUpdate(packageFamilyName), client.Int(value))
+func (s *EnterpriseModernAppManagement) UpdateAppManagementAppStorePackageFamilyNameDoNotUpdate(ctx context.Context, packageFamilyName string, value AppManagementAppStorePackageFamilyNameDoNotUpdateValue) error {
+	return s.c.Replace(ctx, URIAppManagementAppStorePackageFamilyNameDoNotUpdate(packageFamilyName), client.Int(int64(value)))
 }
 
 // DeleteAppManagementAppStorePackageFamilyNameDoNotUpdate deletes ./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/{packageFamilyName}/DoNotUpdate.
@@ -460,12 +461,13 @@ func (s *EnterpriseModernAppManagement) DeleteAppManagementAppStorePackageFamily
 // available.
 //
 // Supported from OS build 10.0.19041 (CSP v1.2).
-func (s *EnterpriseModernAppManagement) GetAppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdate(ctx context.Context, packageFamilyName string) (int64, error) {
+func (s *EnterpriseModernAppManagement) GetAppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdate(ctx context.Context, packageFamilyName string) (AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue, error) {
 	v, err := s.c.Get(ctx, URIAppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdate(packageFamilyName))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue(n), err
 }
 
 // CreateAppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdate creates ./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/{packageFamilyName}/MaintainProcessorArchitectureOnUpdate.
@@ -475,8 +477,8 @@ func (s *EnterpriseModernAppManagement) GetAppManagementAppStorePackageFamilyNam
 // available.
 //
 // Supported from OS build 10.0.19041 (CSP v1.2).
-func (s *EnterpriseModernAppManagement) CreateAppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdate(ctx context.Context, packageFamilyName string, value int64) error {
-	return s.c.Add(ctx, URIAppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdate(packageFamilyName), client.Int(value))
+func (s *EnterpriseModernAppManagement) CreateAppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdate(ctx context.Context, packageFamilyName string, value AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue) error {
+	return s.c.Add(ctx, URIAppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdate(packageFamilyName), client.Int(int64(value)))
 }
 
 // UpdateAppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdate updates ./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/{packageFamilyName}/MaintainProcessorArchitectureOnUpdate.
@@ -486,8 +488,8 @@ func (s *EnterpriseModernAppManagement) CreateAppManagementAppStorePackageFamily
 // available.
 //
 // Supported from OS build 10.0.19041 (CSP v1.2).
-func (s *EnterpriseModernAppManagement) UpdateAppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdate(ctx context.Context, packageFamilyName string, value int64) error {
-	return s.c.Replace(ctx, URIAppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdate(packageFamilyName), client.Int(value))
+func (s *EnterpriseModernAppManagement) UpdateAppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdate(ctx context.Context, packageFamilyName string, value AppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue) error {
+	return s.c.Replace(ctx, URIAppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdate(packageFamilyName), client.Int(int64(value)))
 }
 
 // DeleteAppManagementAppStorePackageFamilyNameMaintainProcessorArchitectureOnUpdate deletes ./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/{packageFamilyName}/MaintainProcessorArchitectureOnUpdate.
@@ -509,12 +511,13 @@ func (s *EnterpriseModernAppManagement) DeleteAppManagementAppStorePackageFamily
 // doesn’t remove it for all users.
 //
 // Supported from OS build 10.0.17763 (CSP v1.2).
-func (s *EnterpriseModernAppManagement) GetAppManagementAppStorePackageFamilyNameNonRemovable(ctx context.Context, packageFamilyName string) (int64, error) {
+func (s *EnterpriseModernAppManagement) GetAppManagementAppStorePackageFamilyNameNonRemovable(ctx context.Context, packageFamilyName string) (AppManagementAppStorePackageFamilyNameNonRemovableValue, error) {
 	v, err := s.c.Get(ctx, URIAppManagementAppStorePackageFamilyNameNonRemovable(packageFamilyName))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AppManagementAppStorePackageFamilyNameNonRemovableValue(n), err
 }
 
 // CreateAppManagementAppStorePackageFamilyNameNonRemovable creates ./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/{packageFamilyName}/NonRemovable.
@@ -525,8 +528,8 @@ func (s *EnterpriseModernAppManagement) GetAppManagementAppStorePackageFamilyNam
 // doesn’t remove it for all users.
 //
 // Supported from OS build 10.0.17763 (CSP v1.2).
-func (s *EnterpriseModernAppManagement) CreateAppManagementAppStorePackageFamilyNameNonRemovable(ctx context.Context, packageFamilyName string, value int64) error {
-	return s.c.Add(ctx, URIAppManagementAppStorePackageFamilyNameNonRemovable(packageFamilyName), client.Int(value))
+func (s *EnterpriseModernAppManagement) CreateAppManagementAppStorePackageFamilyNameNonRemovable(ctx context.Context, packageFamilyName string, value AppManagementAppStorePackageFamilyNameNonRemovableValue) error {
+	return s.c.Add(ctx, URIAppManagementAppStorePackageFamilyNameNonRemovable(packageFamilyName), client.Int(int64(value)))
 }
 
 // UpdateAppManagementAppStorePackageFamilyNameNonRemovable updates ./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/{packageFamilyName}/NonRemovable.
@@ -537,8 +540,8 @@ func (s *EnterpriseModernAppManagement) CreateAppManagementAppStorePackageFamily
 // doesn’t remove it for all users.
 //
 // Supported from OS build 10.0.17763 (CSP v1.2).
-func (s *EnterpriseModernAppManagement) UpdateAppManagementAppStorePackageFamilyNameNonRemovable(ctx context.Context, packageFamilyName string, value int64) error {
-	return s.c.Replace(ctx, URIAppManagementAppStorePackageFamilyNameNonRemovable(packageFamilyName), client.Int(value))
+func (s *EnterpriseModernAppManagement) UpdateAppManagementAppStorePackageFamilyNameNonRemovable(ctx context.Context, packageFamilyName string, value AppManagementAppStorePackageFamilyNameNonRemovableValue) error {
+	return s.c.Replace(ctx, URIAppManagementAppStorePackageFamilyNameNonRemovable(packageFamilyName), client.Int(int64(value)))
 }
 
 // ListAppManagementAppStoreReleaseManagement lists the children of ./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/AppStore/ReleaseManagement.
@@ -1032,24 +1035,25 @@ func (s *EnterpriseModernAppManagement) UpdateAppManagementSystemPackageFamilyNa
 
 // GetAppManagementSystemPackageFamilyNameDoNotUpdate reads ./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/{packageFamilyName}/DoNotUpdate.
 // Specifies whether you want to block a specific app from being updated via auto-updates.
-func (s *EnterpriseModernAppManagement) GetAppManagementSystemPackageFamilyNameDoNotUpdate(ctx context.Context, packageFamilyName string) (int64, error) {
+func (s *EnterpriseModernAppManagement) GetAppManagementSystemPackageFamilyNameDoNotUpdate(ctx context.Context, packageFamilyName string) (AppManagementSystemPackageFamilyNameDoNotUpdateValue, error) {
 	v, err := s.c.Get(ctx, URIAppManagementSystemPackageFamilyNameDoNotUpdate(packageFamilyName))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AppManagementSystemPackageFamilyNameDoNotUpdateValue(n), err
 }
 
 // CreateAppManagementSystemPackageFamilyNameDoNotUpdate creates ./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/{packageFamilyName}/DoNotUpdate.
 // Specifies whether you want to block a specific app from being updated via auto-updates.
-func (s *EnterpriseModernAppManagement) CreateAppManagementSystemPackageFamilyNameDoNotUpdate(ctx context.Context, packageFamilyName string, value int64) error {
-	return s.c.Add(ctx, URIAppManagementSystemPackageFamilyNameDoNotUpdate(packageFamilyName), client.Int(value))
+func (s *EnterpriseModernAppManagement) CreateAppManagementSystemPackageFamilyNameDoNotUpdate(ctx context.Context, packageFamilyName string, value AppManagementSystemPackageFamilyNameDoNotUpdateValue) error {
+	return s.c.Add(ctx, URIAppManagementSystemPackageFamilyNameDoNotUpdate(packageFamilyName), client.Int(int64(value)))
 }
 
 // UpdateAppManagementSystemPackageFamilyNameDoNotUpdate updates ./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/{packageFamilyName}/DoNotUpdate.
 // Specifies whether you want to block a specific app from being updated via auto-updates.
-func (s *EnterpriseModernAppManagement) UpdateAppManagementSystemPackageFamilyNameDoNotUpdate(ctx context.Context, packageFamilyName string, value int64) error {
-	return s.c.Replace(ctx, URIAppManagementSystemPackageFamilyNameDoNotUpdate(packageFamilyName), client.Int(value))
+func (s *EnterpriseModernAppManagement) UpdateAppManagementSystemPackageFamilyNameDoNotUpdate(ctx context.Context, packageFamilyName string, value AppManagementSystemPackageFamilyNameDoNotUpdateValue) error {
+	return s.c.Replace(ctx, URIAppManagementSystemPackageFamilyNameDoNotUpdate(packageFamilyName), client.Int(int64(value)))
 }
 
 // DeleteAppManagementSystemPackageFamilyNameDoNotUpdate deletes ./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/{packageFamilyName}/DoNotUpdate.
@@ -1065,12 +1069,13 @@ func (s *EnterpriseModernAppManagement) DeleteAppManagementSystemPackageFamilyNa
 // available.
 //
 // Supported from OS build 10.0.19041 (CSP v1.2).
-func (s *EnterpriseModernAppManagement) GetAppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdate(ctx context.Context, packageFamilyName string) (int64, error) {
+func (s *EnterpriseModernAppManagement) GetAppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdate(ctx context.Context, packageFamilyName string) (AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateValue, error) {
 	v, err := s.c.Get(ctx, URIAppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdate(packageFamilyName))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateValue(n), err
 }
 
 // CreateAppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdate creates ./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/{packageFamilyName}/MaintainProcessorArchitectureOnUpdate.
@@ -1080,8 +1085,8 @@ func (s *EnterpriseModernAppManagement) GetAppManagementSystemPackageFamilyNameM
 // available.
 //
 // Supported from OS build 10.0.19041 (CSP v1.2).
-func (s *EnterpriseModernAppManagement) CreateAppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdate(ctx context.Context, packageFamilyName string, value int64) error {
-	return s.c.Add(ctx, URIAppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdate(packageFamilyName), client.Int(value))
+func (s *EnterpriseModernAppManagement) CreateAppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdate(ctx context.Context, packageFamilyName string, value AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateValue) error {
+	return s.c.Add(ctx, URIAppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdate(packageFamilyName), client.Int(int64(value)))
 }
 
 // UpdateAppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdate updates ./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/{packageFamilyName}/MaintainProcessorArchitectureOnUpdate.
@@ -1091,8 +1096,8 @@ func (s *EnterpriseModernAppManagement) CreateAppManagementSystemPackageFamilyNa
 // available.
 //
 // Supported from OS build 10.0.19041 (CSP v1.2).
-func (s *EnterpriseModernAppManagement) UpdateAppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdate(ctx context.Context, packageFamilyName string, value int64) error {
-	return s.c.Replace(ctx, URIAppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdate(packageFamilyName), client.Int(value))
+func (s *EnterpriseModernAppManagement) UpdateAppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdate(ctx context.Context, packageFamilyName string, value AppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdateValue) error {
+	return s.c.Replace(ctx, URIAppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdate(packageFamilyName), client.Int(int64(value)))
 }
 
 // DeleteAppManagementSystemPackageFamilyNameMaintainProcessorArchitectureOnUpdate deletes ./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/{packageFamilyName}/MaintainProcessorArchitectureOnUpdate.
@@ -1114,12 +1119,13 @@ func (s *EnterpriseModernAppManagement) DeleteAppManagementSystemPackageFamilyNa
 // doesn’t remove it for all users.
 //
 // Supported from OS build 10.0.17763 (CSP v1.2).
-func (s *EnterpriseModernAppManagement) GetAppManagementSystemPackageFamilyNameNonRemovable(ctx context.Context, packageFamilyName string) (int64, error) {
+func (s *EnterpriseModernAppManagement) GetAppManagementSystemPackageFamilyNameNonRemovable(ctx context.Context, packageFamilyName string) (AppManagementSystemPackageFamilyNameNonRemovableValue, error) {
 	v, err := s.c.Get(ctx, URIAppManagementSystemPackageFamilyNameNonRemovable(packageFamilyName))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AppManagementSystemPackageFamilyNameNonRemovableValue(n), err
 }
 
 // CreateAppManagementSystemPackageFamilyNameNonRemovable creates ./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/{packageFamilyName}/NonRemovable.
@@ -1130,8 +1136,8 @@ func (s *EnterpriseModernAppManagement) GetAppManagementSystemPackageFamilyNameN
 // doesn’t remove it for all users.
 //
 // Supported from OS build 10.0.17763 (CSP v1.2).
-func (s *EnterpriseModernAppManagement) CreateAppManagementSystemPackageFamilyNameNonRemovable(ctx context.Context, packageFamilyName string, value int64) error {
-	return s.c.Add(ctx, URIAppManagementSystemPackageFamilyNameNonRemovable(packageFamilyName), client.Int(value))
+func (s *EnterpriseModernAppManagement) CreateAppManagementSystemPackageFamilyNameNonRemovable(ctx context.Context, packageFamilyName string, value AppManagementSystemPackageFamilyNameNonRemovableValue) error {
+	return s.c.Add(ctx, URIAppManagementSystemPackageFamilyNameNonRemovable(packageFamilyName), client.Int(int64(value)))
 }
 
 // UpdateAppManagementSystemPackageFamilyNameNonRemovable updates ./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/{packageFamilyName}/NonRemovable.
@@ -1142,8 +1148,8 @@ func (s *EnterpriseModernAppManagement) CreateAppManagementSystemPackageFamilyNa
 // doesn’t remove it for all users.
 //
 // Supported from OS build 10.0.17763 (CSP v1.2).
-func (s *EnterpriseModernAppManagement) UpdateAppManagementSystemPackageFamilyNameNonRemovable(ctx context.Context, packageFamilyName string, value int64) error {
-	return s.c.Replace(ctx, URIAppManagementSystemPackageFamilyNameNonRemovable(packageFamilyName), client.Int(value))
+func (s *EnterpriseModernAppManagement) UpdateAppManagementSystemPackageFamilyNameNonRemovable(ctx context.Context, packageFamilyName string, value AppManagementSystemPackageFamilyNameNonRemovableValue) error {
+	return s.c.Replace(ctx, URIAppManagementSystemPackageFamilyNameNonRemovable(packageFamilyName), client.Int(int64(value)))
 }
 
 // ListAppManagementSystemReleaseManagement lists the children of ./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/System/ReleaseManagement.
@@ -1437,24 +1443,25 @@ func (s *EnterpriseModernAppManagement) GetAppManagementNonStorePackageFamilyNam
 
 // GetAppManagementNonStorePackageFamilyNameDoNotUpdate reads ./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/{packageFamilyName}/DoNotUpdate.
 // Specifies whether you want to block a specific app from being updated via auto-updates.
-func (s *EnterpriseModernAppManagement) GetAppManagementNonStorePackageFamilyNameDoNotUpdate(ctx context.Context, packageFamilyName string) (int64, error) {
+func (s *EnterpriseModernAppManagement) GetAppManagementNonStorePackageFamilyNameDoNotUpdate(ctx context.Context, packageFamilyName string) (AppManagementNonStorePackageFamilyNameDoNotUpdateValue, error) {
 	v, err := s.c.Get(ctx, URIAppManagementNonStorePackageFamilyNameDoNotUpdate(packageFamilyName))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AppManagementNonStorePackageFamilyNameDoNotUpdateValue(n), err
 }
 
 // CreateAppManagementNonStorePackageFamilyNameDoNotUpdate creates ./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/{packageFamilyName}/DoNotUpdate.
 // Specifies whether you want to block a specific app from being updated via auto-updates.
-func (s *EnterpriseModernAppManagement) CreateAppManagementNonStorePackageFamilyNameDoNotUpdate(ctx context.Context, packageFamilyName string, value int64) error {
-	return s.c.Add(ctx, URIAppManagementNonStorePackageFamilyNameDoNotUpdate(packageFamilyName), client.Int(value))
+func (s *EnterpriseModernAppManagement) CreateAppManagementNonStorePackageFamilyNameDoNotUpdate(ctx context.Context, packageFamilyName string, value AppManagementNonStorePackageFamilyNameDoNotUpdateValue) error {
+	return s.c.Add(ctx, URIAppManagementNonStorePackageFamilyNameDoNotUpdate(packageFamilyName), client.Int(int64(value)))
 }
 
 // UpdateAppManagementNonStorePackageFamilyNameDoNotUpdate updates ./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/{packageFamilyName}/DoNotUpdate.
 // Specifies whether you want to block a specific app from being updated via auto-updates.
-func (s *EnterpriseModernAppManagement) UpdateAppManagementNonStorePackageFamilyNameDoNotUpdate(ctx context.Context, packageFamilyName string, value int64) error {
-	return s.c.Replace(ctx, URIAppManagementNonStorePackageFamilyNameDoNotUpdate(packageFamilyName), client.Int(value))
+func (s *EnterpriseModernAppManagement) UpdateAppManagementNonStorePackageFamilyNameDoNotUpdate(ctx context.Context, packageFamilyName string, value AppManagementNonStorePackageFamilyNameDoNotUpdateValue) error {
+	return s.c.Replace(ctx, URIAppManagementNonStorePackageFamilyNameDoNotUpdate(packageFamilyName), client.Int(int64(value)))
 }
 
 // DeleteAppManagementNonStorePackageFamilyNameDoNotUpdate deletes ./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/{packageFamilyName}/DoNotUpdate.
@@ -1470,12 +1477,13 @@ func (s *EnterpriseModernAppManagement) DeleteAppManagementNonStorePackageFamily
 // available.
 //
 // Supported from OS build 10.0.19041 (CSP v1.2).
-func (s *EnterpriseModernAppManagement) GetAppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdate(ctx context.Context, packageFamilyName string) (int64, error) {
+func (s *EnterpriseModernAppManagement) GetAppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdate(ctx context.Context, packageFamilyName string) (AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue, error) {
 	v, err := s.c.Get(ctx, URIAppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdate(packageFamilyName))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue(n), err
 }
 
 // CreateAppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdate creates ./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/{packageFamilyName}/MaintainProcessorArchitectureOnUpdate.
@@ -1485,8 +1493,8 @@ func (s *EnterpriseModernAppManagement) GetAppManagementNonStorePackageFamilyNam
 // available.
 //
 // Supported from OS build 10.0.19041 (CSP v1.2).
-func (s *EnterpriseModernAppManagement) CreateAppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdate(ctx context.Context, packageFamilyName string, value int64) error {
-	return s.c.Add(ctx, URIAppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdate(packageFamilyName), client.Int(value))
+func (s *EnterpriseModernAppManagement) CreateAppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdate(ctx context.Context, packageFamilyName string, value AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue) error {
+	return s.c.Add(ctx, URIAppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdate(packageFamilyName), client.Int(int64(value)))
 }
 
 // UpdateAppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdate updates ./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/{packageFamilyName}/MaintainProcessorArchitectureOnUpdate.
@@ -1496,8 +1504,8 @@ func (s *EnterpriseModernAppManagement) CreateAppManagementNonStorePackageFamily
 // available.
 //
 // Supported from OS build 10.0.19041 (CSP v1.2).
-func (s *EnterpriseModernAppManagement) UpdateAppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdate(ctx context.Context, packageFamilyName string, value int64) error {
-	return s.c.Replace(ctx, URIAppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdate(packageFamilyName), client.Int(value))
+func (s *EnterpriseModernAppManagement) UpdateAppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdate(ctx context.Context, packageFamilyName string, value AppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdateValue) error {
+	return s.c.Replace(ctx, URIAppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdate(packageFamilyName), client.Int(int64(value)))
 }
 
 // DeleteAppManagementNonStorePackageFamilyNameMaintainProcessorArchitectureOnUpdate deletes ./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/{packageFamilyName}/MaintainProcessorArchitectureOnUpdate.
@@ -1519,12 +1527,13 @@ func (s *EnterpriseModernAppManagement) DeleteAppManagementNonStorePackageFamily
 // doesn’t remove it for all users.
 //
 // Supported from OS build 10.0.17763 (CSP v1.2).
-func (s *EnterpriseModernAppManagement) GetAppManagementNonStorePackageFamilyNameNonRemovable(ctx context.Context, packageFamilyName string) (int64, error) {
+func (s *EnterpriseModernAppManagement) GetAppManagementNonStorePackageFamilyNameNonRemovable(ctx context.Context, packageFamilyName string) (AppManagementNonStorePackageFamilyNameNonRemovableValue, error) {
 	v, err := s.c.Get(ctx, URIAppManagementNonStorePackageFamilyNameNonRemovable(packageFamilyName))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AppManagementNonStorePackageFamilyNameNonRemovableValue(n), err
 }
 
 // CreateAppManagementNonStorePackageFamilyNameNonRemovable creates ./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/{packageFamilyName}/NonRemovable.
@@ -1535,8 +1544,8 @@ func (s *EnterpriseModernAppManagement) GetAppManagementNonStorePackageFamilyNam
 // doesn’t remove it for all users.
 //
 // Supported from OS build 10.0.17763 (CSP v1.2).
-func (s *EnterpriseModernAppManagement) CreateAppManagementNonStorePackageFamilyNameNonRemovable(ctx context.Context, packageFamilyName string, value int64) error {
-	return s.c.Add(ctx, URIAppManagementNonStorePackageFamilyNameNonRemovable(packageFamilyName), client.Int(value))
+func (s *EnterpriseModernAppManagement) CreateAppManagementNonStorePackageFamilyNameNonRemovable(ctx context.Context, packageFamilyName string, value AppManagementNonStorePackageFamilyNameNonRemovableValue) error {
+	return s.c.Add(ctx, URIAppManagementNonStorePackageFamilyNameNonRemovable(packageFamilyName), client.Int(int64(value)))
 }
 
 // UpdateAppManagementNonStorePackageFamilyNameNonRemovable updates ./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/{packageFamilyName}/NonRemovable.
@@ -1547,8 +1556,8 @@ func (s *EnterpriseModernAppManagement) CreateAppManagementNonStorePackageFamily
 // doesn’t remove it for all users.
 //
 // Supported from OS build 10.0.17763 (CSP v1.2).
-func (s *EnterpriseModernAppManagement) UpdateAppManagementNonStorePackageFamilyNameNonRemovable(ctx context.Context, packageFamilyName string, value int64) error {
-	return s.c.Replace(ctx, URIAppManagementNonStorePackageFamilyNameNonRemovable(packageFamilyName), client.Int(value))
+func (s *EnterpriseModernAppManagement) UpdateAppManagementNonStorePackageFamilyNameNonRemovable(ctx context.Context, packageFamilyName string, value AppManagementNonStorePackageFamilyNameNonRemovableValue) error {
+	return s.c.Replace(ctx, URIAppManagementNonStorePackageFamilyNameNonRemovable(packageFamilyName), client.Int(int64(value)))
 }
 
 // ListAppManagementNonStoreReleaseManagement lists the children of ./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/nonStore/ReleaseManagement.

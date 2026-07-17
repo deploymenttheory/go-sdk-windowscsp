@@ -21,12 +21,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) GetAccountsBlockMicrosoftAccounts(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetAccountsBlockMicrosoftAccounts(ctx context.Context) (AccountsBlockMicrosoftAccountsValue, error) {
 	v, err := s.c.Get(ctx, URIAccountsBlockMicrosoftAccounts)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AccountsBlockMicrosoftAccountsValue(n), err
 }
 
 // CreateAccountsBlockMicrosoftAccounts creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/Accounts_BlockMicrosoftAccounts.
@@ -42,8 +43,8 @@ func (s *LocalPoliciesSecurityOptions) GetAccountsBlockMicrosoftAccounts(ctx con
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) CreateAccountsBlockMicrosoftAccounts(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAccountsBlockMicrosoftAccounts, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateAccountsBlockMicrosoftAccounts(ctx context.Context, value AccountsBlockMicrosoftAccountsValue) error {
+	return s.c.Add(ctx, URIAccountsBlockMicrosoftAccounts, client.Int(int64(value)))
 }
 
 // UpdateAccountsBlockMicrosoftAccounts updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/Accounts_BlockMicrosoftAccounts.
@@ -59,8 +60,8 @@ func (s *LocalPoliciesSecurityOptions) CreateAccountsBlockMicrosoftAccounts(ctx 
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) UpdateAccountsBlockMicrosoftAccounts(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAccountsBlockMicrosoftAccounts, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateAccountsBlockMicrosoftAccounts(ctx context.Context, value AccountsBlockMicrosoftAccountsValue) error {
+	return s.c.Replace(ctx, URIAccountsBlockMicrosoftAccounts, client.Int(int64(value)))
 }
 
 // DeleteAccountsBlockMicrosoftAccounts deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/Accounts_BlockMicrosoftAccounts.
@@ -93,12 +94,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteAccountsBlockMicrosoftAccounts(ctx 
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) GetAccountsEnableAdministratorAccountStatus(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetAccountsEnableAdministratorAccountStatus(ctx context.Context) (AccountsEnableAdministratorAccountStatusValue, error) {
 	v, err := s.c.Get(ctx, URIAccountsEnableAdministratorAccountStatus)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AccountsEnableAdministratorAccountStatusValue(n), err
 }
 
 // CreateAccountsEnableAdministratorAccountStatus creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/Accounts_EnableAdministratorAccountStatus.
@@ -114,8 +116,8 @@ func (s *LocalPoliciesSecurityOptions) GetAccountsEnableAdministratorAccountStat
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) CreateAccountsEnableAdministratorAccountStatus(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAccountsEnableAdministratorAccountStatus, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateAccountsEnableAdministratorAccountStatus(ctx context.Context, value AccountsEnableAdministratorAccountStatusValue) error {
+	return s.c.Add(ctx, URIAccountsEnableAdministratorAccountStatus, client.Int(int64(value)))
 }
 
 // UpdateAccountsEnableAdministratorAccountStatus updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/Accounts_EnableAdministratorAccountStatus.
@@ -131,8 +133,8 @@ func (s *LocalPoliciesSecurityOptions) CreateAccountsEnableAdministratorAccountS
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) UpdateAccountsEnableAdministratorAccountStatus(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAccountsEnableAdministratorAccountStatus, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateAccountsEnableAdministratorAccountStatus(ctx context.Context, value AccountsEnableAdministratorAccountStatusValue) error {
+	return s.c.Replace(ctx, URIAccountsEnableAdministratorAccountStatus, client.Int(int64(value)))
 }
 
 // DeleteAccountsEnableAdministratorAccountStatus deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/Accounts_EnableAdministratorAccountStatus.
@@ -160,12 +162,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteAccountsEnableAdministratorAccountS
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) GetAccountsEnableGuestAccountStatus(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetAccountsEnableGuestAccountStatus(ctx context.Context) (AccountsEnableGuestAccountStatusValue, error) {
 	v, err := s.c.Get(ctx, URIAccountsEnableGuestAccountStatus)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AccountsEnableGuestAccountStatusValue(n), err
 }
 
 // CreateAccountsEnableGuestAccountStatus creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/Accounts_EnableGuestAccountStatus.
@@ -176,8 +179,8 @@ func (s *LocalPoliciesSecurityOptions) GetAccountsEnableGuestAccountStatus(ctx c
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) CreateAccountsEnableGuestAccountStatus(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAccountsEnableGuestAccountStatus, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateAccountsEnableGuestAccountStatus(ctx context.Context, value AccountsEnableGuestAccountStatusValue) error {
+	return s.c.Add(ctx, URIAccountsEnableGuestAccountStatus, client.Int(int64(value)))
 }
 
 // UpdateAccountsEnableGuestAccountStatus updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/Accounts_EnableGuestAccountStatus.
@@ -188,8 +191,8 @@ func (s *LocalPoliciesSecurityOptions) CreateAccountsEnableGuestAccountStatus(ct
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) UpdateAccountsEnableGuestAccountStatus(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAccountsEnableGuestAccountStatus, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateAccountsEnableGuestAccountStatus(ctx context.Context, value AccountsEnableGuestAccountStatusValue) error {
+	return s.c.Replace(ctx, URIAccountsEnableGuestAccountStatus, client.Int(int64(value)))
 }
 
 // DeleteAccountsEnableGuestAccountStatus deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/Accounts_EnableGuestAccountStatus.
@@ -219,12 +222,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteAccountsEnableGuestAccountStatus(ct
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) GetAccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnly(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetAccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnly(ctx context.Context) (AccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnlyValue, error) {
 	v, err := s.c.Get(ctx, URIAccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnly)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnlyValue(n), err
 }
 
 // CreateAccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnly creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/Accounts_LimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnly.
@@ -242,8 +246,8 @@ func (s *LocalPoliciesSecurityOptions) GetAccountsLimitLocalAccountUseOfBlankPas
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) CreateAccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnly(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnly, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateAccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnly(ctx context.Context, value AccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnlyValue) error {
+	return s.c.Add(ctx, URIAccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnly, client.Int(int64(value)))
 }
 
 // UpdateAccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnly updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/Accounts_LimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnly.
@@ -261,8 +265,8 @@ func (s *LocalPoliciesSecurityOptions) CreateAccountsLimitLocalAccountUseOfBlank
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) UpdateAccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnly(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnly, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateAccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnly(ctx context.Context, value AccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnlyValue) error {
+	return s.c.Replace(ctx, URIAccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnly, client.Int(int64(value)))
 }
 
 // DeleteAccountsLimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnly deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/Accounts_LimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnly.
@@ -640,12 +644,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteAuditShutdownSystemImmediatelyIfUna
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) GetDevicesAllowUndockWithoutHavingToLogon(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetDevicesAllowUndockWithoutHavingToLogon(ctx context.Context) (DevicesAllowUndockWithoutHavingToLogonValue, error) {
 	v, err := s.c.Get(ctx, URIDevicesAllowUndockWithoutHavingToLogon)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DevicesAllowUndockWithoutHavingToLogonValue(n), err
 }
 
 // CreateDevicesAllowUndockWithoutHavingToLogon creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/Devices_AllowUndockWithoutHavingToLogon.
@@ -660,8 +665,8 @@ func (s *LocalPoliciesSecurityOptions) GetDevicesAllowUndockWithoutHavingToLogon
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) CreateDevicesAllowUndockWithoutHavingToLogon(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDevicesAllowUndockWithoutHavingToLogon, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateDevicesAllowUndockWithoutHavingToLogon(ctx context.Context, value DevicesAllowUndockWithoutHavingToLogonValue) error {
+	return s.c.Add(ctx, URIDevicesAllowUndockWithoutHavingToLogon, client.Int(int64(value)))
 }
 
 // UpdateDevicesAllowUndockWithoutHavingToLogon updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/Devices_AllowUndockWithoutHavingToLogon.
@@ -676,8 +681,8 @@ func (s *LocalPoliciesSecurityOptions) CreateDevicesAllowUndockWithoutHavingToLo
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) UpdateDevicesAllowUndockWithoutHavingToLogon(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDevicesAllowUndockWithoutHavingToLogon, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateDevicesAllowUndockWithoutHavingToLogon(ctx context.Context, value DevicesAllowUndockWithoutHavingToLogonValue) error {
+	return s.c.Replace(ctx, URIDevicesAllowUndockWithoutHavingToLogon, client.Int(int64(value)))
 }
 
 // DeleteDevicesAllowUndockWithoutHavingToLogon deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/Devices_AllowUndockWithoutHavingToLogon.
@@ -760,12 +765,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteDevicesAllowedToFormatAndEjectRemov
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) GetDevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrinters(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetDevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrinters(ctx context.Context) (DevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrintersValue, error) {
 	v, err := s.c.Get(ctx, URIDevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrinters)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrintersValue(n), err
 }
 
 // CreateDevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrinters creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/Devices_PreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrinters.
@@ -780,8 +786,8 @@ func (s *LocalPoliciesSecurityOptions) GetDevicesPreventUsersFromInstallingPrint
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) CreateDevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrinters(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrinters, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateDevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrinters(ctx context.Context, value DevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrintersValue) error {
+	return s.c.Add(ctx, URIDevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrinters, client.Int(int64(value)))
 }
 
 // UpdateDevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrinters updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/Devices_PreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrinters.
@@ -796,8 +802,8 @@ func (s *LocalPoliciesSecurityOptions) CreateDevicesPreventUsersFromInstallingPr
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) UpdateDevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrinters(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrinters, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateDevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrinters(ctx context.Context, value DevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrintersValue) error {
+	return s.c.Replace(ctx, URIDevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrinters, client.Int(int64(value)))
 }
 
 // DeleteDevicesPreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrinters deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/Devices_PreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrinters.
@@ -1487,12 +1493,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteDomainMemberRequireStrongSessionKey
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) GetInteractiveLogonDisplayUserInformationWhenTheSessionIsLocked(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetInteractiveLogonDisplayUserInformationWhenTheSessionIsLocked(ctx context.Context) (InteractiveLogonDisplayUserInformationWhenTheSessionIsLockedValue, error) {
 	v, err := s.c.Get(ctx, URIInteractiveLogonDisplayUserInformationWhenTheSessionIsLocked)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return InteractiveLogonDisplayUserInformationWhenTheSessionIsLockedValue(n), err
 }
 
 // CreateInteractiveLogonDisplayUserInformationWhenTheSessionIsLocked creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/InteractiveLogon_DisplayUserInformationWhenTheSessionIsLocked.
@@ -1502,8 +1509,8 @@ func (s *LocalPoliciesSecurityOptions) GetInteractiveLogonDisplayUserInformation
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) CreateInteractiveLogonDisplayUserInformationWhenTheSessionIsLocked(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIInteractiveLogonDisplayUserInformationWhenTheSessionIsLocked, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateInteractiveLogonDisplayUserInformationWhenTheSessionIsLocked(ctx context.Context, value InteractiveLogonDisplayUserInformationWhenTheSessionIsLockedValue) error {
+	return s.c.Add(ctx, URIInteractiveLogonDisplayUserInformationWhenTheSessionIsLocked, client.Int(int64(value)))
 }
 
 // UpdateInteractiveLogonDisplayUserInformationWhenTheSessionIsLocked updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/InteractiveLogon_DisplayUserInformationWhenTheSessionIsLocked.
@@ -1513,8 +1520,8 @@ func (s *LocalPoliciesSecurityOptions) CreateInteractiveLogonDisplayUserInformat
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) UpdateInteractiveLogonDisplayUserInformationWhenTheSessionIsLocked(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIInteractiveLogonDisplayUserInformationWhenTheSessionIsLocked, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateInteractiveLogonDisplayUserInformationWhenTheSessionIsLocked(ctx context.Context, value InteractiveLogonDisplayUserInformationWhenTheSessionIsLockedValue) error {
+	return s.c.Replace(ctx, URIInteractiveLogonDisplayUserInformationWhenTheSessionIsLocked, client.Int(int64(value)))
 }
 
 // DeleteInteractiveLogonDisplayUserInformationWhenTheSessionIsLocked deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/InteractiveLogon_DisplayUserInformationWhenTheSessionIsLocked.
@@ -1536,12 +1543,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteInteractiveLogonDisplayUserInformat
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) GetInteractiveLogonDoNotDisplayLastSignedIn(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetInteractiveLogonDoNotDisplayLastSignedIn(ctx context.Context) (InteractiveLogonDoNotDisplayLastSignedInValue, error) {
 	v, err := s.c.Get(ctx, URIInteractiveLogonDoNotDisplayLastSignedIn)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return InteractiveLogonDoNotDisplayLastSignedInValue(n), err
 }
 
 // CreateInteractiveLogonDoNotDisplayLastSignedIn creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/InteractiveLogon_DoNotDisplayLastSignedIn.
@@ -1552,8 +1560,8 @@ func (s *LocalPoliciesSecurityOptions) GetInteractiveLogonDoNotDisplayLastSigned
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) CreateInteractiveLogonDoNotDisplayLastSignedIn(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIInteractiveLogonDoNotDisplayLastSignedIn, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateInteractiveLogonDoNotDisplayLastSignedIn(ctx context.Context, value InteractiveLogonDoNotDisplayLastSignedInValue) error {
+	return s.c.Add(ctx, URIInteractiveLogonDoNotDisplayLastSignedIn, client.Int(int64(value)))
 }
 
 // UpdateInteractiveLogonDoNotDisplayLastSignedIn updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/InteractiveLogon_DoNotDisplayLastSignedIn.
@@ -1564,8 +1572,8 @@ func (s *LocalPoliciesSecurityOptions) CreateInteractiveLogonDoNotDisplayLastSig
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) UpdateInteractiveLogonDoNotDisplayLastSignedIn(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIInteractiveLogonDoNotDisplayLastSignedIn, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateInteractiveLogonDoNotDisplayLastSignedIn(ctx context.Context, value InteractiveLogonDoNotDisplayLastSignedInValue) error {
+	return s.c.Replace(ctx, URIInteractiveLogonDoNotDisplayLastSignedIn, client.Int(int64(value)))
 }
 
 // DeleteInteractiveLogonDoNotDisplayLastSignedIn deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/InteractiveLogon_DoNotDisplayLastSignedIn.
@@ -1588,12 +1596,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteInteractiveLogonDoNotDisplayLastSig
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) GetInteractiveLogonDoNotDisplayUsernameAtSignIn(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetInteractiveLogonDoNotDisplayUsernameAtSignIn(ctx context.Context) (InteractiveLogonDoNotDisplayUsernameAtSignInValue, error) {
 	v, err := s.c.Get(ctx, URIInteractiveLogonDoNotDisplayUsernameAtSignIn)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return InteractiveLogonDoNotDisplayUsernameAtSignInValue(n), err
 }
 
 // CreateInteractiveLogonDoNotDisplayUsernameAtSignIn creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/InteractiveLogon_DoNotDisplayUsernameAtSignIn.
@@ -1604,8 +1613,8 @@ func (s *LocalPoliciesSecurityOptions) GetInteractiveLogonDoNotDisplayUsernameAt
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) CreateInteractiveLogonDoNotDisplayUsernameAtSignIn(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIInteractiveLogonDoNotDisplayUsernameAtSignIn, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateInteractiveLogonDoNotDisplayUsernameAtSignIn(ctx context.Context, value InteractiveLogonDoNotDisplayUsernameAtSignInValue) error {
+	return s.c.Add(ctx, URIInteractiveLogonDoNotDisplayUsernameAtSignIn, client.Int(int64(value)))
 }
 
 // UpdateInteractiveLogonDoNotDisplayUsernameAtSignIn updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/InteractiveLogon_DoNotDisplayUsernameAtSignIn.
@@ -1616,8 +1625,8 @@ func (s *LocalPoliciesSecurityOptions) CreateInteractiveLogonDoNotDisplayUsernam
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) UpdateInteractiveLogonDoNotDisplayUsernameAtSignIn(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIInteractiveLogonDoNotDisplayUsernameAtSignIn, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateInteractiveLogonDoNotDisplayUsernameAtSignIn(ctx context.Context, value InteractiveLogonDoNotDisplayUsernameAtSignInValue) error {
+	return s.c.Replace(ctx, URIInteractiveLogonDoNotDisplayUsernameAtSignIn, client.Int(int64(value)))
 }
 
 // DeleteInteractiveLogonDoNotDisplayUsernameAtSignIn deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/InteractiveLogon_DoNotDisplayUsernameAtSignIn.
@@ -1644,12 +1653,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteInteractiveLogonDoNotDisplayUsernam
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) GetInteractiveLogonDoNotRequireCTRLALTDEL(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetInteractiveLogonDoNotRequireCTRLALTDEL(ctx context.Context) (InteractiveLogonDoNotRequireCTRLALTDELValue, error) {
 	v, err := s.c.Get(ctx, URIInteractiveLogonDoNotRequireCTRLALTDEL)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return InteractiveLogonDoNotRequireCTRLALTDELValue(n), err
 }
 
 // CreateInteractiveLogonDoNotRequireCTRLALTDEL creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/InteractiveLogon_DoNotRequireCTRLALTDEL.
@@ -1664,8 +1674,8 @@ func (s *LocalPoliciesSecurityOptions) GetInteractiveLogonDoNotRequireCTRLALTDEL
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) CreateInteractiveLogonDoNotRequireCTRLALTDEL(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIInteractiveLogonDoNotRequireCTRLALTDEL, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateInteractiveLogonDoNotRequireCTRLALTDEL(ctx context.Context, value InteractiveLogonDoNotRequireCTRLALTDELValue) error {
+	return s.c.Add(ctx, URIInteractiveLogonDoNotRequireCTRLALTDEL, client.Int(int64(value)))
 }
 
 // UpdateInteractiveLogonDoNotRequireCTRLALTDEL updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/InteractiveLogon_DoNotRequireCTRLALTDEL.
@@ -1680,8 +1690,8 @@ func (s *LocalPoliciesSecurityOptions) CreateInteractiveLogonDoNotRequireCTRLALT
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) UpdateInteractiveLogonDoNotRequireCTRLALTDEL(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIInteractiveLogonDoNotRequireCTRLALTDEL, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateInteractiveLogonDoNotRequireCTRLALTDEL(ctx context.Context, value InteractiveLogonDoNotRequireCTRLALTDELValue) error {
+	return s.c.Replace(ctx, URIInteractiveLogonDoNotRequireCTRLALTDEL, client.Int(int64(value)))
 }
 
 // DeleteInteractiveLogonDoNotRequireCTRLALTDEL deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/InteractiveLogon_DoNotRequireCTRLALTDEL.
@@ -2075,12 +2085,12 @@ func (s *LocalPoliciesSecurityOptions) DeleteInteractiveLogonPromptUserToChangeP
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) GetInteractiveLogonSmartCardRemovalBehavior(ctx context.Context) (string, error) {
+func (s *LocalPoliciesSecurityOptions) GetInteractiveLogonSmartCardRemovalBehavior(ctx context.Context) (InteractiveLogonSmartCardRemovalBehaviorValue, error) {
 	v, err := s.c.Get(ctx, URIInteractiveLogonSmartCardRemovalBehavior)
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return InteractiveLogonSmartCardRemovalBehaviorValue(v.Str()), nil
 }
 
 // CreateInteractiveLogonSmartCardRemovalBehavior creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/InteractiveLogon_SmartCardRemovalBehavior.
@@ -2102,8 +2112,8 @@ func (s *LocalPoliciesSecurityOptions) GetInteractiveLogonSmartCardRemovalBehavi
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) CreateInteractiveLogonSmartCardRemovalBehavior(ctx context.Context, value string) error {
-	return s.c.Add(ctx, URIInteractiveLogonSmartCardRemovalBehavior, client.Chr(value))
+func (s *LocalPoliciesSecurityOptions) CreateInteractiveLogonSmartCardRemovalBehavior(ctx context.Context, value InteractiveLogonSmartCardRemovalBehaviorValue) error {
+	return s.c.Add(ctx, URIInteractiveLogonSmartCardRemovalBehavior, client.Chr(string(value)))
 }
 
 // UpdateInteractiveLogonSmartCardRemovalBehavior updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/InteractiveLogon_SmartCardRemovalBehavior.
@@ -2125,8 +2135,8 @@ func (s *LocalPoliciesSecurityOptions) CreateInteractiveLogonSmartCardRemovalBeh
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) UpdateInteractiveLogonSmartCardRemovalBehavior(ctx context.Context, value string) error {
-	return s.c.Replace(ctx, URIInteractiveLogonSmartCardRemovalBehavior, client.Chr(value))
+func (s *LocalPoliciesSecurityOptions) UpdateInteractiveLogonSmartCardRemovalBehavior(ctx context.Context, value InteractiveLogonSmartCardRemovalBehaviorValue) error {
+	return s.c.Replace(ctx, URIInteractiveLogonSmartCardRemovalBehavior, client.Chr(string(value)))
 }
 
 // DeleteInteractiveLogonSmartCardRemovalBehavior deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/InteractiveLogon_SmartCardRemovalBehavior.
@@ -2181,12 +2191,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteInteractiveLogonSmartCardRemovalBeh
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *LocalPoliciesSecurityOptions) GetMicrosoftNetworkClientDigitallySignCommunicationsAlways(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetMicrosoftNetworkClientDigitallySignCommunicationsAlways(ctx context.Context) (MicrosoftNetworkClientDigitallySignCommunicationsAlwaysValue, error) {
 	v, err := s.c.Get(ctx, URIMicrosoftNetworkClientDigitallySignCommunicationsAlways)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MicrosoftNetworkClientDigitallySignCommunicationsAlwaysValue(n), err
 }
 
 // CreateMicrosoftNetworkClientDigitallySignCommunicationsAlways creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/MicrosoftNetworkClient_DigitallySignCommunicationsAlways.
@@ -2218,8 +2229,8 @@ func (s *LocalPoliciesSecurityOptions) GetMicrosoftNetworkClientDigitallySignCom
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *LocalPoliciesSecurityOptions) CreateMicrosoftNetworkClientDigitallySignCommunicationsAlways(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIMicrosoftNetworkClientDigitallySignCommunicationsAlways, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateMicrosoftNetworkClientDigitallySignCommunicationsAlways(ctx context.Context, value MicrosoftNetworkClientDigitallySignCommunicationsAlwaysValue) error {
+	return s.c.Add(ctx, URIMicrosoftNetworkClientDigitallySignCommunicationsAlways, client.Int(int64(value)))
 }
 
 // UpdateMicrosoftNetworkClientDigitallySignCommunicationsAlways updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/MicrosoftNetworkClient_DigitallySignCommunicationsAlways.
@@ -2251,8 +2262,8 @@ func (s *LocalPoliciesSecurityOptions) CreateMicrosoftNetworkClientDigitallySign
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *LocalPoliciesSecurityOptions) UpdateMicrosoftNetworkClientDigitallySignCommunicationsAlways(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIMicrosoftNetworkClientDigitallySignCommunicationsAlways, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateMicrosoftNetworkClientDigitallySignCommunicationsAlways(ctx context.Context, value MicrosoftNetworkClientDigitallySignCommunicationsAlwaysValue) error {
+	return s.c.Replace(ctx, URIMicrosoftNetworkClientDigitallySignCommunicationsAlways, client.Int(int64(value)))
 }
 
 // DeleteMicrosoftNetworkClientDigitallySignCommunicationsAlways deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/MicrosoftNetworkClient_DigitallySignCommunicationsAlways.
@@ -2317,12 +2328,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteMicrosoftNetworkClientDigitallySign
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) GetMicrosoftNetworkClientDigitallySignCommunicationsIfServerAgrees(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetMicrosoftNetworkClientDigitallySignCommunicationsIfServerAgrees(ctx context.Context) (MicrosoftNetworkClientDigitallySignCommunicationsIfServerAgreesValue, error) {
 	v, err := s.c.Get(ctx, URIMicrosoftNetworkClientDigitallySignCommunicationsIfServerAgrees)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MicrosoftNetworkClientDigitallySignCommunicationsIfServerAgreesValue(n), err
 }
 
 // CreateMicrosoftNetworkClientDigitallySignCommunicationsIfServerAgrees creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/MicrosoftNetworkClient_DigitallySignCommunicationsIfServerAgrees.
@@ -2354,8 +2366,8 @@ func (s *LocalPoliciesSecurityOptions) GetMicrosoftNetworkClientDigitallySignCom
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) CreateMicrosoftNetworkClientDigitallySignCommunicationsIfServerAgrees(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIMicrosoftNetworkClientDigitallySignCommunicationsIfServerAgrees, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateMicrosoftNetworkClientDigitallySignCommunicationsIfServerAgrees(ctx context.Context, value MicrosoftNetworkClientDigitallySignCommunicationsIfServerAgreesValue) error {
+	return s.c.Add(ctx, URIMicrosoftNetworkClientDigitallySignCommunicationsIfServerAgrees, client.Int(int64(value)))
 }
 
 // UpdateMicrosoftNetworkClientDigitallySignCommunicationsIfServerAgrees updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/MicrosoftNetworkClient_DigitallySignCommunicationsIfServerAgrees.
@@ -2387,8 +2399,8 @@ func (s *LocalPoliciesSecurityOptions) CreateMicrosoftNetworkClientDigitallySign
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) UpdateMicrosoftNetworkClientDigitallySignCommunicationsIfServerAgrees(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIMicrosoftNetworkClientDigitallySignCommunicationsIfServerAgrees, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateMicrosoftNetworkClientDigitallySignCommunicationsIfServerAgrees(ctx context.Context, value MicrosoftNetworkClientDigitallySignCommunicationsIfServerAgreesValue) error {
+	return s.c.Replace(ctx, URIMicrosoftNetworkClientDigitallySignCommunicationsIfServerAgrees, client.Int(int64(value)))
 }
 
 // DeleteMicrosoftNetworkClientDigitallySignCommunicationsIfServerAgrees deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/MicrosoftNetworkClient_DigitallySignCommunicationsIfServerAgrees.
@@ -2432,12 +2444,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteMicrosoftNetworkClientDigitallySign
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) GetMicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServers(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetMicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServers(ctx context.Context) (MicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServersValue, error) {
 	v, err := s.c.Get(ctx, URIMicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServers)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServersValue(n), err
 }
 
 // CreateMicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServers creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/MicrosoftNetworkClient_SendUnencryptedPasswordToThirdPartySMBServers.
@@ -2448,8 +2461,8 @@ func (s *LocalPoliciesSecurityOptions) GetMicrosoftNetworkClientSendUnencryptedP
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) CreateMicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServers(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIMicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServers, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateMicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServers(ctx context.Context, value MicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServersValue) error {
+	return s.c.Add(ctx, URIMicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServers, client.Int(int64(value)))
 }
 
 // UpdateMicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServers updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/MicrosoftNetworkClient_SendUnencryptedPasswordToThirdPartySMBServers.
@@ -2460,8 +2473,8 @@ func (s *LocalPoliciesSecurityOptions) CreateMicrosoftNetworkClientSendUnencrypt
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) UpdateMicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServers(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIMicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServers, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateMicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServers(ctx context.Context, value MicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServersValue) error {
+	return s.c.Replace(ctx, URIMicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServers, client.Int(int64(value)))
 }
 
 // DeleteMicrosoftNetworkClientSendUnencryptedPasswordToThirdPartySMBServers deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/MicrosoftNetworkClient_SendUnencryptedPasswordToThirdPartySMBServers.
@@ -2585,12 +2598,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteMicrosoftNetworkServerAmountOfIdleT
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) GetMicrosoftNetworkServerDigitallySignCommunicationsAlways(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetMicrosoftNetworkServerDigitallySignCommunicationsAlways(ctx context.Context) (MicrosoftNetworkServerDigitallySignCommunicationsAlwaysValue, error) {
 	v, err := s.c.Get(ctx, URIMicrosoftNetworkServerDigitallySignCommunicationsAlways)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MicrosoftNetworkServerDigitallySignCommunicationsAlwaysValue(n), err
 }
 
 // CreateMicrosoftNetworkServerDigitallySignCommunicationsAlways creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/MicrosoftNetworkServer_DigitallySignCommunicationsAlways.
@@ -2630,8 +2644,8 @@ func (s *LocalPoliciesSecurityOptions) GetMicrosoftNetworkServerDigitallySignCom
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) CreateMicrosoftNetworkServerDigitallySignCommunicationsAlways(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIMicrosoftNetworkServerDigitallySignCommunicationsAlways, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateMicrosoftNetworkServerDigitallySignCommunicationsAlways(ctx context.Context, value MicrosoftNetworkServerDigitallySignCommunicationsAlwaysValue) error {
+	return s.c.Add(ctx, URIMicrosoftNetworkServerDigitallySignCommunicationsAlways, client.Int(int64(value)))
 }
 
 // UpdateMicrosoftNetworkServerDigitallySignCommunicationsAlways updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/MicrosoftNetworkServer_DigitallySignCommunicationsAlways.
@@ -2671,8 +2685,8 @@ func (s *LocalPoliciesSecurityOptions) CreateMicrosoftNetworkServerDigitallySign
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) UpdateMicrosoftNetworkServerDigitallySignCommunicationsAlways(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIMicrosoftNetworkServerDigitallySignCommunicationsAlways, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateMicrosoftNetworkServerDigitallySignCommunicationsAlways(ctx context.Context, value MicrosoftNetworkServerDigitallySignCommunicationsAlwaysValue) error {
+	return s.c.Replace(ctx, URIMicrosoftNetworkServerDigitallySignCommunicationsAlways, client.Int(int64(value)))
 }
 
 // DeleteMicrosoftNetworkServerDigitallySignCommunicationsAlways deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/MicrosoftNetworkServer_DigitallySignCommunicationsAlways.
@@ -2748,12 +2762,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteMicrosoftNetworkServerDigitallySign
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) GetMicrosoftNetworkServerDigitallySignCommunicationsIfClientAgrees(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetMicrosoftNetworkServerDigitallySignCommunicationsIfClientAgrees(ctx context.Context) (MicrosoftNetworkServerDigitallySignCommunicationsIfClientAgreesValue, error) {
 	v, err := s.c.Get(ctx, URIMicrosoftNetworkServerDigitallySignCommunicationsIfClientAgrees)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MicrosoftNetworkServerDigitallySignCommunicationsIfClientAgreesValue(n), err
 }
 
 // CreateMicrosoftNetworkServerDigitallySignCommunicationsIfClientAgrees creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/MicrosoftNetworkServer_DigitallySignCommunicationsIfClientAgrees.
@@ -2788,8 +2803,8 @@ func (s *LocalPoliciesSecurityOptions) GetMicrosoftNetworkServerDigitallySignCom
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) CreateMicrosoftNetworkServerDigitallySignCommunicationsIfClientAgrees(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIMicrosoftNetworkServerDigitallySignCommunicationsIfClientAgrees, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateMicrosoftNetworkServerDigitallySignCommunicationsIfClientAgrees(ctx context.Context, value MicrosoftNetworkServerDigitallySignCommunicationsIfClientAgreesValue) error {
+	return s.c.Add(ctx, URIMicrosoftNetworkServerDigitallySignCommunicationsIfClientAgrees, client.Int(int64(value)))
 }
 
 // UpdateMicrosoftNetworkServerDigitallySignCommunicationsIfClientAgrees updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/MicrosoftNetworkServer_DigitallySignCommunicationsIfClientAgrees.
@@ -2824,8 +2839,8 @@ func (s *LocalPoliciesSecurityOptions) CreateMicrosoftNetworkServerDigitallySign
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) UpdateMicrosoftNetworkServerDigitallySignCommunicationsIfClientAgrees(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIMicrosoftNetworkServerDigitallySignCommunicationsIfClientAgrees, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateMicrosoftNetworkServerDigitallySignCommunicationsIfClientAgrees(ctx context.Context, value MicrosoftNetworkServerDigitallySignCommunicationsIfClientAgreesValue) error {
+	return s.c.Replace(ctx, URIMicrosoftNetworkServerDigitallySignCommunicationsIfClientAgrees, client.Int(int64(value)))
 }
 
 // DeleteMicrosoftNetworkServerDigitallySignCommunicationsIfClientAgrees deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/MicrosoftNetworkServer_DigitallySignCommunicationsIfClientAgrees.
@@ -3065,12 +3080,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteMicrosoftNetworkServerServerSPNTarg
 //
 // Default: 0.
 // Supported from OS build 10.0.26100, 10.0.22621.5126 (CSP v11.0).
-func (s *LocalPoliciesSecurityOptions) GetNetworkAccessAllowAnonymousSIDOrNameTranslation(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetNetworkAccessAllowAnonymousSIDOrNameTranslation(ctx context.Context) (NetworkAccessAllowAnonymousSIDOrNameTranslationValue, error) {
 	v, err := s.c.Get(ctx, URINetworkAccessAllowAnonymousSIDOrNameTranslation)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return NetworkAccessAllowAnonymousSIDOrNameTranslationValue(n), err
 }
 
 // CreateNetworkAccessAllowAnonymousSIDOrNameTranslation creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkAccess_AllowAnonymousSIDOrNameTranslation.
@@ -3086,8 +3102,8 @@ func (s *LocalPoliciesSecurityOptions) GetNetworkAccessAllowAnonymousSIDOrNameTr
 //
 // Default: 0.
 // Supported from OS build 10.0.26100, 10.0.22621.5126 (CSP v11.0).
-func (s *LocalPoliciesSecurityOptions) CreateNetworkAccessAllowAnonymousSIDOrNameTranslation(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URINetworkAccessAllowAnonymousSIDOrNameTranslation, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateNetworkAccessAllowAnonymousSIDOrNameTranslation(ctx context.Context, value NetworkAccessAllowAnonymousSIDOrNameTranslationValue) error {
+	return s.c.Add(ctx, URINetworkAccessAllowAnonymousSIDOrNameTranslation, client.Int(int64(value)))
 }
 
 // UpdateNetworkAccessAllowAnonymousSIDOrNameTranslation updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkAccess_AllowAnonymousSIDOrNameTranslation.
@@ -3103,8 +3119,8 @@ func (s *LocalPoliciesSecurityOptions) CreateNetworkAccessAllowAnonymousSIDOrNam
 //
 // Default: 0.
 // Supported from OS build 10.0.26100, 10.0.22621.5126 (CSP v11.0).
-func (s *LocalPoliciesSecurityOptions) UpdateNetworkAccessAllowAnonymousSIDOrNameTranslation(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URINetworkAccessAllowAnonymousSIDOrNameTranslation, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateNetworkAccessAllowAnonymousSIDOrNameTranslation(ctx context.Context, value NetworkAccessAllowAnonymousSIDOrNameTranslationValue) error {
+	return s.c.Replace(ctx, URINetworkAccessAllowAnonymousSIDOrNameTranslation, client.Int(int64(value)))
 }
 
 // DeleteNetworkAccessAllowAnonymousSIDOrNameTranslation deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkAccess_AllowAnonymousSIDOrNameTranslation.
@@ -3138,12 +3154,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteNetworkAccessAllowAnonymousSIDOrNam
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) GetNetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccounts(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetNetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccounts(ctx context.Context) (NetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccountsValue, error) {
 	v, err := s.c.Get(ctx, URINetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccounts)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return NetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccountsValue(n), err
 }
 
 // CreateNetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccounts creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkAccess_DoNotAllowAnonymousEnumerationOfSAMAccounts.
@@ -3160,8 +3177,8 @@ func (s *LocalPoliciesSecurityOptions) GetNetworkAccessDoNotAllowAnonymousEnumer
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) CreateNetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccounts(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URINetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccounts, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateNetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccounts(ctx context.Context, value NetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccountsValue) error {
+	return s.c.Add(ctx, URINetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccounts, client.Int(int64(value)))
 }
 
 // UpdateNetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccounts updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkAccess_DoNotAllowAnonymousEnumerationOfSAMAccounts.
@@ -3178,8 +3195,8 @@ func (s *LocalPoliciesSecurityOptions) CreateNetworkAccessDoNotAllowAnonymousEnu
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) UpdateNetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccounts(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URINetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccounts, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateNetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccounts(ctx context.Context, value NetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccountsValue) error {
+	return s.c.Replace(ctx, URINetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccounts, client.Int(int64(value)))
 }
 
 // DeleteNetworkAccessDoNotAllowAnonymousEnumerationOfSAMAccounts deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkAccess_DoNotAllowAnonymousEnumerationOfSAMAccounts.
@@ -3211,12 +3228,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteNetworkAccessDoNotAllowAnonymousEnu
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) GetNetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndShares(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetNetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndShares(ctx context.Context) (NetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndSharesValue, error) {
 	v, err := s.c.Get(ctx, URINetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndShares)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return NetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndSharesValue(n), err
 }
 
 // CreateNetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndShares creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkAccess_DoNotAllowAnonymousEnumerationOfSamAccountsAndShares.
@@ -3230,8 +3248,8 @@ func (s *LocalPoliciesSecurityOptions) GetNetworkAccessDoNotAllowAnonymousEnumer
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) CreateNetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndShares(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URINetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndShares, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateNetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndShares(ctx context.Context, value NetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndSharesValue) error {
+	return s.c.Add(ctx, URINetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndShares, client.Int(int64(value)))
 }
 
 // UpdateNetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndShares updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkAccess_DoNotAllowAnonymousEnumerationOfSamAccountsAndShares.
@@ -3245,8 +3263,8 @@ func (s *LocalPoliciesSecurityOptions) CreateNetworkAccessDoNotAllowAnonymousEnu
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) UpdateNetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndShares(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URINetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndShares, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateNetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndShares(ctx context.Context, value NetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndSharesValue) error {
+	return s.c.Replace(ctx, URINetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndShares, client.Int(int64(value)))
 }
 
 // DeleteNetworkAccessDoNotAllowAnonymousEnumerationOfSamAccountsAndShares deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkAccess_DoNotAllowAnonymousEnumerationOfSamAccountsAndShares.
@@ -3648,12 +3666,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteNetworkAccessRemotelyAccessibleRegi
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) GetNetworkAccessRestrictAnonymousAccessToNamedPipesAndShares(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetNetworkAccessRestrictAnonymousAccessToNamedPipesAndShares(ctx context.Context) (NetworkAccessRestrictAnonymousAccessToNamedPipesAndSharesValue, error) {
 	v, err := s.c.Get(ctx, URINetworkAccessRestrictAnonymousAccessToNamedPipesAndShares)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return NetworkAccessRestrictAnonymousAccessToNamedPipesAndSharesValue(n), err
 }
 
 // CreateNetworkAccessRestrictAnonymousAccessToNamedPipesAndShares creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkAccess_RestrictAnonymousAccessToNamedPipesAndShares.
@@ -3664,8 +3683,8 @@ func (s *LocalPoliciesSecurityOptions) GetNetworkAccessRestrictAnonymousAccessTo
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) CreateNetworkAccessRestrictAnonymousAccessToNamedPipesAndShares(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URINetworkAccessRestrictAnonymousAccessToNamedPipesAndShares, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateNetworkAccessRestrictAnonymousAccessToNamedPipesAndShares(ctx context.Context, value NetworkAccessRestrictAnonymousAccessToNamedPipesAndSharesValue) error {
+	return s.c.Add(ctx, URINetworkAccessRestrictAnonymousAccessToNamedPipesAndShares, client.Int(int64(value)))
 }
 
 // UpdateNetworkAccessRestrictAnonymousAccessToNamedPipesAndShares updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkAccess_RestrictAnonymousAccessToNamedPipesAndShares.
@@ -3676,8 +3695,8 @@ func (s *LocalPoliciesSecurityOptions) CreateNetworkAccessRestrictAnonymousAcces
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) UpdateNetworkAccessRestrictAnonymousAccessToNamedPipesAndShares(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URINetworkAccessRestrictAnonymousAccessToNamedPipesAndShares, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateNetworkAccessRestrictAnonymousAccessToNamedPipesAndShares(ctx context.Context, value NetworkAccessRestrictAnonymousAccessToNamedPipesAndSharesValue) error {
+	return s.c.Replace(ctx, URINetworkAccessRestrictAnonymousAccessToNamedPipesAndShares, client.Int(int64(value)))
 }
 
 // DeleteNetworkAccessRestrictAnonymousAccessToNamedPipesAndShares deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkAccess_RestrictAnonymousAccessToNamedPipesAndShares.
@@ -3950,12 +3969,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteNetworkSecurityAllowLocalSystemNULL
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *LocalPoliciesSecurityOptions) GetNetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLM(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetNetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLM(ctx context.Context) (NetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLMValue, error) {
 	v, err := s.c.Get(ctx, URINetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLM)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return NetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLMValue(n), err
 }
 
 // CreateNetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLM creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkSecurity_AllowLocalSystemToUseComputerIdentityForNTLM.
@@ -3972,8 +3992,8 @@ func (s *LocalPoliciesSecurityOptions) GetNetworkSecurityAllowLocalSystemToUseCo
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *LocalPoliciesSecurityOptions) CreateNetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLM(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URINetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLM, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateNetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLM(ctx context.Context, value NetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLMValue) error {
+	return s.c.Add(ctx, URINetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLM, client.Int(int64(value)))
 }
 
 // UpdateNetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLM updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkSecurity_AllowLocalSystemToUseComputerIdentityForNTLM.
@@ -3990,8 +4010,8 @@ func (s *LocalPoliciesSecurityOptions) CreateNetworkSecurityAllowLocalSystemToUs
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *LocalPoliciesSecurityOptions) UpdateNetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLM(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URINetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLM, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateNetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLM(ctx context.Context, value NetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLMValue) error {
+	return s.c.Replace(ctx, URINetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLM, client.Int(int64(value)))
 }
 
 // DeleteNetworkSecurityAllowLocalSystemToUseComputerIdentityForNTLM deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkSecurity_AllowLocalSystemToUseComputerIdentityForNTLM.
@@ -4019,12 +4039,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteNetworkSecurityAllowLocalSystemToUs
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) GetNetworkSecurityAllowPKU2UAuthenticationRequests(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetNetworkSecurityAllowPKU2UAuthenticationRequests(ctx context.Context) (NetworkSecurityAllowPKU2UAuthenticationRequestsValue, error) {
 	v, err := s.c.Get(ctx, URINetworkSecurityAllowPKU2UAuthenticationRequests)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return NetworkSecurityAllowPKU2UAuthenticationRequestsValue(n), err
 }
 
 // CreateNetworkSecurityAllowPKU2UAuthenticationRequests creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkSecurity_AllowPKU2UAuthenticationRequests.
@@ -4034,8 +4055,8 @@ func (s *LocalPoliciesSecurityOptions) GetNetworkSecurityAllowPKU2UAuthenticatio
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) CreateNetworkSecurityAllowPKU2UAuthenticationRequests(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URINetworkSecurityAllowPKU2UAuthenticationRequests, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateNetworkSecurityAllowPKU2UAuthenticationRequests(ctx context.Context, value NetworkSecurityAllowPKU2UAuthenticationRequestsValue) error {
+	return s.c.Add(ctx, URINetworkSecurityAllowPKU2UAuthenticationRequests, client.Int(int64(value)))
 }
 
 // UpdateNetworkSecurityAllowPKU2UAuthenticationRequests updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkSecurity_AllowPKU2UAuthenticationRequests.
@@ -4045,8 +4066,8 @@ func (s *LocalPoliciesSecurityOptions) CreateNetworkSecurityAllowPKU2UAuthentica
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) UpdateNetworkSecurityAllowPKU2UAuthenticationRequests(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URINetworkSecurityAllowPKU2UAuthenticationRequests, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateNetworkSecurityAllowPKU2UAuthenticationRequests(ctx context.Context, value NetworkSecurityAllowPKU2UAuthenticationRequestsValue) error {
+	return s.c.Replace(ctx, URINetworkSecurityAllowPKU2UAuthenticationRequests, client.Int(int64(value)))
 }
 
 // DeleteNetworkSecurityAllowPKU2UAuthenticationRequests deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkSecurity_AllowPKU2UAuthenticationRequests.
@@ -4076,12 +4097,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteNetworkSecurityAllowPKU2UAuthentica
 // Supported from OS build 10.0.17134 (CSP v7.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *LocalPoliciesSecurityOptions) GetNetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChange(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetNetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChange(ctx context.Context) (NetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChangeValue, error) {
 	v, err := s.c.Get(ctx, URINetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChange)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return NetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChangeValue(n), err
 }
 
 // CreateNetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChange creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkSecurity_DoNotStoreLANManagerHashValueOnNextPasswordChange.
@@ -4100,8 +4122,8 @@ func (s *LocalPoliciesSecurityOptions) GetNetworkSecurityDoNotStoreLANManagerHas
 // Supported from OS build 10.0.17134 (CSP v7.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *LocalPoliciesSecurityOptions) CreateNetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChange(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URINetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChange, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateNetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChange(ctx context.Context, value NetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChangeValue) error {
+	return s.c.Add(ctx, URINetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChange, client.Int(int64(value)))
 }
 
 // UpdateNetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChange updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkSecurity_DoNotStoreLANManagerHashValueOnNextPasswordChange.
@@ -4120,8 +4142,8 @@ func (s *LocalPoliciesSecurityOptions) CreateNetworkSecurityDoNotStoreLANManager
 // Supported from OS build 10.0.17134 (CSP v7.0).
 //
 // Deprecated: no longer recommended since OS build 10.0.22000.
-func (s *LocalPoliciesSecurityOptions) UpdateNetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChange(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URINetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChange, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateNetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChange(ctx context.Context, value NetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChangeValue) error {
+	return s.c.Replace(ctx, URINetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChange, client.Int(int64(value)))
 }
 
 // DeleteNetworkSecurityDoNotStoreLANManagerHashValueOnNextPasswordChange deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkSecurity_DoNotStoreLANManagerHashValueOnNextPasswordChange.
@@ -4164,12 +4186,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteNetworkSecurityDoNotStoreLANManager
 //
 // Default: 1.
 // Supported from OS build 10.0.26100, 10.0.22621.5126 (CSP v11.0).
-func (s *LocalPoliciesSecurityOptions) GetNetworkSecurityForceLogoffWhenLogonHoursExpire(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetNetworkSecurityForceLogoffWhenLogonHoursExpire(ctx context.Context) (NetworkSecurityForceLogoffWhenLogonHoursExpireValue, error) {
 	v, err := s.c.Get(ctx, URINetworkSecurityForceLogoffWhenLogonHoursExpire)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return NetworkSecurityForceLogoffWhenLogonHoursExpireValue(n), err
 }
 
 // CreateNetworkSecurityForceLogoffWhenLogonHoursExpire creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkSecurity_ForceLogoffWhenLogonHoursExpire.
@@ -4192,8 +4215,8 @@ func (s *LocalPoliciesSecurityOptions) GetNetworkSecurityForceLogoffWhenLogonHou
 //
 // Default: 1.
 // Supported from OS build 10.0.26100, 10.0.22621.5126 (CSP v11.0).
-func (s *LocalPoliciesSecurityOptions) CreateNetworkSecurityForceLogoffWhenLogonHoursExpire(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URINetworkSecurityForceLogoffWhenLogonHoursExpire, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateNetworkSecurityForceLogoffWhenLogonHoursExpire(ctx context.Context, value NetworkSecurityForceLogoffWhenLogonHoursExpireValue) error {
+	return s.c.Add(ctx, URINetworkSecurityForceLogoffWhenLogonHoursExpire, client.Int(int64(value)))
 }
 
 // UpdateNetworkSecurityForceLogoffWhenLogonHoursExpire updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkSecurity_ForceLogoffWhenLogonHoursExpire.
@@ -4216,8 +4239,8 @@ func (s *LocalPoliciesSecurityOptions) CreateNetworkSecurityForceLogoffWhenLogon
 //
 // Default: 1.
 // Supported from OS build 10.0.26100, 10.0.22621.5126 (CSP v11.0).
-func (s *LocalPoliciesSecurityOptions) UpdateNetworkSecurityForceLogoffWhenLogonHoursExpire(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URINetworkSecurityForceLogoffWhenLogonHoursExpire, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateNetworkSecurityForceLogoffWhenLogonHoursExpire(ctx context.Context, value NetworkSecurityForceLogoffWhenLogonHoursExpireValue) error {
+	return s.c.Replace(ctx, URINetworkSecurityForceLogoffWhenLogonHoursExpire, client.Int(int64(value)))
 }
 
 // DeleteNetworkSecurityForceLogoffWhenLogonHoursExpire deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkSecurity_ForceLogoffWhenLogonHoursExpire.
@@ -4272,12 +4295,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteNetworkSecurityForceLogoffWhenLogon
 //
 // Default: 3.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) GetNetworkSecurityLANManagerAuthenticationLevel(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetNetworkSecurityLANManagerAuthenticationLevel(ctx context.Context) (NetworkSecurityLANManagerAuthenticationLevelValue, error) {
 	v, err := s.c.Get(ctx, URINetworkSecurityLANManagerAuthenticationLevel)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return NetworkSecurityLANManagerAuthenticationLevelValue(n), err
 }
 
 // CreateNetworkSecurityLANManagerAuthenticationLevel creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkSecurity_LANManagerAuthenticationLevel.
@@ -4308,8 +4332,8 @@ func (s *LocalPoliciesSecurityOptions) GetNetworkSecurityLANManagerAuthenticatio
 //
 // Default: 3.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) CreateNetworkSecurityLANManagerAuthenticationLevel(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URINetworkSecurityLANManagerAuthenticationLevel, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateNetworkSecurityLANManagerAuthenticationLevel(ctx context.Context, value NetworkSecurityLANManagerAuthenticationLevelValue) error {
+	return s.c.Add(ctx, URINetworkSecurityLANManagerAuthenticationLevel, client.Int(int64(value)))
 }
 
 // UpdateNetworkSecurityLANManagerAuthenticationLevel updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkSecurity_LANManagerAuthenticationLevel.
@@ -4340,8 +4364,8 @@ func (s *LocalPoliciesSecurityOptions) CreateNetworkSecurityLANManagerAuthentica
 //
 // Default: 3.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) UpdateNetworkSecurityLANManagerAuthenticationLevel(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URINetworkSecurityLANManagerAuthenticationLevel, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateNetworkSecurityLANManagerAuthenticationLevel(ctx context.Context, value NetworkSecurityLANManagerAuthenticationLevelValue) error {
+	return s.c.Replace(ctx, URINetworkSecurityLANManagerAuthenticationLevel, client.Int(int64(value)))
 }
 
 // DeleteNetworkSecurityLANManagerAuthenticationLevel deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkSecurity_LANManagerAuthenticationLevel.
@@ -4480,12 +4504,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteNetworkSecurityLDAPClientSigningReq
 //
 // Default: 536870912.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *LocalPoliciesSecurityOptions) GetNetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClients(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetNetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClients(ctx context.Context) (NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClientsValue, error) {
 	v, err := s.c.Get(ctx, URINetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClients)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClientsValue(n), err
 }
 
 // CreateNetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClients creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkSecurity_MinimumSessionSecurityForNTLMSSPBasedClients.
@@ -4500,8 +4525,8 @@ func (s *LocalPoliciesSecurityOptions) GetNetworkSecurityMinimumSessionSecurityF
 //
 // Default: 536870912.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *LocalPoliciesSecurityOptions) CreateNetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClients(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URINetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClients, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateNetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClients(ctx context.Context, value NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClientsValue) error {
+	return s.c.Add(ctx, URINetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClients, client.Int(int64(value)))
 }
 
 // UpdateNetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClients updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkSecurity_MinimumSessionSecurityForNTLMSSPBasedClients.
@@ -4516,8 +4541,8 @@ func (s *LocalPoliciesSecurityOptions) CreateNetworkSecurityMinimumSessionSecuri
 //
 // Default: 536870912.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *LocalPoliciesSecurityOptions) UpdateNetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClients(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URINetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClients, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateNetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClients(ctx context.Context, value NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClientsValue) error {
+	return s.c.Replace(ctx, URINetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClients, client.Int(int64(value)))
 }
 
 // DeleteNetworkSecurityMinimumSessionSecurityForNTLMSSPBasedClients deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkSecurity_MinimumSessionSecurityForNTLMSSPBasedClients.
@@ -4548,12 +4573,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteNetworkSecurityMinimumSessionSecuri
 //
 // Default: 536870912.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) GetNetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServers(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetNetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServers(ctx context.Context) (NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServersValue, error) {
 	v, err := s.c.Get(ctx, URINetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServers)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServersValue(n), err
 }
 
 // CreateNetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServers creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkSecurity_MinimumSessionSecurityForNTLMSSPBasedServers.
@@ -4568,8 +4594,8 @@ func (s *LocalPoliciesSecurityOptions) GetNetworkSecurityMinimumSessionSecurityF
 //
 // Default: 536870912.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) CreateNetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServers(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URINetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServers, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateNetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServers(ctx context.Context, value NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServersValue) error {
+	return s.c.Add(ctx, URINetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServers, client.Int(int64(value)))
 }
 
 // UpdateNetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServers updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkSecurity_MinimumSessionSecurityForNTLMSSPBasedServers.
@@ -4584,8 +4610,8 @@ func (s *LocalPoliciesSecurityOptions) CreateNetworkSecurityMinimumSessionSecuri
 //
 // Default: 536870912.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) UpdateNetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServers(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URINetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServers, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateNetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServers(ctx context.Context, value NetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServersValue) error {
+	return s.c.Replace(ctx, URINetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServers, client.Int(int64(value)))
 }
 
 // DeleteNetworkSecurityMinimumSessionSecurityForNTLMSSPBasedServers deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkSecurity_MinimumSessionSecurityForNTLMSSPBasedServers.
@@ -4695,12 +4721,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteNetworkSecurityRestrictNTLMAddRemot
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) GetNetworkSecurityRestrictNTLMAuditIncomingNTLMTraffic(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetNetworkSecurityRestrictNTLMAuditIncomingNTLMTraffic(ctx context.Context) (NetworkSecurityRestrictNTLMAuditIncomingNTLMTrafficValue, error) {
 	v, err := s.c.Get(ctx, URINetworkSecurityRestrictNTLMAuditIncomingNTLMTraffic)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return NetworkSecurityRestrictNTLMAuditIncomingNTLMTrafficValue(n), err
 }
 
 // CreateNetworkSecurityRestrictNTLMAuditIncomingNTLMTraffic creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkSecurity_RestrictNTLM_AuditIncomingNTLMTraffic.
@@ -4718,8 +4745,8 @@ func (s *LocalPoliciesSecurityOptions) GetNetworkSecurityRestrictNTLMAuditIncomi
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) CreateNetworkSecurityRestrictNTLMAuditIncomingNTLMTraffic(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URINetworkSecurityRestrictNTLMAuditIncomingNTLMTraffic, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateNetworkSecurityRestrictNTLMAuditIncomingNTLMTraffic(ctx context.Context, value NetworkSecurityRestrictNTLMAuditIncomingNTLMTrafficValue) error {
+	return s.c.Add(ctx, URINetworkSecurityRestrictNTLMAuditIncomingNTLMTraffic, client.Int(int64(value)))
 }
 
 // UpdateNetworkSecurityRestrictNTLMAuditIncomingNTLMTraffic updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkSecurity_RestrictNTLM_AuditIncomingNTLMTraffic.
@@ -4737,8 +4764,8 @@ func (s *LocalPoliciesSecurityOptions) CreateNetworkSecurityRestrictNTLMAuditInc
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) UpdateNetworkSecurityRestrictNTLMAuditIncomingNTLMTraffic(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URINetworkSecurityRestrictNTLMAuditIncomingNTLMTraffic, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateNetworkSecurityRestrictNTLMAuditIncomingNTLMTraffic(ctx context.Context, value NetworkSecurityRestrictNTLMAuditIncomingNTLMTrafficValue) error {
+	return s.c.Replace(ctx, URINetworkSecurityRestrictNTLMAuditIncomingNTLMTraffic, client.Int(int64(value)))
 }
 
 // DeleteNetworkSecurityRestrictNTLMAuditIncomingNTLMTraffic deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkSecurity_RestrictNTLM_AuditIncomingNTLMTraffic.
@@ -4773,12 +4800,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteNetworkSecurityRestrictNTLMAuditInc
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) GetNetworkSecurityRestrictNTLMIncomingNTLMTraffic(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetNetworkSecurityRestrictNTLMIncomingNTLMTraffic(ctx context.Context) (NetworkSecurityRestrictNTLMIncomingNTLMTrafficValue, error) {
 	v, err := s.c.Get(ctx, URINetworkSecurityRestrictNTLMIncomingNTLMTraffic)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return NetworkSecurityRestrictNTLMIncomingNTLMTrafficValue(n), err
 }
 
 // CreateNetworkSecurityRestrictNTLMIncomingNTLMTraffic creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkSecurity_RestrictNTLM_IncomingNTLMTraffic.
@@ -4794,8 +4822,8 @@ func (s *LocalPoliciesSecurityOptions) GetNetworkSecurityRestrictNTLMIncomingNTL
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) CreateNetworkSecurityRestrictNTLMIncomingNTLMTraffic(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URINetworkSecurityRestrictNTLMIncomingNTLMTraffic, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateNetworkSecurityRestrictNTLMIncomingNTLMTraffic(ctx context.Context, value NetworkSecurityRestrictNTLMIncomingNTLMTrafficValue) error {
+	return s.c.Add(ctx, URINetworkSecurityRestrictNTLMIncomingNTLMTraffic, client.Int(int64(value)))
 }
 
 // UpdateNetworkSecurityRestrictNTLMIncomingNTLMTraffic updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkSecurity_RestrictNTLM_IncomingNTLMTraffic.
@@ -4811,8 +4839,8 @@ func (s *LocalPoliciesSecurityOptions) CreateNetworkSecurityRestrictNTLMIncoming
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) UpdateNetworkSecurityRestrictNTLMIncomingNTLMTraffic(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URINetworkSecurityRestrictNTLMIncomingNTLMTraffic, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateNetworkSecurityRestrictNTLMIncomingNTLMTraffic(ctx context.Context, value NetworkSecurityRestrictNTLMIncomingNTLMTrafficValue) error {
+	return s.c.Replace(ctx, URINetworkSecurityRestrictNTLMIncomingNTLMTraffic, client.Int(int64(value)))
 }
 
 // DeleteNetworkSecurityRestrictNTLMIncomingNTLMTraffic deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkSecurity_RestrictNTLM_IncomingNTLMTraffic.
@@ -4849,12 +4877,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteNetworkSecurityRestrictNTLMIncoming
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) GetNetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServers(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetNetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServers(ctx context.Context) (NetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServersValue, error) {
 	v, err := s.c.Get(ctx, URINetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServers)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return NetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServersValue(n), err
 }
 
 // CreateNetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServers creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkSecurity_RestrictNTLM_OutgoingNTLMTrafficToRemoteServers.
@@ -4874,8 +4903,8 @@ func (s *LocalPoliciesSecurityOptions) GetNetworkSecurityRestrictNTLMOutgoingNTL
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) CreateNetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServers(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URINetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServers, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateNetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServers(ctx context.Context, value NetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServersValue) error {
+	return s.c.Add(ctx, URINetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServers, client.Int(int64(value)))
 }
 
 // UpdateNetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServers updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkSecurity_RestrictNTLM_OutgoingNTLMTrafficToRemoteServers.
@@ -4895,8 +4924,8 @@ func (s *LocalPoliciesSecurityOptions) CreateNetworkSecurityRestrictNTLMOutgoing
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LocalPoliciesSecurityOptions) UpdateNetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServers(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URINetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServers, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateNetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServers(ctx context.Context, value NetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServersValue) error {
+	return s.c.Replace(ctx, URINetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServers, client.Int(int64(value)))
 }
 
 // DeleteNetworkSecurityRestrictNTLMOutgoingNTLMTrafficToRemoteServers deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/NetworkSecurity_RestrictNTLM_OutgoingNTLMTrafficToRemoteServers.
@@ -5051,12 +5080,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteRecoveryConsoleAllowFloppyCopyAndAc
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) GetShutdownAllowSystemToBeShutDownWithoutHavingToLogOn(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetShutdownAllowSystemToBeShutDownWithoutHavingToLogOn(ctx context.Context) (ShutdownAllowSystemToBeShutDownWithoutHavingToLogOnValue, error) {
 	v, err := s.c.Get(ctx, URIShutdownAllowSystemToBeShutDownWithoutHavingToLogOn)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ShutdownAllowSystemToBeShutDownWithoutHavingToLogOnValue(n), err
 }
 
 // CreateShutdownAllowSystemToBeShutDownWithoutHavingToLogOn creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/Shutdown_AllowSystemToBeShutDownWithoutHavingToLogOn.
@@ -5070,8 +5100,8 @@ func (s *LocalPoliciesSecurityOptions) GetShutdownAllowSystemToBeShutDownWithout
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) CreateShutdownAllowSystemToBeShutDownWithoutHavingToLogOn(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIShutdownAllowSystemToBeShutDownWithoutHavingToLogOn, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateShutdownAllowSystemToBeShutDownWithoutHavingToLogOn(ctx context.Context, value ShutdownAllowSystemToBeShutDownWithoutHavingToLogOnValue) error {
+	return s.c.Add(ctx, URIShutdownAllowSystemToBeShutDownWithoutHavingToLogOn, client.Int(int64(value)))
 }
 
 // UpdateShutdownAllowSystemToBeShutDownWithoutHavingToLogOn updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/Shutdown_AllowSystemToBeShutDownWithoutHavingToLogOn.
@@ -5085,8 +5115,8 @@ func (s *LocalPoliciesSecurityOptions) CreateShutdownAllowSystemToBeShutDownWith
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) UpdateShutdownAllowSystemToBeShutDownWithoutHavingToLogOn(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIShutdownAllowSystemToBeShutDownWithoutHavingToLogOn, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateShutdownAllowSystemToBeShutDownWithoutHavingToLogOn(ctx context.Context, value ShutdownAllowSystemToBeShutDownWithoutHavingToLogOnValue) error {
+	return s.c.Replace(ctx, URIShutdownAllowSystemToBeShutDownWithoutHavingToLogOn, client.Int(int64(value)))
 }
 
 // DeleteShutdownAllowSystemToBeShutDownWithoutHavingToLogOn deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/Shutdown_AllowSystemToBeShutDownWithoutHavingToLogOn.
@@ -5119,12 +5149,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteShutdownAllowSystemToBeShutDownWith
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) GetShutdownClearVirtualMemoryPageFile(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetShutdownClearVirtualMemoryPageFile(ctx context.Context) (ShutdownClearVirtualMemoryPageFileValue, error) {
 	v, err := s.c.Get(ctx, URIShutdownClearVirtualMemoryPageFile)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ShutdownClearVirtualMemoryPageFileValue(n), err
 }
 
 // CreateShutdownClearVirtualMemoryPageFile creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/Shutdown_ClearVirtualMemoryPageFile.
@@ -5142,8 +5173,8 @@ func (s *LocalPoliciesSecurityOptions) GetShutdownClearVirtualMemoryPageFile(ctx
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) CreateShutdownClearVirtualMemoryPageFile(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIShutdownClearVirtualMemoryPageFile, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateShutdownClearVirtualMemoryPageFile(ctx context.Context, value ShutdownClearVirtualMemoryPageFileValue) error {
+	return s.c.Add(ctx, URIShutdownClearVirtualMemoryPageFile, client.Int(int64(value)))
 }
 
 // UpdateShutdownClearVirtualMemoryPageFile updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/Shutdown_ClearVirtualMemoryPageFile.
@@ -5161,8 +5192,8 @@ func (s *LocalPoliciesSecurityOptions) CreateShutdownClearVirtualMemoryPageFile(
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) UpdateShutdownClearVirtualMemoryPageFile(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIShutdownClearVirtualMemoryPageFile, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateShutdownClearVirtualMemoryPageFile(ctx context.Context, value ShutdownClearVirtualMemoryPageFileValue) error {
+	return s.c.Replace(ctx, URIShutdownClearVirtualMemoryPageFile, client.Int(int64(value)))
 }
 
 // DeleteShutdownClearVirtualMemoryPageFile deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/Shutdown_ClearVirtualMemoryPageFile.
@@ -5382,12 +5413,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteSystemObjectsStrengthenDefaultPermi
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) GetUserAccountControlAllowUIAccessApplicationsToPromptForElevation(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetUserAccountControlAllowUIAccessApplicationsToPromptForElevation(ctx context.Context) (UserAccountControlAllowUIAccessApplicationsToPromptForElevationValue, error) {
 	v, err := s.c.Get(ctx, URIUserAccountControlAllowUIAccessApplicationsToPromptForElevation)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return UserAccountControlAllowUIAccessApplicationsToPromptForElevationValue(n), err
 }
 
 // CreateUserAccountControlAllowUIAccessApplicationsToPromptForElevation creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_AllowUIAccessApplicationsToPromptForElevation.
@@ -5404,8 +5436,8 @@ func (s *LocalPoliciesSecurityOptions) GetUserAccountControlAllowUIAccessApplica
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlAllowUIAccessApplicationsToPromptForElevation(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIUserAccountControlAllowUIAccessApplicationsToPromptForElevation, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlAllowUIAccessApplicationsToPromptForElevation(ctx context.Context, value UserAccountControlAllowUIAccessApplicationsToPromptForElevationValue) error {
+	return s.c.Add(ctx, URIUserAccountControlAllowUIAccessApplicationsToPromptForElevation, client.Int(int64(value)))
 }
 
 // UpdateUserAccountControlAllowUIAccessApplicationsToPromptForElevation updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_AllowUIAccessApplicationsToPromptForElevation.
@@ -5422,8 +5454,8 @@ func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlAllowUIAccessAppl
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) UpdateUserAccountControlAllowUIAccessApplicationsToPromptForElevation(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIUserAccountControlAllowUIAccessApplicationsToPromptForElevation, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateUserAccountControlAllowUIAccessApplicationsToPromptForElevation(ctx context.Context, value UserAccountControlAllowUIAccessApplicationsToPromptForElevationValue) error {
+	return s.c.Replace(ctx, URIUserAccountControlAllowUIAccessApplicationsToPromptForElevation, client.Int(int64(value)))
 }
 
 // DeleteUserAccountControlAllowUIAccessApplicationsToPromptForElevation deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_AllowUIAccessApplicationsToPromptForElevation.
@@ -5457,12 +5489,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteUserAccountControlAllowUIAccessAppl
 //
 // Default: 1.
 // Supported from OS build 11.0.26200.7019, 11.0.26100.7019 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) GetUserAccountControlBehaviorOfTheElevationPromptForAdministratorProtection(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetUserAccountControlBehaviorOfTheElevationPromptForAdministratorProtection(ctx context.Context) (UserAccountControlBehaviorOfTheElevationPromptForAdministratorProtectionValue, error) {
 	v, err := s.c.Get(ctx, URIUserAccountControlBehaviorOfTheElevationPromptForAdministratorProtection)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return UserAccountControlBehaviorOfTheElevationPromptForAdministratorProtectionValue(n), err
 }
 
 // CreateUserAccountControlBehaviorOfTheElevationPromptForAdministratorProtection creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_BehaviorOfTheElevationPromptForAdministratorProtection.
@@ -5478,8 +5511,8 @@ func (s *LocalPoliciesSecurityOptions) GetUserAccountControlBehaviorOfTheElevati
 //
 // Default: 1.
 // Supported from OS build 11.0.26200.7019, 11.0.26100.7019 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlBehaviorOfTheElevationPromptForAdministratorProtection(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIUserAccountControlBehaviorOfTheElevationPromptForAdministratorProtection, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlBehaviorOfTheElevationPromptForAdministratorProtection(ctx context.Context, value UserAccountControlBehaviorOfTheElevationPromptForAdministratorProtectionValue) error {
+	return s.c.Add(ctx, URIUserAccountControlBehaviorOfTheElevationPromptForAdministratorProtection, client.Int(int64(value)))
 }
 
 // UpdateUserAccountControlBehaviorOfTheElevationPromptForAdministratorProtection updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_BehaviorOfTheElevationPromptForAdministratorProtection.
@@ -5495,8 +5528,8 @@ func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlBehaviorOfTheElev
 //
 // Default: 1.
 // Supported from OS build 11.0.26200.7019, 11.0.26100.7019 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) UpdateUserAccountControlBehaviorOfTheElevationPromptForAdministratorProtection(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIUserAccountControlBehaviorOfTheElevationPromptForAdministratorProtection, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateUserAccountControlBehaviorOfTheElevationPromptForAdministratorProtection(ctx context.Context, value UserAccountControlBehaviorOfTheElevationPromptForAdministratorProtectionValue) error {
+	return s.c.Replace(ctx, URIUserAccountControlBehaviorOfTheElevationPromptForAdministratorProtection, client.Int(int64(value)))
 }
 
 // DeleteUserAccountControlBehaviorOfTheElevationPromptForAdministratorProtection deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_BehaviorOfTheElevationPromptForAdministratorProtection.
@@ -5539,12 +5572,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteUserAccountControlBehaviorOfTheElev
 //
 // Default: 5.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) GetUserAccountControlBehaviorOfTheElevationPromptForAdministrators(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetUserAccountControlBehaviorOfTheElevationPromptForAdministrators(ctx context.Context) (UserAccountControlBehaviorOfTheElevationPromptForAdministratorsValue, error) {
 	v, err := s.c.Get(ctx, URIUserAccountControlBehaviorOfTheElevationPromptForAdministrators)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return UserAccountControlBehaviorOfTheElevationPromptForAdministratorsValue(n), err
 }
 
 // CreateUserAccountControlBehaviorOfTheElevationPromptForAdministrators creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_BehaviorOfTheElevationPromptForAdministrators.
@@ -5570,8 +5604,8 @@ func (s *LocalPoliciesSecurityOptions) GetUserAccountControlBehaviorOfTheElevati
 //
 // Default: 5.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlBehaviorOfTheElevationPromptForAdministrators(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIUserAccountControlBehaviorOfTheElevationPromptForAdministrators, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlBehaviorOfTheElevationPromptForAdministrators(ctx context.Context, value UserAccountControlBehaviorOfTheElevationPromptForAdministratorsValue) error {
+	return s.c.Add(ctx, URIUserAccountControlBehaviorOfTheElevationPromptForAdministrators, client.Int(int64(value)))
 }
 
 // UpdateUserAccountControlBehaviorOfTheElevationPromptForAdministrators updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_BehaviorOfTheElevationPromptForAdministrators.
@@ -5597,8 +5631,8 @@ func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlBehaviorOfTheElev
 //
 // Default: 5.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) UpdateUserAccountControlBehaviorOfTheElevationPromptForAdministrators(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIUserAccountControlBehaviorOfTheElevationPromptForAdministrators, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateUserAccountControlBehaviorOfTheElevationPromptForAdministrators(ctx context.Context, value UserAccountControlBehaviorOfTheElevationPromptForAdministratorsValue) error {
+	return s.c.Replace(ctx, URIUserAccountControlBehaviorOfTheElevationPromptForAdministrators, client.Int(int64(value)))
 }
 
 // DeleteUserAccountControlBehaviorOfTheElevationPromptForAdministrators deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_BehaviorOfTheElevationPromptForAdministrators.
@@ -5643,12 +5677,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteUserAccountControlBehaviorOfTheElev
 //
 // Default: 3.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) GetUserAccountControlBehaviorOfTheElevationPromptForStandardUsers(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetUserAccountControlBehaviorOfTheElevationPromptForStandardUsers(ctx context.Context) (UserAccountControlBehaviorOfTheElevationPromptForStandardUsersValue, error) {
 	v, err := s.c.Get(ctx, URIUserAccountControlBehaviorOfTheElevationPromptForStandardUsers)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return UserAccountControlBehaviorOfTheElevationPromptForStandardUsersValue(n), err
 }
 
 // CreateUserAccountControlBehaviorOfTheElevationPromptForStandardUsers creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_BehaviorOfTheElevationPromptForStandardUsers.
@@ -5666,8 +5701,8 @@ func (s *LocalPoliciesSecurityOptions) GetUserAccountControlBehaviorOfTheElevati
 //
 // Default: 3.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlBehaviorOfTheElevationPromptForStandardUsers(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIUserAccountControlBehaviorOfTheElevationPromptForStandardUsers, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlBehaviorOfTheElevationPromptForStandardUsers(ctx context.Context, value UserAccountControlBehaviorOfTheElevationPromptForStandardUsersValue) error {
+	return s.c.Add(ctx, URIUserAccountControlBehaviorOfTheElevationPromptForStandardUsers, client.Int(int64(value)))
 }
 
 // UpdateUserAccountControlBehaviorOfTheElevationPromptForStandardUsers updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_BehaviorOfTheElevationPromptForStandardUsers.
@@ -5685,8 +5720,8 @@ func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlBehaviorOfTheElev
 //
 // Default: 3.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) UpdateUserAccountControlBehaviorOfTheElevationPromptForStandardUsers(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIUserAccountControlBehaviorOfTheElevationPromptForStandardUsers, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateUserAccountControlBehaviorOfTheElevationPromptForStandardUsers(ctx context.Context, value UserAccountControlBehaviorOfTheElevationPromptForStandardUsersValue) error {
+	return s.c.Replace(ctx, URIUserAccountControlBehaviorOfTheElevationPromptForStandardUsers, client.Int(int64(value)))
 }
 
 // DeleteUserAccountControlBehaviorOfTheElevationPromptForStandardUsers deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_BehaviorOfTheElevationPromptForStandardUsers.
@@ -5721,12 +5756,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteUserAccountControlBehaviorOfTheElev
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) GetUserAccountControlDetectApplicationInstallationsAndPromptForElevation(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetUserAccountControlDetectApplicationInstallationsAndPromptForElevation(ctx context.Context) (UserAccountControlDetectApplicationInstallationsAndPromptForElevationValue, error) {
 	v, err := s.c.Get(ctx, URIUserAccountControlDetectApplicationInstallationsAndPromptForElevation)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return UserAccountControlDetectApplicationInstallationsAndPromptForElevationValue(n), err
 }
 
 // CreateUserAccountControlDetectApplicationInstallationsAndPromptForElevation creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_DetectApplicationInstallationsAndPromptForElevation.
@@ -5742,8 +5778,8 @@ func (s *LocalPoliciesSecurityOptions) GetUserAccountControlDetectApplicationIns
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlDetectApplicationInstallationsAndPromptForElevation(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIUserAccountControlDetectApplicationInstallationsAndPromptForElevation, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlDetectApplicationInstallationsAndPromptForElevation(ctx context.Context, value UserAccountControlDetectApplicationInstallationsAndPromptForElevationValue) error {
+	return s.c.Add(ctx, URIUserAccountControlDetectApplicationInstallationsAndPromptForElevation, client.Int(int64(value)))
 }
 
 // UpdateUserAccountControlDetectApplicationInstallationsAndPromptForElevation updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_DetectApplicationInstallationsAndPromptForElevation.
@@ -5759,8 +5795,8 @@ func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlDetectApplication
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) UpdateUserAccountControlDetectApplicationInstallationsAndPromptForElevation(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIUserAccountControlDetectApplicationInstallationsAndPromptForElevation, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateUserAccountControlDetectApplicationInstallationsAndPromptForElevation(ctx context.Context, value UserAccountControlDetectApplicationInstallationsAndPromptForElevationValue) error {
+	return s.c.Replace(ctx, URIUserAccountControlDetectApplicationInstallationsAndPromptForElevation, client.Int(int64(value)))
 }
 
 // DeleteUserAccountControlDetectApplicationInstallationsAndPromptForElevation deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_DetectApplicationInstallationsAndPromptForElevation.
@@ -5792,12 +5828,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteUserAccountControlDetectApplication
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) GetUserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidated(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetUserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidated(ctx context.Context) (UserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidatedValue, error) {
 	v, err := s.c.Get(ctx, URIUserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidated)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return UserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidatedValue(n), err
 }
 
 // CreateUserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidated creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_OnlyElevateExecutableFilesThatAreSignedAndValidated.
@@ -5812,8 +5849,8 @@ func (s *LocalPoliciesSecurityOptions) GetUserAccountControlOnlyElevateExecutabl
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidated(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIUserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidated, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidated(ctx context.Context, value UserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidatedValue) error {
+	return s.c.Add(ctx, URIUserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidated, client.Int(int64(value)))
 }
 
 // UpdateUserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidated updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_OnlyElevateExecutableFilesThatAreSignedAndValidated.
@@ -5828,8 +5865,8 @@ func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlOnlyElevateExecut
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) UpdateUserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidated(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIUserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidated, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateUserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidated(ctx context.Context, value UserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidatedValue) error {
+	return s.c.Replace(ctx, URIUserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidated, client.Int(int64(value)))
 }
 
 // DeleteUserAccountControlOnlyElevateExecutableFilesThatAreSignedAndValidated deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_OnlyElevateExecutableFilesThatAreSignedAndValidated.
@@ -5863,12 +5900,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteUserAccountControlOnlyElevateExecut
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) GetUserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocations(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetUserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocations(ctx context.Context) (UserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocationsValue, error) {
 	v, err := s.c.Get(ctx, URIUserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocations)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return UserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocationsValue(n), err
 }
 
 // CreateUserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocations creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_OnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocations.
@@ -5886,8 +5924,8 @@ func (s *LocalPoliciesSecurityOptions) GetUserAccountControlOnlyElevateUIAccessA
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocations(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIUserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocations, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocations(ctx context.Context, value UserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocationsValue) error {
+	return s.c.Add(ctx, URIUserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocations, client.Int(int64(value)))
 }
 
 // UpdateUserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocations updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_OnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocations.
@@ -5905,8 +5943,8 @@ func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlOnlyElevateUIAcce
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) UpdateUserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocations(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIUserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocations, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateUserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocations(ctx context.Context, value UserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocationsValue) error {
+	return s.c.Replace(ctx, URIUserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocations, client.Int(int64(value)))
 }
 
 // DeleteUserAccountControlOnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocations deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_OnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocations.
@@ -5940,12 +5978,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteUserAccountControlOnlyElevateUIAcce
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) GetUserAccountControlRunAllAdministratorsInAdminApprovalMode(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetUserAccountControlRunAllAdministratorsInAdminApprovalMode(ctx context.Context) (UserAccountControlRunAllAdministratorsInAdminApprovalModeValue, error) {
 	v, err := s.c.Get(ctx, URIUserAccountControlRunAllAdministratorsInAdminApprovalMode)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return UserAccountControlRunAllAdministratorsInAdminApprovalModeValue(n), err
 }
 
 // CreateUserAccountControlRunAllAdministratorsInAdminApprovalMode creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_RunAllAdministratorsInAdminApprovalMode.
@@ -5960,8 +5999,8 @@ func (s *LocalPoliciesSecurityOptions) GetUserAccountControlRunAllAdministrators
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlRunAllAdministratorsInAdminApprovalMode(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIUserAccountControlRunAllAdministratorsInAdminApprovalMode, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlRunAllAdministratorsInAdminApprovalMode(ctx context.Context, value UserAccountControlRunAllAdministratorsInAdminApprovalModeValue) error {
+	return s.c.Add(ctx, URIUserAccountControlRunAllAdministratorsInAdminApprovalMode, client.Int(int64(value)))
 }
 
 // UpdateUserAccountControlRunAllAdministratorsInAdminApprovalMode updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_RunAllAdministratorsInAdminApprovalMode.
@@ -5976,8 +6015,8 @@ func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlRunAllAdministrat
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) UpdateUserAccountControlRunAllAdministratorsInAdminApprovalMode(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIUserAccountControlRunAllAdministratorsInAdminApprovalMode, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateUserAccountControlRunAllAdministratorsInAdminApprovalMode(ctx context.Context, value UserAccountControlRunAllAdministratorsInAdminApprovalModeValue) error {
+	return s.c.Replace(ctx, URIUserAccountControlRunAllAdministratorsInAdminApprovalMode, client.Int(int64(value)))
 }
 
 // DeleteUserAccountControlRunAllAdministratorsInAdminApprovalMode deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_RunAllAdministratorsInAdminApprovalMode.
@@ -6006,12 +6045,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteUserAccountControlRunAllAdministrat
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) GetUserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevation(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetUserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevation(ctx context.Context) (UserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevationValue, error) {
 	v, err := s.c.Get(ctx, URIUserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevation)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return UserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevationValue(n), err
 }
 
 // CreateUserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevation creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_SwitchToTheSecureDesktopWhenPromptingForElevation.
@@ -6024,8 +6064,8 @@ func (s *LocalPoliciesSecurityOptions) GetUserAccountControlSwitchToTheSecureDes
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevation(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIUserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevation, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevation(ctx context.Context, value UserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevationValue) error {
+	return s.c.Add(ctx, URIUserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevation, client.Int(int64(value)))
 }
 
 // UpdateUserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevation updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_SwitchToTheSecureDesktopWhenPromptingForElevation.
@@ -6038,8 +6078,8 @@ func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlSwitchToTheSecure
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) UpdateUserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevation(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIUserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevation, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateUserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevation(ctx context.Context, value UserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevationValue) error {
+	return s.c.Replace(ctx, URIUserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevation, client.Int(int64(value)))
 }
 
 // DeleteUserAccountControlSwitchToTheSecureDesktopWhenPromptingForElevation deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_SwitchToTheSecureDesktopWhenPromptingForElevation.
@@ -6065,12 +6105,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteUserAccountControlSwitchToTheSecure
 //
 // Default: 1.
 // Supported from OS build 11.0.26200.7019, 11.0.26100.7019 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) GetUserAccountControlTypeOfAdminApprovalMode(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetUserAccountControlTypeOfAdminApprovalMode(ctx context.Context) (UserAccountControlTypeOfAdminApprovalModeValue, error) {
 	v, err := s.c.Get(ctx, URIUserAccountControlTypeOfAdminApprovalMode)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return UserAccountControlTypeOfAdminApprovalModeValue(n), err
 }
 
 // CreateUserAccountControlTypeOfAdminApprovalMode creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_TypeOfAdminApprovalMode.
@@ -6082,8 +6123,8 @@ func (s *LocalPoliciesSecurityOptions) GetUserAccountControlTypeOfAdminApprovalM
 //
 // Default: 1.
 // Supported from OS build 11.0.26200.7019, 11.0.26100.7019 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlTypeOfAdminApprovalMode(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIUserAccountControlTypeOfAdminApprovalMode, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlTypeOfAdminApprovalMode(ctx context.Context, value UserAccountControlTypeOfAdminApprovalModeValue) error {
+	return s.c.Add(ctx, URIUserAccountControlTypeOfAdminApprovalMode, client.Int(int64(value)))
 }
 
 // UpdateUserAccountControlTypeOfAdminApprovalMode updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_TypeOfAdminApprovalMode.
@@ -6095,8 +6136,8 @@ func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlTypeOfAdminApprov
 //
 // Default: 1.
 // Supported from OS build 11.0.26200.7019, 11.0.26100.7019 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) UpdateUserAccountControlTypeOfAdminApprovalMode(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIUserAccountControlTypeOfAdminApprovalMode, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateUserAccountControlTypeOfAdminApprovalMode(ctx context.Context, value UserAccountControlTypeOfAdminApprovalModeValue) error {
+	return s.c.Replace(ctx, URIUserAccountControlTypeOfAdminApprovalMode, client.Int(int64(value)))
 }
 
 // DeleteUserAccountControlTypeOfAdminApprovalMode deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_TypeOfAdminApprovalMode.
@@ -6122,12 +6163,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteUserAccountControlTypeOfAdminApprov
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) GetUserAccountControlUseAdminApprovalMode(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetUserAccountControlUseAdminApprovalMode(ctx context.Context) (UserAccountControlUseAdminApprovalModeValue, error) {
 	v, err := s.c.Get(ctx, URIUserAccountControlUseAdminApprovalMode)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return UserAccountControlUseAdminApprovalModeValue(n), err
 }
 
 // CreateUserAccountControlUseAdminApprovalMode creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_UseAdminApprovalMode.
@@ -6140,8 +6182,8 @@ func (s *LocalPoliciesSecurityOptions) GetUserAccountControlUseAdminApprovalMode
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlUseAdminApprovalMode(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIUserAccountControlUseAdminApprovalMode, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlUseAdminApprovalMode(ctx context.Context, value UserAccountControlUseAdminApprovalModeValue) error {
+	return s.c.Add(ctx, URIUserAccountControlUseAdminApprovalMode, client.Int(int64(value)))
 }
 
 // UpdateUserAccountControlUseAdminApprovalMode updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_UseAdminApprovalMode.
@@ -6154,8 +6196,8 @@ func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlUseAdminApprovalM
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) UpdateUserAccountControlUseAdminApprovalMode(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIUserAccountControlUseAdminApprovalMode, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateUserAccountControlUseAdminApprovalMode(ctx context.Context, value UserAccountControlUseAdminApprovalModeValue) error {
+	return s.c.Replace(ctx, URIUserAccountControlUseAdminApprovalMode, client.Int(int64(value)))
 }
 
 // DeleteUserAccountControlUseAdminApprovalMode deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_UseAdminApprovalMode.
@@ -6183,12 +6225,13 @@ func (s *LocalPoliciesSecurityOptions) DeleteUserAccountControlUseAdminApprovalM
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) GetUserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocations(ctx context.Context) (int64, error) {
+func (s *LocalPoliciesSecurityOptions) GetUserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocations(ctx context.Context) (UserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocationsValue, error) {
 	v, err := s.c.Get(ctx, URIUserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocations)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return UserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocationsValue(n), err
 }
 
 // CreateUserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocations creates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_VirtualizeFileAndRegistryWriteFailuresToPerUserLocations.
@@ -6202,8 +6245,8 @@ func (s *LocalPoliciesSecurityOptions) GetUserAccountControlVirtualizeFileAndReg
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocations(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIUserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocations, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocations(ctx context.Context, value UserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocationsValue) error {
+	return s.c.Add(ctx, URIUserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocations, client.Int(int64(value)))
 }
 
 // UpdateUserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocations updates ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_VirtualizeFileAndRegistryWriteFailuresToPerUserLocations.
@@ -6217,8 +6260,8 @@ func (s *LocalPoliciesSecurityOptions) CreateUserAccountControlVirtualizeFileAnd
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *LocalPoliciesSecurityOptions) UpdateUserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocations(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIUserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocations, client.Int(value))
+func (s *LocalPoliciesSecurityOptions) UpdateUserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocations(ctx context.Context, value UserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocationsValue) error {
+	return s.c.Replace(ctx, URIUserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocations, client.Int(int64(value)))
 }
 
 // DeleteUserAccountControlVirtualizeFileAndRegistryWriteFailuresToPerUserLocations deletes ./Device/Vendor/MSFT/Policy/Config/LocalPoliciesSecurityOptions/UserAccountControl_VirtualizeFileAndRegistryWriteFailuresToPerUserLocations.

@@ -494,12 +494,13 @@ func (s *Printers) DeletePublishPrinters(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Printers) GetRequireIppsPolicy(ctx context.Context) (int64, error) {
+func (s *Printers) GetRequireIppsPolicy(ctx context.Context) (RequireIppsPolicyValue, error) {
 	v, err := s.c.Get(ctx, URIRequireIppsPolicy)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return RequireIppsPolicyValue(n), err
 }
 
 // CreateRequireIppsPolicy creates ./Device/Vendor/MSFT/Policy/Config/Printers/RequireIppsPolicy.
@@ -508,8 +509,8 @@ func (s *Printers) GetRequireIppsPolicy(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Printers) CreateRequireIppsPolicy(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIRequireIppsPolicy, client.Int(value))
+func (s *Printers) CreateRequireIppsPolicy(ctx context.Context, value RequireIppsPolicyValue) error {
+	return s.c.Add(ctx, URIRequireIppsPolicy, client.Int(int64(value)))
 }
 
 // UpdateRequireIppsPolicy updates ./Device/Vendor/MSFT/Policy/Config/Printers/RequireIppsPolicy.
@@ -518,8 +519,8 @@ func (s *Printers) CreateRequireIppsPolicy(ctx context.Context, value int64) err
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Printers) UpdateRequireIppsPolicy(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIRequireIppsPolicy, client.Int(value))
+func (s *Printers) UpdateRequireIppsPolicy(ctx context.Context, value RequireIppsPolicyValue) error {
+	return s.c.Replace(ctx, URIRequireIppsPolicy, client.Int(int64(value)))
 }
 
 // DeleteRequireIppsPolicy deletes ./Device/Vendor/MSFT/Policy/Config/Printers/RequireIppsPolicy.

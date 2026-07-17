@@ -2,710 +2,1835 @@
 
 package audit
 
-// AccountLogonLogoffAuditAccountLockout allowed values.
-const (
-	// Off/None
-	AccountLogonLogoffAuditAccountLockoutOffNone int64 = 0
-	// Success
-	AccountLogonLogoffAuditAccountLockoutSuccess int64 = 1
-	// Failure
-	AccountLogonLogoffAuditAccountLockoutFailure int64 = 2
-	// Success+Failure
-	AccountLogonLogoffAuditAccountLockoutSuccessFailure int64 = 3
+import (
+	"fmt"
 )
 
-// AccountLogonLogoffAuditGroupMembership allowed values.
+// AccountLogonLogoffAuditAccountLockoutValue — allowed values for the AccountLogonLogoff_AuditAccountLockout node.
+type AccountLogonLogoffAuditAccountLockoutValue int64
+
 const (
 	// Off/None
-	AccountLogonLogoffAuditGroupMembershipOffNone int64 = 0
+	AccountLogonLogoffAuditAccountLockoutOffNone AccountLogonLogoffAuditAccountLockoutValue = 0
 	// Success
-	AccountLogonLogoffAuditGroupMembershipSuccess int64 = 1
+	AccountLogonLogoffAuditAccountLockoutSuccess AccountLogonLogoffAuditAccountLockoutValue = 1
 	// Failure
-	AccountLogonLogoffAuditGroupMembershipFailure int64 = 2
+	AccountLogonLogoffAuditAccountLockoutFailure AccountLogonLogoffAuditAccountLockoutValue = 2
 	// Success+Failure
-	AccountLogonLogoffAuditGroupMembershipSuccessFailure int64 = 3
+	AccountLogonLogoffAuditAccountLockoutSuccessFailure AccountLogonLogoffAuditAccountLockoutValue = 3
 )
 
-// AccountLogonLogoffAuditIPsecExtendedMode allowed values.
+// String returns the AccountLogonLogoffAuditAccountLockoutValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AccountLogonLogoffAuditAccountLockoutValue) String() string {
+	switch e {
+	case AccountLogonLogoffAuditAccountLockoutOffNone:
+		return "AccountLogonLogoffAuditAccountLockoutOffNone"
+	case AccountLogonLogoffAuditAccountLockoutSuccess:
+		return "AccountLogonLogoffAuditAccountLockoutSuccess"
+	case AccountLogonLogoffAuditAccountLockoutFailure:
+		return "AccountLogonLogoffAuditAccountLockoutFailure"
+	case AccountLogonLogoffAuditAccountLockoutSuccessFailure:
+		return "AccountLogonLogoffAuditAccountLockoutSuccessFailure"
+	default:
+		return fmt.Sprintf("AccountLogonLogoffAuditAccountLockoutValue(%d)", int64(e))
+	}
+}
+
+// AccountLogonLogoffAuditGroupMembershipValue — allowed values for the AccountLogonLogoff_AuditGroupMembership node.
+type AccountLogonLogoffAuditGroupMembershipValue int64
+
 const (
 	// Off/None
-	AccountLogonLogoffAuditIPsecExtendedModeOffNone int64 = 0
+	AccountLogonLogoffAuditGroupMembershipOffNone AccountLogonLogoffAuditGroupMembershipValue = 0
 	// Success
-	AccountLogonLogoffAuditIPsecExtendedModeSuccess int64 = 1
+	AccountLogonLogoffAuditGroupMembershipSuccess AccountLogonLogoffAuditGroupMembershipValue = 1
 	// Failure
-	AccountLogonLogoffAuditIPsecExtendedModeFailure int64 = 2
+	AccountLogonLogoffAuditGroupMembershipFailure AccountLogonLogoffAuditGroupMembershipValue = 2
 	// Success+Failure
-	AccountLogonLogoffAuditIPsecExtendedModeSuccessFailure int64 = 3
+	AccountLogonLogoffAuditGroupMembershipSuccessFailure AccountLogonLogoffAuditGroupMembershipValue = 3
 )
 
-// AccountLogonLogoffAuditIPsecMainMode allowed values.
+// String returns the AccountLogonLogoffAuditGroupMembershipValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AccountLogonLogoffAuditGroupMembershipValue) String() string {
+	switch e {
+	case AccountLogonLogoffAuditGroupMembershipOffNone:
+		return "AccountLogonLogoffAuditGroupMembershipOffNone"
+	case AccountLogonLogoffAuditGroupMembershipSuccess:
+		return "AccountLogonLogoffAuditGroupMembershipSuccess"
+	case AccountLogonLogoffAuditGroupMembershipFailure:
+		return "AccountLogonLogoffAuditGroupMembershipFailure"
+	case AccountLogonLogoffAuditGroupMembershipSuccessFailure:
+		return "AccountLogonLogoffAuditGroupMembershipSuccessFailure"
+	default:
+		return fmt.Sprintf("AccountLogonLogoffAuditGroupMembershipValue(%d)", int64(e))
+	}
+}
+
+// AccountLogonLogoffAuditIPsecExtendedModeValue — allowed values for the AccountLogonLogoff_AuditIPsecExtendedMode node.
+type AccountLogonLogoffAuditIPsecExtendedModeValue int64
+
 const (
 	// Off/None
-	AccountLogonLogoffAuditIPsecMainModeOffNone int64 = 0
+	AccountLogonLogoffAuditIPsecExtendedModeOffNone AccountLogonLogoffAuditIPsecExtendedModeValue = 0
 	// Success
-	AccountLogonLogoffAuditIPsecMainModeSuccess int64 = 1
+	AccountLogonLogoffAuditIPsecExtendedModeSuccess AccountLogonLogoffAuditIPsecExtendedModeValue = 1
 	// Failure
-	AccountLogonLogoffAuditIPsecMainModeFailure int64 = 2
+	AccountLogonLogoffAuditIPsecExtendedModeFailure AccountLogonLogoffAuditIPsecExtendedModeValue = 2
 	// Success+Failure
-	AccountLogonLogoffAuditIPsecMainModeSuccessFailure int64 = 3
+	AccountLogonLogoffAuditIPsecExtendedModeSuccessFailure AccountLogonLogoffAuditIPsecExtendedModeValue = 3
 )
 
-// AccountLogonLogoffAuditIPsecQuickMode allowed values.
+// String returns the AccountLogonLogoffAuditIPsecExtendedModeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AccountLogonLogoffAuditIPsecExtendedModeValue) String() string {
+	switch e {
+	case AccountLogonLogoffAuditIPsecExtendedModeOffNone:
+		return "AccountLogonLogoffAuditIPsecExtendedModeOffNone"
+	case AccountLogonLogoffAuditIPsecExtendedModeSuccess:
+		return "AccountLogonLogoffAuditIPsecExtendedModeSuccess"
+	case AccountLogonLogoffAuditIPsecExtendedModeFailure:
+		return "AccountLogonLogoffAuditIPsecExtendedModeFailure"
+	case AccountLogonLogoffAuditIPsecExtendedModeSuccessFailure:
+		return "AccountLogonLogoffAuditIPsecExtendedModeSuccessFailure"
+	default:
+		return fmt.Sprintf("AccountLogonLogoffAuditIPsecExtendedModeValue(%d)", int64(e))
+	}
+}
+
+// AccountLogonLogoffAuditIPsecMainModeValue — allowed values for the AccountLogonLogoff_AuditIPsecMainMode node.
+type AccountLogonLogoffAuditIPsecMainModeValue int64
+
 const (
 	// Off/None
-	AccountLogonLogoffAuditIPsecQuickModeOffNone int64 = 0
+	AccountLogonLogoffAuditIPsecMainModeOffNone AccountLogonLogoffAuditIPsecMainModeValue = 0
 	// Success
-	AccountLogonLogoffAuditIPsecQuickModeSuccess int64 = 1
+	AccountLogonLogoffAuditIPsecMainModeSuccess AccountLogonLogoffAuditIPsecMainModeValue = 1
 	// Failure
-	AccountLogonLogoffAuditIPsecQuickModeFailure int64 = 2
+	AccountLogonLogoffAuditIPsecMainModeFailure AccountLogonLogoffAuditIPsecMainModeValue = 2
 	// Success+Failure
-	AccountLogonLogoffAuditIPsecQuickModeSuccessFailure int64 = 3
+	AccountLogonLogoffAuditIPsecMainModeSuccessFailure AccountLogonLogoffAuditIPsecMainModeValue = 3
 )
 
-// AccountLogonLogoffAuditLogoff allowed values.
+// String returns the AccountLogonLogoffAuditIPsecMainModeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AccountLogonLogoffAuditIPsecMainModeValue) String() string {
+	switch e {
+	case AccountLogonLogoffAuditIPsecMainModeOffNone:
+		return "AccountLogonLogoffAuditIPsecMainModeOffNone"
+	case AccountLogonLogoffAuditIPsecMainModeSuccess:
+		return "AccountLogonLogoffAuditIPsecMainModeSuccess"
+	case AccountLogonLogoffAuditIPsecMainModeFailure:
+		return "AccountLogonLogoffAuditIPsecMainModeFailure"
+	case AccountLogonLogoffAuditIPsecMainModeSuccessFailure:
+		return "AccountLogonLogoffAuditIPsecMainModeSuccessFailure"
+	default:
+		return fmt.Sprintf("AccountLogonLogoffAuditIPsecMainModeValue(%d)", int64(e))
+	}
+}
+
+// AccountLogonLogoffAuditIPsecQuickModeValue — allowed values for the AccountLogonLogoff_AuditIPsecQuickMode node.
+type AccountLogonLogoffAuditIPsecQuickModeValue int64
+
 const (
 	// Off/None
-	AccountLogonLogoffAuditLogoffOffNone int64 = 0
+	AccountLogonLogoffAuditIPsecQuickModeOffNone AccountLogonLogoffAuditIPsecQuickModeValue = 0
 	// Success
-	AccountLogonLogoffAuditLogoffSuccess int64 = 1
+	AccountLogonLogoffAuditIPsecQuickModeSuccess AccountLogonLogoffAuditIPsecQuickModeValue = 1
 	// Failure
-	AccountLogonLogoffAuditLogoffFailure int64 = 2
+	AccountLogonLogoffAuditIPsecQuickModeFailure AccountLogonLogoffAuditIPsecQuickModeValue = 2
 	// Success+Failure
-	AccountLogonLogoffAuditLogoffSuccessFailure int64 = 3
+	AccountLogonLogoffAuditIPsecQuickModeSuccessFailure AccountLogonLogoffAuditIPsecQuickModeValue = 3
 )
 
-// AccountLogonLogoffAuditLogon allowed values.
+// String returns the AccountLogonLogoffAuditIPsecQuickModeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AccountLogonLogoffAuditIPsecQuickModeValue) String() string {
+	switch e {
+	case AccountLogonLogoffAuditIPsecQuickModeOffNone:
+		return "AccountLogonLogoffAuditIPsecQuickModeOffNone"
+	case AccountLogonLogoffAuditIPsecQuickModeSuccess:
+		return "AccountLogonLogoffAuditIPsecQuickModeSuccess"
+	case AccountLogonLogoffAuditIPsecQuickModeFailure:
+		return "AccountLogonLogoffAuditIPsecQuickModeFailure"
+	case AccountLogonLogoffAuditIPsecQuickModeSuccessFailure:
+		return "AccountLogonLogoffAuditIPsecQuickModeSuccessFailure"
+	default:
+		return fmt.Sprintf("AccountLogonLogoffAuditIPsecQuickModeValue(%d)", int64(e))
+	}
+}
+
+// AccountLogonLogoffAuditLogoffValue — allowed values for the AccountLogonLogoff_AuditLogoff node.
+type AccountLogonLogoffAuditLogoffValue int64
+
 const (
 	// Off/None
-	AccountLogonLogoffAuditLogonOffNone int64 = 0
+	AccountLogonLogoffAuditLogoffOffNone AccountLogonLogoffAuditLogoffValue = 0
 	// Success
-	AccountLogonLogoffAuditLogonSuccess int64 = 1
+	AccountLogonLogoffAuditLogoffSuccess AccountLogonLogoffAuditLogoffValue = 1
 	// Failure
-	AccountLogonLogoffAuditLogonFailure int64 = 2
+	AccountLogonLogoffAuditLogoffFailure AccountLogonLogoffAuditLogoffValue = 2
 	// Success+Failure
-	AccountLogonLogoffAuditLogonSuccessFailure int64 = 3
+	AccountLogonLogoffAuditLogoffSuccessFailure AccountLogonLogoffAuditLogoffValue = 3
 )
 
-// AccountLogonLogoffAuditNetworkPolicyServer allowed values.
+// String returns the AccountLogonLogoffAuditLogoffValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AccountLogonLogoffAuditLogoffValue) String() string {
+	switch e {
+	case AccountLogonLogoffAuditLogoffOffNone:
+		return "AccountLogonLogoffAuditLogoffOffNone"
+	case AccountLogonLogoffAuditLogoffSuccess:
+		return "AccountLogonLogoffAuditLogoffSuccess"
+	case AccountLogonLogoffAuditLogoffFailure:
+		return "AccountLogonLogoffAuditLogoffFailure"
+	case AccountLogonLogoffAuditLogoffSuccessFailure:
+		return "AccountLogonLogoffAuditLogoffSuccessFailure"
+	default:
+		return fmt.Sprintf("AccountLogonLogoffAuditLogoffValue(%d)", int64(e))
+	}
+}
+
+// AccountLogonLogoffAuditLogonValue — allowed values for the AccountLogonLogoff_AuditLogon node.
+type AccountLogonLogoffAuditLogonValue int64
+
 const (
 	// Off/None
-	AccountLogonLogoffAuditNetworkPolicyServerOffNone int64 = 0
+	AccountLogonLogoffAuditLogonOffNone AccountLogonLogoffAuditLogonValue = 0
 	// Success
-	AccountLogonLogoffAuditNetworkPolicyServerSuccess int64 = 1
+	AccountLogonLogoffAuditLogonSuccess AccountLogonLogoffAuditLogonValue = 1
 	// Failure
-	AccountLogonLogoffAuditNetworkPolicyServerFailure int64 = 2
+	AccountLogonLogoffAuditLogonFailure AccountLogonLogoffAuditLogonValue = 2
 	// Success+Failure
-	AccountLogonLogoffAuditNetworkPolicyServerSuccessFailure int64 = 3
+	AccountLogonLogoffAuditLogonSuccessFailure AccountLogonLogoffAuditLogonValue = 3
 )
 
-// AccountLogonLogoffAuditOtherLogonLogoffEvents allowed values.
+// String returns the AccountLogonLogoffAuditLogonValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AccountLogonLogoffAuditLogonValue) String() string {
+	switch e {
+	case AccountLogonLogoffAuditLogonOffNone:
+		return "AccountLogonLogoffAuditLogonOffNone"
+	case AccountLogonLogoffAuditLogonSuccess:
+		return "AccountLogonLogoffAuditLogonSuccess"
+	case AccountLogonLogoffAuditLogonFailure:
+		return "AccountLogonLogoffAuditLogonFailure"
+	case AccountLogonLogoffAuditLogonSuccessFailure:
+		return "AccountLogonLogoffAuditLogonSuccessFailure"
+	default:
+		return fmt.Sprintf("AccountLogonLogoffAuditLogonValue(%d)", int64(e))
+	}
+}
+
+// AccountLogonLogoffAuditNetworkPolicyServerValue — allowed values for the AccountLogonLogoff_AuditNetworkPolicyServer node.
+type AccountLogonLogoffAuditNetworkPolicyServerValue int64
+
 const (
 	// Off/None
-	AccountLogonLogoffAuditOtherLogonLogoffEventsOffNone int64 = 0
+	AccountLogonLogoffAuditNetworkPolicyServerOffNone AccountLogonLogoffAuditNetworkPolicyServerValue = 0
 	// Success
-	AccountLogonLogoffAuditOtherLogonLogoffEventsSuccess int64 = 1
+	AccountLogonLogoffAuditNetworkPolicyServerSuccess AccountLogonLogoffAuditNetworkPolicyServerValue = 1
 	// Failure
-	AccountLogonLogoffAuditOtherLogonLogoffEventsFailure int64 = 2
+	AccountLogonLogoffAuditNetworkPolicyServerFailure AccountLogonLogoffAuditNetworkPolicyServerValue = 2
 	// Success+Failure
-	AccountLogonLogoffAuditOtherLogonLogoffEventsSuccessFailure int64 = 3
+	AccountLogonLogoffAuditNetworkPolicyServerSuccessFailure AccountLogonLogoffAuditNetworkPolicyServerValue = 3
 )
 
-// AccountLogonLogoffAuditSpecialLogon allowed values.
+// String returns the AccountLogonLogoffAuditNetworkPolicyServerValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AccountLogonLogoffAuditNetworkPolicyServerValue) String() string {
+	switch e {
+	case AccountLogonLogoffAuditNetworkPolicyServerOffNone:
+		return "AccountLogonLogoffAuditNetworkPolicyServerOffNone"
+	case AccountLogonLogoffAuditNetworkPolicyServerSuccess:
+		return "AccountLogonLogoffAuditNetworkPolicyServerSuccess"
+	case AccountLogonLogoffAuditNetworkPolicyServerFailure:
+		return "AccountLogonLogoffAuditNetworkPolicyServerFailure"
+	case AccountLogonLogoffAuditNetworkPolicyServerSuccessFailure:
+		return "AccountLogonLogoffAuditNetworkPolicyServerSuccessFailure"
+	default:
+		return fmt.Sprintf("AccountLogonLogoffAuditNetworkPolicyServerValue(%d)", int64(e))
+	}
+}
+
+// AccountLogonLogoffAuditOtherLogonLogoffEventsValue — allowed values for the AccountLogonLogoff_AuditOtherLogonLogoffEvents node.
+type AccountLogonLogoffAuditOtherLogonLogoffEventsValue int64
+
 const (
 	// Off/None
-	AccountLogonLogoffAuditSpecialLogonOffNone int64 = 0
+	AccountLogonLogoffAuditOtherLogonLogoffEventsOffNone AccountLogonLogoffAuditOtherLogonLogoffEventsValue = 0
 	// Success
-	AccountLogonLogoffAuditSpecialLogonSuccess int64 = 1
+	AccountLogonLogoffAuditOtherLogonLogoffEventsSuccess AccountLogonLogoffAuditOtherLogonLogoffEventsValue = 1
 	// Failure
-	AccountLogonLogoffAuditSpecialLogonFailure int64 = 2
+	AccountLogonLogoffAuditOtherLogonLogoffEventsFailure AccountLogonLogoffAuditOtherLogonLogoffEventsValue = 2
 	// Success+Failure
-	AccountLogonLogoffAuditSpecialLogonSuccessFailure int64 = 3
+	AccountLogonLogoffAuditOtherLogonLogoffEventsSuccessFailure AccountLogonLogoffAuditOtherLogonLogoffEventsValue = 3
 )
 
-// AccountLogonLogoffAuditUserDeviceClaims allowed values.
+// String returns the AccountLogonLogoffAuditOtherLogonLogoffEventsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AccountLogonLogoffAuditOtherLogonLogoffEventsValue) String() string {
+	switch e {
+	case AccountLogonLogoffAuditOtherLogonLogoffEventsOffNone:
+		return "AccountLogonLogoffAuditOtherLogonLogoffEventsOffNone"
+	case AccountLogonLogoffAuditOtherLogonLogoffEventsSuccess:
+		return "AccountLogonLogoffAuditOtherLogonLogoffEventsSuccess"
+	case AccountLogonLogoffAuditOtherLogonLogoffEventsFailure:
+		return "AccountLogonLogoffAuditOtherLogonLogoffEventsFailure"
+	case AccountLogonLogoffAuditOtherLogonLogoffEventsSuccessFailure:
+		return "AccountLogonLogoffAuditOtherLogonLogoffEventsSuccessFailure"
+	default:
+		return fmt.Sprintf("AccountLogonLogoffAuditOtherLogonLogoffEventsValue(%d)", int64(e))
+	}
+}
+
+// AccountLogonLogoffAuditSpecialLogonValue — allowed values for the AccountLogonLogoff_AuditSpecialLogon node.
+type AccountLogonLogoffAuditSpecialLogonValue int64
+
 const (
 	// Off/None
-	AccountLogonLogoffAuditUserDeviceClaimsOffNone int64 = 0
+	AccountLogonLogoffAuditSpecialLogonOffNone AccountLogonLogoffAuditSpecialLogonValue = 0
 	// Success
-	AccountLogonLogoffAuditUserDeviceClaimsSuccess int64 = 1
+	AccountLogonLogoffAuditSpecialLogonSuccess AccountLogonLogoffAuditSpecialLogonValue = 1
 	// Failure
-	AccountLogonLogoffAuditUserDeviceClaimsFailure int64 = 2
+	AccountLogonLogoffAuditSpecialLogonFailure AccountLogonLogoffAuditSpecialLogonValue = 2
 	// Success+Failure
-	AccountLogonLogoffAuditUserDeviceClaimsSuccessFailure int64 = 3
+	AccountLogonLogoffAuditSpecialLogonSuccessFailure AccountLogonLogoffAuditSpecialLogonValue = 3
 )
 
-// AccountLogonAuditCredentialValidation allowed values.
+// String returns the AccountLogonLogoffAuditSpecialLogonValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AccountLogonLogoffAuditSpecialLogonValue) String() string {
+	switch e {
+	case AccountLogonLogoffAuditSpecialLogonOffNone:
+		return "AccountLogonLogoffAuditSpecialLogonOffNone"
+	case AccountLogonLogoffAuditSpecialLogonSuccess:
+		return "AccountLogonLogoffAuditSpecialLogonSuccess"
+	case AccountLogonLogoffAuditSpecialLogonFailure:
+		return "AccountLogonLogoffAuditSpecialLogonFailure"
+	case AccountLogonLogoffAuditSpecialLogonSuccessFailure:
+		return "AccountLogonLogoffAuditSpecialLogonSuccessFailure"
+	default:
+		return fmt.Sprintf("AccountLogonLogoffAuditSpecialLogonValue(%d)", int64(e))
+	}
+}
+
+// AccountLogonLogoffAuditUserDeviceClaimsValue — allowed values for the AccountLogonLogoff_AuditUserDeviceClaims node.
+type AccountLogonLogoffAuditUserDeviceClaimsValue int64
+
 const (
 	// Off/None
-	AccountLogonAuditCredentialValidationOffNone int64 = 0
+	AccountLogonLogoffAuditUserDeviceClaimsOffNone AccountLogonLogoffAuditUserDeviceClaimsValue = 0
 	// Success
-	AccountLogonAuditCredentialValidationSuccess int64 = 1
+	AccountLogonLogoffAuditUserDeviceClaimsSuccess AccountLogonLogoffAuditUserDeviceClaimsValue = 1
 	// Failure
-	AccountLogonAuditCredentialValidationFailure int64 = 2
+	AccountLogonLogoffAuditUserDeviceClaimsFailure AccountLogonLogoffAuditUserDeviceClaimsValue = 2
 	// Success+Failure
-	AccountLogonAuditCredentialValidationSuccessFailure int64 = 3
+	AccountLogonLogoffAuditUserDeviceClaimsSuccessFailure AccountLogonLogoffAuditUserDeviceClaimsValue = 3
 )
 
-// AccountLogonAuditKerberosAuthenticationService allowed values.
+// String returns the AccountLogonLogoffAuditUserDeviceClaimsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AccountLogonLogoffAuditUserDeviceClaimsValue) String() string {
+	switch e {
+	case AccountLogonLogoffAuditUserDeviceClaimsOffNone:
+		return "AccountLogonLogoffAuditUserDeviceClaimsOffNone"
+	case AccountLogonLogoffAuditUserDeviceClaimsSuccess:
+		return "AccountLogonLogoffAuditUserDeviceClaimsSuccess"
+	case AccountLogonLogoffAuditUserDeviceClaimsFailure:
+		return "AccountLogonLogoffAuditUserDeviceClaimsFailure"
+	case AccountLogonLogoffAuditUserDeviceClaimsSuccessFailure:
+		return "AccountLogonLogoffAuditUserDeviceClaimsSuccessFailure"
+	default:
+		return fmt.Sprintf("AccountLogonLogoffAuditUserDeviceClaimsValue(%d)", int64(e))
+	}
+}
+
+// AccountLogonAuditCredentialValidationValue — allowed values for the AccountLogon_AuditCredentialValidation node.
+type AccountLogonAuditCredentialValidationValue int64
+
 const (
 	// Off/None
-	AccountLogonAuditKerberosAuthenticationServiceOffNone int64 = 0
+	AccountLogonAuditCredentialValidationOffNone AccountLogonAuditCredentialValidationValue = 0
 	// Success
-	AccountLogonAuditKerberosAuthenticationServiceSuccess int64 = 1
+	AccountLogonAuditCredentialValidationSuccess AccountLogonAuditCredentialValidationValue = 1
 	// Failure
-	AccountLogonAuditKerberosAuthenticationServiceFailure int64 = 2
+	AccountLogonAuditCredentialValidationFailure AccountLogonAuditCredentialValidationValue = 2
 	// Success+Failure
-	AccountLogonAuditKerberosAuthenticationServiceSuccessFailure int64 = 3
+	AccountLogonAuditCredentialValidationSuccessFailure AccountLogonAuditCredentialValidationValue = 3
 )
 
-// AccountLogonAuditKerberosServiceTicketOperations allowed values.
+// String returns the AccountLogonAuditCredentialValidationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AccountLogonAuditCredentialValidationValue) String() string {
+	switch e {
+	case AccountLogonAuditCredentialValidationOffNone:
+		return "AccountLogonAuditCredentialValidationOffNone"
+	case AccountLogonAuditCredentialValidationSuccess:
+		return "AccountLogonAuditCredentialValidationSuccess"
+	case AccountLogonAuditCredentialValidationFailure:
+		return "AccountLogonAuditCredentialValidationFailure"
+	case AccountLogonAuditCredentialValidationSuccessFailure:
+		return "AccountLogonAuditCredentialValidationSuccessFailure"
+	default:
+		return fmt.Sprintf("AccountLogonAuditCredentialValidationValue(%d)", int64(e))
+	}
+}
+
+// AccountLogonAuditKerberosAuthenticationServiceValue — allowed values for the AccountLogon_AuditKerberosAuthenticationService node.
+type AccountLogonAuditKerberosAuthenticationServiceValue int64
+
 const (
 	// Off/None
-	AccountLogonAuditKerberosServiceTicketOperationsOffNone int64 = 0
+	AccountLogonAuditKerberosAuthenticationServiceOffNone AccountLogonAuditKerberosAuthenticationServiceValue = 0
 	// Success
-	AccountLogonAuditKerberosServiceTicketOperationsSuccess int64 = 1
+	AccountLogonAuditKerberosAuthenticationServiceSuccess AccountLogonAuditKerberosAuthenticationServiceValue = 1
 	// Failure
-	AccountLogonAuditKerberosServiceTicketOperationsFailure int64 = 2
+	AccountLogonAuditKerberosAuthenticationServiceFailure AccountLogonAuditKerberosAuthenticationServiceValue = 2
 	// Success+Failure
-	AccountLogonAuditKerberosServiceTicketOperationsSuccessFailure int64 = 3
+	AccountLogonAuditKerberosAuthenticationServiceSuccessFailure AccountLogonAuditKerberosAuthenticationServiceValue = 3
 )
 
-// AccountLogonAuditOtherAccountLogonEvents allowed values.
+// String returns the AccountLogonAuditKerberosAuthenticationServiceValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AccountLogonAuditKerberosAuthenticationServiceValue) String() string {
+	switch e {
+	case AccountLogonAuditKerberosAuthenticationServiceOffNone:
+		return "AccountLogonAuditKerberosAuthenticationServiceOffNone"
+	case AccountLogonAuditKerberosAuthenticationServiceSuccess:
+		return "AccountLogonAuditKerberosAuthenticationServiceSuccess"
+	case AccountLogonAuditKerberosAuthenticationServiceFailure:
+		return "AccountLogonAuditKerberosAuthenticationServiceFailure"
+	case AccountLogonAuditKerberosAuthenticationServiceSuccessFailure:
+		return "AccountLogonAuditKerberosAuthenticationServiceSuccessFailure"
+	default:
+		return fmt.Sprintf("AccountLogonAuditKerberosAuthenticationServiceValue(%d)", int64(e))
+	}
+}
+
+// AccountLogonAuditKerberosServiceTicketOperationsValue — allowed values for the AccountLogon_AuditKerberosServiceTicketOperations node.
+type AccountLogonAuditKerberosServiceTicketOperationsValue int64
+
 const (
 	// Off/None
-	AccountLogonAuditOtherAccountLogonEventsOffNone int64 = 0
+	AccountLogonAuditKerberosServiceTicketOperationsOffNone AccountLogonAuditKerberosServiceTicketOperationsValue = 0
 	// Success
-	AccountLogonAuditOtherAccountLogonEventsSuccess int64 = 1
+	AccountLogonAuditKerberosServiceTicketOperationsSuccess AccountLogonAuditKerberosServiceTicketOperationsValue = 1
 	// Failure
-	AccountLogonAuditOtherAccountLogonEventsFailure int64 = 2
+	AccountLogonAuditKerberosServiceTicketOperationsFailure AccountLogonAuditKerberosServiceTicketOperationsValue = 2
 	// Success+Failure
-	AccountLogonAuditOtherAccountLogonEventsSuccessFailure int64 = 3
+	AccountLogonAuditKerberosServiceTicketOperationsSuccessFailure AccountLogonAuditKerberosServiceTicketOperationsValue = 3
 )
 
-// AccountManagementAuditApplicationGroupManagement allowed values.
+// String returns the AccountLogonAuditKerberosServiceTicketOperationsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AccountLogonAuditKerberosServiceTicketOperationsValue) String() string {
+	switch e {
+	case AccountLogonAuditKerberosServiceTicketOperationsOffNone:
+		return "AccountLogonAuditKerberosServiceTicketOperationsOffNone"
+	case AccountLogonAuditKerberosServiceTicketOperationsSuccess:
+		return "AccountLogonAuditKerberosServiceTicketOperationsSuccess"
+	case AccountLogonAuditKerberosServiceTicketOperationsFailure:
+		return "AccountLogonAuditKerberosServiceTicketOperationsFailure"
+	case AccountLogonAuditKerberosServiceTicketOperationsSuccessFailure:
+		return "AccountLogonAuditKerberosServiceTicketOperationsSuccessFailure"
+	default:
+		return fmt.Sprintf("AccountLogonAuditKerberosServiceTicketOperationsValue(%d)", int64(e))
+	}
+}
+
+// AccountLogonAuditOtherAccountLogonEventsValue — allowed values for the AccountLogon_AuditOtherAccountLogonEvents node.
+type AccountLogonAuditOtherAccountLogonEventsValue int64
+
 const (
 	// Off/None
-	AccountManagementAuditApplicationGroupManagementOffNone int64 = 0
+	AccountLogonAuditOtherAccountLogonEventsOffNone AccountLogonAuditOtherAccountLogonEventsValue = 0
 	// Success
-	AccountManagementAuditApplicationGroupManagementSuccess int64 = 1
+	AccountLogonAuditOtherAccountLogonEventsSuccess AccountLogonAuditOtherAccountLogonEventsValue = 1
 	// Failure
-	AccountManagementAuditApplicationGroupManagementFailure int64 = 2
+	AccountLogonAuditOtherAccountLogonEventsFailure AccountLogonAuditOtherAccountLogonEventsValue = 2
 	// Success+Failure
-	AccountManagementAuditApplicationGroupManagementSuccessFailure int64 = 3
+	AccountLogonAuditOtherAccountLogonEventsSuccessFailure AccountLogonAuditOtherAccountLogonEventsValue = 3
 )
 
-// AccountManagementAuditComputerAccountManagement allowed values.
+// String returns the AccountLogonAuditOtherAccountLogonEventsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AccountLogonAuditOtherAccountLogonEventsValue) String() string {
+	switch e {
+	case AccountLogonAuditOtherAccountLogonEventsOffNone:
+		return "AccountLogonAuditOtherAccountLogonEventsOffNone"
+	case AccountLogonAuditOtherAccountLogonEventsSuccess:
+		return "AccountLogonAuditOtherAccountLogonEventsSuccess"
+	case AccountLogonAuditOtherAccountLogonEventsFailure:
+		return "AccountLogonAuditOtherAccountLogonEventsFailure"
+	case AccountLogonAuditOtherAccountLogonEventsSuccessFailure:
+		return "AccountLogonAuditOtherAccountLogonEventsSuccessFailure"
+	default:
+		return fmt.Sprintf("AccountLogonAuditOtherAccountLogonEventsValue(%d)", int64(e))
+	}
+}
+
+// AccountManagementAuditApplicationGroupManagementValue — allowed values for the AccountManagement_AuditApplicationGroupManagement node.
+type AccountManagementAuditApplicationGroupManagementValue int64
+
 const (
 	// Off/None
-	AccountManagementAuditComputerAccountManagementOffNone int64 = 0
+	AccountManagementAuditApplicationGroupManagementOffNone AccountManagementAuditApplicationGroupManagementValue = 0
 	// Success
-	AccountManagementAuditComputerAccountManagementSuccess int64 = 1
+	AccountManagementAuditApplicationGroupManagementSuccess AccountManagementAuditApplicationGroupManagementValue = 1
 	// Failure
-	AccountManagementAuditComputerAccountManagementFailure int64 = 2
+	AccountManagementAuditApplicationGroupManagementFailure AccountManagementAuditApplicationGroupManagementValue = 2
 	// Success+Failure
-	AccountManagementAuditComputerAccountManagementSuccessFailure int64 = 3
+	AccountManagementAuditApplicationGroupManagementSuccessFailure AccountManagementAuditApplicationGroupManagementValue = 3
 )
 
-// AccountManagementAuditDistributionGroupManagement allowed values.
+// String returns the AccountManagementAuditApplicationGroupManagementValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AccountManagementAuditApplicationGroupManagementValue) String() string {
+	switch e {
+	case AccountManagementAuditApplicationGroupManagementOffNone:
+		return "AccountManagementAuditApplicationGroupManagementOffNone"
+	case AccountManagementAuditApplicationGroupManagementSuccess:
+		return "AccountManagementAuditApplicationGroupManagementSuccess"
+	case AccountManagementAuditApplicationGroupManagementFailure:
+		return "AccountManagementAuditApplicationGroupManagementFailure"
+	case AccountManagementAuditApplicationGroupManagementSuccessFailure:
+		return "AccountManagementAuditApplicationGroupManagementSuccessFailure"
+	default:
+		return fmt.Sprintf("AccountManagementAuditApplicationGroupManagementValue(%d)", int64(e))
+	}
+}
+
+// AccountManagementAuditComputerAccountManagementValue — allowed values for the AccountManagement_AuditComputerAccountManagement node.
+type AccountManagementAuditComputerAccountManagementValue int64
+
 const (
 	// Off/None
-	AccountManagementAuditDistributionGroupManagementOffNone int64 = 0
+	AccountManagementAuditComputerAccountManagementOffNone AccountManagementAuditComputerAccountManagementValue = 0
 	// Success
-	AccountManagementAuditDistributionGroupManagementSuccess int64 = 1
+	AccountManagementAuditComputerAccountManagementSuccess AccountManagementAuditComputerAccountManagementValue = 1
 	// Failure
-	AccountManagementAuditDistributionGroupManagementFailure int64 = 2
+	AccountManagementAuditComputerAccountManagementFailure AccountManagementAuditComputerAccountManagementValue = 2
 	// Success+Failure
-	AccountManagementAuditDistributionGroupManagementSuccessFailure int64 = 3
+	AccountManagementAuditComputerAccountManagementSuccessFailure AccountManagementAuditComputerAccountManagementValue = 3
 )
 
-// AccountManagementAuditOtherAccountManagementEvents allowed values.
+// String returns the AccountManagementAuditComputerAccountManagementValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AccountManagementAuditComputerAccountManagementValue) String() string {
+	switch e {
+	case AccountManagementAuditComputerAccountManagementOffNone:
+		return "AccountManagementAuditComputerAccountManagementOffNone"
+	case AccountManagementAuditComputerAccountManagementSuccess:
+		return "AccountManagementAuditComputerAccountManagementSuccess"
+	case AccountManagementAuditComputerAccountManagementFailure:
+		return "AccountManagementAuditComputerAccountManagementFailure"
+	case AccountManagementAuditComputerAccountManagementSuccessFailure:
+		return "AccountManagementAuditComputerAccountManagementSuccessFailure"
+	default:
+		return fmt.Sprintf("AccountManagementAuditComputerAccountManagementValue(%d)", int64(e))
+	}
+}
+
+// AccountManagementAuditDistributionGroupManagementValue — allowed values for the AccountManagement_AuditDistributionGroupManagement node.
+type AccountManagementAuditDistributionGroupManagementValue int64
+
 const (
 	// Off/None
-	AccountManagementAuditOtherAccountManagementEventsOffNone int64 = 0
+	AccountManagementAuditDistributionGroupManagementOffNone AccountManagementAuditDistributionGroupManagementValue = 0
 	// Success
-	AccountManagementAuditOtherAccountManagementEventsSuccess int64 = 1
+	AccountManagementAuditDistributionGroupManagementSuccess AccountManagementAuditDistributionGroupManagementValue = 1
 	// Failure
-	AccountManagementAuditOtherAccountManagementEventsFailure int64 = 2
+	AccountManagementAuditDistributionGroupManagementFailure AccountManagementAuditDistributionGroupManagementValue = 2
 	// Success+Failure
-	AccountManagementAuditOtherAccountManagementEventsSuccessFailure int64 = 3
+	AccountManagementAuditDistributionGroupManagementSuccessFailure AccountManagementAuditDistributionGroupManagementValue = 3
 )
 
-// AccountManagementAuditSecurityGroupManagement allowed values.
+// String returns the AccountManagementAuditDistributionGroupManagementValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AccountManagementAuditDistributionGroupManagementValue) String() string {
+	switch e {
+	case AccountManagementAuditDistributionGroupManagementOffNone:
+		return "AccountManagementAuditDistributionGroupManagementOffNone"
+	case AccountManagementAuditDistributionGroupManagementSuccess:
+		return "AccountManagementAuditDistributionGroupManagementSuccess"
+	case AccountManagementAuditDistributionGroupManagementFailure:
+		return "AccountManagementAuditDistributionGroupManagementFailure"
+	case AccountManagementAuditDistributionGroupManagementSuccessFailure:
+		return "AccountManagementAuditDistributionGroupManagementSuccessFailure"
+	default:
+		return fmt.Sprintf("AccountManagementAuditDistributionGroupManagementValue(%d)", int64(e))
+	}
+}
+
+// AccountManagementAuditOtherAccountManagementEventsValue — allowed values for the AccountManagement_AuditOtherAccountManagementEvents node.
+type AccountManagementAuditOtherAccountManagementEventsValue int64
+
 const (
 	// Off/None
-	AccountManagementAuditSecurityGroupManagementOffNone int64 = 0
+	AccountManagementAuditOtherAccountManagementEventsOffNone AccountManagementAuditOtherAccountManagementEventsValue = 0
 	// Success
-	AccountManagementAuditSecurityGroupManagementSuccess int64 = 1
+	AccountManagementAuditOtherAccountManagementEventsSuccess AccountManagementAuditOtherAccountManagementEventsValue = 1
 	// Failure
-	AccountManagementAuditSecurityGroupManagementFailure int64 = 2
+	AccountManagementAuditOtherAccountManagementEventsFailure AccountManagementAuditOtherAccountManagementEventsValue = 2
 	// Success+Failure
-	AccountManagementAuditSecurityGroupManagementSuccessFailure int64 = 3
+	AccountManagementAuditOtherAccountManagementEventsSuccessFailure AccountManagementAuditOtherAccountManagementEventsValue = 3
 )
 
-// AccountManagementAuditUserAccountManagement allowed values.
+// String returns the AccountManagementAuditOtherAccountManagementEventsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AccountManagementAuditOtherAccountManagementEventsValue) String() string {
+	switch e {
+	case AccountManagementAuditOtherAccountManagementEventsOffNone:
+		return "AccountManagementAuditOtherAccountManagementEventsOffNone"
+	case AccountManagementAuditOtherAccountManagementEventsSuccess:
+		return "AccountManagementAuditOtherAccountManagementEventsSuccess"
+	case AccountManagementAuditOtherAccountManagementEventsFailure:
+		return "AccountManagementAuditOtherAccountManagementEventsFailure"
+	case AccountManagementAuditOtherAccountManagementEventsSuccessFailure:
+		return "AccountManagementAuditOtherAccountManagementEventsSuccessFailure"
+	default:
+		return fmt.Sprintf("AccountManagementAuditOtherAccountManagementEventsValue(%d)", int64(e))
+	}
+}
+
+// AccountManagementAuditSecurityGroupManagementValue — allowed values for the AccountManagement_AuditSecurityGroupManagement node.
+type AccountManagementAuditSecurityGroupManagementValue int64
+
 const (
 	// Off/None
-	AccountManagementAuditUserAccountManagementOffNone int64 = 0
+	AccountManagementAuditSecurityGroupManagementOffNone AccountManagementAuditSecurityGroupManagementValue = 0
 	// Success
-	AccountManagementAuditUserAccountManagementSuccess int64 = 1
+	AccountManagementAuditSecurityGroupManagementSuccess AccountManagementAuditSecurityGroupManagementValue = 1
 	// Failure
-	AccountManagementAuditUserAccountManagementFailure int64 = 2
+	AccountManagementAuditSecurityGroupManagementFailure AccountManagementAuditSecurityGroupManagementValue = 2
 	// Success+Failure
-	AccountManagementAuditUserAccountManagementSuccessFailure int64 = 3
+	AccountManagementAuditSecurityGroupManagementSuccessFailure AccountManagementAuditSecurityGroupManagementValue = 3
 )
 
-// DSAccessAuditDetailedDirectoryServiceReplication allowed values.
+// String returns the AccountManagementAuditSecurityGroupManagementValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AccountManagementAuditSecurityGroupManagementValue) String() string {
+	switch e {
+	case AccountManagementAuditSecurityGroupManagementOffNone:
+		return "AccountManagementAuditSecurityGroupManagementOffNone"
+	case AccountManagementAuditSecurityGroupManagementSuccess:
+		return "AccountManagementAuditSecurityGroupManagementSuccess"
+	case AccountManagementAuditSecurityGroupManagementFailure:
+		return "AccountManagementAuditSecurityGroupManagementFailure"
+	case AccountManagementAuditSecurityGroupManagementSuccessFailure:
+		return "AccountManagementAuditSecurityGroupManagementSuccessFailure"
+	default:
+		return fmt.Sprintf("AccountManagementAuditSecurityGroupManagementValue(%d)", int64(e))
+	}
+}
+
+// AccountManagementAuditUserAccountManagementValue — allowed values for the AccountManagement_AuditUserAccountManagement node.
+type AccountManagementAuditUserAccountManagementValue int64
+
 const (
 	// Off/None
-	DSAccessAuditDetailedDirectoryServiceReplicationOffNone int64 = 0
+	AccountManagementAuditUserAccountManagementOffNone AccountManagementAuditUserAccountManagementValue = 0
 	// Success
-	DSAccessAuditDetailedDirectoryServiceReplicationSuccess int64 = 1
+	AccountManagementAuditUserAccountManagementSuccess AccountManagementAuditUserAccountManagementValue = 1
 	// Failure
-	DSAccessAuditDetailedDirectoryServiceReplicationFailure int64 = 2
+	AccountManagementAuditUserAccountManagementFailure AccountManagementAuditUserAccountManagementValue = 2
 	// Success+Failure
-	DSAccessAuditDetailedDirectoryServiceReplicationSuccessFailure int64 = 3
+	AccountManagementAuditUserAccountManagementSuccessFailure AccountManagementAuditUserAccountManagementValue = 3
 )
 
-// DSAccessAuditDirectoryServiceAccess allowed values.
+// String returns the AccountManagementAuditUserAccountManagementValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AccountManagementAuditUserAccountManagementValue) String() string {
+	switch e {
+	case AccountManagementAuditUserAccountManagementOffNone:
+		return "AccountManagementAuditUserAccountManagementOffNone"
+	case AccountManagementAuditUserAccountManagementSuccess:
+		return "AccountManagementAuditUserAccountManagementSuccess"
+	case AccountManagementAuditUserAccountManagementFailure:
+		return "AccountManagementAuditUserAccountManagementFailure"
+	case AccountManagementAuditUserAccountManagementSuccessFailure:
+		return "AccountManagementAuditUserAccountManagementSuccessFailure"
+	default:
+		return fmt.Sprintf("AccountManagementAuditUserAccountManagementValue(%d)", int64(e))
+	}
+}
+
+// DSAccessAuditDetailedDirectoryServiceReplicationValue — allowed values for the DSAccess_AuditDetailedDirectoryServiceReplication node.
+type DSAccessAuditDetailedDirectoryServiceReplicationValue int64
+
 const (
 	// Off/None
-	DSAccessAuditDirectoryServiceAccessOffNone int64 = 0
+	DSAccessAuditDetailedDirectoryServiceReplicationOffNone DSAccessAuditDetailedDirectoryServiceReplicationValue = 0
 	// Success
-	DSAccessAuditDirectoryServiceAccessSuccess int64 = 1
+	DSAccessAuditDetailedDirectoryServiceReplicationSuccess DSAccessAuditDetailedDirectoryServiceReplicationValue = 1
 	// Failure
-	DSAccessAuditDirectoryServiceAccessFailure int64 = 2
+	DSAccessAuditDetailedDirectoryServiceReplicationFailure DSAccessAuditDetailedDirectoryServiceReplicationValue = 2
 	// Success+Failure
-	DSAccessAuditDirectoryServiceAccessSuccessFailure int64 = 3
+	DSAccessAuditDetailedDirectoryServiceReplicationSuccessFailure DSAccessAuditDetailedDirectoryServiceReplicationValue = 3
 )
 
-// DSAccessAuditDirectoryServiceChanges allowed values.
+// String returns the DSAccessAuditDetailedDirectoryServiceReplicationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DSAccessAuditDetailedDirectoryServiceReplicationValue) String() string {
+	switch e {
+	case DSAccessAuditDetailedDirectoryServiceReplicationOffNone:
+		return "DSAccessAuditDetailedDirectoryServiceReplicationOffNone"
+	case DSAccessAuditDetailedDirectoryServiceReplicationSuccess:
+		return "DSAccessAuditDetailedDirectoryServiceReplicationSuccess"
+	case DSAccessAuditDetailedDirectoryServiceReplicationFailure:
+		return "DSAccessAuditDetailedDirectoryServiceReplicationFailure"
+	case DSAccessAuditDetailedDirectoryServiceReplicationSuccessFailure:
+		return "DSAccessAuditDetailedDirectoryServiceReplicationSuccessFailure"
+	default:
+		return fmt.Sprintf("DSAccessAuditDetailedDirectoryServiceReplicationValue(%d)", int64(e))
+	}
+}
+
+// DSAccessAuditDirectoryServiceAccessValue — allowed values for the DSAccess_AuditDirectoryServiceAccess node.
+type DSAccessAuditDirectoryServiceAccessValue int64
+
 const (
 	// Off/None
-	DSAccessAuditDirectoryServiceChangesOffNone int64 = 0
+	DSAccessAuditDirectoryServiceAccessOffNone DSAccessAuditDirectoryServiceAccessValue = 0
 	// Success
-	DSAccessAuditDirectoryServiceChangesSuccess int64 = 1
+	DSAccessAuditDirectoryServiceAccessSuccess DSAccessAuditDirectoryServiceAccessValue = 1
 	// Failure
-	DSAccessAuditDirectoryServiceChangesFailure int64 = 2
+	DSAccessAuditDirectoryServiceAccessFailure DSAccessAuditDirectoryServiceAccessValue = 2
 	// Success+Failure
-	DSAccessAuditDirectoryServiceChangesSuccessFailure int64 = 3
+	DSAccessAuditDirectoryServiceAccessSuccessFailure DSAccessAuditDirectoryServiceAccessValue = 3
 )
 
-// DSAccessAuditDirectoryServiceReplication allowed values.
+// String returns the DSAccessAuditDirectoryServiceAccessValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DSAccessAuditDirectoryServiceAccessValue) String() string {
+	switch e {
+	case DSAccessAuditDirectoryServiceAccessOffNone:
+		return "DSAccessAuditDirectoryServiceAccessOffNone"
+	case DSAccessAuditDirectoryServiceAccessSuccess:
+		return "DSAccessAuditDirectoryServiceAccessSuccess"
+	case DSAccessAuditDirectoryServiceAccessFailure:
+		return "DSAccessAuditDirectoryServiceAccessFailure"
+	case DSAccessAuditDirectoryServiceAccessSuccessFailure:
+		return "DSAccessAuditDirectoryServiceAccessSuccessFailure"
+	default:
+		return fmt.Sprintf("DSAccessAuditDirectoryServiceAccessValue(%d)", int64(e))
+	}
+}
+
+// DSAccessAuditDirectoryServiceChangesValue — allowed values for the DSAccess_AuditDirectoryServiceChanges node.
+type DSAccessAuditDirectoryServiceChangesValue int64
+
 const (
 	// Off/None
-	DSAccessAuditDirectoryServiceReplicationOffNone int64 = 0
+	DSAccessAuditDirectoryServiceChangesOffNone DSAccessAuditDirectoryServiceChangesValue = 0
 	// Success
-	DSAccessAuditDirectoryServiceReplicationSuccess int64 = 1
+	DSAccessAuditDirectoryServiceChangesSuccess DSAccessAuditDirectoryServiceChangesValue = 1
 	// Failure
-	DSAccessAuditDirectoryServiceReplicationFailure int64 = 2
+	DSAccessAuditDirectoryServiceChangesFailure DSAccessAuditDirectoryServiceChangesValue = 2
 	// Success+Failure
-	DSAccessAuditDirectoryServiceReplicationSuccessFailure int64 = 3
+	DSAccessAuditDirectoryServiceChangesSuccessFailure DSAccessAuditDirectoryServiceChangesValue = 3
 )
 
-// DetailedTrackingAuditDPAPIActivity allowed values.
+// String returns the DSAccessAuditDirectoryServiceChangesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DSAccessAuditDirectoryServiceChangesValue) String() string {
+	switch e {
+	case DSAccessAuditDirectoryServiceChangesOffNone:
+		return "DSAccessAuditDirectoryServiceChangesOffNone"
+	case DSAccessAuditDirectoryServiceChangesSuccess:
+		return "DSAccessAuditDirectoryServiceChangesSuccess"
+	case DSAccessAuditDirectoryServiceChangesFailure:
+		return "DSAccessAuditDirectoryServiceChangesFailure"
+	case DSAccessAuditDirectoryServiceChangesSuccessFailure:
+		return "DSAccessAuditDirectoryServiceChangesSuccessFailure"
+	default:
+		return fmt.Sprintf("DSAccessAuditDirectoryServiceChangesValue(%d)", int64(e))
+	}
+}
+
+// DSAccessAuditDirectoryServiceReplicationValue — allowed values for the DSAccess_AuditDirectoryServiceReplication node.
+type DSAccessAuditDirectoryServiceReplicationValue int64
+
 const (
 	// Off/None
-	DetailedTrackingAuditDPAPIActivityOffNone int64 = 0
+	DSAccessAuditDirectoryServiceReplicationOffNone DSAccessAuditDirectoryServiceReplicationValue = 0
 	// Success
-	DetailedTrackingAuditDPAPIActivitySuccess int64 = 1
+	DSAccessAuditDirectoryServiceReplicationSuccess DSAccessAuditDirectoryServiceReplicationValue = 1
 	// Failure
-	DetailedTrackingAuditDPAPIActivityFailure int64 = 2
+	DSAccessAuditDirectoryServiceReplicationFailure DSAccessAuditDirectoryServiceReplicationValue = 2
 	// Success+Failure
-	DetailedTrackingAuditDPAPIActivitySuccessFailure int64 = 3
+	DSAccessAuditDirectoryServiceReplicationSuccessFailure DSAccessAuditDirectoryServiceReplicationValue = 3
 )
 
-// DetailedTrackingAuditPNPActivity allowed values.
+// String returns the DSAccessAuditDirectoryServiceReplicationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DSAccessAuditDirectoryServiceReplicationValue) String() string {
+	switch e {
+	case DSAccessAuditDirectoryServiceReplicationOffNone:
+		return "DSAccessAuditDirectoryServiceReplicationOffNone"
+	case DSAccessAuditDirectoryServiceReplicationSuccess:
+		return "DSAccessAuditDirectoryServiceReplicationSuccess"
+	case DSAccessAuditDirectoryServiceReplicationFailure:
+		return "DSAccessAuditDirectoryServiceReplicationFailure"
+	case DSAccessAuditDirectoryServiceReplicationSuccessFailure:
+		return "DSAccessAuditDirectoryServiceReplicationSuccessFailure"
+	default:
+		return fmt.Sprintf("DSAccessAuditDirectoryServiceReplicationValue(%d)", int64(e))
+	}
+}
+
+// DetailedTrackingAuditDPAPIActivityValue — allowed values for the DetailedTracking_AuditDPAPIActivity node.
+type DetailedTrackingAuditDPAPIActivityValue int64
+
 const (
 	// Off/None
-	DetailedTrackingAuditPNPActivityOffNone int64 = 0
+	DetailedTrackingAuditDPAPIActivityOffNone DetailedTrackingAuditDPAPIActivityValue = 0
 	// Success
-	DetailedTrackingAuditPNPActivitySuccess int64 = 1
+	DetailedTrackingAuditDPAPIActivitySuccess DetailedTrackingAuditDPAPIActivityValue = 1
 	// Failure
-	DetailedTrackingAuditPNPActivityFailure int64 = 2
+	DetailedTrackingAuditDPAPIActivityFailure DetailedTrackingAuditDPAPIActivityValue = 2
 	// Success+Failure
-	DetailedTrackingAuditPNPActivitySuccessFailure int64 = 3
+	DetailedTrackingAuditDPAPIActivitySuccessFailure DetailedTrackingAuditDPAPIActivityValue = 3
 )
 
-// DetailedTrackingAuditProcessCreation allowed values.
+// String returns the DetailedTrackingAuditDPAPIActivityValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DetailedTrackingAuditDPAPIActivityValue) String() string {
+	switch e {
+	case DetailedTrackingAuditDPAPIActivityOffNone:
+		return "DetailedTrackingAuditDPAPIActivityOffNone"
+	case DetailedTrackingAuditDPAPIActivitySuccess:
+		return "DetailedTrackingAuditDPAPIActivitySuccess"
+	case DetailedTrackingAuditDPAPIActivityFailure:
+		return "DetailedTrackingAuditDPAPIActivityFailure"
+	case DetailedTrackingAuditDPAPIActivitySuccessFailure:
+		return "DetailedTrackingAuditDPAPIActivitySuccessFailure"
+	default:
+		return fmt.Sprintf("DetailedTrackingAuditDPAPIActivityValue(%d)", int64(e))
+	}
+}
+
+// DetailedTrackingAuditPNPActivityValue — allowed values for the DetailedTracking_AuditPNPActivity node.
+type DetailedTrackingAuditPNPActivityValue int64
+
 const (
 	// Off/None
-	DetailedTrackingAuditProcessCreationOffNone int64 = 0
+	DetailedTrackingAuditPNPActivityOffNone DetailedTrackingAuditPNPActivityValue = 0
 	// Success
-	DetailedTrackingAuditProcessCreationSuccess int64 = 1
+	DetailedTrackingAuditPNPActivitySuccess DetailedTrackingAuditPNPActivityValue = 1
 	// Failure
-	DetailedTrackingAuditProcessCreationFailure int64 = 2
+	DetailedTrackingAuditPNPActivityFailure DetailedTrackingAuditPNPActivityValue = 2
 	// Success+Failure
-	DetailedTrackingAuditProcessCreationSuccessFailure int64 = 3
+	DetailedTrackingAuditPNPActivitySuccessFailure DetailedTrackingAuditPNPActivityValue = 3
 )
 
-// DetailedTrackingAuditProcessTermination allowed values.
+// String returns the DetailedTrackingAuditPNPActivityValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DetailedTrackingAuditPNPActivityValue) String() string {
+	switch e {
+	case DetailedTrackingAuditPNPActivityOffNone:
+		return "DetailedTrackingAuditPNPActivityOffNone"
+	case DetailedTrackingAuditPNPActivitySuccess:
+		return "DetailedTrackingAuditPNPActivitySuccess"
+	case DetailedTrackingAuditPNPActivityFailure:
+		return "DetailedTrackingAuditPNPActivityFailure"
+	case DetailedTrackingAuditPNPActivitySuccessFailure:
+		return "DetailedTrackingAuditPNPActivitySuccessFailure"
+	default:
+		return fmt.Sprintf("DetailedTrackingAuditPNPActivityValue(%d)", int64(e))
+	}
+}
+
+// DetailedTrackingAuditProcessCreationValue — allowed values for the DetailedTracking_AuditProcessCreation node.
+type DetailedTrackingAuditProcessCreationValue int64
+
 const (
 	// Off/None
-	DetailedTrackingAuditProcessTerminationOffNone int64 = 0
+	DetailedTrackingAuditProcessCreationOffNone DetailedTrackingAuditProcessCreationValue = 0
 	// Success
-	DetailedTrackingAuditProcessTerminationSuccess int64 = 1
+	DetailedTrackingAuditProcessCreationSuccess DetailedTrackingAuditProcessCreationValue = 1
 	// Failure
-	DetailedTrackingAuditProcessTerminationFailure int64 = 2
+	DetailedTrackingAuditProcessCreationFailure DetailedTrackingAuditProcessCreationValue = 2
 	// Success+Failure
-	DetailedTrackingAuditProcessTerminationSuccessFailure int64 = 3
+	DetailedTrackingAuditProcessCreationSuccessFailure DetailedTrackingAuditProcessCreationValue = 3
 )
 
-// DetailedTrackingAuditRPCEvents allowed values.
+// String returns the DetailedTrackingAuditProcessCreationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DetailedTrackingAuditProcessCreationValue) String() string {
+	switch e {
+	case DetailedTrackingAuditProcessCreationOffNone:
+		return "DetailedTrackingAuditProcessCreationOffNone"
+	case DetailedTrackingAuditProcessCreationSuccess:
+		return "DetailedTrackingAuditProcessCreationSuccess"
+	case DetailedTrackingAuditProcessCreationFailure:
+		return "DetailedTrackingAuditProcessCreationFailure"
+	case DetailedTrackingAuditProcessCreationSuccessFailure:
+		return "DetailedTrackingAuditProcessCreationSuccessFailure"
+	default:
+		return fmt.Sprintf("DetailedTrackingAuditProcessCreationValue(%d)", int64(e))
+	}
+}
+
+// DetailedTrackingAuditProcessTerminationValue — allowed values for the DetailedTracking_AuditProcessTermination node.
+type DetailedTrackingAuditProcessTerminationValue int64
+
 const (
 	// Off/None
-	DetailedTrackingAuditRPCEventsOffNone int64 = 0
+	DetailedTrackingAuditProcessTerminationOffNone DetailedTrackingAuditProcessTerminationValue = 0
 	// Success
-	DetailedTrackingAuditRPCEventsSuccess int64 = 1
+	DetailedTrackingAuditProcessTerminationSuccess DetailedTrackingAuditProcessTerminationValue = 1
 	// Failure
-	DetailedTrackingAuditRPCEventsFailure int64 = 2
+	DetailedTrackingAuditProcessTerminationFailure DetailedTrackingAuditProcessTerminationValue = 2
 	// Success+Failure
-	DetailedTrackingAuditRPCEventsSuccessFailure int64 = 3
+	DetailedTrackingAuditProcessTerminationSuccessFailure DetailedTrackingAuditProcessTerminationValue = 3
 )
 
-// DetailedTrackingAuditTokenRightAdjusted allowed values.
+// String returns the DetailedTrackingAuditProcessTerminationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DetailedTrackingAuditProcessTerminationValue) String() string {
+	switch e {
+	case DetailedTrackingAuditProcessTerminationOffNone:
+		return "DetailedTrackingAuditProcessTerminationOffNone"
+	case DetailedTrackingAuditProcessTerminationSuccess:
+		return "DetailedTrackingAuditProcessTerminationSuccess"
+	case DetailedTrackingAuditProcessTerminationFailure:
+		return "DetailedTrackingAuditProcessTerminationFailure"
+	case DetailedTrackingAuditProcessTerminationSuccessFailure:
+		return "DetailedTrackingAuditProcessTerminationSuccessFailure"
+	default:
+		return fmt.Sprintf("DetailedTrackingAuditProcessTerminationValue(%d)", int64(e))
+	}
+}
+
+// DetailedTrackingAuditRPCEventsValue — allowed values for the DetailedTracking_AuditRPCEvents node.
+type DetailedTrackingAuditRPCEventsValue int64
+
 const (
 	// Off/None
-	DetailedTrackingAuditTokenRightAdjustedOffNone int64 = 0
+	DetailedTrackingAuditRPCEventsOffNone DetailedTrackingAuditRPCEventsValue = 0
 	// Success
-	DetailedTrackingAuditTokenRightAdjustedSuccess int64 = 1
+	DetailedTrackingAuditRPCEventsSuccess DetailedTrackingAuditRPCEventsValue = 1
 	// Failure
-	DetailedTrackingAuditTokenRightAdjustedFailure int64 = 2
+	DetailedTrackingAuditRPCEventsFailure DetailedTrackingAuditRPCEventsValue = 2
 	// Success+Failure
-	DetailedTrackingAuditTokenRightAdjustedSuccessFailure int64 = 3
+	DetailedTrackingAuditRPCEventsSuccessFailure DetailedTrackingAuditRPCEventsValue = 3
 )
 
-// ObjectAccessAuditApplicationGenerated allowed values.
+// String returns the DetailedTrackingAuditRPCEventsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DetailedTrackingAuditRPCEventsValue) String() string {
+	switch e {
+	case DetailedTrackingAuditRPCEventsOffNone:
+		return "DetailedTrackingAuditRPCEventsOffNone"
+	case DetailedTrackingAuditRPCEventsSuccess:
+		return "DetailedTrackingAuditRPCEventsSuccess"
+	case DetailedTrackingAuditRPCEventsFailure:
+		return "DetailedTrackingAuditRPCEventsFailure"
+	case DetailedTrackingAuditRPCEventsSuccessFailure:
+		return "DetailedTrackingAuditRPCEventsSuccessFailure"
+	default:
+		return fmt.Sprintf("DetailedTrackingAuditRPCEventsValue(%d)", int64(e))
+	}
+}
+
+// DetailedTrackingAuditTokenRightAdjustedValue — allowed values for the DetailedTracking_AuditTokenRightAdjusted node.
+type DetailedTrackingAuditTokenRightAdjustedValue int64
+
 const (
 	// Off/None
-	ObjectAccessAuditApplicationGeneratedOffNone int64 = 0
+	DetailedTrackingAuditTokenRightAdjustedOffNone DetailedTrackingAuditTokenRightAdjustedValue = 0
 	// Success
-	ObjectAccessAuditApplicationGeneratedSuccess int64 = 1
+	DetailedTrackingAuditTokenRightAdjustedSuccess DetailedTrackingAuditTokenRightAdjustedValue = 1
 	// Failure
-	ObjectAccessAuditApplicationGeneratedFailure int64 = 2
+	DetailedTrackingAuditTokenRightAdjustedFailure DetailedTrackingAuditTokenRightAdjustedValue = 2
 	// Success+Failure
-	ObjectAccessAuditApplicationGeneratedSuccessFailure int64 = 3
+	DetailedTrackingAuditTokenRightAdjustedSuccessFailure DetailedTrackingAuditTokenRightAdjustedValue = 3
 )
 
-// ObjectAccessAuditCentralAccessPolicyStaging allowed values.
+// String returns the DetailedTrackingAuditTokenRightAdjustedValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DetailedTrackingAuditTokenRightAdjustedValue) String() string {
+	switch e {
+	case DetailedTrackingAuditTokenRightAdjustedOffNone:
+		return "DetailedTrackingAuditTokenRightAdjustedOffNone"
+	case DetailedTrackingAuditTokenRightAdjustedSuccess:
+		return "DetailedTrackingAuditTokenRightAdjustedSuccess"
+	case DetailedTrackingAuditTokenRightAdjustedFailure:
+		return "DetailedTrackingAuditTokenRightAdjustedFailure"
+	case DetailedTrackingAuditTokenRightAdjustedSuccessFailure:
+		return "DetailedTrackingAuditTokenRightAdjustedSuccessFailure"
+	default:
+		return fmt.Sprintf("DetailedTrackingAuditTokenRightAdjustedValue(%d)", int64(e))
+	}
+}
+
+// ObjectAccessAuditApplicationGeneratedValue — allowed values for the ObjectAccess_AuditApplicationGenerated node.
+type ObjectAccessAuditApplicationGeneratedValue int64
+
 const (
 	// Off/None
-	ObjectAccessAuditCentralAccessPolicyStagingOffNone int64 = 0
+	ObjectAccessAuditApplicationGeneratedOffNone ObjectAccessAuditApplicationGeneratedValue = 0
 	// Success
-	ObjectAccessAuditCentralAccessPolicyStagingSuccess int64 = 1
+	ObjectAccessAuditApplicationGeneratedSuccess ObjectAccessAuditApplicationGeneratedValue = 1
 	// Failure
-	ObjectAccessAuditCentralAccessPolicyStagingFailure int64 = 2
+	ObjectAccessAuditApplicationGeneratedFailure ObjectAccessAuditApplicationGeneratedValue = 2
 	// Success+Failure
-	ObjectAccessAuditCentralAccessPolicyStagingSuccessFailure int64 = 3
+	ObjectAccessAuditApplicationGeneratedSuccessFailure ObjectAccessAuditApplicationGeneratedValue = 3
 )
 
-// ObjectAccessAuditCertificationServices allowed values.
+// String returns the ObjectAccessAuditApplicationGeneratedValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ObjectAccessAuditApplicationGeneratedValue) String() string {
+	switch e {
+	case ObjectAccessAuditApplicationGeneratedOffNone:
+		return "ObjectAccessAuditApplicationGeneratedOffNone"
+	case ObjectAccessAuditApplicationGeneratedSuccess:
+		return "ObjectAccessAuditApplicationGeneratedSuccess"
+	case ObjectAccessAuditApplicationGeneratedFailure:
+		return "ObjectAccessAuditApplicationGeneratedFailure"
+	case ObjectAccessAuditApplicationGeneratedSuccessFailure:
+		return "ObjectAccessAuditApplicationGeneratedSuccessFailure"
+	default:
+		return fmt.Sprintf("ObjectAccessAuditApplicationGeneratedValue(%d)", int64(e))
+	}
+}
+
+// ObjectAccessAuditCentralAccessPolicyStagingValue — allowed values for the ObjectAccess_AuditCentralAccessPolicyStaging node.
+type ObjectAccessAuditCentralAccessPolicyStagingValue int64
+
 const (
 	// Off/None
-	ObjectAccessAuditCertificationServicesOffNone int64 = 0
+	ObjectAccessAuditCentralAccessPolicyStagingOffNone ObjectAccessAuditCentralAccessPolicyStagingValue = 0
 	// Success
-	ObjectAccessAuditCertificationServicesSuccess int64 = 1
+	ObjectAccessAuditCentralAccessPolicyStagingSuccess ObjectAccessAuditCentralAccessPolicyStagingValue = 1
 	// Failure
-	ObjectAccessAuditCertificationServicesFailure int64 = 2
+	ObjectAccessAuditCentralAccessPolicyStagingFailure ObjectAccessAuditCentralAccessPolicyStagingValue = 2
 	// Success+Failure
-	ObjectAccessAuditCertificationServicesSuccessFailure int64 = 3
+	ObjectAccessAuditCentralAccessPolicyStagingSuccessFailure ObjectAccessAuditCentralAccessPolicyStagingValue = 3
 )
 
-// ObjectAccessAuditDetailedFileShare allowed values.
+// String returns the ObjectAccessAuditCentralAccessPolicyStagingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ObjectAccessAuditCentralAccessPolicyStagingValue) String() string {
+	switch e {
+	case ObjectAccessAuditCentralAccessPolicyStagingOffNone:
+		return "ObjectAccessAuditCentralAccessPolicyStagingOffNone"
+	case ObjectAccessAuditCentralAccessPolicyStagingSuccess:
+		return "ObjectAccessAuditCentralAccessPolicyStagingSuccess"
+	case ObjectAccessAuditCentralAccessPolicyStagingFailure:
+		return "ObjectAccessAuditCentralAccessPolicyStagingFailure"
+	case ObjectAccessAuditCentralAccessPolicyStagingSuccessFailure:
+		return "ObjectAccessAuditCentralAccessPolicyStagingSuccessFailure"
+	default:
+		return fmt.Sprintf("ObjectAccessAuditCentralAccessPolicyStagingValue(%d)", int64(e))
+	}
+}
+
+// ObjectAccessAuditCertificationServicesValue — allowed values for the ObjectAccess_AuditCertificationServices node.
+type ObjectAccessAuditCertificationServicesValue int64
+
 const (
 	// Off/None
-	ObjectAccessAuditDetailedFileShareOffNone int64 = 0
+	ObjectAccessAuditCertificationServicesOffNone ObjectAccessAuditCertificationServicesValue = 0
 	// Success
-	ObjectAccessAuditDetailedFileShareSuccess int64 = 1
+	ObjectAccessAuditCertificationServicesSuccess ObjectAccessAuditCertificationServicesValue = 1
 	// Failure
-	ObjectAccessAuditDetailedFileShareFailure int64 = 2
+	ObjectAccessAuditCertificationServicesFailure ObjectAccessAuditCertificationServicesValue = 2
 	// Success+Failure
-	ObjectAccessAuditDetailedFileShareSuccessFailure int64 = 3
+	ObjectAccessAuditCertificationServicesSuccessFailure ObjectAccessAuditCertificationServicesValue = 3
 )
 
-// ObjectAccessAuditFileShare allowed values.
+// String returns the ObjectAccessAuditCertificationServicesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ObjectAccessAuditCertificationServicesValue) String() string {
+	switch e {
+	case ObjectAccessAuditCertificationServicesOffNone:
+		return "ObjectAccessAuditCertificationServicesOffNone"
+	case ObjectAccessAuditCertificationServicesSuccess:
+		return "ObjectAccessAuditCertificationServicesSuccess"
+	case ObjectAccessAuditCertificationServicesFailure:
+		return "ObjectAccessAuditCertificationServicesFailure"
+	case ObjectAccessAuditCertificationServicesSuccessFailure:
+		return "ObjectAccessAuditCertificationServicesSuccessFailure"
+	default:
+		return fmt.Sprintf("ObjectAccessAuditCertificationServicesValue(%d)", int64(e))
+	}
+}
+
+// ObjectAccessAuditDetailedFileShareValue — allowed values for the ObjectAccess_AuditDetailedFileShare node.
+type ObjectAccessAuditDetailedFileShareValue int64
+
 const (
 	// Off/None
-	ObjectAccessAuditFileShareOffNone int64 = 0
+	ObjectAccessAuditDetailedFileShareOffNone ObjectAccessAuditDetailedFileShareValue = 0
 	// Success
-	ObjectAccessAuditFileShareSuccess int64 = 1
+	ObjectAccessAuditDetailedFileShareSuccess ObjectAccessAuditDetailedFileShareValue = 1
 	// Failure
-	ObjectAccessAuditFileShareFailure int64 = 2
+	ObjectAccessAuditDetailedFileShareFailure ObjectAccessAuditDetailedFileShareValue = 2
 	// Success+Failure
-	ObjectAccessAuditFileShareSuccessFailure int64 = 3
+	ObjectAccessAuditDetailedFileShareSuccessFailure ObjectAccessAuditDetailedFileShareValue = 3
 )
 
-// ObjectAccessAuditFileSystem allowed values.
+// String returns the ObjectAccessAuditDetailedFileShareValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ObjectAccessAuditDetailedFileShareValue) String() string {
+	switch e {
+	case ObjectAccessAuditDetailedFileShareOffNone:
+		return "ObjectAccessAuditDetailedFileShareOffNone"
+	case ObjectAccessAuditDetailedFileShareSuccess:
+		return "ObjectAccessAuditDetailedFileShareSuccess"
+	case ObjectAccessAuditDetailedFileShareFailure:
+		return "ObjectAccessAuditDetailedFileShareFailure"
+	case ObjectAccessAuditDetailedFileShareSuccessFailure:
+		return "ObjectAccessAuditDetailedFileShareSuccessFailure"
+	default:
+		return fmt.Sprintf("ObjectAccessAuditDetailedFileShareValue(%d)", int64(e))
+	}
+}
+
+// ObjectAccessAuditFileShareValue — allowed values for the ObjectAccess_AuditFileShare node.
+type ObjectAccessAuditFileShareValue int64
+
 const (
 	// Off/None
-	ObjectAccessAuditFileSystemOffNone int64 = 0
+	ObjectAccessAuditFileShareOffNone ObjectAccessAuditFileShareValue = 0
 	// Success
-	ObjectAccessAuditFileSystemSuccess int64 = 1
+	ObjectAccessAuditFileShareSuccess ObjectAccessAuditFileShareValue = 1
 	// Failure
-	ObjectAccessAuditFileSystemFailure int64 = 2
+	ObjectAccessAuditFileShareFailure ObjectAccessAuditFileShareValue = 2
 	// Success+Failure
-	ObjectAccessAuditFileSystemSuccessFailure int64 = 3
+	ObjectAccessAuditFileShareSuccessFailure ObjectAccessAuditFileShareValue = 3
 )
 
-// ObjectAccessAuditFilteringPlatformConnection allowed values.
+// String returns the ObjectAccessAuditFileShareValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ObjectAccessAuditFileShareValue) String() string {
+	switch e {
+	case ObjectAccessAuditFileShareOffNone:
+		return "ObjectAccessAuditFileShareOffNone"
+	case ObjectAccessAuditFileShareSuccess:
+		return "ObjectAccessAuditFileShareSuccess"
+	case ObjectAccessAuditFileShareFailure:
+		return "ObjectAccessAuditFileShareFailure"
+	case ObjectAccessAuditFileShareSuccessFailure:
+		return "ObjectAccessAuditFileShareSuccessFailure"
+	default:
+		return fmt.Sprintf("ObjectAccessAuditFileShareValue(%d)", int64(e))
+	}
+}
+
+// ObjectAccessAuditFileSystemValue — allowed values for the ObjectAccess_AuditFileSystem node.
+type ObjectAccessAuditFileSystemValue int64
+
 const (
 	// Off/None
-	ObjectAccessAuditFilteringPlatformConnectionOffNone int64 = 0
+	ObjectAccessAuditFileSystemOffNone ObjectAccessAuditFileSystemValue = 0
 	// Success
-	ObjectAccessAuditFilteringPlatformConnectionSuccess int64 = 1
+	ObjectAccessAuditFileSystemSuccess ObjectAccessAuditFileSystemValue = 1
 	// Failure
-	ObjectAccessAuditFilteringPlatformConnectionFailure int64 = 2
+	ObjectAccessAuditFileSystemFailure ObjectAccessAuditFileSystemValue = 2
 	// Success+Failure
-	ObjectAccessAuditFilteringPlatformConnectionSuccessFailure int64 = 3
+	ObjectAccessAuditFileSystemSuccessFailure ObjectAccessAuditFileSystemValue = 3
 )
 
-// ObjectAccessAuditFilteringPlatformPacketDrop allowed values.
+// String returns the ObjectAccessAuditFileSystemValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ObjectAccessAuditFileSystemValue) String() string {
+	switch e {
+	case ObjectAccessAuditFileSystemOffNone:
+		return "ObjectAccessAuditFileSystemOffNone"
+	case ObjectAccessAuditFileSystemSuccess:
+		return "ObjectAccessAuditFileSystemSuccess"
+	case ObjectAccessAuditFileSystemFailure:
+		return "ObjectAccessAuditFileSystemFailure"
+	case ObjectAccessAuditFileSystemSuccessFailure:
+		return "ObjectAccessAuditFileSystemSuccessFailure"
+	default:
+		return fmt.Sprintf("ObjectAccessAuditFileSystemValue(%d)", int64(e))
+	}
+}
+
+// ObjectAccessAuditFilteringPlatformConnectionValue — allowed values for the ObjectAccess_AuditFilteringPlatformConnection node.
+type ObjectAccessAuditFilteringPlatformConnectionValue int64
+
 const (
 	// Off/None
-	ObjectAccessAuditFilteringPlatformPacketDropOffNone int64 = 0
+	ObjectAccessAuditFilteringPlatformConnectionOffNone ObjectAccessAuditFilteringPlatformConnectionValue = 0
 	// Success
-	ObjectAccessAuditFilteringPlatformPacketDropSuccess int64 = 1
+	ObjectAccessAuditFilteringPlatformConnectionSuccess ObjectAccessAuditFilteringPlatformConnectionValue = 1
 	// Failure
-	ObjectAccessAuditFilteringPlatformPacketDropFailure int64 = 2
+	ObjectAccessAuditFilteringPlatformConnectionFailure ObjectAccessAuditFilteringPlatformConnectionValue = 2
 	// Success+Failure
-	ObjectAccessAuditFilteringPlatformPacketDropSuccessFailure int64 = 3
+	ObjectAccessAuditFilteringPlatformConnectionSuccessFailure ObjectAccessAuditFilteringPlatformConnectionValue = 3
 )
 
-// ObjectAccessAuditHandleManipulation allowed values.
+// String returns the ObjectAccessAuditFilteringPlatformConnectionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ObjectAccessAuditFilteringPlatformConnectionValue) String() string {
+	switch e {
+	case ObjectAccessAuditFilteringPlatformConnectionOffNone:
+		return "ObjectAccessAuditFilteringPlatformConnectionOffNone"
+	case ObjectAccessAuditFilteringPlatformConnectionSuccess:
+		return "ObjectAccessAuditFilteringPlatformConnectionSuccess"
+	case ObjectAccessAuditFilteringPlatformConnectionFailure:
+		return "ObjectAccessAuditFilteringPlatformConnectionFailure"
+	case ObjectAccessAuditFilteringPlatformConnectionSuccessFailure:
+		return "ObjectAccessAuditFilteringPlatformConnectionSuccessFailure"
+	default:
+		return fmt.Sprintf("ObjectAccessAuditFilteringPlatformConnectionValue(%d)", int64(e))
+	}
+}
+
+// ObjectAccessAuditFilteringPlatformPacketDropValue — allowed values for the ObjectAccess_AuditFilteringPlatformPacketDrop node.
+type ObjectAccessAuditFilteringPlatformPacketDropValue int64
+
 const (
 	// Off/None
-	ObjectAccessAuditHandleManipulationOffNone int64 = 0
+	ObjectAccessAuditFilteringPlatformPacketDropOffNone ObjectAccessAuditFilteringPlatformPacketDropValue = 0
 	// Success
-	ObjectAccessAuditHandleManipulationSuccess int64 = 1
+	ObjectAccessAuditFilteringPlatformPacketDropSuccess ObjectAccessAuditFilteringPlatformPacketDropValue = 1
 	// Failure
-	ObjectAccessAuditHandleManipulationFailure int64 = 2
+	ObjectAccessAuditFilteringPlatformPacketDropFailure ObjectAccessAuditFilteringPlatformPacketDropValue = 2
 	// Success+Failure
-	ObjectAccessAuditHandleManipulationSuccessFailure int64 = 3
+	ObjectAccessAuditFilteringPlatformPacketDropSuccessFailure ObjectAccessAuditFilteringPlatformPacketDropValue = 3
 )
 
-// ObjectAccessAuditKernelObject allowed values.
+// String returns the ObjectAccessAuditFilteringPlatformPacketDropValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ObjectAccessAuditFilteringPlatformPacketDropValue) String() string {
+	switch e {
+	case ObjectAccessAuditFilteringPlatformPacketDropOffNone:
+		return "ObjectAccessAuditFilteringPlatformPacketDropOffNone"
+	case ObjectAccessAuditFilteringPlatformPacketDropSuccess:
+		return "ObjectAccessAuditFilteringPlatformPacketDropSuccess"
+	case ObjectAccessAuditFilteringPlatformPacketDropFailure:
+		return "ObjectAccessAuditFilteringPlatformPacketDropFailure"
+	case ObjectAccessAuditFilteringPlatformPacketDropSuccessFailure:
+		return "ObjectAccessAuditFilteringPlatformPacketDropSuccessFailure"
+	default:
+		return fmt.Sprintf("ObjectAccessAuditFilteringPlatformPacketDropValue(%d)", int64(e))
+	}
+}
+
+// ObjectAccessAuditHandleManipulationValue — allowed values for the ObjectAccess_AuditHandleManipulation node.
+type ObjectAccessAuditHandleManipulationValue int64
+
 const (
 	// Off/None
-	ObjectAccessAuditKernelObjectOffNone int64 = 0
+	ObjectAccessAuditHandleManipulationOffNone ObjectAccessAuditHandleManipulationValue = 0
 	// Success
-	ObjectAccessAuditKernelObjectSuccess int64 = 1
+	ObjectAccessAuditHandleManipulationSuccess ObjectAccessAuditHandleManipulationValue = 1
 	// Failure
-	ObjectAccessAuditKernelObjectFailure int64 = 2
+	ObjectAccessAuditHandleManipulationFailure ObjectAccessAuditHandleManipulationValue = 2
 	// Success+Failure
-	ObjectAccessAuditKernelObjectSuccessFailure int64 = 3
+	ObjectAccessAuditHandleManipulationSuccessFailure ObjectAccessAuditHandleManipulationValue = 3
 )
 
-// ObjectAccessAuditOtherObjectAccessEvents allowed values.
+// String returns the ObjectAccessAuditHandleManipulationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ObjectAccessAuditHandleManipulationValue) String() string {
+	switch e {
+	case ObjectAccessAuditHandleManipulationOffNone:
+		return "ObjectAccessAuditHandleManipulationOffNone"
+	case ObjectAccessAuditHandleManipulationSuccess:
+		return "ObjectAccessAuditHandleManipulationSuccess"
+	case ObjectAccessAuditHandleManipulationFailure:
+		return "ObjectAccessAuditHandleManipulationFailure"
+	case ObjectAccessAuditHandleManipulationSuccessFailure:
+		return "ObjectAccessAuditHandleManipulationSuccessFailure"
+	default:
+		return fmt.Sprintf("ObjectAccessAuditHandleManipulationValue(%d)", int64(e))
+	}
+}
+
+// ObjectAccessAuditKernelObjectValue — allowed values for the ObjectAccess_AuditKernelObject node.
+type ObjectAccessAuditKernelObjectValue int64
+
 const (
 	// Off/None
-	ObjectAccessAuditOtherObjectAccessEventsOffNone int64 = 0
+	ObjectAccessAuditKernelObjectOffNone ObjectAccessAuditKernelObjectValue = 0
 	// Success
-	ObjectAccessAuditOtherObjectAccessEventsSuccess int64 = 1
+	ObjectAccessAuditKernelObjectSuccess ObjectAccessAuditKernelObjectValue = 1
 	// Failure
-	ObjectAccessAuditOtherObjectAccessEventsFailure int64 = 2
+	ObjectAccessAuditKernelObjectFailure ObjectAccessAuditKernelObjectValue = 2
 	// Success+Failure
-	ObjectAccessAuditOtherObjectAccessEventsSuccessFailure int64 = 3
+	ObjectAccessAuditKernelObjectSuccessFailure ObjectAccessAuditKernelObjectValue = 3
 )
 
-// ObjectAccessAuditRegistry allowed values.
+// String returns the ObjectAccessAuditKernelObjectValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ObjectAccessAuditKernelObjectValue) String() string {
+	switch e {
+	case ObjectAccessAuditKernelObjectOffNone:
+		return "ObjectAccessAuditKernelObjectOffNone"
+	case ObjectAccessAuditKernelObjectSuccess:
+		return "ObjectAccessAuditKernelObjectSuccess"
+	case ObjectAccessAuditKernelObjectFailure:
+		return "ObjectAccessAuditKernelObjectFailure"
+	case ObjectAccessAuditKernelObjectSuccessFailure:
+		return "ObjectAccessAuditKernelObjectSuccessFailure"
+	default:
+		return fmt.Sprintf("ObjectAccessAuditKernelObjectValue(%d)", int64(e))
+	}
+}
+
+// ObjectAccessAuditOtherObjectAccessEventsValue — allowed values for the ObjectAccess_AuditOtherObjectAccessEvents node.
+type ObjectAccessAuditOtherObjectAccessEventsValue int64
+
 const (
 	// Off/None
-	ObjectAccessAuditRegistryOffNone int64 = 0
+	ObjectAccessAuditOtherObjectAccessEventsOffNone ObjectAccessAuditOtherObjectAccessEventsValue = 0
 	// Success
-	ObjectAccessAuditRegistrySuccess int64 = 1
+	ObjectAccessAuditOtherObjectAccessEventsSuccess ObjectAccessAuditOtherObjectAccessEventsValue = 1
 	// Failure
-	ObjectAccessAuditRegistryFailure int64 = 2
+	ObjectAccessAuditOtherObjectAccessEventsFailure ObjectAccessAuditOtherObjectAccessEventsValue = 2
 	// Success+Failure
-	ObjectAccessAuditRegistrySuccessFailure int64 = 3
+	ObjectAccessAuditOtherObjectAccessEventsSuccessFailure ObjectAccessAuditOtherObjectAccessEventsValue = 3
 )
 
-// ObjectAccessAuditRemovableStorage allowed values.
+// String returns the ObjectAccessAuditOtherObjectAccessEventsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ObjectAccessAuditOtherObjectAccessEventsValue) String() string {
+	switch e {
+	case ObjectAccessAuditOtherObjectAccessEventsOffNone:
+		return "ObjectAccessAuditOtherObjectAccessEventsOffNone"
+	case ObjectAccessAuditOtherObjectAccessEventsSuccess:
+		return "ObjectAccessAuditOtherObjectAccessEventsSuccess"
+	case ObjectAccessAuditOtherObjectAccessEventsFailure:
+		return "ObjectAccessAuditOtherObjectAccessEventsFailure"
+	case ObjectAccessAuditOtherObjectAccessEventsSuccessFailure:
+		return "ObjectAccessAuditOtherObjectAccessEventsSuccessFailure"
+	default:
+		return fmt.Sprintf("ObjectAccessAuditOtherObjectAccessEventsValue(%d)", int64(e))
+	}
+}
+
+// ObjectAccessAuditRegistryValue — allowed values for the ObjectAccess_AuditRegistry node.
+type ObjectAccessAuditRegistryValue int64
+
 const (
 	// Off/None
-	ObjectAccessAuditRemovableStorageOffNone int64 = 0
+	ObjectAccessAuditRegistryOffNone ObjectAccessAuditRegistryValue = 0
 	// Success
-	ObjectAccessAuditRemovableStorageSuccess int64 = 1
+	ObjectAccessAuditRegistrySuccess ObjectAccessAuditRegistryValue = 1
 	// Failure
-	ObjectAccessAuditRemovableStorageFailure int64 = 2
+	ObjectAccessAuditRegistryFailure ObjectAccessAuditRegistryValue = 2
 	// Success+Failure
-	ObjectAccessAuditRemovableStorageSuccessFailure int64 = 3
+	ObjectAccessAuditRegistrySuccessFailure ObjectAccessAuditRegistryValue = 3
 )
 
-// ObjectAccessAuditSAM allowed values.
+// String returns the ObjectAccessAuditRegistryValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ObjectAccessAuditRegistryValue) String() string {
+	switch e {
+	case ObjectAccessAuditRegistryOffNone:
+		return "ObjectAccessAuditRegistryOffNone"
+	case ObjectAccessAuditRegistrySuccess:
+		return "ObjectAccessAuditRegistrySuccess"
+	case ObjectAccessAuditRegistryFailure:
+		return "ObjectAccessAuditRegistryFailure"
+	case ObjectAccessAuditRegistrySuccessFailure:
+		return "ObjectAccessAuditRegistrySuccessFailure"
+	default:
+		return fmt.Sprintf("ObjectAccessAuditRegistryValue(%d)", int64(e))
+	}
+}
+
+// ObjectAccessAuditRemovableStorageValue — allowed values for the ObjectAccess_AuditRemovableStorage node.
+type ObjectAccessAuditRemovableStorageValue int64
+
 const (
 	// Off/None
-	ObjectAccessAuditSAMOffNone int64 = 0
+	ObjectAccessAuditRemovableStorageOffNone ObjectAccessAuditRemovableStorageValue = 0
 	// Success
-	ObjectAccessAuditSAMSuccess int64 = 1
+	ObjectAccessAuditRemovableStorageSuccess ObjectAccessAuditRemovableStorageValue = 1
 	// Failure
-	ObjectAccessAuditSAMFailure int64 = 2
+	ObjectAccessAuditRemovableStorageFailure ObjectAccessAuditRemovableStorageValue = 2
 	// Success+Failure
-	ObjectAccessAuditSAMSuccessFailure int64 = 3
+	ObjectAccessAuditRemovableStorageSuccessFailure ObjectAccessAuditRemovableStorageValue = 3
 )
 
-// PolicyChangeAuditAuthenticationPolicyChange allowed values.
+// String returns the ObjectAccessAuditRemovableStorageValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ObjectAccessAuditRemovableStorageValue) String() string {
+	switch e {
+	case ObjectAccessAuditRemovableStorageOffNone:
+		return "ObjectAccessAuditRemovableStorageOffNone"
+	case ObjectAccessAuditRemovableStorageSuccess:
+		return "ObjectAccessAuditRemovableStorageSuccess"
+	case ObjectAccessAuditRemovableStorageFailure:
+		return "ObjectAccessAuditRemovableStorageFailure"
+	case ObjectAccessAuditRemovableStorageSuccessFailure:
+		return "ObjectAccessAuditRemovableStorageSuccessFailure"
+	default:
+		return fmt.Sprintf("ObjectAccessAuditRemovableStorageValue(%d)", int64(e))
+	}
+}
+
+// ObjectAccessAuditSAMValue — allowed values for the ObjectAccess_AuditSAM node.
+type ObjectAccessAuditSAMValue int64
+
 const (
 	// Off/None
-	PolicyChangeAuditAuthenticationPolicyChangeOffNone int64 = 0
+	ObjectAccessAuditSAMOffNone ObjectAccessAuditSAMValue = 0
 	// Success
-	PolicyChangeAuditAuthenticationPolicyChangeSuccess int64 = 1
+	ObjectAccessAuditSAMSuccess ObjectAccessAuditSAMValue = 1
 	// Failure
-	PolicyChangeAuditAuthenticationPolicyChangeFailure int64 = 2
+	ObjectAccessAuditSAMFailure ObjectAccessAuditSAMValue = 2
 	// Success+Failure
-	PolicyChangeAuditAuthenticationPolicyChangeSuccessFailure int64 = 3
+	ObjectAccessAuditSAMSuccessFailure ObjectAccessAuditSAMValue = 3
 )
 
-// PolicyChangeAuditAuthorizationPolicyChange allowed values.
+// String returns the ObjectAccessAuditSAMValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ObjectAccessAuditSAMValue) String() string {
+	switch e {
+	case ObjectAccessAuditSAMOffNone:
+		return "ObjectAccessAuditSAMOffNone"
+	case ObjectAccessAuditSAMSuccess:
+		return "ObjectAccessAuditSAMSuccess"
+	case ObjectAccessAuditSAMFailure:
+		return "ObjectAccessAuditSAMFailure"
+	case ObjectAccessAuditSAMSuccessFailure:
+		return "ObjectAccessAuditSAMSuccessFailure"
+	default:
+		return fmt.Sprintf("ObjectAccessAuditSAMValue(%d)", int64(e))
+	}
+}
+
+// PolicyChangeAuditAuthenticationPolicyChangeValue — allowed values for the PolicyChange_AuditAuthenticationPolicyChange node.
+type PolicyChangeAuditAuthenticationPolicyChangeValue int64
+
 const (
 	// Off/None
-	PolicyChangeAuditAuthorizationPolicyChangeOffNone int64 = 0
+	PolicyChangeAuditAuthenticationPolicyChangeOffNone PolicyChangeAuditAuthenticationPolicyChangeValue = 0
 	// Success
-	PolicyChangeAuditAuthorizationPolicyChangeSuccess int64 = 1
+	PolicyChangeAuditAuthenticationPolicyChangeSuccess PolicyChangeAuditAuthenticationPolicyChangeValue = 1
 	// Failure
-	PolicyChangeAuditAuthorizationPolicyChangeFailure int64 = 2
+	PolicyChangeAuditAuthenticationPolicyChangeFailure PolicyChangeAuditAuthenticationPolicyChangeValue = 2
 	// Success+Failure
-	PolicyChangeAuditAuthorizationPolicyChangeSuccessFailure int64 = 3
+	PolicyChangeAuditAuthenticationPolicyChangeSuccessFailure PolicyChangeAuditAuthenticationPolicyChangeValue = 3
 )
 
-// PolicyChangeAuditFilteringPlatformPolicyChange allowed values.
+// String returns the PolicyChangeAuditAuthenticationPolicyChangeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PolicyChangeAuditAuthenticationPolicyChangeValue) String() string {
+	switch e {
+	case PolicyChangeAuditAuthenticationPolicyChangeOffNone:
+		return "PolicyChangeAuditAuthenticationPolicyChangeOffNone"
+	case PolicyChangeAuditAuthenticationPolicyChangeSuccess:
+		return "PolicyChangeAuditAuthenticationPolicyChangeSuccess"
+	case PolicyChangeAuditAuthenticationPolicyChangeFailure:
+		return "PolicyChangeAuditAuthenticationPolicyChangeFailure"
+	case PolicyChangeAuditAuthenticationPolicyChangeSuccessFailure:
+		return "PolicyChangeAuditAuthenticationPolicyChangeSuccessFailure"
+	default:
+		return fmt.Sprintf("PolicyChangeAuditAuthenticationPolicyChangeValue(%d)", int64(e))
+	}
+}
+
+// PolicyChangeAuditAuthorizationPolicyChangeValue — allowed values for the PolicyChange_AuditAuthorizationPolicyChange node.
+type PolicyChangeAuditAuthorizationPolicyChangeValue int64
+
 const (
 	// Off/None
-	PolicyChangeAuditFilteringPlatformPolicyChangeOffNone int64 = 0
+	PolicyChangeAuditAuthorizationPolicyChangeOffNone PolicyChangeAuditAuthorizationPolicyChangeValue = 0
 	// Success
-	PolicyChangeAuditFilteringPlatformPolicyChangeSuccess int64 = 1
+	PolicyChangeAuditAuthorizationPolicyChangeSuccess PolicyChangeAuditAuthorizationPolicyChangeValue = 1
 	// Failure
-	PolicyChangeAuditFilteringPlatformPolicyChangeFailure int64 = 2
+	PolicyChangeAuditAuthorizationPolicyChangeFailure PolicyChangeAuditAuthorizationPolicyChangeValue = 2
 	// Success+Failure
-	PolicyChangeAuditFilteringPlatformPolicyChangeSuccessFailure int64 = 3
+	PolicyChangeAuditAuthorizationPolicyChangeSuccessFailure PolicyChangeAuditAuthorizationPolicyChangeValue = 3
 )
 
-// PolicyChangeAuditMPSSVCRuleLevelPolicyChange allowed values.
+// String returns the PolicyChangeAuditAuthorizationPolicyChangeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PolicyChangeAuditAuthorizationPolicyChangeValue) String() string {
+	switch e {
+	case PolicyChangeAuditAuthorizationPolicyChangeOffNone:
+		return "PolicyChangeAuditAuthorizationPolicyChangeOffNone"
+	case PolicyChangeAuditAuthorizationPolicyChangeSuccess:
+		return "PolicyChangeAuditAuthorizationPolicyChangeSuccess"
+	case PolicyChangeAuditAuthorizationPolicyChangeFailure:
+		return "PolicyChangeAuditAuthorizationPolicyChangeFailure"
+	case PolicyChangeAuditAuthorizationPolicyChangeSuccessFailure:
+		return "PolicyChangeAuditAuthorizationPolicyChangeSuccessFailure"
+	default:
+		return fmt.Sprintf("PolicyChangeAuditAuthorizationPolicyChangeValue(%d)", int64(e))
+	}
+}
+
+// PolicyChangeAuditFilteringPlatformPolicyChangeValue — allowed values for the PolicyChange_AuditFilteringPlatformPolicyChange node.
+type PolicyChangeAuditFilteringPlatformPolicyChangeValue int64
+
 const (
 	// Off/None
-	PolicyChangeAuditMPSSVCRuleLevelPolicyChangeOffNone int64 = 0
+	PolicyChangeAuditFilteringPlatformPolicyChangeOffNone PolicyChangeAuditFilteringPlatformPolicyChangeValue = 0
 	// Success
-	PolicyChangeAuditMPSSVCRuleLevelPolicyChangeSuccess int64 = 1
+	PolicyChangeAuditFilteringPlatformPolicyChangeSuccess PolicyChangeAuditFilteringPlatformPolicyChangeValue = 1
 	// Failure
-	PolicyChangeAuditMPSSVCRuleLevelPolicyChangeFailure int64 = 2
+	PolicyChangeAuditFilteringPlatformPolicyChangeFailure PolicyChangeAuditFilteringPlatformPolicyChangeValue = 2
 	// Success+Failure
-	PolicyChangeAuditMPSSVCRuleLevelPolicyChangeSuccessFailure int64 = 3
+	PolicyChangeAuditFilteringPlatformPolicyChangeSuccessFailure PolicyChangeAuditFilteringPlatformPolicyChangeValue = 3
 )
 
-// PolicyChangeAuditOtherPolicyChangeEvents allowed values.
+// String returns the PolicyChangeAuditFilteringPlatformPolicyChangeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PolicyChangeAuditFilteringPlatformPolicyChangeValue) String() string {
+	switch e {
+	case PolicyChangeAuditFilteringPlatformPolicyChangeOffNone:
+		return "PolicyChangeAuditFilteringPlatformPolicyChangeOffNone"
+	case PolicyChangeAuditFilteringPlatformPolicyChangeSuccess:
+		return "PolicyChangeAuditFilteringPlatformPolicyChangeSuccess"
+	case PolicyChangeAuditFilteringPlatformPolicyChangeFailure:
+		return "PolicyChangeAuditFilteringPlatformPolicyChangeFailure"
+	case PolicyChangeAuditFilteringPlatformPolicyChangeSuccessFailure:
+		return "PolicyChangeAuditFilteringPlatformPolicyChangeSuccessFailure"
+	default:
+		return fmt.Sprintf("PolicyChangeAuditFilteringPlatformPolicyChangeValue(%d)", int64(e))
+	}
+}
+
+// PolicyChangeAuditMPSSVCRuleLevelPolicyChangeValue — allowed values for the PolicyChange_AuditMPSSVCRuleLevelPolicyChange node.
+type PolicyChangeAuditMPSSVCRuleLevelPolicyChangeValue int64
+
 const (
 	// Off/None
-	PolicyChangeAuditOtherPolicyChangeEventsOffNone int64 = 0
+	PolicyChangeAuditMPSSVCRuleLevelPolicyChangeOffNone PolicyChangeAuditMPSSVCRuleLevelPolicyChangeValue = 0
 	// Success
-	PolicyChangeAuditOtherPolicyChangeEventsSuccess int64 = 1
+	PolicyChangeAuditMPSSVCRuleLevelPolicyChangeSuccess PolicyChangeAuditMPSSVCRuleLevelPolicyChangeValue = 1
 	// Failure
-	PolicyChangeAuditOtherPolicyChangeEventsFailure int64 = 2
+	PolicyChangeAuditMPSSVCRuleLevelPolicyChangeFailure PolicyChangeAuditMPSSVCRuleLevelPolicyChangeValue = 2
 	// Success+Failure
-	PolicyChangeAuditOtherPolicyChangeEventsSuccessFailure int64 = 3
+	PolicyChangeAuditMPSSVCRuleLevelPolicyChangeSuccessFailure PolicyChangeAuditMPSSVCRuleLevelPolicyChangeValue = 3
 )
 
-// PolicyChangeAuditPolicyChange allowed values.
+// String returns the PolicyChangeAuditMPSSVCRuleLevelPolicyChangeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PolicyChangeAuditMPSSVCRuleLevelPolicyChangeValue) String() string {
+	switch e {
+	case PolicyChangeAuditMPSSVCRuleLevelPolicyChangeOffNone:
+		return "PolicyChangeAuditMPSSVCRuleLevelPolicyChangeOffNone"
+	case PolicyChangeAuditMPSSVCRuleLevelPolicyChangeSuccess:
+		return "PolicyChangeAuditMPSSVCRuleLevelPolicyChangeSuccess"
+	case PolicyChangeAuditMPSSVCRuleLevelPolicyChangeFailure:
+		return "PolicyChangeAuditMPSSVCRuleLevelPolicyChangeFailure"
+	case PolicyChangeAuditMPSSVCRuleLevelPolicyChangeSuccessFailure:
+		return "PolicyChangeAuditMPSSVCRuleLevelPolicyChangeSuccessFailure"
+	default:
+		return fmt.Sprintf("PolicyChangeAuditMPSSVCRuleLevelPolicyChangeValue(%d)", int64(e))
+	}
+}
+
+// PolicyChangeAuditOtherPolicyChangeEventsValue — allowed values for the PolicyChange_AuditOtherPolicyChangeEvents node.
+type PolicyChangeAuditOtherPolicyChangeEventsValue int64
+
 const (
 	// Off/None
-	PolicyChangeAuditPolicyChangeOffNone int64 = 0
+	PolicyChangeAuditOtherPolicyChangeEventsOffNone PolicyChangeAuditOtherPolicyChangeEventsValue = 0
 	// Success
-	PolicyChangeAuditPolicyChangeSuccess int64 = 1
+	PolicyChangeAuditOtherPolicyChangeEventsSuccess PolicyChangeAuditOtherPolicyChangeEventsValue = 1
 	// Failure
-	PolicyChangeAuditPolicyChangeFailure int64 = 2
+	PolicyChangeAuditOtherPolicyChangeEventsFailure PolicyChangeAuditOtherPolicyChangeEventsValue = 2
 	// Success+Failure
-	PolicyChangeAuditPolicyChangeSuccessFailure int64 = 3
+	PolicyChangeAuditOtherPolicyChangeEventsSuccessFailure PolicyChangeAuditOtherPolicyChangeEventsValue = 3
 )
 
-// PrivilegeUseAuditNonSensitivePrivilegeUse allowed values.
+// String returns the PolicyChangeAuditOtherPolicyChangeEventsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PolicyChangeAuditOtherPolicyChangeEventsValue) String() string {
+	switch e {
+	case PolicyChangeAuditOtherPolicyChangeEventsOffNone:
+		return "PolicyChangeAuditOtherPolicyChangeEventsOffNone"
+	case PolicyChangeAuditOtherPolicyChangeEventsSuccess:
+		return "PolicyChangeAuditOtherPolicyChangeEventsSuccess"
+	case PolicyChangeAuditOtherPolicyChangeEventsFailure:
+		return "PolicyChangeAuditOtherPolicyChangeEventsFailure"
+	case PolicyChangeAuditOtherPolicyChangeEventsSuccessFailure:
+		return "PolicyChangeAuditOtherPolicyChangeEventsSuccessFailure"
+	default:
+		return fmt.Sprintf("PolicyChangeAuditOtherPolicyChangeEventsValue(%d)", int64(e))
+	}
+}
+
+// PolicyChangeAuditPolicyChangeValue — allowed values for the PolicyChange_AuditPolicyChange node.
+type PolicyChangeAuditPolicyChangeValue int64
+
 const (
 	// Off/None
-	PrivilegeUseAuditNonSensitivePrivilegeUseOffNone int64 = 0
+	PolicyChangeAuditPolicyChangeOffNone PolicyChangeAuditPolicyChangeValue = 0
 	// Success
-	PrivilegeUseAuditNonSensitivePrivilegeUseSuccess int64 = 1
+	PolicyChangeAuditPolicyChangeSuccess PolicyChangeAuditPolicyChangeValue = 1
 	// Failure
-	PrivilegeUseAuditNonSensitivePrivilegeUseFailure int64 = 2
+	PolicyChangeAuditPolicyChangeFailure PolicyChangeAuditPolicyChangeValue = 2
 	// Success+Failure
-	PrivilegeUseAuditNonSensitivePrivilegeUseSuccessFailure int64 = 3
+	PolicyChangeAuditPolicyChangeSuccessFailure PolicyChangeAuditPolicyChangeValue = 3
 )
 
-// PrivilegeUseAuditOtherPrivilegeUseEvents allowed values.
+// String returns the PolicyChangeAuditPolicyChangeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PolicyChangeAuditPolicyChangeValue) String() string {
+	switch e {
+	case PolicyChangeAuditPolicyChangeOffNone:
+		return "PolicyChangeAuditPolicyChangeOffNone"
+	case PolicyChangeAuditPolicyChangeSuccess:
+		return "PolicyChangeAuditPolicyChangeSuccess"
+	case PolicyChangeAuditPolicyChangeFailure:
+		return "PolicyChangeAuditPolicyChangeFailure"
+	case PolicyChangeAuditPolicyChangeSuccessFailure:
+		return "PolicyChangeAuditPolicyChangeSuccessFailure"
+	default:
+		return fmt.Sprintf("PolicyChangeAuditPolicyChangeValue(%d)", int64(e))
+	}
+}
+
+// PrivilegeUseAuditNonSensitivePrivilegeUseValue — allowed values for the PrivilegeUse_AuditNonSensitivePrivilegeUse node.
+type PrivilegeUseAuditNonSensitivePrivilegeUseValue int64
+
 const (
 	// Off/None
-	PrivilegeUseAuditOtherPrivilegeUseEventsOffNone int64 = 0
+	PrivilegeUseAuditNonSensitivePrivilegeUseOffNone PrivilegeUseAuditNonSensitivePrivilegeUseValue = 0
 	// Success
-	PrivilegeUseAuditOtherPrivilegeUseEventsSuccess int64 = 1
+	PrivilegeUseAuditNonSensitivePrivilegeUseSuccess PrivilegeUseAuditNonSensitivePrivilegeUseValue = 1
 	// Failure
-	PrivilegeUseAuditOtherPrivilegeUseEventsFailure int64 = 2
+	PrivilegeUseAuditNonSensitivePrivilegeUseFailure PrivilegeUseAuditNonSensitivePrivilegeUseValue = 2
 	// Success+Failure
-	PrivilegeUseAuditOtherPrivilegeUseEventsSuccessFailure int64 = 3
+	PrivilegeUseAuditNonSensitivePrivilegeUseSuccessFailure PrivilegeUseAuditNonSensitivePrivilegeUseValue = 3
 )
 
-// PrivilegeUseAuditSensitivePrivilegeUse allowed values.
+// String returns the PrivilegeUseAuditNonSensitivePrivilegeUseValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PrivilegeUseAuditNonSensitivePrivilegeUseValue) String() string {
+	switch e {
+	case PrivilegeUseAuditNonSensitivePrivilegeUseOffNone:
+		return "PrivilegeUseAuditNonSensitivePrivilegeUseOffNone"
+	case PrivilegeUseAuditNonSensitivePrivilegeUseSuccess:
+		return "PrivilegeUseAuditNonSensitivePrivilegeUseSuccess"
+	case PrivilegeUseAuditNonSensitivePrivilegeUseFailure:
+		return "PrivilegeUseAuditNonSensitivePrivilegeUseFailure"
+	case PrivilegeUseAuditNonSensitivePrivilegeUseSuccessFailure:
+		return "PrivilegeUseAuditNonSensitivePrivilegeUseSuccessFailure"
+	default:
+		return fmt.Sprintf("PrivilegeUseAuditNonSensitivePrivilegeUseValue(%d)", int64(e))
+	}
+}
+
+// PrivilegeUseAuditOtherPrivilegeUseEventsValue — allowed values for the PrivilegeUse_AuditOtherPrivilegeUseEvents node.
+type PrivilegeUseAuditOtherPrivilegeUseEventsValue int64
+
 const (
 	// Off/None
-	PrivilegeUseAuditSensitivePrivilegeUseOffNone int64 = 0
+	PrivilegeUseAuditOtherPrivilegeUseEventsOffNone PrivilegeUseAuditOtherPrivilegeUseEventsValue = 0
 	// Success
-	PrivilegeUseAuditSensitivePrivilegeUseSuccess int64 = 1
+	PrivilegeUseAuditOtherPrivilegeUseEventsSuccess PrivilegeUseAuditOtherPrivilegeUseEventsValue = 1
 	// Failure
-	PrivilegeUseAuditSensitivePrivilegeUseFailure int64 = 2
+	PrivilegeUseAuditOtherPrivilegeUseEventsFailure PrivilegeUseAuditOtherPrivilegeUseEventsValue = 2
 	// Success+Failure
-	PrivilegeUseAuditSensitivePrivilegeUseSuccessFailure int64 = 3
+	PrivilegeUseAuditOtherPrivilegeUseEventsSuccessFailure PrivilegeUseAuditOtherPrivilegeUseEventsValue = 3
 )
 
-// SystemAuditIPsecDriver allowed values.
+// String returns the PrivilegeUseAuditOtherPrivilegeUseEventsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PrivilegeUseAuditOtherPrivilegeUseEventsValue) String() string {
+	switch e {
+	case PrivilegeUseAuditOtherPrivilegeUseEventsOffNone:
+		return "PrivilegeUseAuditOtherPrivilegeUseEventsOffNone"
+	case PrivilegeUseAuditOtherPrivilegeUseEventsSuccess:
+		return "PrivilegeUseAuditOtherPrivilegeUseEventsSuccess"
+	case PrivilegeUseAuditOtherPrivilegeUseEventsFailure:
+		return "PrivilegeUseAuditOtherPrivilegeUseEventsFailure"
+	case PrivilegeUseAuditOtherPrivilegeUseEventsSuccessFailure:
+		return "PrivilegeUseAuditOtherPrivilegeUseEventsSuccessFailure"
+	default:
+		return fmt.Sprintf("PrivilegeUseAuditOtherPrivilegeUseEventsValue(%d)", int64(e))
+	}
+}
+
+// PrivilegeUseAuditSensitivePrivilegeUseValue — allowed values for the PrivilegeUse_AuditSensitivePrivilegeUse node.
+type PrivilegeUseAuditSensitivePrivilegeUseValue int64
+
 const (
 	// Off/None
-	SystemAuditIPsecDriverOffNone int64 = 0
+	PrivilegeUseAuditSensitivePrivilegeUseOffNone PrivilegeUseAuditSensitivePrivilegeUseValue = 0
 	// Success
-	SystemAuditIPsecDriverSuccess int64 = 1
+	PrivilegeUseAuditSensitivePrivilegeUseSuccess PrivilegeUseAuditSensitivePrivilegeUseValue = 1
 	// Failure
-	SystemAuditIPsecDriverFailure int64 = 2
+	PrivilegeUseAuditSensitivePrivilegeUseFailure PrivilegeUseAuditSensitivePrivilegeUseValue = 2
 	// Success+Failure
-	SystemAuditIPsecDriverSuccessFailure int64 = 3
+	PrivilegeUseAuditSensitivePrivilegeUseSuccessFailure PrivilegeUseAuditSensitivePrivilegeUseValue = 3
 )
 
-// SystemAuditOtherSystemEvents allowed values.
+// String returns the PrivilegeUseAuditSensitivePrivilegeUseValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PrivilegeUseAuditSensitivePrivilegeUseValue) String() string {
+	switch e {
+	case PrivilegeUseAuditSensitivePrivilegeUseOffNone:
+		return "PrivilegeUseAuditSensitivePrivilegeUseOffNone"
+	case PrivilegeUseAuditSensitivePrivilegeUseSuccess:
+		return "PrivilegeUseAuditSensitivePrivilegeUseSuccess"
+	case PrivilegeUseAuditSensitivePrivilegeUseFailure:
+		return "PrivilegeUseAuditSensitivePrivilegeUseFailure"
+	case PrivilegeUseAuditSensitivePrivilegeUseSuccessFailure:
+		return "PrivilegeUseAuditSensitivePrivilegeUseSuccessFailure"
+	default:
+		return fmt.Sprintf("PrivilegeUseAuditSensitivePrivilegeUseValue(%d)", int64(e))
+	}
+}
+
+// SystemAuditIPsecDriverValue — allowed values for the System_AuditIPsecDriver node.
+type SystemAuditIPsecDriverValue int64
+
 const (
 	// Off/None
-	SystemAuditOtherSystemEventsOffNone int64 = 0
+	SystemAuditIPsecDriverOffNone SystemAuditIPsecDriverValue = 0
 	// Success
-	SystemAuditOtherSystemEventsSuccess int64 = 1
+	SystemAuditIPsecDriverSuccess SystemAuditIPsecDriverValue = 1
 	// Failure
-	SystemAuditOtherSystemEventsFailure int64 = 2
+	SystemAuditIPsecDriverFailure SystemAuditIPsecDriverValue = 2
 	// Success+Failure
-	SystemAuditOtherSystemEventsSuccessFailure int64 = 3
+	SystemAuditIPsecDriverSuccessFailure SystemAuditIPsecDriverValue = 3
 )
 
-// SystemAuditSecurityStateChange allowed values.
+// String returns the SystemAuditIPsecDriverValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SystemAuditIPsecDriverValue) String() string {
+	switch e {
+	case SystemAuditIPsecDriverOffNone:
+		return "SystemAuditIPsecDriverOffNone"
+	case SystemAuditIPsecDriverSuccess:
+		return "SystemAuditIPsecDriverSuccess"
+	case SystemAuditIPsecDriverFailure:
+		return "SystemAuditIPsecDriverFailure"
+	case SystemAuditIPsecDriverSuccessFailure:
+		return "SystemAuditIPsecDriverSuccessFailure"
+	default:
+		return fmt.Sprintf("SystemAuditIPsecDriverValue(%d)", int64(e))
+	}
+}
+
+// SystemAuditOtherSystemEventsValue — allowed values for the System_AuditOtherSystemEvents node.
+type SystemAuditOtherSystemEventsValue int64
+
 const (
 	// Off/None
-	SystemAuditSecurityStateChangeOffNone int64 = 0
+	SystemAuditOtherSystemEventsOffNone SystemAuditOtherSystemEventsValue = 0
 	// Success
-	SystemAuditSecurityStateChangeSuccess int64 = 1
+	SystemAuditOtherSystemEventsSuccess SystemAuditOtherSystemEventsValue = 1
 	// Failure
-	SystemAuditSecurityStateChangeFailure int64 = 2
+	SystemAuditOtherSystemEventsFailure SystemAuditOtherSystemEventsValue = 2
 	// Success+Failure
-	SystemAuditSecurityStateChangeSuccessFailure int64 = 3
+	SystemAuditOtherSystemEventsSuccessFailure SystemAuditOtherSystemEventsValue = 3
 )
 
-// SystemAuditSecuritySystemExtension allowed values.
+// String returns the SystemAuditOtherSystemEventsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SystemAuditOtherSystemEventsValue) String() string {
+	switch e {
+	case SystemAuditOtherSystemEventsOffNone:
+		return "SystemAuditOtherSystemEventsOffNone"
+	case SystemAuditOtherSystemEventsSuccess:
+		return "SystemAuditOtherSystemEventsSuccess"
+	case SystemAuditOtherSystemEventsFailure:
+		return "SystemAuditOtherSystemEventsFailure"
+	case SystemAuditOtherSystemEventsSuccessFailure:
+		return "SystemAuditOtherSystemEventsSuccessFailure"
+	default:
+		return fmt.Sprintf("SystemAuditOtherSystemEventsValue(%d)", int64(e))
+	}
+}
+
+// SystemAuditSecurityStateChangeValue — allowed values for the System_AuditSecurityStateChange node.
+type SystemAuditSecurityStateChangeValue int64
+
 const (
 	// Off/None
-	SystemAuditSecuritySystemExtensionOffNone int64 = 0
+	SystemAuditSecurityStateChangeOffNone SystemAuditSecurityStateChangeValue = 0
 	// Success
-	SystemAuditSecuritySystemExtensionSuccess int64 = 1
+	SystemAuditSecurityStateChangeSuccess SystemAuditSecurityStateChangeValue = 1
 	// Failure
-	SystemAuditSecuritySystemExtensionFailure int64 = 2
+	SystemAuditSecurityStateChangeFailure SystemAuditSecurityStateChangeValue = 2
 	// Success+Failure
-	SystemAuditSecuritySystemExtensionSuccessFailure int64 = 3
+	SystemAuditSecurityStateChangeSuccessFailure SystemAuditSecurityStateChangeValue = 3
 )
 
-// SystemAuditSystemIntegrity allowed values.
+// String returns the SystemAuditSecurityStateChangeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SystemAuditSecurityStateChangeValue) String() string {
+	switch e {
+	case SystemAuditSecurityStateChangeOffNone:
+		return "SystemAuditSecurityStateChangeOffNone"
+	case SystemAuditSecurityStateChangeSuccess:
+		return "SystemAuditSecurityStateChangeSuccess"
+	case SystemAuditSecurityStateChangeFailure:
+		return "SystemAuditSecurityStateChangeFailure"
+	case SystemAuditSecurityStateChangeSuccessFailure:
+		return "SystemAuditSecurityStateChangeSuccessFailure"
+	default:
+		return fmt.Sprintf("SystemAuditSecurityStateChangeValue(%d)", int64(e))
+	}
+}
+
+// SystemAuditSecuritySystemExtensionValue — allowed values for the System_AuditSecuritySystemExtension node.
+type SystemAuditSecuritySystemExtensionValue int64
+
 const (
 	// Off/None
-	SystemAuditSystemIntegrityOffNone int64 = 0
+	SystemAuditSecuritySystemExtensionOffNone SystemAuditSecuritySystemExtensionValue = 0
 	// Success
-	SystemAuditSystemIntegritySuccess int64 = 1
+	SystemAuditSecuritySystemExtensionSuccess SystemAuditSecuritySystemExtensionValue = 1
 	// Failure
-	SystemAuditSystemIntegrityFailure int64 = 2
+	SystemAuditSecuritySystemExtensionFailure SystemAuditSecuritySystemExtensionValue = 2
 	// Success+Failure
-	SystemAuditSystemIntegritySuccessFailure int64 = 3
+	SystemAuditSecuritySystemExtensionSuccessFailure SystemAuditSecuritySystemExtensionValue = 3
 )
+
+// String returns the SystemAuditSecuritySystemExtensionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SystemAuditSecuritySystemExtensionValue) String() string {
+	switch e {
+	case SystemAuditSecuritySystemExtensionOffNone:
+		return "SystemAuditSecuritySystemExtensionOffNone"
+	case SystemAuditSecuritySystemExtensionSuccess:
+		return "SystemAuditSecuritySystemExtensionSuccess"
+	case SystemAuditSecuritySystemExtensionFailure:
+		return "SystemAuditSecuritySystemExtensionFailure"
+	case SystemAuditSecuritySystemExtensionSuccessFailure:
+		return "SystemAuditSecuritySystemExtensionSuccessFailure"
+	default:
+		return fmt.Sprintf("SystemAuditSecuritySystemExtensionValue(%d)", int64(e))
+	}
+}
+
+// SystemAuditSystemIntegrityValue — allowed values for the System_AuditSystemIntegrity node.
+type SystemAuditSystemIntegrityValue int64
+
+const (
+	// Off/None
+	SystemAuditSystemIntegrityOffNone SystemAuditSystemIntegrityValue = 0
+	// Success
+	SystemAuditSystemIntegritySuccess SystemAuditSystemIntegrityValue = 1
+	// Failure
+	SystemAuditSystemIntegrityFailure SystemAuditSystemIntegrityValue = 2
+	// Success+Failure
+	SystemAuditSystemIntegritySuccessFailure SystemAuditSystemIntegrityValue = 3
+)
+
+// String returns the SystemAuditSystemIntegrityValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SystemAuditSystemIntegrityValue) String() string {
+	switch e {
+	case SystemAuditSystemIntegrityOffNone:
+		return "SystemAuditSystemIntegrityOffNone"
+	case SystemAuditSystemIntegritySuccess:
+		return "SystemAuditSystemIntegritySuccess"
+	case SystemAuditSystemIntegrityFailure:
+		return "SystemAuditSystemIntegrityFailure"
+	case SystemAuditSystemIntegritySuccessFailure:
+		return "SystemAuditSystemIntegritySuccessFailure"
+	default:
+		return fmt.Sprintf("SystemAuditSystemIntegrityValue(%d)", int64(e))
+	}
+}

@@ -1,7 +1,8 @@
 // Package codegen orchestrates the offline CSP code generator: it loads the
-// committed DDF snapshots, builds view models (build), renders them through
-// the template firewall (render), assembles files (fileasm) and prunes stale
-// output. Everything is deterministic from metadata/csp.
+// committed DDF snapshots, clears previously generated output (identified
+// by the DO-NOT-EDIT header), builds view models (build), renders them
+// through the template firewall (render) and assembles files (fileasm).
+// Everything is deterministic from metadata/csp.
 package codegen
 
 import (
@@ -33,16 +34,18 @@ func Run(metadataDir, outDir, modulePath string) error {
 		return err
 	}
 
-	written := map[string]bool{}
+	// Clear before re-emitting: a run never mixes fresh output with
+	// leftovers from a previous generation. Only header-marked files are
+	// removed; hand-written packages under the output root survive.
+	if err := clearGenerated(outDir); err != nil {
+		return fmt.Errorf("clear %s: %w", outDir, err)
+	}
 	for _, p := range pkgs {
-		if err := emitPackage(outDir, p, modulePath, written); err != nil {
+		if err := emitPackage(outDir, p, modulePath); err != nil {
 			return fmt.Errorf("%s: %w", p.Dir, err)
 		}
 	}
-	if err := emitRegistry(outDir, pkgs, modulePath, release, written); err != nil {
-		return err
-	}
-	if err := pruneStale(outDir, written); err != nil {
+	if err := emitRegistry(outDir, pkgs, modulePath, release); err != nil {
 		return err
 	}
 	fmt.Printf("generated %d CSP packages -> %s\n", len(pkgs), outDir)
@@ -103,7 +106,7 @@ func loadPackages(metadataDir, release string) ([]*view.Package, error) {
 	return pkgs, nil
 }
 
-func emitPackage(outDir string, p *view.Package, modulePath string, written map[string]bool) error {
+func emitPackage(outDir string, p *view.Package, modulePath string) error {
 	dir := filepath.Join(outDir, filepath.FromSlash(p.Dir))
 	clientImport := fileasm.Import{Path: modulePath + "/client"}
 
@@ -112,7 +115,7 @@ func emitPackage(outDir string, p *view.Package, modulePath string, written map[
 	if err != nil {
 		return err
 	}
-	if err := writeGen(dir, "doc.go", p.PackageName, doc, nil, "", written); err != nil {
+	if err := writeGen(dir, "doc.go", p.PackageName, doc, nil, ""); err != nil {
 		return err
 	}
 
@@ -121,7 +124,7 @@ func emitPackage(outDir string, p *view.Package, modulePath string, written map[
 	if err != nil {
 		return err
 	}
-	if err := writeGen(dir, p.PackageName+"_service.go", p.PackageName, "", []fileasm.Import{clientImport}, service, written); err != nil {
+	if err := writeGen(dir, p.PackageName+"_service.go", p.PackageName, "", []fileasm.Import{clientImport}, service); err != nil {
 		return err
 	}
 
@@ -145,7 +148,7 @@ func emitPackage(outDir string, p *view.Package, modulePath string, written map[
 		uris.WriteString(s)
 	}
 	if uris.Len() > 0 {
-		if err := writeGen(dir, p.PackageName+"_uris.go", p.PackageName, "", nil, uris.String(), written); err != nil {
+		if err := writeGen(dir, p.PackageName+"_uris.go", p.PackageName, "", nil, uris.String()); err != nil {
 			return err
 		}
 	}
@@ -163,7 +166,7 @@ func emitPackage(outDir string, p *view.Package, modulePath string, written map[
 	if strings.Contains(crud.String(), "client.") {
 		crudImports = append(crudImports, clientImport)
 	}
-	if err := writeGen(dir, p.PackageName+"_crud.go", p.PackageName, "", crudImports, crud.String(), written); err != nil {
+	if err := writeGen(dir, p.PackageName+"_crud.go", p.PackageName, "", crudImports, crud.String()); err != nil {
 		return err
 	}
 
@@ -177,7 +180,11 @@ func emitPackage(outDir string, p *view.Package, modulePath string, written map[
 			}
 			enums.WriteString(s)
 		}
-		if err := writeGen(dir, p.PackageName+"_enums.go", p.PackageName, "", nil, enums.String(), written); err != nil {
+		var enumImports []fileasm.Import
+		if strings.Contains(enums.String(), "fmt.") {
+			enumImports = append(enumImports, fileasm.Import{Path: "fmt"})
+		}
+		if err := writeGen(dir, p.PackageName+"_enums.go", p.PackageName, "", enumImports, enums.String()); err != nil {
 			return err
 		}
 	}
@@ -193,7 +200,7 @@ func hasConstURIs(p *view.Package) bool {
 	return false
 }
 
-func emitRegistry(outDir string, pkgs []*view.Package, modulePath, release string, written map[string]bool) error {
+func emitRegistry(outDir string, pkgs []*view.Package, modulePath, release string) error {
 	reg := view.Registry{Release: release}
 	families := []struct {
 		field, typeName, doc, dir string
@@ -232,26 +239,20 @@ func emitRegistry(outDir string, pkgs []*view.Package, modulePath, release strin
 	if err != nil {
 		return err
 	}
-	return writeGen(outDir, "registry.go", "windowscsp", "", imports, body, written)
+	return writeGen(outDir, "registry.go", "windowscsp", "", imports, body)
 }
 
-func writeGen(dir, name, pkg, docComment string, imports []fileasm.Import, body string, written map[string]bool) error {
-	path := filepath.Join(dir, name)
-	if err := fileasm.WriteFile(path, pkg, docComment, imports, body); err != nil {
-		return err
-	}
-	abs, err := filepath.Abs(path)
-	if err != nil {
-		return err
-	}
-	written[abs] = true
-	return nil
+func writeGen(dir, name, pkg, docComment string, imports []fileasm.Import, body string) error {
+	return fileasm.WriteFile(filepath.Join(dir, name), pkg, docComment, imports, body)
 }
 
-// pruneStale deletes generated files (identified by the header marker) that
-// this run did not write, then removes emptied directories. Hand-written
+// clearGenerated removes every generated file (identified by the header
+// marker) under outDir, then removes emptied directories. Hand-written
 // files are never touched.
-func pruneStale(outDir string, written map[string]bool) error {
+func clearGenerated(outDir string) error {
+	if _, err := os.Stat(outDir); os.IsNotExist(err) {
+		return nil
+	}
 	var dirs []string
 	err := filepath.WalkDir(outDir, func(path string, d fs.DirEntry, err error) error {
 		if err != nil {
@@ -262,13 +263,6 @@ func pruneStale(outDir string, written map[string]bool) error {
 			return nil
 		}
 		if !strings.HasSuffix(path, ".go") {
-			return nil
-		}
-		abs, err := filepath.Abs(path)
-		if err != nil {
-			return err
-		}
-		if written[abs] {
 			return nil
 		}
 		head := make([]byte, len(fileasm.Header))

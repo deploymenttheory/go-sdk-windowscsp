@@ -201,28 +201,29 @@ func (s *PassportForWork) DeleteTenantIdPoliciesExcludeSecurityDevicesTPM12(ctx 
 // Use this policy setting to configure the use of digits in the Windows Hello for Business PIN.
 //
 // Default: 0.
-func (s *PassportForWork) GetTenantIdPoliciesPINComplexityDigits(ctx context.Context, tenantId string) (int64, error) {
+func (s *PassportForWork) GetTenantIdPoliciesPINComplexityDigits(ctx context.Context, tenantId string) (TenantIdPoliciesPINComplexityDigitsValue, error) {
 	v, err := s.c.Get(ctx, URITenantIdPoliciesPINComplexityDigits(tenantId))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return TenantIdPoliciesPINComplexityDigitsValue(n), err
 }
 
 // CreateTenantIdPoliciesPINComplexityDigits creates ./Device/Vendor/MSFT/PassportForWork/{tenantId}/Policies/PINComplexity/Digits.
 // Use this policy setting to configure the use of digits in the Windows Hello for Business PIN.
 //
 // Default: 0.
-func (s *PassportForWork) CreateTenantIdPoliciesPINComplexityDigits(ctx context.Context, tenantId string, value int64) error {
-	return s.c.Add(ctx, URITenantIdPoliciesPINComplexityDigits(tenantId), client.Int(value))
+func (s *PassportForWork) CreateTenantIdPoliciesPINComplexityDigits(ctx context.Context, tenantId string, value TenantIdPoliciesPINComplexityDigitsValue) error {
+	return s.c.Add(ctx, URITenantIdPoliciesPINComplexityDigits(tenantId), client.Int(int64(value)))
 }
 
 // UpdateTenantIdPoliciesPINComplexityDigits updates ./Device/Vendor/MSFT/PassportForWork/{tenantId}/Policies/PINComplexity/Digits.
 // Use this policy setting to configure the use of digits in the Windows Hello for Business PIN.
 //
 // Default: 0.
-func (s *PassportForWork) UpdateTenantIdPoliciesPINComplexityDigits(ctx context.Context, tenantId string, value int64) error {
-	return s.c.Replace(ctx, URITenantIdPoliciesPINComplexityDigits(tenantId), client.Int(value))
+func (s *PassportForWork) UpdateTenantIdPoliciesPINComplexityDigits(ctx context.Context, tenantId string, value TenantIdPoliciesPINComplexityDigitsValue) error {
+	return s.c.Replace(ctx, URITenantIdPoliciesPINComplexityDigits(tenantId), client.Int(int64(value)))
 }
 
 // DeleteTenantIdPoliciesPINComplexityDigits deletes ./Device/Vendor/MSFT/PassportForWork/{tenantId}/Policies/PINComplexity/Digits.
@@ -322,12 +323,13 @@ func (s *PassportForWork) DeleteTenantIdPoliciesPINComplexityHistory(ctx context
 // Business PIN.
 //
 // Default: 0.
-func (s *PassportForWork) GetTenantIdPoliciesPINComplexityLowercaseLetters(ctx context.Context, tenantId string) (int64, error) {
+func (s *PassportForWork) GetTenantIdPoliciesPINComplexityLowercaseLetters(ctx context.Context, tenantId string) (TenantIdPoliciesPINComplexityLowercaseLettersValue, error) {
 	v, err := s.c.Get(ctx, URITenantIdPoliciesPINComplexityLowercaseLetters(tenantId))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return TenantIdPoliciesPINComplexityLowercaseLettersValue(n), err
 }
 
 // CreateTenantIdPoliciesPINComplexityLowercaseLetters creates ./Device/Vendor/MSFT/PassportForWork/{tenantId}/Policies/PINComplexity/LowercaseLetters.
@@ -335,8 +337,8 @@ func (s *PassportForWork) GetTenantIdPoliciesPINComplexityLowercaseLetters(ctx c
 // Business PIN.
 //
 // Default: 0.
-func (s *PassportForWork) CreateTenantIdPoliciesPINComplexityLowercaseLetters(ctx context.Context, tenantId string, value int64) error {
-	return s.c.Add(ctx, URITenantIdPoliciesPINComplexityLowercaseLetters(tenantId), client.Int(value))
+func (s *PassportForWork) CreateTenantIdPoliciesPINComplexityLowercaseLetters(ctx context.Context, tenantId string, value TenantIdPoliciesPINComplexityLowercaseLettersValue) error {
+	return s.c.Add(ctx, URITenantIdPoliciesPINComplexityLowercaseLetters(tenantId), client.Int(int64(value)))
 }
 
 // UpdateTenantIdPoliciesPINComplexityLowercaseLetters updates ./Device/Vendor/MSFT/PassportForWork/{tenantId}/Policies/PINComplexity/LowercaseLetters.
@@ -344,8 +346,8 @@ func (s *PassportForWork) CreateTenantIdPoliciesPINComplexityLowercaseLetters(ct
 // Business PIN.
 //
 // Default: 0.
-func (s *PassportForWork) UpdateTenantIdPoliciesPINComplexityLowercaseLetters(ctx context.Context, tenantId string, value int64) error {
-	return s.c.Replace(ctx, URITenantIdPoliciesPINComplexityLowercaseLetters(tenantId), client.Int(value))
+func (s *PassportForWork) UpdateTenantIdPoliciesPINComplexityLowercaseLetters(ctx context.Context, tenantId string, value TenantIdPoliciesPINComplexityLowercaseLettersValue) error {
+	return s.c.Replace(ctx, URITenantIdPoliciesPINComplexityLowercaseLetters(tenantId), client.Int(int64(value)))
 }
 
 // DeleteTenantIdPoliciesPINComplexityLowercaseLetters deletes ./Device/Vendor/MSFT/PassportForWork/{tenantId}/Policies/PINComplexity/LowercaseLetters.
@@ -459,12 +461,13 @@ func (s *PassportForWork) DeleteTenantIdPoliciesPINComplexityMinimumPINLength(ct
 // include: ! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~ .
 //
 // Default: 0.
-func (s *PassportForWork) GetTenantIdPoliciesPINComplexitySpecialCharacters(ctx context.Context, tenantId string) (int64, error) {
+func (s *PassportForWork) GetTenantIdPoliciesPINComplexitySpecialCharacters(ctx context.Context, tenantId string) (TenantIdPoliciesPINComplexitySpecialCharactersValue, error) {
 	v, err := s.c.Get(ctx, URITenantIdPoliciesPINComplexitySpecialCharacters(tenantId))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return TenantIdPoliciesPINComplexitySpecialCharactersValue(n), err
 }
 
 // CreateTenantIdPoliciesPINComplexitySpecialCharacters creates ./Device/Vendor/MSFT/PassportForWork/{tenantId}/Policies/PINComplexity/SpecialCharacters.
@@ -473,8 +476,8 @@ func (s *PassportForWork) GetTenantIdPoliciesPINComplexitySpecialCharacters(ctx 
 // include: ! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~ .
 //
 // Default: 0.
-func (s *PassportForWork) CreateTenantIdPoliciesPINComplexitySpecialCharacters(ctx context.Context, tenantId string, value int64) error {
-	return s.c.Add(ctx, URITenantIdPoliciesPINComplexitySpecialCharacters(tenantId), client.Int(value))
+func (s *PassportForWork) CreateTenantIdPoliciesPINComplexitySpecialCharacters(ctx context.Context, tenantId string, value TenantIdPoliciesPINComplexitySpecialCharactersValue) error {
+	return s.c.Add(ctx, URITenantIdPoliciesPINComplexitySpecialCharacters(tenantId), client.Int(int64(value)))
 }
 
 // UpdateTenantIdPoliciesPINComplexitySpecialCharacters updates ./Device/Vendor/MSFT/PassportForWork/{tenantId}/Policies/PINComplexity/SpecialCharacters.
@@ -483,8 +486,8 @@ func (s *PassportForWork) CreateTenantIdPoliciesPINComplexitySpecialCharacters(c
 // include: ! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~ .
 //
 // Default: 0.
-func (s *PassportForWork) UpdateTenantIdPoliciesPINComplexitySpecialCharacters(ctx context.Context, tenantId string, value int64) error {
-	return s.c.Replace(ctx, URITenantIdPoliciesPINComplexitySpecialCharacters(tenantId), client.Int(value))
+func (s *PassportForWork) UpdateTenantIdPoliciesPINComplexitySpecialCharacters(ctx context.Context, tenantId string, value TenantIdPoliciesPINComplexitySpecialCharactersValue) error {
+	return s.c.Replace(ctx, URITenantIdPoliciesPINComplexitySpecialCharacters(tenantId), client.Int(int64(value)))
 }
 
 // DeleteTenantIdPoliciesPINComplexitySpecialCharacters deletes ./Device/Vendor/MSFT/PassportForWork/{tenantId}/Policies/PINComplexity/SpecialCharacters.
@@ -502,12 +505,13 @@ func (s *PassportForWork) DeleteTenantIdPoliciesPINComplexitySpecialCharacters(c
 // Business PIN.
 //
 // Default: 0.
-func (s *PassportForWork) GetTenantIdPoliciesPINComplexityUppercaseLetters(ctx context.Context, tenantId string) (int64, error) {
+func (s *PassportForWork) GetTenantIdPoliciesPINComplexityUppercaseLetters(ctx context.Context, tenantId string) (TenantIdPoliciesPINComplexityUppercaseLettersValue, error) {
 	v, err := s.c.Get(ctx, URITenantIdPoliciesPINComplexityUppercaseLetters(tenantId))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return TenantIdPoliciesPINComplexityUppercaseLettersValue(n), err
 }
 
 // CreateTenantIdPoliciesPINComplexityUppercaseLetters creates ./Device/Vendor/MSFT/PassportForWork/{tenantId}/Policies/PINComplexity/UppercaseLetters.
@@ -515,8 +519,8 @@ func (s *PassportForWork) GetTenantIdPoliciesPINComplexityUppercaseLetters(ctx c
 // Business PIN.
 //
 // Default: 0.
-func (s *PassportForWork) CreateTenantIdPoliciesPINComplexityUppercaseLetters(ctx context.Context, tenantId string, value int64) error {
-	return s.c.Add(ctx, URITenantIdPoliciesPINComplexityUppercaseLetters(tenantId), client.Int(value))
+func (s *PassportForWork) CreateTenantIdPoliciesPINComplexityUppercaseLetters(ctx context.Context, tenantId string, value TenantIdPoliciesPINComplexityUppercaseLettersValue) error {
+	return s.c.Add(ctx, URITenantIdPoliciesPINComplexityUppercaseLetters(tenantId), client.Int(int64(value)))
 }
 
 // UpdateTenantIdPoliciesPINComplexityUppercaseLetters updates ./Device/Vendor/MSFT/PassportForWork/{tenantId}/Policies/PINComplexity/UppercaseLetters.
@@ -524,8 +528,8 @@ func (s *PassportForWork) CreateTenantIdPoliciesPINComplexityUppercaseLetters(ct
 // Business PIN.
 //
 // Default: 0.
-func (s *PassportForWork) UpdateTenantIdPoliciesPINComplexityUppercaseLetters(ctx context.Context, tenantId string, value int64) error {
-	return s.c.Replace(ctx, URITenantIdPoliciesPINComplexityUppercaseLetters(tenantId), client.Int(value))
+func (s *PassportForWork) UpdateTenantIdPoliciesPINComplexityUppercaseLetters(ctx context.Context, tenantId string, value TenantIdPoliciesPINComplexityUppercaseLettersValue) error {
+	return s.c.Replace(ctx, URITenantIdPoliciesPINComplexityUppercaseLetters(tenantId), client.Int(int64(value)))
 }
 
 // DeleteTenantIdPoliciesPINComplexityUppercaseLetters deletes ./Device/Vendor/MSFT/PassportForWork/{tenantId}/Policies/PINComplexity/UppercaseLetters.
@@ -806,12 +810,13 @@ func (s *PassportForWork) DeleteTenantIdPoliciesUsePassportForWork(ctx context.C
 //
 // Default: 1.
 // Supported from OS build 10.0.22621 (CSP v1.3).
-func (s *PassportForWork) GetBiometricsEnableESSwithSupportedPeripherals(ctx context.Context) (int64, error) {
+func (s *PassportForWork) GetBiometricsEnableESSwithSupportedPeripherals(ctx context.Context) (BiometricsEnableESSwithSupportedPeripheralsValue, error) {
 	v, err := s.c.Get(ctx, URIBiometricsEnableESSwithSupportedPeripherals)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return BiometricsEnableESSwithSupportedPeripheralsValue(n), err
 }
 
 // CreateBiometricsEnableESSwithSupportedPeripherals creates ./Device/Vendor/MSFT/PassportForWork/Biometrics/EnableESSwithSupportedPeripherals.
@@ -823,8 +828,8 @@ func (s *PassportForWork) GetBiometricsEnableESSwithSupportedPeripherals(ctx con
 //
 // Default: 1.
 // Supported from OS build 10.0.22621 (CSP v1.3).
-func (s *PassportForWork) CreateBiometricsEnableESSwithSupportedPeripherals(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIBiometricsEnableESSwithSupportedPeripherals, client.Int(value))
+func (s *PassportForWork) CreateBiometricsEnableESSwithSupportedPeripherals(ctx context.Context, value BiometricsEnableESSwithSupportedPeripheralsValue) error {
+	return s.c.Add(ctx, URIBiometricsEnableESSwithSupportedPeripherals, client.Int(int64(value)))
 }
 
 // UpdateBiometricsEnableESSwithSupportedPeripherals updates ./Device/Vendor/MSFT/PassportForWork/Biometrics/EnableESSwithSupportedPeripherals.
@@ -836,8 +841,8 @@ func (s *PassportForWork) CreateBiometricsEnableESSwithSupportedPeripherals(ctx 
 //
 // Default: 1.
 // Supported from OS build 10.0.22621 (CSP v1.3).
-func (s *PassportForWork) UpdateBiometricsEnableESSwithSupportedPeripherals(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIBiometricsEnableESSwithSupportedPeripherals, client.Int(value))
+func (s *PassportForWork) UpdateBiometricsEnableESSwithSupportedPeripherals(ctx context.Context, value BiometricsEnableESSwithSupportedPeripheralsValue) error {
+	return s.c.Replace(ctx, URIBiometricsEnableESSwithSupportedPeripherals, client.Int(int64(value)))
 }
 
 // DeleteBiometricsEnableESSwithSupportedPeripherals deletes ./Device/Vendor/MSFT/PassportForWork/Biometrics/EnableESSwithSupportedPeripherals.
@@ -1098,12 +1103,13 @@ func (s *PassportForWork) DeleteDynamicLockPlugins(ctx context.Context) error {
 // setting, the default is disabled.
 //
 // Default: 0.
-func (s *PassportForWork) GetSecurityKeyUseSecurityKeyForSignin(ctx context.Context) (int64, error) {
+func (s *PassportForWork) GetSecurityKeyUseSecurityKeyForSignin(ctx context.Context) (SecurityKeyUseSecurityKeyForSigninValue, error) {
 	v, err := s.c.Get(ctx, URISecurityKeyUseSecurityKeyForSignin)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SecurityKeyUseSecurityKeyForSigninValue(n), err
 }
 
 // CreateSecurityKeyUseSecurityKeyForSignin creates ./Device/Vendor/MSFT/PassportForWork/SecurityKey/UseSecurityKeyForSignin.
@@ -1111,8 +1117,8 @@ func (s *PassportForWork) GetSecurityKeyUseSecurityKeyForSignin(ctx context.Cont
 // setting, the default is disabled.
 //
 // Default: 0.
-func (s *PassportForWork) CreateSecurityKeyUseSecurityKeyForSignin(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISecurityKeyUseSecurityKeyForSignin, client.Int(value))
+func (s *PassportForWork) CreateSecurityKeyUseSecurityKeyForSignin(ctx context.Context, value SecurityKeyUseSecurityKeyForSigninValue) error {
+	return s.c.Add(ctx, URISecurityKeyUseSecurityKeyForSignin, client.Int(int64(value)))
 }
 
 // UpdateSecurityKeyUseSecurityKeyForSignin updates ./Device/Vendor/MSFT/PassportForWork/SecurityKey/UseSecurityKeyForSignin.
@@ -1120,8 +1126,8 @@ func (s *PassportForWork) CreateSecurityKeyUseSecurityKeyForSignin(ctx context.C
 // setting, the default is disabled.
 //
 // Default: 0.
-func (s *PassportForWork) UpdateSecurityKeyUseSecurityKeyForSignin(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISecurityKeyUseSecurityKeyForSignin, client.Int(value))
+func (s *PassportForWork) UpdateSecurityKeyUseSecurityKeyForSignin(ctx context.Context, value SecurityKeyUseSecurityKeyForSigninValue) error {
+	return s.c.Replace(ctx, URISecurityKeyUseSecurityKeyForSignin, client.Int(int64(value)))
 }
 
 // DeleteSecurityKeyUseSecurityKeyForSignin deletes ./Device/Vendor/MSFT/PassportForWork/SecurityKey/UseSecurityKeyForSignin.

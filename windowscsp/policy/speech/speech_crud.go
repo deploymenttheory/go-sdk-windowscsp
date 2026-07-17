@@ -18,12 +18,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Speech) GetAllowSpeechModelUpdate(ctx context.Context) (int64, error) {
+func (s *Speech) GetAllowSpeechModelUpdate(ctx context.Context) (AllowSpeechModelUpdateValue, error) {
 	v, err := s.c.Get(ctx, URIAllowSpeechModelUpdate)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowSpeechModelUpdateValue(n), err
 }
 
 // CreateAllowSpeechModelUpdate creates ./Device/Vendor/MSFT/Policy/Config/Speech/AllowSpeechModelUpdate.
@@ -36,8 +37,8 @@ func (s *Speech) GetAllowSpeechModelUpdate(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Speech) CreateAllowSpeechModelUpdate(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowSpeechModelUpdate, client.Int(value))
+func (s *Speech) CreateAllowSpeechModelUpdate(ctx context.Context, value AllowSpeechModelUpdateValue) error {
+	return s.c.Add(ctx, URIAllowSpeechModelUpdate, client.Int(int64(value)))
 }
 
 // UpdateAllowSpeechModelUpdate updates ./Device/Vendor/MSFT/Policy/Config/Speech/AllowSpeechModelUpdate.
@@ -50,8 +51,8 @@ func (s *Speech) CreateAllowSpeechModelUpdate(ctx context.Context, value int64) 
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Speech) UpdateAllowSpeechModelUpdate(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowSpeechModelUpdate, client.Int(value))
+func (s *Speech) UpdateAllowSpeechModelUpdate(ctx context.Context, value AllowSpeechModelUpdateValue) error {
+	return s.c.Replace(ctx, URIAllowSpeechModelUpdate, client.Int(int64(value)))
 }
 
 // DeleteAllowSpeechModelUpdate deletes ./Device/Vendor/MSFT/Policy/Config/Speech/AllowSpeechModelUpdate.

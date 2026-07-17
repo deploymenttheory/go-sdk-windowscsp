@@ -91,12 +91,13 @@ func (s *Firewall) UpdateMdmStoreDomainProfileAuthAppsAllowUserPrefMerge(ctx con
 // the GroupPolicyRSoPStore.win if it is configured; otherwise, the local store value is used.
 //
 // Default: 1.
-func (s *Firewall) GetMdmStoreDomainProfileDefaultInboundAction(ctx context.Context) (int64, error) {
+func (s *Firewall) GetMdmStoreDomainProfileDefaultInboundAction(ctx context.Context) (MdmStoreDomainProfileDefaultInboundActionValue, error) {
 	v, err := s.c.Get(ctx, URIMdmStoreDomainProfileDefaultInboundAction)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MdmStoreDomainProfileDefaultInboundActionValue(n), err
 }
 
 // UpdateMdmStoreDomainProfileDefaultInboundAction updates ./Vendor/MSFT/Firewall/MdmStore/DomainProfile/DefaultInboundAction.
@@ -106,8 +107,8 @@ func (s *Firewall) GetMdmStoreDomainProfileDefaultInboundAction(ctx context.Cont
 // the GroupPolicyRSoPStore.win if it is configured; otherwise, the local store value is used.
 //
 // Default: 1.
-func (s *Firewall) UpdateMdmStoreDomainProfileDefaultInboundAction(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIMdmStoreDomainProfileDefaultInboundAction, client.Int(value))
+func (s *Firewall) UpdateMdmStoreDomainProfileDefaultInboundAction(ctx context.Context, value MdmStoreDomainProfileDefaultInboundActionValue) error {
+	return s.c.Replace(ctx, URIMdmStoreDomainProfileDefaultInboundAction, client.Int(int64(value)))
 }
 
 // GetMdmStoreDomainProfileDefaultOutboundAction reads ./Vendor/MSFT/Firewall/MdmStore/DomainProfile/DefaultOutboundAction.
@@ -117,12 +118,13 @@ func (s *Firewall) UpdateMdmStoreDomainProfileDefaultInboundAction(ctx context.C
 // the GroupPolicyRSoPStore win if it is configured; otherwise, the local store value is used.
 //
 // Default: 0.
-func (s *Firewall) GetMdmStoreDomainProfileDefaultOutboundAction(ctx context.Context) (int64, error) {
+func (s *Firewall) GetMdmStoreDomainProfileDefaultOutboundAction(ctx context.Context) (MdmStoreDomainProfileDefaultOutboundActionValue, error) {
 	v, err := s.c.Get(ctx, URIMdmStoreDomainProfileDefaultOutboundAction)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MdmStoreDomainProfileDefaultOutboundActionValue(n), err
 }
 
 // UpdateMdmStoreDomainProfileDefaultOutboundAction updates ./Vendor/MSFT/Firewall/MdmStore/DomainProfile/DefaultOutboundAction.
@@ -132,8 +134,8 @@ func (s *Firewall) GetMdmStoreDomainProfileDefaultOutboundAction(ctx context.Con
 // the GroupPolicyRSoPStore win if it is configured; otherwise, the local store value is used.
 //
 // Default: 0.
-func (s *Firewall) UpdateMdmStoreDomainProfileDefaultOutboundAction(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIMdmStoreDomainProfileDefaultOutboundAction, client.Int(value))
+func (s *Firewall) UpdateMdmStoreDomainProfileDefaultOutboundAction(ctx context.Context, value MdmStoreDomainProfileDefaultOutboundActionValue) error {
+	return s.c.Replace(ctx, URIMdmStoreDomainProfileDefaultOutboundAction, client.Int(int64(value)))
 }
 
 // GetMdmStoreDomainProfileDisableInboundNotifications reads ./Vendor/MSFT/Firewall/MdmStore/DomainProfile/DisableInboundNotifications.
@@ -560,20 +562,21 @@ func (s *Firewall) DeleteMdmStoreFirewallRulesFirewallRuleName(ctx context.Conte
 // Specifies the action the rule enforces:
 //
 // Default: 1.
-func (s *Firewall) GetMdmStoreFirewallRulesFirewallRuleNameActionType(ctx context.Context, firewallRuleName string) (int64, error) {
+func (s *Firewall) GetMdmStoreFirewallRulesFirewallRuleNameActionType(ctx context.Context, firewallRuleName string) (MdmStoreFirewallRulesFirewallRuleNameActionTypeValue, error) {
 	v, err := s.c.Get(ctx, URIMdmStoreFirewallRulesFirewallRuleNameActionType(firewallRuleName))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MdmStoreFirewallRulesFirewallRuleNameActionTypeValue(n), err
 }
 
 // UpdateMdmStoreFirewallRulesFirewallRuleNameActionType updates ./Vendor/MSFT/Firewall/MdmStore/FirewallRules/{firewallRuleName}/Action/Type.
 // Specifies the action the rule enforces:
 //
 // Default: 1.
-func (s *Firewall) UpdateMdmStoreFirewallRulesFirewallRuleNameActionType(ctx context.Context, firewallRuleName string, value int64) error {
-	return s.c.Replace(ctx, URIMdmStoreFirewallRulesFirewallRuleNameActionType(firewallRuleName), client.Int(value))
+func (s *Firewall) UpdateMdmStoreFirewallRulesFirewallRuleNameActionType(ctx context.Context, firewallRuleName string, value MdmStoreFirewallRulesFirewallRuleNameActionTypeValue) error {
+	return s.c.Replace(ctx, URIMdmStoreFirewallRulesFirewallRuleNameActionType(firewallRuleName), client.Int(int64(value)))
 }
 
 // GetMdmStoreFirewallRulesFirewallRuleNameAppFilePath reads ./Vendor/MSFT/Firewall/MdmStore/FirewallRules/{firewallRuleName}/App/FilePath.
@@ -732,20 +735,20 @@ func (s *Firewall) DeleteMdmStoreFirewallRulesFirewallRuleNameDescription(ctx co
 // The rule is enabled based on the traffic direction as following.
 //
 // Default: OUT.
-func (s *Firewall) GetMdmStoreFirewallRulesFirewallRuleNameDirection(ctx context.Context, firewallRuleName string) (string, error) {
+func (s *Firewall) GetMdmStoreFirewallRulesFirewallRuleNameDirection(ctx context.Context, firewallRuleName string) (MdmStoreFirewallRulesFirewallRuleNameDirectionValue, error) {
 	v, err := s.c.Get(ctx, URIMdmStoreFirewallRulesFirewallRuleNameDirection(firewallRuleName))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return MdmStoreFirewallRulesFirewallRuleNameDirectionValue(v.Str()), nil
 }
 
 // UpdateMdmStoreFirewallRulesFirewallRuleNameDirection updates ./Vendor/MSFT/Firewall/MdmStore/FirewallRules/{firewallRuleName}/Direction.
 // The rule is enabled based on the traffic direction as following.
 //
 // Default: OUT.
-func (s *Firewall) UpdateMdmStoreFirewallRulesFirewallRuleNameDirection(ctx context.Context, firewallRuleName string, value string) error {
-	return s.c.Replace(ctx, URIMdmStoreFirewallRulesFirewallRuleNameDirection(firewallRuleName), client.Chr(value))
+func (s *Firewall) UpdateMdmStoreFirewallRulesFirewallRuleNameDirection(ctx context.Context, firewallRuleName string, value MdmStoreFirewallRulesFirewallRuleNameDirectionValue) error {
+	return s.c.Replace(ctx, URIMdmStoreFirewallRulesFirewallRuleNameDirection(firewallRuleName), client.Chr(string(value)))
 }
 
 // GetMdmStoreFirewallRulesFirewallRuleNameEdgeTraversal reads ./Vendor/MSFT/Firewall/MdmStore/FirewallRules/{firewallRuleName}/EdgeTraversal.
@@ -843,12 +846,12 @@ func (s *Firewall) DeleteMdmStoreFirewallRulesFirewallRuleNameIcmpTypesAndCodes(
 // with a ",". Acceptable values are "RemoteAccess", "Wireless", "Lan", "MBB", and "All".
 //
 // Default: All.
-func (s *Firewall) GetMdmStoreFirewallRulesFirewallRuleNameInterfaceTypes(ctx context.Context, firewallRuleName string) (string, error) {
+func (s *Firewall) GetMdmStoreFirewallRulesFirewallRuleNameInterfaceTypes(ctx context.Context, firewallRuleName string) (MdmStoreFirewallRulesFirewallRuleNameInterfaceTypesValue, error) {
 	v, err := s.c.Get(ctx, URIMdmStoreFirewallRulesFirewallRuleNameInterfaceTypes(firewallRuleName))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return MdmStoreFirewallRulesFirewallRuleNameInterfaceTypesValue(v.Str()), nil
 }
 
 // CreateMdmStoreFirewallRulesFirewallRuleNameInterfaceTypes creates ./Vendor/MSFT/Firewall/MdmStore/FirewallRules/{firewallRuleName}/InterfaceTypes.
@@ -856,8 +859,8 @@ func (s *Firewall) GetMdmStoreFirewallRulesFirewallRuleNameInterfaceTypes(ctx co
 // with a ",". Acceptable values are "RemoteAccess", "Wireless", "Lan", "MBB", and "All".
 //
 // Default: All.
-func (s *Firewall) CreateMdmStoreFirewallRulesFirewallRuleNameInterfaceTypes(ctx context.Context, firewallRuleName string, value string) error {
-	return s.c.Add(ctx, URIMdmStoreFirewallRulesFirewallRuleNameInterfaceTypes(firewallRuleName), client.Chr(value))
+func (s *Firewall) CreateMdmStoreFirewallRulesFirewallRuleNameInterfaceTypes(ctx context.Context, firewallRuleName string, value MdmStoreFirewallRulesFirewallRuleNameInterfaceTypesValue) error {
+	return s.c.Add(ctx, URIMdmStoreFirewallRulesFirewallRuleNameInterfaceTypes(firewallRuleName), client.Chr(string(value)))
 }
 
 // UpdateMdmStoreFirewallRulesFirewallRuleNameInterfaceTypes updates ./Vendor/MSFT/Firewall/MdmStore/FirewallRules/{firewallRuleName}/InterfaceTypes.
@@ -865,8 +868,8 @@ func (s *Firewall) CreateMdmStoreFirewallRulesFirewallRuleNameInterfaceTypes(ctx
 // with a ",". Acceptable values are "RemoteAccess", "Wireless", "Lan", "MBB", and "All".
 //
 // Default: All.
-func (s *Firewall) UpdateMdmStoreFirewallRulesFirewallRuleNameInterfaceTypes(ctx context.Context, firewallRuleName string, value string) error {
-	return s.c.Replace(ctx, URIMdmStoreFirewallRulesFirewallRuleNameInterfaceTypes(firewallRuleName), client.Chr(value))
+func (s *Firewall) UpdateMdmStoreFirewallRulesFirewallRuleNameInterfaceTypes(ctx context.Context, firewallRuleName string, value MdmStoreFirewallRulesFirewallRuleNameInterfaceTypesValue) error {
+	return s.c.Replace(ctx, URIMdmStoreFirewallRulesFirewallRuleNameInterfaceTypes(firewallRuleName), client.Chr(string(value)))
 }
 
 // DeleteMdmStoreFirewallRulesFirewallRuleNameInterfaceTypes deletes ./Vendor/MSFT/Firewall/MdmStore/FirewallRules/{firewallRuleName}/InterfaceTypes.
@@ -1041,19 +1044,20 @@ func (s *Firewall) DeleteMdmStoreFirewallRulesFirewallRuleNamePolicyAppId(ctx co
 // GetMdmStoreFirewallRulesFirewallRuleNameProfiles reads ./Vendor/MSFT/Firewall/MdmStore/FirewallRules/{firewallRuleName}/Profiles.
 // Specifies the profiles to which the rule belongs: Domain, Private, Public. See FW_PROFILE_TYPE
 // for the bitmasks that are used to identify profile types. If not specified, the default is All.
-func (s *Firewall) GetMdmStoreFirewallRulesFirewallRuleNameProfiles(ctx context.Context, firewallRuleName string) (int64, error) {
+func (s *Firewall) GetMdmStoreFirewallRulesFirewallRuleNameProfiles(ctx context.Context, firewallRuleName string) (MdmStoreFirewallRulesFirewallRuleNameProfilesValue, error) {
 	v, err := s.c.Get(ctx, URIMdmStoreFirewallRulesFirewallRuleNameProfiles(firewallRuleName))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MdmStoreFirewallRulesFirewallRuleNameProfilesValue(n), err
 }
 
 // UpdateMdmStoreFirewallRulesFirewallRuleNameProfiles updates ./Vendor/MSFT/Firewall/MdmStore/FirewallRules/{firewallRuleName}/Profiles.
 // Specifies the profiles to which the rule belongs: Domain, Private, Public. See FW_PROFILE_TYPE
 // for the bitmasks that are used to identify profile types. If not specified, the default is All.
-func (s *Firewall) UpdateMdmStoreFirewallRulesFirewallRuleNameProfiles(ctx context.Context, firewallRuleName string, value int64) error {
-	return s.c.Replace(ctx, URIMdmStoreFirewallRulesFirewallRuleNameProfiles(firewallRuleName), client.Int(value))
+func (s *Firewall) UpdateMdmStoreFirewallRulesFirewallRuleNameProfiles(ctx context.Context, firewallRuleName string, value MdmStoreFirewallRulesFirewallRuleNameProfilesValue) error {
+	return s.c.Replace(ctx, URIMdmStoreFirewallRulesFirewallRuleNameProfiles(firewallRuleName), client.Int(int64(value)))
 }
 
 // GetMdmStoreFirewallRulesFirewallRuleNameProtocol reads ./Vendor/MSFT/Firewall/MdmStore/FirewallRules/{firewallRuleName}/Protocol.
@@ -1222,12 +1226,13 @@ func (s *Firewall) GetMdmStoreGlobalBinaryVersionSupported(ctx context.Context) 
 // that certificate validation fails if any error is encountered during CRL processing. The merge
 // law for this option is to let the value of the GroupPolicyRSoPStore win if it is configured;
 // otherwise, use the local store value.
-func (s *Firewall) GetMdmStoreGlobalCRLcheck(ctx context.Context) (int64, error) {
+func (s *Firewall) GetMdmStoreGlobalCRLcheck(ctx context.Context) (MdmStoreGlobalCRLcheckValue, error) {
 	v, err := s.c.Get(ctx, URIMdmStoreGlobalCRLcheck)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MdmStoreGlobalCRLcheckValue(n), err
 }
 
 // UpdateMdmStoreGlobalCRLcheck updates ./Vendor/MSFT/Firewall/MdmStore/Global/CRLcheck.
@@ -1239,8 +1244,8 @@ func (s *Firewall) GetMdmStoreGlobalCRLcheck(ctx context.Context) (int64, error)
 // that certificate validation fails if any error is encountered during CRL processing. The merge
 // law for this option is to let the value of the GroupPolicyRSoPStore win if it is configured;
 // otherwise, use the local store value.
-func (s *Firewall) UpdateMdmStoreGlobalCRLcheck(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIMdmStoreGlobalCRLcheck, client.Int(value))
+func (s *Firewall) UpdateMdmStoreGlobalCRLcheck(ctx context.Context, value MdmStoreGlobalCRLcheckValue) error {
+	return s.c.Replace(ctx, URIMdmStoreGlobalCRLcheck, client.Int(int64(value)))
 }
 
 // GetMdmStoreGlobalCurrentProfiles reads ./Vendor/MSFT/Firewall/MdmStore/Global/CurrentProfiles.
@@ -1311,12 +1316,13 @@ func (s *Firewall) UpdateMdmStoreGlobalEnableAuditMode(ctx context.Context, valu
 // 0x02 specifies that packets are to be queued after decryption is performed for forwarding.
 //
 // Default: 0x0.
-func (s *Firewall) GetMdmStoreGlobalEnablePacketQueue(ctx context.Context) (int64, error) {
+func (s *Firewall) GetMdmStoreGlobalEnablePacketQueue(ctx context.Context) (MdmStoreGlobalEnablePacketQueueValue, error) {
 	v, err := s.c.Get(ctx, URIMdmStoreGlobalEnablePacketQueue)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MdmStoreGlobalEnablePacketQueueValue(n), err
 }
 
 // UpdateMdmStoreGlobalEnablePacketQueue updates ./Vendor/MSFT/Firewall/MdmStore/Global/EnablePacketQueue.
@@ -1328,8 +1334,8 @@ func (s *Firewall) GetMdmStoreGlobalEnablePacketQueue(ctx context.Context) (int6
 // 0x02 specifies that packets are to be queued after decryption is performed for forwarding.
 //
 // Default: 0x0.
-func (s *Firewall) UpdateMdmStoreGlobalEnablePacketQueue(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIMdmStoreGlobalEnablePacketQueue, client.Int(value))
+func (s *Firewall) UpdateMdmStoreGlobalEnablePacketQueue(ctx context.Context, value MdmStoreGlobalEnablePacketQueueValue) error {
+	return s.c.Replace(ctx, URIMdmStoreGlobalEnablePacketQueue, client.Int(int64(value)))
 }
 
 // GetMdmStoreGlobalIPsecExempt reads ./Vendor/MSFT/Firewall/MdmStore/Global/IPsecExempt.
@@ -1343,12 +1349,13 @@ func (s *Firewall) UpdateMdmStoreGlobalEnablePacketQueue(ctx context.Context, va
 // local store value.
 //
 // Default: 0x0.
-func (s *Firewall) GetMdmStoreGlobalIPsecExempt(ctx context.Context) (int64, error) {
+func (s *Firewall) GetMdmStoreGlobalIPsecExempt(ctx context.Context) (MdmStoreGlobalIPsecExemptValue, error) {
 	v, err := s.c.Get(ctx, URIMdmStoreGlobalIPsecExempt)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MdmStoreGlobalIPsecExemptValue(n), err
 }
 
 // UpdateMdmStoreGlobalIPsecExempt updates ./Vendor/MSFT/Firewall/MdmStore/Global/IPsecExempt.
@@ -1362,8 +1369,8 @@ func (s *Firewall) GetMdmStoreGlobalIPsecExempt(ctx context.Context) (int64, err
 // local store value.
 //
 // Default: 0x0.
-func (s *Firewall) UpdateMdmStoreGlobalIPsecExempt(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIMdmStoreGlobalIPsecExempt, client.Int(value))
+func (s *Firewall) UpdateMdmStoreGlobalIPsecExempt(ctx context.Context, value MdmStoreGlobalIPsecExemptValue) error {
+	return s.c.Replace(ctx, URIMdmStoreGlobalIPsecExempt, client.Int(int64(value)))
 }
 
 // GetMdmStoreGlobalOpportunisticallyMatchAuthSetPerKM reads ./Vendor/MSFT/Firewall/MdmStore/Global/OpportunisticallyMatchAuthSetPerKM.
@@ -1421,12 +1428,13 @@ func (s *Firewall) GetMdmStoreGlobalPolicyVersionSupported(ctx context.Context) 
 // local store value.
 //
 // Default: 1.
-func (s *Firewall) GetMdmStoreGlobalPresharedKeyEncoding(ctx context.Context) (int64, error) {
+func (s *Firewall) GetMdmStoreGlobalPresharedKeyEncoding(ctx context.Context) (MdmStoreGlobalPresharedKeyEncodingValue, error) {
 	v, err := s.c.Get(ctx, URIMdmStoreGlobalPresharedKeyEncoding)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MdmStoreGlobalPresharedKeyEncodingValue(n), err
 }
 
 // UpdateMdmStoreGlobalPresharedKeyEncoding updates ./Vendor/MSFT/Firewall/MdmStore/Global/PresharedKeyEncoding.
@@ -1436,8 +1444,8 @@ func (s *Firewall) GetMdmStoreGlobalPresharedKeyEncoding(ctx context.Context) (i
 // local store value.
 //
 // Default: 1.
-func (s *Firewall) UpdateMdmStoreGlobalPresharedKeyEncoding(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIMdmStoreGlobalPresharedKeyEncoding, client.Int(value))
+func (s *Firewall) UpdateMdmStoreGlobalPresharedKeyEncoding(ctx context.Context, value MdmStoreGlobalPresharedKeyEncodingValue) error {
+	return s.c.Replace(ctx, URIMdmStoreGlobalPresharedKeyEncoding, client.Int(int64(value)))
 }
 
 // GetMdmStoreGlobalSaIdleTime reads ./Vendor/MSFT/Firewall/MdmStore/Global/SaIdleTime.
@@ -1493,40 +1501,41 @@ func (s *Firewall) DeleteMdmStoreHyperVFirewallRulesFirewallRuleName(ctx context
 // Specifies the action the rule enforces:
 //
 // Default: 1.
-func (s *Firewall) GetMdmStoreHyperVFirewallRulesFirewallRuleNameAction(ctx context.Context, firewallRuleName string) (int64, error) {
+func (s *Firewall) GetMdmStoreHyperVFirewallRulesFirewallRuleNameAction(ctx context.Context, firewallRuleName string) (MdmStoreHyperVFirewallRulesFirewallRuleNameActionValue, error) {
 	v, err := s.c.Get(ctx, URIMdmStoreHyperVFirewallRulesFirewallRuleNameAction(firewallRuleName))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MdmStoreHyperVFirewallRulesFirewallRuleNameActionValue(n), err
 }
 
 // UpdateMdmStoreHyperVFirewallRulesFirewallRuleNameAction updates ./Vendor/MSFT/Firewall/MdmStore/HyperVFirewallRules/{firewallRuleName}/Action.
 // Specifies the action the rule enforces:
 //
 // Default: 1.
-func (s *Firewall) UpdateMdmStoreHyperVFirewallRulesFirewallRuleNameAction(ctx context.Context, firewallRuleName string, value int64) error {
-	return s.c.Replace(ctx, URIMdmStoreHyperVFirewallRulesFirewallRuleNameAction(firewallRuleName), client.Int(value))
+func (s *Firewall) UpdateMdmStoreHyperVFirewallRulesFirewallRuleNameAction(ctx context.Context, firewallRuleName string, value MdmStoreHyperVFirewallRulesFirewallRuleNameActionValue) error {
+	return s.c.Replace(ctx, URIMdmStoreHyperVFirewallRulesFirewallRuleNameAction(firewallRuleName), client.Int(int64(value)))
 }
 
 // GetMdmStoreHyperVFirewallRulesFirewallRuleNameDirection reads ./Vendor/MSFT/Firewall/MdmStore/HyperVFirewallRules/{firewallRuleName}/Direction.
 // The rule is enabled based on the traffic direction as following.
 //
 // Default: OUT.
-func (s *Firewall) GetMdmStoreHyperVFirewallRulesFirewallRuleNameDirection(ctx context.Context, firewallRuleName string) (string, error) {
+func (s *Firewall) GetMdmStoreHyperVFirewallRulesFirewallRuleNameDirection(ctx context.Context, firewallRuleName string) (MdmStoreHyperVFirewallRulesFirewallRuleNameDirectionValue, error) {
 	v, err := s.c.Get(ctx, URIMdmStoreHyperVFirewallRulesFirewallRuleNameDirection(firewallRuleName))
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return MdmStoreHyperVFirewallRulesFirewallRuleNameDirectionValue(v.Str()), nil
 }
 
 // UpdateMdmStoreHyperVFirewallRulesFirewallRuleNameDirection updates ./Vendor/MSFT/Firewall/MdmStore/HyperVFirewallRules/{firewallRuleName}/Direction.
 // The rule is enabled based on the traffic direction as following.
 //
 // Default: OUT.
-func (s *Firewall) UpdateMdmStoreHyperVFirewallRulesFirewallRuleNameDirection(ctx context.Context, firewallRuleName string, value string) error {
-	return s.c.Replace(ctx, URIMdmStoreHyperVFirewallRulesFirewallRuleNameDirection(firewallRuleName), client.Chr(value))
+func (s *Firewall) UpdateMdmStoreHyperVFirewallRulesFirewallRuleNameDirection(ctx context.Context, firewallRuleName string, value MdmStoreHyperVFirewallRulesFirewallRuleNameDirectionValue) error {
+	return s.c.Replace(ctx, URIMdmStoreHyperVFirewallRulesFirewallRuleNameDirection(firewallRuleName), client.Chr(string(value)))
 }
 
 // GetMdmStoreHyperVFirewallRulesFirewallRuleNameEnabled reads ./Vendor/MSFT/Firewall/MdmStore/HyperVFirewallRules/{firewallRuleName}/Enabled.
@@ -1676,12 +1685,13 @@ func (s *Firewall) DeleteMdmStoreHyperVFirewallRulesFirewallRuleNamePriority(ctx
 // for the bitmasks that are used to identify profile types. If not specified, the default is All.
 //
 // Supported from OS build 10.0.25398, 10.0.22621.2352 (CSP v1.0).
-func (s *Firewall) GetMdmStoreHyperVFirewallRulesFirewallRuleNameProfiles(ctx context.Context, firewallRuleName string) (int64, error) {
+func (s *Firewall) GetMdmStoreHyperVFirewallRulesFirewallRuleNameProfiles(ctx context.Context, firewallRuleName string) (MdmStoreHyperVFirewallRulesFirewallRuleNameProfilesValue, error) {
 	v, err := s.c.Get(ctx, URIMdmStoreHyperVFirewallRulesFirewallRuleNameProfiles(firewallRuleName))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MdmStoreHyperVFirewallRulesFirewallRuleNameProfilesValue(n), err
 }
 
 // UpdateMdmStoreHyperVFirewallRulesFirewallRuleNameProfiles updates ./Vendor/MSFT/Firewall/MdmStore/HyperVFirewallRules/{firewallRuleName}/Profiles.
@@ -1689,8 +1699,8 @@ func (s *Firewall) GetMdmStoreHyperVFirewallRulesFirewallRuleNameProfiles(ctx co
 // for the bitmasks that are used to identify profile types. If not specified, the default is All.
 //
 // Supported from OS build 10.0.25398, 10.0.22621.2352 (CSP v1.0).
-func (s *Firewall) UpdateMdmStoreHyperVFirewallRulesFirewallRuleNameProfiles(ctx context.Context, firewallRuleName string, value int64) error {
-	return s.c.Replace(ctx, URIMdmStoreHyperVFirewallRulesFirewallRuleNameProfiles(firewallRuleName), client.Int(value))
+func (s *Firewall) UpdateMdmStoreHyperVFirewallRulesFirewallRuleNameProfiles(ctx context.Context, firewallRuleName string, value MdmStoreHyperVFirewallRulesFirewallRuleNameProfilesValue) error {
+	return s.c.Replace(ctx, URIMdmStoreHyperVFirewallRulesFirewallRuleNameProfiles(firewallRuleName), client.Int(int64(value)))
 }
 
 // GetMdmStoreHyperVFirewallRulesFirewallRuleNameProtocol reads ./Vendor/MSFT/Firewall/MdmStore/HyperVFirewallRules/{firewallRuleName}/Protocol.
@@ -1880,12 +1890,13 @@ func (s *Firewall) UpdateMdmStoreHyperVVMSettingsVMCreatorIdAllowHostPolicyMerge
 // profiles. It is recommended to instead use the profile setting value under the profile subtree.
 //
 // Default: 1.
-func (s *Firewall) GetMdmStoreHyperVVMSettingsVMCreatorIdDefaultInboundAction(ctx context.Context, vmCreatorId string) (int64, error) {
+func (s *Firewall) GetMdmStoreHyperVVMSettingsVMCreatorIdDefaultInboundAction(ctx context.Context, vmCreatorId string) (MdmStoreHyperVVMSettingsVMCreatorIdDefaultInboundActionValue, error) {
 	v, err := s.c.Get(ctx, URIMdmStoreHyperVVMSettingsVMCreatorIdDefaultInboundAction(vmCreatorId))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MdmStoreHyperVVMSettingsVMCreatorIdDefaultInboundActionValue(n), err
 }
 
 // UpdateMdmStoreHyperVVMSettingsVMCreatorIdDefaultInboundAction updates ./Vendor/MSFT/Firewall/MdmStore/HyperVVMSettings/{vmCreatorId}/DefaultInboundAction.
@@ -1895,8 +1906,8 @@ func (s *Firewall) GetMdmStoreHyperVVMSettingsVMCreatorIdDefaultInboundAction(ct
 // profiles. It is recommended to instead use the profile setting value under the profile subtree.
 //
 // Default: 1.
-func (s *Firewall) UpdateMdmStoreHyperVVMSettingsVMCreatorIdDefaultInboundAction(ctx context.Context, vmCreatorId string, value int64) error {
-	return s.c.Replace(ctx, URIMdmStoreHyperVVMSettingsVMCreatorIdDefaultInboundAction(vmCreatorId), client.Int(value))
+func (s *Firewall) UpdateMdmStoreHyperVVMSettingsVMCreatorIdDefaultInboundAction(ctx context.Context, vmCreatorId string, value MdmStoreHyperVVMSettingsVMCreatorIdDefaultInboundActionValue) error {
+	return s.c.Replace(ctx, URIMdmStoreHyperVVMSettingsVMCreatorIdDefaultInboundAction(vmCreatorId), client.Int(int64(value)))
 }
 
 // GetMdmStoreHyperVVMSettingsVMCreatorIdDefaultOutboundAction reads ./Vendor/MSFT/Firewall/MdmStore/HyperVVMSettings/{vmCreatorId}/DefaultOutboundAction.
@@ -1906,12 +1917,13 @@ func (s *Firewall) UpdateMdmStoreHyperVVMSettingsVMCreatorIdDefaultInboundAction
 // profiles. It is recommended to instead use the profile setting value under the profile subtree.
 //
 // Default: 0.
-func (s *Firewall) GetMdmStoreHyperVVMSettingsVMCreatorIdDefaultOutboundAction(ctx context.Context, vmCreatorId string) (int64, error) {
+func (s *Firewall) GetMdmStoreHyperVVMSettingsVMCreatorIdDefaultOutboundAction(ctx context.Context, vmCreatorId string) (MdmStoreHyperVVMSettingsVMCreatorIdDefaultOutboundActionValue, error) {
 	v, err := s.c.Get(ctx, URIMdmStoreHyperVVMSettingsVMCreatorIdDefaultOutboundAction(vmCreatorId))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MdmStoreHyperVVMSettingsVMCreatorIdDefaultOutboundActionValue(n), err
 }
 
 // UpdateMdmStoreHyperVVMSettingsVMCreatorIdDefaultOutboundAction updates ./Vendor/MSFT/Firewall/MdmStore/HyperVVMSettings/{vmCreatorId}/DefaultOutboundAction.
@@ -1921,8 +1933,8 @@ func (s *Firewall) GetMdmStoreHyperVVMSettingsVMCreatorIdDefaultOutboundAction(c
 // profiles. It is recommended to instead use the profile setting value under the profile subtree.
 //
 // Default: 0.
-func (s *Firewall) UpdateMdmStoreHyperVVMSettingsVMCreatorIdDefaultOutboundAction(ctx context.Context, vmCreatorId string, value int64) error {
-	return s.c.Replace(ctx, URIMdmStoreHyperVVMSettingsVMCreatorIdDefaultOutboundAction(vmCreatorId), client.Int(value))
+func (s *Firewall) UpdateMdmStoreHyperVVMSettingsVMCreatorIdDefaultOutboundAction(ctx context.Context, vmCreatorId string, value MdmStoreHyperVVMSettingsVMCreatorIdDefaultOutboundActionValue) error {
+	return s.c.Replace(ctx, URIMdmStoreHyperVVMSettingsVMCreatorIdDefaultOutboundAction(vmCreatorId), client.Int(int64(value)))
 }
 
 // UpdateMdmStoreHyperVVMSettingsVMCreatorIdDomainProfileAllowLocalPolicyMerge updates ./Vendor/MSFT/Firewall/MdmStore/HyperVVMSettings/{vmCreatorId}/DomainProfile/AllowLocalPolicyMerge.
@@ -1940,12 +1952,13 @@ func (s *Firewall) UpdateMdmStoreHyperVVMSettingsVMCreatorIdDomainProfileAllowLo
 // represents a block action. Default value is 1 [Block].
 //
 // Default: 1.
-func (s *Firewall) GetMdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultInboundAction(ctx context.Context, vmCreatorId string) (int64, error) {
+func (s *Firewall) GetMdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultInboundAction(ctx context.Context, vmCreatorId string) (MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultInboundActionValue, error) {
 	v, err := s.c.Get(ctx, URIMdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultInboundAction(vmCreatorId))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultInboundActionValue(n), err
 }
 
 // UpdateMdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultInboundAction updates ./Vendor/MSFT/Firewall/MdmStore/HyperVVMSettings/{vmCreatorId}/DomainProfile/DefaultInboundAction.
@@ -1954,8 +1967,8 @@ func (s *Firewall) GetMdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultInb
 // represents a block action. Default value is 1 [Block].
 //
 // Default: 1.
-func (s *Firewall) UpdateMdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultInboundAction(ctx context.Context, vmCreatorId string, value int64) error {
-	return s.c.Replace(ctx, URIMdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultInboundAction(vmCreatorId), client.Int(value))
+func (s *Firewall) UpdateMdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultInboundAction(ctx context.Context, vmCreatorId string, value MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultInboundActionValue) error {
+	return s.c.Replace(ctx, URIMdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultInboundAction(vmCreatorId), client.Int(int64(value)))
 }
 
 // GetMdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultOutboundAction reads ./Vendor/MSFT/Firewall/MdmStore/HyperVVMSettings/{vmCreatorId}/DomainProfile/DefaultOutboundAction.
@@ -1964,12 +1977,13 @@ func (s *Firewall) UpdateMdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefault
 // represents a block action. Default value is 0 [Allow].
 //
 // Default: 0.
-func (s *Firewall) GetMdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultOutboundAction(ctx context.Context, vmCreatorId string) (int64, error) {
+func (s *Firewall) GetMdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultOutboundAction(ctx context.Context, vmCreatorId string) (MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultOutboundActionValue, error) {
 	v, err := s.c.Get(ctx, URIMdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultOutboundAction(vmCreatorId))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultOutboundActionValue(n), err
 }
 
 // UpdateMdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultOutboundAction updates ./Vendor/MSFT/Firewall/MdmStore/HyperVVMSettings/{vmCreatorId}/DomainProfile/DefaultOutboundAction.
@@ -1978,8 +1992,8 @@ func (s *Firewall) GetMdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultOut
 // represents a block action. Default value is 0 [Allow].
 //
 // Default: 0.
-func (s *Firewall) UpdateMdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultOutboundAction(ctx context.Context, vmCreatorId string, value int64) error {
-	return s.c.Replace(ctx, URIMdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultOutboundAction(vmCreatorId), client.Int(value))
+func (s *Firewall) UpdateMdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultOutboundAction(ctx context.Context, vmCreatorId string, value MdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultOutboundActionValue) error {
+	return s.c.Replace(ctx, URIMdmStoreHyperVVMSettingsVMCreatorIdDomainProfileDefaultOutboundAction(vmCreatorId), client.Int(int64(value)))
 }
 
 // UpdateMdmStoreHyperVVMSettingsVMCreatorIdDomainProfileEnableFirewall updates ./Vendor/MSFT/Firewall/MdmStore/HyperVVMSettings/{vmCreatorId}/DomainProfile/EnableFirewall.
@@ -2024,12 +2038,13 @@ func (s *Firewall) UpdateMdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileAllowL
 // represents a block action. Default value is 1 [Block].
 //
 // Default: 1.
-func (s *Firewall) GetMdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultInboundAction(ctx context.Context, vmCreatorId string) (int64, error) {
+func (s *Firewall) GetMdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultInboundAction(ctx context.Context, vmCreatorId string) (MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultInboundActionValue, error) {
 	v, err := s.c.Get(ctx, URIMdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultInboundAction(vmCreatorId))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultInboundActionValue(n), err
 }
 
 // UpdateMdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultInboundAction updates ./Vendor/MSFT/Firewall/MdmStore/HyperVVMSettings/{vmCreatorId}/PrivateProfile/DefaultInboundAction.
@@ -2038,8 +2053,8 @@ func (s *Firewall) GetMdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultIn
 // represents a block action. Default value is 1 [Block].
 //
 // Default: 1.
-func (s *Firewall) UpdateMdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultInboundAction(ctx context.Context, vmCreatorId string, value int64) error {
-	return s.c.Replace(ctx, URIMdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultInboundAction(vmCreatorId), client.Int(value))
+func (s *Firewall) UpdateMdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultInboundAction(ctx context.Context, vmCreatorId string, value MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultInboundActionValue) error {
+	return s.c.Replace(ctx, URIMdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultInboundAction(vmCreatorId), client.Int(int64(value)))
 }
 
 // GetMdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultOutboundAction reads ./Vendor/MSFT/Firewall/MdmStore/HyperVVMSettings/{vmCreatorId}/PrivateProfile/DefaultOutboundAction.
@@ -2048,12 +2063,13 @@ func (s *Firewall) UpdateMdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaul
 // represents a block action. Default value is 0 [Allow].
 //
 // Default: 0.
-func (s *Firewall) GetMdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultOutboundAction(ctx context.Context, vmCreatorId string) (int64, error) {
+func (s *Firewall) GetMdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultOutboundAction(ctx context.Context, vmCreatorId string) (MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultOutboundActionValue, error) {
 	v, err := s.c.Get(ctx, URIMdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultOutboundAction(vmCreatorId))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultOutboundActionValue(n), err
 }
 
 // UpdateMdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultOutboundAction updates ./Vendor/MSFT/Firewall/MdmStore/HyperVVMSettings/{vmCreatorId}/PrivateProfile/DefaultOutboundAction.
@@ -2062,8 +2078,8 @@ func (s *Firewall) GetMdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultOu
 // represents a block action. Default value is 0 [Allow].
 //
 // Default: 0.
-func (s *Firewall) UpdateMdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultOutboundAction(ctx context.Context, vmCreatorId string, value int64) error {
-	return s.c.Replace(ctx, URIMdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultOutboundAction(vmCreatorId), client.Int(value))
+func (s *Firewall) UpdateMdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultOutboundAction(ctx context.Context, vmCreatorId string, value MdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultOutboundActionValue) error {
+	return s.c.Replace(ctx, URIMdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileDefaultOutboundAction(vmCreatorId), client.Int(int64(value)))
 }
 
 // UpdateMdmStoreHyperVVMSettingsVMCreatorIdPrivateProfileEnableFirewall updates ./Vendor/MSFT/Firewall/MdmStore/HyperVVMSettings/{vmCreatorId}/PrivateProfile/EnableFirewall.
@@ -2089,12 +2105,13 @@ func (s *Firewall) UpdateMdmStoreHyperVVMSettingsVMCreatorIdPublicProfileAllowLo
 // represents a block action. Default value is 1 [Block].
 //
 // Default: 1.
-func (s *Firewall) GetMdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultInboundAction(ctx context.Context, vmCreatorId string) (int64, error) {
+func (s *Firewall) GetMdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultInboundAction(ctx context.Context, vmCreatorId string) (MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultInboundActionValue, error) {
 	v, err := s.c.Get(ctx, URIMdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultInboundAction(vmCreatorId))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultInboundActionValue(n), err
 }
 
 // UpdateMdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultInboundAction updates ./Vendor/MSFT/Firewall/MdmStore/HyperVVMSettings/{vmCreatorId}/PublicProfile/DefaultInboundAction.
@@ -2103,8 +2120,8 @@ func (s *Firewall) GetMdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultInb
 // represents a block action. Default value is 1 [Block].
 //
 // Default: 1.
-func (s *Firewall) UpdateMdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultInboundAction(ctx context.Context, vmCreatorId string, value int64) error {
-	return s.c.Replace(ctx, URIMdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultInboundAction(vmCreatorId), client.Int(value))
+func (s *Firewall) UpdateMdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultInboundAction(ctx context.Context, vmCreatorId string, value MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultInboundActionValue) error {
+	return s.c.Replace(ctx, URIMdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultInboundAction(vmCreatorId), client.Int(int64(value)))
 }
 
 // GetMdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultOutboundAction reads ./Vendor/MSFT/Firewall/MdmStore/HyperVVMSettings/{vmCreatorId}/PublicProfile/DefaultOutboundAction.
@@ -2113,12 +2130,13 @@ func (s *Firewall) UpdateMdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefault
 // represents a block action. Default value is 0 [Allow].
 //
 // Default: 0.
-func (s *Firewall) GetMdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultOutboundAction(ctx context.Context, vmCreatorId string) (int64, error) {
+func (s *Firewall) GetMdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultOutboundAction(ctx context.Context, vmCreatorId string) (MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultOutboundActionValue, error) {
 	v, err := s.c.Get(ctx, URIMdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultOutboundAction(vmCreatorId))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultOutboundActionValue(n), err
 }
 
 // UpdateMdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultOutboundAction updates ./Vendor/MSFT/Firewall/MdmStore/HyperVVMSettings/{vmCreatorId}/PublicProfile/DefaultOutboundAction.
@@ -2127,8 +2145,8 @@ func (s *Firewall) GetMdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultOut
 // represents a block action. Default value is 0 [Allow].
 //
 // Default: 0.
-func (s *Firewall) UpdateMdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultOutboundAction(ctx context.Context, vmCreatorId string, value int64) error {
-	return s.c.Replace(ctx, URIMdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultOutboundAction(vmCreatorId), client.Int(value))
+func (s *Firewall) UpdateMdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultOutboundAction(ctx context.Context, vmCreatorId string, value MdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultOutboundActionValue) error {
+	return s.c.Replace(ctx, URIMdmStoreHyperVVMSettingsVMCreatorIdPublicProfileDefaultOutboundAction(vmCreatorId), client.Int(int64(value)))
 }
 
 // UpdateMdmStoreHyperVVMSettingsVMCreatorIdPublicProfileEnableFirewall updates ./Vendor/MSFT/Firewall/MdmStore/HyperVVMSettings/{vmCreatorId}/PublicProfile/EnableFirewall.
@@ -2222,12 +2240,13 @@ func (s *Firewall) UpdateMdmStorePrivateProfileAuthAppsAllowUserPrefMerge(ctx co
 // the GroupPolicyRSoPStore.win if it is configured; otherwise, the local store value is used.
 //
 // Default: 1.
-func (s *Firewall) GetMdmStorePrivateProfileDefaultInboundAction(ctx context.Context) (int64, error) {
+func (s *Firewall) GetMdmStorePrivateProfileDefaultInboundAction(ctx context.Context) (MdmStorePrivateProfileDefaultInboundActionValue, error) {
 	v, err := s.c.Get(ctx, URIMdmStorePrivateProfileDefaultInboundAction)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MdmStorePrivateProfileDefaultInboundActionValue(n), err
 }
 
 // UpdateMdmStorePrivateProfileDefaultInboundAction updates ./Vendor/MSFT/Firewall/MdmStore/PrivateProfile/DefaultInboundAction.
@@ -2237,8 +2256,8 @@ func (s *Firewall) GetMdmStorePrivateProfileDefaultInboundAction(ctx context.Con
 // the GroupPolicyRSoPStore.win if it is configured; otherwise, the local store value is used.
 //
 // Default: 1.
-func (s *Firewall) UpdateMdmStorePrivateProfileDefaultInboundAction(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIMdmStorePrivateProfileDefaultInboundAction, client.Int(value))
+func (s *Firewall) UpdateMdmStorePrivateProfileDefaultInboundAction(ctx context.Context, value MdmStorePrivateProfileDefaultInboundActionValue) error {
+	return s.c.Replace(ctx, URIMdmStorePrivateProfileDefaultInboundAction, client.Int(int64(value)))
 }
 
 // GetMdmStorePrivateProfileDefaultOutboundAction reads ./Vendor/MSFT/Firewall/MdmStore/PrivateProfile/DefaultOutboundAction.
@@ -2248,12 +2267,13 @@ func (s *Firewall) UpdateMdmStorePrivateProfileDefaultInboundAction(ctx context.
 // the GroupPolicyRSoPStore win if it is configured; otherwise, the local store value is used.
 //
 // Default: 0.
-func (s *Firewall) GetMdmStorePrivateProfileDefaultOutboundAction(ctx context.Context) (int64, error) {
+func (s *Firewall) GetMdmStorePrivateProfileDefaultOutboundAction(ctx context.Context) (MdmStorePrivateProfileDefaultOutboundActionValue, error) {
 	v, err := s.c.Get(ctx, URIMdmStorePrivateProfileDefaultOutboundAction)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MdmStorePrivateProfileDefaultOutboundActionValue(n), err
 }
 
 // UpdateMdmStorePrivateProfileDefaultOutboundAction updates ./Vendor/MSFT/Firewall/MdmStore/PrivateProfile/DefaultOutboundAction.
@@ -2263,8 +2283,8 @@ func (s *Firewall) GetMdmStorePrivateProfileDefaultOutboundAction(ctx context.Co
 // the GroupPolicyRSoPStore win if it is configured; otherwise, the local store value is used.
 //
 // Default: 0.
-func (s *Firewall) UpdateMdmStorePrivateProfileDefaultOutboundAction(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIMdmStorePrivateProfileDefaultOutboundAction, client.Int(value))
+func (s *Firewall) UpdateMdmStorePrivateProfileDefaultOutboundAction(ctx context.Context, value MdmStorePrivateProfileDefaultOutboundActionValue) error {
+	return s.c.Replace(ctx, URIMdmStorePrivateProfileDefaultOutboundAction, client.Int(int64(value)))
 }
 
 // GetMdmStorePrivateProfileDisableInboundNotifications reads ./Vendor/MSFT/Firewall/MdmStore/PrivateProfile/DisableInboundNotifications.
@@ -2675,12 +2695,13 @@ func (s *Firewall) UpdateMdmStorePublicProfileAuthAppsAllowUserPrefMerge(ctx con
 // the GroupPolicyRSoPStore.win if it is configured; otherwise, the local store value is used.
 //
 // Default: 1.
-func (s *Firewall) GetMdmStorePublicProfileDefaultInboundAction(ctx context.Context) (int64, error) {
+func (s *Firewall) GetMdmStorePublicProfileDefaultInboundAction(ctx context.Context) (MdmStorePublicProfileDefaultInboundActionValue, error) {
 	v, err := s.c.Get(ctx, URIMdmStorePublicProfileDefaultInboundAction)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MdmStorePublicProfileDefaultInboundActionValue(n), err
 }
 
 // UpdateMdmStorePublicProfileDefaultInboundAction updates ./Vendor/MSFT/Firewall/MdmStore/PublicProfile/DefaultInboundAction.
@@ -2690,8 +2711,8 @@ func (s *Firewall) GetMdmStorePublicProfileDefaultInboundAction(ctx context.Cont
 // the GroupPolicyRSoPStore.win if it is configured; otherwise, the local store value is used.
 //
 // Default: 1.
-func (s *Firewall) UpdateMdmStorePublicProfileDefaultInboundAction(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIMdmStorePublicProfileDefaultInboundAction, client.Int(value))
+func (s *Firewall) UpdateMdmStorePublicProfileDefaultInboundAction(ctx context.Context, value MdmStorePublicProfileDefaultInboundActionValue) error {
+	return s.c.Replace(ctx, URIMdmStorePublicProfileDefaultInboundAction, client.Int(int64(value)))
 }
 
 // GetMdmStorePublicProfileDefaultOutboundAction reads ./Vendor/MSFT/Firewall/MdmStore/PublicProfile/DefaultOutboundAction.
@@ -2701,12 +2722,13 @@ func (s *Firewall) UpdateMdmStorePublicProfileDefaultInboundAction(ctx context.C
 // the GroupPolicyRSoPStore win if it is configured; otherwise, the local store value is used.
 //
 // Default: 0.
-func (s *Firewall) GetMdmStorePublicProfileDefaultOutboundAction(ctx context.Context) (int64, error) {
+func (s *Firewall) GetMdmStorePublicProfileDefaultOutboundAction(ctx context.Context) (MdmStorePublicProfileDefaultOutboundActionValue, error) {
 	v, err := s.c.Get(ctx, URIMdmStorePublicProfileDefaultOutboundAction)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MdmStorePublicProfileDefaultOutboundActionValue(n), err
 }
 
 // UpdateMdmStorePublicProfileDefaultOutboundAction updates ./Vendor/MSFT/Firewall/MdmStore/PublicProfile/DefaultOutboundAction.
@@ -2716,8 +2738,8 @@ func (s *Firewall) GetMdmStorePublicProfileDefaultOutboundAction(ctx context.Con
 // the GroupPolicyRSoPStore win if it is configured; otherwise, the local store value is used.
 //
 // Default: 0.
-func (s *Firewall) UpdateMdmStorePublicProfileDefaultOutboundAction(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIMdmStorePublicProfileDefaultOutboundAction, client.Int(value))
+func (s *Firewall) UpdateMdmStorePublicProfileDefaultOutboundAction(ctx context.Context, value MdmStorePublicProfileDefaultOutboundActionValue) error {
+	return s.c.Replace(ctx, URIMdmStorePublicProfileDefaultOutboundAction, client.Int(int64(value)))
 }
 
 // GetMdmStorePublicProfileDisableInboundNotifications reads ./Vendor/MSFT/Firewall/MdmStore/PublicProfile/DisableInboundNotifications.

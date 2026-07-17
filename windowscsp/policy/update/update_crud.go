@@ -180,12 +180,13 @@ func (s *Update) DeleteActiveHoursStart(ctx context.Context) error {
 //
 // Default: 2.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Update) GetAllowAutoUpdate(ctx context.Context) (int64, error) {
+func (s *Update) GetAllowAutoUpdate(ctx context.Context) (AllowAutoUpdateValue, error) {
 	v, err := s.c.Get(ctx, URIAllowAutoUpdate)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowAutoUpdateValue(n), err
 }
 
 // CreateAllowAutoUpdate creates ./Device/Vendor/MSFT/Policy/Config/Update/AllowAutoUpdate.
@@ -196,8 +197,8 @@ func (s *Update) GetAllowAutoUpdate(ctx context.Context) (int64, error) {
 //
 // Default: 2.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Update) CreateAllowAutoUpdate(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowAutoUpdate, client.Int(value))
+func (s *Update) CreateAllowAutoUpdate(ctx context.Context, value AllowAutoUpdateValue) error {
+	return s.c.Add(ctx, URIAllowAutoUpdate, client.Int(int64(value)))
 }
 
 // UpdateAllowAutoUpdate updates ./Device/Vendor/MSFT/Policy/Config/Update/AllowAutoUpdate.
@@ -208,8 +209,8 @@ func (s *Update) CreateAllowAutoUpdate(ctx context.Context, value int64) error {
 //
 // Default: 2.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Update) UpdateAllowAutoUpdate(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowAutoUpdate, client.Int(value))
+func (s *Update) UpdateAllowAutoUpdate(ctx context.Context, value AllowAutoUpdateValue) error {
+	return s.c.Replace(ctx, URIAllowAutoUpdate, client.Int(int64(value)))
 }
 
 // DeleteAllowAutoUpdate deletes ./Device/Vendor/MSFT/Policy/Config/Update/AllowAutoUpdate.
@@ -234,12 +235,13 @@ func (s *Update) DeleteAllowAutoUpdate(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Update) GetAllowAutoWindowsUpdateDownloadOverMeteredNetwork(ctx context.Context) (int64, error) {
+func (s *Update) GetAllowAutoWindowsUpdateDownloadOverMeteredNetwork(ctx context.Context) (AllowAutoWindowsUpdateDownloadOverMeteredNetworkValue, error) {
 	v, err := s.c.Get(ctx, URIAllowAutoWindowsUpdateDownloadOverMeteredNetwork)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowAutoWindowsUpdateDownloadOverMeteredNetworkValue(n), err
 }
 
 // CreateAllowAutoWindowsUpdateDownloadOverMeteredNetwork creates ./Device/Vendor/MSFT/Policy/Config/Update/AllowAutoWindowsUpdateDownloadOverMeteredNetwork.
@@ -252,8 +254,8 @@ func (s *Update) GetAllowAutoWindowsUpdateDownloadOverMeteredNetwork(ctx context
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Update) CreateAllowAutoWindowsUpdateDownloadOverMeteredNetwork(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowAutoWindowsUpdateDownloadOverMeteredNetwork, client.Int(value))
+func (s *Update) CreateAllowAutoWindowsUpdateDownloadOverMeteredNetwork(ctx context.Context, value AllowAutoWindowsUpdateDownloadOverMeteredNetworkValue) error {
+	return s.c.Add(ctx, URIAllowAutoWindowsUpdateDownloadOverMeteredNetwork, client.Int(int64(value)))
 }
 
 // UpdateAllowAutoWindowsUpdateDownloadOverMeteredNetwork updates ./Device/Vendor/MSFT/Policy/Config/Update/AllowAutoWindowsUpdateDownloadOverMeteredNetwork.
@@ -266,8 +268,8 @@ func (s *Update) CreateAllowAutoWindowsUpdateDownloadOverMeteredNetwork(ctx cont
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Update) UpdateAllowAutoWindowsUpdateDownloadOverMeteredNetwork(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowAutoWindowsUpdateDownloadOverMeteredNetwork, client.Int(value))
+func (s *Update) UpdateAllowAutoWindowsUpdateDownloadOverMeteredNetwork(ctx context.Context, value AllowAutoWindowsUpdateDownloadOverMeteredNetworkValue) error {
+	return s.c.Replace(ctx, URIAllowAutoWindowsUpdateDownloadOverMeteredNetwork, client.Int(int64(value)))
 }
 
 // DeleteAllowAutoWindowsUpdateDownloadOverMeteredNetwork deletes ./Device/Vendor/MSFT/Policy/Config/Update/AllowAutoWindowsUpdateDownloadOverMeteredNetwork.
@@ -289,12 +291,13 @@ func (s *Update) DeleteAllowAutoWindowsUpdateDownloadOverMeteredNetwork(ctx cont
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Update) GetAllowMUUpdateService(ctx context.Context) (int64, error) {
+func (s *Update) GetAllowMUUpdateService(ctx context.Context) (AllowMUUpdateServiceValue, error) {
 	v, err := s.c.Get(ctx, URIAllowMUUpdateService)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowMUUpdateServiceValue(n), err
 }
 
 // CreateAllowMUUpdateService creates ./Device/Vendor/MSFT/Policy/Config/Update/AllowMUUpdateService.
@@ -302,8 +305,8 @@ func (s *Update) GetAllowMUUpdateService(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Update) CreateAllowMUUpdateService(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowMUUpdateService, client.Int(value))
+func (s *Update) CreateAllowMUUpdateService(ctx context.Context, value AllowMUUpdateServiceValue) error {
+	return s.c.Add(ctx, URIAllowMUUpdateService, client.Int(int64(value)))
 }
 
 // UpdateAllowMUUpdateService updates ./Device/Vendor/MSFT/Policy/Config/Update/AllowMUUpdateService.
@@ -311,8 +314,8 @@ func (s *Update) CreateAllowMUUpdateService(ctx context.Context, value int64) er
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Update) UpdateAllowMUUpdateService(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowMUUpdateService, client.Int(value))
+func (s *Update) UpdateAllowMUUpdateService(ctx context.Context, value AllowMUUpdateServiceValue) error {
+	return s.c.Replace(ctx, URIAllowMUUpdateService, client.Int(int64(value)))
 }
 
 // DeleteAllowMUUpdateService deletes ./Device/Vendor/MSFT/Policy/Config/Update/AllowMUUpdateService.
@@ -335,12 +338,13 @@ func (s *Update) DeleteAllowMUUpdateService(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Update) GetAllowNonMicrosoftSignedUpdate(ctx context.Context) (int64, error) {
+func (s *Update) GetAllowNonMicrosoftSignedUpdate(ctx context.Context) (AllowNonMicrosoftSignedUpdateValue, error) {
 	v, err := s.c.Get(ctx, URIAllowNonMicrosoftSignedUpdate)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowNonMicrosoftSignedUpdateValue(n), err
 }
 
 // CreateAllowNonMicrosoftSignedUpdate creates ./Device/Vendor/MSFT/Policy/Config/Update/AllowNonMicrosoftSignedUpdate.
@@ -354,8 +358,8 @@ func (s *Update) GetAllowNonMicrosoftSignedUpdate(ctx context.Context) (int64, e
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Update) CreateAllowNonMicrosoftSignedUpdate(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowNonMicrosoftSignedUpdate, client.Int(value))
+func (s *Update) CreateAllowNonMicrosoftSignedUpdate(ctx context.Context, value AllowNonMicrosoftSignedUpdateValue) error {
+	return s.c.Add(ctx, URIAllowNonMicrosoftSignedUpdate, client.Int(int64(value)))
 }
 
 // UpdateAllowNonMicrosoftSignedUpdate updates ./Device/Vendor/MSFT/Policy/Config/Update/AllowNonMicrosoftSignedUpdate.
@@ -369,8 +373,8 @@ func (s *Update) CreateAllowNonMicrosoftSignedUpdate(ctx context.Context, value 
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Update) UpdateAllowNonMicrosoftSignedUpdate(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowNonMicrosoftSignedUpdate, client.Int(value))
+func (s *Update) UpdateAllowNonMicrosoftSignedUpdate(ctx context.Context, value AllowNonMicrosoftSignedUpdateValue) error {
+	return s.c.Replace(ctx, URIAllowNonMicrosoftSignedUpdate, client.Int(int64(value)))
 }
 
 // DeleteAllowNonMicrosoftSignedUpdate deletes ./Device/Vendor/MSFT/Policy/Config/Update/AllowNonMicrosoftSignedUpdate.
@@ -394,12 +398,13 @@ func (s *Update) DeleteAllowNonMicrosoftSignedUpdate(ctx context.Context) error 
 //
 // Default: 0.
 // Supported from OS build 10.0.19044.3757 (CSP v10.0).
-func (s *Update) GetAllowOptionalContent(ctx context.Context) (int64, error) {
+func (s *Update) GetAllowOptionalContent(ctx context.Context) (AllowOptionalContentValue, error) {
 	v, err := s.c.Get(ctx, URIAllowOptionalContent)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowOptionalContentValue(n), err
 }
 
 // CreateAllowOptionalContent creates ./Device/Vendor/MSFT/Policy/Config/Update/AllowOptionalContent.
@@ -408,8 +413,8 @@ func (s *Update) GetAllowOptionalContent(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.19044.3757 (CSP v10.0).
-func (s *Update) CreateAllowOptionalContent(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowOptionalContent, client.Int(value))
+func (s *Update) CreateAllowOptionalContent(ctx context.Context, value AllowOptionalContentValue) error {
+	return s.c.Add(ctx, URIAllowOptionalContent, client.Int(int64(value)))
 }
 
 // UpdateAllowOptionalContent updates ./Device/Vendor/MSFT/Policy/Config/Update/AllowOptionalContent.
@@ -418,8 +423,8 @@ func (s *Update) CreateAllowOptionalContent(ctx context.Context, value int64) er
 //
 // Default: 0.
 // Supported from OS build 10.0.19044.3757 (CSP v10.0).
-func (s *Update) UpdateAllowOptionalContent(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowOptionalContent, client.Int(value))
+func (s *Update) UpdateAllowOptionalContent(ctx context.Context, value AllowOptionalContentValue) error {
+	return s.c.Replace(ctx, URIAllowOptionalContent, client.Int(int64(value)))
 }
 
 // DeleteAllowOptionalContent deletes ./Device/Vendor/MSFT/Policy/Config/Update/AllowOptionalContent.
@@ -437,12 +442,13 @@ func (s *Update) DeleteAllowOptionalContent(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.22621.1194 (CSP v11.0).
-func (s *Update) GetAllowTemporaryEnterpriseFeatureControl(ctx context.Context) (int64, error) {
+func (s *Update) GetAllowTemporaryEnterpriseFeatureControl(ctx context.Context) (AllowTemporaryEnterpriseFeatureControlValue, error) {
 	v, err := s.c.Get(ctx, URIAllowTemporaryEnterpriseFeatureControl)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowTemporaryEnterpriseFeatureControlValue(n), err
 }
 
 // CreateAllowTemporaryEnterpriseFeatureControl creates ./Device/Vendor/MSFT/Policy/Config/Update/AllowTemporaryEnterpriseFeatureControl.
@@ -450,8 +456,8 @@ func (s *Update) GetAllowTemporaryEnterpriseFeatureControl(ctx context.Context) 
 //
 // Default: 0.
 // Supported from OS build 10.0.22621.1194 (CSP v11.0).
-func (s *Update) CreateAllowTemporaryEnterpriseFeatureControl(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowTemporaryEnterpriseFeatureControl, client.Int(value))
+func (s *Update) CreateAllowTemporaryEnterpriseFeatureControl(ctx context.Context, value AllowTemporaryEnterpriseFeatureControlValue) error {
+	return s.c.Add(ctx, URIAllowTemporaryEnterpriseFeatureControl, client.Int(int64(value)))
 }
 
 // UpdateAllowTemporaryEnterpriseFeatureControl updates ./Device/Vendor/MSFT/Policy/Config/Update/AllowTemporaryEnterpriseFeatureControl.
@@ -459,8 +465,8 @@ func (s *Update) CreateAllowTemporaryEnterpriseFeatureControl(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.22621.1194 (CSP v11.0).
-func (s *Update) UpdateAllowTemporaryEnterpriseFeatureControl(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowTemporaryEnterpriseFeatureControl, client.Int(value))
+func (s *Update) UpdateAllowTemporaryEnterpriseFeatureControl(ctx context.Context, value AllowTemporaryEnterpriseFeatureControlValue) error {
+	return s.c.Replace(ctx, URIAllowTemporaryEnterpriseFeatureControl, client.Int(int64(value)))
 }
 
 // DeleteAllowTemporaryEnterpriseFeatureControl deletes ./Device/Vendor/MSFT/Policy/Config/Update/AllowTemporaryEnterpriseFeatureControl.
@@ -484,12 +490,13 @@ func (s *Update) DeleteAllowTemporaryEnterpriseFeatureControl(ctx context.Contex
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Update) GetAllowUpdateService(ctx context.Context) (int64, error) {
+func (s *Update) GetAllowUpdateService(ctx context.Context) (AllowUpdateServiceValue, error) {
 	v, err := s.c.Get(ctx, URIAllowUpdateService)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowUpdateServiceValue(n), err
 }
 
 // CreateAllowUpdateService creates ./Device/Vendor/MSFT/Policy/Config/Update/AllowUpdateService.
@@ -504,8 +511,8 @@ func (s *Update) GetAllowUpdateService(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Update) CreateAllowUpdateService(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowUpdateService, client.Int(value))
+func (s *Update) CreateAllowUpdateService(ctx context.Context, value AllowUpdateServiceValue) error {
+	return s.c.Add(ctx, URIAllowUpdateService, client.Int(int64(value)))
 }
 
 // UpdateAllowUpdateService updates ./Device/Vendor/MSFT/Policy/Config/Update/AllowUpdateService.
@@ -520,8 +527,8 @@ func (s *Update) CreateAllowUpdateService(ctx context.Context, value int64) erro
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Update) UpdateAllowUpdateService(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowUpdateService, client.Int(value))
+func (s *Update) UpdateAllowUpdateService(ctx context.Context, value AllowUpdateServiceValue) error {
+	return s.c.Replace(ctx, URIAllowUpdateService, client.Int(int64(value)))
 }
 
 // DeleteAllowUpdateService deletes ./Device/Vendor/MSFT/Policy/Config/Update/AllowUpdateService.
@@ -758,12 +765,13 @@ func (s *Update) DeleteAutoRestartDeadlinePeriodInDaysForFeatureUpdates(ctx cont
 //
 // Default: 15.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Update) GetAutoRestartNotificationSchedule(ctx context.Context) (int64, error) {
+func (s *Update) GetAutoRestartNotificationSchedule(ctx context.Context) (AutoRestartNotificationScheduleValue, error) {
 	v, err := s.c.Get(ctx, URIAutoRestartNotificationSchedule)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AutoRestartNotificationScheduleValue(n), err
 }
 
 // CreateAutoRestartNotificationSchedule creates ./Device/Vendor/MSFT/Policy/Config/Update/AutoRestartNotificationSchedule.
@@ -772,8 +780,8 @@ func (s *Update) GetAutoRestartNotificationSchedule(ctx context.Context) (int64,
 //
 // Default: 15.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Update) CreateAutoRestartNotificationSchedule(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAutoRestartNotificationSchedule, client.Int(value))
+func (s *Update) CreateAutoRestartNotificationSchedule(ctx context.Context, value AutoRestartNotificationScheduleValue) error {
+	return s.c.Add(ctx, URIAutoRestartNotificationSchedule, client.Int(int64(value)))
 }
 
 // UpdateAutoRestartNotificationSchedule updates ./Device/Vendor/MSFT/Policy/Config/Update/AutoRestartNotificationSchedule.
@@ -782,8 +790,8 @@ func (s *Update) CreateAutoRestartNotificationSchedule(ctx context.Context, valu
 //
 // Default: 15.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Update) UpdateAutoRestartNotificationSchedule(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAutoRestartNotificationSchedule, client.Int(value))
+func (s *Update) UpdateAutoRestartNotificationSchedule(ctx context.Context, value AutoRestartNotificationScheduleValue) error {
+	return s.c.Replace(ctx, URIAutoRestartNotificationSchedule, client.Int(int64(value)))
 }
 
 // DeleteAutoRestartNotificationSchedule deletes ./Device/Vendor/MSFT/Policy/Config/Update/AutoRestartNotificationSchedule.
@@ -802,12 +810,13 @@ func (s *Update) DeleteAutoRestartNotificationSchedule(ctx context.Context) erro
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Update) GetAutoRestartRequiredNotificationDismissal(ctx context.Context) (int64, error) {
+func (s *Update) GetAutoRestartRequiredNotificationDismissal(ctx context.Context) (AutoRestartRequiredNotificationDismissalValue, error) {
 	v, err := s.c.Get(ctx, URIAutoRestartRequiredNotificationDismissal)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AutoRestartRequiredNotificationDismissalValue(n), err
 }
 
 // CreateAutoRestartRequiredNotificationDismissal creates ./Device/Vendor/MSFT/Policy/Config/Update/AutoRestartRequiredNotificationDismissal.
@@ -816,8 +825,8 @@ func (s *Update) GetAutoRestartRequiredNotificationDismissal(ctx context.Context
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Update) CreateAutoRestartRequiredNotificationDismissal(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAutoRestartRequiredNotificationDismissal, client.Int(value))
+func (s *Update) CreateAutoRestartRequiredNotificationDismissal(ctx context.Context, value AutoRestartRequiredNotificationDismissalValue) error {
+	return s.c.Add(ctx, URIAutoRestartRequiredNotificationDismissal, client.Int(int64(value)))
 }
 
 // UpdateAutoRestartRequiredNotificationDismissal updates ./Device/Vendor/MSFT/Policy/Config/Update/AutoRestartRequiredNotificationDismissal.
@@ -826,8 +835,8 @@ func (s *Update) CreateAutoRestartRequiredNotificationDismissal(ctx context.Cont
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Update) UpdateAutoRestartRequiredNotificationDismissal(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAutoRestartRequiredNotificationDismissal, client.Int(value))
+func (s *Update) UpdateAutoRestartRequiredNotificationDismissal(ctx context.Context, value AutoRestartRequiredNotificationDismissalValue) error {
+	return s.c.Replace(ctx, URIAutoRestartRequiredNotificationDismissal, client.Int(int64(value)))
 }
 
 // DeleteAutoRestartRequiredNotificationDismissal deletes ./Device/Vendor/MSFT/Policy/Config/Update/AutoRestartRequiredNotificationDismissal.
@@ -851,12 +860,13 @@ func (s *Update) DeleteAutoRestartRequiredNotificationDismissal(ctx context.Cont
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Update) GetAutomaticMaintenanceWakeUp(ctx context.Context) (int64, error) {
+func (s *Update) GetAutomaticMaintenanceWakeUp(ctx context.Context) (AutomaticMaintenanceWakeUpValue, error) {
 	v, err := s.c.Get(ctx, URIAutomaticMaintenanceWakeUp)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AutomaticMaintenanceWakeUpValue(n), err
 }
 
 // CreateAutomaticMaintenanceWakeUp creates ./Device/Vendor/MSFT/Policy/Config/Update/AutomaticMaintenanceWakeUp.
@@ -870,8 +880,8 @@ func (s *Update) GetAutomaticMaintenanceWakeUp(ctx context.Context) (int64, erro
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Update) CreateAutomaticMaintenanceWakeUp(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAutomaticMaintenanceWakeUp, client.Int(value))
+func (s *Update) CreateAutomaticMaintenanceWakeUp(ctx context.Context, value AutomaticMaintenanceWakeUpValue) error {
+	return s.c.Add(ctx, URIAutomaticMaintenanceWakeUp, client.Int(int64(value)))
 }
 
 // UpdateAutomaticMaintenanceWakeUp updates ./Device/Vendor/MSFT/Policy/Config/Update/AutomaticMaintenanceWakeUp.
@@ -885,8 +895,8 @@ func (s *Update) CreateAutomaticMaintenanceWakeUp(ctx context.Context, value int
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Update) UpdateAutomaticMaintenanceWakeUp(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAutomaticMaintenanceWakeUp, client.Int(value))
+func (s *Update) UpdateAutomaticMaintenanceWakeUp(ctx context.Context, value AutomaticMaintenanceWakeUpValue) error {
+	return s.c.Replace(ctx, URIAutomaticMaintenanceWakeUp, client.Int(int64(value)))
 }
 
 // DeleteAutomaticMaintenanceWakeUp deletes ./Device/Vendor/MSFT/Policy/Config/Update/AutomaticMaintenanceWakeUp.
@@ -912,12 +922,13 @@ func (s *Update) DeleteAutomaticMaintenanceWakeUp(ctx context.Context) error {
 //
 // Default: 16.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Update) GetBranchReadinessLevel(ctx context.Context) (int64, error) {
+func (s *Update) GetBranchReadinessLevel(ctx context.Context) (BranchReadinessLevelValue, error) {
 	v, err := s.c.Get(ctx, URIBranchReadinessLevel)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return BranchReadinessLevelValue(n), err
 }
 
 // CreateBranchReadinessLevel creates ./Device/Vendor/MSFT/Policy/Config/Update/BranchReadinessLevel.
@@ -928,8 +939,8 @@ func (s *Update) GetBranchReadinessLevel(ctx context.Context) (int64, error) {
 //
 // Default: 16.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Update) CreateBranchReadinessLevel(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIBranchReadinessLevel, client.Int(value))
+func (s *Update) CreateBranchReadinessLevel(ctx context.Context, value BranchReadinessLevelValue) error {
+	return s.c.Add(ctx, URIBranchReadinessLevel, client.Int(int64(value)))
 }
 
 // UpdateBranchReadinessLevel updates ./Device/Vendor/MSFT/Policy/Config/Update/BranchReadinessLevel.
@@ -940,8 +951,8 @@ func (s *Update) CreateBranchReadinessLevel(ctx context.Context, value int64) er
 //
 // Default: 16.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Update) UpdateBranchReadinessLevel(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIBranchReadinessLevel, client.Int(value))
+func (s *Update) UpdateBranchReadinessLevel(ctx context.Context, value BranchReadinessLevelValue) error {
+	return s.c.Replace(ctx, URIBranchReadinessLevel, client.Int(int64(value)))
 }
 
 // DeleteBranchReadinessLevel deletes ./Device/Vendor/MSFT/Policy/Config/Update/BranchReadinessLevel.
@@ -1189,12 +1200,13 @@ func (s *Update) DeleteConfigureDeadlineGracePeriodForFeatureUpdates(ctx context
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Update) GetConfigureDeadlineNoAutoReboot(ctx context.Context) (int64, error) {
+func (s *Update) GetConfigureDeadlineNoAutoReboot(ctx context.Context) (ConfigureDeadlineNoAutoRebootValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureDeadlineNoAutoReboot)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureDeadlineNoAutoRebootValue(n), err
 }
 
 // CreateConfigureDeadlineNoAutoReboot creates ./Device/Vendor/MSFT/Policy/Config/Update/ConfigureDeadlineNoAutoReboot.
@@ -1206,8 +1218,8 @@ func (s *Update) GetConfigureDeadlineNoAutoReboot(ctx context.Context) (int64, e
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Update) CreateConfigureDeadlineNoAutoReboot(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureDeadlineNoAutoReboot, client.Int(value))
+func (s *Update) CreateConfigureDeadlineNoAutoReboot(ctx context.Context, value ConfigureDeadlineNoAutoRebootValue) error {
+	return s.c.Add(ctx, URIConfigureDeadlineNoAutoReboot, client.Int(int64(value)))
 }
 
 // UpdateConfigureDeadlineNoAutoReboot updates ./Device/Vendor/MSFT/Policy/Config/Update/ConfigureDeadlineNoAutoReboot.
@@ -1219,8 +1231,8 @@ func (s *Update) CreateConfigureDeadlineNoAutoReboot(ctx context.Context, value 
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Update) UpdateConfigureDeadlineNoAutoReboot(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureDeadlineNoAutoReboot, client.Int(value))
+func (s *Update) UpdateConfigureDeadlineNoAutoReboot(ctx context.Context, value ConfigureDeadlineNoAutoRebootValue) error {
+	return s.c.Replace(ctx, URIConfigureDeadlineNoAutoReboot, client.Int(int64(value)))
 }
 
 // DeleteConfigureDeadlineNoAutoReboot deletes ./Device/Vendor/MSFT/Policy/Config/Update/ConfigureDeadlineNoAutoReboot.
@@ -1245,12 +1257,13 @@ func (s *Update) DeleteConfigureDeadlineNoAutoReboot(ctx context.Context) error 
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Update) GetConfigureDeadlineNoAutoRebootForFeatureUpdates(ctx context.Context) (int64, error) {
+func (s *Update) GetConfigureDeadlineNoAutoRebootForFeatureUpdates(ctx context.Context) (ConfigureDeadlineNoAutoRebootForFeatureUpdatesValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureDeadlineNoAutoRebootForFeatureUpdates)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureDeadlineNoAutoRebootForFeatureUpdatesValue(n), err
 }
 
 // CreateConfigureDeadlineNoAutoRebootForFeatureUpdates creates ./Device/Vendor/MSFT/Policy/Config/Update/ConfigureDeadlineNoAutoRebootForFeatureUpdates.
@@ -1262,8 +1275,8 @@ func (s *Update) GetConfigureDeadlineNoAutoRebootForFeatureUpdates(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Update) CreateConfigureDeadlineNoAutoRebootForFeatureUpdates(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureDeadlineNoAutoRebootForFeatureUpdates, client.Int(value))
+func (s *Update) CreateConfigureDeadlineNoAutoRebootForFeatureUpdates(ctx context.Context, value ConfigureDeadlineNoAutoRebootForFeatureUpdatesValue) error {
+	return s.c.Add(ctx, URIConfigureDeadlineNoAutoRebootForFeatureUpdates, client.Int(int64(value)))
 }
 
 // UpdateConfigureDeadlineNoAutoRebootForFeatureUpdates updates ./Device/Vendor/MSFT/Policy/Config/Update/ConfigureDeadlineNoAutoRebootForFeatureUpdates.
@@ -1275,8 +1288,8 @@ func (s *Update) CreateConfigureDeadlineNoAutoRebootForFeatureUpdates(ctx contex
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Update) UpdateConfigureDeadlineNoAutoRebootForFeatureUpdates(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureDeadlineNoAutoRebootForFeatureUpdates, client.Int(value))
+func (s *Update) UpdateConfigureDeadlineNoAutoRebootForFeatureUpdates(ctx context.Context, value ConfigureDeadlineNoAutoRebootForFeatureUpdatesValue) error {
+	return s.c.Replace(ctx, URIConfigureDeadlineNoAutoRebootForFeatureUpdates, client.Int(int64(value)))
 }
 
 // DeleteConfigureDeadlineNoAutoRebootForFeatureUpdates deletes ./Device/Vendor/MSFT/Policy/Config/Update/ConfigureDeadlineNoAutoRebootForFeatureUpdates.
@@ -1301,12 +1314,13 @@ func (s *Update) DeleteConfigureDeadlineNoAutoRebootForFeatureUpdates(ctx contex
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Update) GetConfigureDeadlineNoAutoRebootForQualityUpdates(ctx context.Context) (int64, error) {
+func (s *Update) GetConfigureDeadlineNoAutoRebootForQualityUpdates(ctx context.Context) (ConfigureDeadlineNoAutoRebootForQualityUpdatesValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureDeadlineNoAutoRebootForQualityUpdates)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureDeadlineNoAutoRebootForQualityUpdatesValue(n), err
 }
 
 // CreateConfigureDeadlineNoAutoRebootForQualityUpdates creates ./Device/Vendor/MSFT/Policy/Config/Update/ConfigureDeadlineNoAutoRebootForQualityUpdates.
@@ -1318,8 +1332,8 @@ func (s *Update) GetConfigureDeadlineNoAutoRebootForQualityUpdates(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Update) CreateConfigureDeadlineNoAutoRebootForQualityUpdates(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureDeadlineNoAutoRebootForQualityUpdates, client.Int(value))
+func (s *Update) CreateConfigureDeadlineNoAutoRebootForQualityUpdates(ctx context.Context, value ConfigureDeadlineNoAutoRebootForQualityUpdatesValue) error {
+	return s.c.Add(ctx, URIConfigureDeadlineNoAutoRebootForQualityUpdates, client.Int(int64(value)))
 }
 
 // UpdateConfigureDeadlineNoAutoRebootForQualityUpdates updates ./Device/Vendor/MSFT/Policy/Config/Update/ConfigureDeadlineNoAutoRebootForQualityUpdates.
@@ -1331,8 +1345,8 @@ func (s *Update) CreateConfigureDeadlineNoAutoRebootForQualityUpdates(ctx contex
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Update) UpdateConfigureDeadlineNoAutoRebootForQualityUpdates(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureDeadlineNoAutoRebootForQualityUpdates, client.Int(value))
+func (s *Update) UpdateConfigureDeadlineNoAutoRebootForQualityUpdates(ctx context.Context, value ConfigureDeadlineNoAutoRebootForQualityUpdatesValue) error {
+	return s.c.Replace(ctx, URIConfigureDeadlineNoAutoRebootForQualityUpdates, client.Int(int64(value)))
 }
 
 // DeleteConfigureDeadlineNoAutoRebootForQualityUpdates deletes ./Device/Vendor/MSFT/Policy/Config/Update/ConfigureDeadlineNoAutoRebootForQualityUpdates.
@@ -1725,12 +1739,13 @@ func (s *Update) DeleteDetectionFrequency(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Update) GetDisableDualScan(ctx context.Context) (int64, error) {
+func (s *Update) GetDisableDualScan(ctx context.Context) (DisableDualScanValue, error) {
 	v, err := s.c.Get(ctx, URIDisableDualScan)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableDualScanValue(n), err
 }
 
 // CreateDisableDualScan creates ./Device/Vendor/MSFT/Policy/Config/Update/DisableDualScan.
@@ -1738,8 +1753,8 @@ func (s *Update) GetDisableDualScan(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Update) CreateDisableDualScan(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableDualScan, client.Int(value))
+func (s *Update) CreateDisableDualScan(ctx context.Context, value DisableDualScanValue) error {
+	return s.c.Add(ctx, URIDisableDualScan, client.Int(int64(value)))
 }
 
 // UpdateDisableDualScan updates ./Device/Vendor/MSFT/Policy/Config/Update/DisableDualScan.
@@ -1747,8 +1762,8 @@ func (s *Update) CreateDisableDualScan(ctx context.Context, value int64) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Update) UpdateDisableDualScan(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableDualScan, client.Int(value))
+func (s *Update) UpdateDisableDualScan(ctx context.Context, value DisableDualScanValue) error {
+	return s.c.Replace(ctx, URIDisableDualScan, client.Int(int64(value)))
 }
 
 // DeleteDisableDualScan deletes ./Device/Vendor/MSFT/Policy/Config/Update/DisableDualScan.
@@ -1765,12 +1780,13 @@ func (s *Update) DeleteDisableDualScan(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.22000, 10.0.19041.546, 10.0.18363.1110, 10.0.18362.1110, 10.0.17763.1490 (CSP v8.0).
-func (s *Update) GetDisableWUfBSafeguards(ctx context.Context) (int64, error) {
+func (s *Update) GetDisableWUfBSafeguards(ctx context.Context) (DisableWUfBSafeguardsValue, error) {
 	v, err := s.c.Get(ctx, URIDisableWUfBSafeguards)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableWUfBSafeguardsValue(n), err
 }
 
 // CreateDisableWUfBSafeguards creates ./Device/Vendor/MSFT/Policy/Config/Update/DisableWUfBSafeguards.
@@ -1778,8 +1794,8 @@ func (s *Update) GetDisableWUfBSafeguards(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.22000, 10.0.19041.546, 10.0.18363.1110, 10.0.18362.1110, 10.0.17763.1490 (CSP v8.0).
-func (s *Update) CreateDisableWUfBSafeguards(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableWUfBSafeguards, client.Int(value))
+func (s *Update) CreateDisableWUfBSafeguards(ctx context.Context, value DisableWUfBSafeguardsValue) error {
+	return s.c.Add(ctx, URIDisableWUfBSafeguards, client.Int(int64(value)))
 }
 
 // UpdateDisableWUfBSafeguards updates ./Device/Vendor/MSFT/Policy/Config/Update/DisableWUfBSafeguards.
@@ -1787,8 +1803,8 @@ func (s *Update) CreateDisableWUfBSafeguards(ctx context.Context, value int64) e
 //
 // Default: 0.
 // Supported from OS build 10.0.22000, 10.0.19041.546, 10.0.18363.1110, 10.0.18362.1110, 10.0.17763.1490 (CSP v8.0).
-func (s *Update) UpdateDisableWUfBSafeguards(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableWUfBSafeguards, client.Int(value))
+func (s *Update) UpdateDisableWUfBSafeguards(ctx context.Context, value DisableWUfBSafeguardsValue) error {
+	return s.c.Replace(ctx, URIDisableWUfBSafeguards, client.Int(int64(value)))
 }
 
 // DeleteDisableWUfBSafeguards deletes ./Device/Vendor/MSFT/Policy/Config/Update/DisableWUfBSafeguards.
@@ -1804,28 +1820,29 @@ func (s *Update) DeleteDisableWUfBSafeguards(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.10240.18818, 10.0.14393.4169, 10.0.15063.2108, 10.0.16299.2166, 10.0.17134.1967, 10.0.17763.1697, 10.0.18362.1316, 10.0.18363.1316, 10.0.19041.746, 10.0.19042.746, 10.0.22000 (CSP v1.0).
-func (s *Update) GetDoNotEnforceEnterpriseTLSCertPinningForUpdateDetection(ctx context.Context) (int64, error) {
+func (s *Update) GetDoNotEnforceEnterpriseTLSCertPinningForUpdateDetection(ctx context.Context) (DoNotEnforceEnterpriseTLSCertPinningForUpdateDetectionValue, error) {
 	v, err := s.c.Get(ctx, URIDoNotEnforceEnterpriseTLSCertPinningForUpdateDetection)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DoNotEnforceEnterpriseTLSCertPinningForUpdateDetectionValue(n), err
 }
 
 // CreateDoNotEnforceEnterpriseTLSCertPinningForUpdateDetection creates ./Device/Vendor/MSFT/Policy/Config/Update/DoNotEnforceEnterpriseTLSCertPinningForUpdateDetection.
 //
 // Default: 0.
 // Supported from OS build 10.0.10240.18818, 10.0.14393.4169, 10.0.15063.2108, 10.0.16299.2166, 10.0.17134.1967, 10.0.17763.1697, 10.0.18362.1316, 10.0.18363.1316, 10.0.19041.746, 10.0.19042.746, 10.0.22000 (CSP v1.0).
-func (s *Update) CreateDoNotEnforceEnterpriseTLSCertPinningForUpdateDetection(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDoNotEnforceEnterpriseTLSCertPinningForUpdateDetection, client.Int(value))
+func (s *Update) CreateDoNotEnforceEnterpriseTLSCertPinningForUpdateDetection(ctx context.Context, value DoNotEnforceEnterpriseTLSCertPinningForUpdateDetectionValue) error {
+	return s.c.Add(ctx, URIDoNotEnforceEnterpriseTLSCertPinningForUpdateDetection, client.Int(int64(value)))
 }
 
 // UpdateDoNotEnforceEnterpriseTLSCertPinningForUpdateDetection updates ./Device/Vendor/MSFT/Policy/Config/Update/DoNotEnforceEnterpriseTLSCertPinningForUpdateDetection.
 //
 // Default: 0.
 // Supported from OS build 10.0.10240.18818, 10.0.14393.4169, 10.0.15063.2108, 10.0.16299.2166, 10.0.17134.1967, 10.0.17763.1697, 10.0.18362.1316, 10.0.18363.1316, 10.0.19041.746, 10.0.19042.746, 10.0.22000 (CSP v1.0).
-func (s *Update) UpdateDoNotEnforceEnterpriseTLSCertPinningForUpdateDetection(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDoNotEnforceEnterpriseTLSCertPinningForUpdateDetection, client.Int(value))
+func (s *Update) UpdateDoNotEnforceEnterpriseTLSCertPinningForUpdateDetection(ctx context.Context, value DoNotEnforceEnterpriseTLSCertPinningForUpdateDetectionValue) error {
+	return s.c.Replace(ctx, URIDoNotEnforceEnterpriseTLSCertPinningForUpdateDetection, client.Int(int64(value)))
 }
 
 // DeleteDoNotEnforceEnterpriseTLSCertPinningForUpdateDetection deletes ./Device/Vendor/MSFT/Policy/Config/Update/DoNotEnforceEnterpriseTLSCertPinningForUpdateDetection.
@@ -2287,12 +2304,13 @@ func (s *Update) DeleteEngagedRestartTransitionScheduleForFeatureUpdates(ctx con
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Update) GetExcludeWUDriversInQualityUpdate(ctx context.Context) (int64, error) {
+func (s *Update) GetExcludeWUDriversInQualityUpdate(ctx context.Context) (ExcludeWUDriversInQualityUpdateValue, error) {
 	v, err := s.c.Get(ctx, URIExcludeWUDriversInQualityUpdate)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ExcludeWUDriversInQualityUpdateValue(n), err
 }
 
 // CreateExcludeWUDriversInQualityUpdate creates ./Device/Vendor/MSFT/Policy/Config/Update/ExcludeWUDriversInQualityUpdate.
@@ -2302,8 +2320,8 @@ func (s *Update) GetExcludeWUDriversInQualityUpdate(ctx context.Context) (int64,
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Update) CreateExcludeWUDriversInQualityUpdate(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIExcludeWUDriversInQualityUpdate, client.Int(value))
+func (s *Update) CreateExcludeWUDriversInQualityUpdate(ctx context.Context, value ExcludeWUDriversInQualityUpdateValue) error {
+	return s.c.Add(ctx, URIExcludeWUDriversInQualityUpdate, client.Int(int64(value)))
 }
 
 // UpdateExcludeWUDriversInQualityUpdate updates ./Device/Vendor/MSFT/Policy/Config/Update/ExcludeWUDriversInQualityUpdate.
@@ -2313,8 +2331,8 @@ func (s *Update) CreateExcludeWUDriversInQualityUpdate(ctx context.Context, valu
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Update) UpdateExcludeWUDriversInQualityUpdate(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIExcludeWUDriversInQualityUpdate, client.Int(value))
+func (s *Update) UpdateExcludeWUDriversInQualityUpdate(ctx context.Context, value ExcludeWUDriversInQualityUpdateValue) error {
+	return s.c.Replace(ctx, URIExcludeWUDriversInQualityUpdate, client.Int(int64(value)))
 }
 
 // DeleteExcludeWUDriversInQualityUpdate deletes ./Device/Vendor/MSFT/Policy/Config/Update/ExcludeWUDriversInQualityUpdate.
@@ -2338,12 +2356,13 @@ func (s *Update) DeleteExcludeWUDriversInQualityUpdate(ctx context.Context) erro
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Update) GetFillEmptyContentUrls(ctx context.Context) (int64, error) {
+func (s *Update) GetFillEmptyContentUrls(ctx context.Context) (FillEmptyContentUrlsValue, error) {
 	v, err := s.c.Get(ctx, URIFillEmptyContentUrls)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return FillEmptyContentUrlsValue(n), err
 }
 
 // CreateFillEmptyContentUrls creates ./Device/Vendor/MSFT/Policy/Config/Update/FillEmptyContentUrls.
@@ -2356,8 +2375,8 @@ func (s *Update) GetFillEmptyContentUrls(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Update) CreateFillEmptyContentUrls(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIFillEmptyContentUrls, client.Int(value))
+func (s *Update) CreateFillEmptyContentUrls(ctx context.Context, value FillEmptyContentUrlsValue) error {
+	return s.c.Add(ctx, URIFillEmptyContentUrls, client.Int(int64(value)))
 }
 
 // UpdateFillEmptyContentUrls updates ./Device/Vendor/MSFT/Policy/Config/Update/FillEmptyContentUrls.
@@ -2370,8 +2389,8 @@ func (s *Update) CreateFillEmptyContentUrls(ctx context.Context, value int64) er
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Update) UpdateFillEmptyContentUrls(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIFillEmptyContentUrls, client.Int(value))
+func (s *Update) UpdateFillEmptyContentUrls(ctx context.Context, value FillEmptyContentUrlsValue) error {
+	return s.c.Replace(ctx, URIFillEmptyContentUrls, client.Int(int64(value)))
 }
 
 // DeleteFillEmptyContentUrls deletes ./Device/Vendor/MSFT/Policy/Config/Update/FillEmptyContentUrls.
@@ -2396,12 +2415,13 @@ func (s *Update) DeleteFillEmptyContentUrls(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Update) GetIgnoreMOAppDownloadLimit(ctx context.Context) (int64, error) {
+func (s *Update) GetIgnoreMOAppDownloadLimit(ctx context.Context) (IgnoreMOAppDownloadLimitValue, error) {
 	v, err := s.c.Get(ctx, URIIgnoreMOAppDownloadLimit)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return IgnoreMOAppDownloadLimitValue(n), err
 }
 
 // CreateIgnoreMOAppDownloadLimit creates ./Device/Vendor/MSFT/Policy/Config/Update/IgnoreMOAppDownloadLimit.
@@ -2412,8 +2432,8 @@ func (s *Update) GetIgnoreMOAppDownloadLimit(ctx context.Context) (int64, error)
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Update) CreateIgnoreMOAppDownloadLimit(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIIgnoreMOAppDownloadLimit, client.Int(value))
+func (s *Update) CreateIgnoreMOAppDownloadLimit(ctx context.Context, value IgnoreMOAppDownloadLimitValue) error {
+	return s.c.Add(ctx, URIIgnoreMOAppDownloadLimit, client.Int(int64(value)))
 }
 
 // UpdateIgnoreMOAppDownloadLimit updates ./Device/Vendor/MSFT/Policy/Config/Update/IgnoreMOAppDownloadLimit.
@@ -2424,8 +2444,8 @@ func (s *Update) CreateIgnoreMOAppDownloadLimit(ctx context.Context, value int64
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Update) UpdateIgnoreMOAppDownloadLimit(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIIgnoreMOAppDownloadLimit, client.Int(value))
+func (s *Update) UpdateIgnoreMOAppDownloadLimit(ctx context.Context, value IgnoreMOAppDownloadLimitValue) error {
+	return s.c.Replace(ctx, URIIgnoreMOAppDownloadLimit, client.Int(int64(value)))
 }
 
 // DeleteIgnoreMOAppDownloadLimit deletes ./Device/Vendor/MSFT/Policy/Config/Update/IgnoreMOAppDownloadLimit.
@@ -2448,12 +2468,13 @@ func (s *Update) DeleteIgnoreMOAppDownloadLimit(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Update) GetIgnoreMOUpdateDownloadLimit(ctx context.Context) (int64, error) {
+func (s *Update) GetIgnoreMOUpdateDownloadLimit(ctx context.Context) (IgnoreMOUpdateDownloadLimitValue, error) {
 	v, err := s.c.Get(ctx, URIIgnoreMOUpdateDownloadLimit)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return IgnoreMOUpdateDownloadLimitValue(n), err
 }
 
 // CreateIgnoreMOUpdateDownloadLimit creates ./Device/Vendor/MSFT/Policy/Config/Update/IgnoreMOUpdateDownloadLimit.
@@ -2464,8 +2485,8 @@ func (s *Update) GetIgnoreMOUpdateDownloadLimit(ctx context.Context) (int64, err
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Update) CreateIgnoreMOUpdateDownloadLimit(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIIgnoreMOUpdateDownloadLimit, client.Int(value))
+func (s *Update) CreateIgnoreMOUpdateDownloadLimit(ctx context.Context, value IgnoreMOUpdateDownloadLimitValue) error {
+	return s.c.Add(ctx, URIIgnoreMOUpdateDownloadLimit, client.Int(int64(value)))
 }
 
 // UpdateIgnoreMOUpdateDownloadLimit updates ./Device/Vendor/MSFT/Policy/Config/Update/IgnoreMOUpdateDownloadLimit.
@@ -2476,8 +2497,8 @@ func (s *Update) CreateIgnoreMOUpdateDownloadLimit(ctx context.Context, value in
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Update) UpdateIgnoreMOUpdateDownloadLimit(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIIgnoreMOUpdateDownloadLimit, client.Int(value))
+func (s *Update) UpdateIgnoreMOUpdateDownloadLimit(ctx context.Context, value IgnoreMOUpdateDownloadLimitValue) error {
+	return s.c.Replace(ctx, URIIgnoreMOUpdateDownloadLimit, client.Int(int64(value)))
 }
 
 // DeleteIgnoreMOUpdateDownloadLimit deletes ./Device/Vendor/MSFT/Policy/Config/Update/IgnoreMOUpdateDownloadLimit.
@@ -2636,12 +2657,13 @@ func (s *Update) DeleteMaintenanceWindowMonthlyMonthBasedDayOfMonth(ctx context.
 //
 // Default: 1.
 // Supported from OS build 99.9.99999 (CSP v11.0).
-func (s *Update) GetMaintenanceWindowMonthlySchedule(ctx context.Context) (int64, error) {
+func (s *Update) GetMaintenanceWindowMonthlySchedule(ctx context.Context) (MaintenanceWindowMonthlyScheduleValue, error) {
 	v, err := s.c.Get(ctx, URIMaintenanceWindowMonthlySchedule)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MaintenanceWindowMonthlyScheduleValue(n), err
 }
 
 // CreateMaintenanceWindowMonthlySchedule creates ./Device/Vendor/MSFT/Policy/Config/Update/MaintenanceWindowMonthlySchedule.
@@ -2652,8 +2674,8 @@ func (s *Update) GetMaintenanceWindowMonthlySchedule(ctx context.Context) (int64
 //
 // Default: 1.
 // Supported from OS build 99.9.99999 (CSP v11.0).
-func (s *Update) CreateMaintenanceWindowMonthlySchedule(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIMaintenanceWindowMonthlySchedule, client.Int(value))
+func (s *Update) CreateMaintenanceWindowMonthlySchedule(ctx context.Context, value MaintenanceWindowMonthlyScheduleValue) error {
+	return s.c.Add(ctx, URIMaintenanceWindowMonthlySchedule, client.Int(int64(value)))
 }
 
 // UpdateMaintenanceWindowMonthlySchedule updates ./Device/Vendor/MSFT/Policy/Config/Update/MaintenanceWindowMonthlySchedule.
@@ -2664,8 +2686,8 @@ func (s *Update) CreateMaintenanceWindowMonthlySchedule(ctx context.Context, val
 //
 // Default: 1.
 // Supported from OS build 99.9.99999 (CSP v11.0).
-func (s *Update) UpdateMaintenanceWindowMonthlySchedule(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIMaintenanceWindowMonthlySchedule, client.Int(value))
+func (s *Update) UpdateMaintenanceWindowMonthlySchedule(ctx context.Context, value MaintenanceWindowMonthlyScheduleValue) error {
+	return s.c.Replace(ctx, URIMaintenanceWindowMonthlySchedule, client.Int(int64(value)))
 }
 
 // DeleteMaintenanceWindowMonthlySchedule deletes ./Device/Vendor/MSFT/Policy/Config/Update/MaintenanceWindowMonthlySchedule.
@@ -2687,12 +2709,13 @@ func (s *Update) DeleteMaintenanceWindowMonthlySchedule(ctx context.Context) err
 //
 // Default: 1.
 // Supported from OS build 99.9.99999 (CSP v11.0).
-func (s *Update) GetMaintenanceWindowMonthlyWeekBasedDayOfTheWeek(ctx context.Context) (int64, error) {
+func (s *Update) GetMaintenanceWindowMonthlyWeekBasedDayOfTheWeek(ctx context.Context) (MaintenanceWindowMonthlyWeekBasedDayOfTheWeekValue, error) {
 	v, err := s.c.Get(ctx, URIMaintenanceWindowMonthlyWeekBasedDayOfTheWeek)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MaintenanceWindowMonthlyWeekBasedDayOfTheWeekValue(n), err
 }
 
 // CreateMaintenanceWindowMonthlyWeekBasedDayOfTheWeek creates ./Device/Vendor/MSFT/Policy/Config/Update/MaintenanceWindowMonthlyWeekBasedDayOfTheWeek.
@@ -2702,8 +2725,8 @@ func (s *Update) GetMaintenanceWindowMonthlyWeekBasedDayOfTheWeek(ctx context.Co
 //
 // Default: 1.
 // Supported from OS build 99.9.99999 (CSP v11.0).
-func (s *Update) CreateMaintenanceWindowMonthlyWeekBasedDayOfTheWeek(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIMaintenanceWindowMonthlyWeekBasedDayOfTheWeek, client.Int(value))
+func (s *Update) CreateMaintenanceWindowMonthlyWeekBasedDayOfTheWeek(ctx context.Context, value MaintenanceWindowMonthlyWeekBasedDayOfTheWeekValue) error {
+	return s.c.Add(ctx, URIMaintenanceWindowMonthlyWeekBasedDayOfTheWeek, client.Int(int64(value)))
 }
 
 // UpdateMaintenanceWindowMonthlyWeekBasedDayOfTheWeek updates ./Device/Vendor/MSFT/Policy/Config/Update/MaintenanceWindowMonthlyWeekBasedDayOfTheWeek.
@@ -2713,8 +2736,8 @@ func (s *Update) CreateMaintenanceWindowMonthlyWeekBasedDayOfTheWeek(ctx context
 //
 // Default: 1.
 // Supported from OS build 99.9.99999 (CSP v11.0).
-func (s *Update) UpdateMaintenanceWindowMonthlyWeekBasedDayOfTheWeek(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIMaintenanceWindowMonthlyWeekBasedDayOfTheWeek, client.Int(value))
+func (s *Update) UpdateMaintenanceWindowMonthlyWeekBasedDayOfTheWeek(ctx context.Context, value MaintenanceWindowMonthlyWeekBasedDayOfTheWeekValue) error {
+	return s.c.Replace(ctx, URIMaintenanceWindowMonthlyWeekBasedDayOfTheWeek, client.Int(int64(value)))
 }
 
 // DeleteMaintenanceWindowMonthlyWeekBasedDayOfTheWeek deletes ./Device/Vendor/MSFT/Policy/Config/Update/MaintenanceWindowMonthlyWeekBasedDayOfTheWeek.
@@ -2735,12 +2758,13 @@ func (s *Update) DeleteMaintenanceWindowMonthlyWeekBasedDayOfTheWeek(ctx context
 //
 // Default: 1.
 // Supported from OS build 99.9.99999 (CSP v11.0).
-func (s *Update) GetMaintenanceWindowMonthlyWeekBasedOccurrenceInMonth(ctx context.Context) (int64, error) {
+func (s *Update) GetMaintenanceWindowMonthlyWeekBasedOccurrenceInMonth(ctx context.Context) (MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthValue, error) {
 	v, err := s.c.Get(ctx, URIMaintenanceWindowMonthlyWeekBasedOccurrenceInMonth)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthValue(n), err
 }
 
 // CreateMaintenanceWindowMonthlyWeekBasedOccurrenceInMonth creates ./Device/Vendor/MSFT/Policy/Config/Update/MaintenanceWindowMonthlyWeekBasedOccurrenceInMonth.
@@ -2750,8 +2774,8 @@ func (s *Update) GetMaintenanceWindowMonthlyWeekBasedOccurrenceInMonth(ctx conte
 //
 // Default: 1.
 // Supported from OS build 99.9.99999 (CSP v11.0).
-func (s *Update) CreateMaintenanceWindowMonthlyWeekBasedOccurrenceInMonth(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIMaintenanceWindowMonthlyWeekBasedOccurrenceInMonth, client.Int(value))
+func (s *Update) CreateMaintenanceWindowMonthlyWeekBasedOccurrenceInMonth(ctx context.Context, value MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthValue) error {
+	return s.c.Add(ctx, URIMaintenanceWindowMonthlyWeekBasedOccurrenceInMonth, client.Int(int64(value)))
 }
 
 // UpdateMaintenanceWindowMonthlyWeekBasedOccurrenceInMonth updates ./Device/Vendor/MSFT/Policy/Config/Update/MaintenanceWindowMonthlyWeekBasedOccurrenceInMonth.
@@ -2761,8 +2785,8 @@ func (s *Update) CreateMaintenanceWindowMonthlyWeekBasedOccurrenceInMonth(ctx co
 //
 // Default: 1.
 // Supported from OS build 99.9.99999 (CSP v11.0).
-func (s *Update) UpdateMaintenanceWindowMonthlyWeekBasedOccurrenceInMonth(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIMaintenanceWindowMonthlyWeekBasedOccurrenceInMonth, client.Int(value))
+func (s *Update) UpdateMaintenanceWindowMonthlyWeekBasedOccurrenceInMonth(ctx context.Context, value MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthValue) error {
+	return s.c.Replace(ctx, URIMaintenanceWindowMonthlyWeekBasedOccurrenceInMonth, client.Int(int64(value)))
 }
 
 // DeleteMaintenanceWindowMonthlyWeekBasedOccurrenceInMonth deletes ./Device/Vendor/MSFT/Policy/Config/Update/MaintenanceWindowMonthlyWeekBasedOccurrenceInMonth.
@@ -2782,12 +2806,13 @@ func (s *Update) DeleteMaintenanceWindowMonthlyWeekBasedOccurrenceInMonth(ctx co
 //
 // Default: 1.
 // Supported from OS build 99.9.99999 (CSP v11.0).
-func (s *Update) GetMaintenanceWindowRepeatScheduleOption(ctx context.Context) (int64, error) {
+func (s *Update) GetMaintenanceWindowRepeatScheduleOption(ctx context.Context) (MaintenanceWindowRepeatScheduleOptionValue, error) {
 	v, err := s.c.Get(ctx, URIMaintenanceWindowRepeatScheduleOption)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MaintenanceWindowRepeatScheduleOptionValue(n), err
 }
 
 // CreateMaintenanceWindowRepeatScheduleOption creates ./Device/Vendor/MSFT/Policy/Config/Update/MaintenanceWindowRepeatScheduleOption.
@@ -2796,8 +2821,8 @@ func (s *Update) GetMaintenanceWindowRepeatScheduleOption(ctx context.Context) (
 //
 // Default: 1.
 // Supported from OS build 99.9.99999 (CSP v11.0).
-func (s *Update) CreateMaintenanceWindowRepeatScheduleOption(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIMaintenanceWindowRepeatScheduleOption, client.Int(value))
+func (s *Update) CreateMaintenanceWindowRepeatScheduleOption(ctx context.Context, value MaintenanceWindowRepeatScheduleOptionValue) error {
+	return s.c.Add(ctx, URIMaintenanceWindowRepeatScheduleOption, client.Int(int64(value)))
 }
 
 // UpdateMaintenanceWindowRepeatScheduleOption updates ./Device/Vendor/MSFT/Policy/Config/Update/MaintenanceWindowRepeatScheduleOption.
@@ -2806,8 +2831,8 @@ func (s *Update) CreateMaintenanceWindowRepeatScheduleOption(ctx context.Context
 //
 // Default: 1.
 // Supported from OS build 99.9.99999 (CSP v11.0).
-func (s *Update) UpdateMaintenanceWindowRepeatScheduleOption(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIMaintenanceWindowRepeatScheduleOption, client.Int(value))
+func (s *Update) UpdateMaintenanceWindowRepeatScheduleOption(ctx context.Context, value MaintenanceWindowRepeatScheduleOptionValue) error {
+	return s.c.Replace(ctx, URIMaintenanceWindowRepeatScheduleOption, client.Int(int64(value)))
 }
 
 // DeleteMaintenanceWindowRepeatScheduleOption deletes ./Device/Vendor/MSFT/Policy/Config/Update/MaintenanceWindowRepeatScheduleOption.
@@ -2910,12 +2935,13 @@ func (s *Update) DeleteMaintenanceWindowStartTime(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 99.9.99999 (CSP v11.0).
-func (s *Update) GetMaintenanceWindowUpdateActions(ctx context.Context) (int64, error) {
+func (s *Update) GetMaintenanceWindowUpdateActions(ctx context.Context) (MaintenanceWindowUpdateActionsValue, error) {
 	v, err := s.c.Get(ctx, URIMaintenanceWindowUpdateActions)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MaintenanceWindowUpdateActionsValue(n), err
 }
 
 // CreateMaintenanceWindowUpdateActions creates ./Device/Vendor/MSFT/Policy/Config/Update/MaintenanceWindowUpdateActions.
@@ -2924,8 +2950,8 @@ func (s *Update) GetMaintenanceWindowUpdateActions(ctx context.Context) (int64, 
 //
 // Default: 1.
 // Supported from OS build 99.9.99999 (CSP v11.0).
-func (s *Update) CreateMaintenanceWindowUpdateActions(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIMaintenanceWindowUpdateActions, client.Int(value))
+func (s *Update) CreateMaintenanceWindowUpdateActions(ctx context.Context, value MaintenanceWindowUpdateActionsValue) error {
+	return s.c.Add(ctx, URIMaintenanceWindowUpdateActions, client.Int(int64(value)))
 }
 
 // UpdateMaintenanceWindowUpdateActions updates ./Device/Vendor/MSFT/Policy/Config/Update/MaintenanceWindowUpdateActions.
@@ -2934,8 +2960,8 @@ func (s *Update) CreateMaintenanceWindowUpdateActions(ctx context.Context, value
 //
 // Default: 1.
 // Supported from OS build 99.9.99999 (CSP v11.0).
-func (s *Update) UpdateMaintenanceWindowUpdateActions(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIMaintenanceWindowUpdateActions, client.Int(value))
+func (s *Update) UpdateMaintenanceWindowUpdateActions(ctx context.Context, value MaintenanceWindowUpdateActionsValue) error {
+	return s.c.Replace(ctx, URIMaintenanceWindowUpdateActions, client.Int(int64(value)))
 }
 
 // DeleteMaintenanceWindowUpdateActions deletes ./Device/Vendor/MSFT/Policy/Config/Update/MaintenanceWindowUpdateActions.
@@ -3261,12 +3287,13 @@ func (s *Update) DeleteMaintenanceWindowWeeklyWednesday(ctx context.Context) err
 //
 // Default: 3.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Update) GetManagePreviewBuilds(ctx context.Context) (int64, error) {
+func (s *Update) GetManagePreviewBuilds(ctx context.Context) (ManagePreviewBuildsValue, error) {
 	v, err := s.c.Get(ctx, URIManagePreviewBuilds)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ManagePreviewBuildsValue(n), err
 }
 
 // CreateManagePreviewBuilds creates ./Device/Vendor/MSFT/Policy/Config/Update/ManagePreviewBuilds.
@@ -3274,8 +3301,8 @@ func (s *Update) GetManagePreviewBuilds(ctx context.Context) (int64, error) {
 //
 // Default: 3.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Update) CreateManagePreviewBuilds(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIManagePreviewBuilds, client.Int(value))
+func (s *Update) CreateManagePreviewBuilds(ctx context.Context, value ManagePreviewBuildsValue) error {
+	return s.c.Add(ctx, URIManagePreviewBuilds, client.Int(int64(value)))
 }
 
 // UpdateManagePreviewBuilds updates ./Device/Vendor/MSFT/Policy/Config/Update/ManagePreviewBuilds.
@@ -3283,8 +3310,8 @@ func (s *Update) CreateManagePreviewBuilds(ctx context.Context, value int64) err
 //
 // Default: 3.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Update) UpdateManagePreviewBuilds(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIManagePreviewBuilds, client.Int(value))
+func (s *Update) UpdateManagePreviewBuilds(ctx context.Context, value ManagePreviewBuildsValue) error {
+	return s.c.Replace(ctx, URIManagePreviewBuilds, client.Int(int64(value)))
 }
 
 // DeleteManagePreviewBuilds deletes ./Device/Vendor/MSFT/Policy/Config/Update/ManagePreviewBuilds.
@@ -3305,12 +3332,13 @@ func (s *Update) DeleteManagePreviewBuilds(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Update) GetNoUpdateNotificationsDuringActiveHours(ctx context.Context) (int64, error) {
+func (s *Update) GetNoUpdateNotificationsDuringActiveHours(ctx context.Context) (NoUpdateNotificationsDuringActiveHoursValue, error) {
 	v, err := s.c.Get(ctx, URINoUpdateNotificationsDuringActiveHours)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return NoUpdateNotificationsDuringActiveHoursValue(n), err
 }
 
 // CreateNoUpdateNotificationsDuringActiveHours creates ./Device/Vendor/MSFT/Policy/Config/Update/NoUpdateNotificationsDuringActiveHours.
@@ -3322,8 +3350,8 @@ func (s *Update) GetNoUpdateNotificationsDuringActiveHours(ctx context.Context) 
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Update) CreateNoUpdateNotificationsDuringActiveHours(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URINoUpdateNotificationsDuringActiveHours, client.Int(value))
+func (s *Update) CreateNoUpdateNotificationsDuringActiveHours(ctx context.Context, value NoUpdateNotificationsDuringActiveHoursValue) error {
+	return s.c.Add(ctx, URINoUpdateNotificationsDuringActiveHours, client.Int(int64(value)))
 }
 
 // UpdateNoUpdateNotificationsDuringActiveHours updates ./Device/Vendor/MSFT/Policy/Config/Update/NoUpdateNotificationsDuringActiveHours.
@@ -3335,8 +3363,8 @@ func (s *Update) CreateNoUpdateNotificationsDuringActiveHours(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Update) UpdateNoUpdateNotificationsDuringActiveHours(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URINoUpdateNotificationsDuringActiveHours, client.Int(value))
+func (s *Update) UpdateNoUpdateNotificationsDuringActiveHours(ctx context.Context, value NoUpdateNotificationsDuringActiveHoursValue) error {
+	return s.c.Replace(ctx, URINoUpdateNotificationsDuringActiveHours, client.Int(int64(value)))
 }
 
 // DeleteNoUpdateNotificationsDuringActiveHours deletes ./Device/Vendor/MSFT/Policy/Config/Update/NoUpdateNotificationsDuringActiveHours.
@@ -3364,12 +3392,13 @@ func (s *Update) DeleteNoUpdateNotificationsDuringActiveHours(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Update) GetPauseDeferrals(ctx context.Context) (int64, error) {
+func (s *Update) GetPauseDeferrals(ctx context.Context) (PauseDeferralsValue, error) {
 	v, err := s.c.Get(ctx, URIPauseDeferrals)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PauseDeferralsValue(n), err
 }
 
 // CreatePauseDeferrals creates ./Device/Vendor/MSFT/Policy/Config/Update/PauseDeferrals.
@@ -3384,8 +3413,8 @@ func (s *Update) GetPauseDeferrals(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Update) CreatePauseDeferrals(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPauseDeferrals, client.Int(value))
+func (s *Update) CreatePauseDeferrals(ctx context.Context, value PauseDeferralsValue) error {
+	return s.c.Add(ctx, URIPauseDeferrals, client.Int(int64(value)))
 }
 
 // UpdatePauseDeferrals updates ./Device/Vendor/MSFT/Policy/Config/Update/PauseDeferrals.
@@ -3400,8 +3429,8 @@ func (s *Update) CreatePauseDeferrals(ctx context.Context, value int64) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Update) UpdatePauseDeferrals(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPauseDeferrals, client.Int(value))
+func (s *Update) UpdatePauseDeferrals(ctx context.Context, value PauseDeferralsValue) error {
+	return s.c.Replace(ctx, URIPauseDeferrals, client.Int(int64(value)))
 }
 
 // DeletePauseDeferrals deletes ./Device/Vendor/MSFT/Policy/Config/Update/PauseDeferrals.
@@ -3427,12 +3456,13 @@ func (s *Update) DeletePauseDeferrals(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Update) GetPauseFeatureUpdates(ctx context.Context) (int64, error) {
+func (s *Update) GetPauseFeatureUpdates(ctx context.Context) (PauseFeatureUpdatesValue, error) {
 	v, err := s.c.Get(ctx, URIPauseFeatureUpdates)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PauseFeatureUpdatesValue(n), err
 }
 
 // CreatePauseFeatureUpdates creates ./Device/Vendor/MSFT/Policy/Config/Update/PauseFeatureUpdates.
@@ -3442,8 +3472,8 @@ func (s *Update) GetPauseFeatureUpdates(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Update) CreatePauseFeatureUpdates(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPauseFeatureUpdates, client.Int(value))
+func (s *Update) CreatePauseFeatureUpdates(ctx context.Context, value PauseFeatureUpdatesValue) error {
+	return s.c.Add(ctx, URIPauseFeatureUpdates, client.Int(int64(value)))
 }
 
 // UpdatePauseFeatureUpdates updates ./Device/Vendor/MSFT/Policy/Config/Update/PauseFeatureUpdates.
@@ -3453,8 +3483,8 @@ func (s *Update) CreatePauseFeatureUpdates(ctx context.Context, value int64) err
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Update) UpdatePauseFeatureUpdates(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPauseFeatureUpdates, client.Int(value))
+func (s *Update) UpdatePauseFeatureUpdates(ctx context.Context, value PauseFeatureUpdatesValue) error {
+	return s.c.Replace(ctx, URIPauseFeatureUpdates, client.Int(int64(value)))
 }
 
 // DeletePauseFeatureUpdates deletes ./Device/Vendor/MSFT/Policy/Config/Update/PauseFeatureUpdates.
@@ -3517,12 +3547,13 @@ func (s *Update) DeletePauseFeatureUpdatesStartTime(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Update) GetPauseQualityUpdates(ctx context.Context) (int64, error) {
+func (s *Update) GetPauseQualityUpdates(ctx context.Context) (PauseQualityUpdatesValue, error) {
 	v, err := s.c.Get(ctx, URIPauseQualityUpdates)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PauseQualityUpdatesValue(n), err
 }
 
 // CreatePauseQualityUpdates creates ./Device/Vendor/MSFT/Policy/Config/Update/PauseQualityUpdates.
@@ -3530,8 +3561,8 @@ func (s *Update) GetPauseQualityUpdates(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Update) CreatePauseQualityUpdates(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPauseQualityUpdates, client.Int(value))
+func (s *Update) CreatePauseQualityUpdates(ctx context.Context, value PauseQualityUpdatesValue) error {
+	return s.c.Add(ctx, URIPauseQualityUpdates, client.Int(int64(value)))
 }
 
 // UpdatePauseQualityUpdates updates ./Device/Vendor/MSFT/Policy/Config/Update/PauseQualityUpdates.
@@ -3539,8 +3570,8 @@ func (s *Update) CreatePauseQualityUpdates(ctx context.Context, value int64) err
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Update) UpdatePauseQualityUpdates(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPauseQualityUpdates, client.Int(value))
+func (s *Update) UpdatePauseQualityUpdates(ctx context.Context, value PauseQualityUpdatesValue) error {
+	return s.c.Replace(ctx, URIPauseQualityUpdates, client.Int(int64(value)))
 }
 
 // DeletePauseQualityUpdates deletes ./Device/Vendor/MSFT/Policy/Config/Update/PauseQualityUpdates.
@@ -3692,12 +3723,13 @@ func (s *Update) DeleteProductVersion(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Update) GetRequireDeferUpgrade(ctx context.Context) (int64, error) {
+func (s *Update) GetRequireDeferUpgrade(ctx context.Context) (RequireDeferUpgradeValue, error) {
 	v, err := s.c.Get(ctx, URIRequireDeferUpgrade)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return RequireDeferUpgradeValue(n), err
 }
 
 // CreateRequireDeferUpgrade creates ./Device/Vendor/MSFT/Policy/Config/Update/RequireDeferUpgrade.
@@ -3708,8 +3740,8 @@ func (s *Update) GetRequireDeferUpgrade(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Update) CreateRequireDeferUpgrade(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIRequireDeferUpgrade, client.Int(value))
+func (s *Update) CreateRequireDeferUpgrade(ctx context.Context, value RequireDeferUpgradeValue) error {
+	return s.c.Add(ctx, URIRequireDeferUpgrade, client.Int(int64(value)))
 }
 
 // UpdateRequireDeferUpgrade updates ./Device/Vendor/MSFT/Policy/Config/Update/RequireDeferUpgrade.
@@ -3720,8 +3752,8 @@ func (s *Update) CreateRequireDeferUpgrade(ctx context.Context, value int64) err
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Update) UpdateRequireDeferUpgrade(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIRequireDeferUpgrade, client.Int(value))
+func (s *Update) UpdateRequireDeferUpgrade(ctx context.Context, value RequireDeferUpgradeValue) error {
+	return s.c.Replace(ctx, URIRequireDeferUpgrade, client.Int(int64(value)))
 }
 
 // DeleteRequireDeferUpgrade deletes ./Device/Vendor/MSFT/Policy/Config/Update/RequireDeferUpgrade.
@@ -3746,12 +3778,13 @@ func (s *Update) DeleteRequireDeferUpgrade(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Update) GetRequireUpdateApproval(ctx context.Context) (int64, error) {
+func (s *Update) GetRequireUpdateApproval(ctx context.Context) (RequireUpdateApprovalValue, error) {
 	v, err := s.c.Get(ctx, URIRequireUpdateApproval)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return RequireUpdateApprovalValue(n), err
 }
 
 // CreateRequireUpdateApproval creates ./Device/Vendor/MSFT/Policy/Config/Update/RequireUpdateApproval.
@@ -3764,8 +3797,8 @@ func (s *Update) GetRequireUpdateApproval(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Update) CreateRequireUpdateApproval(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIRequireUpdateApproval, client.Int(value))
+func (s *Update) CreateRequireUpdateApproval(ctx context.Context, value RequireUpdateApprovalValue) error {
+	return s.c.Add(ctx, URIRequireUpdateApproval, client.Int(int64(value)))
 }
 
 // UpdateRequireUpdateApproval updates ./Device/Vendor/MSFT/Policy/Config/Update/RequireUpdateApproval.
@@ -3778,8 +3811,8 @@ func (s *Update) CreateRequireUpdateApproval(ctx context.Context, value int64) e
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Update) UpdateRequireUpdateApproval(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIRequireUpdateApproval, client.Int(value))
+func (s *Update) UpdateRequireUpdateApproval(ctx context.Context, value RequireUpdateApprovalValue) error {
+	return s.c.Replace(ctx, URIRequireUpdateApproval, client.Int(int64(value)))
 }
 
 // DeleteRequireUpdateApproval deletes ./Device/Vendor/MSFT/Policy/Config/Update/RequireUpdateApproval.
@@ -3802,12 +3835,13 @@ func (s *Update) DeleteRequireUpdateApproval(ctx context.Context) error {
 //
 // Default: 15.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Update) GetScheduleImminentRestartWarning(ctx context.Context) (int64, error) {
+func (s *Update) GetScheduleImminentRestartWarning(ctx context.Context) (ScheduleImminentRestartWarningValue, error) {
 	v, err := s.c.Get(ctx, URIScheduleImminentRestartWarning)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ScheduleImminentRestartWarningValue(n), err
 }
 
 // CreateScheduleImminentRestartWarning creates ./Device/Vendor/MSFT/Policy/Config/Update/ScheduleImminentRestartWarning.
@@ -3816,8 +3850,8 @@ func (s *Update) GetScheduleImminentRestartWarning(ctx context.Context) (int64, 
 //
 // Default: 15.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Update) CreateScheduleImminentRestartWarning(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIScheduleImminentRestartWarning, client.Int(value))
+func (s *Update) CreateScheduleImminentRestartWarning(ctx context.Context, value ScheduleImminentRestartWarningValue) error {
+	return s.c.Add(ctx, URIScheduleImminentRestartWarning, client.Int(int64(value)))
 }
 
 // UpdateScheduleImminentRestartWarning updates ./Device/Vendor/MSFT/Policy/Config/Update/ScheduleImminentRestartWarning.
@@ -3826,8 +3860,8 @@ func (s *Update) CreateScheduleImminentRestartWarning(ctx context.Context, value
 //
 // Default: 15.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Update) UpdateScheduleImminentRestartWarning(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIScheduleImminentRestartWarning, client.Int(value))
+func (s *Update) UpdateScheduleImminentRestartWarning(ctx context.Context, value ScheduleImminentRestartWarningValue) error {
+	return s.c.Replace(ctx, URIScheduleImminentRestartWarning, client.Int(int64(value)))
 }
 
 // DeleteScheduleImminentRestartWarning deletes ./Device/Vendor/MSFT/Policy/Config/Update/ScheduleImminentRestartWarning.
@@ -3847,12 +3881,13 @@ func (s *Update) DeleteScheduleImminentRestartWarning(ctx context.Context) error
 //
 // Default: 4.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Update) GetScheduleRestartWarning(ctx context.Context) (int64, error) {
+func (s *Update) GetScheduleRestartWarning(ctx context.Context) (ScheduleRestartWarningValue, error) {
 	v, err := s.c.Get(ctx, URIScheduleRestartWarning)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ScheduleRestartWarningValue(n), err
 }
 
 // CreateScheduleRestartWarning creates ./Device/Vendor/MSFT/Policy/Config/Update/ScheduleRestartWarning.
@@ -3862,8 +3897,8 @@ func (s *Update) GetScheduleRestartWarning(ctx context.Context) (int64, error) {
 //
 // Default: 4.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Update) CreateScheduleRestartWarning(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIScheduleRestartWarning, client.Int(value))
+func (s *Update) CreateScheduleRestartWarning(ctx context.Context, value ScheduleRestartWarningValue) error {
+	return s.c.Add(ctx, URIScheduleRestartWarning, client.Int(int64(value)))
 }
 
 // UpdateScheduleRestartWarning updates ./Device/Vendor/MSFT/Policy/Config/Update/ScheduleRestartWarning.
@@ -3873,8 +3908,8 @@ func (s *Update) CreateScheduleRestartWarning(ctx context.Context, value int64) 
 //
 // Default: 4.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Update) UpdateScheduleRestartWarning(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIScheduleRestartWarning, client.Int(value))
+func (s *Update) UpdateScheduleRestartWarning(ctx context.Context, value ScheduleRestartWarningValue) error {
+	return s.c.Replace(ctx, URIScheduleRestartWarning, client.Int(int64(value)))
 }
 
 // DeleteScheduleRestartWarning deletes ./Device/Vendor/MSFT/Policy/Config/Update/ScheduleRestartWarning.
@@ -3894,12 +3929,13 @@ func (s *Update) DeleteScheduleRestartWarning(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Update) GetScheduledInstallDay(ctx context.Context) (int64, error) {
+func (s *Update) GetScheduledInstallDay(ctx context.Context) (ScheduledInstallDayValue, error) {
 	v, err := s.c.Get(ctx, URIScheduledInstallDay)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ScheduledInstallDayValue(n), err
 }
 
 // CreateScheduledInstallDay creates ./Device/Vendor/MSFT/Policy/Config/Update/ScheduledInstallDay.
@@ -3908,8 +3944,8 @@ func (s *Update) GetScheduledInstallDay(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Update) CreateScheduledInstallDay(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIScheduledInstallDay, client.Int(value))
+func (s *Update) CreateScheduledInstallDay(ctx context.Context, value ScheduledInstallDayValue) error {
+	return s.c.Add(ctx, URIScheduledInstallDay, client.Int(int64(value)))
 }
 
 // UpdateScheduledInstallDay updates ./Device/Vendor/MSFT/Policy/Config/Update/ScheduledInstallDay.
@@ -3918,8 +3954,8 @@ func (s *Update) CreateScheduledInstallDay(ctx context.Context, value int64) err
 //
 // Default: 0.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Update) UpdateScheduledInstallDay(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIScheduledInstallDay, client.Int(value))
+func (s *Update) UpdateScheduledInstallDay(ctx context.Context, value ScheduledInstallDayValue) error {
+	return s.c.Replace(ctx, URIScheduledInstallDay, client.Int(int64(value)))
 }
 
 // DeleteScheduledInstallDay deletes ./Device/Vendor/MSFT/Policy/Config/Update/ScheduledInstallDay.
@@ -3938,12 +3974,13 @@ func (s *Update) DeleteScheduledInstallDay(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Update) GetScheduledInstallEveryWeek(ctx context.Context) (int64, error) {
+func (s *Update) GetScheduledInstallEveryWeek(ctx context.Context) (ScheduledInstallEveryWeekValue, error) {
 	v, err := s.c.Get(ctx, URIScheduledInstallEveryWeek)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ScheduledInstallEveryWeekValue(n), err
 }
 
 // CreateScheduledInstallEveryWeek creates ./Device/Vendor/MSFT/Policy/Config/Update/ScheduledInstallEveryWeek.
@@ -3952,8 +3989,8 @@ func (s *Update) GetScheduledInstallEveryWeek(ctx context.Context) (int64, error
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Update) CreateScheduledInstallEveryWeek(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIScheduledInstallEveryWeek, client.Int(value))
+func (s *Update) CreateScheduledInstallEveryWeek(ctx context.Context, value ScheduledInstallEveryWeekValue) error {
+	return s.c.Add(ctx, URIScheduledInstallEveryWeek, client.Int(int64(value)))
 }
 
 // UpdateScheduledInstallEveryWeek updates ./Device/Vendor/MSFT/Policy/Config/Update/ScheduledInstallEveryWeek.
@@ -3962,8 +3999,8 @@ func (s *Update) CreateScheduledInstallEveryWeek(ctx context.Context, value int6
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Update) UpdateScheduledInstallEveryWeek(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIScheduledInstallEveryWeek, client.Int(value))
+func (s *Update) UpdateScheduledInstallEveryWeek(ctx context.Context, value ScheduledInstallEveryWeekValue) error {
+	return s.c.Replace(ctx, URIScheduledInstallEveryWeek, client.Int(int64(value)))
 }
 
 // DeleteScheduledInstallEveryWeek deletes ./Device/Vendor/MSFT/Policy/Config/Update/ScheduledInstallEveryWeek.
@@ -3983,12 +4020,13 @@ func (s *Update) DeleteScheduledInstallEveryWeek(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Update) GetScheduledInstallFirstWeek(ctx context.Context) (int64, error) {
+func (s *Update) GetScheduledInstallFirstWeek(ctx context.Context) (ScheduledInstallFirstWeekValue, error) {
 	v, err := s.c.Get(ctx, URIScheduledInstallFirstWeek)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ScheduledInstallFirstWeekValue(n), err
 }
 
 // CreateScheduledInstallFirstWeek creates ./Device/Vendor/MSFT/Policy/Config/Update/ScheduledInstallFirstWeek.
@@ -3998,8 +4036,8 @@ func (s *Update) GetScheduledInstallFirstWeek(ctx context.Context) (int64, error
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Update) CreateScheduledInstallFirstWeek(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIScheduledInstallFirstWeek, client.Int(value))
+func (s *Update) CreateScheduledInstallFirstWeek(ctx context.Context, value ScheduledInstallFirstWeekValue) error {
+	return s.c.Add(ctx, URIScheduledInstallFirstWeek, client.Int(int64(value)))
 }
 
 // UpdateScheduledInstallFirstWeek updates ./Device/Vendor/MSFT/Policy/Config/Update/ScheduledInstallFirstWeek.
@@ -4009,8 +4047,8 @@ func (s *Update) CreateScheduledInstallFirstWeek(ctx context.Context, value int6
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Update) UpdateScheduledInstallFirstWeek(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIScheduledInstallFirstWeek, client.Int(value))
+func (s *Update) UpdateScheduledInstallFirstWeek(ctx context.Context, value ScheduledInstallFirstWeekValue) error {
+	return s.c.Replace(ctx, URIScheduledInstallFirstWeek, client.Int(int64(value)))
 }
 
 // DeleteScheduledInstallFirstWeek deletes ./Device/Vendor/MSFT/Policy/Config/Update/ScheduledInstallFirstWeek.
@@ -4031,12 +4069,13 @@ func (s *Update) DeleteScheduledInstallFirstWeek(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Update) GetScheduledInstallFourthWeek(ctx context.Context) (int64, error) {
+func (s *Update) GetScheduledInstallFourthWeek(ctx context.Context) (ScheduledInstallFourthWeekValue, error) {
 	v, err := s.c.Get(ctx, URIScheduledInstallFourthWeek)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ScheduledInstallFourthWeekValue(n), err
 }
 
 // CreateScheduledInstallFourthWeek creates ./Device/Vendor/MSFT/Policy/Config/Update/ScheduledInstallFourthWeek.
@@ -4046,8 +4085,8 @@ func (s *Update) GetScheduledInstallFourthWeek(ctx context.Context) (int64, erro
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Update) CreateScheduledInstallFourthWeek(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIScheduledInstallFourthWeek, client.Int(value))
+func (s *Update) CreateScheduledInstallFourthWeek(ctx context.Context, value ScheduledInstallFourthWeekValue) error {
+	return s.c.Add(ctx, URIScheduledInstallFourthWeek, client.Int(int64(value)))
 }
 
 // UpdateScheduledInstallFourthWeek updates ./Device/Vendor/MSFT/Policy/Config/Update/ScheduledInstallFourthWeek.
@@ -4057,8 +4096,8 @@ func (s *Update) CreateScheduledInstallFourthWeek(ctx context.Context, value int
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Update) UpdateScheduledInstallFourthWeek(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIScheduledInstallFourthWeek, client.Int(value))
+func (s *Update) UpdateScheduledInstallFourthWeek(ctx context.Context, value ScheduledInstallFourthWeekValue) error {
+	return s.c.Replace(ctx, URIScheduledInstallFourthWeek, client.Int(int64(value)))
 }
 
 // DeleteScheduledInstallFourthWeek deletes ./Device/Vendor/MSFT/Policy/Config/Update/ScheduledInstallFourthWeek.
@@ -4079,12 +4118,13 @@ func (s *Update) DeleteScheduledInstallFourthWeek(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Update) GetScheduledInstallSecondWeek(ctx context.Context) (int64, error) {
+func (s *Update) GetScheduledInstallSecondWeek(ctx context.Context) (ScheduledInstallSecondWeekValue, error) {
 	v, err := s.c.Get(ctx, URIScheduledInstallSecondWeek)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ScheduledInstallSecondWeekValue(n), err
 }
 
 // CreateScheduledInstallSecondWeek creates ./Device/Vendor/MSFT/Policy/Config/Update/ScheduledInstallSecondWeek.
@@ -4094,8 +4134,8 @@ func (s *Update) GetScheduledInstallSecondWeek(ctx context.Context) (int64, erro
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Update) CreateScheduledInstallSecondWeek(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIScheduledInstallSecondWeek, client.Int(value))
+func (s *Update) CreateScheduledInstallSecondWeek(ctx context.Context, value ScheduledInstallSecondWeekValue) error {
+	return s.c.Add(ctx, URIScheduledInstallSecondWeek, client.Int(int64(value)))
 }
 
 // UpdateScheduledInstallSecondWeek updates ./Device/Vendor/MSFT/Policy/Config/Update/ScheduledInstallSecondWeek.
@@ -4105,8 +4145,8 @@ func (s *Update) CreateScheduledInstallSecondWeek(ctx context.Context, value int
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Update) UpdateScheduledInstallSecondWeek(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIScheduledInstallSecondWeek, client.Int(value))
+func (s *Update) UpdateScheduledInstallSecondWeek(ctx context.Context, value ScheduledInstallSecondWeekValue) error {
+	return s.c.Replace(ctx, URIScheduledInstallSecondWeek, client.Int(int64(value)))
 }
 
 // DeleteScheduledInstallSecondWeek deletes ./Device/Vendor/MSFT/Policy/Config/Update/ScheduledInstallSecondWeek.
@@ -4127,12 +4167,13 @@ func (s *Update) DeleteScheduledInstallSecondWeek(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Update) GetScheduledInstallThirdWeek(ctx context.Context) (int64, error) {
+func (s *Update) GetScheduledInstallThirdWeek(ctx context.Context) (ScheduledInstallThirdWeekValue, error) {
 	v, err := s.c.Get(ctx, URIScheduledInstallThirdWeek)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ScheduledInstallThirdWeekValue(n), err
 }
 
 // CreateScheduledInstallThirdWeek creates ./Device/Vendor/MSFT/Policy/Config/Update/ScheduledInstallThirdWeek.
@@ -4142,8 +4183,8 @@ func (s *Update) GetScheduledInstallThirdWeek(ctx context.Context) (int64, error
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Update) CreateScheduledInstallThirdWeek(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIScheduledInstallThirdWeek, client.Int(value))
+func (s *Update) CreateScheduledInstallThirdWeek(ctx context.Context, value ScheduledInstallThirdWeekValue) error {
+	return s.c.Add(ctx, URIScheduledInstallThirdWeek, client.Int(int64(value)))
 }
 
 // UpdateScheduledInstallThirdWeek updates ./Device/Vendor/MSFT/Policy/Config/Update/ScheduledInstallThirdWeek.
@@ -4153,8 +4194,8 @@ func (s *Update) CreateScheduledInstallThirdWeek(ctx context.Context, value int6
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Update) UpdateScheduledInstallThirdWeek(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIScheduledInstallThirdWeek, client.Int(value))
+func (s *Update) UpdateScheduledInstallThirdWeek(ctx context.Context, value ScheduledInstallThirdWeekValue) error {
+	return s.c.Replace(ctx, URIScheduledInstallThirdWeek, client.Int(int64(value)))
 }
 
 // DeleteScheduledInstallThirdWeek deletes ./Device/Vendor/MSFT/Policy/Config/Update/ScheduledInstallThirdWeek.
@@ -4225,12 +4266,13 @@ func (s *Update) DeleteScheduledInstallTime(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Update) GetSetAutoRestartNotificationDisable(ctx context.Context) (int64, error) {
+func (s *Update) GetSetAutoRestartNotificationDisable(ctx context.Context) (SetAutoRestartNotificationDisableValue, error) {
 	v, err := s.c.Get(ctx, URISetAutoRestartNotificationDisable)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SetAutoRestartNotificationDisableValue(n), err
 }
 
 // CreateSetAutoRestartNotificationDisable creates ./Device/Vendor/MSFT/Policy/Config/Update/SetAutoRestartNotificationDisable.
@@ -4238,8 +4280,8 @@ func (s *Update) GetSetAutoRestartNotificationDisable(ctx context.Context) (int6
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Update) CreateSetAutoRestartNotificationDisable(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISetAutoRestartNotificationDisable, client.Int(value))
+func (s *Update) CreateSetAutoRestartNotificationDisable(ctx context.Context, value SetAutoRestartNotificationDisableValue) error {
+	return s.c.Add(ctx, URISetAutoRestartNotificationDisable, client.Int(int64(value)))
 }
 
 // UpdateSetAutoRestartNotificationDisable updates ./Device/Vendor/MSFT/Policy/Config/Update/SetAutoRestartNotificationDisable.
@@ -4247,8 +4289,8 @@ func (s *Update) CreateSetAutoRestartNotificationDisable(ctx context.Context, va
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Update) UpdateSetAutoRestartNotificationDisable(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISetAutoRestartNotificationDisable, client.Int(value))
+func (s *Update) UpdateSetAutoRestartNotificationDisable(ctx context.Context, value SetAutoRestartNotificationDisableValue) error {
+	return s.c.Replace(ctx, URISetAutoRestartNotificationDisable, client.Int(int64(value)))
 }
 
 // DeleteSetAutoRestartNotificationDisable deletes ./Device/Vendor/MSFT/Policy/Config/Update/SetAutoRestartNotificationDisable.
@@ -4267,12 +4309,13 @@ func (s *Update) DeleteSetAutoRestartNotificationDisable(ctx context.Context) er
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Update) GetSetDisablePauseUXAccess(ctx context.Context) (int64, error) {
+func (s *Update) GetSetDisablePauseUXAccess(ctx context.Context) (SetDisablePauseUXAccessValue, error) {
 	v, err := s.c.Get(ctx, URISetDisablePauseUXAccess)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SetDisablePauseUXAccessValue(n), err
 }
 
 // CreateSetDisablePauseUXAccess creates ./Device/Vendor/MSFT/Policy/Config/Update/SetDisablePauseUXAccess.
@@ -4282,8 +4325,8 @@ func (s *Update) GetSetDisablePauseUXAccess(ctx context.Context) (int64, error) 
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Update) CreateSetDisablePauseUXAccess(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISetDisablePauseUXAccess, client.Int(value))
+func (s *Update) CreateSetDisablePauseUXAccess(ctx context.Context, value SetDisablePauseUXAccessValue) error {
+	return s.c.Add(ctx, URISetDisablePauseUXAccess, client.Int(int64(value)))
 }
 
 // UpdateSetDisablePauseUXAccess updates ./Device/Vendor/MSFT/Policy/Config/Update/SetDisablePauseUXAccess.
@@ -4293,8 +4336,8 @@ func (s *Update) CreateSetDisablePauseUXAccess(ctx context.Context, value int64)
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Update) UpdateSetDisablePauseUXAccess(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISetDisablePauseUXAccess, client.Int(value))
+func (s *Update) UpdateSetDisablePauseUXAccess(ctx context.Context, value SetDisablePauseUXAccessValue) error {
+	return s.c.Replace(ctx, URISetDisablePauseUXAccess, client.Int(int64(value)))
 }
 
 // DeleteSetDisablePauseUXAccess deletes ./Device/Vendor/MSFT/Policy/Config/Update/SetDisablePauseUXAccess.
@@ -4315,12 +4358,13 @@ func (s *Update) DeleteSetDisablePauseUXAccess(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Update) GetSetDisableUXWUAccess(ctx context.Context) (int64, error) {
+func (s *Update) GetSetDisableUXWUAccess(ctx context.Context) (SetDisableUXWUAccessValue, error) {
 	v, err := s.c.Get(ctx, URISetDisableUXWUAccess)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SetDisableUXWUAccessValue(n), err
 }
 
 // CreateSetDisableUXWUAccess creates ./Device/Vendor/MSFT/Policy/Config/Update/SetDisableUXWUAccess.
@@ -4330,8 +4374,8 @@ func (s *Update) GetSetDisableUXWUAccess(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Update) CreateSetDisableUXWUAccess(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISetDisableUXWUAccess, client.Int(value))
+func (s *Update) CreateSetDisableUXWUAccess(ctx context.Context, value SetDisableUXWUAccessValue) error {
+	return s.c.Add(ctx, URISetDisableUXWUAccess, client.Int(int64(value)))
 }
 
 // UpdateSetDisableUXWUAccess updates ./Device/Vendor/MSFT/Policy/Config/Update/SetDisableUXWUAccess.
@@ -4341,8 +4385,8 @@ func (s *Update) CreateSetDisableUXWUAccess(ctx context.Context, value int64) er
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Update) UpdateSetDisableUXWUAccess(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISetDisableUXWUAccess, client.Int(value))
+func (s *Update) UpdateSetDisableUXWUAccess(ctx context.Context, value SetDisableUXWUAccessValue) error {
+	return s.c.Replace(ctx, URISetDisableUXWUAccess, client.Int(int64(value)))
 }
 
 // DeleteSetDisableUXWUAccess deletes ./Device/Vendor/MSFT/Policy/Config/Update/SetDisableUXWUAccess.
@@ -4366,12 +4410,13 @@ func (s *Update) DeleteSetDisableUXWUAccess(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Update) GetSetEDURestart(ctx context.Context) (int64, error) {
+func (s *Update) GetSetEDURestart(ctx context.Context) (SetEDURestartValue, error) {
 	v, err := s.c.Get(ctx, URISetEDURestart)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SetEDURestartValue(n), err
 }
 
 // CreateSetEDURestart creates ./Device/Vendor/MSFT/Policy/Config/Update/SetEDURestart.
@@ -4384,8 +4429,8 @@ func (s *Update) GetSetEDURestart(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Update) CreateSetEDURestart(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISetEDURestart, client.Int(value))
+func (s *Update) CreateSetEDURestart(ctx context.Context, value SetEDURestartValue) error {
+	return s.c.Add(ctx, URISetEDURestart, client.Int(int64(value)))
 }
 
 // UpdateSetEDURestart updates ./Device/Vendor/MSFT/Policy/Config/Update/SetEDURestart.
@@ -4398,8 +4443,8 @@ func (s *Update) CreateSetEDURestart(ctx context.Context, value int64) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Update) UpdateSetEDURestart(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISetEDURestart, client.Int(value))
+func (s *Update) UpdateSetEDURestart(ctx context.Context, value SetEDURestartValue) error {
+	return s.c.Replace(ctx, URISetEDURestart, client.Int(int64(value)))
 }
 
 // DeleteSetEDURestart deletes ./Device/Vendor/MSFT/Policy/Config/Update/SetEDURestart.
@@ -4420,28 +4465,29 @@ func (s *Update) DeleteSetEDURestart(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.19041.1202, 10.0.19042.1202, 10.0.19043.1202, 10.0.19044.1288, 10.0.19045.2130, 10.0.20348.371, 10.0.22000 (CSP v10.0).
-func (s *Update) GetSetPolicyDrivenUpdateSourceForDriverUpdates(ctx context.Context) (int64, error) {
+func (s *Update) GetSetPolicyDrivenUpdateSourceForDriverUpdates(ctx context.Context) (SetPolicyDrivenUpdateSourceForDriverUpdatesValue, error) {
 	v, err := s.c.Get(ctx, URISetPolicyDrivenUpdateSourceForDriverUpdates)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SetPolicyDrivenUpdateSourceForDriverUpdatesValue(n), err
 }
 
 // CreateSetPolicyDrivenUpdateSourceForDriverUpdates creates ./Device/Vendor/MSFT/Policy/Config/Update/SetPolicyDrivenUpdateSourceForDriverUpdates.
 //
 // Default: 1.
 // Supported from OS build 10.0.19041.1202, 10.0.19042.1202, 10.0.19043.1202, 10.0.19044.1288, 10.0.19045.2130, 10.0.20348.371, 10.0.22000 (CSP v10.0).
-func (s *Update) CreateSetPolicyDrivenUpdateSourceForDriverUpdates(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISetPolicyDrivenUpdateSourceForDriverUpdates, client.Int(value))
+func (s *Update) CreateSetPolicyDrivenUpdateSourceForDriverUpdates(ctx context.Context, value SetPolicyDrivenUpdateSourceForDriverUpdatesValue) error {
+	return s.c.Add(ctx, URISetPolicyDrivenUpdateSourceForDriverUpdates, client.Int(int64(value)))
 }
 
 // UpdateSetPolicyDrivenUpdateSourceForDriverUpdates updates ./Device/Vendor/MSFT/Policy/Config/Update/SetPolicyDrivenUpdateSourceForDriverUpdates.
 //
 // Default: 1.
 // Supported from OS build 10.0.19041.1202, 10.0.19042.1202, 10.0.19043.1202, 10.0.19044.1288, 10.0.19045.2130, 10.0.20348.371, 10.0.22000 (CSP v10.0).
-func (s *Update) UpdateSetPolicyDrivenUpdateSourceForDriverUpdates(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISetPolicyDrivenUpdateSourceForDriverUpdates, client.Int(value))
+func (s *Update) UpdateSetPolicyDrivenUpdateSourceForDriverUpdates(ctx context.Context, value SetPolicyDrivenUpdateSourceForDriverUpdatesValue) error {
+	return s.c.Replace(ctx, URISetPolicyDrivenUpdateSourceForDriverUpdates, client.Int(int64(value)))
 }
 
 // DeleteSetPolicyDrivenUpdateSourceForDriverUpdates deletes ./Device/Vendor/MSFT/Policy/Config/Update/SetPolicyDrivenUpdateSourceForDriverUpdates.
@@ -4456,28 +4502,29 @@ func (s *Update) DeleteSetPolicyDrivenUpdateSourceForDriverUpdates(ctx context.C
 //
 // Default: 1.
 // Supported from OS build 10.0.19041.1202, 10.0.19042.1202, 10.0.19043.1202, 10.0.19044.1288, 10.0.19045.2130, 10.0.20348.371, 10.0.22000 (CSP v10.0).
-func (s *Update) GetSetPolicyDrivenUpdateSourceForFeatureUpdates(ctx context.Context) (int64, error) {
+func (s *Update) GetSetPolicyDrivenUpdateSourceForFeatureUpdates(ctx context.Context) (SetPolicyDrivenUpdateSourceForFeatureUpdatesValue, error) {
 	v, err := s.c.Get(ctx, URISetPolicyDrivenUpdateSourceForFeatureUpdates)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SetPolicyDrivenUpdateSourceForFeatureUpdatesValue(n), err
 }
 
 // CreateSetPolicyDrivenUpdateSourceForFeatureUpdates creates ./Device/Vendor/MSFT/Policy/Config/Update/SetPolicyDrivenUpdateSourceForFeatureUpdates.
 //
 // Default: 1.
 // Supported from OS build 10.0.19041.1202, 10.0.19042.1202, 10.0.19043.1202, 10.0.19044.1288, 10.0.19045.2130, 10.0.20348.371, 10.0.22000 (CSP v10.0).
-func (s *Update) CreateSetPolicyDrivenUpdateSourceForFeatureUpdates(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISetPolicyDrivenUpdateSourceForFeatureUpdates, client.Int(value))
+func (s *Update) CreateSetPolicyDrivenUpdateSourceForFeatureUpdates(ctx context.Context, value SetPolicyDrivenUpdateSourceForFeatureUpdatesValue) error {
+	return s.c.Add(ctx, URISetPolicyDrivenUpdateSourceForFeatureUpdates, client.Int(int64(value)))
 }
 
 // UpdateSetPolicyDrivenUpdateSourceForFeatureUpdates updates ./Device/Vendor/MSFT/Policy/Config/Update/SetPolicyDrivenUpdateSourceForFeatureUpdates.
 //
 // Default: 1.
 // Supported from OS build 10.0.19041.1202, 10.0.19042.1202, 10.0.19043.1202, 10.0.19044.1288, 10.0.19045.2130, 10.0.20348.371, 10.0.22000 (CSP v10.0).
-func (s *Update) UpdateSetPolicyDrivenUpdateSourceForFeatureUpdates(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISetPolicyDrivenUpdateSourceForFeatureUpdates, client.Int(value))
+func (s *Update) UpdateSetPolicyDrivenUpdateSourceForFeatureUpdates(ctx context.Context, value SetPolicyDrivenUpdateSourceForFeatureUpdatesValue) error {
+	return s.c.Replace(ctx, URISetPolicyDrivenUpdateSourceForFeatureUpdates, client.Int(int64(value)))
 }
 
 // DeleteSetPolicyDrivenUpdateSourceForFeatureUpdates deletes ./Device/Vendor/MSFT/Policy/Config/Update/SetPolicyDrivenUpdateSourceForFeatureUpdates.
@@ -4492,28 +4539,29 @@ func (s *Update) DeleteSetPolicyDrivenUpdateSourceForFeatureUpdates(ctx context.
 //
 // Default: 1.
 // Supported from OS build 10.0.19041.1202, 10.0.19042.1202, 10.0.19043.1202, 10.0.19044.1288, 10.0.19045.2130, 10.0.20348.371, 10.0.22000 (CSP v10.0).
-func (s *Update) GetSetPolicyDrivenUpdateSourceForOtherUpdates(ctx context.Context) (int64, error) {
+func (s *Update) GetSetPolicyDrivenUpdateSourceForOtherUpdates(ctx context.Context) (SetPolicyDrivenUpdateSourceForOtherUpdatesValue, error) {
 	v, err := s.c.Get(ctx, URISetPolicyDrivenUpdateSourceForOtherUpdates)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SetPolicyDrivenUpdateSourceForOtherUpdatesValue(n), err
 }
 
 // CreateSetPolicyDrivenUpdateSourceForOtherUpdates creates ./Device/Vendor/MSFT/Policy/Config/Update/SetPolicyDrivenUpdateSourceForOtherUpdates.
 //
 // Default: 1.
 // Supported from OS build 10.0.19041.1202, 10.0.19042.1202, 10.0.19043.1202, 10.0.19044.1288, 10.0.19045.2130, 10.0.20348.371, 10.0.22000 (CSP v10.0).
-func (s *Update) CreateSetPolicyDrivenUpdateSourceForOtherUpdates(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISetPolicyDrivenUpdateSourceForOtherUpdates, client.Int(value))
+func (s *Update) CreateSetPolicyDrivenUpdateSourceForOtherUpdates(ctx context.Context, value SetPolicyDrivenUpdateSourceForOtherUpdatesValue) error {
+	return s.c.Add(ctx, URISetPolicyDrivenUpdateSourceForOtherUpdates, client.Int(int64(value)))
 }
 
 // UpdateSetPolicyDrivenUpdateSourceForOtherUpdates updates ./Device/Vendor/MSFT/Policy/Config/Update/SetPolicyDrivenUpdateSourceForOtherUpdates.
 //
 // Default: 1.
 // Supported from OS build 10.0.19041.1202, 10.0.19042.1202, 10.0.19043.1202, 10.0.19044.1288, 10.0.19045.2130, 10.0.20348.371, 10.0.22000 (CSP v10.0).
-func (s *Update) UpdateSetPolicyDrivenUpdateSourceForOtherUpdates(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISetPolicyDrivenUpdateSourceForOtherUpdates, client.Int(value))
+func (s *Update) UpdateSetPolicyDrivenUpdateSourceForOtherUpdates(ctx context.Context, value SetPolicyDrivenUpdateSourceForOtherUpdatesValue) error {
+	return s.c.Replace(ctx, URISetPolicyDrivenUpdateSourceForOtherUpdates, client.Int(int64(value)))
 }
 
 // DeleteSetPolicyDrivenUpdateSourceForOtherUpdates deletes ./Device/Vendor/MSFT/Policy/Config/Update/SetPolicyDrivenUpdateSourceForOtherUpdates.
@@ -4528,28 +4576,29 @@ func (s *Update) DeleteSetPolicyDrivenUpdateSourceForOtherUpdates(ctx context.Co
 //
 // Default: 1.
 // Supported from OS build 10.0.19041.1202, 10.0.19042.1202, 10.0.19043.1202, 10.0.19044.1288, 10.0.19045.2130, 10.0.20348.371, 10.0.22000 (CSP v10.0).
-func (s *Update) GetSetPolicyDrivenUpdateSourceForQualityUpdates(ctx context.Context) (int64, error) {
+func (s *Update) GetSetPolicyDrivenUpdateSourceForQualityUpdates(ctx context.Context) (SetPolicyDrivenUpdateSourceForQualityUpdatesValue, error) {
 	v, err := s.c.Get(ctx, URISetPolicyDrivenUpdateSourceForQualityUpdates)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SetPolicyDrivenUpdateSourceForQualityUpdatesValue(n), err
 }
 
 // CreateSetPolicyDrivenUpdateSourceForQualityUpdates creates ./Device/Vendor/MSFT/Policy/Config/Update/SetPolicyDrivenUpdateSourceForQualityUpdates.
 //
 // Default: 1.
 // Supported from OS build 10.0.19041.1202, 10.0.19042.1202, 10.0.19043.1202, 10.0.19044.1288, 10.0.19045.2130, 10.0.20348.371, 10.0.22000 (CSP v10.0).
-func (s *Update) CreateSetPolicyDrivenUpdateSourceForQualityUpdates(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISetPolicyDrivenUpdateSourceForQualityUpdates, client.Int(value))
+func (s *Update) CreateSetPolicyDrivenUpdateSourceForQualityUpdates(ctx context.Context, value SetPolicyDrivenUpdateSourceForQualityUpdatesValue) error {
+	return s.c.Add(ctx, URISetPolicyDrivenUpdateSourceForQualityUpdates, client.Int(int64(value)))
 }
 
 // UpdateSetPolicyDrivenUpdateSourceForQualityUpdates updates ./Device/Vendor/MSFT/Policy/Config/Update/SetPolicyDrivenUpdateSourceForQualityUpdates.
 //
 // Default: 1.
 // Supported from OS build 10.0.19041.1202, 10.0.19042.1202, 10.0.19043.1202, 10.0.19044.1288, 10.0.19045.2130, 10.0.20348.371, 10.0.22000 (CSP v10.0).
-func (s *Update) UpdateSetPolicyDrivenUpdateSourceForQualityUpdates(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISetPolicyDrivenUpdateSourceForQualityUpdates, client.Int(value))
+func (s *Update) UpdateSetPolicyDrivenUpdateSourceForQualityUpdates(ctx context.Context, value SetPolicyDrivenUpdateSourceForQualityUpdatesValue) error {
+	return s.c.Replace(ctx, URISetPolicyDrivenUpdateSourceForQualityUpdates, client.Int(int64(value)))
 }
 
 // DeleteSetPolicyDrivenUpdateSourceForQualityUpdates deletes ./Device/Vendor/MSFT/Policy/Config/Update/SetPolicyDrivenUpdateSourceForQualityUpdates.
@@ -4564,28 +4613,29 @@ func (s *Update) DeleteSetPolicyDrivenUpdateSourceForQualityUpdates(ctx context.
 //
 // Default: 0.
 // Supported from OS build 10.0.10240.18696, 10.0.14393.3930, 10.0.15063.2500, 10.0.16299.2107, 10.0.17134.1726, 10.0.17763.1457, 10.0.18362.1082, 10.0.18363.1082, 10.0.19041.508, 10.0.22000 (CSP v1.0).
-func (s *Update) GetSetProxyBehaviorForUpdateDetection(ctx context.Context) (int64, error) {
+func (s *Update) GetSetProxyBehaviorForUpdateDetection(ctx context.Context) (SetProxyBehaviorForUpdateDetectionValue, error) {
 	v, err := s.c.Get(ctx, URISetProxyBehaviorForUpdateDetection)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SetProxyBehaviorForUpdateDetectionValue(n), err
 }
 
 // CreateSetProxyBehaviorForUpdateDetection creates ./Device/Vendor/MSFT/Policy/Config/Update/SetProxyBehaviorForUpdateDetection.
 //
 // Default: 0.
 // Supported from OS build 10.0.10240.18696, 10.0.14393.3930, 10.0.15063.2500, 10.0.16299.2107, 10.0.17134.1726, 10.0.17763.1457, 10.0.18362.1082, 10.0.18363.1082, 10.0.19041.508, 10.0.22000 (CSP v1.0).
-func (s *Update) CreateSetProxyBehaviorForUpdateDetection(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISetProxyBehaviorForUpdateDetection, client.Int(value))
+func (s *Update) CreateSetProxyBehaviorForUpdateDetection(ctx context.Context, value SetProxyBehaviorForUpdateDetectionValue) error {
+	return s.c.Add(ctx, URISetProxyBehaviorForUpdateDetection, client.Int(int64(value)))
 }
 
 // UpdateSetProxyBehaviorForUpdateDetection updates ./Device/Vendor/MSFT/Policy/Config/Update/SetProxyBehaviorForUpdateDetection.
 //
 // Default: 0.
 // Supported from OS build 10.0.10240.18696, 10.0.14393.3930, 10.0.15063.2500, 10.0.16299.2107, 10.0.17134.1726, 10.0.17763.1457, 10.0.18362.1082, 10.0.18363.1082, 10.0.19041.508, 10.0.22000 (CSP v1.0).
-func (s *Update) UpdateSetProxyBehaviorForUpdateDetection(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISetProxyBehaviorForUpdateDetection, client.Int(value))
+func (s *Update) UpdateSetProxyBehaviorForUpdateDetection(ctx context.Context, value SetProxyBehaviorForUpdateDetectionValue) error {
+	return s.c.Replace(ctx, URISetProxyBehaviorForUpdateDetection, client.Int(int64(value)))
 }
 
 // DeleteSetProxyBehaviorForUpdateDetection deletes ./Device/Vendor/MSFT/Policy/Config/Update/SetProxyBehaviorForUpdateDetection.
@@ -4656,12 +4706,13 @@ func (s *Update) DeleteTargetReleaseVersion(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Update) GetUpdateNotificationLevel(ctx context.Context) (int64, error) {
+func (s *Update) GetUpdateNotificationLevel(ctx context.Context) (UpdateNotificationLevelValue, error) {
 	v, err := s.c.Get(ctx, URIUpdateNotificationLevel)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return UpdateNotificationLevelValue(n), err
 }
 
 // CreateUpdateNotificationLevel creates ./Device/Vendor/MSFT/Policy/Config/Update/UpdateNotificationLevel.
@@ -4676,8 +4727,8 @@ func (s *Update) GetUpdateNotificationLevel(ctx context.Context) (int64, error) 
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Update) CreateUpdateNotificationLevel(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIUpdateNotificationLevel, client.Int(value))
+func (s *Update) CreateUpdateNotificationLevel(ctx context.Context, value UpdateNotificationLevelValue) error {
+	return s.c.Add(ctx, URIUpdateNotificationLevel, client.Int(int64(value)))
 }
 
 // UpdateUpdateNotificationLevel updates ./Device/Vendor/MSFT/Policy/Config/Update/UpdateNotificationLevel.
@@ -4692,8 +4743,8 @@ func (s *Update) CreateUpdateNotificationLevel(ctx context.Context, value int64)
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Update) UpdateUpdateNotificationLevel(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIUpdateNotificationLevel, client.Int(value))
+func (s *Update) UpdateUpdateNotificationLevel(ctx context.Context, value UpdateNotificationLevelValue) error {
+	return s.c.Replace(ctx, URIUpdateNotificationLevel, client.Int(int64(value)))
 }
 
 // DeleteUpdateNotificationLevel deletes ./Device/Vendor/MSFT/Policy/Config/Update/UpdateNotificationLevel.

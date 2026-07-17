@@ -2,12 +2,33 @@
 
 package tenantdefinedtelemetry
 
-// CustomTelemetryId allowed values.
+import (
+	"fmt"
+)
+
+// CustomTelemetryIdValue — allowed values for the CustomTelemetryId node.
+type CustomTelemetryIdValue int64
+
 const (
 	// Base
-	CustomTelemetryIdBase int64 = 0
+	CustomTelemetryIdBase CustomTelemetryIdValue = 0
 	// Education
-	CustomTelemetryIdEducation int64 = 1
+	CustomTelemetryIdEducation CustomTelemetryIdValue = 1
 	// Commercial
-	CustomTelemetryIdCommercial int64 = 2
+	CustomTelemetryIdCommercial CustomTelemetryIdValue = 2
 )
+
+// String returns the CustomTelemetryIdValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e CustomTelemetryIdValue) String() string {
+	switch e {
+	case CustomTelemetryIdBase:
+		return "CustomTelemetryIdBase"
+	case CustomTelemetryIdEducation:
+		return "CustomTelemetryIdEducation"
+	case CustomTelemetryIdCommercial:
+		return "CustomTelemetryIdCommercial"
+	default:
+		return fmt.Sprintf("CustomTelemetryIdValue(%d)", int64(e))
+	}
+}

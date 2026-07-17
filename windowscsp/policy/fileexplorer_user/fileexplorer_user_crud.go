@@ -14,12 +14,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *FileExplorerUser) GetAllowOptionToShowNetwork(ctx context.Context) (int64, error) {
+func (s *FileExplorerUser) GetAllowOptionToShowNetwork(ctx context.Context) (AllowOptionToShowNetworkValue, error) {
 	v, err := s.c.Get(ctx, URIAllowOptionToShowNetwork)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowOptionToShowNetworkValue(n), err
 }
 
 // CreateAllowOptionToShowNetwork creates ./User/Vendor/MSFT/Policy/Config/FileExplorer/AllowOptionToShowNetwork.
@@ -28,8 +29,8 @@ func (s *FileExplorerUser) GetAllowOptionToShowNetwork(ctx context.Context) (int
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *FileExplorerUser) CreateAllowOptionToShowNetwork(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowOptionToShowNetwork, client.Int(value))
+func (s *FileExplorerUser) CreateAllowOptionToShowNetwork(ctx context.Context, value AllowOptionToShowNetworkValue) error {
+	return s.c.Add(ctx, URIAllowOptionToShowNetwork, client.Int(int64(value)))
 }
 
 // UpdateAllowOptionToShowNetwork updates ./User/Vendor/MSFT/Policy/Config/FileExplorer/AllowOptionToShowNetwork.
@@ -38,8 +39,8 @@ func (s *FileExplorerUser) CreateAllowOptionToShowNetwork(ctx context.Context, v
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *FileExplorerUser) UpdateAllowOptionToShowNetwork(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowOptionToShowNetwork, client.Int(value))
+func (s *FileExplorerUser) UpdateAllowOptionToShowNetwork(ctx context.Context, value AllowOptionToShowNetworkValue) error {
+	return s.c.Replace(ctx, URIAllowOptionToShowNetwork, client.Int(int64(value)))
 }
 
 // DeleteAllowOptionToShowNetwork deletes ./User/Vendor/MSFT/Policy/Config/FileExplorer/AllowOptionToShowNetwork.
@@ -57,12 +58,13 @@ func (s *FileExplorerUser) DeleteAllowOptionToShowNetwork(ctx context.Context) e
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *FileExplorerUser) GetAllowOptionToShowThisPC(ctx context.Context) (int64, error) {
+func (s *FileExplorerUser) GetAllowOptionToShowThisPC(ctx context.Context) (AllowOptionToShowThisPCValue, error) {
 	v, err := s.c.Get(ctx, URIAllowOptionToShowThisPC)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowOptionToShowThisPCValue(n), err
 }
 
 // CreateAllowOptionToShowThisPC creates ./User/Vendor/MSFT/Policy/Config/FileExplorer/AllowOptionToShowThisPC.
@@ -70,8 +72,8 @@ func (s *FileExplorerUser) GetAllowOptionToShowThisPC(ctx context.Context) (int6
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *FileExplorerUser) CreateAllowOptionToShowThisPC(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowOptionToShowThisPC, client.Int(value))
+func (s *FileExplorerUser) CreateAllowOptionToShowThisPC(ctx context.Context, value AllowOptionToShowThisPCValue) error {
+	return s.c.Add(ctx, URIAllowOptionToShowThisPC, client.Int(int64(value)))
 }
 
 // UpdateAllowOptionToShowThisPC updates ./User/Vendor/MSFT/Policy/Config/FileExplorer/AllowOptionToShowThisPC.
@@ -79,8 +81,8 @@ func (s *FileExplorerUser) CreateAllowOptionToShowThisPC(ctx context.Context, va
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *FileExplorerUser) UpdateAllowOptionToShowThisPC(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowOptionToShowThisPC, client.Int(value))
+func (s *FileExplorerUser) UpdateAllowOptionToShowThisPC(ctx context.Context, value AllowOptionToShowThisPCValue) error {
+	return s.c.Replace(ctx, URIAllowOptionToShowThisPC, client.Int(int64(value)))
 }
 
 // DeleteAllowOptionToShowThisPC deletes ./User/Vendor/MSFT/Policy/Config/FileExplorer/AllowOptionToShowThisPC.
@@ -98,12 +100,13 @@ func (s *FileExplorerUser) DeleteAllowOptionToShowThisPC(ctx context.Context) er
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *FileExplorerUser) GetSetAllowedFolderLocations(ctx context.Context) (int64, error) {
+func (s *FileExplorerUser) GetSetAllowedFolderLocations(ctx context.Context) (SetAllowedFolderLocationsValue, error) {
 	v, err := s.c.Get(ctx, URISetAllowedFolderLocations)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SetAllowedFolderLocationsValue(n), err
 }
 
 // CreateSetAllowedFolderLocations creates ./User/Vendor/MSFT/Policy/Config/FileExplorer/SetAllowedFolderLocations.
@@ -112,8 +115,8 @@ func (s *FileExplorerUser) GetSetAllowedFolderLocations(ctx context.Context) (in
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *FileExplorerUser) CreateSetAllowedFolderLocations(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISetAllowedFolderLocations, client.Int(value))
+func (s *FileExplorerUser) CreateSetAllowedFolderLocations(ctx context.Context, value SetAllowedFolderLocationsValue) error {
+	return s.c.Add(ctx, URISetAllowedFolderLocations, client.Int(int64(value)))
 }
 
 // UpdateSetAllowedFolderLocations updates ./User/Vendor/MSFT/Policy/Config/FileExplorer/SetAllowedFolderLocations.
@@ -122,8 +125,8 @@ func (s *FileExplorerUser) CreateSetAllowedFolderLocations(ctx context.Context, 
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *FileExplorerUser) UpdateSetAllowedFolderLocations(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISetAllowedFolderLocations, client.Int(value))
+func (s *FileExplorerUser) UpdateSetAllowedFolderLocations(ctx context.Context, value SetAllowedFolderLocationsValue) error {
+	return s.c.Replace(ctx, URISetAllowedFolderLocations, client.Int(int64(value)))
 }
 
 // DeleteSetAllowedFolderLocations deletes ./User/Vendor/MSFT/Policy/Config/FileExplorer/SetAllowedFolderLocations.
@@ -142,12 +145,13 @@ func (s *FileExplorerUser) DeleteSetAllowedFolderLocations(ctx context.Context) 
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *FileExplorerUser) GetSetAllowedStorageLocations(ctx context.Context) (int64, error) {
+func (s *FileExplorerUser) GetSetAllowedStorageLocations(ctx context.Context) (SetAllowedStorageLocationsValue, error) {
 	v, err := s.c.Get(ctx, URISetAllowedStorageLocations)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SetAllowedStorageLocationsValue(n), err
 }
 
 // CreateSetAllowedStorageLocations creates ./User/Vendor/MSFT/Policy/Config/FileExplorer/SetAllowedStorageLocations.
@@ -156,8 +160,8 @@ func (s *FileExplorerUser) GetSetAllowedStorageLocations(ctx context.Context) (i
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *FileExplorerUser) CreateSetAllowedStorageLocations(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISetAllowedStorageLocations, client.Int(value))
+func (s *FileExplorerUser) CreateSetAllowedStorageLocations(ctx context.Context, value SetAllowedStorageLocationsValue) error {
+	return s.c.Add(ctx, URISetAllowedStorageLocations, client.Int(int64(value)))
 }
 
 // UpdateSetAllowedStorageLocations updates ./User/Vendor/MSFT/Policy/Config/FileExplorer/SetAllowedStorageLocations.
@@ -166,8 +170,8 @@ func (s *FileExplorerUser) CreateSetAllowedStorageLocations(ctx context.Context,
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *FileExplorerUser) UpdateSetAllowedStorageLocations(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISetAllowedStorageLocations, client.Int(value))
+func (s *FileExplorerUser) UpdateSetAllowedStorageLocations(ctx context.Context, value SetAllowedStorageLocationsValue) error {
+	return s.c.Replace(ctx, URISetAllowedStorageLocations, client.Int(int64(value)))
 }
 
 // DeleteSetAllowedStorageLocations deletes ./User/Vendor/MSFT/Policy/Config/FileExplorer/SetAllowedStorageLocations.

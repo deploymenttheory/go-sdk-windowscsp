@@ -226,12 +226,13 @@ func (s *DMClient) DeleteProviderProviderIDCommercialID(ctx context.Context, pro
 // lock. The default value is 0.
 //
 // Default: 0.
-func (s *DMClient) GetProviderProviderIDConfigLockLock(ctx context.Context, providerID string) (int64, error) {
+func (s *DMClient) GetProviderProviderIDConfigLockLock(ctx context.Context, providerID string) (ProviderProviderIDConfigLockLockValue, error) {
 	v, err := s.c.Get(ctx, URIProviderProviderIDConfigLockLock(providerID))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ProviderProviderIDConfigLockLockValue(n), err
 }
 
 // CreateProviderProviderIDConfigLockLock creates ./Device/Vendor/MSFT/DMClient/Provider/{providerID}/ConfigLock/Lock.
@@ -239,8 +240,8 @@ func (s *DMClient) GetProviderProviderIDConfigLockLock(ctx context.Context, prov
 // lock. The default value is 0.
 //
 // Default: 0.
-func (s *DMClient) CreateProviderProviderIDConfigLockLock(ctx context.Context, providerID string, value int64) error {
-	return s.c.Add(ctx, URIProviderProviderIDConfigLockLock(providerID), client.Int(value))
+func (s *DMClient) CreateProviderProviderIDConfigLockLock(ctx context.Context, providerID string, value ProviderProviderIDConfigLockLockValue) error {
+	return s.c.Add(ctx, URIProviderProviderIDConfigLockLock(providerID), client.Int(int64(value)))
 }
 
 // UpdateProviderProviderIDConfigLockLock updates ./Device/Vendor/MSFT/DMClient/Provider/{providerID}/ConfigLock/Lock.
@@ -248,8 +249,8 @@ func (s *DMClient) CreateProviderProviderIDConfigLockLock(ctx context.Context, p
 // lock. The default value is 0.
 //
 // Default: 0.
-func (s *DMClient) UpdateProviderProviderIDConfigLockLock(ctx context.Context, providerID string, value int64) error {
-	return s.c.Replace(ctx, URIProviderProviderIDConfigLockLock(providerID), client.Int(value))
+func (s *DMClient) UpdateProviderProviderIDConfigLockLock(ctx context.Context, providerID string, value ProviderProviderIDConfigLockLockValue) error {
+	return s.c.Replace(ctx, URIProviderProviderIDConfigLockLock(providerID), client.Int(int64(value)))
 }
 
 // DeleteProviderProviderIDConfigLockLock deletes ./Device/Vendor/MSFT/DMClient/Provider/{providerID}/ConfigLock/Lock.
@@ -628,12 +629,13 @@ func (s *DMClient) DeleteProviderProviderIDEnhancedAppLayerSecurityCert1(ctx con
 // 1: sign only; 2: encrypt only; 3: sign and encrypt. The default value is 0.
 //
 // Default: 0.
-func (s *DMClient) GetProviderProviderIDEnhancedAppLayerSecuritySecurityMode(ctx context.Context, providerID string) (int64, error) {
+func (s *DMClient) GetProviderProviderIDEnhancedAppLayerSecuritySecurityMode(ctx context.Context, providerID string) (ProviderProviderIDEnhancedAppLayerSecuritySecurityModeValue, error) {
 	v, err := s.c.Get(ctx, URIProviderProviderIDEnhancedAppLayerSecuritySecurityMode(providerID))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ProviderProviderIDEnhancedAppLayerSecuritySecurityModeValue(n), err
 }
 
 // CreateProviderProviderIDEnhancedAppLayerSecuritySecurityMode creates ./Device/Vendor/MSFT/DMClient/Provider/{providerID}/EnhancedAppLayerSecurity/SecurityMode.
@@ -641,8 +643,8 @@ func (s *DMClient) GetProviderProviderIDEnhancedAppLayerSecuritySecurityMode(ctx
 // 1: sign only; 2: encrypt only; 3: sign and encrypt. The default value is 0.
 //
 // Default: 0.
-func (s *DMClient) CreateProviderProviderIDEnhancedAppLayerSecuritySecurityMode(ctx context.Context, providerID string, value int64) error {
-	return s.c.Add(ctx, URIProviderProviderIDEnhancedAppLayerSecuritySecurityMode(providerID), client.Int(value))
+func (s *DMClient) CreateProviderProviderIDEnhancedAppLayerSecuritySecurityMode(ctx context.Context, providerID string, value ProviderProviderIDEnhancedAppLayerSecuritySecurityModeValue) error {
+	return s.c.Add(ctx, URIProviderProviderIDEnhancedAppLayerSecuritySecurityMode(providerID), client.Int(int64(value)))
 }
 
 // UpdateProviderProviderIDEnhancedAppLayerSecuritySecurityMode updates ./Device/Vendor/MSFT/DMClient/Provider/{providerID}/EnhancedAppLayerSecurity/SecurityMode.
@@ -650,8 +652,8 @@ func (s *DMClient) CreateProviderProviderIDEnhancedAppLayerSecuritySecurityMode(
 // 1: sign only; 2: encrypt only; 3: sign and encrypt. The default value is 0.
 //
 // Default: 0.
-func (s *DMClient) UpdateProviderProviderIDEnhancedAppLayerSecuritySecurityMode(ctx context.Context, providerID string, value int64) error {
-	return s.c.Replace(ctx, URIProviderProviderIDEnhancedAppLayerSecuritySecurityMode(providerID), client.Int(value))
+func (s *DMClient) UpdateProviderProviderIDEnhancedAppLayerSecuritySecurityMode(ctx context.Context, providerID string, value ProviderProviderIDEnhancedAppLayerSecuritySecurityModeValue) error {
+	return s.c.Replace(ctx, URIProviderProviderIDEnhancedAppLayerSecuritySecurityMode(providerID), client.Int(int64(value)))
 }
 
 // DeleteProviderProviderIDEnhancedAppLayerSecuritySecurityMode deletes ./Device/Vendor/MSFT/DMClient/Provider/{providerID}/EnhancedAppLayerSecurity/SecurityMode.
@@ -861,12 +863,13 @@ func (s *DMClient) UpdateProviderProviderIDFirstSyncStatusAllowCollectLogsButton
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v1.5).
-func (s *DMClient) GetProviderProviderIDFirstSyncStatusBlockInStatusPage(ctx context.Context, providerID string) (int64, error) {
+func (s *DMClient) GetProviderProviderIDFirstSyncStatusBlockInStatusPage(ctx context.Context, providerID string) (ProviderProviderIDFirstSyncStatusBlockInStatusPageValue, error) {
 	v, err := s.c.Get(ctx, URIProviderProviderIDFirstSyncStatusBlockInStatusPage(providerID))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ProviderProviderIDFirstSyncStatusBlockInStatusPageValue(n), err
 }
 
 // UpdateProviderProviderIDFirstSyncStatusBlockInStatusPage updates ./Device/Vendor/MSFT/DMClient/Provider/{providerID}/FirstSyncStatus/BlockInStatusPage.
@@ -875,8 +878,8 @@ func (s *DMClient) GetProviderProviderIDFirstSyncStatusBlockInStatusPage(ctx con
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v1.5).
-func (s *DMClient) UpdateProviderProviderIDFirstSyncStatusBlockInStatusPage(ctx context.Context, providerID string, value int64) error {
-	return s.c.Replace(ctx, URIProviderProviderIDFirstSyncStatusBlockInStatusPage(providerID), client.Int(value))
+func (s *DMClient) UpdateProviderProviderIDFirstSyncStatusBlockInStatusPage(ctx context.Context, providerID string, value ProviderProviderIDFirstSyncStatusBlockInStatusPageValue) error {
+	return s.c.Replace(ctx, URIProviderProviderIDFirstSyncStatusBlockInStatusPage(providerID), client.Int(int64(value)))
 }
 
 // GetProviderProviderIDFirstSyncStatusCustomErrorText reads ./Device/Vendor/MSFT/DMClient/Provider/{providerID}/FirstSyncStatus/CustomErrorText.
@@ -1288,12 +1291,13 @@ func (s *DMClient) UpdateProviderProviderIDFirstSyncStatusTimeOutUntilSyncFailur
 // force a failure or success message to appear on the device by setting this value and then
 // setting the IsSyncDone node to true. This node only applies to the user MDM status page (on a
 // per user basis).
-func (s *DMClient) GetProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisioned(ctx context.Context, providerID string) (int64, error) {
+func (s *DMClient) GetProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisioned(ctx context.Context, providerID string) (ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedValue, error) {
 	v, err := s.c.Get(ctx, URIProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisioned(providerID))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedValue(n), err
 }
 
 // UpdateProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisioned updates ./Device/Vendor/MSFT/DMClient/Provider/{providerID}/FirstSyncStatus/WasDeviceSuccessfullyProvisioned.
@@ -1303,8 +1307,8 @@ func (s *DMClient) GetProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProv
 // force a failure or success message to appear on the device by setting this value and then
 // setting the IsSyncDone node to true. This node only applies to the user MDM status page (on a
 // per user basis).
-func (s *DMClient) UpdateProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisioned(ctx context.Context, providerID string, value int64) error {
-	return s.c.Replace(ctx, URIProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisioned(providerID), client.Int(value))
+func (s *DMClient) UpdateProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisioned(ctx context.Context, providerID string, value ProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisionedValue) error {
+	return s.c.Replace(ctx, URIProviderProviderIDFirstSyncStatusWasDeviceSuccessfullyProvisioned(providerID), client.Int(int64(value)))
 }
 
 // GetProviderProviderIDForceAadToken reads ./Device/Vendor/MSFT/DMClient/Provider/{providerID}/ForceAadToken.
@@ -1506,12 +1510,13 @@ func (s *DMClient) ExecProviderProviderIDLinkedEnrollmentEnroll(ctx context.Cont
 // GetProviderProviderIDLinkedEnrollmentEnrollStatus reads ./Device/Vendor/MSFT/DMClient/Provider/{providerID}/LinkedEnrollment/EnrollStatus.
 // Returns the current enrollment or un-enrollment status of the linked enrollment. Supports Get
 // only.
-func (s *DMClient) GetProviderProviderIDLinkedEnrollmentEnrollStatus(ctx context.Context, providerID string) (int64, error) {
+func (s *DMClient) GetProviderProviderIDLinkedEnrollmentEnrollStatus(ctx context.Context, providerID string) (ProviderProviderIDLinkedEnrollmentEnrollStatusValue, error) {
 	v, err := s.c.Get(ctx, URIProviderProviderIDLinkedEnrollmentEnrollStatus(providerID))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ProviderProviderIDLinkedEnrollmentEnrollStatusValue(n), err
 }
 
 // GetProviderProviderIDLinkedEnrollmentLastError reads ./Device/Vendor/MSFT/DMClient/Provider/{providerID}/LinkedEnrollment/LastError.
@@ -2320,12 +2325,13 @@ func (s *DMClient) GetProviderProviderIDPushStatus(ctx context.Context, provider
 // operation when it detects issues with the MDM certificate
 //
 // Default: 0.
-func (s *DMClient) GetProviderProviderIDRecoveryAllowRecovery(ctx context.Context, providerID string) (int64, error) {
+func (s *DMClient) GetProviderProviderIDRecoveryAllowRecovery(ctx context.Context, providerID string) (ProviderProviderIDRecoveryAllowRecoveryValue, error) {
 	v, err := s.c.Get(ctx, URIProviderProviderIDRecoveryAllowRecovery(providerID))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ProviderProviderIDRecoveryAllowRecoveryValue(n), err
 }
 
 // UpdateProviderProviderIDRecoveryAllowRecovery updates ./Device/Vendor/MSFT/DMClient/Provider/{providerID}/Recovery/AllowRecovery.
@@ -2333,8 +2339,8 @@ func (s *DMClient) GetProviderProviderIDRecoveryAllowRecovery(ctx context.Contex
 // operation when it detects issues with the MDM certificate
 //
 // Default: 0.
-func (s *DMClient) UpdateProviderProviderIDRecoveryAllowRecovery(ctx context.Context, providerID string, value int64) error {
-	return s.c.Replace(ctx, URIProviderProviderIDRecoveryAllowRecovery(providerID), client.Int(value))
+func (s *DMClient) UpdateProviderProviderIDRecoveryAllowRecovery(ctx context.Context, providerID string, value ProviderProviderIDRecoveryAllowRecoveryValue) error {
+	return s.c.Replace(ctx, URIProviderProviderIDRecoveryAllowRecovery(providerID), client.Int(int64(value)))
 }
 
 // ExecProviderProviderIDRecoveryInitiateRecovery executes ./Device/Vendor/MSFT/DMClient/Provider/{providerID}/Recovery/InitiateRecovery.
@@ -2342,8 +2348,8 @@ func (s *DMClient) UpdateProviderProviderIDRecoveryAllowRecovery(ctx context.Con
 // taken.
 //
 // Default: 0.
-func (s *DMClient) ExecProviderProviderIDRecoveryInitiateRecovery(ctx context.Context, providerID string, value int64) error {
-	return s.c.Exec(ctx, URIProviderProviderIDRecoveryInitiateRecovery(providerID), client.Int(value))
+func (s *DMClient) ExecProviderProviderIDRecoveryInitiateRecovery(ctx context.Context, providerID string, value ProviderProviderIDRecoveryInitiateRecoveryValue) error {
+	return s.c.Exec(ctx, URIProviderProviderIDRecoveryInitiateRecovery(providerID), client.Int(int64(value)))
 }
 
 // GetProviderProviderIDRecoveryRecoveryStatus reads ./Device/Vendor/MSFT/DMClient/Provider/{providerID}/Recovery/RecoveryStatus.

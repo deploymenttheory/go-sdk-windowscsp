@@ -2,54 +2,138 @@
 
 package fileexplorer_user
 
-// AllowOptionToShowNetwork allowed values.
-const (
-	// Not Allowed.
-	AllowOptionToShowNetworkNotAllowed int64 = 0
-	// Allowed.
-	AllowOptionToShowNetworkAllowed int64 = 1
+import (
+	"fmt"
 )
 
-// AllowOptionToShowThisPC allowed values.
+// AllowOptionToShowNetworkValue — allowed values for the AllowOptionToShowNetwork node.
+type AllowOptionToShowNetworkValue int64
+
 const (
 	// Not Allowed.
-	AllowOptionToShowThisPCNotAllowed int64 = 0
+	AllowOptionToShowNetworkNotAllowed AllowOptionToShowNetworkValue = 0
 	// Allowed.
-	AllowOptionToShowThisPCAllowed int64 = 1
+	AllowOptionToShowNetworkAllowed AllowOptionToShowNetworkValue = 1
 )
 
-// SetAllowedFolderLocations allowed values.
+// String returns the AllowOptionToShowNetworkValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowOptionToShowNetworkValue) String() string {
+	switch e {
+	case AllowOptionToShowNetworkNotAllowed:
+		return "AllowOptionToShowNetworkNotAllowed"
+	case AllowOptionToShowNetworkAllowed:
+		return "AllowOptionToShowNetworkAllowed"
+	default:
+		return fmt.Sprintf("AllowOptionToShowNetworkValue(%d)", int64(e))
+	}
+}
+
+// AllowOptionToShowThisPCValue — allowed values for the AllowOptionToShowThisPC node.
+type AllowOptionToShowThisPCValue int64
+
+const (
+	// Not Allowed.
+	AllowOptionToShowThisPCNotAllowed AllowOptionToShowThisPCValue = 0
+	// Allowed.
+	AllowOptionToShowThisPCAllowed AllowOptionToShowThisPCValue = 1
+)
+
+// String returns the AllowOptionToShowThisPCValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowOptionToShowThisPCValue) String() string {
+	switch e {
+	case AllowOptionToShowThisPCNotAllowed:
+		return "AllowOptionToShowThisPCNotAllowed"
+	case AllowOptionToShowThisPCAllowed:
+		return "AllowOptionToShowThisPCAllowed"
+	default:
+		return fmt.Sprintf("AllowOptionToShowThisPCValue(%d)", int64(e))
+	}
+}
+
+// SetAllowedFolderLocationsValue — allowed values for the SetAllowedFolderLocations node.
+type SetAllowedFolderLocationsValue int64
+
 const (
 	// Access to all folder locations.
-	SetAllowedFolderLocationsAccessToAllFolderLocations int64 = 0
+	SetAllowedFolderLocationsAccessToAllFolderLocations SetAllowedFolderLocationsValue = 0
 	// Documents, Pictures, Downloads
-	SetAllowedFolderLocationsDocumentsPicturesDownloads int64 = 13
+	SetAllowedFolderLocationsDocumentsPicturesDownloads SetAllowedFolderLocationsValue = 13
 	// Desktop, Documents, Pictures, Downloads
-	SetAllowedFolderLocationsDesktopDocumentsPicturesDownloads int64 = 15
+	SetAllowedFolderLocationsDesktopDocumentsPicturesDownloads SetAllowedFolderLocationsValue = 15
 	// Desktop, Documents, Pictures, Downloads, Network
-	SetAllowedFolderLocationsDesktopDocumentsPicturesDownloadsNetwork int64 = 31
+	SetAllowedFolderLocationsDesktopDocumentsPicturesDownloadsNetwork SetAllowedFolderLocationsValue = 31
 	// This PC, Desktop, Documents, Pictures, Downloads
-	SetAllowedFolderLocationsThisPCDesktopDocumentsPicturesDownloads int64 = 47
+	SetAllowedFolderLocationsThisPCDesktopDocumentsPicturesDownloads SetAllowedFolderLocationsValue = 47
 	// This PC, Desktop, Documents, Pictures, Downloads, Network
-	SetAllowedFolderLocationsThisPCDesktopDocumentsPicturesDownloads2 int64 = 63
+	SetAllowedFolderLocationsThisPCDesktopDocumentsPicturesDownloads2 SetAllowedFolderLocationsValue = 63
 )
 
-// SetAllowedStorageLocations allowed values.
+// String returns the SetAllowedFolderLocationsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SetAllowedFolderLocationsValue) String() string {
+	switch e {
+	case SetAllowedFolderLocationsAccessToAllFolderLocations:
+		return "SetAllowedFolderLocationsAccessToAllFolderLocations"
+	case SetAllowedFolderLocationsDocumentsPicturesDownloads:
+		return "SetAllowedFolderLocationsDocumentsPicturesDownloads"
+	case SetAllowedFolderLocationsDesktopDocumentsPicturesDownloads:
+		return "SetAllowedFolderLocationsDesktopDocumentsPicturesDownloads"
+	case SetAllowedFolderLocationsDesktopDocumentsPicturesDownloadsNetwork:
+		return "SetAllowedFolderLocationsDesktopDocumentsPicturesDownloadsNetwork"
+	case SetAllowedFolderLocationsThisPCDesktopDocumentsPicturesDownloads:
+		return "SetAllowedFolderLocationsThisPCDesktopDocumentsPicturesDownloads"
+	case SetAllowedFolderLocationsThisPCDesktopDocumentsPicturesDownloads2:
+		return "SetAllowedFolderLocationsThisPCDesktopDocumentsPicturesDownloads2"
+	default:
+		return fmt.Sprintf("SetAllowedFolderLocationsValue(%d)", int64(e))
+	}
+}
+
+// SetAllowedStorageLocationsValue — allowed values for the SetAllowedStorageLocations node.
+type SetAllowedStorageLocationsValue int64
+
 const (
 	// Access to all storage locations.
-	SetAllowedStorageLocationsAccessToAllStorageLocations int64 = 0
+	SetAllowedStorageLocationsAccessToAllStorageLocations SetAllowedStorageLocationsValue = 0
 	// Removable Drives
-	SetAllowedStorageLocationsRemovableDrives int64 = 1
+	SetAllowedStorageLocationsRemovableDrives SetAllowedStorageLocationsValue = 1
 	// Sync roots
-	SetAllowedStorageLocationsSyncRoots int64 = 2
+	SetAllowedStorageLocationsSyncRoots SetAllowedStorageLocationsValue = 2
 	// Removable Drives, Sync roots
-	SetAllowedStorageLocationsRemovableDrivesSyncRoots int64 = 3
+	SetAllowedStorageLocationsRemovableDrivesSyncRoots SetAllowedStorageLocationsValue = 3
 	// Local Drives
-	SetAllowedStorageLocationsLocalDrives int64 = 4
+	SetAllowedStorageLocationsLocalDrives SetAllowedStorageLocationsValue = 4
 	// Removable Drives, Local Drives
-	SetAllowedStorageLocationsRemovableDrivesLocalDrives int64 = 5
+	SetAllowedStorageLocationsRemovableDrivesLocalDrives SetAllowedStorageLocationsValue = 5
 	// Sync Roots, Local Drives
-	SetAllowedStorageLocationsSyncRootsLocalDrives int64 = 6
+	SetAllowedStorageLocationsSyncRootsLocalDrives SetAllowedStorageLocationsValue = 6
 	// Removable Drives, Sync Roots, Local Drives
-	SetAllowedStorageLocationsRemovableDrivesSyncRootsLocalDrives int64 = 7
+	SetAllowedStorageLocationsRemovableDrivesSyncRootsLocalDrives SetAllowedStorageLocationsValue = 7
 )
+
+// String returns the SetAllowedStorageLocationsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SetAllowedStorageLocationsValue) String() string {
+	switch e {
+	case SetAllowedStorageLocationsAccessToAllStorageLocations:
+		return "SetAllowedStorageLocationsAccessToAllStorageLocations"
+	case SetAllowedStorageLocationsRemovableDrives:
+		return "SetAllowedStorageLocationsRemovableDrives"
+	case SetAllowedStorageLocationsSyncRoots:
+		return "SetAllowedStorageLocationsSyncRoots"
+	case SetAllowedStorageLocationsRemovableDrivesSyncRoots:
+		return "SetAllowedStorageLocationsRemovableDrivesSyncRoots"
+	case SetAllowedStorageLocationsLocalDrives:
+		return "SetAllowedStorageLocationsLocalDrives"
+	case SetAllowedStorageLocationsRemovableDrivesLocalDrives:
+		return "SetAllowedStorageLocationsRemovableDrivesLocalDrives"
+	case SetAllowedStorageLocationsSyncRootsLocalDrives:
+		return "SetAllowedStorageLocationsSyncRootsLocalDrives"
+	case SetAllowedStorageLocationsRemovableDrivesSyncRootsLocalDrives:
+		return "SetAllowedStorageLocationsRemovableDrivesSyncRootsLocalDrives"
+	default:
+		return fmt.Sprintf("SetAllowedStorageLocationsValue(%d)", int64(e))
+	}
+}

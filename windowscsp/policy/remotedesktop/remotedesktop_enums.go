@@ -2,10 +2,29 @@
 
 package remotedesktop
 
-// LoadAadCredKeyFromProfile allowed values.
+import (
+	"fmt"
+)
+
+// LoadAadCredKeyFromProfileValue — allowed values for the LoadAadCredKeyFromProfile node.
+type LoadAadCredKeyFromProfileValue int64
+
 const (
 	// Not allowed.
-	LoadAadCredKeyFromProfileNotAllowed int64 = 0
+	LoadAadCredKeyFromProfileNotAllowed LoadAadCredKeyFromProfileValue = 0
 	// Allowed.
-	LoadAadCredKeyFromProfileAllowed int64 = 1
+	LoadAadCredKeyFromProfileAllowed LoadAadCredKeyFromProfileValue = 1
 )
+
+// String returns the LoadAadCredKeyFromProfileValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e LoadAadCredKeyFromProfileValue) String() string {
+	switch e {
+	case LoadAadCredKeyFromProfileNotAllowed:
+		return "LoadAadCredKeyFromProfileNotAllowed"
+	case LoadAadCredKeyFromProfileAllowed:
+		return "LoadAadCredKeyFromProfileAllowed"
+	default:
+		return fmt.Sprintf("LoadAadCredKeyFromProfileValue(%d)", int64(e))
+	}
+}

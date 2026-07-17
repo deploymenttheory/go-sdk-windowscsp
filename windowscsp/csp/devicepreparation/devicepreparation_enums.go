@@ -2,26 +2,68 @@
 
 package devicepreparation
 
-// PageErrorPhase allowed values.
-const (
-	// Unknown
-	PageErrorPhaseUnknown int64 = 0
-	// AgentDownload
-	PageErrorPhaseAgentDownload int64 = 1
-	// AgentProgress
-	PageErrorPhaseAgentProgress int64 = 2
+import (
+	"fmt"
 )
 
-// PageStatus allowed values.
+// PageErrorPhaseValue — allowed values for the PageErrorPhase node.
+type PageErrorPhaseValue int64
+
+const (
+	// Unknown
+	PageErrorPhaseUnknown PageErrorPhaseValue = 0
+	// AgentDownload
+	PageErrorPhaseAgentDownload PageErrorPhaseValue = 1
+	// AgentProgress
+	PageErrorPhaseAgentProgress PageErrorPhaseValue = 2
+)
+
+// String returns the PageErrorPhaseValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PageErrorPhaseValue) String() string {
+	switch e {
+	case PageErrorPhaseUnknown:
+		return "PageErrorPhaseUnknown"
+	case PageErrorPhaseAgentDownload:
+		return "PageErrorPhaseAgentDownload"
+	case PageErrorPhaseAgentProgress:
+		return "PageErrorPhaseAgentProgress"
+	default:
+		return fmt.Sprintf("PageErrorPhaseValue(%d)", int64(e))
+	}
+}
+
+// PageStatusValue — allowed values for the PageStatus node.
+type PageStatusValue int64
+
 const (
 	// Disabled
-	PageStatusDisabled int64 = 0
+	PageStatusDisabled PageStatusValue = 0
 	// Enabled
-	PageStatusEnabled int64 = 1
+	PageStatusEnabled PageStatusValue = 1
 	// InProgress
-	PageStatusInProgress int64 = 2
+	PageStatusInProgress PageStatusValue = 2
 	// ExitOnSuccess
-	PageStatusExitOnSuccess int64 = 3
+	PageStatusExitOnSuccess PageStatusValue = 3
 	// ExitOnFailure
-	PageStatusExitOnFailure int64 = 4
+	PageStatusExitOnFailure PageStatusValue = 4
 )
+
+// String returns the PageStatusValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PageStatusValue) String() string {
+	switch e {
+	case PageStatusDisabled:
+		return "PageStatusDisabled"
+	case PageStatusEnabled:
+		return "PageStatusEnabled"
+	case PageStatusInProgress:
+		return "PageStatusInProgress"
+	case PageStatusExitOnSuccess:
+		return "PageStatusExitOnSuccess"
+	case PageStatusExitOnFailure:
+		return "PageStatusExitOnFailure"
+	default:
+		return fmt.Sprintf("PageStatusValue(%d)", int64(e))
+	}
+}

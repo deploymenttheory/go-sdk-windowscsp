@@ -2,34 +2,98 @@
 
 package timelanguagesettings
 
-// AllowSet24HourClock allowed values.
+import (
+	"fmt"
+)
+
+// AllowSet24HourClockValue — allowed values for the AllowSet24HourClock node.
+type AllowSet24HourClockValue int64
+
 const (
 	// Not allowed.
-	AllowSet24HourClockNotAllowed int64 = 0
+	AllowSet24HourClockNotAllowed AllowSet24HourClockValue = 0
 	// Allowed.
-	AllowSet24HourClockAllowed int64 = 1
+	AllowSet24HourClockAllowed AllowSet24HourClockValue = 1
 )
 
-// BlockCleanupOfUnusedPreinstalledLangPacks allowed values.
+// String returns the AllowSet24HourClockValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowSet24HourClockValue) String() string {
+	switch e {
+	case AllowSet24HourClockNotAllowed:
+		return "AllowSet24HourClockNotAllowed"
+	case AllowSet24HourClockAllowed:
+		return "AllowSet24HourClockAllowed"
+	default:
+		return fmt.Sprintf("AllowSet24HourClockValue(%d)", int64(e))
+	}
+}
+
+// BlockCleanupOfUnusedPreinstalledLangPacksValue — allowed values for the BlockCleanupOfUnusedPreinstalledLangPacks node.
+type BlockCleanupOfUnusedPreinstalledLangPacksValue int64
+
 const (
 	// Not blocked.
-	BlockCleanupOfUnusedPreinstalledLangPacksNotBlocked int64 = 0
+	BlockCleanupOfUnusedPreinstalledLangPacksNotBlocked BlockCleanupOfUnusedPreinstalledLangPacksValue = 0
 	// Blocked.
-	BlockCleanupOfUnusedPreinstalledLangPacksBlocked int64 = 1
+	BlockCleanupOfUnusedPreinstalledLangPacksBlocked BlockCleanupOfUnusedPreinstalledLangPacksValue = 1
 )
 
-// MachineUILanguageOverwrite allowed values.
+// String returns the BlockCleanupOfUnusedPreinstalledLangPacksValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e BlockCleanupOfUnusedPreinstalledLangPacksValue) String() string {
+	switch e {
+	case BlockCleanupOfUnusedPreinstalledLangPacksNotBlocked:
+		return "BlockCleanupOfUnusedPreinstalledLangPacksNotBlocked"
+	case BlockCleanupOfUnusedPreinstalledLangPacksBlocked:
+		return "BlockCleanupOfUnusedPreinstalledLangPacksBlocked"
+	default:
+		return fmt.Sprintf("BlockCleanupOfUnusedPreinstalledLangPacksValue(%d)", int64(e))
+	}
+}
+
+// MachineUILanguageOverwriteValue — allowed values for the MachineUILanguageOverwrite node.
+type MachineUILanguageOverwriteValue int64
+
 const (
 	// Disabled.
-	MachineUILanguageOverwriteDisabled int64 = 0
+	MachineUILanguageOverwriteDisabled MachineUILanguageOverwriteValue = 0
 	// Enabled.
-	MachineUILanguageOverwriteEnabled int64 = 1
+	MachineUILanguageOverwriteEnabled MachineUILanguageOverwriteValue = 1
 )
 
-// RestrictLanguagePacksAndFeaturesInstall allowed values.
+// String returns the MachineUILanguageOverwriteValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MachineUILanguageOverwriteValue) String() string {
+	switch e {
+	case MachineUILanguageOverwriteDisabled:
+		return "MachineUILanguageOverwriteDisabled"
+	case MachineUILanguageOverwriteEnabled:
+		return "MachineUILanguageOverwriteEnabled"
+	default:
+		return fmt.Sprintf("MachineUILanguageOverwriteValue(%d)", int64(e))
+	}
+}
+
+// RestrictLanguagePacksAndFeaturesInstallValue — allowed values for the RestrictLanguagePacksAndFeaturesInstall node.
+type RestrictLanguagePacksAndFeaturesInstallValue int64
+
 const (
 	// Not restricted.
-	RestrictLanguagePacksAndFeaturesInstallNotRestricted int64 = 0
+	RestrictLanguagePacksAndFeaturesInstallNotRestricted RestrictLanguagePacksAndFeaturesInstallValue = 0
 	// Restricted.
-	RestrictLanguagePacksAndFeaturesInstallRestricted int64 = 1
+	RestrictLanguagePacksAndFeaturesInstallRestricted RestrictLanguagePacksAndFeaturesInstallValue = 1
 )
+
+// String returns the RestrictLanguagePacksAndFeaturesInstallValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e RestrictLanguagePacksAndFeaturesInstallValue) String() string {
+	switch e {
+	case RestrictLanguagePacksAndFeaturesInstallNotRestricted:
+		return "RestrictLanguagePacksAndFeaturesInstallNotRestricted"
+	case RestrictLanguagePacksAndFeaturesInstallRestricted:
+		return "RestrictLanguagePacksAndFeaturesInstallRestricted"
+	default:
+		return fmt.Sprintf("RestrictLanguagePacksAndFeaturesInstallValue(%d)", int64(e))
+	}
+}

@@ -2,60 +2,141 @@
 
 package clientcertificateinstall
 
-// PFXCertInstallUniqueIDKeyLocation allowed values.
+import (
+	"fmt"
+)
+
+// PFXCertInstallUniqueIDKeyLocationValue — allowed values for the KeyLocation node.
+type PFXCertInstallUniqueIDKeyLocationValue int64
+
 const (
 	// Install to TPM if present, fail if not present.
-	PFXCertInstallUniqueIDKeyLocationInstallToTPMIfPresentFail int64 = 1
+	PFXCertInstallUniqueIDKeyLocationInstallToTPMIfPresentFail PFXCertInstallUniqueIDKeyLocationValue = 1
 	// Install to TPM if present. If not present, fallback to software.
-	PFXCertInstallUniqueIDKeyLocationInstallToTPMIfPresent int64 = 2
+	PFXCertInstallUniqueIDKeyLocationInstallToTPMIfPresent PFXCertInstallUniqueIDKeyLocationValue = 2
 	// Install to software.
-	PFXCertInstallUniqueIDKeyLocationInstallToSoftware int64 = 3
+	PFXCertInstallUniqueIDKeyLocationInstallToSoftware PFXCertInstallUniqueIDKeyLocationValue = 3
 	// Install to Windows Hello for Business (formerly known as Microsoft Passport for Work) whose name
 	// is specified
-	PFXCertInstallUniqueIDKeyLocationInstallToWindowsHelloForBusiness int64 = 4
+	PFXCertInstallUniqueIDKeyLocationInstallToWindowsHelloForBusiness PFXCertInstallUniqueIDKeyLocationValue = 4
 )
 
-// PFXCertInstallUniqueIDPFXCertPasswordEncryptionType allowed values.
+// String returns the PFXCertInstallUniqueIDKeyLocationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PFXCertInstallUniqueIDKeyLocationValue) String() string {
+	switch e {
+	case PFXCertInstallUniqueIDKeyLocationInstallToTPMIfPresentFail:
+		return "PFXCertInstallUniqueIDKeyLocationInstallToTPMIfPresentFail"
+	case PFXCertInstallUniqueIDKeyLocationInstallToTPMIfPresent:
+		return "PFXCertInstallUniqueIDKeyLocationInstallToTPMIfPresent"
+	case PFXCertInstallUniqueIDKeyLocationInstallToSoftware:
+		return "PFXCertInstallUniqueIDKeyLocationInstallToSoftware"
+	case PFXCertInstallUniqueIDKeyLocationInstallToWindowsHelloForBusiness:
+		return "PFXCertInstallUniqueIDKeyLocationInstallToWindowsHelloForBusiness"
+	default:
+		return fmt.Sprintf("PFXCertInstallUniqueIDKeyLocationValue(%d)", int64(e))
+	}
+}
+
+// PFXCertInstallUniqueIDPFXCertPasswordEncryptionTypeValue — allowed values for the PFXCertPasswordEncryptionType node.
+type PFXCertInstallUniqueIDPFXCertPasswordEncryptionTypeValue int64
+
 const (
 	// Password is not encrypted.
-	PFXCertInstallUniqueIDPFXCertPasswordEncryptionTypePasswordIsNotEncrypted int64 = 0
+	PFXCertInstallUniqueIDPFXCertPasswordEncryptionTypePasswordIsNotEncrypted PFXCertInstallUniqueIDPFXCertPasswordEncryptionTypeValue = 0
 	// Password is encrypted with the MDM certificate.
-	PFXCertInstallUniqueIDPFXCertPasswordEncryptionTypePasswordIsEncryptedWithTheMDM int64 = 1
+	PFXCertInstallUniqueIDPFXCertPasswordEncryptionTypePasswordIsEncryptedWithTheMDM PFXCertInstallUniqueIDPFXCertPasswordEncryptionTypeValue = 1
 	// Password is encrypted with custom certificate.
-	PFXCertInstallUniqueIDPFXCertPasswordEncryptionTypePasswordIsEncryptedWithCustomCertificate int64 = 2
+	PFXCertInstallUniqueIDPFXCertPasswordEncryptionTypePasswordIsEncryptedWithCustomCertificate PFXCertInstallUniqueIDPFXCertPasswordEncryptionTypeValue = 2
 )
 
-// SCEPUniqueIDInstallKeyLength allowed values.
+// String returns the PFXCertInstallUniqueIDPFXCertPasswordEncryptionTypeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PFXCertInstallUniqueIDPFXCertPasswordEncryptionTypeValue) String() string {
+	switch e {
+	case PFXCertInstallUniqueIDPFXCertPasswordEncryptionTypePasswordIsNotEncrypted:
+		return "PFXCertInstallUniqueIDPFXCertPasswordEncryptionTypePasswordIsNotEncrypted"
+	case PFXCertInstallUniqueIDPFXCertPasswordEncryptionTypePasswordIsEncryptedWithTheMDM:
+		return "PFXCertInstallUniqueIDPFXCertPasswordEncryptionTypePasswordIsEncryptedWithTheMDM"
+	case PFXCertInstallUniqueIDPFXCertPasswordEncryptionTypePasswordIsEncryptedWithCustomCertificate:
+		return "PFXCertInstallUniqueIDPFXCertPasswordEncryptionTypePasswordIsEncryptedWithCustomCertificate"
+	default:
+		return fmt.Sprintf("PFXCertInstallUniqueIDPFXCertPasswordEncryptionTypeValue(%d)", int64(e))
+	}
+}
+
+// SCEPUniqueIDInstallKeyLengthValue — allowed values for the KeyLength node.
+type SCEPUniqueIDInstallKeyLengthValue int64
+
 const (
 	// 1024
-	SCEPUniqueIDInstallKeyLengthN1024 int64 = 1024
+	SCEPUniqueIDInstallKeyLengthN1024 SCEPUniqueIDInstallKeyLengthValue = 1024
 	// 2048
-	SCEPUniqueIDInstallKeyLengthN2048 int64 = 2048
+	SCEPUniqueIDInstallKeyLengthN2048 SCEPUniqueIDInstallKeyLengthValue = 2048
 	// 4096
-	SCEPUniqueIDInstallKeyLengthN4096 int64 = 4096
+	SCEPUniqueIDInstallKeyLengthN4096 SCEPUniqueIDInstallKeyLengthValue = 4096
 )
 
-// SCEPUniqueIDInstallKeyProtection allowed values.
+// String returns the SCEPUniqueIDInstallKeyLengthValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SCEPUniqueIDInstallKeyLengthValue) String() string {
+	switch e {
+	case SCEPUniqueIDInstallKeyLengthN1024:
+		return "SCEPUniqueIDInstallKeyLengthN1024"
+	case SCEPUniqueIDInstallKeyLengthN2048:
+		return "SCEPUniqueIDInstallKeyLengthN2048"
+	case SCEPUniqueIDInstallKeyLengthN4096:
+		return "SCEPUniqueIDInstallKeyLengthN4096"
+	default:
+		return fmt.Sprintf("SCEPUniqueIDInstallKeyLengthValue(%d)", int64(e))
+	}
+}
+
+// SCEPUniqueIDInstallKeyProtectionValue — allowed values for the KeyProtection node.
+type SCEPUniqueIDInstallKeyProtectionValue int64
+
 const (
 	// Private key protected by TPM.
-	SCEPUniqueIDInstallKeyProtectionPrivateKeyProtectedByTPM int64 = 1
+	SCEPUniqueIDInstallKeyProtectionPrivateKeyProtectedByTPM SCEPUniqueIDInstallKeyProtectionValue = 1
 	// Private key protected by phone TPM if the device supports TPM. All Windows Phone 8.1 devices
 	// support TPM and will treat value 2 as 1.
-	SCEPUniqueIDInstallKeyProtectionPrivateKeyProtectedByPhoneTPM int64 = 2
+	SCEPUniqueIDInstallKeyProtectionPrivateKeyProtectedByPhoneTPM SCEPUniqueIDInstallKeyProtectionValue = 2
 	// (Default) Private key saved in software KSP.
-	SCEPUniqueIDInstallKeyProtectionDefaultPrivateKeySavedInSoftware int64 = 3
+	SCEPUniqueIDInstallKeyProtectionDefaultPrivateKeySavedInSoftware SCEPUniqueIDInstallKeyProtectionValue = 3
 	// Private key protected by Windows Hello for Business (formerly known as Microsoft Passport for
 	// Work). If this option is specified, the ContainerName must be specified, otherwise enrollment
 	// will fail.
-	SCEPUniqueIDInstallKeyProtectionPrivateKeyProtectedByWindowsHello int64 = 4
+	SCEPUniqueIDInstallKeyProtectionPrivateKeyProtectedByWindowsHello SCEPUniqueIDInstallKeyProtectionValue = 4
 )
 
-// SCEPUniqueIDInstallValidPeriod allowed values.
+// String returns the SCEPUniqueIDInstallKeyProtectionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SCEPUniqueIDInstallKeyProtectionValue) String() string {
+	switch e {
+	case SCEPUniqueIDInstallKeyProtectionPrivateKeyProtectedByTPM:
+		return "SCEPUniqueIDInstallKeyProtectionPrivateKeyProtectedByTPM"
+	case SCEPUniqueIDInstallKeyProtectionPrivateKeyProtectedByPhoneTPM:
+		return "SCEPUniqueIDInstallKeyProtectionPrivateKeyProtectedByPhoneTPM"
+	case SCEPUniqueIDInstallKeyProtectionDefaultPrivateKeySavedInSoftware:
+		return "SCEPUniqueIDInstallKeyProtectionDefaultPrivateKeySavedInSoftware"
+	case SCEPUniqueIDInstallKeyProtectionPrivateKeyProtectedByWindowsHello:
+		return "SCEPUniqueIDInstallKeyProtectionPrivateKeyProtectedByWindowsHello"
+	default:
+		return fmt.Sprintf("SCEPUniqueIDInstallKeyProtectionValue(%d)", int64(e))
+	}
+}
+
+// SCEPUniqueIDInstallValidPeriodValue — allowed values for the ValidPeriod node.
+type SCEPUniqueIDInstallValidPeriodValue string
+
 const (
 	// Days
-	SCEPUniqueIDInstallValidPeriodDays = "Days"
+	SCEPUniqueIDInstallValidPeriodDays SCEPUniqueIDInstallValidPeriodValue = "Days"
 	// Months
-	SCEPUniqueIDInstallValidPeriodMonths = "Months"
+	SCEPUniqueIDInstallValidPeriodMonths SCEPUniqueIDInstallValidPeriodValue = "Months"
 	// Years
-	SCEPUniqueIDInstallValidPeriodYears = "Years"
+	SCEPUniqueIDInstallValidPeriodYears SCEPUniqueIDInstallValidPeriodValue = "Years"
 )
+
+// String returns the SCEPUniqueIDInstallValidPeriodValue value as a plain string.
+func (e SCEPUniqueIDInstallValidPeriodValue) String() string { return string(e) }

@@ -20,12 +20,13 @@ import (
 //
 // Default: 2.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *System) GetAllowBuildPreview(ctx context.Context) (int64, error) {
+func (s *System) GetAllowBuildPreview(ctx context.Context) (AllowBuildPreviewValue, error) {
 	v, err := s.c.Get(ctx, URIAllowBuildPreview)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowBuildPreviewValue(n), err
 }
 
 // CreateAllowBuildPreview creates ./Device/Vendor/MSFT/Policy/Config/System/AllowBuildPreview.
@@ -40,8 +41,8 @@ func (s *System) GetAllowBuildPreview(ctx context.Context) (int64, error) {
 //
 // Default: 2.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *System) CreateAllowBuildPreview(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowBuildPreview, client.Int(value))
+func (s *System) CreateAllowBuildPreview(ctx context.Context, value AllowBuildPreviewValue) error {
+	return s.c.Add(ctx, URIAllowBuildPreview, client.Int(int64(value)))
 }
 
 // UpdateAllowBuildPreview updates ./Device/Vendor/MSFT/Policy/Config/System/AllowBuildPreview.
@@ -56,8 +57,8 @@ func (s *System) CreateAllowBuildPreview(ctx context.Context, value int64) error
 //
 // Default: 2.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *System) UpdateAllowBuildPreview(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowBuildPreview, client.Int(value))
+func (s *System) UpdateAllowBuildPreview(ctx context.Context, value AllowBuildPreviewValue) error {
+	return s.c.Replace(ctx, URIAllowBuildPreview, client.Int(int64(value)))
 }
 
 // DeleteAllowBuildPreview deletes ./Device/Vendor/MSFT/Policy/Config/System/AllowBuildPreview.
@@ -95,12 +96,13 @@ func (s *System) DeleteAllowBuildPreview(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *System) GetAllowCommercialDataPipeline(ctx context.Context) (int64, error) {
+func (s *System) GetAllowCommercialDataPipeline(ctx context.Context) (AllowCommercialDataPipelineValue, error) {
 	v, err := s.c.Get(ctx, URIAllowCommercialDataPipeline)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowCommercialDataPipelineValue(n), err
 }
 
 // CreateAllowCommercialDataPipeline creates ./Device/Vendor/MSFT/Policy/Config/System/AllowCommercialDataPipeline.
@@ -122,8 +124,8 @@ func (s *System) GetAllowCommercialDataPipeline(ctx context.Context) (int64, err
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *System) CreateAllowCommercialDataPipeline(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowCommercialDataPipeline, client.Int(value))
+func (s *System) CreateAllowCommercialDataPipeline(ctx context.Context, value AllowCommercialDataPipelineValue) error {
+	return s.c.Add(ctx, URIAllowCommercialDataPipeline, client.Int(int64(value)))
 }
 
 // UpdateAllowCommercialDataPipeline updates ./Device/Vendor/MSFT/Policy/Config/System/AllowCommercialDataPipeline.
@@ -145,8 +147,8 @@ func (s *System) CreateAllowCommercialDataPipeline(ctx context.Context, value in
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *System) UpdateAllowCommercialDataPipeline(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowCommercialDataPipeline, client.Int(value))
+func (s *System) UpdateAllowCommercialDataPipeline(ctx context.Context, value AllowCommercialDataPipelineValue) error {
+	return s.c.Replace(ctx, URIAllowCommercialDataPipeline, client.Int(int64(value)))
 }
 
 // DeleteAllowCommercialDataPipeline deletes ./Device/Vendor/MSFT/Policy/Config/System/AllowCommercialDataPipeline.
@@ -187,12 +189,13 @@ func (s *System) DeleteAllowCommercialDataPipeline(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.22000, 10.0.18362.836, 10.0.17763.1217 (CSP v8.0).
-func (s *System) GetAllowDesktopAnalyticsProcessing(ctx context.Context) (int64, error) {
+func (s *System) GetAllowDesktopAnalyticsProcessing(ctx context.Context) (AllowDesktopAnalyticsProcessingValue, error) {
 	v, err := s.c.Get(ctx, URIAllowDesktopAnalyticsProcessing)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowDesktopAnalyticsProcessingValue(n), err
 }
 
 // CreateAllowDesktopAnalyticsProcessing creates ./Device/Vendor/MSFT/Policy/Config/System/AllowDesktopAnalyticsProcessing.
@@ -210,8 +213,8 @@ func (s *System) GetAllowDesktopAnalyticsProcessing(ctx context.Context) (int64,
 //
 // Default: 0.
 // Supported from OS build 10.0.22000, 10.0.18362.836, 10.0.17763.1217 (CSP v8.0).
-func (s *System) CreateAllowDesktopAnalyticsProcessing(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowDesktopAnalyticsProcessing, client.Int(value))
+func (s *System) CreateAllowDesktopAnalyticsProcessing(ctx context.Context, value AllowDesktopAnalyticsProcessingValue) error {
+	return s.c.Add(ctx, URIAllowDesktopAnalyticsProcessing, client.Int(int64(value)))
 }
 
 // UpdateAllowDesktopAnalyticsProcessing updates ./Device/Vendor/MSFT/Policy/Config/System/AllowDesktopAnalyticsProcessing.
@@ -229,8 +232,8 @@ func (s *System) CreateAllowDesktopAnalyticsProcessing(ctx context.Context, valu
 //
 // Default: 0.
 // Supported from OS build 10.0.22000, 10.0.18362.836, 10.0.17763.1217 (CSP v8.0).
-func (s *System) UpdateAllowDesktopAnalyticsProcessing(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowDesktopAnalyticsProcessing, client.Int(value))
+func (s *System) UpdateAllowDesktopAnalyticsProcessing(ctx context.Context, value AllowDesktopAnalyticsProcessingValue) error {
+	return s.c.Replace(ctx, URIAllowDesktopAnalyticsProcessing, client.Int(int64(value)))
 }
 
 // DeleteAllowDesktopAnalyticsProcessing deletes ./Device/Vendor/MSFT/Policy/Config/System/AllowDesktopAnalyticsProcessing.
@@ -259,12 +262,13 @@ func (s *System) DeleteAllowDesktopAnalyticsProcessing(ctx context.Context) erro
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *System) GetAllowDeviceNameInDiagnosticData(ctx context.Context) (int64, error) {
+func (s *System) GetAllowDeviceNameInDiagnosticData(ctx context.Context) (AllowDeviceNameInDiagnosticDataValue, error) {
 	v, err := s.c.Get(ctx, URIAllowDeviceNameInDiagnosticData)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowDeviceNameInDiagnosticDataValue(n), err
 }
 
 // CreateAllowDeviceNameInDiagnosticData creates ./Device/Vendor/MSFT/Policy/Config/System/AllowDeviceNameInDiagnosticData.
@@ -274,8 +278,8 @@ func (s *System) GetAllowDeviceNameInDiagnosticData(ctx context.Context) (int64,
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *System) CreateAllowDeviceNameInDiagnosticData(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowDeviceNameInDiagnosticData, client.Int(value))
+func (s *System) CreateAllowDeviceNameInDiagnosticData(ctx context.Context, value AllowDeviceNameInDiagnosticDataValue) error {
+	return s.c.Add(ctx, URIAllowDeviceNameInDiagnosticData, client.Int(int64(value)))
 }
 
 // UpdateAllowDeviceNameInDiagnosticData updates ./Device/Vendor/MSFT/Policy/Config/System/AllowDeviceNameInDiagnosticData.
@@ -285,8 +289,8 @@ func (s *System) CreateAllowDeviceNameInDiagnosticData(ctx context.Context, valu
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *System) UpdateAllowDeviceNameInDiagnosticData(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowDeviceNameInDiagnosticData, client.Int(value))
+func (s *System) UpdateAllowDeviceNameInDiagnosticData(ctx context.Context, value AllowDeviceNameInDiagnosticDataValue) error {
+	return s.c.Replace(ctx, URIAllowDeviceNameInDiagnosticData, client.Int(int64(value)))
 }
 
 // DeleteAllowDeviceNameInDiagnosticData deletes ./Device/Vendor/MSFT/Policy/Config/System/AllowDeviceNameInDiagnosticData.
@@ -305,12 +309,13 @@ func (s *System) DeleteAllowDeviceNameInDiagnosticData(ctx context.Context) erro
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *System) GetAllowEmbeddedMode(ctx context.Context) (int64, error) {
+func (s *System) GetAllowEmbeddedMode(ctx context.Context) (AllowEmbeddedModeValue, error) {
 	v, err := s.c.Get(ctx, URIAllowEmbeddedMode)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowEmbeddedModeValue(n), err
 }
 
 // CreateAllowEmbeddedMode creates ./Device/Vendor/MSFT/Policy/Config/System/AllowEmbeddedMode.
@@ -318,8 +323,8 @@ func (s *System) GetAllowEmbeddedMode(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *System) CreateAllowEmbeddedMode(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowEmbeddedMode, client.Int(value))
+func (s *System) CreateAllowEmbeddedMode(ctx context.Context, value AllowEmbeddedModeValue) error {
+	return s.c.Add(ctx, URIAllowEmbeddedMode, client.Int(int64(value)))
 }
 
 // UpdateAllowEmbeddedMode updates ./Device/Vendor/MSFT/Policy/Config/System/AllowEmbeddedMode.
@@ -327,8 +332,8 @@ func (s *System) CreateAllowEmbeddedMode(ctx context.Context, value int64) error
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *System) UpdateAllowEmbeddedMode(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowEmbeddedMode, client.Int(value))
+func (s *System) UpdateAllowEmbeddedMode(ctx context.Context, value AllowEmbeddedModeValue) error {
+	return s.c.Replace(ctx, URIAllowEmbeddedMode, client.Int(int64(value)))
 }
 
 // DeleteAllowEmbeddedMode deletes ./Device/Vendor/MSFT/Policy/Config/System/AllowEmbeddedMode.
@@ -347,12 +352,13 @@ func (s *System) DeleteAllowEmbeddedMode(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *System) GetAllowExperimentation(ctx context.Context) (int64, error) {
+func (s *System) GetAllowExperimentation(ctx context.Context) (AllowExperimentationValue, error) {
 	v, err := s.c.Get(ctx, URIAllowExperimentation)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowExperimentationValue(n), err
 }
 
 // CreateAllowExperimentation creates ./Device/Vendor/MSFT/Policy/Config/System/AllowExperimentation.
@@ -362,8 +368,8 @@ func (s *System) GetAllowExperimentation(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *System) CreateAllowExperimentation(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowExperimentation, client.Int(value))
+func (s *System) CreateAllowExperimentation(ctx context.Context, value AllowExperimentationValue) error {
+	return s.c.Add(ctx, URIAllowExperimentation, client.Int(int64(value)))
 }
 
 // UpdateAllowExperimentation updates ./Device/Vendor/MSFT/Policy/Config/System/AllowExperimentation.
@@ -373,8 +379,8 @@ func (s *System) CreateAllowExperimentation(ctx context.Context, value int64) er
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *System) UpdateAllowExperimentation(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowExperimentation, client.Int(value))
+func (s *System) UpdateAllowExperimentation(ctx context.Context, value AllowExperimentationValue) error {
+	return s.c.Replace(ctx, URIAllowExperimentation, client.Int(int64(value)))
 }
 
 // DeleteAllowExperimentation deletes ./Device/Vendor/MSFT/Policy/Config/System/AllowExperimentation.
@@ -406,12 +412,13 @@ func (s *System) DeleteAllowExperimentation(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *System) GetAllowFontProviders(ctx context.Context) (int64, error) {
+func (s *System) GetAllowFontProviders(ctx context.Context) (AllowFontProvidersValue, error) {
 	v, err := s.c.Get(ctx, URIAllowFontProviders)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowFontProvidersValue(n), err
 }
 
 // CreateAllowFontProviders creates ./Device/Vendor/MSFT/Policy/Config/System/AllowFontProviders.
@@ -432,8 +439,8 @@ func (s *System) GetAllowFontProviders(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *System) CreateAllowFontProviders(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowFontProviders, client.Int(value))
+func (s *System) CreateAllowFontProviders(ctx context.Context, value AllowFontProvidersValue) error {
+	return s.c.Add(ctx, URIAllowFontProviders, client.Int(int64(value)))
 }
 
 // UpdateAllowFontProviders updates ./Device/Vendor/MSFT/Policy/Config/System/AllowFontProviders.
@@ -454,8 +461,8 @@ func (s *System) CreateAllowFontProviders(ctx context.Context, value int64) erro
 //
 // Default: 1.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *System) UpdateAllowFontProviders(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowFontProviders, client.Int(value))
+func (s *System) UpdateAllowFontProviders(ctx context.Context, value AllowFontProvidersValue) error {
+	return s.c.Replace(ctx, URIAllowFontProviders, client.Int(int64(value)))
 }
 
 // DeleteAllowFontProviders deletes ./Device/Vendor/MSFT/Policy/Config/System/AllowFontProviders.
@@ -493,12 +500,13 @@ func (s *System) DeleteAllowFontProviders(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *System) GetAllowLocation(ctx context.Context) (int64, error) {
+func (s *System) GetAllowLocation(ctx context.Context) (AllowLocationValue, error) {
 	v, err := s.c.Get(ctx, URIAllowLocation)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowLocationValue(n), err
 }
 
 // CreateAllowLocation creates ./Device/Vendor/MSFT/Policy/Config/System/AllowLocation.
@@ -514,8 +522,8 @@ func (s *System) GetAllowLocation(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *System) CreateAllowLocation(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowLocation, client.Int(value))
+func (s *System) CreateAllowLocation(ctx context.Context, value AllowLocationValue) error {
+	return s.c.Add(ctx, URIAllowLocation, client.Int(int64(value)))
 }
 
 // UpdateAllowLocation updates ./Device/Vendor/MSFT/Policy/Config/System/AllowLocation.
@@ -531,8 +539,8 @@ func (s *System) CreateAllowLocation(ctx context.Context, value int64) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *System) UpdateAllowLocation(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowLocation, client.Int(value))
+func (s *System) UpdateAllowLocation(ctx context.Context, value AllowLocationValue) error {
+	return s.c.Replace(ctx, URIAllowLocation, client.Int(int64(value)))
 }
 
 // DeleteAllowLocation deletes ./Device/Vendor/MSFT/Policy/Config/System/AllowLocation.
@@ -567,12 +575,13 @@ func (s *System) DeleteAllowLocation(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.22000, 10.0.18362.836, 10.0.17763.1217 (CSP v8.0).
-func (s *System) GetAllowMicrosoftManagedDesktopProcessing(ctx context.Context) (int64, error) {
+func (s *System) GetAllowMicrosoftManagedDesktopProcessing(ctx context.Context) (AllowMicrosoftManagedDesktopProcessingValue, error) {
 	v, err := s.c.Get(ctx, URIAllowMicrosoftManagedDesktopProcessing)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowMicrosoftManagedDesktopProcessingValue(n), err
 }
 
 // CreateAllowMicrosoftManagedDesktopProcessing creates ./Device/Vendor/MSFT/Policy/Config/System/AllowMicrosoftManagedDesktopProcessing.
@@ -590,8 +599,8 @@ func (s *System) GetAllowMicrosoftManagedDesktopProcessing(ctx context.Context) 
 //
 // Default: 0.
 // Supported from OS build 10.0.22000, 10.0.18362.836, 10.0.17763.1217 (CSP v8.0).
-func (s *System) CreateAllowMicrosoftManagedDesktopProcessing(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowMicrosoftManagedDesktopProcessing, client.Int(value))
+func (s *System) CreateAllowMicrosoftManagedDesktopProcessing(ctx context.Context, value AllowMicrosoftManagedDesktopProcessingValue) error {
+	return s.c.Add(ctx, URIAllowMicrosoftManagedDesktopProcessing, client.Int(int64(value)))
 }
 
 // UpdateAllowMicrosoftManagedDesktopProcessing updates ./Device/Vendor/MSFT/Policy/Config/System/AllowMicrosoftManagedDesktopProcessing.
@@ -609,8 +618,8 @@ func (s *System) CreateAllowMicrosoftManagedDesktopProcessing(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.22000, 10.0.18362.836, 10.0.17763.1217 (CSP v8.0).
-func (s *System) UpdateAllowMicrosoftManagedDesktopProcessing(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowMicrosoftManagedDesktopProcessing, client.Int(value))
+func (s *System) UpdateAllowMicrosoftManagedDesktopProcessing(ctx context.Context, value AllowMicrosoftManagedDesktopProcessingValue) error {
+	return s.c.Replace(ctx, URIAllowMicrosoftManagedDesktopProcessing, client.Int(int64(value)))
 }
 
 // DeleteAllowMicrosoftManagedDesktopProcessing deletes ./Device/Vendor/MSFT/Policy/Config/System/AllowMicrosoftManagedDesktopProcessing.
@@ -638,12 +647,13 @@ func (s *System) DeleteAllowMicrosoftManagedDesktopProcessing(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *System) GetAllowOOBEUpdates(ctx context.Context) (int64, error) {
+func (s *System) GetAllowOOBEUpdates(ctx context.Context) (AllowOOBEUpdatesValue, error) {
 	v, err := s.c.Get(ctx, URIAllowOOBEUpdates)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowOOBEUpdatesValue(n), err
 }
 
 // CreateAllowOOBEUpdates creates ./Device/Vendor/MSFT/Policy/Config/System/AllowOOBEUpdates.
@@ -652,8 +662,8 @@ func (s *System) GetAllowOOBEUpdates(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *System) CreateAllowOOBEUpdates(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowOOBEUpdates, client.Int(value))
+func (s *System) CreateAllowOOBEUpdates(ctx context.Context, value AllowOOBEUpdatesValue) error {
+	return s.c.Add(ctx, URIAllowOOBEUpdates, client.Int(int64(value)))
 }
 
 // UpdateAllowOOBEUpdates updates ./Device/Vendor/MSFT/Policy/Config/System/AllowOOBEUpdates.
@@ -662,8 +672,8 @@ func (s *System) CreateAllowOOBEUpdates(ctx context.Context, value int64) error 
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *System) UpdateAllowOOBEUpdates(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowOOBEUpdates, client.Int(value))
+func (s *System) UpdateAllowOOBEUpdates(ctx context.Context, value AllowOOBEUpdatesValue) error {
+	return s.c.Replace(ctx, URIAllowOOBEUpdates, client.Int(int64(value)))
 }
 
 // DeleteAllowOOBEUpdates deletes ./Device/Vendor/MSFT/Policy/Config/System/AllowOOBEUpdates.
@@ -682,12 +692,13 @@ func (s *System) DeleteAllowOOBEUpdates(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *System) GetAllowStorageCard(ctx context.Context) (int64, error) {
+func (s *System) GetAllowStorageCard(ctx context.Context) (AllowStorageCardValue, error) {
 	v, err := s.c.Get(ctx, URIAllowStorageCard)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowStorageCardValue(n), err
 }
 
 // CreateAllowStorageCard creates ./Device/Vendor/MSFT/Policy/Config/System/AllowStorageCard.
@@ -696,8 +707,8 @@ func (s *System) GetAllowStorageCard(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *System) CreateAllowStorageCard(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowStorageCard, client.Int(value))
+func (s *System) CreateAllowStorageCard(ctx context.Context, value AllowStorageCardValue) error {
+	return s.c.Add(ctx, URIAllowStorageCard, client.Int(int64(value)))
 }
 
 // UpdateAllowStorageCard updates ./Device/Vendor/MSFT/Policy/Config/System/AllowStorageCard.
@@ -706,8 +717,8 @@ func (s *System) CreateAllowStorageCard(ctx context.Context, value int64) error 
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *System) UpdateAllowStorageCard(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowStorageCard, client.Int(value))
+func (s *System) UpdateAllowStorageCard(ctx context.Context, value AllowStorageCardValue) error {
+	return s.c.Replace(ctx, URIAllowStorageCard, client.Int(int64(value)))
 }
 
 // DeleteAllowStorageCard deletes ./Device/Vendor/MSFT/Policy/Config/System/AllowStorageCard.
@@ -744,12 +755,13 @@ func (s *System) DeleteAllowStorageCard(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *System) GetAllowTelemetry(ctx context.Context) (int64, error) {
+func (s *System) GetAllowTelemetry(ctx context.Context) (AllowTelemetryValue, error) {
 	v, err := s.c.Get(ctx, URIAllowTelemetry)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowTelemetryValue(n), err
 }
 
 // CreateAllowTelemetry creates ./Device/Vendor/MSFT/Policy/Config/System/AllowTelemetry.
@@ -776,8 +788,8 @@ func (s *System) GetAllowTelemetry(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *System) CreateAllowTelemetry(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowTelemetry, client.Int(value))
+func (s *System) CreateAllowTelemetry(ctx context.Context, value AllowTelemetryValue) error {
+	return s.c.Add(ctx, URIAllowTelemetry, client.Int(int64(value)))
 }
 
 // UpdateAllowTelemetry updates ./Device/Vendor/MSFT/Policy/Config/System/AllowTelemetry.
@@ -804,8 +816,8 @@ func (s *System) CreateAllowTelemetry(ctx context.Context, value int64) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *System) UpdateAllowTelemetry(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowTelemetry, client.Int(value))
+func (s *System) UpdateAllowTelemetry(ctx context.Context, value AllowTelemetryValue) error {
+	return s.c.Replace(ctx, URIAllowTelemetry, client.Int(int64(value)))
 }
 
 // DeleteAllowTelemetry deletes ./Device/Vendor/MSFT/Policy/Config/System/AllowTelemetry.
@@ -851,12 +863,13 @@ func (s *System) DeleteAllowTelemetry(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.22000, 10.0.18362.836, 10.0.17763.1217 (CSP v8.0).
-func (s *System) GetAllowUpdateComplianceProcessing(ctx context.Context) (int64, error) {
+func (s *System) GetAllowUpdateComplianceProcessing(ctx context.Context) (AllowUpdateComplianceProcessingValue, error) {
 	v, err := s.c.Get(ctx, URIAllowUpdateComplianceProcessing)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowUpdateComplianceProcessingValue(n), err
 }
 
 // CreateAllowUpdateComplianceProcessing creates ./Device/Vendor/MSFT/Policy/Config/System/AllowUpdateComplianceProcessing.
@@ -874,8 +887,8 @@ func (s *System) GetAllowUpdateComplianceProcessing(ctx context.Context) (int64,
 //
 // Default: 0.
 // Supported from OS build 10.0.22000, 10.0.18362.836, 10.0.17763.1217 (CSP v8.0).
-func (s *System) CreateAllowUpdateComplianceProcessing(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowUpdateComplianceProcessing, client.Int(value))
+func (s *System) CreateAllowUpdateComplianceProcessing(ctx context.Context, value AllowUpdateComplianceProcessingValue) error {
+	return s.c.Add(ctx, URIAllowUpdateComplianceProcessing, client.Int(int64(value)))
 }
 
 // UpdateAllowUpdateComplianceProcessing updates ./Device/Vendor/MSFT/Policy/Config/System/AllowUpdateComplianceProcessing.
@@ -893,8 +906,8 @@ func (s *System) CreateAllowUpdateComplianceProcessing(ctx context.Context, valu
 //
 // Default: 0.
 // Supported from OS build 10.0.22000, 10.0.18362.836, 10.0.17763.1217 (CSP v8.0).
-func (s *System) UpdateAllowUpdateComplianceProcessing(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowUpdateComplianceProcessing, client.Int(value))
+func (s *System) UpdateAllowUpdateComplianceProcessing(ctx context.Context, value AllowUpdateComplianceProcessingValue) error {
+	return s.c.Replace(ctx, URIAllowUpdateComplianceProcessing, client.Int(int64(value)))
 }
 
 // DeleteAllowUpdateComplianceProcessing deletes ./Device/Vendor/MSFT/Policy/Config/System/AllowUpdateComplianceProcessing.
@@ -923,12 +936,13 @@ func (s *System) DeleteAllowUpdateComplianceProcessing(ctx context.Context) erro
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *System) GetAllowUserToResetPhone(ctx context.Context) (int64, error) {
+func (s *System) GetAllowUserToResetPhone(ctx context.Context) (AllowUserToResetPhoneValue, error) {
 	v, err := s.c.Get(ctx, URIAllowUserToResetPhone)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowUserToResetPhoneValue(n), err
 }
 
 // CreateAllowUserToResetPhone creates ./Device/Vendor/MSFT/Policy/Config/System/AllowUserToResetPhone.
@@ -938,8 +952,8 @@ func (s *System) GetAllowUserToResetPhone(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *System) CreateAllowUserToResetPhone(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowUserToResetPhone, client.Int(value))
+func (s *System) CreateAllowUserToResetPhone(ctx context.Context, value AllowUserToResetPhoneValue) error {
+	return s.c.Add(ctx, URIAllowUserToResetPhone, client.Int(int64(value)))
 }
 
 // UpdateAllowUserToResetPhone updates ./Device/Vendor/MSFT/Policy/Config/System/AllowUserToResetPhone.
@@ -949,8 +963,8 @@ func (s *System) CreateAllowUserToResetPhone(ctx context.Context, value int64) e
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *System) UpdateAllowUserToResetPhone(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowUserToResetPhone, client.Int(value))
+func (s *System) UpdateAllowUserToResetPhone(ctx context.Context, value AllowUserToResetPhoneValue) error {
+	return s.c.Replace(ctx, URIAllowUserToResetPhone, client.Int(int64(value)))
 }
 
 // DeleteAllowUserToResetPhone deletes ./Device/Vendor/MSFT/Policy/Config/System/AllowUserToResetPhone.
@@ -978,12 +992,13 @@ func (s *System) DeleteAllowUserToResetPhone(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.22000, 10.0.18362.836, 10.0.17763.1217 (CSP v8.0).
-func (s *System) GetAllowWUfBCloudProcessing(ctx context.Context) (int64, error) {
+func (s *System) GetAllowWUfBCloudProcessing(ctx context.Context) (AllowWUfBCloudProcessingValue, error) {
 	v, err := s.c.Get(ctx, URIAllowWUfBCloudProcessing)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowWUfBCloudProcessingValue(n), err
 }
 
 // CreateAllowWUfBCloudProcessing creates ./Device/Vendor/MSFT/Policy/Config/System/AllowWUfBCloudProcessing.
@@ -1000,8 +1015,8 @@ func (s *System) GetAllowWUfBCloudProcessing(ctx context.Context) (int64, error)
 //
 // Default: 0.
 // Supported from OS build 10.0.22000, 10.0.18362.836, 10.0.17763.1217 (CSP v8.0).
-func (s *System) CreateAllowWUfBCloudProcessing(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowWUfBCloudProcessing, client.Int(value))
+func (s *System) CreateAllowWUfBCloudProcessing(ctx context.Context, value AllowWUfBCloudProcessingValue) error {
+	return s.c.Add(ctx, URIAllowWUfBCloudProcessing, client.Int(int64(value)))
 }
 
 // UpdateAllowWUfBCloudProcessing updates ./Device/Vendor/MSFT/Policy/Config/System/AllowWUfBCloudProcessing.
@@ -1018,8 +1033,8 @@ func (s *System) CreateAllowWUfBCloudProcessing(ctx context.Context, value int64
 //
 // Default: 0.
 // Supported from OS build 10.0.22000, 10.0.18362.836, 10.0.17763.1217 (CSP v8.0).
-func (s *System) UpdateAllowWUfBCloudProcessing(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowWUfBCloudProcessing, client.Int(value))
+func (s *System) UpdateAllowWUfBCloudProcessing(ctx context.Context, value AllowWUfBCloudProcessingValue) error {
+	return s.c.Replace(ctx, URIAllowWUfBCloudProcessing, client.Int(int64(value)))
 }
 
 // DeleteAllowWUfBCloudProcessing deletes ./Device/Vendor/MSFT/Policy/Config/System/AllowWUfBCloudProcessing.
@@ -1128,28 +1143,29 @@ func (s *System) DeleteConfigureMicrosoft365UploadEndpoint(ctx context.Context) 
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *System) GetConfigureTelemetryOptInChangeNotification(ctx context.Context) (int64, error) {
+func (s *System) GetConfigureTelemetryOptInChangeNotification(ctx context.Context) (ConfigureTelemetryOptInChangeNotificationValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureTelemetryOptInChangeNotification)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureTelemetryOptInChangeNotificationValue(n), err
 }
 
 // CreateConfigureTelemetryOptInChangeNotification creates ./Device/Vendor/MSFT/Policy/Config/System/ConfigureTelemetryOptInChangeNotification.
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *System) CreateConfigureTelemetryOptInChangeNotification(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureTelemetryOptInChangeNotification, client.Int(value))
+func (s *System) CreateConfigureTelemetryOptInChangeNotification(ctx context.Context, value ConfigureTelemetryOptInChangeNotificationValue) error {
+	return s.c.Add(ctx, URIConfigureTelemetryOptInChangeNotification, client.Int(int64(value)))
 }
 
 // UpdateConfigureTelemetryOptInChangeNotification updates ./Device/Vendor/MSFT/Policy/Config/System/ConfigureTelemetryOptInChangeNotification.
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *System) UpdateConfigureTelemetryOptInChangeNotification(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureTelemetryOptInChangeNotification, client.Int(value))
+func (s *System) UpdateConfigureTelemetryOptInChangeNotification(ctx context.Context, value ConfigureTelemetryOptInChangeNotificationValue) error {
+	return s.c.Replace(ctx, URIConfigureTelemetryOptInChangeNotification, client.Int(int64(value)))
 }
 
 // DeleteConfigureTelemetryOptInChangeNotification deletes ./Device/Vendor/MSFT/Policy/Config/System/ConfigureTelemetryOptInChangeNotification.
@@ -1164,28 +1180,29 @@ func (s *System) DeleteConfigureTelemetryOptInChangeNotification(ctx context.Con
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *System) GetConfigureTelemetryOptInSettingsUx(ctx context.Context) (int64, error) {
+func (s *System) GetConfigureTelemetryOptInSettingsUx(ctx context.Context) (ConfigureTelemetryOptInSettingsUxValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureTelemetryOptInSettingsUx)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureTelemetryOptInSettingsUxValue(n), err
 }
 
 // CreateConfigureTelemetryOptInSettingsUx creates ./Device/Vendor/MSFT/Policy/Config/System/ConfigureTelemetryOptInSettingsUx.
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *System) CreateConfigureTelemetryOptInSettingsUx(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureTelemetryOptInSettingsUx, client.Int(value))
+func (s *System) CreateConfigureTelemetryOptInSettingsUx(ctx context.Context, value ConfigureTelemetryOptInSettingsUxValue) error {
+	return s.c.Add(ctx, URIConfigureTelemetryOptInSettingsUx, client.Int(int64(value)))
 }
 
 // UpdateConfigureTelemetryOptInSettingsUx updates ./Device/Vendor/MSFT/Policy/Config/System/ConfigureTelemetryOptInSettingsUx.
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *System) UpdateConfigureTelemetryOptInSettingsUx(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureTelemetryOptInSettingsUx, client.Int(value))
+func (s *System) UpdateConfigureTelemetryOptInSettingsUx(ctx context.Context, value ConfigureTelemetryOptInSettingsUxValue) error {
+	return s.c.Replace(ctx, URIConfigureTelemetryOptInSettingsUx, client.Int(int64(value)))
 }
 
 // DeleteConfigureTelemetryOptInSettingsUx deletes ./Device/Vendor/MSFT/Policy/Config/System/ConfigureTelemetryOptInSettingsUx.
@@ -1204,12 +1221,13 @@ func (s *System) DeleteConfigureTelemetryOptInSettingsUx(ctx context.Context) er
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3775 (CSP v11.0).
-func (s *System) GetDisableCHPE(ctx context.Context) (int64, error) {
+func (s *System) GetDisableCHPE(ctx context.Context) (DisableCHPEValue, error) {
 	v, err := s.c.Get(ctx, URIDisableCHPE)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableCHPEValue(n), err
 }
 
 // CreateDisableCHPE creates ./Device/Vendor/MSFT/Policy/Config/System/DisableCHPE.
@@ -1220,8 +1238,8 @@ func (s *System) GetDisableCHPE(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3775 (CSP v11.0).
-func (s *System) CreateDisableCHPE(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableCHPE, client.Int(value))
+func (s *System) CreateDisableCHPE(ctx context.Context, value DisableCHPEValue) error {
+	return s.c.Add(ctx, URIDisableCHPE, client.Int(int64(value)))
 }
 
 // UpdateDisableCHPE updates ./Device/Vendor/MSFT/Policy/Config/System/DisableCHPE.
@@ -1232,8 +1250,8 @@ func (s *System) CreateDisableCHPE(ctx context.Context, value int64) error {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3775 (CSP v11.0).
-func (s *System) UpdateDisableCHPE(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableCHPE, client.Int(value))
+func (s *System) UpdateDisableCHPE(ctx context.Context, value DisableCHPEValue) error {
+	return s.c.Replace(ctx, URIDisableCHPE, client.Int(int64(value)))
 }
 
 // DeleteDisableCHPE deletes ./Device/Vendor/MSFT/Policy/Config/System/DisableCHPE.
@@ -1252,28 +1270,29 @@ func (s *System) DeleteDisableCHPE(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *System) GetDisableDeviceDelete(ctx context.Context) (int64, error) {
+func (s *System) GetDisableDeviceDelete(ctx context.Context) (DisableDeviceDeleteValue, error) {
 	v, err := s.c.Get(ctx, URIDisableDeviceDelete)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableDeviceDeleteValue(n), err
 }
 
 // CreateDisableDeviceDelete creates ./Device/Vendor/MSFT/Policy/Config/System/DisableDeviceDelete.
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *System) CreateDisableDeviceDelete(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableDeviceDelete, client.Int(value))
+func (s *System) CreateDisableDeviceDelete(ctx context.Context, value DisableDeviceDeleteValue) error {
+	return s.c.Add(ctx, URIDisableDeviceDelete, client.Int(int64(value)))
 }
 
 // UpdateDisableDeviceDelete updates ./Device/Vendor/MSFT/Policy/Config/System/DisableDeviceDelete.
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *System) UpdateDisableDeviceDelete(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableDeviceDelete, client.Int(value))
+func (s *System) UpdateDisableDeviceDelete(ctx context.Context, value DisableDeviceDeleteValue) error {
+	return s.c.Replace(ctx, URIDisableDeviceDelete, client.Int(int64(value)))
 }
 
 // DeleteDisableDeviceDelete deletes ./Device/Vendor/MSFT/Policy/Config/System/DisableDeviceDelete.
@@ -1288,28 +1307,29 @@ func (s *System) DeleteDisableDeviceDelete(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *System) GetDisableDiagnosticDataViewer(ctx context.Context) (int64, error) {
+func (s *System) GetDisableDiagnosticDataViewer(ctx context.Context) (DisableDiagnosticDataViewerValue, error) {
 	v, err := s.c.Get(ctx, URIDisableDiagnosticDataViewer)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableDiagnosticDataViewerValue(n), err
 }
 
 // CreateDisableDiagnosticDataViewer creates ./Device/Vendor/MSFT/Policy/Config/System/DisableDiagnosticDataViewer.
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *System) CreateDisableDiagnosticDataViewer(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableDiagnosticDataViewer, client.Int(value))
+func (s *System) CreateDisableDiagnosticDataViewer(ctx context.Context, value DisableDiagnosticDataViewerValue) error {
+	return s.c.Add(ctx, URIDisableDiagnosticDataViewer, client.Int(int64(value)))
 }
 
 // UpdateDisableDiagnosticDataViewer updates ./Device/Vendor/MSFT/Policy/Config/System/DisableDiagnosticDataViewer.
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *System) UpdateDisableDiagnosticDataViewer(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableDiagnosticDataViewer, client.Int(value))
+func (s *System) UpdateDisableDiagnosticDataViewer(ctx context.Context, value DisableDiagnosticDataViewerValue) error {
+	return s.c.Replace(ctx, URIDisableDiagnosticDataViewer, client.Int(int64(value)))
 }
 
 // DeleteDisableDiagnosticDataViewer deletes ./Device/Vendor/MSFT/Policy/Config/System/DisableDiagnosticDataViewer.
@@ -1326,12 +1346,13 @@ func (s *System) DeleteDisableDiagnosticDataViewer(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *System) GetDisableDirectXDatabaseUpdate(ctx context.Context) (int64, error) {
+func (s *System) GetDisableDirectXDatabaseUpdate(ctx context.Context) (DisableDirectXDatabaseUpdateValue, error) {
 	v, err := s.c.Get(ctx, URIDisableDirectXDatabaseUpdate)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableDirectXDatabaseUpdateValue(n), err
 }
 
 // CreateDisableDirectXDatabaseUpdate creates ./Device/Vendor/MSFT/Policy/Config/System/DisableDirectXDatabaseUpdate.
@@ -1340,8 +1361,8 @@ func (s *System) GetDisableDirectXDatabaseUpdate(ctx context.Context) (int64, er
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *System) CreateDisableDirectXDatabaseUpdate(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableDirectXDatabaseUpdate, client.Int(value))
+func (s *System) CreateDisableDirectXDatabaseUpdate(ctx context.Context, value DisableDirectXDatabaseUpdateValue) error {
+	return s.c.Add(ctx, URIDisableDirectXDatabaseUpdate, client.Int(int64(value)))
 }
 
 // UpdateDisableDirectXDatabaseUpdate updates ./Device/Vendor/MSFT/Policy/Config/System/DisableDirectXDatabaseUpdate.
@@ -1350,8 +1371,8 @@ func (s *System) CreateDisableDirectXDatabaseUpdate(ctx context.Context, value i
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *System) UpdateDisableDirectXDatabaseUpdate(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableDirectXDatabaseUpdate, client.Int(value))
+func (s *System) UpdateDisableDirectXDatabaseUpdate(ctx context.Context, value DisableDirectXDatabaseUpdateValue) error {
+	return s.c.Replace(ctx, URIDisableDirectXDatabaseUpdate, client.Int(int64(value)))
 }
 
 // DeleteDisableDirectXDatabaseUpdate deletes ./Device/Vendor/MSFT/Policy/Config/System/DisableDirectXDatabaseUpdate.
@@ -1374,12 +1395,13 @@ func (s *System) DeleteDisableDirectXDatabaseUpdate(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *System) GetDisableEnterpriseAuthProxy(ctx context.Context) (int64, error) {
+func (s *System) GetDisableEnterpriseAuthProxy(ctx context.Context) (DisableEnterpriseAuthProxyValue, error) {
 	v, err := s.c.Get(ctx, URIDisableEnterpriseAuthProxy)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableEnterpriseAuthProxyValue(n), err
 }
 
 // CreateDisableEnterpriseAuthProxy creates ./Device/Vendor/MSFT/Policy/Config/System/DisableEnterpriseAuthProxy.
@@ -1392,8 +1414,8 @@ func (s *System) GetDisableEnterpriseAuthProxy(ctx context.Context) (int64, erro
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *System) CreateDisableEnterpriseAuthProxy(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableEnterpriseAuthProxy, client.Int(value))
+func (s *System) CreateDisableEnterpriseAuthProxy(ctx context.Context, value DisableEnterpriseAuthProxyValue) error {
+	return s.c.Add(ctx, URIDisableEnterpriseAuthProxy, client.Int(int64(value)))
 }
 
 // UpdateDisableEnterpriseAuthProxy updates ./Device/Vendor/MSFT/Policy/Config/System/DisableEnterpriseAuthProxy.
@@ -1406,8 +1428,8 @@ func (s *System) CreateDisableEnterpriseAuthProxy(ctx context.Context, value int
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *System) UpdateDisableEnterpriseAuthProxy(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableEnterpriseAuthProxy, client.Int(value))
+func (s *System) UpdateDisableEnterpriseAuthProxy(ctx context.Context, value DisableEnterpriseAuthProxyValue) error {
+	return s.c.Replace(ctx, URIDisableEnterpriseAuthProxy, client.Int(int64(value)))
 }
 
 // DeleteDisableEnterpriseAuthProxy deletes ./Device/Vendor/MSFT/Policy/Config/System/DisableEnterpriseAuthProxy.
@@ -1435,12 +1457,13 @@ func (s *System) DeleteDisableEnterpriseAuthProxy(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *System) GetDisableOneDriveFileSync(ctx context.Context) (int64, error) {
+func (s *System) GetDisableOneDriveFileSync(ctx context.Context) (DisableOneDriveFileSyncValue, error) {
 	v, err := s.c.Get(ctx, URIDisableOneDriveFileSync)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableOneDriveFileSyncValue(n), err
 }
 
 // CreateDisableOneDriveFileSync creates ./Device/Vendor/MSFT/Policy/Config/System/DisableOneDriveFileSync.
@@ -1454,8 +1477,8 @@ func (s *System) GetDisableOneDriveFileSync(ctx context.Context) (int64, error) 
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *System) CreateDisableOneDriveFileSync(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableOneDriveFileSync, client.Int(value))
+func (s *System) CreateDisableOneDriveFileSync(ctx context.Context, value DisableOneDriveFileSyncValue) error {
+	return s.c.Add(ctx, URIDisableOneDriveFileSync, client.Int(int64(value)))
 }
 
 // UpdateDisableOneDriveFileSync updates ./Device/Vendor/MSFT/Policy/Config/System/DisableOneDriveFileSync.
@@ -1469,8 +1492,8 @@ func (s *System) CreateDisableOneDriveFileSync(ctx context.Context, value int64)
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *System) UpdateDisableOneDriveFileSync(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableOneDriveFileSync, client.Int(value))
+func (s *System) UpdateDisableOneDriveFileSync(ctx context.Context, value DisableOneDriveFileSyncValue) error {
+	return s.c.Replace(ctx, URIDisableOneDriveFileSync, client.Int(int64(value)))
 }
 
 // DeleteDisableOneDriveFileSync deletes ./Device/Vendor/MSFT/Policy/Config/System/DisableOneDriveFileSync.
@@ -1496,12 +1519,13 @@ func (s *System) DeleteDisableOneDriveFileSync(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *System) GetDisableOneSettingsDownloads(ctx context.Context) (int64, error) {
+func (s *System) GetDisableOneSettingsDownloads(ctx context.Context) (DisableOneSettingsDownloadsValue, error) {
 	v, err := s.c.Get(ctx, URIDisableOneSettingsDownloads)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableOneSettingsDownloadsValue(n), err
 }
 
 // CreateDisableOneSettingsDownloads creates ./Device/Vendor/MSFT/Policy/Config/System/DisableOneSettingsDownloads.
@@ -1512,8 +1536,8 @@ func (s *System) GetDisableOneSettingsDownloads(ctx context.Context) (int64, err
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *System) CreateDisableOneSettingsDownloads(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableOneSettingsDownloads, client.Int(value))
+func (s *System) CreateDisableOneSettingsDownloads(ctx context.Context, value DisableOneSettingsDownloadsValue) error {
+	return s.c.Add(ctx, URIDisableOneSettingsDownloads, client.Int(int64(value)))
 }
 
 // UpdateDisableOneSettingsDownloads updates ./Device/Vendor/MSFT/Policy/Config/System/DisableOneSettingsDownloads.
@@ -1524,8 +1548,8 @@ func (s *System) CreateDisableOneSettingsDownloads(ctx context.Context, value in
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *System) UpdateDisableOneSettingsDownloads(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableOneSettingsDownloads, client.Int(value))
+func (s *System) UpdateDisableOneSettingsDownloads(ctx context.Context, value DisableOneSettingsDownloadsValue) error {
+	return s.c.Replace(ctx, URIDisableOneSettingsDownloads, client.Int(int64(value)))
 }
 
 // DeleteDisableOneSettingsDownloads deletes ./Device/Vendor/MSFT/Policy/Config/System/DisableOneSettingsDownloads.
@@ -1581,12 +1605,13 @@ func (s *System) DeleteDisableSystemRestore(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.4946 (CSP v11.0).
-func (s *System) GetEnableHotpatchAutoRemediation(ctx context.Context) (int64, error) {
+func (s *System) GetEnableHotpatchAutoRemediation(ctx context.Context) (EnableHotpatchAutoRemediationValue, error) {
 	v, err := s.c.Get(ctx, URIEnableHotpatchAutoRemediation)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableHotpatchAutoRemediationValue(n), err
 }
 
 // CreateEnableHotpatchAutoRemediation creates ./Device/Vendor/MSFT/Policy/Config/System/EnableHotpatchAutoRemediation.
@@ -1598,8 +1623,8 @@ func (s *System) GetEnableHotpatchAutoRemediation(ctx context.Context) (int64, e
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.4946 (CSP v11.0).
-func (s *System) CreateEnableHotpatchAutoRemediation(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableHotpatchAutoRemediation, client.Int(value))
+func (s *System) CreateEnableHotpatchAutoRemediation(ctx context.Context, value EnableHotpatchAutoRemediationValue) error {
+	return s.c.Add(ctx, URIEnableHotpatchAutoRemediation, client.Int(int64(value)))
 }
 
 // UpdateEnableHotpatchAutoRemediation updates ./Device/Vendor/MSFT/Policy/Config/System/EnableHotpatchAutoRemediation.
@@ -1611,8 +1636,8 @@ func (s *System) CreateEnableHotpatchAutoRemediation(ctx context.Context, value 
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.4946 (CSP v11.0).
-func (s *System) UpdateEnableHotpatchAutoRemediation(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableHotpatchAutoRemediation, client.Int(value))
+func (s *System) UpdateEnableHotpatchAutoRemediation(ctx context.Context, value EnableHotpatchAutoRemediationValue) error {
+	return s.c.Replace(ctx, URIEnableHotpatchAutoRemediation, client.Int(int64(value)))
 }
 
 // DeleteEnableHotpatchAutoRemediation deletes ./Device/Vendor/MSFT/Policy/Config/System/EnableHotpatchAutoRemediation.
@@ -1637,12 +1662,13 @@ func (s *System) DeleteEnableHotpatchAutoRemediation(ctx context.Context) error 
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *System) GetEnableOneSettingsAuditing(ctx context.Context) (int64, error) {
+func (s *System) GetEnableOneSettingsAuditing(ctx context.Context) (EnableOneSettingsAuditingValue, error) {
 	v, err := s.c.Get(ctx, URIEnableOneSettingsAuditing)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableOneSettingsAuditingValue(n), err
 }
 
 // CreateEnableOneSettingsAuditing creates ./Device/Vendor/MSFT/Policy/Config/System/EnableOneSettingsAuditing.
@@ -1654,8 +1680,8 @@ func (s *System) GetEnableOneSettingsAuditing(ctx context.Context) (int64, error
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *System) CreateEnableOneSettingsAuditing(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableOneSettingsAuditing, client.Int(value))
+func (s *System) CreateEnableOneSettingsAuditing(ctx context.Context, value EnableOneSettingsAuditingValue) error {
+	return s.c.Add(ctx, URIEnableOneSettingsAuditing, client.Int(int64(value)))
 }
 
 // UpdateEnableOneSettingsAuditing updates ./Device/Vendor/MSFT/Policy/Config/System/EnableOneSettingsAuditing.
@@ -1667,8 +1693,8 @@ func (s *System) CreateEnableOneSettingsAuditing(ctx context.Context, value int6
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *System) UpdateEnableOneSettingsAuditing(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableOneSettingsAuditing, client.Int(value))
+func (s *System) UpdateEnableOneSettingsAuditing(ctx context.Context, value EnableOneSettingsAuditingValue) error {
+	return s.c.Replace(ctx, URIEnableOneSettingsAuditing, client.Int(int64(value)))
 }
 
 // DeleteEnableOneSettingsAuditing deletes ./Device/Vendor/MSFT/Policy/Config/System/EnableOneSettingsAuditing.
@@ -1691,12 +1717,13 @@ func (s *System) DeleteEnableOneSettingsAuditing(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *System) GetFeedbackHubAlwaysSaveDiagnosticsLocally(ctx context.Context) (int64, error) {
+func (s *System) GetFeedbackHubAlwaysSaveDiagnosticsLocally(ctx context.Context) (FeedbackHubAlwaysSaveDiagnosticsLocallyValue, error) {
 	v, err := s.c.Get(ctx, URIFeedbackHubAlwaysSaveDiagnosticsLocally)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return FeedbackHubAlwaysSaveDiagnosticsLocallyValue(n), err
 }
 
 // CreateFeedbackHubAlwaysSaveDiagnosticsLocally creates ./Device/Vendor/MSFT/Policy/Config/System/FeedbackHubAlwaysSaveDiagnosticsLocally.
@@ -1706,8 +1733,8 @@ func (s *System) GetFeedbackHubAlwaysSaveDiagnosticsLocally(ctx context.Context)
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *System) CreateFeedbackHubAlwaysSaveDiagnosticsLocally(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIFeedbackHubAlwaysSaveDiagnosticsLocally, client.Int(value))
+func (s *System) CreateFeedbackHubAlwaysSaveDiagnosticsLocally(ctx context.Context, value FeedbackHubAlwaysSaveDiagnosticsLocallyValue) error {
+	return s.c.Add(ctx, URIFeedbackHubAlwaysSaveDiagnosticsLocally, client.Int(int64(value)))
 }
 
 // UpdateFeedbackHubAlwaysSaveDiagnosticsLocally updates ./Device/Vendor/MSFT/Policy/Config/System/FeedbackHubAlwaysSaveDiagnosticsLocally.
@@ -1717,8 +1744,8 @@ func (s *System) CreateFeedbackHubAlwaysSaveDiagnosticsLocally(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *System) UpdateFeedbackHubAlwaysSaveDiagnosticsLocally(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIFeedbackHubAlwaysSaveDiagnosticsLocally, client.Int(value))
+func (s *System) UpdateFeedbackHubAlwaysSaveDiagnosticsLocally(ctx context.Context, value FeedbackHubAlwaysSaveDiagnosticsLocallyValue) error {
+	return s.c.Replace(ctx, URIFeedbackHubAlwaysSaveDiagnosticsLocally, client.Int(int64(value)))
 }
 
 // DeleteFeedbackHubAlwaysSaveDiagnosticsLocally deletes ./Device/Vendor/MSFT/Policy/Config/System/FeedbackHubAlwaysSaveDiagnosticsLocally.
@@ -1742,12 +1769,13 @@ func (s *System) DeleteFeedbackHubAlwaysSaveDiagnosticsLocally(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *System) GetHideUnsupportedHardwareNotifications(ctx context.Context) (int64, error) {
+func (s *System) GetHideUnsupportedHardwareNotifications(ctx context.Context) (HideUnsupportedHardwareNotificationsValue, error) {
 	v, err := s.c.Get(ctx, URIHideUnsupportedHardwareNotifications)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HideUnsupportedHardwareNotificationsValue(n), err
 }
 
 // CreateHideUnsupportedHardwareNotifications creates ./Device/Vendor/MSFT/Policy/Config/System/HideUnsupportedHardwareNotifications.
@@ -1760,8 +1788,8 @@ func (s *System) GetHideUnsupportedHardwareNotifications(ctx context.Context) (i
 //
 // Default: 0.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *System) CreateHideUnsupportedHardwareNotifications(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHideUnsupportedHardwareNotifications, client.Int(value))
+func (s *System) CreateHideUnsupportedHardwareNotifications(ctx context.Context, value HideUnsupportedHardwareNotificationsValue) error {
+	return s.c.Add(ctx, URIHideUnsupportedHardwareNotifications, client.Int(int64(value)))
 }
 
 // UpdateHideUnsupportedHardwareNotifications updates ./Device/Vendor/MSFT/Policy/Config/System/HideUnsupportedHardwareNotifications.
@@ -1774,8 +1802,8 @@ func (s *System) CreateHideUnsupportedHardwareNotifications(ctx context.Context,
 //
 // Default: 0.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *System) UpdateHideUnsupportedHardwareNotifications(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHideUnsupportedHardwareNotifications, client.Int(value))
+func (s *System) UpdateHideUnsupportedHardwareNotifications(ctx context.Context, value HideUnsupportedHardwareNotificationsValue) error {
+	return s.c.Replace(ctx, URIHideUnsupportedHardwareNotifications, client.Int(int64(value)))
 }
 
 // DeleteHideUnsupportedHardwareNotifications deletes ./Device/Vendor/MSFT/Policy/Config/System/HideUnsupportedHardwareNotifications.
@@ -1802,12 +1830,13 @@ func (s *System) DeleteHideUnsupportedHardwareNotifications(ctx context.Context)
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *System) GetLimitDiagnosticLogCollection(ctx context.Context) (int64, error) {
+func (s *System) GetLimitDiagnosticLogCollection(ctx context.Context) (LimitDiagnosticLogCollectionValue, error) {
 	v, err := s.c.Get(ctx, URILimitDiagnosticLogCollection)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return LimitDiagnosticLogCollectionValue(n), err
 }
 
 // CreateLimitDiagnosticLogCollection creates ./Device/Vendor/MSFT/Policy/Config/System/LimitDiagnosticLogCollection.
@@ -1820,8 +1849,8 @@ func (s *System) GetLimitDiagnosticLogCollection(ctx context.Context) (int64, er
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *System) CreateLimitDiagnosticLogCollection(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URILimitDiagnosticLogCollection, client.Int(value))
+func (s *System) CreateLimitDiagnosticLogCollection(ctx context.Context, value LimitDiagnosticLogCollectionValue) error {
+	return s.c.Add(ctx, URILimitDiagnosticLogCollection, client.Int(int64(value)))
 }
 
 // UpdateLimitDiagnosticLogCollection updates ./Device/Vendor/MSFT/Policy/Config/System/LimitDiagnosticLogCollection.
@@ -1834,8 +1863,8 @@ func (s *System) CreateLimitDiagnosticLogCollection(ctx context.Context, value i
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *System) UpdateLimitDiagnosticLogCollection(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URILimitDiagnosticLogCollection, client.Int(value))
+func (s *System) UpdateLimitDiagnosticLogCollection(ctx context.Context, value LimitDiagnosticLogCollectionValue) error {
+	return s.c.Replace(ctx, URILimitDiagnosticLogCollection, client.Int(int64(value)))
 }
 
 // DeleteLimitDiagnosticLogCollection deletes ./Device/Vendor/MSFT/Policy/Config/System/LimitDiagnosticLogCollection.
@@ -1862,12 +1891,13 @@ func (s *System) DeleteLimitDiagnosticLogCollection(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *System) GetLimitDumpCollection(ctx context.Context) (int64, error) {
+func (s *System) GetLimitDumpCollection(ctx context.Context) (LimitDumpCollectionValue, error) {
 	v, err := s.c.Get(ctx, URILimitDumpCollection)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return LimitDumpCollectionValue(n), err
 }
 
 // CreateLimitDumpCollection creates ./Device/Vendor/MSFT/Policy/Config/System/LimitDumpCollection.
@@ -1880,8 +1910,8 @@ func (s *System) GetLimitDumpCollection(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *System) CreateLimitDumpCollection(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URILimitDumpCollection, client.Int(value))
+func (s *System) CreateLimitDumpCollection(ctx context.Context, value LimitDumpCollectionValue) error {
+	return s.c.Add(ctx, URILimitDumpCollection, client.Int(int64(value)))
 }
 
 // UpdateLimitDumpCollection updates ./Device/Vendor/MSFT/Policy/Config/System/LimitDumpCollection.
@@ -1894,8 +1924,8 @@ func (s *System) CreateLimitDumpCollection(ctx context.Context, value int64) err
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *System) UpdateLimitDumpCollection(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URILimitDumpCollection, client.Int(value))
+func (s *System) UpdateLimitDumpCollection(ctx context.Context, value LimitDumpCollectionValue) error {
+	return s.c.Replace(ctx, URILimitDumpCollection, client.Int(int64(value)))
 }
 
 // DeleteLimitDumpCollection deletes ./Device/Vendor/MSFT/Policy/Config/System/LimitDumpCollection.
@@ -1931,12 +1961,13 @@ func (s *System) DeleteLimitDumpCollection(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *System) GetLimitEnhancedDiagnosticDataWindowsAnalytics(ctx context.Context) (int64, error) {
+func (s *System) GetLimitEnhancedDiagnosticDataWindowsAnalytics(ctx context.Context) (LimitEnhancedDiagnosticDataWindowsAnalyticsValue, error) {
 	v, err := s.c.Get(ctx, URILimitEnhancedDiagnosticDataWindowsAnalytics)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return LimitEnhancedDiagnosticDataWindowsAnalyticsValue(n), err
 }
 
 // CreateLimitEnhancedDiagnosticDataWindowsAnalytics creates ./Device/Vendor/MSFT/Policy/Config/System/LimitEnhancedDiagnosticDataWindowsAnalytics.
@@ -1958,8 +1989,8 @@ func (s *System) GetLimitEnhancedDiagnosticDataWindowsAnalytics(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *System) CreateLimitEnhancedDiagnosticDataWindowsAnalytics(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URILimitEnhancedDiagnosticDataWindowsAnalytics, client.Int(value))
+func (s *System) CreateLimitEnhancedDiagnosticDataWindowsAnalytics(ctx context.Context, value LimitEnhancedDiagnosticDataWindowsAnalyticsValue) error {
+	return s.c.Add(ctx, URILimitEnhancedDiagnosticDataWindowsAnalytics, client.Int(int64(value)))
 }
 
 // UpdateLimitEnhancedDiagnosticDataWindowsAnalytics updates ./Device/Vendor/MSFT/Policy/Config/System/LimitEnhancedDiagnosticDataWindowsAnalytics.
@@ -1981,8 +2012,8 @@ func (s *System) CreateLimitEnhancedDiagnosticDataWindowsAnalytics(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *System) UpdateLimitEnhancedDiagnosticDataWindowsAnalytics(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URILimitEnhancedDiagnosticDataWindowsAnalytics, client.Int(value))
+func (s *System) UpdateLimitEnhancedDiagnosticDataWindowsAnalytics(ctx context.Context, value LimitEnhancedDiagnosticDataWindowsAnalyticsValue) error {
+	return s.c.Replace(ctx, URILimitEnhancedDiagnosticDataWindowsAnalytics, client.Int(int64(value)))
 }
 
 // DeleteLimitEnhancedDiagnosticDataWindowsAnalytics deletes ./Device/Vendor/MSFT/Policy/Config/System/LimitEnhancedDiagnosticDataWindowsAnalytics.
@@ -2076,12 +2107,13 @@ func (s *System) DeleteTelemetryProxy(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *System) GetTurnOffFileHistory(ctx context.Context) (int64, error) {
+func (s *System) GetTurnOffFileHistory(ctx context.Context) (TurnOffFileHistoryValue, error) {
 	v, err := s.c.Get(ctx, URITurnOffFileHistory)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return TurnOffFileHistoryValue(n), err
 }
 
 // CreateTurnOffFileHistory creates ./Device/Vendor/MSFT/Policy/Config/System/TurnOffFileHistory.
@@ -2092,8 +2124,8 @@ func (s *System) GetTurnOffFileHistory(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *System) CreateTurnOffFileHistory(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URITurnOffFileHistory, client.Int(value))
+func (s *System) CreateTurnOffFileHistory(ctx context.Context, value TurnOffFileHistoryValue) error {
+	return s.c.Add(ctx, URITurnOffFileHistory, client.Int(int64(value)))
 }
 
 // UpdateTurnOffFileHistory updates ./Device/Vendor/MSFT/Policy/Config/System/TurnOffFileHistory.
@@ -2104,8 +2136,8 @@ func (s *System) CreateTurnOffFileHistory(ctx context.Context, value int64) erro
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *System) UpdateTurnOffFileHistory(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URITurnOffFileHistory, client.Int(value))
+func (s *System) UpdateTurnOffFileHistory(ctx context.Context, value TurnOffFileHistoryValue) error {
+	return s.c.Replace(ctx, URITurnOffFileHistory, client.Int(int64(value)))
 }
 
 // DeleteTurnOffFileHistory deletes ./Device/Vendor/MSFT/Policy/Config/System/TurnOffFileHistory.

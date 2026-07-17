@@ -152,12 +152,13 @@ func (s *WindowsLogon) DeleteDontDisplayNetworkSelectionUI(ctx context.Context) 
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *WindowsLogon) GetEnableFirstLogonAnimation(ctx context.Context) (int64, error) {
+func (s *WindowsLogon) GetEnableFirstLogonAnimation(ctx context.Context) (EnableFirstLogonAnimationValue, error) {
 	v, err := s.c.Get(ctx, URIEnableFirstLogonAnimation)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableFirstLogonAnimationValue(n), err
 }
 
 // CreateEnableFirstLogonAnimation creates ./Device/Vendor/MSFT/Policy/Config/WindowsLogon/EnableFirstLogonAnimation.
@@ -176,8 +177,8 @@ func (s *WindowsLogon) GetEnableFirstLogonAnimation(ctx context.Context) (int64,
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *WindowsLogon) CreateEnableFirstLogonAnimation(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableFirstLogonAnimation, client.Int(value))
+func (s *WindowsLogon) CreateEnableFirstLogonAnimation(ctx context.Context, value EnableFirstLogonAnimationValue) error {
+	return s.c.Add(ctx, URIEnableFirstLogonAnimation, client.Int(int64(value)))
 }
 
 // UpdateEnableFirstLogonAnimation updates ./Device/Vendor/MSFT/Policy/Config/WindowsLogon/EnableFirstLogonAnimation.
@@ -196,8 +197,8 @@ func (s *WindowsLogon) CreateEnableFirstLogonAnimation(ctx context.Context, valu
 //
 // Default: 1.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *WindowsLogon) UpdateEnableFirstLogonAnimation(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableFirstLogonAnimation, client.Int(value))
+func (s *WindowsLogon) UpdateEnableFirstLogonAnimation(ctx context.Context, value EnableFirstLogonAnimationValue) error {
+	return s.c.Replace(ctx, URIEnableFirstLogonAnimation, client.Int(int64(value)))
 }
 
 // DeleteEnableFirstLogonAnimation deletes ./Device/Vendor/MSFT/Policy/Config/WindowsLogon/EnableFirstLogonAnimation.
@@ -294,12 +295,13 @@ func (s *WindowsLogon) DeleteEnumerateLocalUsersOnDomainJoinedComputers(ctx cont
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *WindowsLogon) GetHideFastUserSwitching(ctx context.Context) (int64, error) {
+func (s *WindowsLogon) GetHideFastUserSwitching(ctx context.Context) (HideFastUserSwitchingValue, error) {
 	v, err := s.c.Get(ctx, URIHideFastUserSwitching)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HideFastUserSwitchingValue(n), err
 }
 
 // CreateHideFastUserSwitching creates ./Device/Vendor/MSFT/Policy/Config/WindowsLogon/HideFastUserSwitching.
@@ -312,8 +314,8 @@ func (s *WindowsLogon) GetHideFastUserSwitching(ctx context.Context) (int64, err
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *WindowsLogon) CreateHideFastUserSwitching(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIHideFastUserSwitching, client.Int(value))
+func (s *WindowsLogon) CreateHideFastUserSwitching(ctx context.Context, value HideFastUserSwitchingValue) error {
+	return s.c.Add(ctx, URIHideFastUserSwitching, client.Int(int64(value)))
 }
 
 // UpdateHideFastUserSwitching updates ./Device/Vendor/MSFT/Policy/Config/WindowsLogon/HideFastUserSwitching.
@@ -326,8 +328,8 @@ func (s *WindowsLogon) CreateHideFastUserSwitching(ctx context.Context, value in
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *WindowsLogon) UpdateHideFastUserSwitching(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIHideFastUserSwitching, client.Int(value))
+func (s *WindowsLogon) UpdateHideFastUserSwitching(ctx context.Context, value HideFastUserSwitchingValue) error {
+	return s.c.Replace(ctx, URIHideFastUserSwitching, client.Int(int64(value)))
 }
 
 // DeleteHideFastUserSwitching deletes ./Device/Vendor/MSFT/Policy/Config/WindowsLogon/HideFastUserSwitching.
@@ -357,12 +359,13 @@ func (s *WindowsLogon) DeleteHideFastUserSwitching(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.22621.2338 (CSP v11.0).
-func (s *WindowsLogon) GetOverrideShellProgram(ctx context.Context) (int64, error) {
+func (s *WindowsLogon) GetOverrideShellProgram(ctx context.Context) (OverrideShellProgramValue, error) {
 	v, err := s.c.Get(ctx, URIOverrideShellProgram)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return OverrideShellProgramValue(n), err
 }
 
 // CreateOverrideShellProgram creates ./Device/Vendor/MSFT/Policy/Config/WindowsLogon/OverrideShellProgram.
@@ -378,8 +381,8 @@ func (s *WindowsLogon) GetOverrideShellProgram(ctx context.Context) (int64, erro
 //
 // Default: 0.
 // Supported from OS build 10.0.22621.2338 (CSP v11.0).
-func (s *WindowsLogon) CreateOverrideShellProgram(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIOverrideShellProgram, client.Int(value))
+func (s *WindowsLogon) CreateOverrideShellProgram(ctx context.Context, value OverrideShellProgramValue) error {
+	return s.c.Add(ctx, URIOverrideShellProgram, client.Int(int64(value)))
 }
 
 // UpdateOverrideShellProgram updates ./Device/Vendor/MSFT/Policy/Config/WindowsLogon/OverrideShellProgram.
@@ -395,8 +398,8 @@ func (s *WindowsLogon) CreateOverrideShellProgram(ctx context.Context, value int
 //
 // Default: 0.
 // Supported from OS build 10.0.22621.2338 (CSP v11.0).
-func (s *WindowsLogon) UpdateOverrideShellProgram(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIOverrideShellProgram, client.Int(value))
+func (s *WindowsLogon) UpdateOverrideShellProgram(ctx context.Context, value OverrideShellProgramValue) error {
+	return s.c.Replace(ctx, URIOverrideShellProgram, client.Int(int64(value)))
 }
 
 // DeleteOverrideShellProgram deletes ./Device/Vendor/MSFT/Policy/Config/WindowsLogon/OverrideShellProgram.

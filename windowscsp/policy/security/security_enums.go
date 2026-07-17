@@ -2,99 +2,272 @@
 
 package security
 
-// AllowAddProvisioningPackage allowed values.
-const (
-	// Not allowed.
-	AllowAddProvisioningPackageNotAllowed int64 = 0
-	// Allowed.
-	AllowAddProvisioningPackageAllowed int64 = 1
+import (
+	"fmt"
 )
 
-// AllowManualRootCertificateInstallation allowed values.
+// AllowAddProvisioningPackageValue — allowed values for the AllowAddProvisioningPackage node.
+type AllowAddProvisioningPackageValue int64
+
 const (
 	// Not allowed.
-	AllowManualRootCertificateInstallationNotAllowed int64 = 0
+	AllowAddProvisioningPackageNotAllowed AllowAddProvisioningPackageValue = 0
 	// Allowed.
-	AllowManualRootCertificateInstallationAllowed int64 = 1
+	AllowAddProvisioningPackageAllowed AllowAddProvisioningPackageValue = 1
 )
 
-// AllowRemoveProvisioningPackage allowed values.
+// String returns the AllowAddProvisioningPackageValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowAddProvisioningPackageValue) String() string {
+	switch e {
+	case AllowAddProvisioningPackageNotAllowed:
+		return "AllowAddProvisioningPackageNotAllowed"
+	case AllowAddProvisioningPackageAllowed:
+		return "AllowAddProvisioningPackageAllowed"
+	default:
+		return fmt.Sprintf("AllowAddProvisioningPackageValue(%d)", int64(e))
+	}
+}
+
+// AllowManualRootCertificateInstallationValue — allowed values for the AllowManualRootCertificateInstallation node.
+type AllowManualRootCertificateInstallationValue int64
+
 const (
 	// Not allowed.
-	AllowRemoveProvisioningPackageNotAllowed int64 = 0
+	AllowManualRootCertificateInstallationNotAllowed AllowManualRootCertificateInstallationValue = 0
 	// Allowed.
-	AllowRemoveProvisioningPackageAllowed int64 = 1
+	AllowManualRootCertificateInstallationAllowed AllowManualRootCertificateInstallationValue = 1
 )
 
-// AntiTheftMode allowed values.
+// String returns the AllowManualRootCertificateInstallationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowManualRootCertificateInstallationValue) String() string {
+	switch e {
+	case AllowManualRootCertificateInstallationNotAllowed:
+		return "AllowManualRootCertificateInstallationNotAllowed"
+	case AllowManualRootCertificateInstallationAllowed:
+		return "AllowManualRootCertificateInstallationAllowed"
+	default:
+		return fmt.Sprintf("AllowManualRootCertificateInstallationValue(%d)", int64(e))
+	}
+}
+
+// AllowRemoveProvisioningPackageValue — allowed values for the AllowRemoveProvisioningPackage node.
+type AllowRemoveProvisioningPackageValue int64
+
+const (
+	// Not allowed.
+	AllowRemoveProvisioningPackageNotAllowed AllowRemoveProvisioningPackageValue = 0
+	// Allowed.
+	AllowRemoveProvisioningPackageAllowed AllowRemoveProvisioningPackageValue = 1
+)
+
+// String returns the AllowRemoveProvisioningPackageValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowRemoveProvisioningPackageValue) String() string {
+	switch e {
+	case AllowRemoveProvisioningPackageNotAllowed:
+		return "AllowRemoveProvisioningPackageNotAllowed"
+	case AllowRemoveProvisioningPackageAllowed:
+		return "AllowRemoveProvisioningPackageAllowed"
+	default:
+		return fmt.Sprintf("AllowRemoveProvisioningPackageValue(%d)", int64(e))
+	}
+}
+
+// AntiTheftModeValue — allowed values for the AntiTheftMode node.
+type AntiTheftModeValue int64
+
 const (
 	// Disabled.
-	AntiTheftModeDisabled int64 = 0
+	AntiTheftModeDisabled AntiTheftModeValue = 0
 	// Enabled.
-	AntiTheftModeEnabled int64 = 1
+	AntiTheftModeEnabled AntiTheftModeValue = 1
 )
 
-// ClearTPMIfNotReady allowed values.
+// String returns the AntiTheftModeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AntiTheftModeValue) String() string {
+	switch e {
+	case AntiTheftModeDisabled:
+		return "AntiTheftModeDisabled"
+	case AntiTheftModeEnabled:
+		return "AntiTheftModeEnabled"
+	default:
+		return fmt.Sprintf("AntiTheftModeValue(%d)", int64(e))
+	}
+}
+
+// ClearTPMIfNotReadyValue — allowed values for the ClearTPMIfNotReady node.
+type ClearTPMIfNotReadyValue int64
+
 const (
 	// Will not force recovery from a non-ready TPM state.
-	ClearTPMIfNotReadyWillNotForceRecoveryFromA int64 = 0
+	ClearTPMIfNotReadyWillNotForceRecoveryFromA ClearTPMIfNotReadyValue = 0
 	// Will prompt to clear the TPM if the TPM is in a non-ready state (or reduced functionality) which
 	// can be remediated with a TPM Clear.
-	ClearTPMIfNotReadyWillPromptToClearTheTPM int64 = 1
+	ClearTPMIfNotReadyWillPromptToClearTheTPM ClearTPMIfNotReadyValue = 1
 )
 
-// ConfigureWindowsPasswords allowed values.
+// String returns the ClearTPMIfNotReadyValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ClearTPMIfNotReadyValue) String() string {
+	switch e {
+	case ClearTPMIfNotReadyWillNotForceRecoveryFromA:
+		return "ClearTPMIfNotReadyWillNotForceRecoveryFromA"
+	case ClearTPMIfNotReadyWillPromptToClearTheTPM:
+		return "ClearTPMIfNotReadyWillPromptToClearTheTPM"
+	default:
+		return fmt.Sprintf("ClearTPMIfNotReadyValue(%d)", int64(e))
+	}
+}
+
+// ConfigureWindowsPasswordsValue — allowed values for the ConfigureWindowsPasswords node.
+type ConfigureWindowsPasswordsValue int64
+
 const (
 	// -Disallow passwords (Asymmetric credentials will be promoted to replace passwords on Windows
 	// features)
-	ConfigureWindowsPasswordsDisallowPasswords int64 = 0
+	ConfigureWindowsPasswordsDisallowPasswords ConfigureWindowsPasswordsValue = 0
 	// Allow passwords (Passwords continue to be allowed to be used for Windows features)
-	ConfigureWindowsPasswordsAllowPasswords int64 = 1
+	ConfigureWindowsPasswordsAllowPasswords ConfigureWindowsPasswordsValue = 1
 	// as per SKU and device capabilities. Windows 10 S devices will exhibit "Disallow passwords"
 	// default, and all other devices will default to "Allow passwords")
-	ConfigureWindowsPasswordsAsPerSKUAndDeviceCapabilities int64 = 2
+	ConfigureWindowsPasswordsAsPerSKUAndDeviceCapabilities ConfigureWindowsPasswordsValue = 2
 )
 
-// PreventAutomaticDeviceEncryptionForAzureADJoinedDevices allowed values.
+// String returns the ConfigureWindowsPasswordsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureWindowsPasswordsValue) String() string {
+	switch e {
+	case ConfigureWindowsPasswordsDisallowPasswords:
+		return "ConfigureWindowsPasswordsDisallowPasswords"
+	case ConfigureWindowsPasswordsAllowPasswords:
+		return "ConfigureWindowsPasswordsAllowPasswords"
+	case ConfigureWindowsPasswordsAsPerSKUAndDeviceCapabilities:
+		return "ConfigureWindowsPasswordsAsPerSKUAndDeviceCapabilities"
+	default:
+		return fmt.Sprintf("ConfigureWindowsPasswordsValue(%d)", int64(e))
+	}
+}
+
+// PreventAutomaticDeviceEncryptionForAzureADJoinedDevicesValue — allowed values for the PreventAutomaticDeviceEncryptionForAzureADJoinedDevices node.
+type PreventAutomaticDeviceEncryptionForAzureADJoinedDevicesValue int64
+
 const (
 	// Encryption enabled.
-	PreventAutomaticDeviceEncryptionForAzureADJoinedDevicesEncryptionEnabled int64 = 0
+	PreventAutomaticDeviceEncryptionForAzureADJoinedDevicesEncryptionEnabled PreventAutomaticDeviceEncryptionForAzureADJoinedDevicesValue = 0
 	// Encryption disabled.
-	PreventAutomaticDeviceEncryptionForAzureADJoinedDevicesEncryptionDisabled int64 = 1
+	PreventAutomaticDeviceEncryptionForAzureADJoinedDevicesEncryptionDisabled PreventAutomaticDeviceEncryptionForAzureADJoinedDevicesValue = 1
 )
 
-// RecoveryEnvironmentAuthentication allowed values.
+// String returns the PreventAutomaticDeviceEncryptionForAzureADJoinedDevicesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PreventAutomaticDeviceEncryptionForAzureADJoinedDevicesValue) String() string {
+	switch e {
+	case PreventAutomaticDeviceEncryptionForAzureADJoinedDevicesEncryptionEnabled:
+		return "PreventAutomaticDeviceEncryptionForAzureADJoinedDevicesEncryptionEnabled"
+	case PreventAutomaticDeviceEncryptionForAzureADJoinedDevicesEncryptionDisabled:
+		return "PreventAutomaticDeviceEncryptionForAzureADJoinedDevicesEncryptionDisabled"
+	default:
+		return fmt.Sprintf("PreventAutomaticDeviceEncryptionForAzureADJoinedDevicesValue(%d)", int64(e))
+	}
+}
+
+// RecoveryEnvironmentAuthenticationValue — allowed values for the RecoveryEnvironmentAuthentication node.
+type RecoveryEnvironmentAuthenticationValue int64
+
 const (
 	// current) behavior
-	RecoveryEnvironmentAuthenticationCurrentBehavior int64 = 0
+	RecoveryEnvironmentAuthenticationCurrentBehavior RecoveryEnvironmentAuthenticationValue = 0
 	// RequireAuthentication: Admin Authentication is always required for components in
 	// RecoveryEnvironment
-	RecoveryEnvironmentAuthenticationRequireAuthentication int64 = 1
+	RecoveryEnvironmentAuthenticationRequireAuthentication RecoveryEnvironmentAuthenticationValue = 1
 	// NoRequireAuthentication: Admin Authentication is not required for components in
 	// RecoveryEnvironment
-	RecoveryEnvironmentAuthenticationNoRequireAuthentication int64 = 2
+	RecoveryEnvironmentAuthenticationNoRequireAuthentication RecoveryEnvironmentAuthenticationValue = 2
 )
 
-// RequireDeviceEncryption allowed values.
+// String returns the RecoveryEnvironmentAuthenticationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e RecoveryEnvironmentAuthenticationValue) String() string {
+	switch e {
+	case RecoveryEnvironmentAuthenticationCurrentBehavior:
+		return "RecoveryEnvironmentAuthenticationCurrentBehavior"
+	case RecoveryEnvironmentAuthenticationRequireAuthentication:
+		return "RecoveryEnvironmentAuthenticationRequireAuthentication"
+	case RecoveryEnvironmentAuthenticationNoRequireAuthentication:
+		return "RecoveryEnvironmentAuthenticationNoRequireAuthentication"
+	default:
+		return fmt.Sprintf("RecoveryEnvironmentAuthenticationValue(%d)", int64(e))
+	}
+}
+
+// RequireDeviceEncryptionValue — allowed values for the RequireDeviceEncryption node.
+type RequireDeviceEncryptionValue int64
+
 const (
 	// Encryption is not required.
-	RequireDeviceEncryptionEncryptionIsNotRequired int64 = 0
+	RequireDeviceEncryptionEncryptionIsNotRequired RequireDeviceEncryptionValue = 0
 	// Encryption is required.
-	RequireDeviceEncryptionEncryptionIsRequired int64 = 1
+	RequireDeviceEncryptionEncryptionIsRequired RequireDeviceEncryptionValue = 1
 )
 
-// RequireProvisioningPackageSignature allowed values.
+// String returns the RequireDeviceEncryptionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e RequireDeviceEncryptionValue) String() string {
+	switch e {
+	case RequireDeviceEncryptionEncryptionIsNotRequired:
+		return "RequireDeviceEncryptionEncryptionIsNotRequired"
+	case RequireDeviceEncryptionEncryptionIsRequired:
+		return "RequireDeviceEncryptionEncryptionIsRequired"
+	default:
+		return fmt.Sprintf("RequireDeviceEncryptionValue(%d)", int64(e))
+	}
+}
+
+// RequireProvisioningPackageSignatureValue — allowed values for the RequireProvisioningPackageSignature node.
+type RequireProvisioningPackageSignatureValue int64
+
 const (
 	// Not required.
-	RequireProvisioningPackageSignatureNotRequired int64 = 0
+	RequireProvisioningPackageSignatureNotRequired RequireProvisioningPackageSignatureValue = 0
 	// Required.
-	RequireProvisioningPackageSignatureRequired int64 = 1
+	RequireProvisioningPackageSignatureRequired RequireProvisioningPackageSignatureValue = 1
 )
 
-// RequireRetrieveHealthCertificateOnBoot allowed values.
+// String returns the RequireProvisioningPackageSignatureValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e RequireProvisioningPackageSignatureValue) String() string {
+	switch e {
+	case RequireProvisioningPackageSignatureNotRequired:
+		return "RequireProvisioningPackageSignatureNotRequired"
+	case RequireProvisioningPackageSignatureRequired:
+		return "RequireProvisioningPackageSignatureRequired"
+	default:
+		return fmt.Sprintf("RequireProvisioningPackageSignatureValue(%d)", int64(e))
+	}
+}
+
+// RequireRetrieveHealthCertificateOnBootValue — allowed values for the RequireRetrieveHealthCertificateOnBoot node.
+type RequireRetrieveHealthCertificateOnBootValue int64
+
 const (
 	// Not required.
-	RequireRetrieveHealthCertificateOnBootNotRequired int64 = 0
+	RequireRetrieveHealthCertificateOnBootNotRequired RequireRetrieveHealthCertificateOnBootValue = 0
 	// Required.
-	RequireRetrieveHealthCertificateOnBootRequired int64 = 1
+	RequireRetrieveHealthCertificateOnBootRequired RequireRetrieveHealthCertificateOnBootValue = 1
 )
+
+// String returns the RequireRetrieveHealthCertificateOnBootValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e RequireRetrieveHealthCertificateOnBootValue) String() string {
+	switch e {
+	case RequireRetrieveHealthCertificateOnBootNotRequired:
+		return "RequireRetrieveHealthCertificateOnBootNotRequired"
+	case RequireRetrieveHealthCertificateOnBootRequired:
+		return "RequireRetrieveHealthCertificateOnBootRequired"
+	default:
+		return fmt.Sprintf("RequireRetrieveHealthCertificateOnBootValue(%d)", int64(e))
+	}
+}

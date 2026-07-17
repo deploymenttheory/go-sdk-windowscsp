@@ -2,178 +2,255 @@
 
 package vpnv2
 
-// ProfileNameDataEncryption allowed values.
+// ProfileNameDataEncryptionValue — allowed values for the DataEncryption node.
+type ProfileNameDataEncryptionValue string
+
 const (
 	// No Data Encryption required.
-	ProfileNameDataEncryptionNoDataEncryptionRequired = "None"
+	ProfileNameDataEncryptionNoDataEncryptionRequired ProfileNameDataEncryptionValue = "None"
 	// Data Encryption required.
-	ProfileNameDataEncryptionDataEncryptionRequired = "Require"
+	ProfileNameDataEncryptionDataEncryptionRequired ProfileNameDataEncryptionValue = "Require"
 	// Maximum-strength Data Encryption required.
-	ProfileNameDataEncryptionMaximumStrengthDataEncryptionRequired = "Max"
+	ProfileNameDataEncryptionMaximumStrengthDataEncryptionRequired ProfileNameDataEncryptionValue = "Max"
 	// Perform encryption if possible.
-	ProfileNameDataEncryptionPerformEncryptionIfPossible = "Optional"
+	ProfileNameDataEncryptionPerformEncryptionIfPossible ProfileNameDataEncryptionValue = "Optional"
 )
 
-// ProfileNameNativeProfileAuthenticationMachineMethod allowed values.
+// String returns the ProfileNameDataEncryptionValue value as a plain string.
+func (e ProfileNameDataEncryptionValue) String() string { return string(e) }
+
+// ProfileNameNativeProfileAuthenticationMachineMethodValue — allowed values for the MachineMethod node.
+type ProfileNameNativeProfileAuthenticationMachineMethodValue string
+
 const (
 	// Certificate
-	ProfileNameNativeProfileAuthenticationMachineMethodCertificate = "Certificate"
+	ProfileNameNativeProfileAuthenticationMachineMethodCertificate ProfileNameNativeProfileAuthenticationMachineMethodValue = "Certificate"
 )
 
-// ProfileNameNativeProfileAuthenticationUserMethod allowed values.
+// String returns the ProfileNameNativeProfileAuthenticationMachineMethodValue value as a plain string.
+func (e ProfileNameNativeProfileAuthenticationMachineMethodValue) String() string { return string(e) }
+
+// ProfileNameNativeProfileAuthenticationUserMethodValue — allowed values for the UserMethod node.
+type ProfileNameNativeProfileAuthenticationUserMethodValue string
+
 const (
 	// EAP
-	ProfileNameNativeProfileAuthenticationUserMethodEAP = "EAP"
+	ProfileNameNativeProfileAuthenticationUserMethodEAP ProfileNameNativeProfileAuthenticationUserMethodValue = "EAP"
 	// MSChapv2: This is not supported for IKEv2
-	ProfileNameNativeProfileAuthenticationUserMethodMSChapv2 = "MSChapv2"
+	ProfileNameNativeProfileAuthenticationUserMethodMSChapv2 ProfileNameNativeProfileAuthenticationUserMethodValue = "MSChapv2"
 )
 
-// ProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstants allowed values.
+// String returns the ProfileNameNativeProfileAuthenticationUserMethodValue value as a plain string.
+func (e ProfileNameNativeProfileAuthenticationUserMethodValue) String() string { return string(e) }
+
+// ProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstantsValue — allowed values for the AuthenticationTransformConstants node.
+type ProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstantsValue string
+
 const (
 	// MD596
-	ProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstantsMD596 = "MD596"
+	ProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstantsMD596 ProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstantsValue = "MD596"
 	// SHA196
-	ProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstantsSHA196 = "SHA196"
+	ProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstantsSHA196 ProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstantsValue = "SHA196"
 	// SHA256128
-	ProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstantsSHA256128 = "SHA256128"
+	ProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstantsSHA256128 ProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstantsValue = "SHA256128"
 	// GCMAES128
-	ProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstantsGCMAES128 = "GCMAES128"
+	ProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstantsGCMAES128 ProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstantsValue = "GCMAES128"
 	// GCMAES192
-	ProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstantsGCMAES192 = "GCMAES192"
+	ProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstantsGCMAES192 ProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstantsValue = "GCMAES192"
 	// GCMAES256
-	ProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstantsGCMAES256 = "GCMAES256"
+	ProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstantsGCMAES256 ProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstantsValue = "GCMAES256"
 )
 
-// ProfileNameNativeProfileCryptographySuiteCipherTransformConstants allowed values.
+// String returns the ProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstantsValue value as a plain string.
+func (e ProfileNameNativeProfileCryptographySuiteAuthenticationTransformConstantsValue) String() string {
+	return string(e)
+}
+
+// ProfileNameNativeProfileCryptographySuiteCipherTransformConstantsValue — allowed values for the CipherTransformConstants node.
+type ProfileNameNativeProfileCryptographySuiteCipherTransformConstantsValue string
+
 const (
 	// DES
-	ProfileNameNativeProfileCryptographySuiteCipherTransformConstantsDES = "DES"
+	ProfileNameNativeProfileCryptographySuiteCipherTransformConstantsDES ProfileNameNativeProfileCryptographySuiteCipherTransformConstantsValue = "DES"
 	// DES3
-	ProfileNameNativeProfileCryptographySuiteCipherTransformConstantsDES3 = "DES3"
+	ProfileNameNativeProfileCryptographySuiteCipherTransformConstantsDES3 ProfileNameNativeProfileCryptographySuiteCipherTransformConstantsValue = "DES3"
 	// AES128
-	ProfileNameNativeProfileCryptographySuiteCipherTransformConstantsAES128 = "AES128"
+	ProfileNameNativeProfileCryptographySuiteCipherTransformConstantsAES128 ProfileNameNativeProfileCryptographySuiteCipherTransformConstantsValue = "AES128"
 	// AES192
-	ProfileNameNativeProfileCryptographySuiteCipherTransformConstantsAES192 = "AES192"
+	ProfileNameNativeProfileCryptographySuiteCipherTransformConstantsAES192 ProfileNameNativeProfileCryptographySuiteCipherTransformConstantsValue = "AES192"
 	// AES256
-	ProfileNameNativeProfileCryptographySuiteCipherTransformConstantsAES256 = "AES256"
+	ProfileNameNativeProfileCryptographySuiteCipherTransformConstantsAES256 ProfileNameNativeProfileCryptographySuiteCipherTransformConstantsValue = "AES256"
 	// GCMAES128
-	ProfileNameNativeProfileCryptographySuiteCipherTransformConstantsGCMAES128 = "GCMAES128"
+	ProfileNameNativeProfileCryptographySuiteCipherTransformConstantsGCMAES128 ProfileNameNativeProfileCryptographySuiteCipherTransformConstantsValue = "GCMAES128"
 	// GCMAES192
-	ProfileNameNativeProfileCryptographySuiteCipherTransformConstantsGCMAES192 = "GCMAES192"
+	ProfileNameNativeProfileCryptographySuiteCipherTransformConstantsGCMAES192 ProfileNameNativeProfileCryptographySuiteCipherTransformConstantsValue = "GCMAES192"
 	// GCMAES256
-	ProfileNameNativeProfileCryptographySuiteCipherTransformConstantsGCMAES256 = "GCMAES256"
+	ProfileNameNativeProfileCryptographySuiteCipherTransformConstantsGCMAES256 ProfileNameNativeProfileCryptographySuiteCipherTransformConstantsValue = "GCMAES256"
 )
 
-// ProfileNameNativeProfileCryptographySuiteDHGroup allowed values.
+// String returns the ProfileNameNativeProfileCryptographySuiteCipherTransformConstantsValue value as a plain string.
+func (e ProfileNameNativeProfileCryptographySuiteCipherTransformConstantsValue) String() string {
+	return string(e)
+}
+
+// ProfileNameNativeProfileCryptographySuiteDHGroupValue — allowed values for the DHGroup node.
+type ProfileNameNativeProfileCryptographySuiteDHGroupValue string
+
 const (
 	// None
-	ProfileNameNativeProfileCryptographySuiteDHGroupNone = "None"
+	ProfileNameNativeProfileCryptographySuiteDHGroupNone ProfileNameNativeProfileCryptographySuiteDHGroupValue = "None"
 	// Group1
-	ProfileNameNativeProfileCryptographySuiteDHGroupGroup1 = "Group1"
+	ProfileNameNativeProfileCryptographySuiteDHGroupGroup1 ProfileNameNativeProfileCryptographySuiteDHGroupValue = "Group1"
 	// Group2
-	ProfileNameNativeProfileCryptographySuiteDHGroupGroup2 = "Group2"
+	ProfileNameNativeProfileCryptographySuiteDHGroupGroup2 ProfileNameNativeProfileCryptographySuiteDHGroupValue = "Group2"
 	// Group14
-	ProfileNameNativeProfileCryptographySuiteDHGroupGroup14 = "Group14"
+	ProfileNameNativeProfileCryptographySuiteDHGroupGroup14 ProfileNameNativeProfileCryptographySuiteDHGroupValue = "Group14"
 	// ECP256
-	ProfileNameNativeProfileCryptographySuiteDHGroupECP256 = "ECP256"
+	ProfileNameNativeProfileCryptographySuiteDHGroupECP256 ProfileNameNativeProfileCryptographySuiteDHGroupValue = "ECP256"
 	// ECP384
-	ProfileNameNativeProfileCryptographySuiteDHGroupECP384 = "ECP384"
+	ProfileNameNativeProfileCryptographySuiteDHGroupECP384 ProfileNameNativeProfileCryptographySuiteDHGroupValue = "ECP384"
 	// Group24
-	ProfileNameNativeProfileCryptographySuiteDHGroupGroup24 = "Group24"
+	ProfileNameNativeProfileCryptographySuiteDHGroupGroup24 ProfileNameNativeProfileCryptographySuiteDHGroupValue = "Group24"
 )
 
-// ProfileNameNativeProfileCryptographySuiteEncryptionMethod allowed values.
+// String returns the ProfileNameNativeProfileCryptographySuiteDHGroupValue value as a plain string.
+func (e ProfileNameNativeProfileCryptographySuiteDHGroupValue) String() string { return string(e) }
+
+// ProfileNameNativeProfileCryptographySuiteEncryptionMethodValue — allowed values for the EncryptionMethod node.
+type ProfileNameNativeProfileCryptographySuiteEncryptionMethodValue string
+
 const (
 	// DES
-	ProfileNameNativeProfileCryptographySuiteEncryptionMethodDES = "DES"
+	ProfileNameNativeProfileCryptographySuiteEncryptionMethodDES ProfileNameNativeProfileCryptographySuiteEncryptionMethodValue = "DES"
 	// DES3
-	ProfileNameNativeProfileCryptographySuiteEncryptionMethodDES3 = "DES3"
+	ProfileNameNativeProfileCryptographySuiteEncryptionMethodDES3 ProfileNameNativeProfileCryptographySuiteEncryptionMethodValue = "DES3"
 	// AES128
-	ProfileNameNativeProfileCryptographySuiteEncryptionMethodAES128 = "AES128"
+	ProfileNameNativeProfileCryptographySuiteEncryptionMethodAES128 ProfileNameNativeProfileCryptographySuiteEncryptionMethodValue = "AES128"
 	// AES192
-	ProfileNameNativeProfileCryptographySuiteEncryptionMethodAES192 = "AES192"
+	ProfileNameNativeProfileCryptographySuiteEncryptionMethodAES192 ProfileNameNativeProfileCryptographySuiteEncryptionMethodValue = "AES192"
 	// AES256
-	ProfileNameNativeProfileCryptographySuiteEncryptionMethodAES256 = "AES256"
+	ProfileNameNativeProfileCryptographySuiteEncryptionMethodAES256 ProfileNameNativeProfileCryptographySuiteEncryptionMethodValue = "AES256"
 	// AES_GCM_128
-	ProfileNameNativeProfileCryptographySuiteEncryptionMethodAESGCM128 = "AES_GCM_128"
+	ProfileNameNativeProfileCryptographySuiteEncryptionMethodAESGCM128 ProfileNameNativeProfileCryptographySuiteEncryptionMethodValue = "AES_GCM_128"
 	// AES_GCM_256
-	ProfileNameNativeProfileCryptographySuiteEncryptionMethodAESGCM256 = "AES_GCM_256"
+	ProfileNameNativeProfileCryptographySuiteEncryptionMethodAESGCM256 ProfileNameNativeProfileCryptographySuiteEncryptionMethodValue = "AES_GCM_256"
 )
 
-// ProfileNameNativeProfileCryptographySuiteIntegrityCheckMethod allowed values.
+// String returns the ProfileNameNativeProfileCryptographySuiteEncryptionMethodValue value as a plain string.
+func (e ProfileNameNativeProfileCryptographySuiteEncryptionMethodValue) String() string {
+	return string(e)
+}
+
+// ProfileNameNativeProfileCryptographySuiteIntegrityCheckMethodValue — allowed values for the IntegrityCheckMethod node.
+type ProfileNameNativeProfileCryptographySuiteIntegrityCheckMethodValue string
+
 const (
 	// MD5
-	ProfileNameNativeProfileCryptographySuiteIntegrityCheckMethodMD5 = "MD5"
+	ProfileNameNativeProfileCryptographySuiteIntegrityCheckMethodMD5 ProfileNameNativeProfileCryptographySuiteIntegrityCheckMethodValue = "MD5"
 	// SHA196
-	ProfileNameNativeProfileCryptographySuiteIntegrityCheckMethodSHA196 = "SHA196"
+	ProfileNameNativeProfileCryptographySuiteIntegrityCheckMethodSHA196 ProfileNameNativeProfileCryptographySuiteIntegrityCheckMethodValue = "SHA196"
 	// SHA256
-	ProfileNameNativeProfileCryptographySuiteIntegrityCheckMethodSHA256 = "SHA256"
+	ProfileNameNativeProfileCryptographySuiteIntegrityCheckMethodSHA256 ProfileNameNativeProfileCryptographySuiteIntegrityCheckMethodValue = "SHA256"
 	// SHA384
-	ProfileNameNativeProfileCryptographySuiteIntegrityCheckMethodSHA384 = "SHA384"
+	ProfileNameNativeProfileCryptographySuiteIntegrityCheckMethodSHA384 ProfileNameNativeProfileCryptographySuiteIntegrityCheckMethodValue = "SHA384"
 )
 
-// ProfileNameNativeProfileCryptographySuitePfsGroup allowed values.
+// String returns the ProfileNameNativeProfileCryptographySuiteIntegrityCheckMethodValue value as a plain string.
+func (e ProfileNameNativeProfileCryptographySuiteIntegrityCheckMethodValue) String() string {
+	return string(e)
+}
+
+// ProfileNameNativeProfileCryptographySuitePfsGroupValue — allowed values for the PfsGroup node.
+type ProfileNameNativeProfileCryptographySuitePfsGroupValue string
+
 const (
 	// None
-	ProfileNameNativeProfileCryptographySuitePfsGroupNone = "None"
+	ProfileNameNativeProfileCryptographySuitePfsGroupNone ProfileNameNativeProfileCryptographySuitePfsGroupValue = "None"
 	// PFS1
-	ProfileNameNativeProfileCryptographySuitePfsGroupPFS1 = "PFS1"
+	ProfileNameNativeProfileCryptographySuitePfsGroupPFS1 ProfileNameNativeProfileCryptographySuitePfsGroupValue = "PFS1"
 	// PFS2
-	ProfileNameNativeProfileCryptographySuitePfsGroupPFS2 = "PFS2"
+	ProfileNameNativeProfileCryptographySuitePfsGroupPFS2 ProfileNameNativeProfileCryptographySuitePfsGroupValue = "PFS2"
 	// PFS2048
-	ProfileNameNativeProfileCryptographySuitePfsGroupPFS2048 = "PFS2048"
+	ProfileNameNativeProfileCryptographySuitePfsGroupPFS2048 ProfileNameNativeProfileCryptographySuitePfsGroupValue = "PFS2048"
 	// ECP256
-	ProfileNameNativeProfileCryptographySuitePfsGroupECP256 = "ECP256"
+	ProfileNameNativeProfileCryptographySuitePfsGroupECP256 ProfileNameNativeProfileCryptographySuitePfsGroupValue = "ECP256"
 	// ECP384
-	ProfileNameNativeProfileCryptographySuitePfsGroupECP384 = "ECP384"
+	ProfileNameNativeProfileCryptographySuitePfsGroupECP384 ProfileNameNativeProfileCryptographySuitePfsGroupValue = "ECP384"
 	// PFSMM
-	ProfileNameNativeProfileCryptographySuitePfsGroupPFSMM = "PFSMM"
+	ProfileNameNativeProfileCryptographySuitePfsGroupPFSMM ProfileNameNativeProfileCryptographySuitePfsGroupValue = "PFSMM"
 	// PFS24
-	ProfileNameNativeProfileCryptographySuitePfsGroupPFS24 = "PFS24"
+	ProfileNameNativeProfileCryptographySuitePfsGroupPFS24 ProfileNameNativeProfileCryptographySuitePfsGroupValue = "PFS24"
 )
 
-// ProfileNameNativeProfileNativeProtocolType allowed values.
+// String returns the ProfileNameNativeProfileCryptographySuitePfsGroupValue value as a plain string.
+func (e ProfileNameNativeProfileCryptographySuitePfsGroupValue) String() string { return string(e) }
+
+// ProfileNameNativeProfileNativeProtocolTypeValue — allowed values for the NativeProtocolType node.
+type ProfileNameNativeProfileNativeProtocolTypeValue string
+
 const (
 	// PPTP
-	ProfileNameNativeProfileNativeProtocolTypePPTP = "PPTP"
+	ProfileNameNativeProfileNativeProtocolTypePPTP ProfileNameNativeProfileNativeProtocolTypeValue = "PPTP"
 	// L2TP
-	ProfileNameNativeProfileNativeProtocolTypeL2TP = "L2TP"
+	ProfileNameNativeProfileNativeProtocolTypeL2TP ProfileNameNativeProfileNativeProtocolTypeValue = "L2TP"
 	// IKEv2
-	ProfileNameNativeProfileNativeProtocolTypeIKEv2 = "IKEv2"
+	ProfileNameNativeProfileNativeProtocolTypeIKEv2 ProfileNameNativeProfileNativeProtocolTypeValue = "IKEv2"
 	// Automatic
-	ProfileNameNativeProfileNativeProtocolTypeAutomatic = "Automatic"
+	ProfileNameNativeProfileNativeProtocolTypeAutomatic ProfileNameNativeProfileNativeProtocolTypeValue = "Automatic"
 	// SSTP
-	ProfileNameNativeProfileNativeProtocolTypeSSTP = "SSTP"
+	ProfileNameNativeProfileNativeProtocolTypeSSTP ProfileNameNativeProfileNativeProtocolTypeValue = "SSTP"
 	// ProtocolList
-	ProfileNameNativeProfileNativeProtocolTypeProtocolList = "ProtocolList"
+	ProfileNameNativeProfileNativeProtocolTypeProtocolList ProfileNameNativeProfileNativeProtocolTypeValue = "ProtocolList"
 )
 
-// ProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdType allowed values.
+// String returns the ProfileNameNativeProfileNativeProtocolTypeValue value as a plain string.
+func (e ProfileNameNativeProfileNativeProtocolTypeValue) String() string { return string(e) }
+
+// ProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdTypeValue — allowed values for the Type node.
+type ProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdTypeValue string
+
 const (
 	// Pptp
-	ProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdTypePptp = "Pptp"
+	ProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdTypePptp ProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdTypeValue = "Pptp"
 	// L2tp
-	ProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdTypeL2tp = "L2tp"
+	ProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdTypeL2tp ProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdTypeValue = "L2tp"
 	// Ikev2
-	ProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdTypeIkev2 = "Ikev2"
+	ProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdTypeIkev2 ProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdTypeValue = "Ikev2"
 	// Sstp
-	ProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdTypeSstp = "Sstp"
+	ProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdTypeSstp ProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdTypeValue = "Sstp"
 )
 
-// ProfileNameNativeProfileRoutingPolicyType allowed values.
+// String returns the ProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdTypeValue value as a plain string.
+func (e ProfileNameNativeProfileProtocolListNativeProtocolListNativeProtocolRowIdTypeValue) String() string {
+	return string(e)
+}
+
+// ProfileNameNativeProfileRoutingPolicyTypeValue — allowed values for the RoutingPolicyType node.
+type ProfileNameNativeProfileRoutingPolicyTypeValue string
+
 const (
 	// Traffic can go over any interface as determined by the networking stack.
-	ProfileNameNativeProfileRoutingPolicyTypeTrafficCanGoOverAnyInterface = "SplitTunnel"
+	ProfileNameNativeProfileRoutingPolicyTypeTrafficCanGoOverAnyInterface ProfileNameNativeProfileRoutingPolicyTypeValue = "SplitTunnel"
 	// All IP traffic must go over the VPN interface.
-	ProfileNameNativeProfileRoutingPolicyTypeAllIPTrafficMustGoOver = "ForceTunnel"
+	ProfileNameNativeProfileRoutingPolicyTypeAllIPTrafficMustGoOver ProfileNameNativeProfileRoutingPolicyTypeValue = "ForceTunnel"
 )
 
-// ProfileNameTrafficFilterListTrafficFilterIdRoutingPolicyType allowed values.
+// String returns the ProfileNameNativeProfileRoutingPolicyTypeValue value as a plain string.
+func (e ProfileNameNativeProfileRoutingPolicyTypeValue) String() string { return string(e) }
+
+// ProfileNameTrafficFilterListTrafficFilterIdRoutingPolicyTypeValue — allowed values for the RoutingPolicyType node.
+type ProfileNameTrafficFilterListTrafficFilterIdRoutingPolicyTypeValue string
+
 const (
 	// For this traffic filter rule, only the traffic meant for the VPN interface (as determined by the
 	// networking stack) goes over the interface. Internet traffic can continue to go over the other
 	// interfaces.
-	ProfileNameTrafficFilterListTrafficFilterIdRoutingPolicyTypeForThisTrafficFilterRuleOnly = "SplitTunnel"
+	ProfileNameTrafficFilterListTrafficFilterIdRoutingPolicyTypeForThisTrafficFilterRuleOnly ProfileNameTrafficFilterListTrafficFilterIdRoutingPolicyTypeValue = "SplitTunnel"
 	// For this traffic rule all IP traffic must go through the VPN Interface only.
-	ProfileNameTrafficFilterListTrafficFilterIdRoutingPolicyTypeForThisTrafficRuleAllIP = "ForceTunnel"
+	ProfileNameTrafficFilterListTrafficFilterIdRoutingPolicyTypeForThisTrafficRuleAllIP ProfileNameTrafficFilterListTrafficFilterIdRoutingPolicyTypeValue = "ForceTunnel"
 )
+
+// String returns the ProfileNameTrafficFilterListTrafficFilterIdRoutingPolicyTypeValue value as a plain string.
+func (e ProfileNameTrafficFilterListTrafficFilterIdRoutingPolicyTypeValue) String() string {
+	return string(e)
+}

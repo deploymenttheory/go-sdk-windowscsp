@@ -2,189 +2,529 @@
 
 package mixedreality
 
-// AllowCaptivePortalBeforeLogon allowed values.
+import (
+	"fmt"
+)
+
+// AllowCaptivePortalBeforeLogonValue — allowed values for the AllowCaptivePortalBeforeLogon node.
+type AllowCaptivePortalBeforeLogonValue int64
+
 const (
 	// Displaying captive portal is not allowed.
-	AllowCaptivePortalBeforeLogonDisplayingCaptivePortalIsNotAllowed int64 = 0
+	AllowCaptivePortalBeforeLogonDisplayingCaptivePortalIsNotAllowed AllowCaptivePortalBeforeLogonValue = 0
 	// Displaying captive portal is allowed.
-	AllowCaptivePortalBeforeLogonDisplayingCaptivePortalIsAllowed int64 = 1
+	AllowCaptivePortalBeforeLogonDisplayingCaptivePortalIsAllowed AllowCaptivePortalBeforeLogonValue = 1
 )
 
-// AllowLaunchUriInSingleAppKiosk allowed values.
+// String returns the AllowCaptivePortalBeforeLogonValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowCaptivePortalBeforeLogonValue) String() string {
+	switch e {
+	case AllowCaptivePortalBeforeLogonDisplayingCaptivePortalIsNotAllowed:
+		return "AllowCaptivePortalBeforeLogonDisplayingCaptivePortalIsNotAllowed"
+	case AllowCaptivePortalBeforeLogonDisplayingCaptivePortalIsAllowed:
+		return "AllowCaptivePortalBeforeLogonDisplayingCaptivePortalIsAllowed"
+	default:
+		return fmt.Sprintf("AllowCaptivePortalBeforeLogonValue(%d)", int64(e))
+	}
+}
+
+// AllowLaunchUriInSingleAppKioskValue — allowed values for the AllowLaunchUriInSingleAppKiosk node.
+type AllowLaunchUriInSingleAppKioskValue int64
+
 const (
 	// Applications are not allowed to be launched with Launcher API, when in single app kiosk mode.
-	AllowLaunchUriInSingleAppKioskApplicationsAreNotAllowedToBe int64 = 0
+	AllowLaunchUriInSingleAppKioskApplicationsAreNotAllowedToBe AllowLaunchUriInSingleAppKioskValue = 0
 	// Applications are allowed to be launched with Launcher API, when in single app kiosk mode.
-	AllowLaunchUriInSingleAppKioskApplicationsAreAllowedToBeLaunched int64 = 1
+	AllowLaunchUriInSingleAppKioskApplicationsAreAllowedToBeLaunched AllowLaunchUriInSingleAppKioskValue = 1
 )
 
-// AutoUnlock allowed values.
+// String returns the AllowLaunchUriInSingleAppKioskValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowLaunchUriInSingleAppKioskValue) String() string {
+	switch e {
+	case AllowLaunchUriInSingleAppKioskApplicationsAreNotAllowedToBe:
+		return "AllowLaunchUriInSingleAppKioskApplicationsAreNotAllowedToBe"
+	case AllowLaunchUriInSingleAppKioskApplicationsAreAllowedToBeLaunched:
+		return "AllowLaunchUriInSingleAppKioskApplicationsAreAllowedToBeLaunched"
+	default:
+		return fmt.Sprintf("AllowLaunchUriInSingleAppKioskValue(%d)", int64(e))
+	}
+}
+
+// AutoUnlockValue — allowed values for the AutoUnlock node.
+type AutoUnlockValue int64
+
 const (
 	// User will be prompted for credentials.
-	AutoUnlockUserWillBePromptedForCredentials int64 = 0
+	AutoUnlockUserWillBePromptedForCredentials AutoUnlockValue = 0
 	// User will not be prompted for credentials.
-	AutoUnlockUserWillNotBePromptedFor int64 = 1
+	AutoUnlockUserWillNotBePromptedFor AutoUnlockValue = 1
 )
 
-// AutomaticDisplayAdjustment allowed values.
+// String returns the AutoUnlockValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AutoUnlockValue) String() string {
+	switch e {
+	case AutoUnlockUserWillBePromptedForCredentials:
+		return "AutoUnlockUserWillBePromptedForCredentials"
+	case AutoUnlockUserWillNotBePromptedFor:
+		return "AutoUnlockUserWillNotBePromptedFor"
+	default:
+		return fmt.Sprintf("AutoUnlockValue(%d)", int64(e))
+	}
+}
+
+// AutomaticDisplayAdjustmentValue — allowed values for the AutomaticDisplayAdjustment node.
+type AutomaticDisplayAdjustmentValue int64
+
 const (
 	// Disabled.
-	AutomaticDisplayAdjustmentDisabled int64 = 0
+	AutomaticDisplayAdjustmentDisabled AutomaticDisplayAdjustmentValue = 0
 	// Enabled.
-	AutomaticDisplayAdjustmentEnabled int64 = 1
+	AutomaticDisplayAdjustmentEnabled AutomaticDisplayAdjustmentValue = 1
 )
 
-// BrightnessButtonDisabled allowed values.
+// String returns the AutomaticDisplayAdjustmentValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AutomaticDisplayAdjustmentValue) String() string {
+	switch e {
+	case AutomaticDisplayAdjustmentDisabled:
+		return "AutomaticDisplayAdjustmentDisabled"
+	case AutomaticDisplayAdjustmentEnabled:
+		return "AutomaticDisplayAdjustmentEnabled"
+	default:
+		return fmt.Sprintf("AutomaticDisplayAdjustmentValue(%d)", int64(e))
+	}
+}
+
+// BrightnessButtonDisabledValue — allowed values for the BrightnessButtonDisabled node.
+type BrightnessButtonDisabledValue int64
+
 const (
 	// Brightness can be changed with press of brightness button.
-	BrightnessButtonDisabledBrightnessCanBeChangedWithPress int64 = 0
+	BrightnessButtonDisabledBrightnessCanBeChangedWithPress BrightnessButtonDisabledValue = 0
 	// Brightness cannot be changed with press of brightness button.
-	BrightnessButtonDisabledBrightnessCannotBeChangedWithPress int64 = 1
+	BrightnessButtonDisabledBrightnessCannotBeChangedWithPress BrightnessButtonDisabledValue = 1
 )
 
-// ConfigureDeviceStandbyAction allowed values.
+// String returns the BrightnessButtonDisabledValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e BrightnessButtonDisabledValue) String() string {
+	switch e {
+	case BrightnessButtonDisabledBrightnessCanBeChangedWithPress:
+		return "BrightnessButtonDisabledBrightnessCanBeChangedWithPress"
+	case BrightnessButtonDisabledBrightnessCannotBeChangedWithPress:
+		return "BrightnessButtonDisabledBrightnessCannotBeChangedWithPress"
+	default:
+		return fmt.Sprintf("BrightnessButtonDisabledValue(%d)", int64(e))
+	}
+}
+
+// ConfigureDeviceStandbyActionValue — allowed values for the ConfigureDeviceStandbyAction node.
+type ConfigureDeviceStandbyActionValue int64
+
 const (
 	// Not configured.
-	ConfigureDeviceStandbyActionNotConfigured int64 = 0
+	ConfigureDeviceStandbyActionNotConfigured ConfigureDeviceStandbyActionValue = 0
 	// Logoff users.
-	ConfigureDeviceStandbyActionLogoffUsers int64 = 1
+	ConfigureDeviceStandbyActionLogoffUsers ConfigureDeviceStandbyActionValue = 1
 	// Reboot device.
-	ConfigureDeviceStandbyActionRebootDevice int64 = 2
+	ConfigureDeviceStandbyActionRebootDevice ConfigureDeviceStandbyActionValue = 2
 )
 
-// ConfigureMovingPlatform allowed values.
+// String returns the ConfigureDeviceStandbyActionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureDeviceStandbyActionValue) String() string {
+	switch e {
+	case ConfigureDeviceStandbyActionNotConfigured:
+		return "ConfigureDeviceStandbyActionNotConfigured"
+	case ConfigureDeviceStandbyActionLogoffUsers:
+		return "ConfigureDeviceStandbyActionLogoffUsers"
+	case ConfigureDeviceStandbyActionRebootDevice:
+		return "ConfigureDeviceStandbyActionRebootDevice"
+	default:
+		return fmt.Sprintf("ConfigureDeviceStandbyActionValue(%d)", int64(e))
+	}
+}
+
+// ConfigureMovingPlatformValue — allowed values for the ConfigureMovingPlatform node.
+type ConfigureMovingPlatformValue int64
+
 const (
 	// Last set user's preference. Initial state is OFF and after that user's preference is persisted
 	// across reboots and is used to initialize the system.
-	ConfigureMovingPlatformLastSetUserSPreference int64 = 0
+	ConfigureMovingPlatformLastSetUserSPreference ConfigureMovingPlatformValue = 0
 	// Moving platform is disabled and cannot be changed by user.
-	ConfigureMovingPlatformMovingPlatformIsDisabledAndCannot int64 = 1
+	ConfigureMovingPlatformMovingPlatformIsDisabledAndCannot ConfigureMovingPlatformValue = 1
 	// Moving platform is enabled and cannot be changed by user.
-	ConfigureMovingPlatformMovingPlatformIsEnabledAndCannot int64 = 2
+	ConfigureMovingPlatformMovingPlatformIsEnabledAndCannot ConfigureMovingPlatformValue = 2
 )
 
-// DisallowNetworkConnectivityPassivePolling allowed values.
+// String returns the ConfigureMovingPlatformValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureMovingPlatformValue) String() string {
+	switch e {
+	case ConfigureMovingPlatformLastSetUserSPreference:
+		return "ConfigureMovingPlatformLastSetUserSPreference"
+	case ConfigureMovingPlatformMovingPlatformIsDisabledAndCannot:
+		return "ConfigureMovingPlatformMovingPlatformIsDisabledAndCannot"
+	case ConfigureMovingPlatformMovingPlatformIsEnabledAndCannot:
+		return "ConfigureMovingPlatformMovingPlatformIsEnabledAndCannot"
+	default:
+		return fmt.Sprintf("ConfigureMovingPlatformValue(%d)", int64(e))
+	}
+}
+
+// DisallowNetworkConnectivityPassivePollingValue — allowed values for the DisallowNetworkConnectivityPassivePolling node.
+type DisallowNetworkConnectivityPassivePollingValue int64
+
 const (
 	// Allowed.
-	DisallowNetworkConnectivityPassivePollingAllowed int64 = 0
+	DisallowNetworkConnectivityPassivePollingAllowed DisallowNetworkConnectivityPassivePollingValue = 0
 	// Not allowed.
-	DisallowNetworkConnectivityPassivePollingNotAllowed int64 = 1
+	DisallowNetworkConnectivityPassivePollingNotAllowed DisallowNetworkConnectivityPassivePollingValue = 1
 )
 
-// EnableStartMenuSingleHandGesture allowed values.
+// String returns the DisallowNetworkConnectivityPassivePollingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisallowNetworkConnectivityPassivePollingValue) String() string {
+	switch e {
+	case DisallowNetworkConnectivityPassivePollingAllowed:
+		return "DisallowNetworkConnectivityPassivePollingAllowed"
+	case DisallowNetworkConnectivityPassivePollingNotAllowed:
+		return "DisallowNetworkConnectivityPassivePollingNotAllowed"
+	default:
+		return fmt.Sprintf("DisallowNetworkConnectivityPassivePollingValue(%d)", int64(e))
+	}
+}
+
+// EnableStartMenuSingleHandGestureValue — allowed values for the EnableStartMenuSingleHandGesture node.
+type EnableStartMenuSingleHandGestureValue int64
+
 const (
 	// Don't allow pinching your thumb and index finger, while looking at the Start icon on your wrist,
 	// to open the Start menu.
-	EnableStartMenuSingleHandGestureDonTAllowPinchingYourThumbAnd int64 = 0
+	EnableStartMenuSingleHandGestureDonTAllowPinchingYourThumbAnd EnableStartMenuSingleHandGestureValue = 0
 	// Allow pinching your thumb and index finger, while looking at the Start icon on your wrist, to
 	// open the Start menu.
-	EnableStartMenuSingleHandGestureAllowPinchingYourThumbAndIndex int64 = 1
+	EnableStartMenuSingleHandGestureAllowPinchingYourThumbAndIndex EnableStartMenuSingleHandGestureValue = 1
 )
 
-// EnableStartMenuVoiceCommand allowed values.
+// String returns the EnableStartMenuSingleHandGestureValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableStartMenuSingleHandGestureValue) String() string {
+	switch e {
+	case EnableStartMenuSingleHandGestureDonTAllowPinchingYourThumbAnd:
+		return "EnableStartMenuSingleHandGestureDonTAllowPinchingYourThumbAnd"
+	case EnableStartMenuSingleHandGestureAllowPinchingYourThumbAndIndex:
+		return "EnableStartMenuSingleHandGestureAllowPinchingYourThumbAndIndex"
+	default:
+		return fmt.Sprintf("EnableStartMenuSingleHandGestureValue(%d)", int64(e))
+	}
+}
+
+// EnableStartMenuVoiceCommandValue — allowed values for the EnableStartMenuVoiceCommand node.
+type EnableStartMenuVoiceCommandValue int64
+
 const (
 	// Using voice commands to open the Start menu is disabled.
-	EnableStartMenuVoiceCommandUsingVoiceCommandsToOpenThe int64 = 0
+	EnableStartMenuVoiceCommandUsingVoiceCommandsToOpenThe EnableStartMenuVoiceCommandValue = 0
 	// Using voice commands to open the Start menu is enabled.
-	EnableStartMenuVoiceCommandUsingVoiceCommandsToOpenThe2 int64 = 1
+	EnableStartMenuVoiceCommandUsingVoiceCommandsToOpenThe2 EnableStartMenuVoiceCommandValue = 1
 )
 
-// EnableStartMenuWristTap allowed values.
+// String returns the EnableStartMenuVoiceCommandValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableStartMenuVoiceCommandValue) String() string {
+	switch e {
+	case EnableStartMenuVoiceCommandUsingVoiceCommandsToOpenThe:
+		return "EnableStartMenuVoiceCommandUsingVoiceCommandsToOpenThe"
+	case EnableStartMenuVoiceCommandUsingVoiceCommandsToOpenThe2:
+		return "EnableStartMenuVoiceCommandUsingVoiceCommandsToOpenThe2"
+	default:
+		return fmt.Sprintf("EnableStartMenuVoiceCommandValue(%d)", int64(e))
+	}
+}
+
+// EnableStartMenuWristTapValue — allowed values for the EnableStartMenuWristTap node.
+type EnableStartMenuWristTapValue int64
+
 const (
 	// Don't allow tapping the Start icon on your wrist to open the Start menu.
-	EnableStartMenuWristTapDonTAllowTappingTheStartIcon int64 = 0
+	EnableStartMenuWristTapDonTAllowTappingTheStartIcon EnableStartMenuWristTapValue = 0
 	// Allow tapping the Start icon on your wrist to open the Start menu.
-	EnableStartMenuWristTapAllowTappingTheStartIconOn int64 = 1
+	EnableStartMenuWristTapAllowTappingTheStartIconOn EnableStartMenuWristTapValue = 1
 )
 
-// EyeTrackingCalibrationPrompt allowed values.
+// String returns the EnableStartMenuWristTapValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EnableStartMenuWristTapValue) String() string {
+	switch e {
+	case EnableStartMenuWristTapDonTAllowTappingTheStartIcon:
+		return "EnableStartMenuWristTapDonTAllowTappingTheStartIcon"
+	case EnableStartMenuWristTapAllowTappingTheStartIconOn:
+		return "EnableStartMenuWristTapAllowTappingTheStartIconOn"
+	default:
+		return fmt.Sprintf("EnableStartMenuWristTapValue(%d)", int64(e))
+	}
+}
+
+// EyeTrackingCalibrationPromptValue — allowed values for the EyeTrackingCalibrationPrompt node.
+type EyeTrackingCalibrationPromptValue int64
+
 const (
 	// Disabled.
-	EyeTrackingCalibrationPromptDisabled int64 = 0
+	EyeTrackingCalibrationPromptDisabled EyeTrackingCalibrationPromptValue = 0
 	// Enabled.
-	EyeTrackingCalibrationPromptEnabled int64 = 1
+	EyeTrackingCalibrationPromptEnabled EyeTrackingCalibrationPromptValue = 1
 )
 
-// FallbackDiagnostics allowed values.
+// String returns the EyeTrackingCalibrationPromptValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e EyeTrackingCalibrationPromptValue) String() string {
+	switch e {
+	case EyeTrackingCalibrationPromptDisabled:
+		return "EyeTrackingCalibrationPromptDisabled"
+	case EyeTrackingCalibrationPromptEnabled:
+		return "EyeTrackingCalibrationPromptEnabled"
+	default:
+		return fmt.Sprintf("EyeTrackingCalibrationPromptValue(%d)", int64(e))
+	}
+}
+
+// FallbackDiagnosticsValue — allowed values for the FallbackDiagnostics node.
+type FallbackDiagnosticsValue int64
+
 const (
 	// Not allowed. Diagnostic logs cannot be collected by pressing the button combination.
-	FallbackDiagnosticsNotAllowed int64 = 0
+	FallbackDiagnosticsNotAllowed FallbackDiagnosticsValue = 0
 	// Allowed for device owners only. Diagnostics logs can be collected by pressing the button
 	// combination only if signed-in user is considered as device owner.
-	FallbackDiagnosticsAllowedForDeviceOwnersOnly int64 = 1
+	FallbackDiagnosticsAllowedForDeviceOwnersOnly FallbackDiagnosticsValue = 1
 	// Allowed for all users. Diagnostic logs can be collected by pressing the button combination.
-	FallbackDiagnosticsAllowedForAllUsers int64 = 2
+	FallbackDiagnosticsAllowedForAllUsers FallbackDiagnosticsValue = 2
 )
 
-// ManualDownDirectionDisabled allowed values.
+// String returns the FallbackDiagnosticsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e FallbackDiagnosticsValue) String() string {
+	switch e {
+	case FallbackDiagnosticsNotAllowed:
+		return "FallbackDiagnosticsNotAllowed"
+	case FallbackDiagnosticsAllowedForDeviceOwnersOnly:
+		return "FallbackDiagnosticsAllowedForDeviceOwnersOnly"
+	case FallbackDiagnosticsAllowedForAllUsers:
+		return "FallbackDiagnosticsAllowedForAllUsers"
+	default:
+		return fmt.Sprintf("FallbackDiagnosticsValue(%d)", int64(e))
+	}
+}
+
+// ManualDownDirectionDisabledValue — allowed values for the ManualDownDirectionDisabled node.
+type ManualDownDirectionDisabledValue int64
+
 const (
 	// User is allowed to manually change down direction.
-	ManualDownDirectionDisabledUserIsAllowedToManuallyChange int64 = 0
+	ManualDownDirectionDisabledUserIsAllowedToManuallyChange ManualDownDirectionDisabledValue = 0
 	// User is not allowed to manually change down direction.
-	ManualDownDirectionDisabledUserIsNotAllowedToManually int64 = 1
+	ManualDownDirectionDisabledUserIsNotAllowedToManually ManualDownDirectionDisabledValue = 1
 )
 
-// MicrophoneDisabled allowed values.
+// String returns the ManualDownDirectionDisabledValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ManualDownDirectionDisabledValue) String() string {
+	switch e {
+	case ManualDownDirectionDisabledUserIsAllowedToManuallyChange:
+		return "ManualDownDirectionDisabledUserIsAllowedToManuallyChange"
+	case ManualDownDirectionDisabledUserIsNotAllowedToManually:
+		return "ManualDownDirectionDisabledUserIsNotAllowedToManually"
+	default:
+		return fmt.Sprintf("ManualDownDirectionDisabledValue(%d)", int64(e))
+	}
+}
+
+// MicrophoneDisabledValue — allowed values for the MicrophoneDisabled node.
+type MicrophoneDisabledValue int64
+
 const (
 	// Microphone can be used for voice.
-	MicrophoneDisabledMicrophoneCanBeUsedForVoice int64 = 0
+	MicrophoneDisabledMicrophoneCanBeUsedForVoice MicrophoneDisabledValue = 0
 	// Microphone cannot be used for voice.
-	MicrophoneDisabledMicrophoneCannotBeUsedForVoice int64 = 1
+	MicrophoneDisabledMicrophoneCannotBeUsedForVoice MicrophoneDisabledValue = 1
 )
 
-// PreferLogonAsOtherUser allowed values.
+// String returns the MicrophoneDisabledValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MicrophoneDisabledValue) String() string {
+	switch e {
+	case MicrophoneDisabledMicrophoneCanBeUsedForVoice:
+		return "MicrophoneDisabledMicrophoneCanBeUsedForVoice"
+	case MicrophoneDisabledMicrophoneCannotBeUsedForVoice:
+		return "MicrophoneDisabledMicrophoneCannotBeUsedForVoice"
+	default:
+		return fmt.Sprintf("MicrophoneDisabledValue(%d)", int64(e))
+	}
+}
+
+// PreferLogonAsOtherUserValue — allowed values for the PreferLogonAsOtherUser node.
+type PreferLogonAsOtherUserValue int64
+
 const (
 	// Disabled.
-	PreferLogonAsOtherUserDisabled int64 = 0
+	PreferLogonAsOtherUserDisabled PreferLogonAsOtherUserValue = 0
 	// Enabled.
-	PreferLogonAsOtherUserEnabled int64 = 1
+	PreferLogonAsOtherUserEnabled PreferLogonAsOtherUserValue = 1
 )
 
-// RequireStartIconHold allowed values.
+// String returns the PreferLogonAsOtherUserValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PreferLogonAsOtherUserValue) String() string {
+	switch e {
+	case PreferLogonAsOtherUserDisabled:
+		return "PreferLogonAsOtherUserDisabled"
+	case PreferLogonAsOtherUserEnabled:
+		return "PreferLogonAsOtherUserEnabled"
+	default:
+		return fmt.Sprintf("PreferLogonAsOtherUserValue(%d)", int64(e))
+	}
+}
+
+// RequireStartIconHoldValue — allowed values for the RequireStartIconHold node.
+type RequireStartIconHoldValue int64
+
 const (
 	// Don't require the Start icon to be pressed for 2 seconds.
-	RequireStartIconHoldDonTRequireTheStartIconTo int64 = 0
+	RequireStartIconHoldDonTRequireTheStartIconTo RequireStartIconHoldValue = 0
 	// Require the Start icon to be pressed for 2 seconds.
-	RequireStartIconHoldRequireTheStartIconToBe int64 = 1
+	RequireStartIconHoldRequireTheStartIconToBe RequireStartIconHoldValue = 1
 )
 
-// RequireStartIconVisible allowed values.
+// String returns the RequireStartIconHoldValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e RequireStartIconHoldValue) String() string {
+	switch e {
+	case RequireStartIconHoldDonTRequireTheStartIconTo:
+		return "RequireStartIconHoldDonTRequireTheStartIconTo"
+	case RequireStartIconHoldRequireTheStartIconToBe:
+		return "RequireStartIconHoldRequireTheStartIconToBe"
+	default:
+		return fmt.Sprintf("RequireStartIconHoldValue(%d)", int64(e))
+	}
+}
+
+// RequireStartIconVisibleValue — allowed values for the RequireStartIconVisible node.
+type RequireStartIconVisibleValue int64
+
 const (
 	// Don't require the Start icon to be looked at when you tap it.
-	RequireStartIconVisibleDonTRequireTheStartIconTo int64 = 0
+	RequireStartIconVisibleDonTRequireTheStartIconTo RequireStartIconVisibleValue = 0
 	// Require the Start icon to be looked at when you tap it.
-	RequireStartIconVisibleRequireTheStartIconToBe int64 = 1
+	RequireStartIconVisibleRequireTheStartIconToBe RequireStartIconVisibleValue = 1
 )
 
-// SkipCalibrationDuringSetup allowed values.
+// String returns the RequireStartIconVisibleValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e RequireStartIconVisibleValue) String() string {
+	switch e {
+	case RequireStartIconVisibleDonTRequireTheStartIconTo:
+		return "RequireStartIconVisibleDonTRequireTheStartIconTo"
+	case RequireStartIconVisibleRequireTheStartIconToBe:
+		return "RequireStartIconVisibleRequireTheStartIconToBe"
+	default:
+		return fmt.Sprintf("RequireStartIconVisibleValue(%d)", int64(e))
+	}
+}
+
+// SkipCalibrationDuringSetupValue — allowed values for the SkipCalibrationDuringSetup node.
+type SkipCalibrationDuringSetupValue int64
+
 const (
 	// Eye tracking calibration process will be shown during device setup and first time user setup.
-	SkipCalibrationDuringSetupEyeTrackingCalibrationProcessWillBe int64 = 0
+	SkipCalibrationDuringSetupEyeTrackingCalibrationProcessWillBe SkipCalibrationDuringSetupValue = 0
 	// Eye tracking calibration process will not be shown during device setup and first time user
 	// setup.
-	SkipCalibrationDuringSetupEyeTrackingCalibrationProcessWillNot int64 = 1
+	SkipCalibrationDuringSetupEyeTrackingCalibrationProcessWillNot SkipCalibrationDuringSetupValue = 1
 )
 
-// SkipTrainingDuringSetup allowed values.
+// String returns the SkipCalibrationDuringSetupValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SkipCalibrationDuringSetupValue) String() string {
+	switch e {
+	case SkipCalibrationDuringSetupEyeTrackingCalibrationProcessWillBe:
+		return "SkipCalibrationDuringSetupEyeTrackingCalibrationProcessWillBe"
+	case SkipCalibrationDuringSetupEyeTrackingCalibrationProcessWillNot:
+		return "SkipCalibrationDuringSetupEyeTrackingCalibrationProcessWillNot"
+	default:
+		return fmt.Sprintf("SkipCalibrationDuringSetupValue(%d)", int64(e))
+	}
+}
+
+// SkipTrainingDuringSetupValue — allowed values for the SkipTrainingDuringSetup node.
+type SkipTrainingDuringSetupValue int64
+
 const (
 	// Training process will be shown during device setup and first time user setup.
-	SkipTrainingDuringSetupTrainingProcessWillBeShownDuring int64 = 0
+	SkipTrainingDuringSetupTrainingProcessWillBeShownDuring SkipTrainingDuringSetupValue = 0
 	// Training process will not be shown during device setup and first time user setup.
-	SkipTrainingDuringSetupTrainingProcessWillNotBeShown int64 = 1
+	SkipTrainingDuringSetupTrainingProcessWillNotBeShown SkipTrainingDuringSetupValue = 1
 )
 
-// VisitorAutoLogon allowed values.
+// String returns the SkipTrainingDuringSetupValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SkipTrainingDuringSetupValue) String() string {
+	switch e {
+	case SkipTrainingDuringSetupTrainingProcessWillBeShownDuring:
+		return "SkipTrainingDuringSetupTrainingProcessWillBeShownDuring"
+	case SkipTrainingDuringSetupTrainingProcessWillNotBeShown:
+		return "SkipTrainingDuringSetupTrainingProcessWillNotBeShown"
+	default:
+		return fmt.Sprintf("SkipTrainingDuringSetupValue(%d)", int64(e))
+	}
+}
+
+// VisitorAutoLogonValue — allowed values for the VisitorAutoLogon node.
+type VisitorAutoLogonValue int64
+
 const (
 	// Visitor user will not be signed in automatically.
-	VisitorAutoLogonVisitorUserWillNotBeSigned int64 = 0
+	VisitorAutoLogonVisitorUserWillNotBeSigned VisitorAutoLogonValue = 0
 	// Visitor user will be signed in automatically.
-	VisitorAutoLogonVisitorUserWillBeSignedIn int64 = 1
+	VisitorAutoLogonVisitorUserWillBeSignedIn VisitorAutoLogonValue = 1
 )
 
-// VolumeButtonDisabled allowed values.
+// String returns the VisitorAutoLogonValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e VisitorAutoLogonValue) String() string {
+	switch e {
+	case VisitorAutoLogonVisitorUserWillNotBeSigned:
+		return "VisitorAutoLogonVisitorUserWillNotBeSigned"
+	case VisitorAutoLogonVisitorUserWillBeSignedIn:
+		return "VisitorAutoLogonVisitorUserWillBeSignedIn"
+	default:
+		return fmt.Sprintf("VisitorAutoLogonValue(%d)", int64(e))
+	}
+}
+
+// VolumeButtonDisabledValue — allowed values for the VolumeButtonDisabled node.
+type VolumeButtonDisabledValue int64
+
 const (
 	// Volume can be changed with press of the volume button.
-	VolumeButtonDisabledVolumeCanBeChangedWithPress int64 = 0
+	VolumeButtonDisabledVolumeCanBeChangedWithPress VolumeButtonDisabledValue = 0
 	// Volume cannot be changed with press of the volume button.
-	VolumeButtonDisabledVolumeCannotBeChangedWithPress int64 = 1
+	VolumeButtonDisabledVolumeCannotBeChangedWithPress VolumeButtonDisabledValue = 1
 )
+
+// String returns the VolumeButtonDisabledValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e VolumeButtonDisabledValue) String() string {
+	switch e {
+	case VolumeButtonDisabledVolumeCanBeChangedWithPress:
+		return "VolumeButtonDisabledVolumeCanBeChangedWithPress"
+	case VolumeButtonDisabledVolumeCannotBeChangedWithPress:
+		return "VolumeButtonDisabledVolumeCannotBeChangedWithPress"
+	default:
+		return fmt.Sprintf("VolumeButtonDisabledValue(%d)", int64(e))
+	}
+}

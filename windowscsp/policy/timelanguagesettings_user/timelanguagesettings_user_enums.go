@@ -2,10 +2,29 @@
 
 package timelanguagesettings_user
 
-// RestrictLanguagePacksAndFeaturesInstall allowed values.
+import (
+	"fmt"
+)
+
+// RestrictLanguagePacksAndFeaturesInstallValue — allowed values for the RestrictLanguagePacksAndFeaturesInstall node.
+type RestrictLanguagePacksAndFeaturesInstallValue int64
+
 const (
 	// Not restricted.
-	RestrictLanguagePacksAndFeaturesInstallNotRestricted int64 = 0
+	RestrictLanguagePacksAndFeaturesInstallNotRestricted RestrictLanguagePacksAndFeaturesInstallValue = 0
 	// Restricted.
-	RestrictLanguagePacksAndFeaturesInstallRestricted int64 = 1
+	RestrictLanguagePacksAndFeaturesInstallRestricted RestrictLanguagePacksAndFeaturesInstallValue = 1
 )
+
+// String returns the RestrictLanguagePacksAndFeaturesInstallValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e RestrictLanguagePacksAndFeaturesInstallValue) String() string {
+	switch e {
+	case RestrictLanguagePacksAndFeaturesInstallNotRestricted:
+		return "RestrictLanguagePacksAndFeaturesInstallNotRestricted"
+	case RestrictLanguagePacksAndFeaturesInstallRestricted:
+		return "RestrictLanguagePacksAndFeaturesInstallRestricted"
+	default:
+		return fmt.Sprintf("RestrictLanguagePacksAndFeaturesInstallValue(%d)", int64(e))
+	}
+}

@@ -2,42 +2,114 @@
 
 package systemservices
 
-// ConfigureXboxAccessoryManagementServiceStartupMode allowed values.
-const (
-	// Automatic
-	ConfigureXboxAccessoryManagementServiceStartupModeAutomatic int64 = 2
-	// Manual
-	ConfigureXboxAccessoryManagementServiceStartupModeManual int64 = 3
-	// Disabled
-	ConfigureXboxAccessoryManagementServiceStartupModeDisabled int64 = 4
+import (
+	"fmt"
 )
 
-// ConfigureXboxLiveAuthManagerServiceStartupMode allowed values.
+// ConfigureXboxAccessoryManagementServiceStartupModeValue — allowed values for the ConfigureXboxAccessoryManagementServiceStartupMode node.
+type ConfigureXboxAccessoryManagementServiceStartupModeValue int64
+
 const (
 	// Automatic
-	ConfigureXboxLiveAuthManagerServiceStartupModeAutomatic int64 = 2
+	ConfigureXboxAccessoryManagementServiceStartupModeAutomatic ConfigureXboxAccessoryManagementServiceStartupModeValue = 2
 	// Manual
-	ConfigureXboxLiveAuthManagerServiceStartupModeManual int64 = 3
+	ConfigureXboxAccessoryManagementServiceStartupModeManual ConfigureXboxAccessoryManagementServiceStartupModeValue = 3
 	// Disabled
-	ConfigureXboxLiveAuthManagerServiceStartupModeDisabled int64 = 4
+	ConfigureXboxAccessoryManagementServiceStartupModeDisabled ConfigureXboxAccessoryManagementServiceStartupModeValue = 4
 )
 
-// ConfigureXboxLiveGameSaveServiceStartupMode allowed values.
+// String returns the ConfigureXboxAccessoryManagementServiceStartupModeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureXboxAccessoryManagementServiceStartupModeValue) String() string {
+	switch e {
+	case ConfigureXboxAccessoryManagementServiceStartupModeAutomatic:
+		return "ConfigureXboxAccessoryManagementServiceStartupModeAutomatic"
+	case ConfigureXboxAccessoryManagementServiceStartupModeManual:
+		return "ConfigureXboxAccessoryManagementServiceStartupModeManual"
+	case ConfigureXboxAccessoryManagementServiceStartupModeDisabled:
+		return "ConfigureXboxAccessoryManagementServiceStartupModeDisabled"
+	default:
+		return fmt.Sprintf("ConfigureXboxAccessoryManagementServiceStartupModeValue(%d)", int64(e))
+	}
+}
+
+// ConfigureXboxLiveAuthManagerServiceStartupModeValue — allowed values for the ConfigureXboxLiveAuthManagerServiceStartupMode node.
+type ConfigureXboxLiveAuthManagerServiceStartupModeValue int64
+
 const (
 	// Automatic
-	ConfigureXboxLiveGameSaveServiceStartupModeAutomatic int64 = 2
+	ConfigureXboxLiveAuthManagerServiceStartupModeAutomatic ConfigureXboxLiveAuthManagerServiceStartupModeValue = 2
 	// Manual
-	ConfigureXboxLiveGameSaveServiceStartupModeManual int64 = 3
+	ConfigureXboxLiveAuthManagerServiceStartupModeManual ConfigureXboxLiveAuthManagerServiceStartupModeValue = 3
 	// Disabled
-	ConfigureXboxLiveGameSaveServiceStartupModeDisabled int64 = 4
+	ConfigureXboxLiveAuthManagerServiceStartupModeDisabled ConfigureXboxLiveAuthManagerServiceStartupModeValue = 4
 )
 
-// ConfigureXboxLiveNetworkingServiceStartupMode allowed values.
+// String returns the ConfigureXboxLiveAuthManagerServiceStartupModeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureXboxLiveAuthManagerServiceStartupModeValue) String() string {
+	switch e {
+	case ConfigureXboxLiveAuthManagerServiceStartupModeAutomatic:
+		return "ConfigureXboxLiveAuthManagerServiceStartupModeAutomatic"
+	case ConfigureXboxLiveAuthManagerServiceStartupModeManual:
+		return "ConfigureXboxLiveAuthManagerServiceStartupModeManual"
+	case ConfigureXboxLiveAuthManagerServiceStartupModeDisabled:
+		return "ConfigureXboxLiveAuthManagerServiceStartupModeDisabled"
+	default:
+		return fmt.Sprintf("ConfigureXboxLiveAuthManagerServiceStartupModeValue(%d)", int64(e))
+	}
+}
+
+// ConfigureXboxLiveGameSaveServiceStartupModeValue — allowed values for the ConfigureXboxLiveGameSaveServiceStartupMode node.
+type ConfigureXboxLiveGameSaveServiceStartupModeValue int64
+
 const (
 	// Automatic
-	ConfigureXboxLiveNetworkingServiceStartupModeAutomatic int64 = 2
+	ConfigureXboxLiveGameSaveServiceStartupModeAutomatic ConfigureXboxLiveGameSaveServiceStartupModeValue = 2
 	// Manual
-	ConfigureXboxLiveNetworkingServiceStartupModeManual int64 = 3
+	ConfigureXboxLiveGameSaveServiceStartupModeManual ConfigureXboxLiveGameSaveServiceStartupModeValue = 3
 	// Disabled
-	ConfigureXboxLiveNetworkingServiceStartupModeDisabled int64 = 4
+	ConfigureXboxLiveGameSaveServiceStartupModeDisabled ConfigureXboxLiveGameSaveServiceStartupModeValue = 4
 )
+
+// String returns the ConfigureXboxLiveGameSaveServiceStartupModeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureXboxLiveGameSaveServiceStartupModeValue) String() string {
+	switch e {
+	case ConfigureXboxLiveGameSaveServiceStartupModeAutomatic:
+		return "ConfigureXboxLiveGameSaveServiceStartupModeAutomatic"
+	case ConfigureXboxLiveGameSaveServiceStartupModeManual:
+		return "ConfigureXboxLiveGameSaveServiceStartupModeManual"
+	case ConfigureXboxLiveGameSaveServiceStartupModeDisabled:
+		return "ConfigureXboxLiveGameSaveServiceStartupModeDisabled"
+	default:
+		return fmt.Sprintf("ConfigureXboxLiveGameSaveServiceStartupModeValue(%d)", int64(e))
+	}
+}
+
+// ConfigureXboxLiveNetworkingServiceStartupModeValue — allowed values for the ConfigureXboxLiveNetworkingServiceStartupMode node.
+type ConfigureXboxLiveNetworkingServiceStartupModeValue int64
+
+const (
+	// Automatic
+	ConfigureXboxLiveNetworkingServiceStartupModeAutomatic ConfigureXboxLiveNetworkingServiceStartupModeValue = 2
+	// Manual
+	ConfigureXboxLiveNetworkingServiceStartupModeManual ConfigureXboxLiveNetworkingServiceStartupModeValue = 3
+	// Disabled
+	ConfigureXboxLiveNetworkingServiceStartupModeDisabled ConfigureXboxLiveNetworkingServiceStartupModeValue = 4
+)
+
+// String returns the ConfigureXboxLiveNetworkingServiceStartupModeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureXboxLiveNetworkingServiceStartupModeValue) String() string {
+	switch e {
+	case ConfigureXboxLiveNetworkingServiceStartupModeAutomatic:
+		return "ConfigureXboxLiveNetworkingServiceStartupModeAutomatic"
+	case ConfigureXboxLiveNetworkingServiceStartupModeManual:
+		return "ConfigureXboxLiveNetworkingServiceStartupModeManual"
+	case ConfigureXboxLiveNetworkingServiceStartupModeDisabled:
+		return "ConfigureXboxLiveNetworkingServiceStartupModeDisabled"
+	default:
+		return fmt.Sprintf("ConfigureXboxLiveNetworkingServiceStartupModeValue(%d)", int64(e))
+	}
+}

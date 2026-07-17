@@ -2,13 +2,19 @@
 
 package update
 
-// AllowAutoUpdate allowed values.
+import (
+	"fmt"
+)
+
+// AllowAutoUpdateValue — allowed values for the AllowAutoUpdate node.
+type AllowAutoUpdateValue int64
+
 const (
 	// Notify the user before downloading the update. This policy is used by the enterprise who wants
 	// to enable the end-users to manage data usage. With this option users are notified when there are
 	// updates that apply to the device and are ready for download. Users can download and install the
 	// updates from the Windows Update control panel.
-	AllowAutoUpdateNotifyTheUserBeforeDownloadingThe int64 = 0
+	AllowAutoUpdateNotifyTheUserBeforeDownloadingThe AllowAutoUpdateValue = 0
 	// Auto install the update and then notify the user to schedule a device restart. Updates are
 	// downloaded automatically on non-metered networks and installed during "Automatic Maintenance"
 	// when the device is not in use and is not running on battery power. If automatic maintenance is
@@ -19,7 +25,7 @@ const (
 	// it if the proposed time is inconvenient. Enabling the end-user to control the start time reduces
 	// the risk of accidental data loss caused by applications that do not shutdown properly on
 	// restart.
-	AllowAutoUpdateAutoInstallTheUpdateAndThen int64 = 1
+	AllowAutoUpdateAutoInstallTheUpdateAndThen AllowAutoUpdateValue = 1
 	// Auto install and restart. Updates are downloaded automatically on non-metered networks and
 	// installed during "Automatic Maintenance" when the device is not in use and is not running on
 	// battery power. If automatic maintenance is unable to install updates for two days, Windows
@@ -27,498 +33,1339 @@ const (
 	// automatically restarted when the device is not actively being used. This is the default behavior
 	// for unmanaged devices. Devices are updated quickly, but it increases the risk of accidental data
 	// loss caused by an application that does not shutdown properly on restart.
-	AllowAutoUpdateAutoInstallAndRestart int64 = 2
+	AllowAutoUpdateAutoInstallAndRestart AllowAutoUpdateValue = 2
 	// Auto install and restart at a specified time. The IT specifies the installation day and time. If
 	// no day and time are specified, the default is 3 AM daily. Automatic installation happens at this
 	// time and device restart happens after a 15-minute countdown. If the user is logged in when
 	// Windows is ready to restart, the user can interrupt the 15-minute countdown to delay the
 	// restart.
-	AllowAutoUpdateAutoInstallAndRestartAtA int64 = 3
+	AllowAutoUpdateAutoInstallAndRestartAtA AllowAutoUpdateValue = 3
 	// Auto install and restart without end-user control. Updates are downloaded automatically on
 	// non-metered networks and installed during "Automatic Maintenance" when the device is not in use
 	// and is not running on battery power. If automatic maintenance is unable to install updates for
 	// two days, Windows Update will install updates right away. If a restart is required, then the
 	// device is automatically restarted when the device is not actively being used. This setting
 	// option also sets the end-user control panel to read-only.
-	AllowAutoUpdateAutoInstallAndRestartWithoutEndUser int64 = 4
+	AllowAutoUpdateAutoInstallAndRestartWithoutEndUser AllowAutoUpdateValue = 4
 	// Turn off automatic updates.
-	AllowAutoUpdateTurnOffAutomaticUpdates int64 = 5
+	AllowAutoUpdateTurnOffAutomaticUpdates AllowAutoUpdateValue = 5
 )
 
-// AllowAutoWindowsUpdateDownloadOverMeteredNetwork allowed values.
+// String returns the AllowAutoUpdateValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowAutoUpdateValue) String() string {
+	switch e {
+	case AllowAutoUpdateNotifyTheUserBeforeDownloadingThe:
+		return "AllowAutoUpdateNotifyTheUserBeforeDownloadingThe"
+	case AllowAutoUpdateAutoInstallTheUpdateAndThen:
+		return "AllowAutoUpdateAutoInstallTheUpdateAndThen"
+	case AllowAutoUpdateAutoInstallAndRestart:
+		return "AllowAutoUpdateAutoInstallAndRestart"
+	case AllowAutoUpdateAutoInstallAndRestartAtA:
+		return "AllowAutoUpdateAutoInstallAndRestartAtA"
+	case AllowAutoUpdateAutoInstallAndRestartWithoutEndUser:
+		return "AllowAutoUpdateAutoInstallAndRestartWithoutEndUser"
+	case AllowAutoUpdateTurnOffAutomaticUpdates:
+		return "AllowAutoUpdateTurnOffAutomaticUpdates"
+	default:
+		return fmt.Sprintf("AllowAutoUpdateValue(%d)", int64(e))
+	}
+}
+
+// AllowAutoWindowsUpdateDownloadOverMeteredNetworkValue — allowed values for the AllowAutoWindowsUpdateDownloadOverMeteredNetwork node.
+type AllowAutoWindowsUpdateDownloadOverMeteredNetworkValue int64
+
 const (
 	// Not allowed
-	AllowAutoWindowsUpdateDownloadOverMeteredNetworkNotAllowed int64 = 0
+	AllowAutoWindowsUpdateDownloadOverMeteredNetworkNotAllowed AllowAutoWindowsUpdateDownloadOverMeteredNetworkValue = 0
 	// Allowed
-	AllowAutoWindowsUpdateDownloadOverMeteredNetworkAllowed int64 = 1
+	AllowAutoWindowsUpdateDownloadOverMeteredNetworkAllowed AllowAutoWindowsUpdateDownloadOverMeteredNetworkValue = 1
 )
 
-// AllowMUUpdateService allowed values.
+// String returns the AllowAutoWindowsUpdateDownloadOverMeteredNetworkValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowAutoWindowsUpdateDownloadOverMeteredNetworkValue) String() string {
+	switch e {
+	case AllowAutoWindowsUpdateDownloadOverMeteredNetworkNotAllowed:
+		return "AllowAutoWindowsUpdateDownloadOverMeteredNetworkNotAllowed"
+	case AllowAutoWindowsUpdateDownloadOverMeteredNetworkAllowed:
+		return "AllowAutoWindowsUpdateDownloadOverMeteredNetworkAllowed"
+	default:
+		return fmt.Sprintf("AllowAutoWindowsUpdateDownloadOverMeteredNetworkValue(%d)", int64(e))
+	}
+}
+
+// AllowMUUpdateServiceValue — allowed values for the AllowMUUpdateService node.
+type AllowMUUpdateServiceValue int64
+
 const (
 	// Not allowed or not configured.
-	AllowMUUpdateServiceNotAllowedOrNotConfigured int64 = 0
+	AllowMUUpdateServiceNotAllowedOrNotConfigured AllowMUUpdateServiceValue = 0
 	// Allowed. Accepts updates received through Microsoft Update.
-	AllowMUUpdateServiceAllowed int64 = 1
+	AllowMUUpdateServiceAllowed AllowMUUpdateServiceValue = 1
 )
 
-// AllowNonMicrosoftSignedUpdate allowed values.
+// String returns the AllowMUUpdateServiceValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowMUUpdateServiceValue) String() string {
+	switch e {
+	case AllowMUUpdateServiceNotAllowedOrNotConfigured:
+		return "AllowMUUpdateServiceNotAllowedOrNotConfigured"
+	case AllowMUUpdateServiceAllowed:
+		return "AllowMUUpdateServiceAllowed"
+	default:
+		return fmt.Sprintf("AllowMUUpdateServiceValue(%d)", int64(e))
+	}
+}
+
+// AllowNonMicrosoftSignedUpdateValue — allowed values for the AllowNonMicrosoftSignedUpdate node.
+type AllowNonMicrosoftSignedUpdateValue int64
+
 const (
 	// Not allowed or not configured. Updates from an intranet Microsoft update service location must
 	// be signed by Microsoft.
-	AllowNonMicrosoftSignedUpdateNotAllowedOrNotConfigured int64 = 0
+	AllowNonMicrosoftSignedUpdateNotAllowedOrNotConfigured AllowNonMicrosoftSignedUpdateValue = 0
 	// Allowed. Accepts updates received through an intranet Microsoft update service location, if they
 	// are signed by a certificate found in the 'Trusted Publishers' certificate store of the local
 	// computer.
-	AllowNonMicrosoftSignedUpdateAllowed int64 = 1
+	AllowNonMicrosoftSignedUpdateAllowed AllowNonMicrosoftSignedUpdateValue = 1
 )
 
-// AllowOptionalContent allowed values.
+// String returns the AllowNonMicrosoftSignedUpdateValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowNonMicrosoftSignedUpdateValue) String() string {
+	switch e {
+	case AllowNonMicrosoftSignedUpdateNotAllowedOrNotConfigured:
+		return "AllowNonMicrosoftSignedUpdateNotAllowedOrNotConfigured"
+	case AllowNonMicrosoftSignedUpdateAllowed:
+		return "AllowNonMicrosoftSignedUpdateAllowed"
+	default:
+		return fmt.Sprintf("AllowNonMicrosoftSignedUpdateValue(%d)", int64(e))
+	}
+}
+
+// AllowOptionalContentValue — allowed values for the AllowOptionalContent node.
+type AllowOptionalContentValue int64
+
 const (
 	// Don't receive optional updates
-	AllowOptionalContentDonTReceiveOptionalUpdates int64 = 0
+	AllowOptionalContentDonTReceiveOptionalUpdates AllowOptionalContentValue = 0
 	// Automatically receive optional updates (including CFRs)
-	AllowOptionalContentAutomaticallyReceiveOptionalUpdates int64 = 1
+	AllowOptionalContentAutomaticallyReceiveOptionalUpdates AllowOptionalContentValue = 1
 	// Automatically receive optional updates
-	AllowOptionalContentAutomaticallyReceiveOptionalUpdates2 int64 = 2
+	AllowOptionalContentAutomaticallyReceiveOptionalUpdates2 AllowOptionalContentValue = 2
 	// Users can select which optional updates to receive
-	AllowOptionalContentUsersCanSelectWhichOptionalUpdates int64 = 3
+	AllowOptionalContentUsersCanSelectWhichOptionalUpdates AllowOptionalContentValue = 3
 )
 
-// AllowTemporaryEnterpriseFeatureControl allowed values.
+// String returns the AllowOptionalContentValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowOptionalContentValue) String() string {
+	switch e {
+	case AllowOptionalContentDonTReceiveOptionalUpdates:
+		return "AllowOptionalContentDonTReceiveOptionalUpdates"
+	case AllowOptionalContentAutomaticallyReceiveOptionalUpdates:
+		return "AllowOptionalContentAutomaticallyReceiveOptionalUpdates"
+	case AllowOptionalContentAutomaticallyReceiveOptionalUpdates2:
+		return "AllowOptionalContentAutomaticallyReceiveOptionalUpdates2"
+	case AllowOptionalContentUsersCanSelectWhichOptionalUpdates:
+		return "AllowOptionalContentUsersCanSelectWhichOptionalUpdates"
+	default:
+		return fmt.Sprintf("AllowOptionalContentValue(%d)", int64(e))
+	}
+}
+
+// AllowTemporaryEnterpriseFeatureControlValue — allowed values for the AllowTemporaryEnterpriseFeatureControl node.
+type AllowTemporaryEnterpriseFeatureControlValue int64
+
 const (
 	// Not allowed
-	AllowTemporaryEnterpriseFeatureControlNotAllowed int64 = 0
+	AllowTemporaryEnterpriseFeatureControlNotAllowed AllowTemporaryEnterpriseFeatureControlValue = 0
 	// Allowed
-	AllowTemporaryEnterpriseFeatureControlAllowed int64 = 1
+	AllowTemporaryEnterpriseFeatureControlAllowed AllowTemporaryEnterpriseFeatureControlValue = 1
 )
 
-// AllowUpdateService allowed values.
+// String returns the AllowTemporaryEnterpriseFeatureControlValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowTemporaryEnterpriseFeatureControlValue) String() string {
+	switch e {
+	case AllowTemporaryEnterpriseFeatureControlNotAllowed:
+		return "AllowTemporaryEnterpriseFeatureControlNotAllowed"
+	case AllowTemporaryEnterpriseFeatureControlAllowed:
+		return "AllowTemporaryEnterpriseFeatureControlAllowed"
+	default:
+		return fmt.Sprintf("AllowTemporaryEnterpriseFeatureControlValue(%d)", int64(e))
+	}
+}
+
+// AllowUpdateServiceValue — allowed values for the AllowUpdateService node.
+type AllowUpdateServiceValue int64
+
 const (
 	// Not allowed.
-	AllowUpdateServiceNotAllowed int64 = 0
+	AllowUpdateServiceNotAllowed AllowUpdateServiceValue = 0
 	// Allowed.
-	AllowUpdateServiceAllowed int64 = 1
+	AllowUpdateServiceAllowed AllowUpdateServiceValue = 1
 )
 
-// AutoRestartNotificationSchedule allowed values.
+// String returns the AllowUpdateServiceValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AllowUpdateServiceValue) String() string {
+	switch e {
+	case AllowUpdateServiceNotAllowed:
+		return "AllowUpdateServiceNotAllowed"
+	case AllowUpdateServiceAllowed:
+		return "AllowUpdateServiceAllowed"
+	default:
+		return fmt.Sprintf("AllowUpdateServiceValue(%d)", int64(e))
+	}
+}
+
+// AutoRestartNotificationScheduleValue — allowed values for the AutoRestartNotificationSchedule node.
+type AutoRestartNotificationScheduleValue int64
+
 const (
 	// 15 Minutes
-	AutoRestartNotificationScheduleN15Minutes int64 = 15
+	AutoRestartNotificationScheduleN15Minutes AutoRestartNotificationScheduleValue = 15
 	// 30 Minutes
-	AutoRestartNotificationScheduleN30Minutes int64 = 30
+	AutoRestartNotificationScheduleN30Minutes AutoRestartNotificationScheduleValue = 30
 	// 60 Minutes
-	AutoRestartNotificationScheduleN60Minutes int64 = 60
+	AutoRestartNotificationScheduleN60Minutes AutoRestartNotificationScheduleValue = 60
 	// 120 Minutes
-	AutoRestartNotificationScheduleN120Minutes int64 = 120
+	AutoRestartNotificationScheduleN120Minutes AutoRestartNotificationScheduleValue = 120
 	// 240 Minutes
-	AutoRestartNotificationScheduleN240Minutes int64 = 240
+	AutoRestartNotificationScheduleN240Minutes AutoRestartNotificationScheduleValue = 240
 )
 
-// AutoRestartRequiredNotificationDismissal allowed values.
+// String returns the AutoRestartNotificationScheduleValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AutoRestartNotificationScheduleValue) String() string {
+	switch e {
+	case AutoRestartNotificationScheduleN15Minutes:
+		return "AutoRestartNotificationScheduleN15Minutes"
+	case AutoRestartNotificationScheduleN30Minutes:
+		return "AutoRestartNotificationScheduleN30Minutes"
+	case AutoRestartNotificationScheduleN60Minutes:
+		return "AutoRestartNotificationScheduleN60Minutes"
+	case AutoRestartNotificationScheduleN120Minutes:
+		return "AutoRestartNotificationScheduleN120Minutes"
+	case AutoRestartNotificationScheduleN240Minutes:
+		return "AutoRestartNotificationScheduleN240Minutes"
+	default:
+		return fmt.Sprintf("AutoRestartNotificationScheduleValue(%d)", int64(e))
+	}
+}
+
+// AutoRestartRequiredNotificationDismissalValue — allowed values for the AutoRestartRequiredNotificationDismissal node.
+type AutoRestartRequiredNotificationDismissalValue int64
+
 const (
 	// Auto Dismissal.
-	AutoRestartRequiredNotificationDismissalAutoDismissal int64 = 1
+	AutoRestartRequiredNotificationDismissalAutoDismissal AutoRestartRequiredNotificationDismissalValue = 1
 	// User Dismissal.
-	AutoRestartRequiredNotificationDismissalUserDismissal int64 = 2
+	AutoRestartRequiredNotificationDismissalUserDismissal AutoRestartRequiredNotificationDismissalValue = 2
 )
 
-// AutomaticMaintenanceWakeUp allowed values.
+// String returns the AutoRestartRequiredNotificationDismissalValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AutoRestartRequiredNotificationDismissalValue) String() string {
+	switch e {
+	case AutoRestartRequiredNotificationDismissalAutoDismissal:
+		return "AutoRestartRequiredNotificationDismissalAutoDismissal"
+	case AutoRestartRequiredNotificationDismissalUserDismissal:
+		return "AutoRestartRequiredNotificationDismissalUserDismissal"
+	default:
+		return fmt.Sprintf("AutoRestartRequiredNotificationDismissalValue(%d)", int64(e))
+	}
+}
+
+// AutomaticMaintenanceWakeUpValue — allowed values for the AutomaticMaintenanceWakeUp node.
+type AutomaticMaintenanceWakeUpValue int64
+
 const (
 	// Disabled.
-	AutomaticMaintenanceWakeUpDisabled int64 = 0
+	AutomaticMaintenanceWakeUpDisabled AutomaticMaintenanceWakeUpValue = 0
 	// Enabled.
-	AutomaticMaintenanceWakeUpEnabled int64 = 1
+	AutomaticMaintenanceWakeUpEnabled AutomaticMaintenanceWakeUpValue = 1
 )
 
-// BranchReadinessLevel allowed values.
+// String returns the AutomaticMaintenanceWakeUpValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e AutomaticMaintenanceWakeUpValue) String() string {
+	switch e {
+	case AutomaticMaintenanceWakeUpDisabled:
+		return "AutomaticMaintenanceWakeUpDisabled"
+	case AutomaticMaintenanceWakeUpEnabled:
+		return "AutomaticMaintenanceWakeUpEnabled"
+	default:
+		return fmt.Sprintf("AutomaticMaintenanceWakeUpValue(%d)", int64(e))
+	}
+}
+
+// BranchReadinessLevelValue — allowed values for the BranchReadinessLevel node.
+type BranchReadinessLevelValue int64
+
 const (
 	// {0x2} - Windows Insider build - Fast (added in Windows 10, version 1709)
-	BranchReadinessLevelN0x2WindowsInsiderBuild int64 = 2
+	BranchReadinessLevelN0x2WindowsInsiderBuild BranchReadinessLevelValue = 2
 	// {0x4} - Windows Insider build - Slow (added in Windows 10, version 1709)
-	BranchReadinessLevelN0x4WindowsInsiderBuild int64 = 4
+	BranchReadinessLevelN0x4WindowsInsiderBuild BranchReadinessLevelValue = 4
 	// {0x8} - Release Windows Insider build (added in Windows 10, version 1709)
-	BranchReadinessLevelN0x8ReleaseWindowsInsiderBuild int64 = 8
+	BranchReadinessLevelN0x8ReleaseWindowsInsiderBuild BranchReadinessLevelValue = 8
 	// {0x10} - Semi-annual Channel (Targeted). Device gets all applicable feature updates from
 	// Semi-annual Channel (Targeted).
-	BranchReadinessLevelN0x10SemiAnnualChannel int64 = 16
+	BranchReadinessLevelN0x10SemiAnnualChannel BranchReadinessLevelValue = 16
 	// 2 {0x20} - Semi-annual Channel. Device gets feature updates from Semi-annual Channel. (*Only
 	// applicable to releases prior to 1903, for all releases 1903 and after the Semi-annual Channel
 	// and Semi-annual Channel (Targeted) into a single Semi-annual Channel with a value of 16)
-	BranchReadinessLevelN20x20SemiAnnualChannel int64 = 32
+	BranchReadinessLevelN20x20SemiAnnualChannel BranchReadinessLevelValue = 32
 	// {0x40} - Release Preview of Quality Updates Only.
-	BranchReadinessLevelN0x40ReleasePreviewOfQuality int64 = 64
+	BranchReadinessLevelN0x40ReleasePreviewOfQuality BranchReadinessLevelValue = 64
 	// {0x80} - Canary Channel.
-	BranchReadinessLevelN0x80CanaryChannel int64 = 128
+	BranchReadinessLevelN0x80CanaryChannel BranchReadinessLevelValue = 128
 )
 
-// ConfigureDeadlineNoAutoReboot allowed values.
+// String returns the BranchReadinessLevelValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e BranchReadinessLevelValue) String() string {
+	switch e {
+	case BranchReadinessLevelN0x2WindowsInsiderBuild:
+		return "BranchReadinessLevelN0x2WindowsInsiderBuild"
+	case BranchReadinessLevelN0x4WindowsInsiderBuild:
+		return "BranchReadinessLevelN0x4WindowsInsiderBuild"
+	case BranchReadinessLevelN0x8ReleaseWindowsInsiderBuild:
+		return "BranchReadinessLevelN0x8ReleaseWindowsInsiderBuild"
+	case BranchReadinessLevelN0x10SemiAnnualChannel:
+		return "BranchReadinessLevelN0x10SemiAnnualChannel"
+	case BranchReadinessLevelN20x20SemiAnnualChannel:
+		return "BranchReadinessLevelN20x20SemiAnnualChannel"
+	case BranchReadinessLevelN0x40ReleasePreviewOfQuality:
+		return "BranchReadinessLevelN0x40ReleasePreviewOfQuality"
+	case BranchReadinessLevelN0x80CanaryChannel:
+		return "BranchReadinessLevelN0x80CanaryChannel"
+	default:
+		return fmt.Sprintf("BranchReadinessLevelValue(%d)", int64(e))
+	}
+}
+
+// ConfigureDeadlineNoAutoRebootValue — allowed values for the ConfigureDeadlineNoAutoReboot node.
+type ConfigureDeadlineNoAutoRebootValue int64
+
 const (
 	// Disabled.
-	ConfigureDeadlineNoAutoRebootDisabled int64 = 0
+	ConfigureDeadlineNoAutoRebootDisabled ConfigureDeadlineNoAutoRebootValue = 0
 	// Enabled.
-	ConfigureDeadlineNoAutoRebootEnabled int64 = 1
+	ConfigureDeadlineNoAutoRebootEnabled ConfigureDeadlineNoAutoRebootValue = 1
 )
 
-// ConfigureDeadlineNoAutoRebootForFeatureUpdates allowed values.
+// String returns the ConfigureDeadlineNoAutoRebootValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureDeadlineNoAutoRebootValue) String() string {
+	switch e {
+	case ConfigureDeadlineNoAutoRebootDisabled:
+		return "ConfigureDeadlineNoAutoRebootDisabled"
+	case ConfigureDeadlineNoAutoRebootEnabled:
+		return "ConfigureDeadlineNoAutoRebootEnabled"
+	default:
+		return fmt.Sprintf("ConfigureDeadlineNoAutoRebootValue(%d)", int64(e))
+	}
+}
+
+// ConfigureDeadlineNoAutoRebootForFeatureUpdatesValue — allowed values for the ConfigureDeadlineNoAutoRebootForFeatureUpdates node.
+type ConfigureDeadlineNoAutoRebootForFeatureUpdatesValue int64
+
 const (
 	// Disabled.
-	ConfigureDeadlineNoAutoRebootForFeatureUpdatesDisabled int64 = 0
+	ConfigureDeadlineNoAutoRebootForFeatureUpdatesDisabled ConfigureDeadlineNoAutoRebootForFeatureUpdatesValue = 0
 	// Enabled.
-	ConfigureDeadlineNoAutoRebootForFeatureUpdatesEnabled int64 = 1
+	ConfigureDeadlineNoAutoRebootForFeatureUpdatesEnabled ConfigureDeadlineNoAutoRebootForFeatureUpdatesValue = 1
 )
 
-// ConfigureDeadlineNoAutoRebootForQualityUpdates allowed values.
+// String returns the ConfigureDeadlineNoAutoRebootForFeatureUpdatesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureDeadlineNoAutoRebootForFeatureUpdatesValue) String() string {
+	switch e {
+	case ConfigureDeadlineNoAutoRebootForFeatureUpdatesDisabled:
+		return "ConfigureDeadlineNoAutoRebootForFeatureUpdatesDisabled"
+	case ConfigureDeadlineNoAutoRebootForFeatureUpdatesEnabled:
+		return "ConfigureDeadlineNoAutoRebootForFeatureUpdatesEnabled"
+	default:
+		return fmt.Sprintf("ConfigureDeadlineNoAutoRebootForFeatureUpdatesValue(%d)", int64(e))
+	}
+}
+
+// ConfigureDeadlineNoAutoRebootForQualityUpdatesValue — allowed values for the ConfigureDeadlineNoAutoRebootForQualityUpdates node.
+type ConfigureDeadlineNoAutoRebootForQualityUpdatesValue int64
+
 const (
 	// Disabled.
-	ConfigureDeadlineNoAutoRebootForQualityUpdatesDisabled int64 = 0
+	ConfigureDeadlineNoAutoRebootForQualityUpdatesDisabled ConfigureDeadlineNoAutoRebootForQualityUpdatesValue = 0
 	// Enabled.
-	ConfigureDeadlineNoAutoRebootForQualityUpdatesEnabled int64 = 1
+	ConfigureDeadlineNoAutoRebootForQualityUpdatesEnabled ConfigureDeadlineNoAutoRebootForQualityUpdatesValue = 1
 )
 
-// DisableDualScan allowed values.
+// String returns the ConfigureDeadlineNoAutoRebootForQualityUpdatesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigureDeadlineNoAutoRebootForQualityUpdatesValue) String() string {
+	switch e {
+	case ConfigureDeadlineNoAutoRebootForQualityUpdatesDisabled:
+		return "ConfigureDeadlineNoAutoRebootForQualityUpdatesDisabled"
+	case ConfigureDeadlineNoAutoRebootForQualityUpdatesEnabled:
+		return "ConfigureDeadlineNoAutoRebootForQualityUpdatesEnabled"
+	default:
+		return fmt.Sprintf("ConfigureDeadlineNoAutoRebootForQualityUpdatesValue(%d)", int64(e))
+	}
+}
+
+// DisableDualScanValue — allowed values for the DisableDualScan node.
+type DisableDualScanValue int64
+
 const (
 	// allow scan against Windows Update
-	DisableDualScanAllowScanAgainstWindowsUpdate int64 = 0
+	DisableDualScanAllowScanAgainstWindowsUpdate DisableDualScanValue = 0
 	// do not allow update deferral policies to cause scans against Windows Update
-	DisableDualScanDoNotAllowUpdateDeferralPolicies int64 = 1
+	DisableDualScanDoNotAllowUpdateDeferralPolicies DisableDualScanValue = 1
 )
 
-// DisableWUfBSafeguards allowed values.
+// String returns the DisableDualScanValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableDualScanValue) String() string {
+	switch e {
+	case DisableDualScanAllowScanAgainstWindowsUpdate:
+		return "DisableDualScanAllowScanAgainstWindowsUpdate"
+	case DisableDualScanDoNotAllowUpdateDeferralPolicies:
+		return "DisableDualScanDoNotAllowUpdateDeferralPolicies"
+	default:
+		return fmt.Sprintf("DisableDualScanValue(%d)", int64(e))
+	}
+}
+
+// DisableWUfBSafeguardsValue — allowed values for the DisableWUfBSafeguards node.
+type DisableWUfBSafeguardsValue int64
+
 const (
 	// Safeguards are enabled and devices may be blocked for upgrades until the safeguard is cleared.
-	DisableWUfBSafeguardsSafeguardsAreEnabledAndDevicesMay int64 = 0
+	DisableWUfBSafeguardsSafeguardsAreEnabledAndDevicesMay DisableWUfBSafeguardsValue = 0
 	// Safeguards are not enabled and upgrades will be deployed without blocking on safeguards.
-	DisableWUfBSafeguardsSafeguardsAreNotEnabledAndUpgrades int64 = 1
+	DisableWUfBSafeguardsSafeguardsAreNotEnabledAndUpgrades DisableWUfBSafeguardsValue = 1
 )
 
-// DoNotEnforceEnterpriseTLSCertPinningForUpdateDetection allowed values.
+// String returns the DisableWUfBSafeguardsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DisableWUfBSafeguardsValue) String() string {
+	switch e {
+	case DisableWUfBSafeguardsSafeguardsAreEnabledAndDevicesMay:
+		return "DisableWUfBSafeguardsSafeguardsAreEnabledAndDevicesMay"
+	case DisableWUfBSafeguardsSafeguardsAreNotEnabledAndUpgrades:
+		return "DisableWUfBSafeguardsSafeguardsAreNotEnabledAndUpgrades"
+	default:
+		return fmt.Sprintf("DisableWUfBSafeguardsValue(%d)", int64(e))
+	}
+}
+
+// DoNotEnforceEnterpriseTLSCertPinningForUpdateDetectionValue — allowed values for the DoNotEnforceEnterpriseTLSCertPinningForUpdateDetection node.
+type DoNotEnforceEnterpriseTLSCertPinningForUpdateDetectionValue int64
+
 const (
 	// Disabled.
-	DoNotEnforceEnterpriseTLSCertPinningForUpdateDetectionDisabled int64 = 0
+	DoNotEnforceEnterpriseTLSCertPinningForUpdateDetectionDisabled DoNotEnforceEnterpriseTLSCertPinningForUpdateDetectionValue = 0
 	// Enabled.
-	DoNotEnforceEnterpriseTLSCertPinningForUpdateDetectionEnabled int64 = 1
+	DoNotEnforceEnterpriseTLSCertPinningForUpdateDetectionEnabled DoNotEnforceEnterpriseTLSCertPinningForUpdateDetectionValue = 1
 )
 
-// ExcludeWUDriversInQualityUpdate allowed values.
+// String returns the DoNotEnforceEnterpriseTLSCertPinningForUpdateDetectionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e DoNotEnforceEnterpriseTLSCertPinningForUpdateDetectionValue) String() string {
+	switch e {
+	case DoNotEnforceEnterpriseTLSCertPinningForUpdateDetectionDisabled:
+		return "DoNotEnforceEnterpriseTLSCertPinningForUpdateDetectionDisabled"
+	case DoNotEnforceEnterpriseTLSCertPinningForUpdateDetectionEnabled:
+		return "DoNotEnforceEnterpriseTLSCertPinningForUpdateDetectionEnabled"
+	default:
+		return fmt.Sprintf("DoNotEnforceEnterpriseTLSCertPinningForUpdateDetectionValue(%d)", int64(e))
+	}
+}
+
+// ExcludeWUDriversInQualityUpdateValue — allowed values for the ExcludeWUDriversInQualityUpdate node.
+type ExcludeWUDriversInQualityUpdateValue int64
+
 const (
 	// Allow Windows Update drivers.
-	ExcludeWUDriversInQualityUpdateAllowWindowsUpdateDrivers int64 = 0
+	ExcludeWUDriversInQualityUpdateAllowWindowsUpdateDrivers ExcludeWUDriversInQualityUpdateValue = 0
 	// Exclude Windows Update drivers.
-	ExcludeWUDriversInQualityUpdateExcludeWindowsUpdateDrivers int64 = 1
+	ExcludeWUDriversInQualityUpdateExcludeWindowsUpdateDrivers ExcludeWUDriversInQualityUpdateValue = 1
 )
 
-// FillEmptyContentUrls allowed values.
+// String returns the ExcludeWUDriversInQualityUpdateValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ExcludeWUDriversInQualityUpdateValue) String() string {
+	switch e {
+	case ExcludeWUDriversInQualityUpdateAllowWindowsUpdateDrivers:
+		return "ExcludeWUDriversInQualityUpdateAllowWindowsUpdateDrivers"
+	case ExcludeWUDriversInQualityUpdateExcludeWindowsUpdateDrivers:
+		return "ExcludeWUDriversInQualityUpdateExcludeWindowsUpdateDrivers"
+	default:
+		return fmt.Sprintf("ExcludeWUDriversInQualityUpdateValue(%d)", int64(e))
+	}
+}
+
+// FillEmptyContentUrlsValue — allowed values for the FillEmptyContentUrls node.
+type FillEmptyContentUrlsValue int64
+
 const (
 	// Disabled.
-	FillEmptyContentUrlsDisabled int64 = 0
+	FillEmptyContentUrlsDisabled FillEmptyContentUrlsValue = 0
 	// Enabled.
-	FillEmptyContentUrlsEnabled int64 = 1
+	FillEmptyContentUrlsEnabled FillEmptyContentUrlsValue = 1
 )
 
-// IgnoreMOAppDownloadLimit allowed values.
+// String returns the FillEmptyContentUrlsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e FillEmptyContentUrlsValue) String() string {
+	switch e {
+	case FillEmptyContentUrlsDisabled:
+		return "FillEmptyContentUrlsDisabled"
+	case FillEmptyContentUrlsEnabled:
+		return "FillEmptyContentUrlsEnabled"
+	default:
+		return fmt.Sprintf("FillEmptyContentUrlsValue(%d)", int64(e))
+	}
+}
+
+// IgnoreMOAppDownloadLimitValue — allowed values for the IgnoreMOAppDownloadLimit node.
+type IgnoreMOAppDownloadLimitValue int64
+
 const (
 	// Do not ignore MO download limit for apps and their updates.
-	IgnoreMOAppDownloadLimitDoNotIgnoreMODownloadLimit int64 = 0
+	IgnoreMOAppDownloadLimitDoNotIgnoreMODownloadLimit IgnoreMOAppDownloadLimitValue = 0
 	// Ignore MO download limit (allow unlimited downloading) for apps and their updates.
-	IgnoreMOAppDownloadLimitIgnoreMODownloadLimit int64 = 1
+	IgnoreMOAppDownloadLimitIgnoreMODownloadLimit IgnoreMOAppDownloadLimitValue = 1
 )
 
-// IgnoreMOUpdateDownloadLimit allowed values.
+// String returns the IgnoreMOAppDownloadLimitValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e IgnoreMOAppDownloadLimitValue) String() string {
+	switch e {
+	case IgnoreMOAppDownloadLimitDoNotIgnoreMODownloadLimit:
+		return "IgnoreMOAppDownloadLimitDoNotIgnoreMODownloadLimit"
+	case IgnoreMOAppDownloadLimitIgnoreMODownloadLimit:
+		return "IgnoreMOAppDownloadLimitIgnoreMODownloadLimit"
+	default:
+		return fmt.Sprintf("IgnoreMOAppDownloadLimitValue(%d)", int64(e))
+	}
+}
+
+// IgnoreMOUpdateDownloadLimitValue — allowed values for the IgnoreMOUpdateDownloadLimit node.
+type IgnoreMOUpdateDownloadLimitValue int64
+
 const (
 	// Do not ignore MO download limit for OS updates.
-	IgnoreMOUpdateDownloadLimitDoNotIgnoreMODownloadLimit int64 = 0
+	IgnoreMOUpdateDownloadLimitDoNotIgnoreMODownloadLimit IgnoreMOUpdateDownloadLimitValue = 0
 	// Ignore MO download limit (allow unlimited downloading) for OS updates.
-	IgnoreMOUpdateDownloadLimitIgnoreMODownloadLimit int64 = 1
+	IgnoreMOUpdateDownloadLimitIgnoreMODownloadLimit IgnoreMOUpdateDownloadLimitValue = 1
 )
 
-// MaintenanceWindowMonthlySchedule allowed values.
+// String returns the IgnoreMOUpdateDownloadLimitValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e IgnoreMOUpdateDownloadLimitValue) String() string {
+	switch e {
+	case IgnoreMOUpdateDownloadLimitDoNotIgnoreMODownloadLimit:
+		return "IgnoreMOUpdateDownloadLimitDoNotIgnoreMODownloadLimit"
+	case IgnoreMOUpdateDownloadLimitIgnoreMODownloadLimit:
+		return "IgnoreMOUpdateDownloadLimitIgnoreMODownloadLimit"
+	default:
+		return fmt.Sprintf("IgnoreMOUpdateDownloadLimitValue(%d)", int64(e))
+	}
+}
+
+// MaintenanceWindowMonthlyScheduleValue — allowed values for the MaintenanceWindowMonthlySchedule node.
+type MaintenanceWindowMonthlyScheduleValue int64
+
 const (
 	// Date-based
-	MaintenanceWindowMonthlyScheduleDateBased int64 = 1
+	MaintenanceWindowMonthlyScheduleDateBased MaintenanceWindowMonthlyScheduleValue = 1
 	// Week-based
-	MaintenanceWindowMonthlyScheduleWeekBased int64 = 2
+	MaintenanceWindowMonthlyScheduleWeekBased MaintenanceWindowMonthlyScheduleValue = 2
 	// Last day of the month
-	MaintenanceWindowMonthlyScheduleLastDayOfTheMonth int64 = 3
+	MaintenanceWindowMonthlyScheduleLastDayOfTheMonth MaintenanceWindowMonthlyScheduleValue = 3
 )
 
-// MaintenanceWindowMonthlyWeekBasedDayOfTheWeek allowed values.
+// String returns the MaintenanceWindowMonthlyScheduleValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MaintenanceWindowMonthlyScheduleValue) String() string {
+	switch e {
+	case MaintenanceWindowMonthlyScheduleDateBased:
+		return "MaintenanceWindowMonthlyScheduleDateBased"
+	case MaintenanceWindowMonthlyScheduleWeekBased:
+		return "MaintenanceWindowMonthlyScheduleWeekBased"
+	case MaintenanceWindowMonthlyScheduleLastDayOfTheMonth:
+		return "MaintenanceWindowMonthlyScheduleLastDayOfTheMonth"
+	default:
+		return fmt.Sprintf("MaintenanceWindowMonthlyScheduleValue(%d)", int64(e))
+	}
+}
+
+// MaintenanceWindowMonthlyWeekBasedDayOfTheWeekValue — allowed values for the MaintenanceWindowMonthlyWeekBasedDayOfTheWeek node.
+type MaintenanceWindowMonthlyWeekBasedDayOfTheWeekValue int64
+
 const (
 	// Sunday
-	MaintenanceWindowMonthlyWeekBasedDayOfTheWeekSunday int64 = 1
+	MaintenanceWindowMonthlyWeekBasedDayOfTheWeekSunday MaintenanceWindowMonthlyWeekBasedDayOfTheWeekValue = 1
 	// Monday
-	MaintenanceWindowMonthlyWeekBasedDayOfTheWeekMonday int64 = 2
+	MaintenanceWindowMonthlyWeekBasedDayOfTheWeekMonday MaintenanceWindowMonthlyWeekBasedDayOfTheWeekValue = 2
 	// Tuesday
-	MaintenanceWindowMonthlyWeekBasedDayOfTheWeekTuesday int64 = 3
+	MaintenanceWindowMonthlyWeekBasedDayOfTheWeekTuesday MaintenanceWindowMonthlyWeekBasedDayOfTheWeekValue = 3
 	// Wednesday
-	MaintenanceWindowMonthlyWeekBasedDayOfTheWeekWednesday int64 = 4
+	MaintenanceWindowMonthlyWeekBasedDayOfTheWeekWednesday MaintenanceWindowMonthlyWeekBasedDayOfTheWeekValue = 4
 	// Thursday
-	MaintenanceWindowMonthlyWeekBasedDayOfTheWeekThursday int64 = 5
+	MaintenanceWindowMonthlyWeekBasedDayOfTheWeekThursday MaintenanceWindowMonthlyWeekBasedDayOfTheWeekValue = 5
 	// Friday
-	MaintenanceWindowMonthlyWeekBasedDayOfTheWeekFriday int64 = 6
+	MaintenanceWindowMonthlyWeekBasedDayOfTheWeekFriday MaintenanceWindowMonthlyWeekBasedDayOfTheWeekValue = 6
 	// Saturday
-	MaintenanceWindowMonthlyWeekBasedDayOfTheWeekSaturday int64 = 7
+	MaintenanceWindowMonthlyWeekBasedDayOfTheWeekSaturday MaintenanceWindowMonthlyWeekBasedDayOfTheWeekValue = 7
 )
 
-// MaintenanceWindowMonthlyWeekBasedOccurrenceInMonth allowed values.
+// String returns the MaintenanceWindowMonthlyWeekBasedDayOfTheWeekValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MaintenanceWindowMonthlyWeekBasedDayOfTheWeekValue) String() string {
+	switch e {
+	case MaintenanceWindowMonthlyWeekBasedDayOfTheWeekSunday:
+		return "MaintenanceWindowMonthlyWeekBasedDayOfTheWeekSunday"
+	case MaintenanceWindowMonthlyWeekBasedDayOfTheWeekMonday:
+		return "MaintenanceWindowMonthlyWeekBasedDayOfTheWeekMonday"
+	case MaintenanceWindowMonthlyWeekBasedDayOfTheWeekTuesday:
+		return "MaintenanceWindowMonthlyWeekBasedDayOfTheWeekTuesday"
+	case MaintenanceWindowMonthlyWeekBasedDayOfTheWeekWednesday:
+		return "MaintenanceWindowMonthlyWeekBasedDayOfTheWeekWednesday"
+	case MaintenanceWindowMonthlyWeekBasedDayOfTheWeekThursday:
+		return "MaintenanceWindowMonthlyWeekBasedDayOfTheWeekThursday"
+	case MaintenanceWindowMonthlyWeekBasedDayOfTheWeekFriday:
+		return "MaintenanceWindowMonthlyWeekBasedDayOfTheWeekFriday"
+	case MaintenanceWindowMonthlyWeekBasedDayOfTheWeekSaturday:
+		return "MaintenanceWindowMonthlyWeekBasedDayOfTheWeekSaturday"
+	default:
+		return fmt.Sprintf("MaintenanceWindowMonthlyWeekBasedDayOfTheWeekValue(%d)", int64(e))
+	}
+}
+
+// MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthValue — allowed values for the MaintenanceWindowMonthlyWeekBasedOccurrenceInMonth node.
+type MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthValue int64
+
 const (
 	// First
-	MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthFirst int64 = 1
+	MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthFirst MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthValue = 1
 	// Second
-	MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthSecond int64 = 2
+	MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthSecond MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthValue = 2
 	// Third
-	MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthThird int64 = 3
+	MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthThird MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthValue = 3
 	// Fourth
-	MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthFourth int64 = 4
+	MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthFourth MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthValue = 4
 	// Last
-	MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthLast int64 = 5
+	MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthLast MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthValue = 5
 )
 
-// MaintenanceWindowRepeatScheduleOption allowed values.
+// String returns the MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthValue) String() string {
+	switch e {
+	case MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthFirst:
+		return "MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthFirst"
+	case MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthSecond:
+		return "MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthSecond"
+	case MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthThird:
+		return "MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthThird"
+	case MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthFourth:
+		return "MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthFourth"
+	case MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthLast:
+		return "MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthLast"
+	default:
+		return fmt.Sprintf("MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthValue(%d)", int64(e))
+	}
+}
+
+// MaintenanceWindowRepeatScheduleOptionValue — allowed values for the MaintenanceWindowRepeatScheduleOption node.
+type MaintenanceWindowRepeatScheduleOptionValue int64
+
 const (
 	// No repeat
-	MaintenanceWindowRepeatScheduleOptionNoRepeat int64 = 1
+	MaintenanceWindowRepeatScheduleOptionNoRepeat MaintenanceWindowRepeatScheduleOptionValue = 1
 	// Daily
-	MaintenanceWindowRepeatScheduleOptionDaily int64 = 2
+	MaintenanceWindowRepeatScheduleOptionDaily MaintenanceWindowRepeatScheduleOptionValue = 2
 	// Weekly
-	MaintenanceWindowRepeatScheduleOptionWeekly int64 = 3
+	MaintenanceWindowRepeatScheduleOptionWeekly MaintenanceWindowRepeatScheduleOptionValue = 3
 	// Monthly
-	MaintenanceWindowRepeatScheduleOptionMonthly int64 = 4
+	MaintenanceWindowRepeatScheduleOptionMonthly MaintenanceWindowRepeatScheduleOptionValue = 4
 )
 
-// MaintenanceWindowUpdateActions allowed values.
+// String returns the MaintenanceWindowRepeatScheduleOptionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MaintenanceWindowRepeatScheduleOptionValue) String() string {
+	switch e {
+	case MaintenanceWindowRepeatScheduleOptionNoRepeat:
+		return "MaintenanceWindowRepeatScheduleOptionNoRepeat"
+	case MaintenanceWindowRepeatScheduleOptionDaily:
+		return "MaintenanceWindowRepeatScheduleOptionDaily"
+	case MaintenanceWindowRepeatScheduleOptionWeekly:
+		return "MaintenanceWindowRepeatScheduleOptionWeekly"
+	case MaintenanceWindowRepeatScheduleOptionMonthly:
+		return "MaintenanceWindowRepeatScheduleOptionMonthly"
+	default:
+		return fmt.Sprintf("MaintenanceWindowRepeatScheduleOptionValue(%d)", int64(e))
+	}
+}
+
+// MaintenanceWindowUpdateActionsValue — allowed values for the MaintenanceWindowUpdateActions node.
+type MaintenanceWindowUpdateActionsValue int64
+
 const (
 	// Download, install and restart
-	MaintenanceWindowUpdateActionsDownloadInstallAndRestart int64 = 1
+	MaintenanceWindowUpdateActionsDownloadInstallAndRestart MaintenanceWindowUpdateActionsValue = 1
 	// Install and restart
-	MaintenanceWindowUpdateActionsInstallAndRestart int64 = 2
+	MaintenanceWindowUpdateActionsInstallAndRestart MaintenanceWindowUpdateActionsValue = 2
 	// Restart only
-	MaintenanceWindowUpdateActionsRestartOnly int64 = 3
+	MaintenanceWindowUpdateActionsRestartOnly MaintenanceWindowUpdateActionsValue = 3
 )
 
-// ManagePreviewBuilds allowed values.
+// String returns the MaintenanceWindowUpdateActionsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e MaintenanceWindowUpdateActionsValue) String() string {
+	switch e {
+	case MaintenanceWindowUpdateActionsDownloadInstallAndRestart:
+		return "MaintenanceWindowUpdateActionsDownloadInstallAndRestart"
+	case MaintenanceWindowUpdateActionsInstallAndRestart:
+		return "MaintenanceWindowUpdateActionsInstallAndRestart"
+	case MaintenanceWindowUpdateActionsRestartOnly:
+		return "MaintenanceWindowUpdateActionsRestartOnly"
+	default:
+		return fmt.Sprintf("MaintenanceWindowUpdateActionsValue(%d)", int64(e))
+	}
+}
+
+// ManagePreviewBuildsValue — allowed values for the ManagePreviewBuilds node.
+type ManagePreviewBuildsValue int64
+
 const (
 	// Disable Preview builds
-	ManagePreviewBuildsDisablePreviewBuilds int64 = 0
+	ManagePreviewBuildsDisablePreviewBuilds ManagePreviewBuildsValue = 0
 	// Disable Preview builds once the next release is public
-	ManagePreviewBuildsDisablePreviewBuildsOnceTheNext int64 = 1
+	ManagePreviewBuildsDisablePreviewBuildsOnceTheNext ManagePreviewBuildsValue = 1
 	// Enable Preview builds
-	ManagePreviewBuildsEnablePreviewBuilds int64 = 2
+	ManagePreviewBuildsEnablePreviewBuilds ManagePreviewBuildsValue = 2
 	// Preview builds is left to user selection
-	ManagePreviewBuildsPreviewBuildsIsLeftToUser int64 = 3
+	ManagePreviewBuildsPreviewBuildsIsLeftToUser ManagePreviewBuildsValue = 3
 )
 
-// NoUpdateNotificationsDuringActiveHours allowed values.
+// String returns the ManagePreviewBuildsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ManagePreviewBuildsValue) String() string {
+	switch e {
+	case ManagePreviewBuildsDisablePreviewBuilds:
+		return "ManagePreviewBuildsDisablePreviewBuilds"
+	case ManagePreviewBuildsDisablePreviewBuildsOnceTheNext:
+		return "ManagePreviewBuildsDisablePreviewBuildsOnceTheNext"
+	case ManagePreviewBuildsEnablePreviewBuilds:
+		return "ManagePreviewBuildsEnablePreviewBuilds"
+	case ManagePreviewBuildsPreviewBuildsIsLeftToUser:
+		return "ManagePreviewBuildsPreviewBuildsIsLeftToUser"
+	default:
+		return fmt.Sprintf("ManagePreviewBuildsValue(%d)", int64(e))
+	}
+}
+
+// NoUpdateNotificationsDuringActiveHoursValue — allowed values for the NoUpdateNotificationsDuringActiveHours node.
+type NoUpdateNotificationsDuringActiveHoursValue int64
+
 const (
 	// Disabled.
-	NoUpdateNotificationsDuringActiveHoursDisabled int64 = 0
+	NoUpdateNotificationsDuringActiveHoursDisabled NoUpdateNotificationsDuringActiveHoursValue = 0
 	// Enabled.
-	NoUpdateNotificationsDuringActiveHoursEnabled int64 = 1
+	NoUpdateNotificationsDuringActiveHoursEnabled NoUpdateNotificationsDuringActiveHoursValue = 1
 )
 
-// PauseDeferrals allowed values.
+// String returns the NoUpdateNotificationsDuringActiveHoursValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e NoUpdateNotificationsDuringActiveHoursValue) String() string {
+	switch e {
+	case NoUpdateNotificationsDuringActiveHoursDisabled:
+		return "NoUpdateNotificationsDuringActiveHoursDisabled"
+	case NoUpdateNotificationsDuringActiveHoursEnabled:
+		return "NoUpdateNotificationsDuringActiveHoursEnabled"
+	default:
+		return fmt.Sprintf("NoUpdateNotificationsDuringActiveHoursValue(%d)", int64(e))
+	}
+}
+
+// PauseDeferralsValue — allowed values for the PauseDeferrals node.
+type PauseDeferralsValue int64
+
 const (
 	// Deferrals are not paused.
-	PauseDeferralsDeferralsAreNotPaused int64 = 0
+	PauseDeferralsDeferralsAreNotPaused PauseDeferralsValue = 0
 	// Deferrals are paused.
-	PauseDeferralsDeferralsArePaused int64 = 1
+	PauseDeferralsDeferralsArePaused PauseDeferralsValue = 1
 )
 
-// PauseFeatureUpdates allowed values.
+// String returns the PauseDeferralsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PauseDeferralsValue) String() string {
+	switch e {
+	case PauseDeferralsDeferralsAreNotPaused:
+		return "PauseDeferralsDeferralsAreNotPaused"
+	case PauseDeferralsDeferralsArePaused:
+		return "PauseDeferralsDeferralsArePaused"
+	default:
+		return fmt.Sprintf("PauseDeferralsValue(%d)", int64(e))
+	}
+}
+
+// PauseFeatureUpdatesValue — allowed values for the PauseFeatureUpdates node.
+type PauseFeatureUpdatesValue int64
+
 const (
 	// Feature Updates are not paused.
-	PauseFeatureUpdatesFeatureUpdatesAreNotPaused int64 = 0
+	PauseFeatureUpdatesFeatureUpdatesAreNotPaused PauseFeatureUpdatesValue = 0
 	// Feature Updates are paused for 60 days or until value set to back to 0, whichever is sooner.
-	PauseFeatureUpdatesFeatureUpdatesArePausedFor60 int64 = 1
+	PauseFeatureUpdatesFeatureUpdatesArePausedFor60 PauseFeatureUpdatesValue = 1
 )
 
-// PauseQualityUpdates allowed values.
+// String returns the PauseFeatureUpdatesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PauseFeatureUpdatesValue) String() string {
+	switch e {
+	case PauseFeatureUpdatesFeatureUpdatesAreNotPaused:
+		return "PauseFeatureUpdatesFeatureUpdatesAreNotPaused"
+	case PauseFeatureUpdatesFeatureUpdatesArePausedFor60:
+		return "PauseFeatureUpdatesFeatureUpdatesArePausedFor60"
+	default:
+		return fmt.Sprintf("PauseFeatureUpdatesValue(%d)", int64(e))
+	}
+}
+
+// PauseQualityUpdatesValue — allowed values for the PauseQualityUpdates node.
+type PauseQualityUpdatesValue int64
+
 const (
 	// Quality Updates are not paused.
-	PauseQualityUpdatesQualityUpdatesAreNotPaused int64 = 0
+	PauseQualityUpdatesQualityUpdatesAreNotPaused PauseQualityUpdatesValue = 0
 	// Quality Updates are paused for 35 days or until value set back to 0, whichever is sooner.
-	PauseQualityUpdatesQualityUpdatesArePausedFor35 int64 = 1
+	PauseQualityUpdatesQualityUpdatesArePausedFor35 PauseQualityUpdatesValue = 1
 )
 
-// RequireDeferUpgrade allowed values.
+// String returns the PauseQualityUpdatesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e PauseQualityUpdatesValue) String() string {
+	switch e {
+	case PauseQualityUpdatesQualityUpdatesAreNotPaused:
+		return "PauseQualityUpdatesQualityUpdatesAreNotPaused"
+	case PauseQualityUpdatesQualityUpdatesArePausedFor35:
+		return "PauseQualityUpdatesQualityUpdatesArePausedFor35"
+	default:
+		return fmt.Sprintf("PauseQualityUpdatesValue(%d)", int64(e))
+	}
+}
+
+// RequireDeferUpgradeValue — allowed values for the RequireDeferUpgrade node.
+type RequireDeferUpgradeValue int64
+
 const (
 	// User gets upgrades from Semi-Annual Channel (Targeted).
-	RequireDeferUpgradeUserGetsUpgradesFromSemiAnnualChannel int64 = 0
+	RequireDeferUpgradeUserGetsUpgradesFromSemiAnnualChannel RequireDeferUpgradeValue = 0
 	// User gets upgrades from Semi-Annual Channel.
-	RequireDeferUpgradeUserGetsUpgradesFromSemiAnnualChannel2 int64 = 1
+	RequireDeferUpgradeUserGetsUpgradesFromSemiAnnualChannel2 RequireDeferUpgradeValue = 1
 )
 
-// RequireUpdateApproval allowed values.
+// String returns the RequireDeferUpgradeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e RequireDeferUpgradeValue) String() string {
+	switch e {
+	case RequireDeferUpgradeUserGetsUpgradesFromSemiAnnualChannel:
+		return "RequireDeferUpgradeUserGetsUpgradesFromSemiAnnualChannel"
+	case RequireDeferUpgradeUserGetsUpgradesFromSemiAnnualChannel2:
+		return "RequireDeferUpgradeUserGetsUpgradesFromSemiAnnualChannel2"
+	default:
+		return fmt.Sprintf("RequireDeferUpgradeValue(%d)", int64(e))
+	}
+}
+
+// RequireUpdateApprovalValue — allowed values for the RequireUpdateApproval node.
+type RequireUpdateApprovalValue int64
+
 const (
 	// Not configured. The device installs all applicable updates.
-	RequireUpdateApprovalNotConfigured int64 = 0
+	RequireUpdateApprovalNotConfigured RequireUpdateApprovalValue = 0
 	// The device only installs updates that are both applicable and on the Approved Updates list. Set
 	// this policy to 1 if IT wants to control the deployment of updates on devices, such as when
 	// testing is required prior to deployment.
-	RequireUpdateApprovalTheDeviceOnlyInstallsUpdatesThat int64 = 1
+	RequireUpdateApprovalTheDeviceOnlyInstallsUpdatesThat RequireUpdateApprovalValue = 1
 )
 
-// ScheduleImminentRestartWarning allowed values.
+// String returns the RequireUpdateApprovalValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e RequireUpdateApprovalValue) String() string {
+	switch e {
+	case RequireUpdateApprovalNotConfigured:
+		return "RequireUpdateApprovalNotConfigured"
+	case RequireUpdateApprovalTheDeviceOnlyInstallsUpdatesThat:
+		return "RequireUpdateApprovalTheDeviceOnlyInstallsUpdatesThat"
+	default:
+		return fmt.Sprintf("RequireUpdateApprovalValue(%d)", int64(e))
+	}
+}
+
+// ScheduleImminentRestartWarningValue — allowed values for the ScheduleImminentRestartWarning node.
+type ScheduleImminentRestartWarningValue int64
+
 const (
 	// 15 Minutes
-	ScheduleImminentRestartWarningN15Minutes int64 = 15
+	ScheduleImminentRestartWarningN15Minutes ScheduleImminentRestartWarningValue = 15
 	// 30 Minutes
-	ScheduleImminentRestartWarningN30Minutes int64 = 30
+	ScheduleImminentRestartWarningN30Minutes ScheduleImminentRestartWarningValue = 30
 	// 60 Minutes
-	ScheduleImminentRestartWarningN60Minutes int64 = 60
+	ScheduleImminentRestartWarningN60Minutes ScheduleImminentRestartWarningValue = 60
 )
 
-// ScheduleRestartWarning allowed values.
+// String returns the ScheduleImminentRestartWarningValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ScheduleImminentRestartWarningValue) String() string {
+	switch e {
+	case ScheduleImminentRestartWarningN15Minutes:
+		return "ScheduleImminentRestartWarningN15Minutes"
+	case ScheduleImminentRestartWarningN30Minutes:
+		return "ScheduleImminentRestartWarningN30Minutes"
+	case ScheduleImminentRestartWarningN60Minutes:
+		return "ScheduleImminentRestartWarningN60Minutes"
+	default:
+		return fmt.Sprintf("ScheduleImminentRestartWarningValue(%d)", int64(e))
+	}
+}
+
+// ScheduleRestartWarningValue — allowed values for the ScheduleRestartWarning node.
+type ScheduleRestartWarningValue int64
+
 const (
 	// 2 Hours
-	ScheduleRestartWarningN2Hours int64 = 2
+	ScheduleRestartWarningN2Hours ScheduleRestartWarningValue = 2
 	// 4 Hours
-	ScheduleRestartWarningN4Hours int64 = 4
+	ScheduleRestartWarningN4Hours ScheduleRestartWarningValue = 4
 	// 8 Hours
-	ScheduleRestartWarningN8Hours int64 = 8
+	ScheduleRestartWarningN8Hours ScheduleRestartWarningValue = 8
 	// 12 Hours
-	ScheduleRestartWarningN12Hours int64 = 12
+	ScheduleRestartWarningN12Hours ScheduleRestartWarningValue = 12
 	// 24 Hours
-	ScheduleRestartWarningN24Hours int64 = 24
+	ScheduleRestartWarningN24Hours ScheduleRestartWarningValue = 24
 )
 
-// ScheduledInstallDay allowed values.
+// String returns the ScheduleRestartWarningValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ScheduleRestartWarningValue) String() string {
+	switch e {
+	case ScheduleRestartWarningN2Hours:
+		return "ScheduleRestartWarningN2Hours"
+	case ScheduleRestartWarningN4Hours:
+		return "ScheduleRestartWarningN4Hours"
+	case ScheduleRestartWarningN8Hours:
+		return "ScheduleRestartWarningN8Hours"
+	case ScheduleRestartWarningN12Hours:
+		return "ScheduleRestartWarningN12Hours"
+	case ScheduleRestartWarningN24Hours:
+		return "ScheduleRestartWarningN24Hours"
+	default:
+		return fmt.Sprintf("ScheduleRestartWarningValue(%d)", int64(e))
+	}
+}
+
+// ScheduledInstallDayValue — allowed values for the ScheduledInstallDay node.
+type ScheduledInstallDayValue int64
+
 const (
 	// Every day
-	ScheduledInstallDayEveryDay int64 = 0
+	ScheduledInstallDayEveryDay ScheduledInstallDayValue = 0
 	// Sunday
-	ScheduledInstallDaySunday int64 = 1
+	ScheduledInstallDaySunday ScheduledInstallDayValue = 1
 	// Monday
-	ScheduledInstallDayMonday int64 = 2
+	ScheduledInstallDayMonday ScheduledInstallDayValue = 2
 	// Tuesday
-	ScheduledInstallDayTuesday int64 = 3
+	ScheduledInstallDayTuesday ScheduledInstallDayValue = 3
 	// Wednesday
-	ScheduledInstallDayWednesday int64 = 4
+	ScheduledInstallDayWednesday ScheduledInstallDayValue = 4
 	// Thursday
-	ScheduledInstallDayThursday int64 = 5
+	ScheduledInstallDayThursday ScheduledInstallDayValue = 5
 	// Friday
-	ScheduledInstallDayFriday int64 = 6
+	ScheduledInstallDayFriday ScheduledInstallDayValue = 6
 	// Saturday
-	ScheduledInstallDaySaturday int64 = 7
+	ScheduledInstallDaySaturday ScheduledInstallDayValue = 7
 )
 
-// ScheduledInstallEveryWeek allowed values.
+// String returns the ScheduledInstallDayValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ScheduledInstallDayValue) String() string {
+	switch e {
+	case ScheduledInstallDayEveryDay:
+		return "ScheduledInstallDayEveryDay"
+	case ScheduledInstallDaySunday:
+		return "ScheduledInstallDaySunday"
+	case ScheduledInstallDayMonday:
+		return "ScheduledInstallDayMonday"
+	case ScheduledInstallDayTuesday:
+		return "ScheduledInstallDayTuesday"
+	case ScheduledInstallDayWednesday:
+		return "ScheduledInstallDayWednesday"
+	case ScheduledInstallDayThursday:
+		return "ScheduledInstallDayThursday"
+	case ScheduledInstallDayFriday:
+		return "ScheduledInstallDayFriday"
+	case ScheduledInstallDaySaturday:
+		return "ScheduledInstallDaySaturday"
+	default:
+		return fmt.Sprintf("ScheduledInstallDayValue(%d)", int64(e))
+	}
+}
+
+// ScheduledInstallEveryWeekValue — allowed values for the ScheduledInstallEveryWeek node.
+type ScheduledInstallEveryWeekValue int64
+
 const (
 	// no update in the schedule
-	ScheduledInstallEveryWeekNoUpdateInTheSchedule int64 = 0
+	ScheduledInstallEveryWeekNoUpdateInTheSchedule ScheduledInstallEveryWeekValue = 0
 	// update is scheduled every week
-	ScheduledInstallEveryWeekUpdateIsScheduledEveryWeek int64 = 1
+	ScheduledInstallEveryWeekUpdateIsScheduledEveryWeek ScheduledInstallEveryWeekValue = 1
 )
 
-// ScheduledInstallFirstWeek allowed values.
+// String returns the ScheduledInstallEveryWeekValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ScheduledInstallEveryWeekValue) String() string {
+	switch e {
+	case ScheduledInstallEveryWeekNoUpdateInTheSchedule:
+		return "ScheduledInstallEveryWeekNoUpdateInTheSchedule"
+	case ScheduledInstallEveryWeekUpdateIsScheduledEveryWeek:
+		return "ScheduledInstallEveryWeekUpdateIsScheduledEveryWeek"
+	default:
+		return fmt.Sprintf("ScheduledInstallEveryWeekValue(%d)", int64(e))
+	}
+}
+
+// ScheduledInstallFirstWeekValue — allowed values for the ScheduledInstallFirstWeek node.
+type ScheduledInstallFirstWeekValue int64
+
 const (
 	// no update in the schedule
-	ScheduledInstallFirstWeekNoUpdateInTheSchedule int64 = 0
+	ScheduledInstallFirstWeekNoUpdateInTheSchedule ScheduledInstallFirstWeekValue = 0
 	// update is scheduled every first week of the month
-	ScheduledInstallFirstWeekUpdateIsScheduledEveryFirstWeek int64 = 1
+	ScheduledInstallFirstWeekUpdateIsScheduledEveryFirstWeek ScheduledInstallFirstWeekValue = 1
 )
 
-// ScheduledInstallFourthWeek allowed values.
+// String returns the ScheduledInstallFirstWeekValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ScheduledInstallFirstWeekValue) String() string {
+	switch e {
+	case ScheduledInstallFirstWeekNoUpdateInTheSchedule:
+		return "ScheduledInstallFirstWeekNoUpdateInTheSchedule"
+	case ScheduledInstallFirstWeekUpdateIsScheduledEveryFirstWeek:
+		return "ScheduledInstallFirstWeekUpdateIsScheduledEveryFirstWeek"
+	default:
+		return fmt.Sprintf("ScheduledInstallFirstWeekValue(%d)", int64(e))
+	}
+}
+
+// ScheduledInstallFourthWeekValue — allowed values for the ScheduledInstallFourthWeek node.
+type ScheduledInstallFourthWeekValue int64
+
 const (
 	// no update in the schedule
-	ScheduledInstallFourthWeekNoUpdateInTheSchedule int64 = 0
+	ScheduledInstallFourthWeekNoUpdateInTheSchedule ScheduledInstallFourthWeekValue = 0
 	// update is scheduled every fourth week of the month
-	ScheduledInstallFourthWeekUpdateIsScheduledEveryFourthWeek int64 = 1
+	ScheduledInstallFourthWeekUpdateIsScheduledEveryFourthWeek ScheduledInstallFourthWeekValue = 1
 )
 
-// ScheduledInstallSecondWeek allowed values.
+// String returns the ScheduledInstallFourthWeekValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ScheduledInstallFourthWeekValue) String() string {
+	switch e {
+	case ScheduledInstallFourthWeekNoUpdateInTheSchedule:
+		return "ScheduledInstallFourthWeekNoUpdateInTheSchedule"
+	case ScheduledInstallFourthWeekUpdateIsScheduledEveryFourthWeek:
+		return "ScheduledInstallFourthWeekUpdateIsScheduledEveryFourthWeek"
+	default:
+		return fmt.Sprintf("ScheduledInstallFourthWeekValue(%d)", int64(e))
+	}
+}
+
+// ScheduledInstallSecondWeekValue — allowed values for the ScheduledInstallSecondWeek node.
+type ScheduledInstallSecondWeekValue int64
+
 const (
 	// no update in the schedule
-	ScheduledInstallSecondWeekNoUpdateInTheSchedule int64 = 0
+	ScheduledInstallSecondWeekNoUpdateInTheSchedule ScheduledInstallSecondWeekValue = 0
 	// update is scheduled every second week of the month
-	ScheduledInstallSecondWeekUpdateIsScheduledEverySecondWeek int64 = 1
+	ScheduledInstallSecondWeekUpdateIsScheduledEverySecondWeek ScheduledInstallSecondWeekValue = 1
 )
 
-// ScheduledInstallThirdWeek allowed values.
+// String returns the ScheduledInstallSecondWeekValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ScheduledInstallSecondWeekValue) String() string {
+	switch e {
+	case ScheduledInstallSecondWeekNoUpdateInTheSchedule:
+		return "ScheduledInstallSecondWeekNoUpdateInTheSchedule"
+	case ScheduledInstallSecondWeekUpdateIsScheduledEverySecondWeek:
+		return "ScheduledInstallSecondWeekUpdateIsScheduledEverySecondWeek"
+	default:
+		return fmt.Sprintf("ScheduledInstallSecondWeekValue(%d)", int64(e))
+	}
+}
+
+// ScheduledInstallThirdWeekValue — allowed values for the ScheduledInstallThirdWeek node.
+type ScheduledInstallThirdWeekValue int64
+
 const (
 	// no update in the schedule
-	ScheduledInstallThirdWeekNoUpdateInTheSchedule int64 = 0
+	ScheduledInstallThirdWeekNoUpdateInTheSchedule ScheduledInstallThirdWeekValue = 0
 	// update is scheduled every third week of the month
-	ScheduledInstallThirdWeekUpdateIsScheduledEveryThirdWeek int64 = 1
+	ScheduledInstallThirdWeekUpdateIsScheduledEveryThirdWeek ScheduledInstallThirdWeekValue = 1
 )
 
-// SetAutoRestartNotificationDisable allowed values.
+// String returns the ScheduledInstallThirdWeekValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ScheduledInstallThirdWeekValue) String() string {
+	switch e {
+	case ScheduledInstallThirdWeekNoUpdateInTheSchedule:
+		return "ScheduledInstallThirdWeekNoUpdateInTheSchedule"
+	case ScheduledInstallThirdWeekUpdateIsScheduledEveryThirdWeek:
+		return "ScheduledInstallThirdWeekUpdateIsScheduledEveryThirdWeek"
+	default:
+		return fmt.Sprintf("ScheduledInstallThirdWeekValue(%d)", int64(e))
+	}
+}
+
+// SetAutoRestartNotificationDisableValue — allowed values for the SetAutoRestartNotificationDisable node.
+type SetAutoRestartNotificationDisableValue int64
+
 const (
 	// Enabled
-	SetAutoRestartNotificationDisableEnabled int64 = 0
+	SetAutoRestartNotificationDisableEnabled SetAutoRestartNotificationDisableValue = 0
 	// Disabled
-	SetAutoRestartNotificationDisableDisabled int64 = 1
+	SetAutoRestartNotificationDisableDisabled SetAutoRestartNotificationDisableValue = 1
 )
 
-// SetDisablePauseUXAccess allowed values.
+// String returns the SetAutoRestartNotificationDisableValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SetAutoRestartNotificationDisableValue) String() string {
+	switch e {
+	case SetAutoRestartNotificationDisableEnabled:
+		return "SetAutoRestartNotificationDisableEnabled"
+	case SetAutoRestartNotificationDisableDisabled:
+		return "SetAutoRestartNotificationDisableDisabled"
+	default:
+		return fmt.Sprintf("SetAutoRestartNotificationDisableValue(%d)", int64(e))
+	}
+}
+
+// SetDisablePauseUXAccessValue — allowed values for the SetDisablePauseUXAccess node.
+type SetDisablePauseUXAccessValue int64
+
 const (
 	// Enable
-	SetDisablePauseUXAccessEnable int64 = 1
+	SetDisablePauseUXAccessEnable SetDisablePauseUXAccessValue = 1
 	// Disable
-	SetDisablePauseUXAccessDisable int64 = 0
+	SetDisablePauseUXAccessDisable SetDisablePauseUXAccessValue = 0
 )
 
-// SetDisableUXWUAccess allowed values.
+// String returns the SetDisablePauseUXAccessValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SetDisablePauseUXAccessValue) String() string {
+	switch e {
+	case SetDisablePauseUXAccessEnable:
+		return "SetDisablePauseUXAccessEnable"
+	case SetDisablePauseUXAccessDisable:
+		return "SetDisablePauseUXAccessDisable"
+	default:
+		return fmt.Sprintf("SetDisablePauseUXAccessValue(%d)", int64(e))
+	}
+}
+
+// SetDisableUXWUAccessValue — allowed values for the SetDisableUXWUAccess node.
+type SetDisableUXWUAccessValue int64
+
 const (
 	// Disabled
-	SetDisableUXWUAccessDisabled int64 = 0
+	SetDisableUXWUAccessDisabled SetDisableUXWUAccessValue = 0
 	// Enabled
-	SetDisableUXWUAccessEnabled int64 = 1
+	SetDisableUXWUAccessEnabled SetDisableUXWUAccessValue = 1
 )
 
-// SetEDURestart allowed values.
+// String returns the SetDisableUXWUAccessValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SetDisableUXWUAccessValue) String() string {
+	switch e {
+	case SetDisableUXWUAccessDisabled:
+		return "SetDisableUXWUAccessDisabled"
+	case SetDisableUXWUAccessEnabled:
+		return "SetDisableUXWUAccessEnabled"
+	default:
+		return fmt.Sprintf("SetDisableUXWUAccessValue(%d)", int64(e))
+	}
+}
+
+// SetEDURestartValue — allowed values for the SetEDURestart node.
+type SetEDURestartValue int64
+
 const (
 	// not configured
-	SetEDURestartNotConfigured int64 = 0
+	SetEDURestartNotConfigured SetEDURestartValue = 0
 	// configured
-	SetEDURestartConfigured int64 = 1
+	SetEDURestartConfigured SetEDURestartValue = 1
 )
 
-// SetPolicyDrivenUpdateSourceForDriverUpdates allowed values.
+// String returns the SetEDURestartValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SetEDURestartValue) String() string {
+	switch e {
+	case SetEDURestartNotConfigured:
+		return "SetEDURestartNotConfigured"
+	case SetEDURestartConfigured:
+		return "SetEDURestartConfigured"
+	default:
+		return fmt.Sprintf("SetEDURestartValue(%d)", int64(e))
+	}
+}
+
+// SetPolicyDrivenUpdateSourceForDriverUpdatesValue — allowed values for the SetPolicyDrivenUpdateSourceForDriverUpdates node.
+type SetPolicyDrivenUpdateSourceForDriverUpdatesValue int64
+
 const (
 	// Detect, download and deploy Driver Updates from Windows Update
-	SetPolicyDrivenUpdateSourceForDriverUpdatesDetectDownloadAndDeployDriverUpdates int64 = 0
+	SetPolicyDrivenUpdateSourceForDriverUpdatesDetectDownloadAndDeployDriverUpdates SetPolicyDrivenUpdateSourceForDriverUpdatesValue = 0
 	// Detect, download and deploy Driver Updates from Windows Server Update Services (WSUS)
-	SetPolicyDrivenUpdateSourceForDriverUpdatesDetectDownloadAndDeployDriverUpdates2 int64 = 1
+	SetPolicyDrivenUpdateSourceForDriverUpdatesDetectDownloadAndDeployDriverUpdates2 SetPolicyDrivenUpdateSourceForDriverUpdatesValue = 1
 )
 
-// SetPolicyDrivenUpdateSourceForFeatureUpdates allowed values.
+// String returns the SetPolicyDrivenUpdateSourceForDriverUpdatesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SetPolicyDrivenUpdateSourceForDriverUpdatesValue) String() string {
+	switch e {
+	case SetPolicyDrivenUpdateSourceForDriverUpdatesDetectDownloadAndDeployDriverUpdates:
+		return "SetPolicyDrivenUpdateSourceForDriverUpdatesDetectDownloadAndDeployDriverUpdates"
+	case SetPolicyDrivenUpdateSourceForDriverUpdatesDetectDownloadAndDeployDriverUpdates2:
+		return "SetPolicyDrivenUpdateSourceForDriverUpdatesDetectDownloadAndDeployDriverUpdates2"
+	default:
+		return fmt.Sprintf("SetPolicyDrivenUpdateSourceForDriverUpdatesValue(%d)", int64(e))
+	}
+}
+
+// SetPolicyDrivenUpdateSourceForFeatureUpdatesValue — allowed values for the SetPolicyDrivenUpdateSourceForFeatureUpdates node.
+type SetPolicyDrivenUpdateSourceForFeatureUpdatesValue int64
+
 const (
 	// Detect, download and deploy Feature Updates from Windows Update
-	SetPolicyDrivenUpdateSourceForFeatureUpdatesDetectDownloadAndDeployFeatureUpdates int64 = 0
+	SetPolicyDrivenUpdateSourceForFeatureUpdatesDetectDownloadAndDeployFeatureUpdates SetPolicyDrivenUpdateSourceForFeatureUpdatesValue = 0
 	// Detect, download and deploy Feature Updates from Windows Server Update Services (WSUS)
-	SetPolicyDrivenUpdateSourceForFeatureUpdatesDetectDownloadAndDeployFeatureUpdates2 int64 = 1
+	SetPolicyDrivenUpdateSourceForFeatureUpdatesDetectDownloadAndDeployFeatureUpdates2 SetPolicyDrivenUpdateSourceForFeatureUpdatesValue = 1
 )
 
-// SetPolicyDrivenUpdateSourceForOtherUpdates allowed values.
+// String returns the SetPolicyDrivenUpdateSourceForFeatureUpdatesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SetPolicyDrivenUpdateSourceForFeatureUpdatesValue) String() string {
+	switch e {
+	case SetPolicyDrivenUpdateSourceForFeatureUpdatesDetectDownloadAndDeployFeatureUpdates:
+		return "SetPolicyDrivenUpdateSourceForFeatureUpdatesDetectDownloadAndDeployFeatureUpdates"
+	case SetPolicyDrivenUpdateSourceForFeatureUpdatesDetectDownloadAndDeployFeatureUpdates2:
+		return "SetPolicyDrivenUpdateSourceForFeatureUpdatesDetectDownloadAndDeployFeatureUpdates2"
+	default:
+		return fmt.Sprintf("SetPolicyDrivenUpdateSourceForFeatureUpdatesValue(%d)", int64(e))
+	}
+}
+
+// SetPolicyDrivenUpdateSourceForOtherUpdatesValue — allowed values for the SetPolicyDrivenUpdateSourceForOtherUpdates node.
+type SetPolicyDrivenUpdateSourceForOtherUpdatesValue int64
+
 const (
 	// Detect, download and deploy other Updates from Windows Update
-	SetPolicyDrivenUpdateSourceForOtherUpdatesDetectDownloadAndDeployOtherUpdates int64 = 0
+	SetPolicyDrivenUpdateSourceForOtherUpdatesDetectDownloadAndDeployOtherUpdates SetPolicyDrivenUpdateSourceForOtherUpdatesValue = 0
 	// Detect, download and deploy other Updates from Windows Server Update Services (WSUS)
-	SetPolicyDrivenUpdateSourceForOtherUpdatesDetectDownloadAndDeployOtherUpdates2 int64 = 1
+	SetPolicyDrivenUpdateSourceForOtherUpdatesDetectDownloadAndDeployOtherUpdates2 SetPolicyDrivenUpdateSourceForOtherUpdatesValue = 1
 )
 
-// SetPolicyDrivenUpdateSourceForQualityUpdates allowed values.
+// String returns the SetPolicyDrivenUpdateSourceForOtherUpdatesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SetPolicyDrivenUpdateSourceForOtherUpdatesValue) String() string {
+	switch e {
+	case SetPolicyDrivenUpdateSourceForOtherUpdatesDetectDownloadAndDeployOtherUpdates:
+		return "SetPolicyDrivenUpdateSourceForOtherUpdatesDetectDownloadAndDeployOtherUpdates"
+	case SetPolicyDrivenUpdateSourceForOtherUpdatesDetectDownloadAndDeployOtherUpdates2:
+		return "SetPolicyDrivenUpdateSourceForOtherUpdatesDetectDownloadAndDeployOtherUpdates2"
+	default:
+		return fmt.Sprintf("SetPolicyDrivenUpdateSourceForOtherUpdatesValue(%d)", int64(e))
+	}
+}
+
+// SetPolicyDrivenUpdateSourceForQualityUpdatesValue — allowed values for the SetPolicyDrivenUpdateSourceForQualityUpdates node.
+type SetPolicyDrivenUpdateSourceForQualityUpdatesValue int64
+
 const (
 	// Detect, download and deploy Quality Updates from Windows Update
-	SetPolicyDrivenUpdateSourceForQualityUpdatesDetectDownloadAndDeployQualityUpdates int64 = 0
+	SetPolicyDrivenUpdateSourceForQualityUpdatesDetectDownloadAndDeployQualityUpdates SetPolicyDrivenUpdateSourceForQualityUpdatesValue = 0
 	// Detect, download and deploy Quality Updates from Windows Server Update Services (WSUS)
-	SetPolicyDrivenUpdateSourceForQualityUpdatesDetectDownloadAndDeployQualityUpdates2 int64 = 1
+	SetPolicyDrivenUpdateSourceForQualityUpdatesDetectDownloadAndDeployQualityUpdates2 SetPolicyDrivenUpdateSourceForQualityUpdatesValue = 1
 )
 
-// SetProxyBehaviorForUpdateDetection allowed values.
+// String returns the SetPolicyDrivenUpdateSourceForQualityUpdatesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SetPolicyDrivenUpdateSourceForQualityUpdatesValue) String() string {
+	switch e {
+	case SetPolicyDrivenUpdateSourceForQualityUpdatesDetectDownloadAndDeployQualityUpdates:
+		return "SetPolicyDrivenUpdateSourceForQualityUpdatesDetectDownloadAndDeployQualityUpdates"
+	case SetPolicyDrivenUpdateSourceForQualityUpdatesDetectDownloadAndDeployQualityUpdates2:
+		return "SetPolicyDrivenUpdateSourceForQualityUpdatesDetectDownloadAndDeployQualityUpdates2"
+	default:
+		return fmt.Sprintf("SetPolicyDrivenUpdateSourceForQualityUpdatesValue(%d)", int64(e))
+	}
+}
+
+// SetProxyBehaviorForUpdateDetectionValue — allowed values for the SetProxyBehaviorForUpdateDetection node.
+type SetProxyBehaviorForUpdateDetectionValue int64
+
 const (
 	// Only use system proxy for detecting updates (default)
-	SetProxyBehaviorForUpdateDetectionOnlyUseSystemProxyForDetecting int64 = 0
+	SetProxyBehaviorForUpdateDetectionOnlyUseSystemProxyForDetecting SetProxyBehaviorForUpdateDetectionValue = 0
 	// Allow user proxy to be used as a fallback if detection using system proxy fails
-	SetProxyBehaviorForUpdateDetectionAllowUserProxyToBeUsed int64 = 1
+	SetProxyBehaviorForUpdateDetectionAllowUserProxyToBeUsed SetProxyBehaviorForUpdateDetectionValue = 1
 )
 
-// UpdateNotificationLevel allowed values.
+// String returns the SetProxyBehaviorForUpdateDetectionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e SetProxyBehaviorForUpdateDetectionValue) String() string {
+	switch e {
+	case SetProxyBehaviorForUpdateDetectionOnlyUseSystemProxyForDetecting:
+		return "SetProxyBehaviorForUpdateDetectionOnlyUseSystemProxyForDetecting"
+	case SetProxyBehaviorForUpdateDetectionAllowUserProxyToBeUsed:
+		return "SetProxyBehaviorForUpdateDetectionAllowUserProxyToBeUsed"
+	default:
+		return fmt.Sprintf("SetProxyBehaviorForUpdateDetectionValue(%d)", int64(e))
+	}
+}
+
+// UpdateNotificationLevelValue — allowed values for the UpdateNotificationLevel node.
+type UpdateNotificationLevelValue int64
+
 const (
 	// Use the default Windows Update notifications
-	UpdateNotificationLevelUseTheDefaultWindowsUpdateNotifications int64 = 0
+	UpdateNotificationLevelUseTheDefaultWindowsUpdateNotifications UpdateNotificationLevelValue = 0
 	// Turn off all notifications, excluding restart warnings
-	UpdateNotificationLevelTurnOffAllNotificationsExcludingRestart int64 = 1
+	UpdateNotificationLevelTurnOffAllNotificationsExcludingRestart UpdateNotificationLevelValue = 1
 	// Turn off all notifications, including restart warnings
-	UpdateNotificationLevelTurnOffAllNotificationsIncludingRestart int64 = 2
+	UpdateNotificationLevelTurnOffAllNotificationsIncludingRestart UpdateNotificationLevelValue = 2
 )
+
+// String returns the UpdateNotificationLevelValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e UpdateNotificationLevelValue) String() string {
+	switch e {
+	case UpdateNotificationLevelUseTheDefaultWindowsUpdateNotifications:
+		return "UpdateNotificationLevelUseTheDefaultWindowsUpdateNotifications"
+	case UpdateNotificationLevelTurnOffAllNotificationsExcludingRestart:
+		return "UpdateNotificationLevelTurnOffAllNotificationsExcludingRestart"
+	case UpdateNotificationLevelTurnOffAllNotificationsIncludingRestart:
+		return "UpdateNotificationLevelTurnOffAllNotificationsIncludingRestart"
+	default:
+		return fmt.Sprintf("UpdateNotificationLevelValue(%d)", int64(e))
+	}
+}

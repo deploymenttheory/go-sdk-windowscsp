@@ -15,12 +15,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *HumanPresence) GetForceAllowDimWhenExternalDisplayConnected(ctx context.Context) (int64, error) {
+func (s *HumanPresence) GetForceAllowDimWhenExternalDisplayConnected(ctx context.Context) (ForceAllowDimWhenExternalDisplayConnectedValue, error) {
 	v, err := s.c.Get(ctx, URIForceAllowDimWhenExternalDisplayConnected)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ForceAllowDimWhenExternalDisplayConnectedValue(n), err
 }
 
 // CreateForceAllowDimWhenExternalDisplayConnected creates ./Device/Vendor/MSFT/Policy/Config/HumanPresence/ForceAllowDimWhenExternalDisplayConnected.
@@ -30,8 +31,8 @@ func (s *HumanPresence) GetForceAllowDimWhenExternalDisplayConnected(ctx context
 //
 // Default: 0.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *HumanPresence) CreateForceAllowDimWhenExternalDisplayConnected(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIForceAllowDimWhenExternalDisplayConnected, client.Int(value))
+func (s *HumanPresence) CreateForceAllowDimWhenExternalDisplayConnected(ctx context.Context, value ForceAllowDimWhenExternalDisplayConnectedValue) error {
+	return s.c.Add(ctx, URIForceAllowDimWhenExternalDisplayConnected, client.Int(int64(value)))
 }
 
 // UpdateForceAllowDimWhenExternalDisplayConnected updates ./Device/Vendor/MSFT/Policy/Config/HumanPresence/ForceAllowDimWhenExternalDisplayConnected.
@@ -41,8 +42,8 @@ func (s *HumanPresence) CreateForceAllowDimWhenExternalDisplayConnected(ctx cont
 //
 // Default: 0.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *HumanPresence) UpdateForceAllowDimWhenExternalDisplayConnected(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIForceAllowDimWhenExternalDisplayConnected, client.Int(value))
+func (s *HumanPresence) UpdateForceAllowDimWhenExternalDisplayConnected(ctx context.Context, value ForceAllowDimWhenExternalDisplayConnectedValue) error {
+	return s.c.Replace(ctx, URIForceAllowDimWhenExternalDisplayConnected, client.Int(int64(value)))
 }
 
 // DeleteForceAllowDimWhenExternalDisplayConnected deletes ./Device/Vendor/MSFT/Policy/Config/HumanPresence/ForceAllowDimWhenExternalDisplayConnected.
@@ -63,12 +64,13 @@ func (s *HumanPresence) DeleteForceAllowDimWhenExternalDisplayConnected(ctx cont
 //
 // Default: 0.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *HumanPresence) GetForceAllowLockWhenExternalDisplayConnected(ctx context.Context) (int64, error) {
+func (s *HumanPresence) GetForceAllowLockWhenExternalDisplayConnected(ctx context.Context) (ForceAllowLockWhenExternalDisplayConnectedValue, error) {
 	v, err := s.c.Get(ctx, URIForceAllowLockWhenExternalDisplayConnected)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ForceAllowLockWhenExternalDisplayConnectedValue(n), err
 }
 
 // CreateForceAllowLockWhenExternalDisplayConnected creates ./Device/Vendor/MSFT/Policy/Config/HumanPresence/ForceAllowLockWhenExternalDisplayConnected.
@@ -78,8 +80,8 @@ func (s *HumanPresence) GetForceAllowLockWhenExternalDisplayConnected(ctx contex
 //
 // Default: 0.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *HumanPresence) CreateForceAllowLockWhenExternalDisplayConnected(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIForceAllowLockWhenExternalDisplayConnected, client.Int(value))
+func (s *HumanPresence) CreateForceAllowLockWhenExternalDisplayConnected(ctx context.Context, value ForceAllowLockWhenExternalDisplayConnectedValue) error {
+	return s.c.Add(ctx, URIForceAllowLockWhenExternalDisplayConnected, client.Int(int64(value)))
 }
 
 // UpdateForceAllowLockWhenExternalDisplayConnected updates ./Device/Vendor/MSFT/Policy/Config/HumanPresence/ForceAllowLockWhenExternalDisplayConnected.
@@ -89,8 +91,8 @@ func (s *HumanPresence) CreateForceAllowLockWhenExternalDisplayConnected(ctx con
 //
 // Default: 0.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *HumanPresence) UpdateForceAllowLockWhenExternalDisplayConnected(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIForceAllowLockWhenExternalDisplayConnected, client.Int(value))
+func (s *HumanPresence) UpdateForceAllowLockWhenExternalDisplayConnected(ctx context.Context, value ForceAllowLockWhenExternalDisplayConnectedValue) error {
+	return s.c.Replace(ctx, URIForceAllowLockWhenExternalDisplayConnected, client.Int(int64(value)))
 }
 
 // DeleteForceAllowLockWhenExternalDisplayConnected deletes ./Device/Vendor/MSFT/Policy/Config/HumanPresence/ForceAllowLockWhenExternalDisplayConnected.
@@ -111,12 +113,13 @@ func (s *HumanPresence) DeleteForceAllowLockWhenExternalDisplayConnected(ctx con
 //
 // Default: 0.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *HumanPresence) GetForceAllowWakeWhenExternalDisplayConnected(ctx context.Context) (int64, error) {
+func (s *HumanPresence) GetForceAllowWakeWhenExternalDisplayConnected(ctx context.Context) (ForceAllowWakeWhenExternalDisplayConnectedValue, error) {
 	v, err := s.c.Get(ctx, URIForceAllowWakeWhenExternalDisplayConnected)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ForceAllowWakeWhenExternalDisplayConnectedValue(n), err
 }
 
 // CreateForceAllowWakeWhenExternalDisplayConnected creates ./Device/Vendor/MSFT/Policy/Config/HumanPresence/ForceAllowWakeWhenExternalDisplayConnected.
@@ -126,8 +129,8 @@ func (s *HumanPresence) GetForceAllowWakeWhenExternalDisplayConnected(ctx contex
 //
 // Default: 0.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *HumanPresence) CreateForceAllowWakeWhenExternalDisplayConnected(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIForceAllowWakeWhenExternalDisplayConnected, client.Int(value))
+func (s *HumanPresence) CreateForceAllowWakeWhenExternalDisplayConnected(ctx context.Context, value ForceAllowWakeWhenExternalDisplayConnectedValue) error {
+	return s.c.Add(ctx, URIForceAllowWakeWhenExternalDisplayConnected, client.Int(int64(value)))
 }
 
 // UpdateForceAllowWakeWhenExternalDisplayConnected updates ./Device/Vendor/MSFT/Policy/Config/HumanPresence/ForceAllowWakeWhenExternalDisplayConnected.
@@ -137,8 +140,8 @@ func (s *HumanPresence) CreateForceAllowWakeWhenExternalDisplayConnected(ctx con
 //
 // Default: 0.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *HumanPresence) UpdateForceAllowWakeWhenExternalDisplayConnected(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIForceAllowWakeWhenExternalDisplayConnected, client.Int(value))
+func (s *HumanPresence) UpdateForceAllowWakeWhenExternalDisplayConnected(ctx context.Context, value ForceAllowWakeWhenExternalDisplayConnectedValue) error {
+	return s.c.Replace(ctx, URIForceAllowWakeWhenExternalDisplayConnected, client.Int(int64(value)))
 }
 
 // DeleteForceAllowWakeWhenExternalDisplayConnected deletes ./Device/Vendor/MSFT/Policy/Config/HumanPresence/ForceAllowWakeWhenExternalDisplayConnected.
@@ -159,12 +162,13 @@ func (s *HumanPresence) DeleteForceAllowWakeWhenExternalDisplayConnected(ctx con
 //
 // Default: 0.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *HumanPresence) GetForceDisableWakeWhenBatterySaverOn(ctx context.Context) (int64, error) {
+func (s *HumanPresence) GetForceDisableWakeWhenBatterySaverOn(ctx context.Context) (ForceDisableWakeWhenBatterySaverOnValue, error) {
 	v, err := s.c.Get(ctx, URIForceDisableWakeWhenBatterySaverOn)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ForceDisableWakeWhenBatterySaverOnValue(n), err
 }
 
 // CreateForceDisableWakeWhenBatterySaverOn creates ./Device/Vendor/MSFT/Policy/Config/HumanPresence/ForceDisableWakeWhenBatterySaverOn.
@@ -174,8 +178,8 @@ func (s *HumanPresence) GetForceDisableWakeWhenBatterySaverOn(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *HumanPresence) CreateForceDisableWakeWhenBatterySaverOn(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIForceDisableWakeWhenBatterySaverOn, client.Int(value))
+func (s *HumanPresence) CreateForceDisableWakeWhenBatterySaverOn(ctx context.Context, value ForceDisableWakeWhenBatterySaverOnValue) error {
+	return s.c.Add(ctx, URIForceDisableWakeWhenBatterySaverOn, client.Int(int64(value)))
 }
 
 // UpdateForceDisableWakeWhenBatterySaverOn updates ./Device/Vendor/MSFT/Policy/Config/HumanPresence/ForceDisableWakeWhenBatterySaverOn.
@@ -185,8 +189,8 @@ func (s *HumanPresence) CreateForceDisableWakeWhenBatterySaverOn(ctx context.Con
 //
 // Default: 0.
 // Supported from OS build 10.0.26100 (CSP v11.0).
-func (s *HumanPresence) UpdateForceDisableWakeWhenBatterySaverOn(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIForceDisableWakeWhenBatterySaverOn, client.Int(value))
+func (s *HumanPresence) UpdateForceDisableWakeWhenBatterySaverOn(ctx context.Context, value ForceDisableWakeWhenBatterySaverOnValue) error {
+	return s.c.Replace(ctx, URIForceDisableWakeWhenBatterySaverOn, client.Int(int64(value)))
 }
 
 // DeleteForceDisableWakeWhenBatterySaverOn deletes ./Device/Vendor/MSFT/Policy/Config/HumanPresence/ForceDisableWakeWhenBatterySaverOn.
@@ -206,12 +210,13 @@ func (s *HumanPresence) DeleteForceDisableWakeWhenBatterySaverOn(ctx context.Con
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *HumanPresence) GetForceInstantDim(ctx context.Context) (int64, error) {
+func (s *HumanPresence) GetForceInstantDim(ctx context.Context) (ForceInstantDimValue, error) {
 	v, err := s.c.Get(ctx, URIForceInstantDim)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ForceInstantDimValue(n), err
 }
 
 // CreateForceInstantDim creates ./Device/Vendor/MSFT/Policy/Config/HumanPresence/ForceInstantDim.
@@ -220,8 +225,8 @@ func (s *HumanPresence) GetForceInstantDim(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *HumanPresence) CreateForceInstantDim(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIForceInstantDim, client.Int(value))
+func (s *HumanPresence) CreateForceInstantDim(ctx context.Context, value ForceInstantDimValue) error {
+	return s.c.Add(ctx, URIForceInstantDim, client.Int(int64(value)))
 }
 
 // UpdateForceInstantDim updates ./Device/Vendor/MSFT/Policy/Config/HumanPresence/ForceInstantDim.
@@ -230,8 +235,8 @@ func (s *HumanPresence) CreateForceInstantDim(ctx context.Context, value int64) 
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *HumanPresence) UpdateForceInstantDim(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIForceInstantDim, client.Int(value))
+func (s *HumanPresence) UpdateForceInstantDim(ctx context.Context, value ForceInstantDimValue) error {
+	return s.c.Replace(ctx, URIForceInstantDim, client.Int(int64(value)))
 }
 
 // DeleteForceInstantDim deletes ./Device/Vendor/MSFT/Policy/Config/HumanPresence/ForceInstantDim.
@@ -250,12 +255,13 @@ func (s *HumanPresence) DeleteForceInstantDim(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *HumanPresence) GetForceInstantLock(ctx context.Context) (int64, error) {
+func (s *HumanPresence) GetForceInstantLock(ctx context.Context) (ForceInstantLockValue, error) {
 	v, err := s.c.Get(ctx, URIForceInstantLock)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ForceInstantLockValue(n), err
 }
 
 // CreateForceInstantLock creates ./Device/Vendor/MSFT/Policy/Config/HumanPresence/ForceInstantLock.
@@ -264,8 +270,8 @@ func (s *HumanPresence) GetForceInstantLock(ctx context.Context) (int64, error) 
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *HumanPresence) CreateForceInstantLock(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIForceInstantLock, client.Int(value))
+func (s *HumanPresence) CreateForceInstantLock(ctx context.Context, value ForceInstantLockValue) error {
+	return s.c.Add(ctx, URIForceInstantLock, client.Int(int64(value)))
 }
 
 // UpdateForceInstantLock updates ./Device/Vendor/MSFT/Policy/Config/HumanPresence/ForceInstantLock.
@@ -274,8 +280,8 @@ func (s *HumanPresence) CreateForceInstantLock(ctx context.Context, value int64)
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *HumanPresence) UpdateForceInstantLock(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIForceInstantLock, client.Int(value))
+func (s *HumanPresence) UpdateForceInstantLock(ctx context.Context, value ForceInstantLockValue) error {
+	return s.c.Replace(ctx, URIForceInstantLock, client.Int(int64(value)))
 }
 
 // DeleteForceInstantLock deletes ./Device/Vendor/MSFT/Policy/Config/HumanPresence/ForceInstantLock.
@@ -294,12 +300,13 @@ func (s *HumanPresence) DeleteForceInstantLock(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *HumanPresence) GetForceInstantWake(ctx context.Context) (int64, error) {
+func (s *HumanPresence) GetForceInstantWake(ctx context.Context) (ForceInstantWakeValue, error) {
 	v, err := s.c.Get(ctx, URIForceInstantWake)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ForceInstantWakeValue(n), err
 }
 
 // CreateForceInstantWake creates ./Device/Vendor/MSFT/Policy/Config/HumanPresence/ForceInstantWake.
@@ -308,8 +315,8 @@ func (s *HumanPresence) GetForceInstantWake(ctx context.Context) (int64, error) 
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *HumanPresence) CreateForceInstantWake(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIForceInstantWake, client.Int(value))
+func (s *HumanPresence) CreateForceInstantWake(ctx context.Context, value ForceInstantWakeValue) error {
+	return s.c.Add(ctx, URIForceInstantWake, client.Int(int64(value)))
 }
 
 // UpdateForceInstantWake updates ./Device/Vendor/MSFT/Policy/Config/HumanPresence/ForceInstantWake.
@@ -318,8 +325,8 @@ func (s *HumanPresence) CreateForceInstantWake(ctx context.Context, value int64)
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *HumanPresence) UpdateForceInstantWake(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIForceInstantWake, client.Int(value))
+func (s *HumanPresence) UpdateForceInstantWake(ctx context.Context, value ForceInstantWakeValue) error {
+	return s.c.Replace(ctx, URIForceInstantWake, client.Int(int64(value)))
 }
 
 // DeleteForceInstantWake deletes ./Device/Vendor/MSFT/Policy/Config/HumanPresence/ForceInstantWake.
@@ -338,12 +345,13 @@ func (s *HumanPresence) DeleteForceInstantWake(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *HumanPresence) GetForceLockTimeout(ctx context.Context) (int64, error) {
+func (s *HumanPresence) GetForceLockTimeout(ctx context.Context) (ForceLockTimeoutValue, error) {
 	v, err := s.c.Get(ctx, URIForceLockTimeout)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ForceLockTimeoutValue(n), err
 }
 
 // CreateForceLockTimeout creates ./Device/Vendor/MSFT/Policy/Config/HumanPresence/ForceLockTimeout.
@@ -352,8 +360,8 @@ func (s *HumanPresence) GetForceLockTimeout(ctx context.Context) (int64, error) 
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *HumanPresence) CreateForceLockTimeout(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIForceLockTimeout, client.Int(value))
+func (s *HumanPresence) CreateForceLockTimeout(ctx context.Context, value ForceLockTimeoutValue) error {
+	return s.c.Add(ctx, URIForceLockTimeout, client.Int(int64(value)))
 }
 
 // UpdateForceLockTimeout updates ./Device/Vendor/MSFT/Policy/Config/HumanPresence/ForceLockTimeout.
@@ -362,8 +370,8 @@ func (s *HumanPresence) CreateForceLockTimeout(ctx context.Context, value int64)
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *HumanPresence) UpdateForceLockTimeout(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIForceLockTimeout, client.Int(value))
+func (s *HumanPresence) UpdateForceLockTimeout(ctx context.Context, value ForceLockTimeoutValue) error {
+	return s.c.Replace(ctx, URIForceLockTimeout, client.Int(int64(value)))
 }
 
 // DeleteForceLockTimeout deletes ./Device/Vendor/MSFT/Policy/Config/HumanPresence/ForceLockTimeout.
@@ -382,12 +390,13 @@ func (s *HumanPresence) DeleteForceLockTimeout(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *HumanPresence) GetForceOnlookerDetection(ctx context.Context) (int64, error) {
+func (s *HumanPresence) GetForceOnlookerDetection(ctx context.Context) (ForceOnlookerDetectionValue, error) {
 	v, err := s.c.Get(ctx, URIForceOnlookerDetection)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ForceOnlookerDetectionValue(n), err
 }
 
 // CreateForceOnlookerDetection creates ./Device/Vendor/MSFT/Policy/Config/HumanPresence/ForceOnlookerDetection.
@@ -396,8 +405,8 @@ func (s *HumanPresence) GetForceOnlookerDetection(ctx context.Context) (int64, e
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *HumanPresence) CreateForceOnlookerDetection(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIForceOnlookerDetection, client.Int(value))
+func (s *HumanPresence) CreateForceOnlookerDetection(ctx context.Context, value ForceOnlookerDetectionValue) error {
+	return s.c.Add(ctx, URIForceOnlookerDetection, client.Int(int64(value)))
 }
 
 // UpdateForceOnlookerDetection updates ./Device/Vendor/MSFT/Policy/Config/HumanPresence/ForceOnlookerDetection.
@@ -406,8 +415,8 @@ func (s *HumanPresence) CreateForceOnlookerDetection(ctx context.Context, value 
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *HumanPresence) UpdateForceOnlookerDetection(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIForceOnlookerDetection, client.Int(value))
+func (s *HumanPresence) UpdateForceOnlookerDetection(ctx context.Context, value ForceOnlookerDetectionValue) error {
+	return s.c.Replace(ctx, URIForceOnlookerDetection, client.Int(int64(value)))
 }
 
 // DeleteForceOnlookerDetection deletes ./Device/Vendor/MSFT/Policy/Config/HumanPresence/ForceOnlookerDetection.
@@ -426,12 +435,13 @@ func (s *HumanPresence) DeleteForceOnlookerDetection(ctx context.Context) error 
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *HumanPresence) GetForceOnlookerDetectionAction(ctx context.Context) (int64, error) {
+func (s *HumanPresence) GetForceOnlookerDetectionAction(ctx context.Context) (ForceOnlookerDetectionActionValue, error) {
 	v, err := s.c.Get(ctx, URIForceOnlookerDetectionAction)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ForceOnlookerDetectionActionValue(n), err
 }
 
 // CreateForceOnlookerDetectionAction creates ./Device/Vendor/MSFT/Policy/Config/HumanPresence/ForceOnlookerDetectionAction.
@@ -440,8 +450,8 @@ func (s *HumanPresence) GetForceOnlookerDetectionAction(ctx context.Context) (in
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *HumanPresence) CreateForceOnlookerDetectionAction(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIForceOnlookerDetectionAction, client.Int(value))
+func (s *HumanPresence) CreateForceOnlookerDetectionAction(ctx context.Context, value ForceOnlookerDetectionActionValue) error {
+	return s.c.Add(ctx, URIForceOnlookerDetectionAction, client.Int(int64(value)))
 }
 
 // UpdateForceOnlookerDetectionAction updates ./Device/Vendor/MSFT/Policy/Config/HumanPresence/ForceOnlookerDetectionAction.
@@ -450,8 +460,8 @@ func (s *HumanPresence) CreateForceOnlookerDetectionAction(ctx context.Context, 
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *HumanPresence) UpdateForceOnlookerDetectionAction(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIForceOnlookerDetectionAction, client.Int(value))
+func (s *HumanPresence) UpdateForceOnlookerDetectionAction(ctx context.Context, value ForceOnlookerDetectionActionValue) error {
+	return s.c.Replace(ctx, URIForceOnlookerDetectionAction, client.Int(int64(value)))
 }
 
 // DeleteForceOnlookerDetectionAction deletes ./Device/Vendor/MSFT/Policy/Config/HumanPresence/ForceOnlookerDetectionAction.

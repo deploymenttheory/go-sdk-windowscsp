@@ -16,12 +16,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3613 (CSP v11.0).
-func (s *LanmanWorkstation) GetAuditInsecureGuestLogon(ctx context.Context) (int64, error) {
+func (s *LanmanWorkstation) GetAuditInsecureGuestLogon(ctx context.Context) (AuditInsecureGuestLogonValue, error) {
 	v, err := s.c.Get(ctx, URIAuditInsecureGuestLogon)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AuditInsecureGuestLogonValue(n), err
 }
 
 // CreateAuditInsecureGuestLogon creates ./Device/Vendor/MSFT/Policy/Config/LanmanWorkstation/AuditInsecureGuestLogon.
@@ -32,8 +33,8 @@ func (s *LanmanWorkstation) GetAuditInsecureGuestLogon(ctx context.Context) (int
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3613 (CSP v11.0).
-func (s *LanmanWorkstation) CreateAuditInsecureGuestLogon(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAuditInsecureGuestLogon, client.Int(value))
+func (s *LanmanWorkstation) CreateAuditInsecureGuestLogon(ctx context.Context, value AuditInsecureGuestLogonValue) error {
+	return s.c.Add(ctx, URIAuditInsecureGuestLogon, client.Int(int64(value)))
 }
 
 // UpdateAuditInsecureGuestLogon updates ./Device/Vendor/MSFT/Policy/Config/LanmanWorkstation/AuditInsecureGuestLogon.
@@ -44,8 +45,8 @@ func (s *LanmanWorkstation) CreateAuditInsecureGuestLogon(ctx context.Context, v
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3613 (CSP v11.0).
-func (s *LanmanWorkstation) UpdateAuditInsecureGuestLogon(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAuditInsecureGuestLogon, client.Int(value))
+func (s *LanmanWorkstation) UpdateAuditInsecureGuestLogon(ctx context.Context, value AuditInsecureGuestLogonValue) error {
+	return s.c.Replace(ctx, URIAuditInsecureGuestLogon, client.Int(int64(value)))
 }
 
 // DeleteAuditInsecureGuestLogon deletes ./Device/Vendor/MSFT/Policy/Config/LanmanWorkstation/AuditInsecureGuestLogon.
@@ -68,12 +69,13 @@ func (s *LanmanWorkstation) DeleteAuditInsecureGuestLogon(ctx context.Context) e
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3613 (CSP v11.0).
-func (s *LanmanWorkstation) GetAuditServerDoesNotSupportEncryption(ctx context.Context) (int64, error) {
+func (s *LanmanWorkstation) GetAuditServerDoesNotSupportEncryption(ctx context.Context) (AuditServerDoesNotSupportEncryptionValue, error) {
 	v, err := s.c.Get(ctx, URIAuditServerDoesNotSupportEncryption)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AuditServerDoesNotSupportEncryptionValue(n), err
 }
 
 // CreateAuditServerDoesNotSupportEncryption creates ./Device/Vendor/MSFT/Policy/Config/LanmanWorkstation/AuditServerDoesNotSupportEncryption.
@@ -84,8 +86,8 @@ func (s *LanmanWorkstation) GetAuditServerDoesNotSupportEncryption(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3613 (CSP v11.0).
-func (s *LanmanWorkstation) CreateAuditServerDoesNotSupportEncryption(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAuditServerDoesNotSupportEncryption, client.Int(value))
+func (s *LanmanWorkstation) CreateAuditServerDoesNotSupportEncryption(ctx context.Context, value AuditServerDoesNotSupportEncryptionValue) error {
+	return s.c.Add(ctx, URIAuditServerDoesNotSupportEncryption, client.Int(int64(value)))
 }
 
 // UpdateAuditServerDoesNotSupportEncryption updates ./Device/Vendor/MSFT/Policy/Config/LanmanWorkstation/AuditServerDoesNotSupportEncryption.
@@ -96,8 +98,8 @@ func (s *LanmanWorkstation) CreateAuditServerDoesNotSupportEncryption(ctx contex
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3613 (CSP v11.0).
-func (s *LanmanWorkstation) UpdateAuditServerDoesNotSupportEncryption(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAuditServerDoesNotSupportEncryption, client.Int(value))
+func (s *LanmanWorkstation) UpdateAuditServerDoesNotSupportEncryption(ctx context.Context, value AuditServerDoesNotSupportEncryptionValue) error {
+	return s.c.Replace(ctx, URIAuditServerDoesNotSupportEncryption, client.Int(int64(value)))
 }
 
 // DeleteAuditServerDoesNotSupportEncryption deletes ./Device/Vendor/MSFT/Policy/Config/LanmanWorkstation/AuditServerDoesNotSupportEncryption.
@@ -120,12 +122,13 @@ func (s *LanmanWorkstation) DeleteAuditServerDoesNotSupportEncryption(ctx contex
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3613 (CSP v11.0).
-func (s *LanmanWorkstation) GetAuditServerDoesNotSupportSigning(ctx context.Context) (int64, error) {
+func (s *LanmanWorkstation) GetAuditServerDoesNotSupportSigning(ctx context.Context) (AuditServerDoesNotSupportSigningValue, error) {
 	v, err := s.c.Get(ctx, URIAuditServerDoesNotSupportSigning)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AuditServerDoesNotSupportSigningValue(n), err
 }
 
 // CreateAuditServerDoesNotSupportSigning creates ./Device/Vendor/MSFT/Policy/Config/LanmanWorkstation/AuditServerDoesNotSupportSigning.
@@ -136,8 +139,8 @@ func (s *LanmanWorkstation) GetAuditServerDoesNotSupportSigning(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3613 (CSP v11.0).
-func (s *LanmanWorkstation) CreateAuditServerDoesNotSupportSigning(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAuditServerDoesNotSupportSigning, client.Int(value))
+func (s *LanmanWorkstation) CreateAuditServerDoesNotSupportSigning(ctx context.Context, value AuditServerDoesNotSupportSigningValue) error {
+	return s.c.Add(ctx, URIAuditServerDoesNotSupportSigning, client.Int(int64(value)))
 }
 
 // UpdateAuditServerDoesNotSupportSigning updates ./Device/Vendor/MSFT/Policy/Config/LanmanWorkstation/AuditServerDoesNotSupportSigning.
@@ -148,8 +151,8 @@ func (s *LanmanWorkstation) CreateAuditServerDoesNotSupportSigning(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3613 (CSP v11.0).
-func (s *LanmanWorkstation) UpdateAuditServerDoesNotSupportSigning(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAuditServerDoesNotSupportSigning, client.Int(value))
+func (s *LanmanWorkstation) UpdateAuditServerDoesNotSupportSigning(ctx context.Context, value AuditServerDoesNotSupportSigningValue) error {
+	return s.c.Replace(ctx, URIAuditServerDoesNotSupportSigning, client.Int(int64(value)))
 }
 
 // DeleteAuditServerDoesNotSupportSigning deletes ./Device/Vendor/MSFT/Policy/Config/LanmanWorkstation/AuditServerDoesNotSupportSigning.
@@ -181,12 +184,13 @@ func (s *LanmanWorkstation) DeleteAuditServerDoesNotSupportSigning(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LanmanWorkstation) GetEnableInsecureGuestLogons(ctx context.Context) (int64, error) {
+func (s *LanmanWorkstation) GetEnableInsecureGuestLogons(ctx context.Context) (EnableInsecureGuestLogonsValue, error) {
 	v, err := s.c.Get(ctx, URIEnableInsecureGuestLogons)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableInsecureGuestLogonsValue(n), err
 }
 
 // CreateEnableInsecureGuestLogons creates ./Device/Vendor/MSFT/Policy/Config/LanmanWorkstation/EnableInsecureGuestLogons.
@@ -206,8 +210,8 @@ func (s *LanmanWorkstation) GetEnableInsecureGuestLogons(ctx context.Context) (i
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LanmanWorkstation) CreateEnableInsecureGuestLogons(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableInsecureGuestLogons, client.Int(value))
+func (s *LanmanWorkstation) CreateEnableInsecureGuestLogons(ctx context.Context, value EnableInsecureGuestLogonsValue) error {
+	return s.c.Add(ctx, URIEnableInsecureGuestLogons, client.Int(int64(value)))
 }
 
 // UpdateEnableInsecureGuestLogons updates ./Device/Vendor/MSFT/Policy/Config/LanmanWorkstation/EnableInsecureGuestLogons.
@@ -227,8 +231,8 @@ func (s *LanmanWorkstation) CreateEnableInsecureGuestLogons(ctx context.Context,
 //
 // Default: 0.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *LanmanWorkstation) UpdateEnableInsecureGuestLogons(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableInsecureGuestLogons, client.Int(value))
+func (s *LanmanWorkstation) UpdateEnableInsecureGuestLogons(ctx context.Context, value EnableInsecureGuestLogonsValue) error {
+	return s.c.Replace(ctx, URIEnableInsecureGuestLogons, client.Int(int64(value)))
 }
 
 // DeleteEnableInsecureGuestLogons deletes ./Device/Vendor/MSFT/Policy/Config/LanmanWorkstation/EnableInsecureGuestLogons.
@@ -260,12 +264,13 @@ func (s *LanmanWorkstation) DeleteEnableInsecureGuestLogons(ctx context.Context)
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3613 (CSP v11.0).
-func (s *LanmanWorkstation) GetEnableMailslots(ctx context.Context) (int64, error) {
+func (s *LanmanWorkstation) GetEnableMailslots(ctx context.Context) (EnableMailslotsValue, error) {
 	v, err := s.c.Get(ctx, URIEnableMailslots)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableMailslotsValue(n), err
 }
 
 // CreateEnableMailslots creates ./Device/Vendor/MSFT/Policy/Config/LanmanWorkstation/EnableMailslots.
@@ -276,8 +281,8 @@ func (s *LanmanWorkstation) GetEnableMailslots(ctx context.Context) (int64, erro
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3613 (CSP v11.0).
-func (s *LanmanWorkstation) CreateEnableMailslots(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableMailslots, client.Int(value))
+func (s *LanmanWorkstation) CreateEnableMailslots(ctx context.Context, value EnableMailslotsValue) error {
+	return s.c.Add(ctx, URIEnableMailslots, client.Int(int64(value)))
 }
 
 // UpdateEnableMailslots updates ./Device/Vendor/MSFT/Policy/Config/LanmanWorkstation/EnableMailslots.
@@ -288,8 +293,8 @@ func (s *LanmanWorkstation) CreateEnableMailslots(ctx context.Context, value int
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3613 (CSP v11.0).
-func (s *LanmanWorkstation) UpdateEnableMailslots(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableMailslots, client.Int(value))
+func (s *LanmanWorkstation) UpdateEnableMailslots(ctx context.Context, value EnableMailslotsValue) error {
+	return s.c.Replace(ctx, URIEnableMailslots, client.Int(int64(value)))
 }
 
 // DeleteEnableMailslots deletes ./Device/Vendor/MSFT/Policy/Config/LanmanWorkstation/EnableMailslots.
@@ -310,12 +315,13 @@ func (s *LanmanWorkstation) DeleteEnableMailslots(ctx context.Context) error {
 //
 // Default: 785.
 // Supported from OS build 99.9.99999, 10.0.26100.3613 (CSP v11.0).
-func (s *LanmanWorkstation) GetMaxSmb2Dialect(ctx context.Context) (int64, error) {
+func (s *LanmanWorkstation) GetMaxSmb2Dialect(ctx context.Context) (MaxSmb2DialectValue, error) {
 	v, err := s.c.Get(ctx, URIMaxSmb2Dialect)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MaxSmb2DialectValue(n), err
 }
 
 // CreateMaxSmb2Dialect creates ./Device/Vendor/MSFT/Policy/Config/LanmanWorkstation/MaxSmb2Dialect.
@@ -324,8 +330,8 @@ func (s *LanmanWorkstation) GetMaxSmb2Dialect(ctx context.Context) (int64, error
 //
 // Default: 785.
 // Supported from OS build 99.9.99999, 10.0.26100.3613 (CSP v11.0).
-func (s *LanmanWorkstation) CreateMaxSmb2Dialect(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIMaxSmb2Dialect, client.Int(value))
+func (s *LanmanWorkstation) CreateMaxSmb2Dialect(ctx context.Context, value MaxSmb2DialectValue) error {
+	return s.c.Add(ctx, URIMaxSmb2Dialect, client.Int(int64(value)))
 }
 
 // UpdateMaxSmb2Dialect updates ./Device/Vendor/MSFT/Policy/Config/LanmanWorkstation/MaxSmb2Dialect.
@@ -334,8 +340,8 @@ func (s *LanmanWorkstation) CreateMaxSmb2Dialect(ctx context.Context, value int6
 //
 // Default: 785.
 // Supported from OS build 99.9.99999, 10.0.26100.3613 (CSP v11.0).
-func (s *LanmanWorkstation) UpdateMaxSmb2Dialect(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIMaxSmb2Dialect, client.Int(value))
+func (s *LanmanWorkstation) UpdateMaxSmb2Dialect(ctx context.Context, value MaxSmb2DialectValue) error {
+	return s.c.Replace(ctx, URIMaxSmb2Dialect, client.Int(int64(value)))
 }
 
 // DeleteMaxSmb2Dialect deletes ./Device/Vendor/MSFT/Policy/Config/LanmanWorkstation/MaxSmb2Dialect.
@@ -354,12 +360,13 @@ func (s *LanmanWorkstation) DeleteMaxSmb2Dialect(ctx context.Context) error {
 //
 // Default: 514.
 // Supported from OS build 99.9.99999, 10.0.26100.3613 (CSP v11.0).
-func (s *LanmanWorkstation) GetMinSmb2Dialect(ctx context.Context) (int64, error) {
+func (s *LanmanWorkstation) GetMinSmb2Dialect(ctx context.Context) (MinSmb2DialectValue, error) {
 	v, err := s.c.Get(ctx, URIMinSmb2Dialect)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MinSmb2DialectValue(n), err
 }
 
 // CreateMinSmb2Dialect creates ./Device/Vendor/MSFT/Policy/Config/LanmanWorkstation/MinSmb2Dialect.
@@ -368,8 +375,8 @@ func (s *LanmanWorkstation) GetMinSmb2Dialect(ctx context.Context) (int64, error
 //
 // Default: 514.
 // Supported from OS build 99.9.99999, 10.0.26100.3613 (CSP v11.0).
-func (s *LanmanWorkstation) CreateMinSmb2Dialect(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIMinSmb2Dialect, client.Int(value))
+func (s *LanmanWorkstation) CreateMinSmb2Dialect(ctx context.Context, value MinSmb2DialectValue) error {
+	return s.c.Add(ctx, URIMinSmb2Dialect, client.Int(int64(value)))
 }
 
 // UpdateMinSmb2Dialect updates ./Device/Vendor/MSFT/Policy/Config/LanmanWorkstation/MinSmb2Dialect.
@@ -378,8 +385,8 @@ func (s *LanmanWorkstation) CreateMinSmb2Dialect(ctx context.Context, value int6
 //
 // Default: 514.
 // Supported from OS build 99.9.99999, 10.0.26100.3613 (CSP v11.0).
-func (s *LanmanWorkstation) UpdateMinSmb2Dialect(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIMinSmb2Dialect, client.Int(value))
+func (s *LanmanWorkstation) UpdateMinSmb2Dialect(ctx context.Context, value MinSmb2DialectValue) error {
+	return s.c.Replace(ctx, URIMinSmb2Dialect, client.Int(int64(value)))
 }
 
 // DeleteMinSmb2Dialect deletes ./Device/Vendor/MSFT/Policy/Config/LanmanWorkstation/MinSmb2Dialect.
@@ -405,12 +412,13 @@ func (s *LanmanWorkstation) DeleteMinSmb2Dialect(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3613 (CSP v11.0).
-func (s *LanmanWorkstation) GetRequireEncryption(ctx context.Context) (int64, error) {
+func (s *LanmanWorkstation) GetRequireEncryption(ctx context.Context) (RequireEncryptionValue, error) {
 	v, err := s.c.Get(ctx, URIRequireEncryption)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return RequireEncryptionValue(n), err
 }
 
 // CreateRequireEncryption creates ./Device/Vendor/MSFT/Policy/Config/LanmanWorkstation/RequireEncryption.
@@ -426,8 +434,8 @@ func (s *LanmanWorkstation) GetRequireEncryption(ctx context.Context) (int64, er
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3613 (CSP v11.0).
-func (s *LanmanWorkstation) CreateRequireEncryption(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIRequireEncryption, client.Int(value))
+func (s *LanmanWorkstation) CreateRequireEncryption(ctx context.Context, value RequireEncryptionValue) error {
+	return s.c.Add(ctx, URIRequireEncryption, client.Int(int64(value)))
 }
 
 // UpdateRequireEncryption updates ./Device/Vendor/MSFT/Policy/Config/LanmanWorkstation/RequireEncryption.
@@ -443,8 +451,8 @@ func (s *LanmanWorkstation) CreateRequireEncryption(ctx context.Context, value i
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.26100.3613 (CSP v11.0).
-func (s *LanmanWorkstation) UpdateRequireEncryption(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIRequireEncryption, client.Int(value))
+func (s *LanmanWorkstation) UpdateRequireEncryption(ctx context.Context, value RequireEncryptionValue) error {
+	return s.c.Replace(ctx, URIRequireEncryption, client.Int(int64(value)))
 }
 
 // DeleteRequireEncryption deletes ./Device/Vendor/MSFT/Policy/Config/LanmanWorkstation/RequireEncryption.

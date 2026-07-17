@@ -13,12 +13,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Licensing) GetAllowWindowsEntitlementReactivation(ctx context.Context) (int64, error) {
+func (s *Licensing) GetAllowWindowsEntitlementReactivation(ctx context.Context) (AllowWindowsEntitlementReactivationValue, error) {
 	v, err := s.c.Get(ctx, URIAllowWindowsEntitlementReactivation)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowWindowsEntitlementReactivationValue(n), err
 }
 
 // CreateAllowWindowsEntitlementReactivation creates ./Device/Vendor/MSFT/Policy/Config/Licensing/AllowWindowsEntitlementReactivation.
@@ -26,8 +27,8 @@ func (s *Licensing) GetAllowWindowsEntitlementReactivation(ctx context.Context) 
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Licensing) CreateAllowWindowsEntitlementReactivation(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowWindowsEntitlementReactivation, client.Int(value))
+func (s *Licensing) CreateAllowWindowsEntitlementReactivation(ctx context.Context, value AllowWindowsEntitlementReactivationValue) error {
+	return s.c.Add(ctx, URIAllowWindowsEntitlementReactivation, client.Int(int64(value)))
 }
 
 // UpdateAllowWindowsEntitlementReactivation updates ./Device/Vendor/MSFT/Policy/Config/Licensing/AllowWindowsEntitlementReactivation.
@@ -35,8 +36,8 @@ func (s *Licensing) CreateAllowWindowsEntitlementReactivation(ctx context.Contex
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Licensing) UpdateAllowWindowsEntitlementReactivation(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowWindowsEntitlementReactivation, client.Int(value))
+func (s *Licensing) UpdateAllowWindowsEntitlementReactivation(ctx context.Context, value AllowWindowsEntitlementReactivationValue) error {
+	return s.c.Replace(ctx, URIAllowWindowsEntitlementReactivation, client.Int(int64(value)))
 }
 
 // DeleteAllowWindowsEntitlementReactivation deletes ./Device/Vendor/MSFT/Policy/Config/Licensing/AllowWindowsEntitlementReactivation.
@@ -54,12 +55,13 @@ func (s *Licensing) DeleteAllowWindowsEntitlementReactivation(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Licensing) GetDisallowKMSClientOnlineAVSValidation(ctx context.Context) (int64, error) {
+func (s *Licensing) GetDisallowKMSClientOnlineAVSValidation(ctx context.Context) (DisallowKMSClientOnlineAVSValidationValue, error) {
 	v, err := s.c.Get(ctx, URIDisallowKMSClientOnlineAVSValidation)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisallowKMSClientOnlineAVSValidationValue(n), err
 }
 
 // CreateDisallowKMSClientOnlineAVSValidation creates ./Device/Vendor/MSFT/Policy/Config/Licensing/DisallowKMSClientOnlineAVSValidation.
@@ -68,8 +70,8 @@ func (s *Licensing) GetDisallowKMSClientOnlineAVSValidation(ctx context.Context)
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Licensing) CreateDisallowKMSClientOnlineAVSValidation(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisallowKMSClientOnlineAVSValidation, client.Int(value))
+func (s *Licensing) CreateDisallowKMSClientOnlineAVSValidation(ctx context.Context, value DisallowKMSClientOnlineAVSValidationValue) error {
+	return s.c.Add(ctx, URIDisallowKMSClientOnlineAVSValidation, client.Int(int64(value)))
 }
 
 // UpdateDisallowKMSClientOnlineAVSValidation updates ./Device/Vendor/MSFT/Policy/Config/Licensing/DisallowKMSClientOnlineAVSValidation.
@@ -78,8 +80,8 @@ func (s *Licensing) CreateDisallowKMSClientOnlineAVSValidation(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Licensing) UpdateDisallowKMSClientOnlineAVSValidation(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisallowKMSClientOnlineAVSValidation, client.Int(value))
+func (s *Licensing) UpdateDisallowKMSClientOnlineAVSValidation(ctx context.Context, value DisallowKMSClientOnlineAVSValidationValue) error {
+	return s.c.Replace(ctx, URIDisallowKMSClientOnlineAVSValidation, client.Int(int64(value)))
 }
 
 // DeleteDisallowKMSClientOnlineAVSValidation deletes ./Device/Vendor/MSFT/Policy/Config/Licensing/DisallowKMSClientOnlineAVSValidation.
@@ -100,12 +102,13 @@ func (s *Licensing) DeleteDisallowKMSClientOnlineAVSValidation(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.19045.6387 (CSP v4.1).
-func (s *Licensing) GetEnableESUSubscriptionCheck(ctx context.Context) (int64, error) {
+func (s *Licensing) GetEnableESUSubscriptionCheck(ctx context.Context) (EnableESUSubscriptionCheckValue, error) {
 	v, err := s.c.Get(ctx, URIEnableESUSubscriptionCheck)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableESUSubscriptionCheckValue(n), err
 }
 
 // CreateEnableESUSubscriptionCheck creates ./Device/Vendor/MSFT/Policy/Config/Licensing/EnableESUSubscriptionCheck.
@@ -116,8 +119,8 @@ func (s *Licensing) GetEnableESUSubscriptionCheck(ctx context.Context) (int64, e
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.19045.6387 (CSP v4.1).
-func (s *Licensing) CreateEnableESUSubscriptionCheck(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableESUSubscriptionCheck, client.Int(value))
+func (s *Licensing) CreateEnableESUSubscriptionCheck(ctx context.Context, value EnableESUSubscriptionCheckValue) error {
+	return s.c.Add(ctx, URIEnableESUSubscriptionCheck, client.Int(int64(value)))
 }
 
 // UpdateEnableESUSubscriptionCheck updates ./Device/Vendor/MSFT/Policy/Config/Licensing/EnableESUSubscriptionCheck.
@@ -128,8 +131,8 @@ func (s *Licensing) CreateEnableESUSubscriptionCheck(ctx context.Context, value 
 //
 // Default: 0.
 // Supported from OS build 99.9.99999, 10.0.19045.6387 (CSP v4.1).
-func (s *Licensing) UpdateEnableESUSubscriptionCheck(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableESUSubscriptionCheck, client.Int(value))
+func (s *Licensing) UpdateEnableESUSubscriptionCheck(ctx context.Context, value EnableESUSubscriptionCheckValue) error {
+	return s.c.Replace(ctx, URIEnableESUSubscriptionCheck, client.Int(int64(value)))
 }
 
 // DeleteEnableESUSubscriptionCheck deletes ./Device/Vendor/MSFT/Policy/Config/Licensing/EnableESUSubscriptionCheck.

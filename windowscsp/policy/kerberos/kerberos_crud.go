@@ -45,12 +45,13 @@ func (s *Kerberos) DeleteAllowForestSearchOrder(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *Kerberos) GetCloudKerberosTicketRetrievalEnabled(ctx context.Context) (int64, error) {
+func (s *Kerberos) GetCloudKerberosTicketRetrievalEnabled(ctx context.Context) (CloudKerberosTicketRetrievalEnabledValue, error) {
 	v, err := s.c.Get(ctx, URICloudKerberosTicketRetrievalEnabled)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return CloudKerberosTicketRetrievalEnabledValue(n), err
 }
 
 // CreateCloudKerberosTicketRetrievalEnabled creates ./Device/Vendor/MSFT/Policy/Config/Kerberos/CloudKerberosTicketRetrievalEnabled.
@@ -58,8 +59,8 @@ func (s *Kerberos) GetCloudKerberosTicketRetrievalEnabled(ctx context.Context) (
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *Kerberos) CreateCloudKerberosTicketRetrievalEnabled(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URICloudKerberosTicketRetrievalEnabled, client.Int(value))
+func (s *Kerberos) CreateCloudKerberosTicketRetrievalEnabled(ctx context.Context, value CloudKerberosTicketRetrievalEnabledValue) error {
+	return s.c.Add(ctx, URICloudKerberosTicketRetrievalEnabled, client.Int(int64(value)))
 }
 
 // UpdateCloudKerberosTicketRetrievalEnabled updates ./Device/Vendor/MSFT/Policy/Config/Kerberos/CloudKerberosTicketRetrievalEnabled.
@@ -67,8 +68,8 @@ func (s *Kerberos) CreateCloudKerberosTicketRetrievalEnabled(ctx context.Context
 //
 // Default: 0.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *Kerberos) UpdateCloudKerberosTicketRetrievalEnabled(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URICloudKerberosTicketRetrievalEnabled, client.Int(value))
+func (s *Kerberos) UpdateCloudKerberosTicketRetrievalEnabled(ctx context.Context, value CloudKerberosTicketRetrievalEnabledValue) error {
+	return s.c.Replace(ctx, URICloudKerberosTicketRetrievalEnabled, client.Int(int64(value)))
 }
 
 // DeleteCloudKerberosTicketRetrievalEnabled deletes ./Device/Vendor/MSFT/Policy/Config/Kerberos/CloudKerberosTicketRetrievalEnabled.
@@ -117,12 +118,13 @@ func (s *Kerberos) DeleteKerberosClientSupportsClaimsCompoundArmor(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Kerberos) GetPKInitHashAlgorithmConfiguration(ctx context.Context) (int64, error) {
+func (s *Kerberos) GetPKInitHashAlgorithmConfiguration(ctx context.Context) (PKInitHashAlgorithmConfigurationValue, error) {
 	v, err := s.c.Get(ctx, URIPKInitHashAlgorithmConfiguration)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PKInitHashAlgorithmConfigurationValue(n), err
 }
 
 // CreatePKInitHashAlgorithmConfiguration creates ./Device/Vendor/MSFT/Policy/Config/Kerberos/PKInitHashAlgorithmConfiguration.
@@ -130,8 +132,8 @@ func (s *Kerberos) GetPKInitHashAlgorithmConfiguration(ctx context.Context) (int
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Kerberos) CreatePKInitHashAlgorithmConfiguration(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPKInitHashAlgorithmConfiguration, client.Int(value))
+func (s *Kerberos) CreatePKInitHashAlgorithmConfiguration(ctx context.Context, value PKInitHashAlgorithmConfigurationValue) error {
+	return s.c.Add(ctx, URIPKInitHashAlgorithmConfiguration, client.Int(int64(value)))
 }
 
 // UpdatePKInitHashAlgorithmConfiguration updates ./Device/Vendor/MSFT/Policy/Config/Kerberos/PKInitHashAlgorithmConfiguration.
@@ -139,8 +141,8 @@ func (s *Kerberos) CreatePKInitHashAlgorithmConfiguration(ctx context.Context, v
 //
 // Default: 0.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Kerberos) UpdatePKInitHashAlgorithmConfiguration(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPKInitHashAlgorithmConfiguration, client.Int(value))
+func (s *Kerberos) UpdatePKInitHashAlgorithmConfiguration(ctx context.Context, value PKInitHashAlgorithmConfigurationValue) error {
+	return s.c.Replace(ctx, URIPKInitHashAlgorithmConfiguration, client.Int(int64(value)))
 }
 
 // DeletePKInitHashAlgorithmConfiguration deletes ./Device/Vendor/MSFT/Policy/Config/Kerberos/PKInitHashAlgorithmConfiguration.
@@ -157,12 +159,13 @@ func (s *Kerberos) DeletePKInitHashAlgorithmConfiguration(ctx context.Context) e
 //
 // Default: 1.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Kerberos) GetPKInitHashAlgorithmSHA1(ctx context.Context) (int64, error) {
+func (s *Kerberos) GetPKInitHashAlgorithmSHA1(ctx context.Context) (PKInitHashAlgorithmSHA1Value, error) {
 	v, err := s.c.Get(ctx, URIPKInitHashAlgorithmSHA1)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PKInitHashAlgorithmSHA1Value(n), err
 }
 
 // CreatePKInitHashAlgorithmSHA1 creates ./Device/Vendor/MSFT/Policy/Config/Kerberos/PKInitHashAlgorithmSHA1.
@@ -170,8 +173,8 @@ func (s *Kerberos) GetPKInitHashAlgorithmSHA1(ctx context.Context) (int64, error
 //
 // Default: 1.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Kerberos) CreatePKInitHashAlgorithmSHA1(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPKInitHashAlgorithmSHA1, client.Int(value))
+func (s *Kerberos) CreatePKInitHashAlgorithmSHA1(ctx context.Context, value PKInitHashAlgorithmSHA1Value) error {
+	return s.c.Add(ctx, URIPKInitHashAlgorithmSHA1, client.Int(int64(value)))
 }
 
 // UpdatePKInitHashAlgorithmSHA1 updates ./Device/Vendor/MSFT/Policy/Config/Kerberos/PKInitHashAlgorithmSHA1.
@@ -179,8 +182,8 @@ func (s *Kerberos) CreatePKInitHashAlgorithmSHA1(ctx context.Context, value int6
 //
 // Default: 1.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Kerberos) UpdatePKInitHashAlgorithmSHA1(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPKInitHashAlgorithmSHA1, client.Int(value))
+func (s *Kerberos) UpdatePKInitHashAlgorithmSHA1(ctx context.Context, value PKInitHashAlgorithmSHA1Value) error {
+	return s.c.Replace(ctx, URIPKInitHashAlgorithmSHA1, client.Int(int64(value)))
 }
 
 // DeletePKInitHashAlgorithmSHA1 deletes ./Device/Vendor/MSFT/Policy/Config/Kerberos/PKInitHashAlgorithmSHA1.
@@ -197,12 +200,13 @@ func (s *Kerberos) DeletePKInitHashAlgorithmSHA1(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Kerberos) GetPKInitHashAlgorithmSHA256(ctx context.Context) (int64, error) {
+func (s *Kerberos) GetPKInitHashAlgorithmSHA256(ctx context.Context) (PKInitHashAlgorithmSHA256Value, error) {
 	v, err := s.c.Get(ctx, URIPKInitHashAlgorithmSHA256)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PKInitHashAlgorithmSHA256Value(n), err
 }
 
 // CreatePKInitHashAlgorithmSHA256 creates ./Device/Vendor/MSFT/Policy/Config/Kerberos/PKInitHashAlgorithmSHA256.
@@ -210,8 +214,8 @@ func (s *Kerberos) GetPKInitHashAlgorithmSHA256(ctx context.Context) (int64, err
 //
 // Default: 1.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Kerberos) CreatePKInitHashAlgorithmSHA256(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPKInitHashAlgorithmSHA256, client.Int(value))
+func (s *Kerberos) CreatePKInitHashAlgorithmSHA256(ctx context.Context, value PKInitHashAlgorithmSHA256Value) error {
+	return s.c.Add(ctx, URIPKInitHashAlgorithmSHA256, client.Int(int64(value)))
 }
 
 // UpdatePKInitHashAlgorithmSHA256 updates ./Device/Vendor/MSFT/Policy/Config/Kerberos/PKInitHashAlgorithmSHA256.
@@ -219,8 +223,8 @@ func (s *Kerberos) CreatePKInitHashAlgorithmSHA256(ctx context.Context, value in
 //
 // Default: 1.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Kerberos) UpdatePKInitHashAlgorithmSHA256(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPKInitHashAlgorithmSHA256, client.Int(value))
+func (s *Kerberos) UpdatePKInitHashAlgorithmSHA256(ctx context.Context, value PKInitHashAlgorithmSHA256Value) error {
+	return s.c.Replace(ctx, URIPKInitHashAlgorithmSHA256, client.Int(int64(value)))
 }
 
 // DeletePKInitHashAlgorithmSHA256 deletes ./Device/Vendor/MSFT/Policy/Config/Kerberos/PKInitHashAlgorithmSHA256.
@@ -237,12 +241,13 @@ func (s *Kerberos) DeletePKInitHashAlgorithmSHA256(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Kerberos) GetPKInitHashAlgorithmSHA384(ctx context.Context) (int64, error) {
+func (s *Kerberos) GetPKInitHashAlgorithmSHA384(ctx context.Context) (PKInitHashAlgorithmSHA384Value, error) {
 	v, err := s.c.Get(ctx, URIPKInitHashAlgorithmSHA384)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PKInitHashAlgorithmSHA384Value(n), err
 }
 
 // CreatePKInitHashAlgorithmSHA384 creates ./Device/Vendor/MSFT/Policy/Config/Kerberos/PKInitHashAlgorithmSHA384.
@@ -250,8 +255,8 @@ func (s *Kerberos) GetPKInitHashAlgorithmSHA384(ctx context.Context) (int64, err
 //
 // Default: 1.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Kerberos) CreatePKInitHashAlgorithmSHA384(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPKInitHashAlgorithmSHA384, client.Int(value))
+func (s *Kerberos) CreatePKInitHashAlgorithmSHA384(ctx context.Context, value PKInitHashAlgorithmSHA384Value) error {
+	return s.c.Add(ctx, URIPKInitHashAlgorithmSHA384, client.Int(int64(value)))
 }
 
 // UpdatePKInitHashAlgorithmSHA384 updates ./Device/Vendor/MSFT/Policy/Config/Kerberos/PKInitHashAlgorithmSHA384.
@@ -259,8 +264,8 @@ func (s *Kerberos) CreatePKInitHashAlgorithmSHA384(ctx context.Context, value in
 //
 // Default: 1.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Kerberos) UpdatePKInitHashAlgorithmSHA384(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPKInitHashAlgorithmSHA384, client.Int(value))
+func (s *Kerberos) UpdatePKInitHashAlgorithmSHA384(ctx context.Context, value PKInitHashAlgorithmSHA384Value) error {
+	return s.c.Replace(ctx, URIPKInitHashAlgorithmSHA384, client.Int(int64(value)))
 }
 
 // DeletePKInitHashAlgorithmSHA384 deletes ./Device/Vendor/MSFT/Policy/Config/Kerberos/PKInitHashAlgorithmSHA384.
@@ -277,12 +282,13 @@ func (s *Kerberos) DeletePKInitHashAlgorithmSHA384(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Kerberos) GetPKInitHashAlgorithmSHA512(ctx context.Context) (int64, error) {
+func (s *Kerberos) GetPKInitHashAlgorithmSHA512(ctx context.Context) (PKInitHashAlgorithmSHA512Value, error) {
 	v, err := s.c.Get(ctx, URIPKInitHashAlgorithmSHA512)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PKInitHashAlgorithmSHA512Value(n), err
 }
 
 // CreatePKInitHashAlgorithmSHA512 creates ./Device/Vendor/MSFT/Policy/Config/Kerberos/PKInitHashAlgorithmSHA512.
@@ -290,8 +296,8 @@ func (s *Kerberos) GetPKInitHashAlgorithmSHA512(ctx context.Context) (int64, err
 //
 // Default: 1.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Kerberos) CreatePKInitHashAlgorithmSHA512(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPKInitHashAlgorithmSHA512, client.Int(value))
+func (s *Kerberos) CreatePKInitHashAlgorithmSHA512(ctx context.Context, value PKInitHashAlgorithmSHA512Value) error {
+	return s.c.Add(ctx, URIPKInitHashAlgorithmSHA512, client.Int(int64(value)))
 }
 
 // UpdatePKInitHashAlgorithmSHA512 updates ./Device/Vendor/MSFT/Policy/Config/Kerberos/PKInitHashAlgorithmSHA512.
@@ -299,8 +305,8 @@ func (s *Kerberos) CreatePKInitHashAlgorithmSHA512(ctx context.Context, value in
 //
 // Default: 1.
 // Supported from OS build 10.0.22621 (CSP v11.0).
-func (s *Kerberos) UpdatePKInitHashAlgorithmSHA512(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPKInitHashAlgorithmSHA512, client.Int(value))
+func (s *Kerberos) UpdatePKInitHashAlgorithmSHA512(ctx context.Context, value PKInitHashAlgorithmSHA512Value) error {
+	return s.c.Replace(ctx, URIPKInitHashAlgorithmSHA512, client.Int(int64(value)))
 }
 
 // DeletePKInitHashAlgorithmSHA512 deletes ./Device/Vendor/MSFT/Policy/Config/Kerberos/PKInitHashAlgorithmSHA512.

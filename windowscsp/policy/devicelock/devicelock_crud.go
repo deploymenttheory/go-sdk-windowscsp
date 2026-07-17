@@ -170,12 +170,13 @@ func (s *DeviceLock) DeleteAllowAdministratorLockout(ctx context.Context) error 
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *DeviceLock) GetAllowIdleReturnWithoutPassword(ctx context.Context) (int64, error) {
+func (s *DeviceLock) GetAllowIdleReturnWithoutPassword(ctx context.Context) (AllowIdleReturnWithoutPasswordValue, error) {
 	v, err := s.c.Get(ctx, URIAllowIdleReturnWithoutPassword)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowIdleReturnWithoutPasswordValue(n), err
 }
 
 // CreateAllowIdleReturnWithoutPassword creates ./Device/Vendor/MSFT/Policy/Config/DeviceLock/AllowIdleReturnWithoutPassword.
@@ -184,8 +185,8 @@ func (s *DeviceLock) GetAllowIdleReturnWithoutPassword(ctx context.Context) (int
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *DeviceLock) CreateAllowIdleReturnWithoutPassword(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowIdleReturnWithoutPassword, client.Int(value))
+func (s *DeviceLock) CreateAllowIdleReturnWithoutPassword(ctx context.Context, value AllowIdleReturnWithoutPasswordValue) error {
+	return s.c.Add(ctx, URIAllowIdleReturnWithoutPassword, client.Int(int64(value)))
 }
 
 // UpdateAllowIdleReturnWithoutPassword updates ./Device/Vendor/MSFT/Policy/Config/DeviceLock/AllowIdleReturnWithoutPassword.
@@ -194,8 +195,8 @@ func (s *DeviceLock) CreateAllowIdleReturnWithoutPassword(ctx context.Context, v
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *DeviceLock) UpdateAllowIdleReturnWithoutPassword(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowIdleReturnWithoutPassword, client.Int(value))
+func (s *DeviceLock) UpdateAllowIdleReturnWithoutPassword(ctx context.Context, value AllowIdleReturnWithoutPasswordValue) error {
+	return s.c.Replace(ctx, URIAllowIdleReturnWithoutPassword, client.Int(int64(value)))
 }
 
 // DeleteAllowIdleReturnWithoutPassword deletes ./Device/Vendor/MSFT/Policy/Config/DeviceLock/AllowIdleReturnWithoutPassword.
@@ -214,12 +215,13 @@ func (s *DeviceLock) DeleteAllowIdleReturnWithoutPassword(ctx context.Context) e
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *DeviceLock) GetAllowScreenTimeoutWhileLockedUserConfig(ctx context.Context) (int64, error) {
+func (s *DeviceLock) GetAllowScreenTimeoutWhileLockedUserConfig(ctx context.Context) (AllowScreenTimeoutWhileLockedUserConfigValue, error) {
 	v, err := s.c.Get(ctx, URIAllowScreenTimeoutWhileLockedUserConfig)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowScreenTimeoutWhileLockedUserConfigValue(n), err
 }
 
 // CreateAllowScreenTimeoutWhileLockedUserConfig creates ./Device/Vendor/MSFT/Policy/Config/DeviceLock/AllowScreenTimeoutWhileLockedUserConfig.
@@ -228,8 +230,8 @@ func (s *DeviceLock) GetAllowScreenTimeoutWhileLockedUserConfig(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *DeviceLock) CreateAllowScreenTimeoutWhileLockedUserConfig(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowScreenTimeoutWhileLockedUserConfig, client.Int(value))
+func (s *DeviceLock) CreateAllowScreenTimeoutWhileLockedUserConfig(ctx context.Context, value AllowScreenTimeoutWhileLockedUserConfigValue) error {
+	return s.c.Add(ctx, URIAllowScreenTimeoutWhileLockedUserConfig, client.Int(int64(value)))
 }
 
 // UpdateAllowScreenTimeoutWhileLockedUserConfig updates ./Device/Vendor/MSFT/Policy/Config/DeviceLock/AllowScreenTimeoutWhileLockedUserConfig.
@@ -238,8 +240,8 @@ func (s *DeviceLock) CreateAllowScreenTimeoutWhileLockedUserConfig(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *DeviceLock) UpdateAllowScreenTimeoutWhileLockedUserConfig(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowScreenTimeoutWhileLockedUserConfig, client.Int(value))
+func (s *DeviceLock) UpdateAllowScreenTimeoutWhileLockedUserConfig(ctx context.Context, value AllowScreenTimeoutWhileLockedUserConfigValue) error {
+	return s.c.Replace(ctx, URIAllowScreenTimeoutWhileLockedUserConfig, client.Int(int64(value)))
 }
 
 // DeleteAllowScreenTimeoutWhileLockedUserConfig deletes ./Device/Vendor/MSFT/Policy/Config/DeviceLock/AllowScreenTimeoutWhileLockedUserConfig.
@@ -258,12 +260,13 @@ func (s *DeviceLock) DeleteAllowScreenTimeoutWhileLockedUserConfig(ctx context.C
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *DeviceLock) GetAllowSimpleDevicePassword(ctx context.Context) (int64, error) {
+func (s *DeviceLock) GetAllowSimpleDevicePassword(ctx context.Context) (AllowSimpleDevicePasswordValue, error) {
 	v, err := s.c.Get(ctx, URIAllowSimpleDevicePassword)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowSimpleDevicePasswordValue(n), err
 }
 
 // CreateAllowSimpleDevicePassword creates ./Device/Vendor/MSFT/Policy/Config/DeviceLock/AllowSimpleDevicePassword.
@@ -272,8 +275,8 @@ func (s *DeviceLock) GetAllowSimpleDevicePassword(ctx context.Context) (int64, e
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *DeviceLock) CreateAllowSimpleDevicePassword(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowSimpleDevicePassword, client.Int(value))
+func (s *DeviceLock) CreateAllowSimpleDevicePassword(ctx context.Context, value AllowSimpleDevicePasswordValue) error {
+	return s.c.Add(ctx, URIAllowSimpleDevicePassword, client.Int(int64(value)))
 }
 
 // UpdateAllowSimpleDevicePassword updates ./Device/Vendor/MSFT/Policy/Config/DeviceLock/AllowSimpleDevicePassword.
@@ -282,8 +285,8 @@ func (s *DeviceLock) CreateAllowSimpleDevicePassword(ctx context.Context, value 
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *DeviceLock) UpdateAllowSimpleDevicePassword(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowSimpleDevicePassword, client.Int(value))
+func (s *DeviceLock) UpdateAllowSimpleDevicePassword(ctx context.Context, value AllowSimpleDevicePasswordValue) error {
+	return s.c.Replace(ctx, URIAllowSimpleDevicePassword, client.Int(int64(value)))
 }
 
 // DeleteAllowSimpleDevicePassword deletes ./Device/Vendor/MSFT/Policy/Config/DeviceLock/AllowSimpleDevicePassword.
@@ -302,12 +305,13 @@ func (s *DeviceLock) DeleteAllowSimpleDevicePassword(ctx context.Context) error 
 //
 // Default: 2.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *DeviceLock) GetAlphanumericDevicePasswordRequired(ctx context.Context) (int64, error) {
+func (s *DeviceLock) GetAlphanumericDevicePasswordRequired(ctx context.Context) (AlphanumericDevicePasswordRequiredValue, error) {
 	v, err := s.c.Get(ctx, URIAlphanumericDevicePasswordRequired)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AlphanumericDevicePasswordRequiredValue(n), err
 }
 
 // CreateAlphanumericDevicePasswordRequired creates ./Device/Vendor/MSFT/Policy/Config/DeviceLock/AlphanumericDevicePasswordRequired.
@@ -316,8 +320,8 @@ func (s *DeviceLock) GetAlphanumericDevicePasswordRequired(ctx context.Context) 
 //
 // Default: 2.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *DeviceLock) CreateAlphanumericDevicePasswordRequired(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAlphanumericDevicePasswordRequired, client.Int(value))
+func (s *DeviceLock) CreateAlphanumericDevicePasswordRequired(ctx context.Context, value AlphanumericDevicePasswordRequiredValue) error {
+	return s.c.Add(ctx, URIAlphanumericDevicePasswordRequired, client.Int(int64(value)))
 }
 
 // UpdateAlphanumericDevicePasswordRequired updates ./Device/Vendor/MSFT/Policy/Config/DeviceLock/AlphanumericDevicePasswordRequired.
@@ -326,8 +330,8 @@ func (s *DeviceLock) CreateAlphanumericDevicePasswordRequired(ctx context.Contex
 //
 // Default: 2.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *DeviceLock) UpdateAlphanumericDevicePasswordRequired(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAlphanumericDevicePasswordRequired, client.Int(value))
+func (s *DeviceLock) UpdateAlphanumericDevicePasswordRequired(ctx context.Context, value AlphanumericDevicePasswordRequiredValue) error {
+	return s.c.Replace(ctx, URIAlphanumericDevicePasswordRequired, client.Int(int64(value)))
 }
 
 // DeleteAlphanumericDevicePasswordRequired deletes ./Device/Vendor/MSFT/Policy/Config/DeviceLock/AlphanumericDevicePasswordRequired.
@@ -417,12 +421,13 @@ func (s *DeviceLock) DeleteClearTextPassword(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *DeviceLock) GetDevicePasswordEnabled(ctx context.Context) (int64, error) {
+func (s *DeviceLock) GetDevicePasswordEnabled(ctx context.Context) (DevicePasswordEnabledValue, error) {
 	v, err := s.c.Get(ctx, URIDevicePasswordEnabled)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DevicePasswordEnabledValue(n), err
 }
 
 // CreateDevicePasswordEnabled creates ./Device/Vendor/MSFT/Policy/Config/DeviceLock/DevicePasswordEnabled.
@@ -430,8 +435,8 @@ func (s *DeviceLock) GetDevicePasswordEnabled(ctx context.Context) (int64, error
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *DeviceLock) CreateDevicePasswordEnabled(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDevicePasswordEnabled, client.Int(value))
+func (s *DeviceLock) CreateDevicePasswordEnabled(ctx context.Context, value DevicePasswordEnabledValue) error {
+	return s.c.Add(ctx, URIDevicePasswordEnabled, client.Int(int64(value)))
 }
 
 // UpdateDevicePasswordEnabled updates ./Device/Vendor/MSFT/Policy/Config/DeviceLock/DevicePasswordEnabled.
@@ -439,8 +444,8 @@ func (s *DeviceLock) CreateDevicePasswordEnabled(ctx context.Context, value int6
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *DeviceLock) UpdateDevicePasswordEnabled(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDevicePasswordEnabled, client.Int(value))
+func (s *DeviceLock) UpdateDevicePasswordEnabled(ctx context.Context, value DevicePasswordEnabledValue) error {
+	return s.c.Replace(ctx, URIDevicePasswordEnabled, client.Int(int64(value)))
 }
 
 // DeleteDevicePasswordEnabled deletes ./Device/Vendor/MSFT/Policy/Config/DeviceLock/DevicePasswordEnabled.
@@ -858,12 +863,13 @@ func (s *DeviceLock) DeleteMaximumPasswordAge(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *DeviceLock) GetMinDevicePasswordComplexCharacters(ctx context.Context) (int64, error) {
+func (s *DeviceLock) GetMinDevicePasswordComplexCharacters(ctx context.Context) (MinDevicePasswordComplexCharactersValue, error) {
 	v, err := s.c.Get(ctx, URIMinDevicePasswordComplexCharacters)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return MinDevicePasswordComplexCharactersValue(n), err
 }
 
 // CreateMinDevicePasswordComplexCharacters creates ./Device/Vendor/MSFT/Policy/Config/DeviceLock/MinDevicePasswordComplexCharacters.
@@ -872,8 +878,8 @@ func (s *DeviceLock) GetMinDevicePasswordComplexCharacters(ctx context.Context) 
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *DeviceLock) CreateMinDevicePasswordComplexCharacters(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIMinDevicePasswordComplexCharacters, client.Int(value))
+func (s *DeviceLock) CreateMinDevicePasswordComplexCharacters(ctx context.Context, value MinDevicePasswordComplexCharactersValue) error {
+	return s.c.Add(ctx, URIMinDevicePasswordComplexCharacters, client.Int(int64(value)))
 }
 
 // UpdateMinDevicePasswordComplexCharacters updates ./Device/Vendor/MSFT/Policy/Config/DeviceLock/MinDevicePasswordComplexCharacters.
@@ -882,8 +888,8 @@ func (s *DeviceLock) CreateMinDevicePasswordComplexCharacters(ctx context.Contex
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *DeviceLock) UpdateMinDevicePasswordComplexCharacters(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIMinDevicePasswordComplexCharacters, client.Int(value))
+func (s *DeviceLock) UpdateMinDevicePasswordComplexCharacters(ctx context.Context, value MinDevicePasswordComplexCharactersValue) error {
+	return s.c.Replace(ctx, URIMinDevicePasswordComplexCharacters, client.Int(int64(value)))
 }
 
 // DeleteMinDevicePasswordComplexCharacters deletes ./Device/Vendor/MSFT/Policy/Config/DeviceLock/MinDevicePasswordComplexCharacters.
@@ -1381,12 +1387,13 @@ func (s *DeviceLock) DeletePreventLockScreenSlideShow(ctx context.Context) error
 //
 // Default: 0.
 // Supported from OS build 10.0.26100, 10.0.22621.5126 (CSP v11.0).
-func (s *DeviceLock) GetRelaxMinimumPasswordLengthLimits(ctx context.Context) (int64, error) {
+func (s *DeviceLock) GetRelaxMinimumPasswordLengthLimits(ctx context.Context) (RelaxMinimumPasswordLengthLimitsValue, error) {
 	v, err := s.c.Get(ctx, URIRelaxMinimumPasswordLengthLimits)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return RelaxMinimumPasswordLengthLimitsValue(n), err
 }
 
 // CreateRelaxMinimumPasswordLengthLimits creates ./Device/Vendor/MSFT/Policy/Config/DeviceLock/RelaxMinimumPasswordLengthLimits.
@@ -1398,8 +1405,8 @@ func (s *DeviceLock) GetRelaxMinimumPasswordLengthLimits(ctx context.Context) (i
 //
 // Default: 0.
 // Supported from OS build 10.0.26100, 10.0.22621.5126 (CSP v11.0).
-func (s *DeviceLock) CreateRelaxMinimumPasswordLengthLimits(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIRelaxMinimumPasswordLengthLimits, client.Int(value))
+func (s *DeviceLock) CreateRelaxMinimumPasswordLengthLimits(ctx context.Context, value RelaxMinimumPasswordLengthLimitsValue) error {
+	return s.c.Add(ctx, URIRelaxMinimumPasswordLengthLimits, client.Int(int64(value)))
 }
 
 // UpdateRelaxMinimumPasswordLengthLimits updates ./Device/Vendor/MSFT/Policy/Config/DeviceLock/RelaxMinimumPasswordLengthLimits.
@@ -1411,8 +1418,8 @@ func (s *DeviceLock) CreateRelaxMinimumPasswordLengthLimits(ctx context.Context,
 //
 // Default: 0.
 // Supported from OS build 10.0.26100, 10.0.22621.5126 (CSP v11.0).
-func (s *DeviceLock) UpdateRelaxMinimumPasswordLengthLimits(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIRelaxMinimumPasswordLengthLimits, client.Int(value))
+func (s *DeviceLock) UpdateRelaxMinimumPasswordLengthLimits(ctx context.Context, value RelaxMinimumPasswordLengthLimitsValue) error {
+	return s.c.Replace(ctx, URIRelaxMinimumPasswordLengthLimits, client.Int(int64(value)))
 }
 
 // DeleteRelaxMinimumPasswordLengthLimits deletes ./Device/Vendor/MSFT/Policy/Config/DeviceLock/RelaxMinimumPasswordLengthLimits.

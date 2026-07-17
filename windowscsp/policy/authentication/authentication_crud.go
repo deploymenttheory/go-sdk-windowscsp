@@ -13,12 +13,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Authentication) GetAllowAadPasswordReset(ctx context.Context) (int64, error) {
+func (s *Authentication) GetAllowAadPasswordReset(ctx context.Context) (AllowAadPasswordResetValue, error) {
 	v, err := s.c.Get(ctx, URIAllowAadPasswordReset)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowAadPasswordResetValue(n), err
 }
 
 // CreateAllowAadPasswordReset creates ./Device/Vendor/MSFT/Policy/Config/Authentication/AllowAadPasswordReset.
@@ -26,8 +27,8 @@ func (s *Authentication) GetAllowAadPasswordReset(ctx context.Context) (int64, e
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Authentication) CreateAllowAadPasswordReset(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowAadPasswordReset, client.Int(value))
+func (s *Authentication) CreateAllowAadPasswordReset(ctx context.Context, value AllowAadPasswordResetValue) error {
+	return s.c.Add(ctx, URIAllowAadPasswordReset, client.Int(int64(value)))
 }
 
 // UpdateAllowAadPasswordReset updates ./Device/Vendor/MSFT/Policy/Config/Authentication/AllowAadPasswordReset.
@@ -35,8 +36,8 @@ func (s *Authentication) CreateAllowAadPasswordReset(ctx context.Context, value 
 //
 // Default: 0.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Authentication) UpdateAllowAadPasswordReset(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowAadPasswordReset, client.Int(value))
+func (s *Authentication) UpdateAllowAadPasswordReset(ctx context.Context, value AllowAadPasswordResetValue) error {
+	return s.c.Replace(ctx, URIAllowAadPasswordReset, client.Int(int64(value)))
 }
 
 // DeleteAllowAadPasswordReset deletes ./Device/Vendor/MSFT/Policy/Config/Authentication/AllowAadPasswordReset.
@@ -53,12 +54,13 @@ func (s *Authentication) DeleteAllowAadPasswordReset(ctx context.Context) error 
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Authentication) GetAllowFastReconnect(ctx context.Context) (int64, error) {
+func (s *Authentication) GetAllowFastReconnect(ctx context.Context) (AllowFastReconnectValue, error) {
 	v, err := s.c.Get(ctx, URIAllowFastReconnect)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowFastReconnectValue(n), err
 }
 
 // CreateAllowFastReconnect creates ./Device/Vendor/MSFT/Policy/Config/Authentication/AllowFastReconnect.
@@ -66,8 +68,8 @@ func (s *Authentication) GetAllowFastReconnect(ctx context.Context) (int64, erro
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Authentication) CreateAllowFastReconnect(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowFastReconnect, client.Int(value))
+func (s *Authentication) CreateAllowFastReconnect(ctx context.Context, value AllowFastReconnectValue) error {
+	return s.c.Add(ctx, URIAllowFastReconnect, client.Int(int64(value)))
 }
 
 // UpdateAllowFastReconnect updates ./Device/Vendor/MSFT/Policy/Config/Authentication/AllowFastReconnect.
@@ -75,8 +77,8 @@ func (s *Authentication) CreateAllowFastReconnect(ctx context.Context, value int
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Authentication) UpdateAllowFastReconnect(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowFastReconnect, client.Int(value))
+func (s *Authentication) UpdateAllowFastReconnect(ctx context.Context, value AllowFastReconnectValue) error {
+	return s.c.Replace(ctx, URIAllowFastReconnect, client.Int(int64(value)))
 }
 
 // DeleteAllowFastReconnect deletes ./Device/Vendor/MSFT/Policy/Config/Authentication/AllowFastReconnect.
@@ -98,12 +100,13 @@ func (s *Authentication) DeleteAllowFastReconnect(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Authentication) GetAllowSecondaryAuthenticationDevice(ctx context.Context) (int64, error) {
+func (s *Authentication) GetAllowSecondaryAuthenticationDevice(ctx context.Context) (AllowSecondaryAuthenticationDeviceValue, error) {
 	v, err := s.c.Get(ctx, URIAllowSecondaryAuthenticationDevice)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowSecondaryAuthenticationDeviceValue(n), err
 }
 
 // CreateAllowSecondaryAuthenticationDevice creates ./Device/Vendor/MSFT/Policy/Config/Authentication/AllowSecondaryAuthenticationDevice.
@@ -116,8 +119,8 @@ func (s *Authentication) GetAllowSecondaryAuthenticationDevice(ctx context.Conte
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Authentication) CreateAllowSecondaryAuthenticationDevice(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowSecondaryAuthenticationDevice, client.Int(value))
+func (s *Authentication) CreateAllowSecondaryAuthenticationDevice(ctx context.Context, value AllowSecondaryAuthenticationDeviceValue) error {
+	return s.c.Add(ctx, URIAllowSecondaryAuthenticationDevice, client.Int(int64(value)))
 }
 
 // UpdateAllowSecondaryAuthenticationDevice updates ./Device/Vendor/MSFT/Policy/Config/Authentication/AllowSecondaryAuthenticationDevice.
@@ -130,8 +133,8 @@ func (s *Authentication) CreateAllowSecondaryAuthenticationDevice(ctx context.Co
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Authentication) UpdateAllowSecondaryAuthenticationDevice(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowSecondaryAuthenticationDevice, client.Int(value))
+func (s *Authentication) UpdateAllowSecondaryAuthenticationDevice(ctx context.Context, value AllowSecondaryAuthenticationDeviceValue) error {
+	return s.c.Replace(ctx, URIAllowSecondaryAuthenticationDevice, client.Int(int64(value)))
 }
 
 // DeleteAllowSecondaryAuthenticationDevice deletes ./Device/Vendor/MSFT/Policy/Config/Authentication/AllowSecondaryAuthenticationDevice.
@@ -230,12 +233,13 @@ func (s *Authentication) DeleteConfigureWebcamAccessDomainNames(ctx context.Cont
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Authentication) GetEnableFastFirstSignIn(ctx context.Context) (int64, error) {
+func (s *Authentication) GetEnableFastFirstSignIn(ctx context.Context) (EnableFastFirstSignInValue, error) {
 	v, err := s.c.Get(ctx, URIEnableFastFirstSignIn)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableFastFirstSignInValue(n), err
 }
 
 // CreateEnableFastFirstSignIn creates ./Device/Vendor/MSFT/Policy/Config/Authentication/EnableFastFirstSignIn.
@@ -244,8 +248,8 @@ func (s *Authentication) GetEnableFastFirstSignIn(ctx context.Context) (int64, e
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Authentication) CreateEnableFastFirstSignIn(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableFastFirstSignIn, client.Int(value))
+func (s *Authentication) CreateEnableFastFirstSignIn(ctx context.Context, value EnableFastFirstSignInValue) error {
+	return s.c.Add(ctx, URIEnableFastFirstSignIn, client.Int(int64(value)))
 }
 
 // UpdateEnableFastFirstSignIn updates ./Device/Vendor/MSFT/Policy/Config/Authentication/EnableFastFirstSignIn.
@@ -254,8 +258,8 @@ func (s *Authentication) CreateEnableFastFirstSignIn(ctx context.Context, value 
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Authentication) UpdateEnableFastFirstSignIn(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableFastFirstSignIn, client.Int(value))
+func (s *Authentication) UpdateEnableFastFirstSignIn(ctx context.Context, value EnableFastFirstSignInValue) error {
+	return s.c.Replace(ctx, URIEnableFastFirstSignIn, client.Int(int64(value)))
 }
 
 // DeleteEnableFastFirstSignIn deletes ./Device/Vendor/MSFT/Policy/Config/Authentication/EnableFastFirstSignIn.
@@ -273,12 +277,13 @@ func (s *Authentication) DeleteEnableFastFirstSignIn(ctx context.Context) error 
 //
 // Default: 0.
 // Supported from OS build 10.0.22631.2506 (CSP v11.0).
-func (s *Authentication) GetEnablePasswordlessExperience(ctx context.Context) (int64, error) {
+func (s *Authentication) GetEnablePasswordlessExperience(ctx context.Context) (EnablePasswordlessExperienceValue, error) {
 	v, err := s.c.Get(ctx, URIEnablePasswordlessExperience)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnablePasswordlessExperienceValue(n), err
 }
 
 // CreateEnablePasswordlessExperience creates ./Device/Vendor/MSFT/Policy/Config/Authentication/EnablePasswordlessExperience.
@@ -286,8 +291,8 @@ func (s *Authentication) GetEnablePasswordlessExperience(ctx context.Context) (i
 //
 // Default: 0.
 // Supported from OS build 10.0.22631.2506 (CSP v11.0).
-func (s *Authentication) CreateEnablePasswordlessExperience(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnablePasswordlessExperience, client.Int(value))
+func (s *Authentication) CreateEnablePasswordlessExperience(ctx context.Context, value EnablePasswordlessExperienceValue) error {
+	return s.c.Add(ctx, URIEnablePasswordlessExperience, client.Int(int64(value)))
 }
 
 // UpdateEnablePasswordlessExperience updates ./Device/Vendor/MSFT/Policy/Config/Authentication/EnablePasswordlessExperience.
@@ -295,8 +300,8 @@ func (s *Authentication) CreateEnablePasswordlessExperience(ctx context.Context,
 //
 // Default: 0.
 // Supported from OS build 10.0.22631.2506 (CSP v11.0).
-func (s *Authentication) UpdateEnablePasswordlessExperience(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnablePasswordlessExperience, client.Int(value))
+func (s *Authentication) UpdateEnablePasswordlessExperience(ctx context.Context, value EnablePasswordlessExperienceValue) error {
+	return s.c.Replace(ctx, URIEnablePasswordlessExperience, client.Int(int64(value)))
 }
 
 // DeleteEnablePasswordlessExperience deletes ./Device/Vendor/MSFT/Policy/Config/Authentication/EnablePasswordlessExperience.
@@ -313,12 +318,13 @@ func (s *Authentication) DeleteEnablePasswordlessExperience(ctx context.Context)
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Authentication) GetEnableWebSignIn(ctx context.Context) (int64, error) {
+func (s *Authentication) GetEnableWebSignIn(ctx context.Context) (EnableWebSignInValue, error) {
 	v, err := s.c.Get(ctx, URIEnableWebSignIn)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableWebSignInValue(n), err
 }
 
 // CreateEnableWebSignIn creates ./Device/Vendor/MSFT/Policy/Config/Authentication/EnableWebSignIn.
@@ -326,8 +332,8 @@ func (s *Authentication) GetEnableWebSignIn(ctx context.Context) (int64, error) 
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Authentication) CreateEnableWebSignIn(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableWebSignIn, client.Int(value))
+func (s *Authentication) CreateEnableWebSignIn(ctx context.Context, value EnableWebSignInValue) error {
+	return s.c.Add(ctx, URIEnableWebSignIn, client.Int(int64(value)))
 }
 
 // UpdateEnableWebSignIn updates ./Device/Vendor/MSFT/Policy/Config/Authentication/EnableWebSignIn.
@@ -335,8 +341,8 @@ func (s *Authentication) CreateEnableWebSignIn(ctx context.Context, value int64)
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Authentication) UpdateEnableWebSignIn(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableWebSignIn, client.Int(value))
+func (s *Authentication) UpdateEnableWebSignIn(ctx context.Context, value EnableWebSignInValue) error {
+	return s.c.Replace(ctx, URIEnableWebSignIn, client.Int(int64(value)))
 }
 
 // DeleteEnableWebSignIn deletes ./Device/Vendor/MSFT/Policy/Config/Authentication/EnableWebSignIn.

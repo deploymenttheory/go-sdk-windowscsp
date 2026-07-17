@@ -14,12 +14,13 @@ import (
 //
 // Default: 65535.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Maps) GetAllowOfflineMapsDownloadOverMeteredConnection(ctx context.Context) (int64, error) {
+func (s *Maps) GetAllowOfflineMapsDownloadOverMeteredConnection(ctx context.Context) (AllowOfflineMapsDownloadOverMeteredConnectionValue, error) {
 	v, err := s.c.Get(ctx, URIAllowOfflineMapsDownloadOverMeteredConnection)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowOfflineMapsDownloadOverMeteredConnectionValue(n), err
 }
 
 // CreateAllowOfflineMapsDownloadOverMeteredConnection creates ./Device/Vendor/MSFT/Policy/Config/Maps/AllowOfflineMapsDownloadOverMeteredConnection.
@@ -28,8 +29,8 @@ func (s *Maps) GetAllowOfflineMapsDownloadOverMeteredConnection(ctx context.Cont
 //
 // Default: 65535.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Maps) CreateAllowOfflineMapsDownloadOverMeteredConnection(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowOfflineMapsDownloadOverMeteredConnection, client.Int(value))
+func (s *Maps) CreateAllowOfflineMapsDownloadOverMeteredConnection(ctx context.Context, value AllowOfflineMapsDownloadOverMeteredConnectionValue) error {
+	return s.c.Add(ctx, URIAllowOfflineMapsDownloadOverMeteredConnection, client.Int(int64(value)))
 }
 
 // UpdateAllowOfflineMapsDownloadOverMeteredConnection updates ./Device/Vendor/MSFT/Policy/Config/Maps/AllowOfflineMapsDownloadOverMeteredConnection.
@@ -38,8 +39,8 @@ func (s *Maps) CreateAllowOfflineMapsDownloadOverMeteredConnection(ctx context.C
 //
 // Default: 65535.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Maps) UpdateAllowOfflineMapsDownloadOverMeteredConnection(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowOfflineMapsDownloadOverMeteredConnection, client.Int(value))
+func (s *Maps) UpdateAllowOfflineMapsDownloadOverMeteredConnection(ctx context.Context, value AllowOfflineMapsDownloadOverMeteredConnectionValue) error {
+	return s.c.Replace(ctx, URIAllowOfflineMapsDownloadOverMeteredConnection, client.Int(int64(value)))
 }
 
 // DeleteAllowOfflineMapsDownloadOverMeteredConnection deletes ./Device/Vendor/MSFT/Policy/Config/Maps/AllowOfflineMapsDownloadOverMeteredConnection.
@@ -58,12 +59,13 @@ func (s *Maps) DeleteAllowOfflineMapsDownloadOverMeteredConnection(ctx context.C
 //
 // Default: 65535.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Maps) GetEnableOfflineMapsAutoUpdate(ctx context.Context) (int64, error) {
+func (s *Maps) GetEnableOfflineMapsAutoUpdate(ctx context.Context) (EnableOfflineMapsAutoUpdateValue, error) {
 	v, err := s.c.Get(ctx, URIEnableOfflineMapsAutoUpdate)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableOfflineMapsAutoUpdateValue(n), err
 }
 
 // CreateEnableOfflineMapsAutoUpdate creates ./Device/Vendor/MSFT/Policy/Config/Maps/EnableOfflineMapsAutoUpdate.
@@ -72,8 +74,8 @@ func (s *Maps) GetEnableOfflineMapsAutoUpdate(ctx context.Context) (int64, error
 //
 // Default: 65535.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Maps) CreateEnableOfflineMapsAutoUpdate(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableOfflineMapsAutoUpdate, client.Int(value))
+func (s *Maps) CreateEnableOfflineMapsAutoUpdate(ctx context.Context, value EnableOfflineMapsAutoUpdateValue) error {
+	return s.c.Add(ctx, URIEnableOfflineMapsAutoUpdate, client.Int(int64(value)))
 }
 
 // UpdateEnableOfflineMapsAutoUpdate updates ./Device/Vendor/MSFT/Policy/Config/Maps/EnableOfflineMapsAutoUpdate.
@@ -82,8 +84,8 @@ func (s *Maps) CreateEnableOfflineMapsAutoUpdate(ctx context.Context, value int6
 //
 // Default: 65535.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Maps) UpdateEnableOfflineMapsAutoUpdate(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableOfflineMapsAutoUpdate, client.Int(value))
+func (s *Maps) UpdateEnableOfflineMapsAutoUpdate(ctx context.Context, value EnableOfflineMapsAutoUpdateValue) error {
+	return s.c.Replace(ctx, URIEnableOfflineMapsAutoUpdate, client.Int(int64(value)))
 }
 
 // DeleteEnableOfflineMapsAutoUpdate deletes ./Device/Vendor/MSFT/Policy/Config/Maps/EnableOfflineMapsAutoUpdate.

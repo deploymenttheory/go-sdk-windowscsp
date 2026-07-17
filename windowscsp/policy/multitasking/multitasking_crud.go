@@ -13,12 +13,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *Multitasking) GetBrowserAltTabBlowout(ctx context.Context) (int64, error) {
+func (s *Multitasking) GetBrowserAltTabBlowout(ctx context.Context) (BrowserAltTabBlowoutValue, error) {
 	v, err := s.c.Get(ctx, URIBrowserAltTabBlowout)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return BrowserAltTabBlowoutValue(n), err
 }
 
 // CreateBrowserAltTabBlowout creates ./User/Vendor/MSFT/Policy/Config/Multitasking/BrowserAltTabBlowout.
@@ -26,8 +27,8 @@ func (s *Multitasking) GetBrowserAltTabBlowout(ctx context.Context) (int64, erro
 //
 // Default: 1.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *Multitasking) CreateBrowserAltTabBlowout(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIBrowserAltTabBlowout, client.Int(value))
+func (s *Multitasking) CreateBrowserAltTabBlowout(ctx context.Context, value BrowserAltTabBlowoutValue) error {
+	return s.c.Add(ctx, URIBrowserAltTabBlowout, client.Int(int64(value)))
 }
 
 // UpdateBrowserAltTabBlowout updates ./User/Vendor/MSFT/Policy/Config/Multitasking/BrowserAltTabBlowout.
@@ -35,8 +36,8 @@ func (s *Multitasking) CreateBrowserAltTabBlowout(ctx context.Context, value int
 //
 // Default: 1.
 // Supported from OS build 10.0.22000 (CSP v11.0).
-func (s *Multitasking) UpdateBrowserAltTabBlowout(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIBrowserAltTabBlowout, client.Int(value))
+func (s *Multitasking) UpdateBrowserAltTabBlowout(ctx context.Context, value BrowserAltTabBlowoutValue) error {
+	return s.c.Replace(ctx, URIBrowserAltTabBlowout, client.Int(int64(value)))
 }
 
 // DeleteBrowserAltTabBlowout deletes ./User/Vendor/MSFT/Policy/Config/Multitasking/BrowserAltTabBlowout.

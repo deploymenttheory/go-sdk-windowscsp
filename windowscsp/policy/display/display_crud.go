@@ -14,12 +14,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Display) GetConfigureMultipleDisplayMode(ctx context.Context) (int64, error) {
+func (s *Display) GetConfigureMultipleDisplayMode(ctx context.Context) (ConfigureMultipleDisplayModeValue, error) {
 	v, err := s.c.Get(ctx, URIConfigureMultipleDisplayMode)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ConfigureMultipleDisplayModeValue(n), err
 }
 
 // CreateConfigureMultipleDisplayMode creates ./Device/Vendor/MSFT/Policy/Config/Display/ConfigureMultipleDisplayMode.
@@ -28,8 +29,8 @@ func (s *Display) GetConfigureMultipleDisplayMode(ctx context.Context) (int64, e
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Display) CreateConfigureMultipleDisplayMode(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIConfigureMultipleDisplayMode, client.Int(value))
+func (s *Display) CreateConfigureMultipleDisplayMode(ctx context.Context, value ConfigureMultipleDisplayModeValue) error {
+	return s.c.Add(ctx, URIConfigureMultipleDisplayMode, client.Int(int64(value)))
 }
 
 // UpdateConfigureMultipleDisplayMode updates ./Device/Vendor/MSFT/Policy/Config/Display/ConfigureMultipleDisplayMode.
@@ -38,8 +39,8 @@ func (s *Display) CreateConfigureMultipleDisplayMode(ctx context.Context, value 
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Display) UpdateConfigureMultipleDisplayMode(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIConfigureMultipleDisplayMode, client.Int(value))
+func (s *Display) UpdateConfigureMultipleDisplayMode(ctx context.Context, value ConfigureMultipleDisplayModeValue) error {
+	return s.c.Replace(ctx, URIConfigureMultipleDisplayMode, client.Int(int64(value)))
 }
 
 // DeleteConfigureMultipleDisplayMode deletes ./Device/Vendor/MSFT/Policy/Config/Display/ConfigureMultipleDisplayMode.
@@ -100,28 +101,29 @@ func (s *Display) DeleteDisablePerProcessDpiForApps(ctx context.Context) error {
 // Enable or disable Per-Process System DPI for all applications.
 //
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Display) GetEnablePerProcessDpi(ctx context.Context) (int64, error) {
+func (s *Display) GetEnablePerProcessDpi(ctx context.Context) (EnablePerProcessDpiValue, error) {
 	v, err := s.c.Get(ctx, URIEnablePerProcessDpi)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnablePerProcessDpiValue(n), err
 }
 
 // CreateEnablePerProcessDpi creates ./Device/Vendor/MSFT/Policy/Config/Display/EnablePerProcessDpi.
 // Enable or disable Per-Process System DPI for all applications.
 //
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Display) CreateEnablePerProcessDpi(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnablePerProcessDpi, client.Int(value))
+func (s *Display) CreateEnablePerProcessDpi(ctx context.Context, value EnablePerProcessDpiValue) error {
+	return s.c.Add(ctx, URIEnablePerProcessDpi, client.Int(int64(value)))
 }
 
 // UpdateEnablePerProcessDpi updates ./Device/Vendor/MSFT/Policy/Config/Display/EnablePerProcessDpi.
 // Enable or disable Per-Process System DPI for all applications.
 //
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Display) UpdateEnablePerProcessDpi(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnablePerProcessDpi, client.Int(value))
+func (s *Display) UpdateEnablePerProcessDpi(ctx context.Context, value EnablePerProcessDpiValue) error {
+	return s.c.Replace(ctx, URIEnablePerProcessDpi, client.Int(int64(value)))
 }
 
 // DeleteEnablePerProcessDpi deletes ./Device/Vendor/MSFT/Policy/Config/Display/EnablePerProcessDpi.
@@ -182,12 +184,13 @@ func (s *Display) DeleteEnablePerProcessDpiForApps(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Display) GetSetClonePreferredResolutionSource(ctx context.Context) (int64, error) {
+func (s *Display) GetSetClonePreferredResolutionSource(ctx context.Context) (SetClonePreferredResolutionSourceValue, error) {
 	v, err := s.c.Get(ctx, URISetClonePreferredResolutionSource)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return SetClonePreferredResolutionSourceValue(n), err
 }
 
 // CreateSetClonePreferredResolutionSource creates ./Device/Vendor/MSFT/Policy/Config/Display/SetClonePreferredResolutionSource.
@@ -196,8 +199,8 @@ func (s *Display) GetSetClonePreferredResolutionSource(ctx context.Context) (int
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Display) CreateSetClonePreferredResolutionSource(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URISetClonePreferredResolutionSource, client.Int(value))
+func (s *Display) CreateSetClonePreferredResolutionSource(ctx context.Context, value SetClonePreferredResolutionSourceValue) error {
+	return s.c.Add(ctx, URISetClonePreferredResolutionSource, client.Int(int64(value)))
 }
 
 // UpdateSetClonePreferredResolutionSource updates ./Device/Vendor/MSFT/Policy/Config/Display/SetClonePreferredResolutionSource.
@@ -206,8 +209,8 @@ func (s *Display) CreateSetClonePreferredResolutionSource(ctx context.Context, v
 //
 // Default: 0.
 // Supported from OS build 99.9.99999 (CSP v9.9).
-func (s *Display) UpdateSetClonePreferredResolutionSource(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URISetClonePreferredResolutionSource, client.Int(value))
+func (s *Display) UpdateSetClonePreferredResolutionSource(ctx context.Context, value SetClonePreferredResolutionSourceValue) error {
+	return s.c.Replace(ctx, URISetClonePreferredResolutionSource, client.Int(int64(value)))
 }
 
 // DeleteSetClonePreferredResolutionSource deletes ./Device/Vendor/MSFT/Policy/Config/Display/SetClonePreferredResolutionSource.

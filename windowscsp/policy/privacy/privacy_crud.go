@@ -15,12 +15,13 @@ import (
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) GetAllowAutoAcceptPairingAndPrivacyConsentPrompts(ctx context.Context) (int64, error) {
+func (s *Privacy) GetAllowAutoAcceptPairingAndPrivacyConsentPrompts(ctx context.Context) (AllowAutoAcceptPairingAndPrivacyConsentPromptsValue, error) {
 	v, err := s.c.Get(ctx, URIAllowAutoAcceptPairingAndPrivacyConsentPrompts)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowAutoAcceptPairingAndPrivacyConsentPromptsValue(n), err
 }
 
 // CreateAllowAutoAcceptPairingAndPrivacyConsentPrompts creates ./Device/Vendor/MSFT/Policy/Config/Privacy/AllowAutoAcceptPairingAndPrivacyConsentPrompts.
@@ -30,8 +31,8 @@ func (s *Privacy) GetAllowAutoAcceptPairingAndPrivacyConsentPrompts(ctx context.
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) CreateAllowAutoAcceptPairingAndPrivacyConsentPrompts(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowAutoAcceptPairingAndPrivacyConsentPrompts, client.Int(value))
+func (s *Privacy) CreateAllowAutoAcceptPairingAndPrivacyConsentPrompts(ctx context.Context, value AllowAutoAcceptPairingAndPrivacyConsentPromptsValue) error {
+	return s.c.Add(ctx, URIAllowAutoAcceptPairingAndPrivacyConsentPrompts, client.Int(int64(value)))
 }
 
 // UpdateAllowAutoAcceptPairingAndPrivacyConsentPrompts updates ./Device/Vendor/MSFT/Policy/Config/Privacy/AllowAutoAcceptPairingAndPrivacyConsentPrompts.
@@ -41,8 +42,8 @@ func (s *Privacy) CreateAllowAutoAcceptPairingAndPrivacyConsentPrompts(ctx conte
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) UpdateAllowAutoAcceptPairingAndPrivacyConsentPrompts(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowAutoAcceptPairingAndPrivacyConsentPrompts, client.Int(value))
+func (s *Privacy) UpdateAllowAutoAcceptPairingAndPrivacyConsentPrompts(ctx context.Context, value AllowAutoAcceptPairingAndPrivacyConsentPromptsValue) error {
+	return s.c.Replace(ctx, URIAllowAutoAcceptPairingAndPrivacyConsentPrompts, client.Int(int64(value)))
 }
 
 // DeleteAllowAutoAcceptPairingAndPrivacyConsentPrompts deletes ./Device/Vendor/MSFT/Policy/Config/Privacy/AllowAutoAcceptPairingAndPrivacyConsentPrompts.
@@ -61,12 +62,13 @@ func (s *Privacy) DeleteAllowAutoAcceptPairingAndPrivacyConsentPrompts(ctx conte
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Privacy) GetAllowCrossDeviceClipboard(ctx context.Context) (int64, error) {
+func (s *Privacy) GetAllowCrossDeviceClipboard(ctx context.Context) (AllowCrossDeviceClipboardValue, error) {
 	v, err := s.c.Get(ctx, URIAllowCrossDeviceClipboard)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowCrossDeviceClipboardValue(n), err
 }
 
 // CreateAllowCrossDeviceClipboard creates ./Device/Vendor/MSFT/Policy/Config/Privacy/AllowCrossDeviceClipboard.
@@ -74,8 +76,8 @@ func (s *Privacy) GetAllowCrossDeviceClipboard(ctx context.Context) (int64, erro
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Privacy) CreateAllowCrossDeviceClipboard(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowCrossDeviceClipboard, client.Int(value))
+func (s *Privacy) CreateAllowCrossDeviceClipboard(ctx context.Context, value AllowCrossDeviceClipboardValue) error {
+	return s.c.Add(ctx, URIAllowCrossDeviceClipboard, client.Int(int64(value)))
 }
 
 // UpdateAllowCrossDeviceClipboard updates ./Device/Vendor/MSFT/Policy/Config/Privacy/AllowCrossDeviceClipboard.
@@ -83,8 +85,8 @@ func (s *Privacy) CreateAllowCrossDeviceClipboard(ctx context.Context, value int
 //
 // Default: 1.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Privacy) UpdateAllowCrossDeviceClipboard(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowCrossDeviceClipboard, client.Int(value))
+func (s *Privacy) UpdateAllowCrossDeviceClipboard(ctx context.Context, value AllowCrossDeviceClipboardValue) error {
+	return s.c.Replace(ctx, URIAllowCrossDeviceClipboard, client.Int(int64(value)))
 }
 
 // DeleteAllowCrossDeviceClipboard deletes ./Device/Vendor/MSFT/Policy/Config/Privacy/AllowCrossDeviceClipboard.
@@ -107,12 +109,13 @@ func (s *Privacy) DeleteAllowCrossDeviceClipboard(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Privacy) GetAllowInputPersonalization(ctx context.Context) (int64, error) {
+func (s *Privacy) GetAllowInputPersonalization(ctx context.Context) (AllowInputPersonalizationValue, error) {
 	v, err := s.c.Get(ctx, URIAllowInputPersonalization)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowInputPersonalizationValue(n), err
 }
 
 // CreateAllowInputPersonalization creates ./Device/Vendor/MSFT/Policy/Config/Privacy/AllowInputPersonalization.
@@ -126,8 +129,8 @@ func (s *Privacy) GetAllowInputPersonalization(ctx context.Context) (int64, erro
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Privacy) CreateAllowInputPersonalization(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowInputPersonalization, client.Int(value))
+func (s *Privacy) CreateAllowInputPersonalization(ctx context.Context, value AllowInputPersonalizationValue) error {
+	return s.c.Add(ctx, URIAllowInputPersonalization, client.Int(int64(value)))
 }
 
 // UpdateAllowInputPersonalization updates ./Device/Vendor/MSFT/Policy/Config/Privacy/AllowInputPersonalization.
@@ -141,8 +144,8 @@ func (s *Privacy) CreateAllowInputPersonalization(ctx context.Context, value int
 //
 // Default: 1.
 // Supported from OS build 10.0.10240 (CSP v1.0).
-func (s *Privacy) UpdateAllowInputPersonalization(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowInputPersonalization, client.Int(value))
+func (s *Privacy) UpdateAllowInputPersonalization(ctx context.Context, value AllowInputPersonalizationValue) error {
+	return s.c.Replace(ctx, URIAllowInputPersonalization, client.Int(int64(value)))
 }
 
 // DeleteAllowInputPersonalization deletes ./Device/Vendor/MSFT/Policy/Config/Privacy/AllowInputPersonalization.
@@ -165,12 +168,13 @@ func (s *Privacy) DeleteAllowInputPersonalization(ctx context.Context) error {
 //
 // Default: 65535.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) GetDisableAdvertisingId(ctx context.Context) (int64, error) {
+func (s *Privacy) GetDisableAdvertisingId(ctx context.Context) (DisableAdvertisingIdValue, error) {
 	v, err := s.c.Get(ctx, URIDisableAdvertisingId)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisableAdvertisingIdValue(n), err
 }
 
 // CreateDisableAdvertisingId creates ./Device/Vendor/MSFT/Policy/Config/Privacy/DisableAdvertisingId.
@@ -178,8 +182,8 @@ func (s *Privacy) GetDisableAdvertisingId(ctx context.Context) (int64, error) {
 //
 // Default: 65535.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) CreateDisableAdvertisingId(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisableAdvertisingId, client.Int(value))
+func (s *Privacy) CreateDisableAdvertisingId(ctx context.Context, value DisableAdvertisingIdValue) error {
+	return s.c.Add(ctx, URIDisableAdvertisingId, client.Int(int64(value)))
 }
 
 // UpdateDisableAdvertisingId updates ./Device/Vendor/MSFT/Policy/Config/Privacy/DisableAdvertisingId.
@@ -187,8 +191,8 @@ func (s *Privacy) CreateDisableAdvertisingId(ctx context.Context, value int64) e
 //
 // Default: 65535.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) UpdateDisableAdvertisingId(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisableAdvertisingId, client.Int(value))
+func (s *Privacy) UpdateDisableAdvertisingId(ctx context.Context, value DisableAdvertisingIdValue) error {
+	return s.c.Replace(ctx, URIDisableAdvertisingId, client.Int(int64(value)))
 }
 
 // DeleteDisableAdvertisingId deletes ./Device/Vendor/MSFT/Policy/Config/Privacy/DisableAdvertisingId.
@@ -206,12 +210,13 @@ func (s *Privacy) DeleteDisableAdvertisingId(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Privacy) GetDisablePrivacyExperience(ctx context.Context) (int64, error) {
+func (s *Privacy) GetDisablePrivacyExperience(ctx context.Context) (DisablePrivacyExperienceValue, error) {
 	v, err := s.c.Get(ctx, URIDisablePrivacyExperience)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return DisablePrivacyExperienceValue(n), err
 }
 
 // CreateDisablePrivacyExperience creates ./Device/Vendor/MSFT/Policy/Config/Privacy/DisablePrivacyExperience.
@@ -220,8 +225,8 @@ func (s *Privacy) GetDisablePrivacyExperience(ctx context.Context) (int64, error
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Privacy) CreateDisablePrivacyExperience(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIDisablePrivacyExperience, client.Int(value))
+func (s *Privacy) CreateDisablePrivacyExperience(ctx context.Context, value DisablePrivacyExperienceValue) error {
+	return s.c.Add(ctx, URIDisablePrivacyExperience, client.Int(int64(value)))
 }
 
 // UpdateDisablePrivacyExperience updates ./Device/Vendor/MSFT/Policy/Config/Privacy/DisablePrivacyExperience.
@@ -230,8 +235,8 @@ func (s *Privacy) CreateDisablePrivacyExperience(ctx context.Context, value int6
 //
 // Default: 0.
 // Supported from OS build 10.0.17763 (CSP v8.0).
-func (s *Privacy) UpdateDisablePrivacyExperience(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIDisablePrivacyExperience, client.Int(value))
+func (s *Privacy) UpdateDisablePrivacyExperience(ctx context.Context, value DisablePrivacyExperienceValue) error {
+	return s.c.Replace(ctx, URIDisablePrivacyExperience, client.Int(int64(value)))
 }
 
 // DeleteDisablePrivacyExperience deletes ./Device/Vendor/MSFT/Policy/Config/Privacy/DisablePrivacyExperience.
@@ -250,12 +255,13 @@ func (s *Privacy) DeleteDisablePrivacyExperience(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Privacy) GetEnableActivityFeed(ctx context.Context) (int64, error) {
+func (s *Privacy) GetEnableActivityFeed(ctx context.Context) (EnableActivityFeedValue, error) {
 	v, err := s.c.Get(ctx, URIEnableActivityFeed)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return EnableActivityFeedValue(n), err
 }
 
 // CreateEnableActivityFeed creates ./Device/Vendor/MSFT/Policy/Config/Privacy/EnableActivityFeed.
@@ -264,8 +270,8 @@ func (s *Privacy) GetEnableActivityFeed(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Privacy) CreateEnableActivityFeed(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIEnableActivityFeed, client.Int(value))
+func (s *Privacy) CreateEnableActivityFeed(ctx context.Context, value EnableActivityFeedValue) error {
+	return s.c.Add(ctx, URIEnableActivityFeed, client.Int(int64(value)))
 }
 
 // UpdateEnableActivityFeed updates ./Device/Vendor/MSFT/Policy/Config/Privacy/EnableActivityFeed.
@@ -274,8 +280,8 @@ func (s *Privacy) CreateEnableActivityFeed(ctx context.Context, value int64) err
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Privacy) UpdateEnableActivityFeed(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIEnableActivityFeed, client.Int(value))
+func (s *Privacy) UpdateEnableActivityFeed(ctx context.Context, value EnableActivityFeedValue) error {
+	return s.c.Replace(ctx, URIEnableActivityFeed, client.Int(int64(value)))
 }
 
 // DeleteEnableActivityFeed deletes ./Device/Vendor/MSFT/Policy/Config/Privacy/EnableActivityFeed.
@@ -293,12 +299,13 @@ func (s *Privacy) DeleteEnableActivityFeed(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) GetLetAppsAccessAccountInfo(ctx context.Context) (int64, error) {
+func (s *Privacy) GetLetAppsAccessAccountInfo(ctx context.Context) (LetAppsAccessAccountInfoValue, error) {
 	v, err := s.c.Get(ctx, URILetAppsAccessAccountInfo)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return LetAppsAccessAccountInfoValue(n), err
 }
 
 // CreateLetAppsAccessAccountInfo creates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessAccountInfo.
@@ -306,8 +313,8 @@ func (s *Privacy) GetLetAppsAccessAccountInfo(ctx context.Context) (int64, error
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) CreateLetAppsAccessAccountInfo(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URILetAppsAccessAccountInfo, client.Int(value))
+func (s *Privacy) CreateLetAppsAccessAccountInfo(ctx context.Context, value LetAppsAccessAccountInfoValue) error {
+	return s.c.Add(ctx, URILetAppsAccessAccountInfo, client.Int(int64(value)))
 }
 
 // UpdateLetAppsAccessAccountInfo updates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessAccountInfo.
@@ -315,8 +322,8 @@ func (s *Privacy) CreateLetAppsAccessAccountInfo(ctx context.Context, value int6
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) UpdateLetAppsAccessAccountInfo(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URILetAppsAccessAccountInfo, client.Int(value))
+func (s *Privacy) UpdateLetAppsAccessAccountInfo(ctx context.Context, value LetAppsAccessAccountInfoValue) error {
+	return s.c.Replace(ctx, URILetAppsAccessAccountInfo, client.Int(int64(value)))
 }
 
 // DeleteLetAppsAccessAccountInfo deletes ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessAccountInfo.
@@ -467,12 +474,13 @@ func (s *Privacy) DeleteLetAppsAccessAccountInfoUserInControlOfTheseApps(ctx con
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Privacy) GetLetAppsAccessBackgroundSpatialPerception(ctx context.Context) (int64, error) {
+func (s *Privacy) GetLetAppsAccessBackgroundSpatialPerception(ctx context.Context) (LetAppsAccessBackgroundSpatialPerceptionValue, error) {
 	v, err := s.c.Get(ctx, URILetAppsAccessBackgroundSpatialPerception)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return LetAppsAccessBackgroundSpatialPerceptionValue(n), err
 }
 
 // CreateLetAppsAccessBackgroundSpatialPerception creates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessBackgroundSpatialPerception.
@@ -482,8 +490,8 @@ func (s *Privacy) GetLetAppsAccessBackgroundSpatialPerception(ctx context.Contex
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Privacy) CreateLetAppsAccessBackgroundSpatialPerception(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URILetAppsAccessBackgroundSpatialPerception, client.Int(value))
+func (s *Privacy) CreateLetAppsAccessBackgroundSpatialPerception(ctx context.Context, value LetAppsAccessBackgroundSpatialPerceptionValue) error {
+	return s.c.Add(ctx, URILetAppsAccessBackgroundSpatialPerception, client.Int(int64(value)))
 }
 
 // UpdateLetAppsAccessBackgroundSpatialPerception updates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessBackgroundSpatialPerception.
@@ -493,8 +501,8 @@ func (s *Privacy) CreateLetAppsAccessBackgroundSpatialPerception(ctx context.Con
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Privacy) UpdateLetAppsAccessBackgroundSpatialPerception(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URILetAppsAccessBackgroundSpatialPerception, client.Int(value))
+func (s *Privacy) UpdateLetAppsAccessBackgroundSpatialPerception(ctx context.Context, value LetAppsAccessBackgroundSpatialPerceptionValue) error {
+	return s.c.Replace(ctx, URILetAppsAccessBackgroundSpatialPerception, client.Int(int64(value)))
 }
 
 // DeleteLetAppsAccessBackgroundSpatialPerception deletes ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessBackgroundSpatialPerception.
@@ -653,12 +661,13 @@ func (s *Privacy) DeleteLetAppsAccessBackgroundSpatialPerceptionUserInControlOfT
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) GetLetAppsAccessCalendar(ctx context.Context) (int64, error) {
+func (s *Privacy) GetLetAppsAccessCalendar(ctx context.Context) (LetAppsAccessCalendarValue, error) {
 	v, err := s.c.Get(ctx, URILetAppsAccessCalendar)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return LetAppsAccessCalendarValue(n), err
 }
 
 // CreateLetAppsAccessCalendar creates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessCalendar.
@@ -666,8 +675,8 @@ func (s *Privacy) GetLetAppsAccessCalendar(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) CreateLetAppsAccessCalendar(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URILetAppsAccessCalendar, client.Int(value))
+func (s *Privacy) CreateLetAppsAccessCalendar(ctx context.Context, value LetAppsAccessCalendarValue) error {
+	return s.c.Add(ctx, URILetAppsAccessCalendar, client.Int(int64(value)))
 }
 
 // UpdateLetAppsAccessCalendar updates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessCalendar.
@@ -675,8 +684,8 @@ func (s *Privacy) CreateLetAppsAccessCalendar(ctx context.Context, value int64) 
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) UpdateLetAppsAccessCalendar(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URILetAppsAccessCalendar, client.Int(value))
+func (s *Privacy) UpdateLetAppsAccessCalendar(ctx context.Context, value LetAppsAccessCalendarValue) error {
+	return s.c.Replace(ctx, URILetAppsAccessCalendar, client.Int(int64(value)))
 }
 
 // DeleteLetAppsAccessCalendar deletes ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessCalendar.
@@ -825,12 +834,13 @@ func (s *Privacy) DeleteLetAppsAccessCalendarUserInControlOfTheseApps(ctx contex
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) GetLetAppsAccessCallHistory(ctx context.Context) (int64, error) {
+func (s *Privacy) GetLetAppsAccessCallHistory(ctx context.Context) (LetAppsAccessCallHistoryValue, error) {
 	v, err := s.c.Get(ctx, URILetAppsAccessCallHistory)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return LetAppsAccessCallHistoryValue(n), err
 }
 
 // CreateLetAppsAccessCallHistory creates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessCallHistory.
@@ -838,8 +848,8 @@ func (s *Privacy) GetLetAppsAccessCallHistory(ctx context.Context) (int64, error
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) CreateLetAppsAccessCallHistory(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URILetAppsAccessCallHistory, client.Int(value))
+func (s *Privacy) CreateLetAppsAccessCallHistory(ctx context.Context, value LetAppsAccessCallHistoryValue) error {
+	return s.c.Add(ctx, URILetAppsAccessCallHistory, client.Int(int64(value)))
 }
 
 // UpdateLetAppsAccessCallHistory updates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessCallHistory.
@@ -847,8 +857,8 @@ func (s *Privacy) CreateLetAppsAccessCallHistory(ctx context.Context, value int6
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) UpdateLetAppsAccessCallHistory(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URILetAppsAccessCallHistory, client.Int(value))
+func (s *Privacy) UpdateLetAppsAccessCallHistory(ctx context.Context, value LetAppsAccessCallHistoryValue) error {
+	return s.c.Replace(ctx, URILetAppsAccessCallHistory, client.Int(int64(value)))
 }
 
 // DeleteLetAppsAccessCallHistory deletes ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessCallHistory.
@@ -997,12 +1007,13 @@ func (s *Privacy) DeleteLetAppsAccessCallHistoryUserInControlOfTheseApps(ctx con
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) GetLetAppsAccessCamera(ctx context.Context) (int64, error) {
+func (s *Privacy) GetLetAppsAccessCamera(ctx context.Context) (LetAppsAccessCameraValue, error) {
 	v, err := s.c.Get(ctx, URILetAppsAccessCamera)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return LetAppsAccessCameraValue(n), err
 }
 
 // CreateLetAppsAccessCamera creates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessCamera.
@@ -1010,8 +1021,8 @@ func (s *Privacy) GetLetAppsAccessCamera(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) CreateLetAppsAccessCamera(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URILetAppsAccessCamera, client.Int(value))
+func (s *Privacy) CreateLetAppsAccessCamera(ctx context.Context, value LetAppsAccessCameraValue) error {
+	return s.c.Add(ctx, URILetAppsAccessCamera, client.Int(int64(value)))
 }
 
 // UpdateLetAppsAccessCamera updates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessCamera.
@@ -1019,8 +1030,8 @@ func (s *Privacy) CreateLetAppsAccessCamera(ctx context.Context, value int64) er
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) UpdateLetAppsAccessCamera(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URILetAppsAccessCamera, client.Int(value))
+func (s *Privacy) UpdateLetAppsAccessCamera(ctx context.Context, value LetAppsAccessCameraValue) error {
+	return s.c.Replace(ctx, URILetAppsAccessCamera, client.Int(int64(value)))
 }
 
 // DeleteLetAppsAccessCamera deletes ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessCamera.
@@ -1169,12 +1180,13 @@ func (s *Privacy) DeleteLetAppsAccessCameraUserInControlOfTheseApps(ctx context.
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) GetLetAppsAccessContacts(ctx context.Context) (int64, error) {
+func (s *Privacy) GetLetAppsAccessContacts(ctx context.Context) (LetAppsAccessContactsValue, error) {
 	v, err := s.c.Get(ctx, URILetAppsAccessContacts)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return LetAppsAccessContactsValue(n), err
 }
 
 // CreateLetAppsAccessContacts creates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessContacts.
@@ -1182,8 +1194,8 @@ func (s *Privacy) GetLetAppsAccessContacts(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) CreateLetAppsAccessContacts(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URILetAppsAccessContacts, client.Int(value))
+func (s *Privacy) CreateLetAppsAccessContacts(ctx context.Context, value LetAppsAccessContactsValue) error {
+	return s.c.Add(ctx, URILetAppsAccessContacts, client.Int(int64(value)))
 }
 
 // UpdateLetAppsAccessContacts updates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessContacts.
@@ -1191,8 +1203,8 @@ func (s *Privacy) CreateLetAppsAccessContacts(ctx context.Context, value int64) 
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) UpdateLetAppsAccessContacts(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URILetAppsAccessContacts, client.Int(value))
+func (s *Privacy) UpdateLetAppsAccessContacts(ctx context.Context, value LetAppsAccessContactsValue) error {
+	return s.c.Replace(ctx, URILetAppsAccessContacts, client.Int(int64(value)))
 }
 
 // DeleteLetAppsAccessContacts deletes ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessContacts.
@@ -1341,12 +1353,13 @@ func (s *Privacy) DeleteLetAppsAccessContactsUserInControlOfTheseApps(ctx contex
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) GetLetAppsAccessEmail(ctx context.Context) (int64, error) {
+func (s *Privacy) GetLetAppsAccessEmail(ctx context.Context) (LetAppsAccessEmailValue, error) {
 	v, err := s.c.Get(ctx, URILetAppsAccessEmail)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return LetAppsAccessEmailValue(n), err
 }
 
 // CreateLetAppsAccessEmail creates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessEmail.
@@ -1354,8 +1367,8 @@ func (s *Privacy) GetLetAppsAccessEmail(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) CreateLetAppsAccessEmail(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URILetAppsAccessEmail, client.Int(value))
+func (s *Privacy) CreateLetAppsAccessEmail(ctx context.Context, value LetAppsAccessEmailValue) error {
+	return s.c.Add(ctx, URILetAppsAccessEmail, client.Int(int64(value)))
 }
 
 // UpdateLetAppsAccessEmail updates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessEmail.
@@ -1363,8 +1376,8 @@ func (s *Privacy) CreateLetAppsAccessEmail(ctx context.Context, value int64) err
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) UpdateLetAppsAccessEmail(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URILetAppsAccessEmail, client.Int(value))
+func (s *Privacy) UpdateLetAppsAccessEmail(ctx context.Context, value LetAppsAccessEmailValue) error {
+	return s.c.Replace(ctx, URILetAppsAccessEmail, client.Int(int64(value)))
 }
 
 // DeleteLetAppsAccessEmail deletes ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessEmail.
@@ -2033,12 +2046,13 @@ func (s *Privacy) DeleteLetAppsAccessGraphicsCaptureWithoutBorderUserInControlOf
 //
 // Default: 0.
 // Supported from OS build 10.0.25000 (CSP v11.0).
-func (s *Privacy) GetLetAppsAccessHumanPresence(ctx context.Context) (int64, error) {
+func (s *Privacy) GetLetAppsAccessHumanPresence(ctx context.Context) (LetAppsAccessHumanPresenceValue, error) {
 	v, err := s.c.Get(ctx, URILetAppsAccessHumanPresence)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return LetAppsAccessHumanPresenceValue(n), err
 }
 
 // CreateLetAppsAccessHumanPresence creates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessHumanPresence.
@@ -2046,8 +2060,8 @@ func (s *Privacy) GetLetAppsAccessHumanPresence(ctx context.Context) (int64, err
 //
 // Default: 0.
 // Supported from OS build 10.0.25000 (CSP v11.0).
-func (s *Privacy) CreateLetAppsAccessHumanPresence(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URILetAppsAccessHumanPresence, client.Int(value))
+func (s *Privacy) CreateLetAppsAccessHumanPresence(ctx context.Context, value LetAppsAccessHumanPresenceValue) error {
+	return s.c.Add(ctx, URILetAppsAccessHumanPresence, client.Int(int64(value)))
 }
 
 // UpdateLetAppsAccessHumanPresence updates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessHumanPresence.
@@ -2055,8 +2069,8 @@ func (s *Privacy) CreateLetAppsAccessHumanPresence(ctx context.Context, value in
 //
 // Default: 0.
 // Supported from OS build 10.0.25000 (CSP v11.0).
-func (s *Privacy) UpdateLetAppsAccessHumanPresence(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URILetAppsAccessHumanPresence, client.Int(value))
+func (s *Privacy) UpdateLetAppsAccessHumanPresence(ctx context.Context, value LetAppsAccessHumanPresenceValue) error {
+	return s.c.Replace(ctx, URILetAppsAccessHumanPresence, client.Int(int64(value)))
 }
 
 // DeleteLetAppsAccessHumanPresence deletes ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessHumanPresence.
@@ -2205,12 +2219,13 @@ func (s *Privacy) DeleteLetAppsAccessHumanPresenceUserInControlOfTheseApps(ctx c
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) GetLetAppsAccessLocation(ctx context.Context) (int64, error) {
+func (s *Privacy) GetLetAppsAccessLocation(ctx context.Context) (LetAppsAccessLocationValue, error) {
 	v, err := s.c.Get(ctx, URILetAppsAccessLocation)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return LetAppsAccessLocationValue(n), err
 }
 
 // CreateLetAppsAccessLocation creates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessLocation.
@@ -2218,8 +2233,8 @@ func (s *Privacy) GetLetAppsAccessLocation(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) CreateLetAppsAccessLocation(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URILetAppsAccessLocation, client.Int(value))
+func (s *Privacy) CreateLetAppsAccessLocation(ctx context.Context, value LetAppsAccessLocationValue) error {
+	return s.c.Add(ctx, URILetAppsAccessLocation, client.Int(int64(value)))
 }
 
 // UpdateLetAppsAccessLocation updates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessLocation.
@@ -2227,8 +2242,8 @@ func (s *Privacy) CreateLetAppsAccessLocation(ctx context.Context, value int64) 
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) UpdateLetAppsAccessLocation(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URILetAppsAccessLocation, client.Int(value))
+func (s *Privacy) UpdateLetAppsAccessLocation(ctx context.Context, value LetAppsAccessLocationValue) error {
+	return s.c.Replace(ctx, URILetAppsAccessLocation, client.Int(int64(value)))
 }
 
 // DeleteLetAppsAccessLocation deletes ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessLocation.
@@ -2377,12 +2392,13 @@ func (s *Privacy) DeleteLetAppsAccessLocationUserInControlOfTheseApps(ctx contex
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) GetLetAppsAccessMessaging(ctx context.Context) (int64, error) {
+func (s *Privacy) GetLetAppsAccessMessaging(ctx context.Context) (LetAppsAccessMessagingValue, error) {
 	v, err := s.c.Get(ctx, URILetAppsAccessMessaging)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return LetAppsAccessMessagingValue(n), err
 }
 
 // CreateLetAppsAccessMessaging creates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessMessaging.
@@ -2390,8 +2406,8 @@ func (s *Privacy) GetLetAppsAccessMessaging(ctx context.Context) (int64, error) 
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) CreateLetAppsAccessMessaging(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URILetAppsAccessMessaging, client.Int(value))
+func (s *Privacy) CreateLetAppsAccessMessaging(ctx context.Context, value LetAppsAccessMessagingValue) error {
+	return s.c.Add(ctx, URILetAppsAccessMessaging, client.Int(int64(value)))
 }
 
 // UpdateLetAppsAccessMessaging updates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessMessaging.
@@ -2399,8 +2415,8 @@ func (s *Privacy) CreateLetAppsAccessMessaging(ctx context.Context, value int64)
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) UpdateLetAppsAccessMessaging(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URILetAppsAccessMessaging, client.Int(value))
+func (s *Privacy) UpdateLetAppsAccessMessaging(ctx context.Context, value LetAppsAccessMessagingValue) error {
+	return s.c.Replace(ctx, URILetAppsAccessMessaging, client.Int(int64(value)))
 }
 
 // DeleteLetAppsAccessMessaging deletes ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessMessaging.
@@ -2549,12 +2565,13 @@ func (s *Privacy) DeleteLetAppsAccessMessagingUserInControlOfTheseApps(ctx conte
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) GetLetAppsAccessMicrophone(ctx context.Context) (int64, error) {
+func (s *Privacy) GetLetAppsAccessMicrophone(ctx context.Context) (LetAppsAccessMicrophoneValue, error) {
 	v, err := s.c.Get(ctx, URILetAppsAccessMicrophone)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return LetAppsAccessMicrophoneValue(n), err
 }
 
 // CreateLetAppsAccessMicrophone creates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessMicrophone.
@@ -2562,8 +2579,8 @@ func (s *Privacy) GetLetAppsAccessMicrophone(ctx context.Context) (int64, error)
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) CreateLetAppsAccessMicrophone(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URILetAppsAccessMicrophone, client.Int(value))
+func (s *Privacy) CreateLetAppsAccessMicrophone(ctx context.Context, value LetAppsAccessMicrophoneValue) error {
+	return s.c.Add(ctx, URILetAppsAccessMicrophone, client.Int(int64(value)))
 }
 
 // UpdateLetAppsAccessMicrophone updates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessMicrophone.
@@ -2571,8 +2588,8 @@ func (s *Privacy) CreateLetAppsAccessMicrophone(ctx context.Context, value int64
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) UpdateLetAppsAccessMicrophone(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URILetAppsAccessMicrophone, client.Int(value))
+func (s *Privacy) UpdateLetAppsAccessMicrophone(ctx context.Context, value LetAppsAccessMicrophoneValue) error {
+	return s.c.Replace(ctx, URILetAppsAccessMicrophone, client.Int(int64(value)))
 }
 
 // DeleteLetAppsAccessMicrophone deletes ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessMicrophone.
@@ -2721,12 +2738,13 @@ func (s *Privacy) DeleteLetAppsAccessMicrophoneUserInControlOfTheseApps(ctx cont
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) GetLetAppsAccessMotion(ctx context.Context) (int64, error) {
+func (s *Privacy) GetLetAppsAccessMotion(ctx context.Context) (LetAppsAccessMotionValue, error) {
 	v, err := s.c.Get(ctx, URILetAppsAccessMotion)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return LetAppsAccessMotionValue(n), err
 }
 
 // CreateLetAppsAccessMotion creates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessMotion.
@@ -2734,8 +2752,8 @@ func (s *Privacy) GetLetAppsAccessMotion(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) CreateLetAppsAccessMotion(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URILetAppsAccessMotion, client.Int(value))
+func (s *Privacy) CreateLetAppsAccessMotion(ctx context.Context, value LetAppsAccessMotionValue) error {
+	return s.c.Add(ctx, URILetAppsAccessMotion, client.Int(int64(value)))
 }
 
 // UpdateLetAppsAccessMotion updates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessMotion.
@@ -2743,8 +2761,8 @@ func (s *Privacy) CreateLetAppsAccessMotion(ctx context.Context, value int64) er
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) UpdateLetAppsAccessMotion(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URILetAppsAccessMotion, client.Int(value))
+func (s *Privacy) UpdateLetAppsAccessMotion(ctx context.Context, value LetAppsAccessMotionValue) error {
+	return s.c.Replace(ctx, URILetAppsAccessMotion, client.Int(int64(value)))
 }
 
 // DeleteLetAppsAccessMotion deletes ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessMotion.
@@ -2893,12 +2911,13 @@ func (s *Privacy) DeleteLetAppsAccessMotionUserInControlOfTheseApps(ctx context.
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Privacy) GetLetAppsAccessNotifications(ctx context.Context) (int64, error) {
+func (s *Privacy) GetLetAppsAccessNotifications(ctx context.Context) (LetAppsAccessNotificationsValue, error) {
 	v, err := s.c.Get(ctx, URILetAppsAccessNotifications)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return LetAppsAccessNotificationsValue(n), err
 }
 
 // CreateLetAppsAccessNotifications creates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessNotifications.
@@ -2906,8 +2925,8 @@ func (s *Privacy) GetLetAppsAccessNotifications(ctx context.Context) (int64, err
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Privacy) CreateLetAppsAccessNotifications(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URILetAppsAccessNotifications, client.Int(value))
+func (s *Privacy) CreateLetAppsAccessNotifications(ctx context.Context, value LetAppsAccessNotificationsValue) error {
+	return s.c.Add(ctx, URILetAppsAccessNotifications, client.Int(int64(value)))
 }
 
 // UpdateLetAppsAccessNotifications updates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessNotifications.
@@ -2915,8 +2934,8 @@ func (s *Privacy) CreateLetAppsAccessNotifications(ctx context.Context, value in
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Privacy) UpdateLetAppsAccessNotifications(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URILetAppsAccessNotifications, client.Int(value))
+func (s *Privacy) UpdateLetAppsAccessNotifications(ctx context.Context, value LetAppsAccessNotificationsValue) error {
+	return s.c.Replace(ctx, URILetAppsAccessNotifications, client.Int(int64(value)))
 }
 
 // DeleteLetAppsAccessNotifications deletes ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessNotifications.
@@ -3065,12 +3084,13 @@ func (s *Privacy) DeleteLetAppsAccessNotificationsUserInControlOfTheseApps(ctx c
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) GetLetAppsAccessPhone(ctx context.Context) (int64, error) {
+func (s *Privacy) GetLetAppsAccessPhone(ctx context.Context) (LetAppsAccessPhoneValue, error) {
 	v, err := s.c.Get(ctx, URILetAppsAccessPhone)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return LetAppsAccessPhoneValue(n), err
 }
 
 // CreateLetAppsAccessPhone creates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessPhone.
@@ -3078,8 +3098,8 @@ func (s *Privacy) GetLetAppsAccessPhone(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) CreateLetAppsAccessPhone(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URILetAppsAccessPhone, client.Int(value))
+func (s *Privacy) CreateLetAppsAccessPhone(ctx context.Context, value LetAppsAccessPhoneValue) error {
+	return s.c.Add(ctx, URILetAppsAccessPhone, client.Int(int64(value)))
 }
 
 // UpdateLetAppsAccessPhone updates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessPhone.
@@ -3087,8 +3107,8 @@ func (s *Privacy) CreateLetAppsAccessPhone(ctx context.Context, value int64) err
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) UpdateLetAppsAccessPhone(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URILetAppsAccessPhone, client.Int(value))
+func (s *Privacy) UpdateLetAppsAccessPhone(ctx context.Context, value LetAppsAccessPhoneValue) error {
+	return s.c.Replace(ctx, URILetAppsAccessPhone, client.Int(int64(value)))
 }
 
 // DeleteLetAppsAccessPhone deletes ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessPhone.
@@ -3237,12 +3257,13 @@ func (s *Privacy) DeleteLetAppsAccessPhoneUserInControlOfTheseApps(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) GetLetAppsAccessRadios(ctx context.Context) (int64, error) {
+func (s *Privacy) GetLetAppsAccessRadios(ctx context.Context) (LetAppsAccessRadiosValue, error) {
 	v, err := s.c.Get(ctx, URILetAppsAccessRadios)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return LetAppsAccessRadiosValue(n), err
 }
 
 // CreateLetAppsAccessRadios creates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessRadios.
@@ -3250,8 +3271,8 @@ func (s *Privacy) GetLetAppsAccessRadios(ctx context.Context) (int64, error) {
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) CreateLetAppsAccessRadios(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URILetAppsAccessRadios, client.Int(value))
+func (s *Privacy) CreateLetAppsAccessRadios(ctx context.Context, value LetAppsAccessRadiosValue) error {
+	return s.c.Add(ctx, URILetAppsAccessRadios, client.Int(int64(value)))
 }
 
 // UpdateLetAppsAccessRadios updates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessRadios.
@@ -3259,8 +3280,8 @@ func (s *Privacy) CreateLetAppsAccessRadios(ctx context.Context, value int64) er
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) UpdateLetAppsAccessRadios(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URILetAppsAccessRadios, client.Int(value))
+func (s *Privacy) UpdateLetAppsAccessRadios(ctx context.Context, value LetAppsAccessRadiosValue) error {
+	return s.c.Replace(ctx, URILetAppsAccessRadios, client.Int(int64(value)))
 }
 
 // DeleteLetAppsAccessRadios deletes ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessRadios.
@@ -3757,12 +3778,13 @@ func (s *Privacy) DeleteLetAppsAccessTasksUserInControlOfTheseApps(ctx context.C
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) GetLetAppsAccessTrustedDevices(ctx context.Context) (int64, error) {
+func (s *Privacy) GetLetAppsAccessTrustedDevices(ctx context.Context) (LetAppsAccessTrustedDevicesValue, error) {
 	v, err := s.c.Get(ctx, URILetAppsAccessTrustedDevices)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return LetAppsAccessTrustedDevicesValue(n), err
 }
 
 // CreateLetAppsAccessTrustedDevices creates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessTrustedDevices.
@@ -3770,8 +3792,8 @@ func (s *Privacy) GetLetAppsAccessTrustedDevices(ctx context.Context) (int64, er
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) CreateLetAppsAccessTrustedDevices(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URILetAppsAccessTrustedDevices, client.Int(value))
+func (s *Privacy) CreateLetAppsAccessTrustedDevices(ctx context.Context, value LetAppsAccessTrustedDevicesValue) error {
+	return s.c.Add(ctx, URILetAppsAccessTrustedDevices, client.Int(int64(value)))
 }
 
 // UpdateLetAppsAccessTrustedDevices updates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessTrustedDevices.
@@ -3779,8 +3801,8 @@ func (s *Privacy) CreateLetAppsAccessTrustedDevices(ctx context.Context, value i
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) UpdateLetAppsAccessTrustedDevices(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URILetAppsAccessTrustedDevices, client.Int(value))
+func (s *Privacy) UpdateLetAppsAccessTrustedDevices(ctx context.Context, value LetAppsAccessTrustedDevicesValue) error {
+	return s.c.Replace(ctx, URILetAppsAccessTrustedDevices, client.Int(int64(value)))
 }
 
 // DeleteLetAppsAccessTrustedDevices deletes ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsAccessTrustedDevices.
@@ -3929,12 +3951,13 @@ func (s *Privacy) DeleteLetAppsAccessTrustedDevicesUserInControlOfTheseApps(ctx 
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Privacy) GetLetAppsActivateWithVoice(ctx context.Context) (int64, error) {
+func (s *Privacy) GetLetAppsActivateWithVoice(ctx context.Context) (LetAppsActivateWithVoiceValue, error) {
 	v, err := s.c.Get(ctx, URILetAppsActivateWithVoice)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return LetAppsActivateWithVoiceValue(n), err
 }
 
 // CreateLetAppsActivateWithVoice creates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsActivateWithVoice.
@@ -3942,8 +3965,8 @@ func (s *Privacy) GetLetAppsActivateWithVoice(ctx context.Context) (int64, error
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Privacy) CreateLetAppsActivateWithVoice(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URILetAppsActivateWithVoice, client.Int(value))
+func (s *Privacy) CreateLetAppsActivateWithVoice(ctx context.Context, value LetAppsActivateWithVoiceValue) error {
+	return s.c.Add(ctx, URILetAppsActivateWithVoice, client.Int(int64(value)))
 }
 
 // UpdateLetAppsActivateWithVoice updates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsActivateWithVoice.
@@ -3951,8 +3974,8 @@ func (s *Privacy) CreateLetAppsActivateWithVoice(ctx context.Context, value int6
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Privacy) UpdateLetAppsActivateWithVoice(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URILetAppsActivateWithVoice, client.Int(value))
+func (s *Privacy) UpdateLetAppsActivateWithVoice(ctx context.Context, value LetAppsActivateWithVoiceValue) error {
+	return s.c.Replace(ctx, URILetAppsActivateWithVoice, client.Int(int64(value)))
 }
 
 // DeleteLetAppsActivateWithVoice deletes ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsActivateWithVoice.
@@ -3970,12 +3993,13 @@ func (s *Privacy) DeleteLetAppsActivateWithVoice(ctx context.Context) error {
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Privacy) GetLetAppsActivateWithVoiceAboveLock(ctx context.Context) (int64, error) {
+func (s *Privacy) GetLetAppsActivateWithVoiceAboveLock(ctx context.Context) (LetAppsActivateWithVoiceAboveLockValue, error) {
 	v, err := s.c.Get(ctx, URILetAppsActivateWithVoiceAboveLock)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return LetAppsActivateWithVoiceAboveLockValue(n), err
 }
 
 // CreateLetAppsActivateWithVoiceAboveLock creates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsActivateWithVoiceAboveLock.
@@ -3984,8 +4008,8 @@ func (s *Privacy) GetLetAppsActivateWithVoiceAboveLock(ctx context.Context) (int
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Privacy) CreateLetAppsActivateWithVoiceAboveLock(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URILetAppsActivateWithVoiceAboveLock, client.Int(value))
+func (s *Privacy) CreateLetAppsActivateWithVoiceAboveLock(ctx context.Context, value LetAppsActivateWithVoiceAboveLockValue) error {
+	return s.c.Add(ctx, URILetAppsActivateWithVoiceAboveLock, client.Int(int64(value)))
 }
 
 // UpdateLetAppsActivateWithVoiceAboveLock updates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsActivateWithVoiceAboveLock.
@@ -3994,8 +4018,8 @@ func (s *Privacy) CreateLetAppsActivateWithVoiceAboveLock(ctx context.Context, v
 //
 // Default: 0.
 // Supported from OS build 10.0.18362 (CSP v9.0).
-func (s *Privacy) UpdateLetAppsActivateWithVoiceAboveLock(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URILetAppsActivateWithVoiceAboveLock, client.Int(value))
+func (s *Privacy) UpdateLetAppsActivateWithVoiceAboveLock(ctx context.Context, value LetAppsActivateWithVoiceAboveLockValue) error {
+	return s.c.Replace(ctx, URILetAppsActivateWithVoiceAboveLock, client.Int(int64(value)))
 }
 
 // DeleteLetAppsActivateWithVoiceAboveLock deletes ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsActivateWithVoiceAboveLock.
@@ -4014,12 +4038,13 @@ func (s *Privacy) DeleteLetAppsActivateWithVoiceAboveLock(ctx context.Context) e
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Privacy) GetLetAppsGetDiagnosticInfo(ctx context.Context) (int64, error) {
+func (s *Privacy) GetLetAppsGetDiagnosticInfo(ctx context.Context) (LetAppsGetDiagnosticInfoValue, error) {
 	v, err := s.c.Get(ctx, URILetAppsGetDiagnosticInfo)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return LetAppsGetDiagnosticInfoValue(n), err
 }
 
 // CreateLetAppsGetDiagnosticInfo creates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsGetDiagnosticInfo.
@@ -4028,8 +4053,8 @@ func (s *Privacy) GetLetAppsGetDiagnosticInfo(ctx context.Context) (int64, error
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Privacy) CreateLetAppsGetDiagnosticInfo(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URILetAppsGetDiagnosticInfo, client.Int(value))
+func (s *Privacy) CreateLetAppsGetDiagnosticInfo(ctx context.Context, value LetAppsGetDiagnosticInfoValue) error {
+	return s.c.Add(ctx, URILetAppsGetDiagnosticInfo, client.Int(int64(value)))
 }
 
 // UpdateLetAppsGetDiagnosticInfo updates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsGetDiagnosticInfo.
@@ -4038,8 +4063,8 @@ func (s *Privacy) CreateLetAppsGetDiagnosticInfo(ctx context.Context, value int6
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Privacy) UpdateLetAppsGetDiagnosticInfo(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URILetAppsGetDiagnosticInfo, client.Int(value))
+func (s *Privacy) UpdateLetAppsGetDiagnosticInfo(ctx context.Context, value LetAppsGetDiagnosticInfoValue) error {
+	return s.c.Replace(ctx, URILetAppsGetDiagnosticInfo, client.Int(int64(value)))
 }
 
 // DeleteLetAppsGetDiagnosticInfo deletes ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsGetDiagnosticInfo.
@@ -4189,12 +4214,13 @@ func (s *Privacy) DeleteLetAppsGetDiagnosticInfoUserInControlOfTheseApps(ctx con
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Privacy) GetLetAppsRunInBackground(ctx context.Context) (int64, error) {
+func (s *Privacy) GetLetAppsRunInBackground(ctx context.Context) (LetAppsRunInBackgroundValue, error) {
 	v, err := s.c.Get(ctx, URILetAppsRunInBackground)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return LetAppsRunInBackgroundValue(n), err
 }
 
 // CreateLetAppsRunInBackground creates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsRunInBackground.
@@ -4202,8 +4228,8 @@ func (s *Privacy) GetLetAppsRunInBackground(ctx context.Context) (int64, error) 
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Privacy) CreateLetAppsRunInBackground(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URILetAppsRunInBackground, client.Int(value))
+func (s *Privacy) CreateLetAppsRunInBackground(ctx context.Context, value LetAppsRunInBackgroundValue) error {
+	return s.c.Add(ctx, URILetAppsRunInBackground, client.Int(int64(value)))
 }
 
 // UpdateLetAppsRunInBackground updates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsRunInBackground.
@@ -4211,8 +4237,8 @@ func (s *Privacy) CreateLetAppsRunInBackground(ctx context.Context, value int64)
 //
 // Default: 0.
 // Supported from OS build 10.0.15063 (CSP v5.0).
-func (s *Privacy) UpdateLetAppsRunInBackground(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URILetAppsRunInBackground, client.Int(value))
+func (s *Privacy) UpdateLetAppsRunInBackground(ctx context.Context, value LetAppsRunInBackgroundValue) error {
+	return s.c.Replace(ctx, URILetAppsRunInBackground, client.Int(int64(value)))
 }
 
 // DeleteLetAppsRunInBackground deletes ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsRunInBackground.
@@ -4362,12 +4388,13 @@ func (s *Privacy) DeleteLetAppsRunInBackgroundUserInControlOfTheseApps(ctx conte
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) GetLetAppsSyncWithDevices(ctx context.Context) (int64, error) {
+func (s *Privacy) GetLetAppsSyncWithDevices(ctx context.Context) (LetAppsSyncWithDevicesValue, error) {
 	v, err := s.c.Get(ctx, URILetAppsSyncWithDevices)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return LetAppsSyncWithDevicesValue(n), err
 }
 
 // CreateLetAppsSyncWithDevices creates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsSyncWithDevices.
@@ -4376,8 +4403,8 @@ func (s *Privacy) GetLetAppsSyncWithDevices(ctx context.Context) (int64, error) 
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) CreateLetAppsSyncWithDevices(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URILetAppsSyncWithDevices, client.Int(value))
+func (s *Privacy) CreateLetAppsSyncWithDevices(ctx context.Context, value LetAppsSyncWithDevicesValue) error {
+	return s.c.Add(ctx, URILetAppsSyncWithDevices, client.Int(int64(value)))
 }
 
 // UpdateLetAppsSyncWithDevices updates ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsSyncWithDevices.
@@ -4386,8 +4413,8 @@ func (s *Privacy) CreateLetAppsSyncWithDevices(ctx context.Context, value int64)
 //
 // Default: 0.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *Privacy) UpdateLetAppsSyncWithDevices(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URILetAppsSyncWithDevices, client.Int(value))
+func (s *Privacy) UpdateLetAppsSyncWithDevices(ctx context.Context, value LetAppsSyncWithDevicesValue) error {
+	return s.c.Replace(ctx, URILetAppsSyncWithDevices, client.Int(int64(value)))
 }
 
 // DeleteLetAppsSyncWithDevices deletes ./Device/Vendor/MSFT/Policy/Config/Privacy/LetAppsSyncWithDevices.
@@ -4537,12 +4564,13 @@ func (s *Privacy) DeleteLetAppsSyncWithDevicesUserInControlOfTheseApps(ctx conte
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Privacy) GetPublishUserActivities(ctx context.Context) (int64, error) {
+func (s *Privacy) GetPublishUserActivities(ctx context.Context) (PublishUserActivitiesValue, error) {
 	v, err := s.c.Get(ctx, URIPublishUserActivities)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return PublishUserActivitiesValue(n), err
 }
 
 // CreatePublishUserActivities creates ./Device/Vendor/MSFT/Policy/Config/Privacy/PublishUserActivities.
@@ -4550,8 +4578,8 @@ func (s *Privacy) GetPublishUserActivities(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Privacy) CreatePublishUserActivities(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIPublishUserActivities, client.Int(value))
+func (s *Privacy) CreatePublishUserActivities(ctx context.Context, value PublishUserActivitiesValue) error {
+	return s.c.Add(ctx, URIPublishUserActivities, client.Int(int64(value)))
 }
 
 // UpdatePublishUserActivities updates ./Device/Vendor/MSFT/Policy/Config/Privacy/PublishUserActivities.
@@ -4559,8 +4587,8 @@ func (s *Privacy) CreatePublishUserActivities(ctx context.Context, value int64) 
 //
 // Default: 1.
 // Supported from OS build 10.0.16299 (CSP v6.0).
-func (s *Privacy) UpdatePublishUserActivities(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIPublishUserActivities, client.Int(value))
+func (s *Privacy) UpdatePublishUserActivities(ctx context.Context, value PublishUserActivitiesValue) error {
+	return s.c.Replace(ctx, URIPublishUserActivities, client.Int(int64(value)))
 }
 
 // DeletePublishUserActivities deletes ./Device/Vendor/MSFT/Policy/Config/Privacy/PublishUserActivities.
@@ -4577,12 +4605,13 @@ func (s *Privacy) DeletePublishUserActivities(ctx context.Context) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Privacy) GetUploadUserActivities(ctx context.Context) (int64, error) {
+func (s *Privacy) GetUploadUserActivities(ctx context.Context) (UploadUserActivitiesValue, error) {
 	v, err := s.c.Get(ctx, URIUploadUserActivities)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return UploadUserActivitiesValue(n), err
 }
 
 // CreateUploadUserActivities creates ./Device/Vendor/MSFT/Policy/Config/Privacy/UploadUserActivities.
@@ -4590,8 +4619,8 @@ func (s *Privacy) GetUploadUserActivities(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Privacy) CreateUploadUserActivities(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIUploadUserActivities, client.Int(value))
+func (s *Privacy) CreateUploadUserActivities(ctx context.Context, value UploadUserActivitiesValue) error {
+	return s.c.Add(ctx, URIUploadUserActivities, client.Int(int64(value)))
 }
 
 // UpdateUploadUserActivities updates ./Device/Vendor/MSFT/Policy/Config/Privacy/UploadUserActivities.
@@ -4599,8 +4628,8 @@ func (s *Privacy) CreateUploadUserActivities(ctx context.Context, value int64) e
 //
 // Default: 1.
 // Supported from OS build 10.0.17134 (CSP v7.0).
-func (s *Privacy) UpdateUploadUserActivities(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIUploadUserActivities, client.Int(value))
+func (s *Privacy) UpdateUploadUserActivities(ctx context.Context, value UploadUserActivitiesValue) error {
+	return s.c.Replace(ctx, URIUploadUserActivities, client.Int(int64(value)))
 }
 
 // DeleteUploadUserActivities deletes ./Device/Vendor/MSFT/Policy/Config/Privacy/UploadUserActivities.

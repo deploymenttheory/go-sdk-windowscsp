@@ -85,28 +85,29 @@ func (s *DeclaredConfiguration) DeleteHostCompleteDocumentsDocIDDocument(ctx con
 // The Abandoned node allows the OMA-DM server to indicate that the document is no longer managed.
 //
 // Default: 0.
-func (s *DeclaredConfiguration) GetHostCompleteDocumentsDocIDPropertiesAbandoned(ctx context.Context, docID string) (int64, error) {
+func (s *DeclaredConfiguration) GetHostCompleteDocumentsDocIDPropertiesAbandoned(ctx context.Context, docID string) (HostCompleteDocumentsDocIDPropertiesAbandonedValue, error) {
 	v, err := s.c.Get(ctx, URIHostCompleteDocumentsDocIDPropertiesAbandoned(docID))
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return HostCompleteDocumentsDocIDPropertiesAbandonedValue(n), err
 }
 
 // CreateHostCompleteDocumentsDocIDPropertiesAbandoned creates ./Device/Vendor/MSFT/DeclaredConfiguration/Host/Complete/Documents/{docID}/Properties/Abandoned.
 // The Abandoned node allows the OMA-DM server to indicate that the document is no longer managed.
 //
 // Default: 0.
-func (s *DeclaredConfiguration) CreateHostCompleteDocumentsDocIDPropertiesAbandoned(ctx context.Context, docID string, value int64) error {
-	return s.c.Add(ctx, URIHostCompleteDocumentsDocIDPropertiesAbandoned(docID), client.Int(value))
+func (s *DeclaredConfiguration) CreateHostCompleteDocumentsDocIDPropertiesAbandoned(ctx context.Context, docID string, value HostCompleteDocumentsDocIDPropertiesAbandonedValue) error {
+	return s.c.Add(ctx, URIHostCompleteDocumentsDocIDPropertiesAbandoned(docID), client.Int(int64(value)))
 }
 
 // UpdateHostCompleteDocumentsDocIDPropertiesAbandoned updates ./Device/Vendor/MSFT/DeclaredConfiguration/Host/Complete/Documents/{docID}/Properties/Abandoned.
 // The Abandoned node allows the OMA-DM server to indicate that the document is no longer managed.
 //
 // Default: 0.
-func (s *DeclaredConfiguration) UpdateHostCompleteDocumentsDocIDPropertiesAbandoned(ctx context.Context, docID string, value int64) error {
-	return s.c.Replace(ctx, URIHostCompleteDocumentsDocIDPropertiesAbandoned(docID), client.Int(value))
+func (s *DeclaredConfiguration) UpdateHostCompleteDocumentsDocIDPropertiesAbandoned(ctx context.Context, docID string, value HostCompleteDocumentsDocIDPropertiesAbandonedValue) error {
+	return s.c.Replace(ctx, URIHostCompleteDocumentsDocIDPropertiesAbandoned(docID), client.Int(int64(value)))
 }
 
 // DeleteHostCompleteDocumentsDocIDPropertiesAbandoned deletes ./Device/Vendor/MSFT/DeclaredConfiguration/Host/Complete/Documents/{docID}/Properties/Abandoned.
@@ -228,24 +229,25 @@ func (s *DeclaredConfiguration) GetHostInventoryResultsDocIDDocument(ctx context
 
 // GetManagementServiceConfigurationConflictResolution reads ./Device/Vendor/MSFT/DeclaredConfiguration/ManagementServiceConfiguration/ConflictResolution.
 // This node controls to turn on conflict resolution on and off.
-func (s *DeclaredConfiguration) GetManagementServiceConfigurationConflictResolution(ctx context.Context) (int64, error) {
+func (s *DeclaredConfiguration) GetManagementServiceConfigurationConflictResolution(ctx context.Context) (ManagementServiceConfigurationConflictResolutionValue, error) {
 	v, err := s.c.Get(ctx, URIManagementServiceConfigurationConflictResolution)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return ManagementServiceConfigurationConflictResolutionValue(n), err
 }
 
 // CreateManagementServiceConfigurationConflictResolution creates ./Device/Vendor/MSFT/DeclaredConfiguration/ManagementServiceConfiguration/ConflictResolution.
 // This node controls to turn on conflict resolution on and off.
-func (s *DeclaredConfiguration) CreateManagementServiceConfigurationConflictResolution(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIManagementServiceConfigurationConflictResolution, client.Int(value))
+func (s *DeclaredConfiguration) CreateManagementServiceConfigurationConflictResolution(ctx context.Context, value ManagementServiceConfigurationConflictResolutionValue) error {
+	return s.c.Add(ctx, URIManagementServiceConfigurationConflictResolution, client.Int(int64(value)))
 }
 
 // UpdateManagementServiceConfigurationConflictResolution updates ./Device/Vendor/MSFT/DeclaredConfiguration/ManagementServiceConfiguration/ConflictResolution.
 // This node controls to turn on conflict resolution on and off.
-func (s *DeclaredConfiguration) UpdateManagementServiceConfigurationConflictResolution(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIManagementServiceConfigurationConflictResolution, client.Int(value))
+func (s *DeclaredConfiguration) UpdateManagementServiceConfigurationConflictResolution(ctx context.Context, value ManagementServiceConfigurationConflictResolutionValue) error {
+	return s.c.Replace(ctx, URIManagementServiceConfigurationConflictResolution, client.Int(int64(value)))
 }
 
 // DeleteManagementServiceConfigurationConflictResolution deletes ./Device/Vendor/MSFT/DeclaredConfiguration/ManagementServiceConfiguration/ConflictResolution.

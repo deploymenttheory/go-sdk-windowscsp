@@ -13,12 +13,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.19041 (CSP v1.0).
-func (s *Demo) GetAllowThing(ctx context.Context) (int64, error) {
+func (s *Demo) GetAllowThing(ctx context.Context) (AllowThingValue, error) {
 	v, err := s.c.Get(ctx, URIAllowThing)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowThingValue(n), err
 }
 
 // CreateAllowThing creates ./Device/Vendor/MSFT/Policy/Config/Demo/AllowThing.
@@ -26,8 +27,8 @@ func (s *Demo) GetAllowThing(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.19041 (CSP v1.0).
-func (s *Demo) CreateAllowThing(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowThing, client.Int(value))
+func (s *Demo) CreateAllowThing(ctx context.Context, value AllowThingValue) error {
+	return s.c.Add(ctx, URIAllowThing, client.Int(int64(value)))
 }
 
 // UpdateAllowThing updates ./Device/Vendor/MSFT/Policy/Config/Demo/AllowThing.
@@ -35,8 +36,8 @@ func (s *Demo) CreateAllowThing(ctx context.Context, value int64) error {
 //
 // Default: 1.
 // Supported from OS build 10.0.19041 (CSP v1.0).
-func (s *Demo) UpdateAllowThing(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowThing, client.Int(value))
+func (s *Demo) UpdateAllowThing(ctx context.Context, value AllowThingValue) error {
+	return s.c.Replace(ctx, URIAllowThing, client.Int(int64(value)))
 }
 
 // DeleteAllowThing deletes ./Device/Vendor/MSFT/Policy/Config/Demo/AllowThing.
@@ -50,24 +51,24 @@ func (s *Demo) DeleteAllowThing(ctx context.Context) error {
 
 // GetMode reads ./Device/Vendor/MSFT/Policy/Config/Demo/Mode.
 // Operating mode.
-func (s *Demo) GetMode(ctx context.Context) (string, error) {
+func (s *Demo) GetMode(ctx context.Context) (ModeValue, error) {
 	v, err := s.c.Get(ctx, URIMode)
 	if err != nil {
 		return "", err
 	}
-	return v.Str(), nil
+	return ModeValue(v.Str()), nil
 }
 
 // CreateMode creates ./Device/Vendor/MSFT/Policy/Config/Demo/Mode.
 // Operating mode.
-func (s *Demo) CreateMode(ctx context.Context, value string) error {
-	return s.c.Add(ctx, URIMode, client.Chr(value))
+func (s *Demo) CreateMode(ctx context.Context, value ModeValue) error {
+	return s.c.Add(ctx, URIMode, client.Chr(string(value)))
 }
 
 // UpdateMode updates ./Device/Vendor/MSFT/Policy/Config/Demo/Mode.
 // Operating mode.
-func (s *Demo) UpdateMode(ctx context.Context, value string) error {
-	return s.c.Replace(ctx, URIMode, client.Chr(value))
+func (s *Demo) UpdateMode(ctx context.Context, value ModeValue) error {
+	return s.c.Replace(ctx, URIMode, client.Chr(string(value)))
 }
 
 // DeleteMode deletes ./Device/Vendor/MSFT/Policy/Config/Demo/Mode.

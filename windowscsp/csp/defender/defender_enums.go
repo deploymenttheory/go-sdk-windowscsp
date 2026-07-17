@@ -2,538 +2,1397 @@
 
 package defender
 
-// ConfigurationAllowDatagramProcessingOnWinServer allowed values.
+import (
+	"fmt"
+)
+
+// ConfigurationAllowDatagramProcessingOnWinServerValue — allowed values for the AllowDatagramProcessingOnWinServer node.
+type ConfigurationAllowDatagramProcessingOnWinServerValue int64
+
 const (
 	// Datagram processing on Windows Server is enabled.
-	ConfigurationAllowDatagramProcessingOnWinServerDatagramProcessingOnWindowsServerIs int64 = 1
+	ConfigurationAllowDatagramProcessingOnWinServerDatagramProcessingOnWindowsServerIs ConfigurationAllowDatagramProcessingOnWinServerValue = 1
 	// Datagram processing on Windows Server is disabled.
-	ConfigurationAllowDatagramProcessingOnWinServerDatagramProcessingOnWindowsServerIs2 int64 = 0
+	ConfigurationAllowDatagramProcessingOnWinServerDatagramProcessingOnWindowsServerIs2 ConfigurationAllowDatagramProcessingOnWinServerValue = 0
 )
 
-// ConfigurationAllowNetworkProtectionDownLevel allowed values.
+// String returns the ConfigurationAllowDatagramProcessingOnWinServerValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationAllowDatagramProcessingOnWinServerValue) String() string {
+	switch e {
+	case ConfigurationAllowDatagramProcessingOnWinServerDatagramProcessingOnWindowsServerIs:
+		return "ConfigurationAllowDatagramProcessingOnWinServerDatagramProcessingOnWindowsServerIs"
+	case ConfigurationAllowDatagramProcessingOnWinServerDatagramProcessingOnWindowsServerIs2:
+		return "ConfigurationAllowDatagramProcessingOnWinServerDatagramProcessingOnWindowsServerIs2"
+	default:
+		return fmt.Sprintf("ConfigurationAllowDatagramProcessingOnWinServerValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationAllowNetworkProtectionDownLevelValue — allowed values for the AllowNetworkProtectionDownLevel node.
+type ConfigurationAllowNetworkProtectionDownLevelValue int64
+
 const (
 	// Network protection will be enabled downlevel.
-	ConfigurationAllowNetworkProtectionDownLevelNetworkProtectionWillBeEnabledDownlevel int64 = 1
+	ConfigurationAllowNetworkProtectionDownLevelNetworkProtectionWillBeEnabledDownlevel ConfigurationAllowNetworkProtectionDownLevelValue = 1
 	// Network protection will be disabled downlevel.
-	ConfigurationAllowNetworkProtectionDownLevelNetworkProtectionWillBeDisabledDownlevel int64 = 0
+	ConfigurationAllowNetworkProtectionDownLevelNetworkProtectionWillBeDisabledDownlevel ConfigurationAllowNetworkProtectionDownLevelValue = 0
 )
 
-// ConfigurationAllowNetworkProtectionOnWinServer allowed values.
+// String returns the ConfigurationAllowNetworkProtectionDownLevelValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationAllowNetworkProtectionDownLevelValue) String() string {
+	switch e {
+	case ConfigurationAllowNetworkProtectionDownLevelNetworkProtectionWillBeEnabledDownlevel:
+		return "ConfigurationAllowNetworkProtectionDownLevelNetworkProtectionWillBeEnabledDownlevel"
+	case ConfigurationAllowNetworkProtectionDownLevelNetworkProtectionWillBeDisabledDownlevel:
+		return "ConfigurationAllowNetworkProtectionDownLevelNetworkProtectionWillBeDisabledDownlevel"
+	default:
+		return fmt.Sprintf("ConfigurationAllowNetworkProtectionDownLevelValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationAllowNetworkProtectionOnWinServerValue — allowed values for the AllowNetworkProtectionOnWinServer node.
+type ConfigurationAllowNetworkProtectionOnWinServerValue int64
+
 const (
 	// Allow
-	ConfigurationAllowNetworkProtectionOnWinServerAllow int64 = 1
+	ConfigurationAllowNetworkProtectionOnWinServerAllow ConfigurationAllowNetworkProtectionOnWinServerValue = 1
 	// Disallow
-	ConfigurationAllowNetworkProtectionOnWinServerDisallow int64 = 0
+	ConfigurationAllowNetworkProtectionOnWinServerDisallow ConfigurationAllowNetworkProtectionOnWinServerValue = 0
 )
 
-// ConfigurationAllowSwitchToAsyncInspection allowed values.
+// String returns the ConfigurationAllowNetworkProtectionOnWinServerValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationAllowNetworkProtectionOnWinServerValue) String() string {
+	switch e {
+	case ConfigurationAllowNetworkProtectionOnWinServerAllow:
+		return "ConfigurationAllowNetworkProtectionOnWinServerAllow"
+	case ConfigurationAllowNetworkProtectionOnWinServerDisallow:
+		return "ConfigurationAllowNetworkProtectionOnWinServerDisallow"
+	default:
+		return fmt.Sprintf("ConfigurationAllowNetworkProtectionOnWinServerValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationAllowSwitchToAsyncInspectionValue — allowed values for the AllowSwitchToAsyncInspection node.
+type ConfigurationAllowSwitchToAsyncInspectionValue int64
+
 const (
 	// Allow switching to asynchronous inspection
-	ConfigurationAllowSwitchToAsyncInspectionAllowSwitchingToAsynchronousInspection int64 = 1
+	ConfigurationAllowSwitchToAsyncInspectionAllowSwitchingToAsynchronousInspection ConfigurationAllowSwitchToAsyncInspectionValue = 1
 	// Don’t allow asynchronous inspection
-	ConfigurationAllowSwitchToAsyncInspectionDonTAllowAsynchronousInspection int64 = 0
+	ConfigurationAllowSwitchToAsyncInspectionDonTAllowAsynchronousInspection ConfigurationAllowSwitchToAsyncInspectionValue = 0
 )
 
-// ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressiveness allowed values.
+// String returns the ConfigurationAllowSwitchToAsyncInspectionValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationAllowSwitchToAsyncInspectionValue) String() string {
+	switch e {
+	case ConfigurationAllowSwitchToAsyncInspectionAllowSwitchingToAsynchronousInspection:
+		return "ConfigurationAllowSwitchToAsyncInspectionAllowSwitchingToAsynchronousInspection"
+	case ConfigurationAllowSwitchToAsyncInspectionDonTAllowAsynchronousInspection:
+		return "ConfigurationAllowSwitchToAsyncInspectionDonTAllowAsynchronousInspection"
+	default:
+		return fmt.Sprintf("ConfigurationAllowSwitchToAsyncInspectionValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressivenessValue — allowed values for the BruteForceProtectionAggressiveness node.
+type ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressivenessValue int64
+
 const (
 	// Low: Only IP addresses that are 100% confidence malicious (default)
-	ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressivenessLow int64 = 0
+	ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressivenessLow ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressivenessValue = 0
 	// Medium: Use cloud aggregation to block IP addresses that are over 99% likely malicious
-	ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressivenessMedium int64 = 1
+	ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressivenessMedium ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressivenessValue = 1
 	// High: Block IP addresses identified using client intelligence and context to block IP addresses
 	// that are over 90% likely malicious
-	ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressivenessHigh int64 = 2
+	ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressivenessHigh ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressivenessValue = 2
 )
 
-// ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredState allowed values.
+// String returns the ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressivenessValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressivenessValue) String() string {
+	switch e {
+	case ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressivenessLow:
+		return "ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressivenessLow"
+	case ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressivenessMedium:
+		return "ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressivenessMedium"
+	case ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressivenessHigh:
+		return "ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressivenessHigh"
+	default:
+		return fmt.Sprintf("ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionAggressivenessValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredStateValue — allowed values for the BruteForceProtectionConfiguredState node.
+type ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredStateValue int64
+
 const (
 	// Not configured: Apply defaults set by the antivirus engine and platform
-	ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredStateNotConfigured int64 = 0
+	ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredStateNotConfigured ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredStateValue = 0
 	// Block: Prevent suspicious and malicious behaviors
-	ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredStateBlock int64 = 1
+	ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredStateBlock ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredStateValue = 1
 	// Audit: Generate EDR detections without blocking
-	ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredStateAudit int64 = 2
+	ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredStateAudit ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredStateValue = 2
 	// Off: Feature is disabled with no performance impact
-	ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredStateOff int64 = 4
+	ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredStateOff ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredStateValue = 4
 )
 
-// ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlocking allowed values.
+// String returns the ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredStateValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredStateValue) String() string {
+	switch e {
+	case ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredStateNotConfigured:
+		return "ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredStateNotConfigured"
+	case ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredStateBlock:
+		return "ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredStateBlock"
+	case ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredStateAudit:
+		return "ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredStateAudit"
+	case ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredStateOff:
+		return "ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredStateOff"
+	default:
+		return fmt.Sprintf("ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionConfiguredStateValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlockingValue — allowed values for the BruteForceProtectionLocalNetworkBlocking node.
+type ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlockingValue int64
+
 const (
 	// Brute-force protection will not block local network addresses
-	ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlockingBruteForceProtectionWillNotBlockLocal int64 = 0
+	ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlockingBruteForceProtectionWillNotBlockLocal ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlockingValue = 0
 	// Brute-force protection will block local network addresses
-	ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlockingBruteForceProtectionWillBlockLocalNetwork int64 = 1
+	ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlockingBruteForceProtectionWillBlockLocalNetwork ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlockingValue = 1
 )
 
-// ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriod allowed values.
+// String returns the ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlockingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlockingValue) String() string {
+	switch e {
+	case ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlockingBruteForceProtectionWillNotBlockLocal:
+		return "ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlockingBruteForceProtectionWillNotBlockLocal"
+	case ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlockingBruteForceProtectionWillBlockLocalNetwork:
+		return "ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlockingBruteForceProtectionWillBlockLocalNetwork"
+	default:
+		return fmt.Sprintf("ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionLocalNetworkBlockingValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriodValue — allowed values for the BruteForceProtectionSkipLearningPeriod node.
+type ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriodValue int64
+
 const (
 	// Brute-force protection blocks threats only after completing a 2-week learning period
-	ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriodBruteForceProtectionBlocksThreatsOnlyAfter int64 = 0
+	ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriodBruteForceProtectionBlocksThreatsOnlyAfter ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriodValue = 0
 	// Brute-force protection starts blocking threats immediately
-	ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriodBruteForceProtectionStartsBlockingThreatsImmediately int64 = 1
+	ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriodBruteForceProtectionStartsBlockingThreatsImmediately ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriodValue = 1
 )
 
-// ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressiveness allowed values.
+// String returns the ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriodValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriodValue) String() string {
+	switch e {
+	case ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriodBruteForceProtectionBlocksThreatsOnlyAfter:
+		return "ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriodBruteForceProtectionBlocksThreatsOnlyAfter"
+	case ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriodBruteForceProtectionStartsBlockingThreatsImmediately:
+		return "ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriodBruteForceProtectionStartsBlockingThreatsImmediately"
+	default:
+		return fmt.Sprintf("ConfigurationBehavioralNetworkBlocksBruteForceProtectionBruteForceProtectionPluginsBruteForceProtectionSkipLearningPeriodValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressivenessValue — allowed values for the RemoteEncryptionProtectionAggressiveness node.
+type ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressivenessValue int64
+
 const (
 	// Low: Block only when confidence level is 100% (Default)
-	ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressivenessLow int64 = 0
+	ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressivenessLow ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressivenessValue = 0
 	// Medium: Use cloud aggregation and block when confidence level is above 99%
-	ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressivenessMedium int64 = 1
+	ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressivenessMedium ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressivenessValue = 1
 	// High: Use cloud intel and context, and block when confidence level is above 90%
-	ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressivenessHigh int64 = 2
+	ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressivenessHigh ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressivenessValue = 2
 )
 
-// ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredState allowed values.
+// String returns the ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressivenessValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressivenessValue) String() string {
+	switch e {
+	case ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressivenessLow:
+		return "ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressivenessLow"
+	case ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressivenessMedium:
+		return "ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressivenessMedium"
+	case ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressivenessHigh:
+		return "ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressivenessHigh"
+	default:
+		return fmt.Sprintf("ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionAggressivenessValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredStateValue — allowed values for the RemoteEncryptionProtectionConfiguredState node.
+type ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredStateValue int64
+
 const (
 	// Not configured: Apply defaults set for the antivirus engine and platform
-	ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredStateNotConfigured int64 = 0
+	ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredStateNotConfigured ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredStateValue = 0
 	// Block: Prevent suspicious and malicious behaviors
-	ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredStateBlock int64 = 1
+	ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredStateBlock ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredStateValue = 1
 	// Audit: Generate EDR detections without blocking
-	ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredStateAudit int64 = 2
+	ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredStateAudit ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredStateValue = 2
 	// Off: Feature is off with no performance impact
-	ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredStateOff int64 = 4
+	ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredStateOff ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredStateValue = 4
 )
 
-// ConfigurationDefaultEnforcement allowed values.
+// String returns the ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredStateValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredStateValue) String() string {
+	switch e {
+	case ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredStateNotConfigured:
+		return "ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredStateNotConfigured"
+	case ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredStateBlock:
+		return "ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredStateBlock"
+	case ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredStateAudit:
+		return "ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredStateAudit"
+	case ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredStateOff:
+		return "ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredStateOff"
+	default:
+		return fmt.Sprintf("ConfigurationBehavioralNetworkBlocksRemoteEncryptionProtectionRemoteEncryptionProtectionConfiguredStateValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationDefaultEnforcementValue — allowed values for the DefaultEnforcement node.
+type ConfigurationDefaultEnforcementValue int64
+
 const (
 	// Default Allow Enforcement
-	ConfigurationDefaultEnforcementDefaultAllowEnforcement int64 = 1
+	ConfigurationDefaultEnforcementDefaultAllowEnforcement ConfigurationDefaultEnforcementValue = 1
 	// Default Deny Enforcement
-	ConfigurationDefaultEnforcementDefaultDenyEnforcement int64 = 2
+	ConfigurationDefaultEnforcementDefaultDenyEnforcement ConfigurationDefaultEnforcementValue = 2
 )
 
-// ConfigurationDeviceControlEnabled allowed values.
+// String returns the ConfigurationDefaultEnforcementValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationDefaultEnforcementValue) String() string {
+	switch e {
+	case ConfigurationDefaultEnforcementDefaultAllowEnforcement:
+		return "ConfigurationDefaultEnforcementDefaultAllowEnforcement"
+	case ConfigurationDefaultEnforcementDefaultDenyEnforcement:
+		return "ConfigurationDefaultEnforcementDefaultDenyEnforcement"
+	default:
+		return fmt.Sprintf("ConfigurationDefaultEnforcementValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationDeviceControlEnabledValue — allowed values for the DeviceControlEnabled node.
+type ConfigurationDeviceControlEnabledValue int64
+
 const (
 	// Device Control is enabled
-	ConfigurationDeviceControlEnabledDeviceControlIsEnabled int64 = 1
+	ConfigurationDeviceControlEnabledDeviceControlIsEnabled ConfigurationDeviceControlEnabledValue = 1
 	// Device Control is disabled
-	ConfigurationDeviceControlEnabledDeviceControlIsDisabled int64 = 0
+	ConfigurationDeviceControlEnabledDeviceControlIsDisabled ConfigurationDeviceControlEnabledValue = 0
 )
 
-// ConfigurationDisableCacheMaintenance allowed values.
+// String returns the ConfigurationDeviceControlEnabledValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationDeviceControlEnabledValue) String() string {
+	switch e {
+	case ConfigurationDeviceControlEnabledDeviceControlIsEnabled:
+		return "ConfigurationDeviceControlEnabledDeviceControlIsEnabled"
+	case ConfigurationDeviceControlEnabledDeviceControlIsDisabled:
+		return "ConfigurationDeviceControlEnabledDeviceControlIsDisabled"
+	default:
+		return fmt.Sprintf("ConfigurationDeviceControlEnabledValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationDisableCacheMaintenanceValue — allowed values for the DisableCacheMaintenance node.
+type ConfigurationDisableCacheMaintenanceValue int64
+
 const (
 	// Cache maintenance is disabled
-	ConfigurationDisableCacheMaintenanceCacheMaintenanceIsDisabled int64 = 1
+	ConfigurationDisableCacheMaintenanceCacheMaintenanceIsDisabled ConfigurationDisableCacheMaintenanceValue = 1
 	// Cache maintenance is enabled (default)
-	ConfigurationDisableCacheMaintenanceCacheMaintenanceIsEnabled int64 = 0
+	ConfigurationDisableCacheMaintenanceCacheMaintenanceIsEnabled ConfigurationDisableCacheMaintenanceValue = 0
 )
 
-// ConfigurationDisableCoreServiceECSIntegration allowed values.
+// String returns the ConfigurationDisableCacheMaintenanceValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationDisableCacheMaintenanceValue) String() string {
+	switch e {
+	case ConfigurationDisableCacheMaintenanceCacheMaintenanceIsDisabled:
+		return "ConfigurationDisableCacheMaintenanceCacheMaintenanceIsDisabled"
+	case ConfigurationDisableCacheMaintenanceCacheMaintenanceIsEnabled:
+		return "ConfigurationDisableCacheMaintenanceCacheMaintenanceIsEnabled"
+	default:
+		return fmt.Sprintf("ConfigurationDisableCacheMaintenanceValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationDisableCoreServiceECSIntegrationValue — allowed values for the DisableCoreServiceECSIntegration node.
+type ConfigurationDisableCoreServiceECSIntegrationValue int64
+
 const (
 	// The Defender core service will use the Experimentation and Configuration Service (ECS) to
 	// rapidly deliver critical, org-specific fixes.
-	ConfigurationDisableCoreServiceECSIntegrationTheDefenderCoreServiceWillUse int64 = 0
+	ConfigurationDisableCoreServiceECSIntegrationTheDefenderCoreServiceWillUse ConfigurationDisableCoreServiceECSIntegrationValue = 0
 	// The Defender core service stops using the Experimentation and Configuration Service (ECS). Fixes
 	// will continue to be delivered through security intelligence updates.
-	ConfigurationDisableCoreServiceECSIntegrationTheDefenderCoreServiceStopsUsing int64 = 1
+	ConfigurationDisableCoreServiceECSIntegrationTheDefenderCoreServiceStopsUsing ConfigurationDisableCoreServiceECSIntegrationValue = 1
 )
 
-// ConfigurationDisableCoreServiceTelemetry allowed values.
+// String returns the ConfigurationDisableCoreServiceECSIntegrationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationDisableCoreServiceECSIntegrationValue) String() string {
+	switch e {
+	case ConfigurationDisableCoreServiceECSIntegrationTheDefenderCoreServiceWillUse:
+		return "ConfigurationDisableCoreServiceECSIntegrationTheDefenderCoreServiceWillUse"
+	case ConfigurationDisableCoreServiceECSIntegrationTheDefenderCoreServiceStopsUsing:
+		return "ConfigurationDisableCoreServiceECSIntegrationTheDefenderCoreServiceStopsUsing"
+	default:
+		return fmt.Sprintf("ConfigurationDisableCoreServiceECSIntegrationValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationDisableCoreServiceTelemetryValue — allowed values for the DisableCoreServiceTelemetry node.
+type ConfigurationDisableCoreServiceTelemetryValue int64
+
 const (
 	// The Defender core service will use the OneDsCollector framework to rapidly collect telemetry.
-	ConfigurationDisableCoreServiceTelemetryTheDefenderCoreServiceWillUse int64 = 0
+	ConfigurationDisableCoreServiceTelemetryTheDefenderCoreServiceWillUse ConfigurationDisableCoreServiceTelemetryValue = 0
 	// The Defender core service stops using the OneDsCollector framework to rapidly collect telemetry,
 	// impacting Microsoft's ability to quickly recognize and address poor performance, false
 	// positives, and other problems.
-	ConfigurationDisableCoreServiceTelemetryTheDefenderCoreServiceStopsUsing int64 = 1
+	ConfigurationDisableCoreServiceTelemetryTheDefenderCoreServiceStopsUsing ConfigurationDisableCoreServiceTelemetryValue = 1
 )
 
-// ConfigurationDisableCpuThrottleOnIdleScans allowed values.
+// String returns the ConfigurationDisableCoreServiceTelemetryValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationDisableCoreServiceTelemetryValue) String() string {
+	switch e {
+	case ConfigurationDisableCoreServiceTelemetryTheDefenderCoreServiceWillUse:
+		return "ConfigurationDisableCoreServiceTelemetryTheDefenderCoreServiceWillUse"
+	case ConfigurationDisableCoreServiceTelemetryTheDefenderCoreServiceStopsUsing:
+		return "ConfigurationDisableCoreServiceTelemetryTheDefenderCoreServiceStopsUsing"
+	default:
+		return fmt.Sprintf("ConfigurationDisableCoreServiceTelemetryValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationDisableCpuThrottleOnIdleScansValue — allowed values for the DisableCpuThrottleOnIdleScans node.
+type ConfigurationDisableCpuThrottleOnIdleScansValue int64
+
 const (
 	// Disable CPU Throttle on idle scans
-	ConfigurationDisableCpuThrottleOnIdleScansDisableCPUThrottleOnIdleScans int64 = 1
+	ConfigurationDisableCpuThrottleOnIdleScansDisableCPUThrottleOnIdleScans ConfigurationDisableCpuThrottleOnIdleScansValue = 1
 	// Enable CPU Throttle on idle scans
-	ConfigurationDisableCpuThrottleOnIdleScansEnableCPUThrottleOnIdleScans int64 = 0
+	ConfigurationDisableCpuThrottleOnIdleScansEnableCPUThrottleOnIdleScans ConfigurationDisableCpuThrottleOnIdleScansValue = 0
 )
 
-// ConfigurationDisableDatagramProcessing allowed values.
+// String returns the ConfigurationDisableCpuThrottleOnIdleScansValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationDisableCpuThrottleOnIdleScansValue) String() string {
+	switch e {
+	case ConfigurationDisableCpuThrottleOnIdleScansDisableCPUThrottleOnIdleScans:
+		return "ConfigurationDisableCpuThrottleOnIdleScansDisableCPUThrottleOnIdleScans"
+	case ConfigurationDisableCpuThrottleOnIdleScansEnableCPUThrottleOnIdleScans:
+		return "ConfigurationDisableCpuThrottleOnIdleScansEnableCPUThrottleOnIdleScans"
+	default:
+		return fmt.Sprintf("ConfigurationDisableCpuThrottleOnIdleScansValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationDisableDatagramProcessingValue — allowed values for the DisableDatagramProcessing node.
+type ConfigurationDisableDatagramProcessingValue int64
+
 const (
 	// UDP inspection is off
-	ConfigurationDisableDatagramProcessingUDPInspectionIsOff int64 = 1
+	ConfigurationDisableDatagramProcessingUDPInspectionIsOff ConfigurationDisableDatagramProcessingValue = 1
 	// UDP inspection is on
-	ConfigurationDisableDatagramProcessingUDPInspectionIsOn int64 = 0
+	ConfigurationDisableDatagramProcessingUDPInspectionIsOn ConfigurationDisableDatagramProcessingValue = 0
 )
 
-// ConfigurationDisableDnsOverTcpParsing allowed values.
+// String returns the ConfigurationDisableDatagramProcessingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationDisableDatagramProcessingValue) String() string {
+	switch e {
+	case ConfigurationDisableDatagramProcessingUDPInspectionIsOff:
+		return "ConfigurationDisableDatagramProcessingUDPInspectionIsOff"
+	case ConfigurationDisableDatagramProcessingUDPInspectionIsOn:
+		return "ConfigurationDisableDatagramProcessingUDPInspectionIsOn"
+	default:
+		return fmt.Sprintf("ConfigurationDisableDatagramProcessingValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationDisableDnsOverTcpParsingValue — allowed values for the DisableDnsOverTcpParsing node.
+type ConfigurationDisableDnsOverTcpParsingValue int64
+
 const (
 	// DNS over TCP parsing is disabled
-	ConfigurationDisableDnsOverTcpParsingDNSOverTCPParsingIsDisabled int64 = 1
+	ConfigurationDisableDnsOverTcpParsingDNSOverTCPParsingIsDisabled ConfigurationDisableDnsOverTcpParsingValue = 1
 	// DNS over TCP parsing is enabled
-	ConfigurationDisableDnsOverTcpParsingDNSOverTCPParsingIsEnabled int64 = 0
+	ConfigurationDisableDnsOverTcpParsingDNSOverTCPParsingIsEnabled ConfigurationDisableDnsOverTcpParsingValue = 0
 )
 
-// ConfigurationDisableDnsParsing allowed values.
+// String returns the ConfigurationDisableDnsOverTcpParsingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationDisableDnsOverTcpParsingValue) String() string {
+	switch e {
+	case ConfigurationDisableDnsOverTcpParsingDNSOverTCPParsingIsDisabled:
+		return "ConfigurationDisableDnsOverTcpParsingDNSOverTCPParsingIsDisabled"
+	case ConfigurationDisableDnsOverTcpParsingDNSOverTCPParsingIsEnabled:
+		return "ConfigurationDisableDnsOverTcpParsingDNSOverTCPParsingIsEnabled"
+	default:
+		return fmt.Sprintf("ConfigurationDisableDnsOverTcpParsingValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationDisableDnsParsingValue — allowed values for the DisableDnsParsing node.
+type ConfigurationDisableDnsParsingValue int64
+
 const (
 	// DNS parsing is disabled
-	ConfigurationDisableDnsParsingDNSParsingIsDisabled int64 = 1
+	ConfigurationDisableDnsParsingDNSParsingIsDisabled ConfigurationDisableDnsParsingValue = 1
 	// DNS parsing is enabled
-	ConfigurationDisableDnsParsingDNSParsingIsEnabled int64 = 0
+	ConfigurationDisableDnsParsingDNSParsingIsEnabled ConfigurationDisableDnsParsingValue = 0
 )
 
-// ConfigurationDisableFtpParsing allowed values.
+// String returns the ConfigurationDisableDnsParsingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationDisableDnsParsingValue) String() string {
+	switch e {
+	case ConfigurationDisableDnsParsingDNSParsingIsDisabled:
+		return "ConfigurationDisableDnsParsingDNSParsingIsDisabled"
+	case ConfigurationDisableDnsParsingDNSParsingIsEnabled:
+		return "ConfigurationDisableDnsParsingDNSParsingIsEnabled"
+	default:
+		return fmt.Sprintf("ConfigurationDisableDnsParsingValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationDisableFtpParsingValue — allowed values for the DisableFtpParsing node.
+type ConfigurationDisableFtpParsingValue int64
+
 const (
 	// FTP parsing is disabled
-	ConfigurationDisableFtpParsingFTPParsingIsDisabled int64 = 1
+	ConfigurationDisableFtpParsingFTPParsingIsDisabled ConfigurationDisableFtpParsingValue = 1
 	// FTP parsing is enabled
-	ConfigurationDisableFtpParsingFTPParsingIsEnabled int64 = 0
+	ConfigurationDisableFtpParsingFTPParsingIsEnabled ConfigurationDisableFtpParsingValue = 0
 )
 
-// ConfigurationDisableGradualRelease allowed values.
+// String returns the ConfigurationDisableFtpParsingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationDisableFtpParsingValue) String() string {
+	switch e {
+	case ConfigurationDisableFtpParsingFTPParsingIsDisabled:
+		return "ConfigurationDisableFtpParsingFTPParsingIsDisabled"
+	case ConfigurationDisableFtpParsingFTPParsingIsEnabled:
+		return "ConfigurationDisableFtpParsingFTPParsingIsEnabled"
+	default:
+		return fmt.Sprintf("ConfigurationDisableFtpParsingValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationDisableGradualReleaseValue — allowed values for the DisableGradualRelease node.
+type ConfigurationDisableGradualReleaseValue int64
+
 const (
 	// Gradual release is disabled
-	ConfigurationDisableGradualReleaseGradualReleaseIsDisabled int64 = 1
+	ConfigurationDisableGradualReleaseGradualReleaseIsDisabled ConfigurationDisableGradualReleaseValue = 1
 	// Gradual release is enabled
-	ConfigurationDisableGradualReleaseGradualReleaseIsEnabled int64 = 0
+	ConfigurationDisableGradualReleaseGradualReleaseIsEnabled ConfigurationDisableGradualReleaseValue = 0
 )
 
-// ConfigurationDisableHttpParsing allowed values.
+// String returns the ConfigurationDisableGradualReleaseValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationDisableGradualReleaseValue) String() string {
+	switch e {
+	case ConfigurationDisableGradualReleaseGradualReleaseIsDisabled:
+		return "ConfigurationDisableGradualReleaseGradualReleaseIsDisabled"
+	case ConfigurationDisableGradualReleaseGradualReleaseIsEnabled:
+		return "ConfigurationDisableGradualReleaseGradualReleaseIsEnabled"
+	default:
+		return fmt.Sprintf("ConfigurationDisableGradualReleaseValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationDisableHttpParsingValue — allowed values for the DisableHttpParsing node.
+type ConfigurationDisableHttpParsingValue int64
+
 const (
 	// HTTP parsing is disabled
-	ConfigurationDisableHttpParsingHTTPParsingIsDisabled int64 = 1
+	ConfigurationDisableHttpParsingHTTPParsingIsDisabled ConfigurationDisableHttpParsingValue = 1
 	// HTTP parsing is enabled
-	ConfigurationDisableHttpParsingHTTPParsingIsEnabled int64 = 0
+	ConfigurationDisableHttpParsingHTTPParsingIsEnabled ConfigurationDisableHttpParsingValue = 0
 )
 
-// ConfigurationDisableInboundConnectionFiltering allowed values.
+// String returns the ConfigurationDisableHttpParsingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationDisableHttpParsingValue) String() string {
+	switch e {
+	case ConfigurationDisableHttpParsingHTTPParsingIsDisabled:
+		return "ConfigurationDisableHttpParsingHTTPParsingIsDisabled"
+	case ConfigurationDisableHttpParsingHTTPParsingIsEnabled:
+		return "ConfigurationDisableHttpParsingHTTPParsingIsEnabled"
+	default:
+		return fmt.Sprintf("ConfigurationDisableHttpParsingValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationDisableInboundConnectionFilteringValue — allowed values for the DisableInboundConnectionFiltering node.
+type ConfigurationDisableInboundConnectionFilteringValue int64
+
 const (
 	// Inbound connection filtering is disabled
-	ConfigurationDisableInboundConnectionFilteringInboundConnectionFilteringIsDisabled int64 = 1
+	ConfigurationDisableInboundConnectionFilteringInboundConnectionFilteringIsDisabled ConfigurationDisableInboundConnectionFilteringValue = 1
 	// Inbound connection filtering is enabled
-	ConfigurationDisableInboundConnectionFilteringInboundConnectionFilteringIsEnabled int64 = 0
+	ConfigurationDisableInboundConnectionFilteringInboundConnectionFilteringIsEnabled ConfigurationDisableInboundConnectionFilteringValue = 0
 )
 
-// ConfigurationDisableLocalAdminMerge allowed values.
+// String returns the ConfigurationDisableInboundConnectionFilteringValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationDisableInboundConnectionFilteringValue) String() string {
+	switch e {
+	case ConfigurationDisableInboundConnectionFilteringInboundConnectionFilteringIsDisabled:
+		return "ConfigurationDisableInboundConnectionFilteringInboundConnectionFilteringIsDisabled"
+	case ConfigurationDisableInboundConnectionFilteringInboundConnectionFilteringIsEnabled:
+		return "ConfigurationDisableInboundConnectionFilteringInboundConnectionFilteringIsEnabled"
+	default:
+		return fmt.Sprintf("ConfigurationDisableInboundConnectionFilteringValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationDisableLocalAdminMergeValue — allowed values for the DisableLocalAdminMerge node.
+type ConfigurationDisableLocalAdminMergeValue int64
+
 const (
 	// Yes
-	ConfigurationDisableLocalAdminMergeYes int64 = 1
+	ConfigurationDisableLocalAdminMergeYes ConfigurationDisableLocalAdminMergeValue = 1
 	// No
-	ConfigurationDisableLocalAdminMergeNo int64 = 0
+	ConfigurationDisableLocalAdminMergeNo ConfigurationDisableLocalAdminMergeValue = 0
 )
 
-// ConfigurationDisableNetworkProtectionPerfTelemetry allowed values.
+// String returns the ConfigurationDisableLocalAdminMergeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationDisableLocalAdminMergeValue) String() string {
+	switch e {
+	case ConfigurationDisableLocalAdminMergeYes:
+		return "ConfigurationDisableLocalAdminMergeYes"
+	case ConfigurationDisableLocalAdminMergeNo:
+		return "ConfigurationDisableLocalAdminMergeNo"
+	default:
+		return fmt.Sprintf("ConfigurationDisableLocalAdminMergeValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationDisableNetworkProtectionPerfTelemetryValue — allowed values for the DisableNetworkProtectionPerfTelemetry node.
+type ConfigurationDisableNetworkProtectionPerfTelemetryValue int64
+
 const (
 	// Network protection telemetry is disabled
-	ConfigurationDisableNetworkProtectionPerfTelemetryNetworkProtectionTelemetryIsDisabled int64 = 1
+	ConfigurationDisableNetworkProtectionPerfTelemetryNetworkProtectionTelemetryIsDisabled ConfigurationDisableNetworkProtectionPerfTelemetryValue = 1
 	// Network protection telemetry is enabled
-	ConfigurationDisableNetworkProtectionPerfTelemetryNetworkProtectionTelemetryIsEnabled int64 = 0
+	ConfigurationDisableNetworkProtectionPerfTelemetryNetworkProtectionTelemetryIsEnabled ConfigurationDisableNetworkProtectionPerfTelemetryValue = 0
 )
 
-// ConfigurationDisableQuicParsing allowed values.
+// String returns the ConfigurationDisableNetworkProtectionPerfTelemetryValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationDisableNetworkProtectionPerfTelemetryValue) String() string {
+	switch e {
+	case ConfigurationDisableNetworkProtectionPerfTelemetryNetworkProtectionTelemetryIsDisabled:
+		return "ConfigurationDisableNetworkProtectionPerfTelemetryNetworkProtectionTelemetryIsDisabled"
+	case ConfigurationDisableNetworkProtectionPerfTelemetryNetworkProtectionTelemetryIsEnabled:
+		return "ConfigurationDisableNetworkProtectionPerfTelemetryNetworkProtectionTelemetryIsEnabled"
+	default:
+		return fmt.Sprintf("ConfigurationDisableNetworkProtectionPerfTelemetryValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationDisableQuicParsingValue — allowed values for the DisableQuicParsing node.
+type ConfigurationDisableQuicParsingValue int64
+
 const (
 	// QUIC parsing is disabled
-	ConfigurationDisableQuicParsingQUICParsingIsDisabled int64 = 1
+	ConfigurationDisableQuicParsingQUICParsingIsDisabled ConfigurationDisableQuicParsingValue = 1
 	// QUIC parsing is enabled
-	ConfigurationDisableQuicParsingQUICParsingIsEnabled int64 = 0
+	ConfigurationDisableQuicParsingQUICParsingIsEnabled ConfigurationDisableQuicParsingValue = 0
 )
 
-// ConfigurationDisableRdpParsing allowed values.
+// String returns the ConfigurationDisableQuicParsingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationDisableQuicParsingValue) String() string {
+	switch e {
+	case ConfigurationDisableQuicParsingQUICParsingIsDisabled:
+		return "ConfigurationDisableQuicParsingQUICParsingIsDisabled"
+	case ConfigurationDisableQuicParsingQUICParsingIsEnabled:
+		return "ConfigurationDisableQuicParsingQUICParsingIsEnabled"
+	default:
+		return fmt.Sprintf("ConfigurationDisableQuicParsingValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationDisableRdpParsingValue — allowed values for the DisableRdpParsing node.
+type ConfigurationDisableRdpParsingValue int64
+
 const (
 	// RDP Parsing is disabled
-	ConfigurationDisableRdpParsingRDPParsingIsDisabled int64 = 1
+	ConfigurationDisableRdpParsingRDPParsingIsDisabled ConfigurationDisableRdpParsingValue = 1
 	// RDP Parsing is enabled
-	ConfigurationDisableRdpParsingRDPParsingIsEnabled int64 = 0
+	ConfigurationDisableRdpParsingRDPParsingIsEnabled ConfigurationDisableRdpParsingValue = 0
 )
 
-// ConfigurationDisableSmtpParsing allowed values.
+// String returns the ConfigurationDisableRdpParsingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationDisableRdpParsingValue) String() string {
+	switch e {
+	case ConfigurationDisableRdpParsingRDPParsingIsDisabled:
+		return "ConfigurationDisableRdpParsingRDPParsingIsDisabled"
+	case ConfigurationDisableRdpParsingRDPParsingIsEnabled:
+		return "ConfigurationDisableRdpParsingRDPParsingIsEnabled"
+	default:
+		return fmt.Sprintf("ConfigurationDisableRdpParsingValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationDisableSmtpParsingValue — allowed values for the DisableSmtpParsing node.
+type ConfigurationDisableSmtpParsingValue int64
+
 const (
 	// SMTP parsing is disabled
-	ConfigurationDisableSmtpParsingSMTPParsingIsDisabled int64 = 1
+	ConfigurationDisableSmtpParsingSMTPParsingIsDisabled ConfigurationDisableSmtpParsingValue = 1
 	// SMTP parsing is enabled
-	ConfigurationDisableSmtpParsingSMTPParsingIsEnabled int64 = 0
+	ConfigurationDisableSmtpParsingSMTPParsingIsEnabled ConfigurationDisableSmtpParsingValue = 0
 )
 
-// ConfigurationDisableSshParsing allowed values.
+// String returns the ConfigurationDisableSmtpParsingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationDisableSmtpParsingValue) String() string {
+	switch e {
+	case ConfigurationDisableSmtpParsingSMTPParsingIsDisabled:
+		return "ConfigurationDisableSmtpParsingSMTPParsingIsDisabled"
+	case ConfigurationDisableSmtpParsingSMTPParsingIsEnabled:
+		return "ConfigurationDisableSmtpParsingSMTPParsingIsEnabled"
+	default:
+		return fmt.Sprintf("ConfigurationDisableSmtpParsingValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationDisableSshParsingValue — allowed values for the DisableSshParsing node.
+type ConfigurationDisableSshParsingValue int64
+
 const (
 	// SSH parsing is disabled
-	ConfigurationDisableSshParsingSSHParsingIsDisabled int64 = 1
+	ConfigurationDisableSshParsingSSHParsingIsDisabled ConfigurationDisableSshParsingValue = 1
 	// SSH parsing is enabled
-	ConfigurationDisableSshParsingSSHParsingIsEnabled int64 = 0
+	ConfigurationDisableSshParsingSSHParsingIsEnabled ConfigurationDisableSshParsingValue = 0
 )
 
-// ConfigurationDisableTlsParsing allowed values.
+// String returns the ConfigurationDisableSshParsingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationDisableSshParsingValue) String() string {
+	switch e {
+	case ConfigurationDisableSshParsingSSHParsingIsDisabled:
+		return "ConfigurationDisableSshParsingSSHParsingIsDisabled"
+	case ConfigurationDisableSshParsingSSHParsingIsEnabled:
+		return "ConfigurationDisableSshParsingSSHParsingIsEnabled"
+	default:
+		return fmt.Sprintf("ConfigurationDisableSshParsingValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationDisableTlsParsingValue — allowed values for the DisableTlsParsing node.
+type ConfigurationDisableTlsParsingValue int64
+
 const (
 	// TLS parsing is disabled
-	ConfigurationDisableTlsParsingTLSParsingIsDisabled int64 = 1
+	ConfigurationDisableTlsParsingTLSParsingIsDisabled ConfigurationDisableTlsParsingValue = 1
 	// TLS parsing is enabled
-	ConfigurationDisableTlsParsingTLSParsingIsEnabled int64 = 0
+	ConfigurationDisableTlsParsingTLSParsingIsEnabled ConfigurationDisableTlsParsingValue = 0
 )
 
-// ConfigurationEnableConvertWarnToBlock allowed values.
+// String returns the ConfigurationDisableTlsParsingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationDisableTlsParsingValue) String() string {
+	switch e {
+	case ConfigurationDisableTlsParsingTLSParsingIsDisabled:
+		return "ConfigurationDisableTlsParsingTLSParsingIsDisabled"
+	case ConfigurationDisableTlsParsingTLSParsingIsEnabled:
+		return "ConfigurationDisableTlsParsingTLSParsingIsEnabled"
+	default:
+		return fmt.Sprintf("ConfigurationDisableTlsParsingValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationEnableConvertWarnToBlockValue — allowed values for the EnableConvertWarnToBlock node.
+type ConfigurationEnableConvertWarnToBlockValue int64
+
 const (
 	// Warn verdicts are converted to block
-	ConfigurationEnableConvertWarnToBlockWarnVerdictsAreConvertedToBlock int64 = 1
+	ConfigurationEnableConvertWarnToBlockWarnVerdictsAreConvertedToBlock ConfigurationEnableConvertWarnToBlockValue = 1
 	// Warn verdicts are not converted to block
-	ConfigurationEnableConvertWarnToBlockWarnVerdictsAreNotConvertedTo int64 = 0
+	ConfigurationEnableConvertWarnToBlockWarnVerdictsAreNotConvertedTo ConfigurationEnableConvertWarnToBlockValue = 0
 )
 
-// ConfigurationEnableDnsSinkhole allowed values.
+// String returns the ConfigurationEnableConvertWarnToBlockValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationEnableConvertWarnToBlockValue) String() string {
+	switch e {
+	case ConfigurationEnableConvertWarnToBlockWarnVerdictsAreConvertedToBlock:
+		return "ConfigurationEnableConvertWarnToBlockWarnVerdictsAreConvertedToBlock"
+	case ConfigurationEnableConvertWarnToBlockWarnVerdictsAreNotConvertedTo:
+		return "ConfigurationEnableConvertWarnToBlockWarnVerdictsAreNotConvertedTo"
+	default:
+		return fmt.Sprintf("ConfigurationEnableConvertWarnToBlockValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationEnableDnsSinkholeValue — allowed values for the EnableDnsSinkhole node.
+type ConfigurationEnableDnsSinkholeValue int64
+
 const (
 	// DNS Sinkhole is disabled
-	ConfigurationEnableDnsSinkholeDNSSinkholeIsDisabled int64 = 0
+	ConfigurationEnableDnsSinkholeDNSSinkholeIsDisabled ConfigurationEnableDnsSinkholeValue = 0
 	// DNS Sinkhole is enabled
-	ConfigurationEnableDnsSinkholeDNSSinkholeIsEnabled int64 = 1
+	ConfigurationEnableDnsSinkholeDNSSinkholeIsEnabled ConfigurationEnableDnsSinkholeValue = 1
 )
 
-// ConfigurationEnableFileHashComputation allowed values.
+// String returns the ConfigurationEnableDnsSinkholeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationEnableDnsSinkholeValue) String() string {
+	switch e {
+	case ConfigurationEnableDnsSinkholeDNSSinkholeIsDisabled:
+		return "ConfigurationEnableDnsSinkholeDNSSinkholeIsDisabled"
+	case ConfigurationEnableDnsSinkholeDNSSinkholeIsEnabled:
+		return "ConfigurationEnableDnsSinkholeDNSSinkholeIsEnabled"
+	default:
+		return fmt.Sprintf("ConfigurationEnableDnsSinkholeValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationEnableFileHashComputationValue — allowed values for the EnableFileHashComputation node.
+type ConfigurationEnableFileHashComputationValue int64
+
 const (
 	// Disable
-	ConfigurationEnableFileHashComputationDisable int64 = 0
+	ConfigurationEnableFileHashComputationDisable ConfigurationEnableFileHashComputationValue = 0
 	// Enable
-	ConfigurationEnableFileHashComputationEnable int64 = 1
+	ConfigurationEnableFileHashComputationEnable ConfigurationEnableFileHashComputationValue = 1
 )
 
-// ConfigurationEnableUdpReceiveOffload allowed values.
+// String returns the ConfigurationEnableFileHashComputationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationEnableFileHashComputationValue) String() string {
+	switch e {
+	case ConfigurationEnableFileHashComputationDisable:
+		return "ConfigurationEnableFileHashComputationDisable"
+	case ConfigurationEnableFileHashComputationEnable:
+		return "ConfigurationEnableFileHashComputationEnable"
+	default:
+		return fmt.Sprintf("ConfigurationEnableFileHashComputationValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationEnableUdpReceiveOffloadValue — allowed values for the EnableUdpReceiveOffload node.
+type ConfigurationEnableUdpReceiveOffloadValue int64
+
 const (
 	// Udp Receive Offload is disabled
-	ConfigurationEnableUdpReceiveOffloadUdpReceiveOffloadIsDisabled int64 = 0
+	ConfigurationEnableUdpReceiveOffloadUdpReceiveOffloadIsDisabled ConfigurationEnableUdpReceiveOffloadValue = 0
 	// Udp Receive Offload is enabled
-	ConfigurationEnableUdpReceiveOffloadUdpReceiveOffloadIsEnabled int64 = 1
+	ConfigurationEnableUdpReceiveOffloadUdpReceiveOffloadIsEnabled ConfigurationEnableUdpReceiveOffloadValue = 1
 )
 
-// ConfigurationEnableUdpSegmentationOffload allowed values.
+// String returns the ConfigurationEnableUdpReceiveOffloadValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationEnableUdpReceiveOffloadValue) String() string {
+	switch e {
+	case ConfigurationEnableUdpReceiveOffloadUdpReceiveOffloadIsDisabled:
+		return "ConfigurationEnableUdpReceiveOffloadUdpReceiveOffloadIsDisabled"
+	case ConfigurationEnableUdpReceiveOffloadUdpReceiveOffloadIsEnabled:
+		return "ConfigurationEnableUdpReceiveOffloadUdpReceiveOffloadIsEnabled"
+	default:
+		return fmt.Sprintf("ConfigurationEnableUdpReceiveOffloadValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationEnableUdpSegmentationOffloadValue — allowed values for the EnableUdpSegmentationOffload node.
+type ConfigurationEnableUdpSegmentationOffloadValue int64
+
 const (
 	// Udp Segmentation Offload is disabled
-	ConfigurationEnableUdpSegmentationOffloadUdpSegmentationOffloadIsDisabled int64 = 0
+	ConfigurationEnableUdpSegmentationOffloadUdpSegmentationOffloadIsDisabled ConfigurationEnableUdpSegmentationOffloadValue = 0
 	// Udp Segmentation Offload is enabled
-	ConfigurationEnableUdpSegmentationOffloadUdpSegmentationOffloadIsEnabled int64 = 1
+	ConfigurationEnableUdpSegmentationOffloadUdpSegmentationOffloadIsEnabled ConfigurationEnableUdpSegmentationOffloadValue = 1
 )
 
-// ConfigurationEngineUpdatesChannel allowed values.
+// String returns the ConfigurationEnableUdpSegmentationOffloadValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationEnableUdpSegmentationOffloadValue) String() string {
+	switch e {
+	case ConfigurationEnableUdpSegmentationOffloadUdpSegmentationOffloadIsDisabled:
+		return "ConfigurationEnableUdpSegmentationOffloadUdpSegmentationOffloadIsDisabled"
+	case ConfigurationEnableUdpSegmentationOffloadUdpSegmentationOffloadIsEnabled:
+		return "ConfigurationEnableUdpSegmentationOffloadUdpSegmentationOffloadIsEnabled"
+	default:
+		return fmt.Sprintf("ConfigurationEnableUdpSegmentationOffloadValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationEngineUpdatesChannelValue — allowed values for the EngineUpdatesChannel node.
+type ConfigurationEngineUpdatesChannelValue int64
+
 const (
 	// Not configured (Default). The device will stay up to date automatically during the gradual
 	// release cycle. Suitable for most devices.
-	ConfigurationEngineUpdatesChannelNotConfigured int64 = 0
+	ConfigurationEngineUpdatesChannelNotConfigured ConfigurationEngineUpdatesChannelValue = 0
 	// Beta Channel: Devices set to this channel will be the first to receive new updates. Select Beta
 	// Channel to participate in identifying and reporting issues to Microsoft. Devices in the Windows
 	// Insider Program are subscribed to this channel by default. For use in (manual) test environments
 	// only and a limited number of devices.
-	ConfigurationEngineUpdatesChannelBetaChannel int64 = 2
+	ConfigurationEngineUpdatesChannelBetaChannel ConfigurationEngineUpdatesChannelValue = 2
 	// Current Channel (Preview): Devices set to this channel will be offered updates earliest during
 	// the monthly gradual release cycle. Suggested for pre-production/validation environments.
-	ConfigurationEngineUpdatesChannelCurrentChannel int64 = 3
+	ConfigurationEngineUpdatesChannelCurrentChannel ConfigurationEngineUpdatesChannelValue = 3
 	// Current Channel (Staged): Devices will be offered updates after the monthly gradual release
 	// cycle. Suggested to apply to a small, representative part of your production population (~10%).
-	ConfigurationEngineUpdatesChannelCurrentChannel2 int64 = 4
+	ConfigurationEngineUpdatesChannelCurrentChannel2 ConfigurationEngineUpdatesChannelValue = 4
 	// Current Channel (Broad): Devices will be offered updates only after the gradual release cycle
 	// completes. Suggested to apply to a broad set of devices in your production population
 	// (~10-100%).
-	ConfigurationEngineUpdatesChannelCurrentChannel3 int64 = 5
+	ConfigurationEngineUpdatesChannelCurrentChannel3 ConfigurationEngineUpdatesChannelValue = 5
 	// Critical - Time delay: Devices will be offered updates with a 48-hour delay. Suggested for
 	// critical environments only.
-	ConfigurationEngineUpdatesChannelCriticalTimeDelay int64 = 6
+	ConfigurationEngineUpdatesChannelCriticalTimeDelay ConfigurationEngineUpdatesChannelValue = 6
 )
 
-// ConfigurationHideExclusionsFromLocalAdmins allowed values.
+// String returns the ConfigurationEngineUpdatesChannelValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationEngineUpdatesChannelValue) String() string {
+	switch e {
+	case ConfigurationEngineUpdatesChannelNotConfigured:
+		return "ConfigurationEngineUpdatesChannelNotConfigured"
+	case ConfigurationEngineUpdatesChannelBetaChannel:
+		return "ConfigurationEngineUpdatesChannelBetaChannel"
+	case ConfigurationEngineUpdatesChannelCurrentChannel:
+		return "ConfigurationEngineUpdatesChannelCurrentChannel"
+	case ConfigurationEngineUpdatesChannelCurrentChannel2:
+		return "ConfigurationEngineUpdatesChannelCurrentChannel2"
+	case ConfigurationEngineUpdatesChannelCurrentChannel3:
+		return "ConfigurationEngineUpdatesChannelCurrentChannel3"
+	case ConfigurationEngineUpdatesChannelCriticalTimeDelay:
+		return "ConfigurationEngineUpdatesChannelCriticalTimeDelay"
+	default:
+		return fmt.Sprintf("ConfigurationEngineUpdatesChannelValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationHideExclusionsFromLocalAdminsValue — allowed values for the HideExclusionsFromLocalAdmins node.
+type ConfigurationHideExclusionsFromLocalAdminsValue int64
+
 const (
 	// If you enable this setting, local admins will no longer be able to see the exclusion list in
 	// Windows Security App or via PowerShell.
-	ConfigurationHideExclusionsFromLocalAdminsIfYouEnableThisSettingLocal int64 = 1
+	ConfigurationHideExclusionsFromLocalAdminsIfYouEnableThisSettingLocal ConfigurationHideExclusionsFromLocalAdminsValue = 1
 	// If you disable or do not configure this setting, local admins will be able to see exclusions in
 	// the Windows Security App and via PowerShell.
-	ConfigurationHideExclusionsFromLocalAdminsIfYouDisableOrDoNot int64 = 0
+	ConfigurationHideExclusionsFromLocalAdminsIfYouDisableOrDoNot ConfigurationHideExclusionsFromLocalAdminsValue = 0
 )
 
-// ConfigurationHideExclusionsFromLocalUsers allowed values.
+// String returns the ConfigurationHideExclusionsFromLocalAdminsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationHideExclusionsFromLocalAdminsValue) String() string {
+	switch e {
+	case ConfigurationHideExclusionsFromLocalAdminsIfYouEnableThisSettingLocal:
+		return "ConfigurationHideExclusionsFromLocalAdminsIfYouEnableThisSettingLocal"
+	case ConfigurationHideExclusionsFromLocalAdminsIfYouDisableOrDoNot:
+		return "ConfigurationHideExclusionsFromLocalAdminsIfYouDisableOrDoNot"
+	default:
+		return fmt.Sprintf("ConfigurationHideExclusionsFromLocalAdminsValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationHideExclusionsFromLocalUsersValue — allowed values for the HideExclusionsFromLocalUsers node.
+type ConfigurationHideExclusionsFromLocalUsersValue int64
+
 const (
 	// If you enable this setting, local users will no longer be able to see the exclusion list in
 	// Windows Security App or via PowerShell.
-	ConfigurationHideExclusionsFromLocalUsersIfYouEnableThisSettingLocal int64 = 1
+	ConfigurationHideExclusionsFromLocalUsersIfYouEnableThisSettingLocal ConfigurationHideExclusionsFromLocalUsersValue = 1
 	// If you disable or do not configure this setting, local users will be able to see exclusions in
 	// the Windows Security App and via PowerShell.
-	ConfigurationHideExclusionsFromLocalUsersIfYouDisableOrDoNot int64 = 0
+	ConfigurationHideExclusionsFromLocalUsersIfYouDisableOrDoNot ConfigurationHideExclusionsFromLocalUsersValue = 0
 )
 
-// ConfigurationIntelTDTEnabled allowed values.
+// String returns the ConfigurationHideExclusionsFromLocalUsersValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationHideExclusionsFromLocalUsersValue) String() string {
+	switch e {
+	case ConfigurationHideExclusionsFromLocalUsersIfYouEnableThisSettingLocal:
+		return "ConfigurationHideExclusionsFromLocalUsersIfYouEnableThisSettingLocal"
+	case ConfigurationHideExclusionsFromLocalUsersIfYouDisableOrDoNot:
+		return "ConfigurationHideExclusionsFromLocalUsersIfYouDisableOrDoNot"
+	default:
+		return fmt.Sprintf("ConfigurationHideExclusionsFromLocalUsersValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationIntelTDTEnabledValue — allowed values for the IntelTDTEnabled node.
+type ConfigurationIntelTDTEnabledValue int64
+
 const (
 	// If you do not configure this setting, the default value will be applied. The default value is
 	// controlled by Microsoft security intelligence updates. Microsoft will enable Intel TDT if there
 	// is a known threat.
-	ConfigurationIntelTDTEnabledIfYouDoNotConfigureThis int64 = 0
+	ConfigurationIntelTDTEnabledIfYouDoNotConfigureThis ConfigurationIntelTDTEnabledValue = 0
 	// If you configure this setting to enabled, Intel TDT integration will turn on.
-	ConfigurationIntelTDTEnabledIfYouConfigureThisSettingTo int64 = 1
+	ConfigurationIntelTDTEnabledIfYouConfigureThisSettingTo ConfigurationIntelTDTEnabledValue = 1
 	// If you configure this setting to disabled, Intel TDT integration will turn off.
-	ConfigurationIntelTDTEnabledIfYouConfigureThisSettingTo2 int64 = 2
+	ConfigurationIntelTDTEnabledIfYouConfigureThisSettingTo2 ConfigurationIntelTDTEnabledValue = 2
 )
 
-// ConfigurationMeteredConnectionUpdates allowed values.
+// String returns the ConfigurationIntelTDTEnabledValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationIntelTDTEnabledValue) String() string {
+	switch e {
+	case ConfigurationIntelTDTEnabledIfYouDoNotConfigureThis:
+		return "ConfigurationIntelTDTEnabledIfYouDoNotConfigureThis"
+	case ConfigurationIntelTDTEnabledIfYouConfigureThisSettingTo:
+		return "ConfigurationIntelTDTEnabledIfYouConfigureThisSettingTo"
+	case ConfigurationIntelTDTEnabledIfYouConfigureThisSettingTo2:
+		return "ConfigurationIntelTDTEnabledIfYouConfigureThisSettingTo2"
+	default:
+		return fmt.Sprintf("ConfigurationIntelTDTEnabledValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationMeteredConnectionUpdatesValue — allowed values for the MeteredConnectionUpdates node.
+type ConfigurationMeteredConnectionUpdatesValue int64
+
 const (
 	// Allowed
-	ConfigurationMeteredConnectionUpdatesAllowed int64 = 1
+	ConfigurationMeteredConnectionUpdatesAllowed ConfigurationMeteredConnectionUpdatesValue = 1
 	// Not Allowed
-	ConfigurationMeteredConnectionUpdatesNotAllowed int64 = 0
+	ConfigurationMeteredConnectionUpdatesNotAllowed ConfigurationMeteredConnectionUpdatesValue = 0
 )
 
-// ConfigurationNetworkProtectionReputationMode allowed values.
+// String returns the ConfigurationMeteredConnectionUpdatesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationMeteredConnectionUpdatesValue) String() string {
+	switch e {
+	case ConfigurationMeteredConnectionUpdatesAllowed:
+		return "ConfigurationMeteredConnectionUpdatesAllowed"
+	case ConfigurationMeteredConnectionUpdatesNotAllowed:
+		return "ConfigurationMeteredConnectionUpdatesNotAllowed"
+	default:
+		return fmt.Sprintf("ConfigurationMeteredConnectionUpdatesValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationNetworkProtectionReputationModeValue — allowed values for the NetworkProtectionReputationMode node.
+type ConfigurationNetworkProtectionReputationModeValue int64
+
 const (
 	// Use standard reputation engine
-	ConfigurationNetworkProtectionReputationModeUseStandardReputationEngine int64 = 0
+	ConfigurationNetworkProtectionReputationModeUseStandardReputationEngine ConfigurationNetworkProtectionReputationModeValue = 0
 	// Use ESP reputation engine
-	ConfigurationNetworkProtectionReputationModeUseESPReputationEngine int64 = 1
+	ConfigurationNetworkProtectionReputationModeUseESPReputationEngine ConfigurationNetworkProtectionReputationModeValue = 1
 )
 
-// ConfigurationOobeEnableRtpAndSigUpdate allowed values.
+// String returns the ConfigurationNetworkProtectionReputationModeValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationNetworkProtectionReputationModeValue) String() string {
+	switch e {
+	case ConfigurationNetworkProtectionReputationModeUseStandardReputationEngine:
+		return "ConfigurationNetworkProtectionReputationModeUseStandardReputationEngine"
+	case ConfigurationNetworkProtectionReputationModeUseESPReputationEngine:
+		return "ConfigurationNetworkProtectionReputationModeUseESPReputationEngine"
+	default:
+		return fmt.Sprintf("ConfigurationNetworkProtectionReputationModeValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationOobeEnableRtpAndSigUpdateValue — allowed values for the OobeEnableRtpAndSigUpdate node.
+type ConfigurationOobeEnableRtpAndSigUpdateValue int64
+
 const (
 	// If you enable this setting, real-time protection and Security Intelligence Updates are enabled
 	// during OOBE.
-	ConfigurationOobeEnableRtpAndSigUpdateIfYouEnableThisSettingRealTime int64 = 1
+	ConfigurationOobeEnableRtpAndSigUpdateIfYouEnableThisSettingRealTime ConfigurationOobeEnableRtpAndSigUpdateValue = 1
 	// If you either disable or do not configure this setting, real-time protection and Security
 	// Intelligence Updates during OOBE is not enabled.
-	ConfigurationOobeEnableRtpAndSigUpdateIfYouEitherDisableOrDo int64 = 0
+	ConfigurationOobeEnableRtpAndSigUpdateIfYouEitherDisableOrDo ConfigurationOobeEnableRtpAndSigUpdateValue = 0
 )
 
-// ConfigurationPassiveRemediation allowed values.
+// String returns the ConfigurationOobeEnableRtpAndSigUpdateValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationOobeEnableRtpAndSigUpdateValue) String() string {
+	switch e {
+	case ConfigurationOobeEnableRtpAndSigUpdateIfYouEnableThisSettingRealTime:
+		return "ConfigurationOobeEnableRtpAndSigUpdateIfYouEnableThisSettingRealTime"
+	case ConfigurationOobeEnableRtpAndSigUpdateIfYouEitherDisableOrDo:
+		return "ConfigurationOobeEnableRtpAndSigUpdateIfYouEitherDisableOrDo"
+	default:
+		return fmt.Sprintf("ConfigurationOobeEnableRtpAndSigUpdateValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationPassiveRemediationValue — allowed values for the PassiveRemediation node.
+type ConfigurationPassiveRemediationValue int64
+
 const (
 	// Passive Remediation is turned off (default)
-	ConfigurationPassiveRemediationPassiveRemediationIsTurnedOff int64 = 0
+	ConfigurationPassiveRemediationPassiveRemediationIsTurnedOff ConfigurationPassiveRemediationValue = 0
 	// PASSIVE_REMEDIATION_FLAG_SENSE_AUTO_REMEDIATION: Passive Remediation Sense AutoRemediation
-	ConfigurationPassiveRemediationPASSIVEREMEDIATIONFLAGSENSEAUTOREMEDIATION int64 = 1
+	ConfigurationPassiveRemediationPASSIVEREMEDIATIONFLAGSENSEAUTOREMEDIATION ConfigurationPassiveRemediationValue = 1
 	// PASSIVE_REMEDIATION_FLAG_RTP_AUDIT: Passive Remediation Realtime Protection Audit
-	ConfigurationPassiveRemediationPASSIVEREMEDIATIONFLAGRTPAUDIT int64 = 2
+	ConfigurationPassiveRemediationPASSIVEREMEDIATIONFLAGRTPAUDIT ConfigurationPassiveRemediationValue = 2
 	// PASSIVE_REMEDIATION_FLAG_RTP_REMEDIATION: Passive Remediation Realtime Protection Remediation
-	ConfigurationPassiveRemediationPASSIVEREMEDIATIONFLAGRTPREMEDIATION int64 = 4
+	ConfigurationPassiveRemediationPASSIVEREMEDIATIONFLAGRTPREMEDIATION ConfigurationPassiveRemediationValue = 4
 )
 
-// ConfigurationPerformanceModeStatus allowed values.
+// String returns the ConfigurationPassiveRemediationValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationPassiveRemediationValue) String() string {
+	switch e {
+	case ConfigurationPassiveRemediationPassiveRemediationIsTurnedOff:
+		return "ConfigurationPassiveRemediationPassiveRemediationIsTurnedOff"
+	case ConfigurationPassiveRemediationPASSIVEREMEDIATIONFLAGSENSEAUTOREMEDIATION:
+		return "ConfigurationPassiveRemediationPASSIVEREMEDIATIONFLAGSENSEAUTOREMEDIATION"
+	case ConfigurationPassiveRemediationPASSIVEREMEDIATIONFLAGRTPAUDIT:
+		return "ConfigurationPassiveRemediationPASSIVEREMEDIATIONFLAGRTPAUDIT"
+	case ConfigurationPassiveRemediationPASSIVEREMEDIATIONFLAGRTPREMEDIATION:
+		return "ConfigurationPassiveRemediationPASSIVEREMEDIATIONFLAGRTPREMEDIATION"
+	default:
+		return fmt.Sprintf("ConfigurationPassiveRemediationValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationPerformanceModeStatusValue — allowed values for the PerformanceModeStatus node.
+type ConfigurationPerformanceModeStatusValue int64
+
 const (
 	// Performance mode is enabled (default).
-	ConfigurationPerformanceModeStatusPerformanceModeIsEnabled int64 = 0
+	ConfigurationPerformanceModeStatusPerformanceModeIsEnabled ConfigurationPerformanceModeStatusValue = 0
 	// Performance mode is disabled.
-	ConfigurationPerformanceModeStatusPerformanceModeIsDisabled int64 = 1
+	ConfigurationPerformanceModeStatusPerformanceModeIsDisabled ConfigurationPerformanceModeStatusValue = 1
 )
 
-// ConfigurationPlatformUpdatesChannel allowed values.
+// String returns the ConfigurationPerformanceModeStatusValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationPerformanceModeStatusValue) String() string {
+	switch e {
+	case ConfigurationPerformanceModeStatusPerformanceModeIsEnabled:
+		return "ConfigurationPerformanceModeStatusPerformanceModeIsEnabled"
+	case ConfigurationPerformanceModeStatusPerformanceModeIsDisabled:
+		return "ConfigurationPerformanceModeStatusPerformanceModeIsDisabled"
+	default:
+		return fmt.Sprintf("ConfigurationPerformanceModeStatusValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationPlatformUpdatesChannelValue — allowed values for the PlatformUpdatesChannel node.
+type ConfigurationPlatformUpdatesChannelValue int64
+
 const (
 	// Not configured (Default). The device will stay up to date automatically during the gradual
 	// release cycle. Suitable for most devices.
-	ConfigurationPlatformUpdatesChannelNotConfigured int64 = 0
+	ConfigurationPlatformUpdatesChannelNotConfigured ConfigurationPlatformUpdatesChannelValue = 0
 	// Beta Channel: Devices set to this channel will be the first to receive new updates. Select Beta
 	// Channel to participate in identifying and reporting issues to Microsoft. Devices in the Windows
 	// Insider Program are subscribed to this channel by default. For use in (manual) test environments
 	// only and a limited number of devices.
-	ConfigurationPlatformUpdatesChannelBetaChannel int64 = 2
+	ConfigurationPlatformUpdatesChannelBetaChannel ConfigurationPlatformUpdatesChannelValue = 2
 	// Current Channel (Preview): Devices set to this channel will be offered updates earliest during
 	// the monthly gradual release cycle. Suggested for pre-production/validation environments.
-	ConfigurationPlatformUpdatesChannelCurrentChannel int64 = 3
+	ConfigurationPlatformUpdatesChannelCurrentChannel ConfigurationPlatformUpdatesChannelValue = 3
 	// Current Channel (Staged): Devices will be offered updates after the monthly gradual release
 	// cycle. Suggested to apply to a small, representative part of your production population (~10%).
-	ConfigurationPlatformUpdatesChannelCurrentChannel2 int64 = 4
+	ConfigurationPlatformUpdatesChannelCurrentChannel2 ConfigurationPlatformUpdatesChannelValue = 4
 	// Current Channel (Broad): Devices will be offered updates only after the gradual release cycle
 	// completes. Suggested to apply to a broad set of devices in your production population
 	// (~10-100%).
-	ConfigurationPlatformUpdatesChannelCurrentChannel3 int64 = 5
+	ConfigurationPlatformUpdatesChannelCurrentChannel3 ConfigurationPlatformUpdatesChannelValue = 5
 	// Critical - Time delay: Devices will be offered updates with a 48-hour delay. Suggested for
 	// critical environments only.
-	ConfigurationPlatformUpdatesChannelCriticalTimeDelay int64 = 6
+	ConfigurationPlatformUpdatesChannelCriticalTimeDelay ConfigurationPlatformUpdatesChannelValue = 6
 )
 
-// ConfigurationQuickScanIncludeExclusions allowed values.
+// String returns the ConfigurationPlatformUpdatesChannelValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationPlatformUpdatesChannelValue) String() string {
+	switch e {
+	case ConfigurationPlatformUpdatesChannelNotConfigured:
+		return "ConfigurationPlatformUpdatesChannelNotConfigured"
+	case ConfigurationPlatformUpdatesChannelBetaChannel:
+		return "ConfigurationPlatformUpdatesChannelBetaChannel"
+	case ConfigurationPlatformUpdatesChannelCurrentChannel:
+		return "ConfigurationPlatformUpdatesChannelCurrentChannel"
+	case ConfigurationPlatformUpdatesChannelCurrentChannel2:
+		return "ConfigurationPlatformUpdatesChannelCurrentChannel2"
+	case ConfigurationPlatformUpdatesChannelCurrentChannel3:
+		return "ConfigurationPlatformUpdatesChannelCurrentChannel3"
+	case ConfigurationPlatformUpdatesChannelCriticalTimeDelay:
+		return "ConfigurationPlatformUpdatesChannelCriticalTimeDelay"
+	default:
+		return fmt.Sprintf("ConfigurationPlatformUpdatesChannelValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationQuickScanIncludeExclusionsValue — allowed values for the QuickScanIncludeExclusions node.
+type ConfigurationQuickScanIncludeExclusionsValue int64
+
 const (
 	// If you set this setting to 0 or do not configure it, exclusions are not scanned during quick
 	// scans.
-	ConfigurationQuickScanIncludeExclusionsIfYouSetThisSettingTo int64 = 0
+	ConfigurationQuickScanIncludeExclusionsIfYouSetThisSettingTo ConfigurationQuickScanIncludeExclusionsValue = 0
 	// If you set this setting to 1, all files and directories that are excluded from real-time
 	// protection using contextual exclusions are scanned during a quick scan.
-	ConfigurationQuickScanIncludeExclusionsIfYouSetThisSettingTo2 int64 = 1
+	ConfigurationQuickScanIncludeExclusionsIfYouSetThisSettingTo2 ConfigurationQuickScanIncludeExclusionsValue = 1
 )
 
-// ConfigurationRandomizeScheduleTaskTimes allowed values.
+// String returns the ConfigurationQuickScanIncludeExclusionsValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationQuickScanIncludeExclusionsValue) String() string {
+	switch e {
+	case ConfigurationQuickScanIncludeExclusionsIfYouSetThisSettingTo:
+		return "ConfigurationQuickScanIncludeExclusionsIfYouSetThisSettingTo"
+	case ConfigurationQuickScanIncludeExclusionsIfYouSetThisSettingTo2:
+		return "ConfigurationQuickScanIncludeExclusionsIfYouSetThisSettingTo2"
+	default:
+		return fmt.Sprintf("ConfigurationQuickScanIncludeExclusionsValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationRandomizeScheduleTaskTimesValue — allowed values for the RandomizeScheduleTaskTimes node.
+type ConfigurationRandomizeScheduleTaskTimesValue int64
+
 const (
 	// Widen or narrow the randomization period for scheduled scans. Specify a randomization window of
 	// between 1 and 23 hours by using the setting SchedulerRandomizationTime.
-	ConfigurationRandomizeScheduleTaskTimesWidenOrNarrowTheRandomizationPeriod int64 = 1
+	ConfigurationRandomizeScheduleTaskTimesWidenOrNarrowTheRandomizationPeriod ConfigurationRandomizeScheduleTaskTimesValue = 1
 	// Scheduled tasks will not be randomized.
-	ConfigurationRandomizeScheduleTaskTimesScheduledTasksWillNotBeRandomized int64 = 0
+	ConfigurationRandomizeScheduleTaskTimesScheduledTasksWillNotBeRandomized ConfigurationRandomizeScheduleTaskTimesValue = 0
 )
 
-// ConfigurationReportingEnableDynamicSignatureDroppedEventReporting allowed values.
+// String returns the ConfigurationRandomizeScheduleTaskTimesValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationRandomizeScheduleTaskTimesValue) String() string {
+	switch e {
+	case ConfigurationRandomizeScheduleTaskTimesWidenOrNarrowTheRandomizationPeriod:
+		return "ConfigurationRandomizeScheduleTaskTimesWidenOrNarrowTheRandomizationPeriod"
+	case ConfigurationRandomizeScheduleTaskTimesScheduledTasksWillNotBeRandomized:
+		return "ConfigurationRandomizeScheduleTaskTimesScheduledTasksWillNotBeRandomized"
+	default:
+		return fmt.Sprintf("ConfigurationRandomizeScheduleTaskTimesValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationReportingEnableDynamicSignatureDroppedEventReportingValue — allowed values for the EnableDynamicSignatureDroppedEventReporting node.
+type ConfigurationReportingEnableDynamicSignatureDroppedEventReportingValue int64
+
 const (
 	// Dynamic Security intelligence update dropped events will not be reported.
-	ConfigurationReportingEnableDynamicSignatureDroppedEventReportingDynamicSecurityIntelligenceUpdateDroppedEvents int64 = 0
+	ConfigurationReportingEnableDynamicSignatureDroppedEventReportingDynamicSecurityIntelligenceUpdateDroppedEvents ConfigurationReportingEnableDynamicSignatureDroppedEventReportingValue = 0
 	// Dynamic Security intelligence update events will be reported.
-	ConfigurationReportingEnableDynamicSignatureDroppedEventReportingDynamicSecurityIntelligenceUpdateEventsWill int64 = 1
+	ConfigurationReportingEnableDynamicSignatureDroppedEventReportingDynamicSecurityIntelligenceUpdateEventsWill ConfigurationReportingEnableDynamicSignatureDroppedEventReportingValue = 1
 )
 
-// ConfigurationScanOnlyIfIdleEnabled allowed values.
+// String returns the ConfigurationReportingEnableDynamicSignatureDroppedEventReportingValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationReportingEnableDynamicSignatureDroppedEventReportingValue) String() string {
+	switch e {
+	case ConfigurationReportingEnableDynamicSignatureDroppedEventReportingDynamicSecurityIntelligenceUpdateDroppedEvents:
+		return "ConfigurationReportingEnableDynamicSignatureDroppedEventReportingDynamicSecurityIntelligenceUpdateDroppedEvents"
+	case ConfigurationReportingEnableDynamicSignatureDroppedEventReportingDynamicSecurityIntelligenceUpdateEventsWill:
+		return "ConfigurationReportingEnableDynamicSignatureDroppedEventReportingDynamicSecurityIntelligenceUpdateEventsWill"
+	default:
+		return fmt.Sprintf("ConfigurationReportingEnableDynamicSignatureDroppedEventReportingValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationScanOnlyIfIdleEnabledValue — allowed values for the ScanOnlyIfIdleEnabled node.
+type ConfigurationScanOnlyIfIdleEnabledValue int64
+
 const (
 	// Runs scheduled scans only if the system is idle.
-	ConfigurationScanOnlyIfIdleEnabledRunsScheduledScansOnlyIfThe int64 = 1
+	ConfigurationScanOnlyIfIdleEnabledRunsScheduledScansOnlyIfThe ConfigurationScanOnlyIfIdleEnabledValue = 1
 	// Runs scheduled scans regardless of whether the system is idle.
-	ConfigurationScanOnlyIfIdleEnabledRunsScheduledScansRegardlessOfWhether int64 = 0
+	ConfigurationScanOnlyIfIdleEnabledRunsScheduledScansRegardlessOfWhether ConfigurationScanOnlyIfIdleEnabledValue = 0
 )
 
-// ConfigurationScheduleSecurityIntelligenceUpdateDay allowed values.
+// String returns the ConfigurationScanOnlyIfIdleEnabledValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationScanOnlyIfIdleEnabledValue) String() string {
+	switch e {
+	case ConfigurationScanOnlyIfIdleEnabledRunsScheduledScansOnlyIfThe:
+		return "ConfigurationScanOnlyIfIdleEnabledRunsScheduledScansOnlyIfThe"
+	case ConfigurationScanOnlyIfIdleEnabledRunsScheduledScansRegardlessOfWhether:
+		return "ConfigurationScanOnlyIfIdleEnabledRunsScheduledScansRegardlessOfWhether"
+	default:
+		return fmt.Sprintf("ConfigurationScanOnlyIfIdleEnabledValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationScheduleSecurityIntelligenceUpdateDayValue — allowed values for the ScheduleSecurityIntelligenceUpdateDay node.
+type ConfigurationScheduleSecurityIntelligenceUpdateDayValue int64
+
 const (
 	// Daily
-	ConfigurationScheduleSecurityIntelligenceUpdateDayDaily int64 = 0
+	ConfigurationScheduleSecurityIntelligenceUpdateDayDaily ConfigurationScheduleSecurityIntelligenceUpdateDayValue = 0
 	// Sunday
-	ConfigurationScheduleSecurityIntelligenceUpdateDaySunday int64 = 1
+	ConfigurationScheduleSecurityIntelligenceUpdateDaySunday ConfigurationScheduleSecurityIntelligenceUpdateDayValue = 1
 	// Monday
-	ConfigurationScheduleSecurityIntelligenceUpdateDayMonday int64 = 2
+	ConfigurationScheduleSecurityIntelligenceUpdateDayMonday ConfigurationScheduleSecurityIntelligenceUpdateDayValue = 2
 	// Tuesday
-	ConfigurationScheduleSecurityIntelligenceUpdateDayTuesday int64 = 3
+	ConfigurationScheduleSecurityIntelligenceUpdateDayTuesday ConfigurationScheduleSecurityIntelligenceUpdateDayValue = 3
 	// Wednesday
-	ConfigurationScheduleSecurityIntelligenceUpdateDayWednesday int64 = 4
+	ConfigurationScheduleSecurityIntelligenceUpdateDayWednesday ConfigurationScheduleSecurityIntelligenceUpdateDayValue = 4
 	// Thursday
-	ConfigurationScheduleSecurityIntelligenceUpdateDayThursday int64 = 5
+	ConfigurationScheduleSecurityIntelligenceUpdateDayThursday ConfigurationScheduleSecurityIntelligenceUpdateDayValue = 5
 	// Friday
-	ConfigurationScheduleSecurityIntelligenceUpdateDayFriday int64 = 6
+	ConfigurationScheduleSecurityIntelligenceUpdateDayFriday ConfigurationScheduleSecurityIntelligenceUpdateDayValue = 6
 	// Saturday
-	ConfigurationScheduleSecurityIntelligenceUpdateDaySaturday int64 = 7
+	ConfigurationScheduleSecurityIntelligenceUpdateDaySaturday ConfigurationScheduleSecurityIntelligenceUpdateDayValue = 7
 	// Never
-	ConfigurationScheduleSecurityIntelligenceUpdateDayNever int64 = 8
+	ConfigurationScheduleSecurityIntelligenceUpdateDayNever ConfigurationScheduleSecurityIntelligenceUpdateDayValue = 8
 )
 
-// ConfigurationSecuredDevicesConfiguration allowed values.
+// String returns the ConfigurationScheduleSecurityIntelligenceUpdateDayValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationScheduleSecurityIntelligenceUpdateDayValue) String() string {
+	switch e {
+	case ConfigurationScheduleSecurityIntelligenceUpdateDayDaily:
+		return "ConfigurationScheduleSecurityIntelligenceUpdateDayDaily"
+	case ConfigurationScheduleSecurityIntelligenceUpdateDaySunday:
+		return "ConfigurationScheduleSecurityIntelligenceUpdateDaySunday"
+	case ConfigurationScheduleSecurityIntelligenceUpdateDayMonday:
+		return "ConfigurationScheduleSecurityIntelligenceUpdateDayMonday"
+	case ConfigurationScheduleSecurityIntelligenceUpdateDayTuesday:
+		return "ConfigurationScheduleSecurityIntelligenceUpdateDayTuesday"
+	case ConfigurationScheduleSecurityIntelligenceUpdateDayWednesday:
+		return "ConfigurationScheduleSecurityIntelligenceUpdateDayWednesday"
+	case ConfigurationScheduleSecurityIntelligenceUpdateDayThursday:
+		return "ConfigurationScheduleSecurityIntelligenceUpdateDayThursday"
+	case ConfigurationScheduleSecurityIntelligenceUpdateDayFriday:
+		return "ConfigurationScheduleSecurityIntelligenceUpdateDayFriday"
+	case ConfigurationScheduleSecurityIntelligenceUpdateDaySaturday:
+		return "ConfigurationScheduleSecurityIntelligenceUpdateDaySaturday"
+	case ConfigurationScheduleSecurityIntelligenceUpdateDayNever:
+		return "ConfigurationScheduleSecurityIntelligenceUpdateDayNever"
+	default:
+		return fmt.Sprintf("ConfigurationScheduleSecurityIntelligenceUpdateDayValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationSecuredDevicesConfigurationValue — allowed values for the SecuredDevicesConfiguration node.
+type ConfigurationSecuredDevicesConfigurationValue string
+
 const (
 	// RemovableMediaDevices
-	ConfigurationSecuredDevicesConfigurationRemovableMediaDevices = "RemovableMediaDevices"
+	ConfigurationSecuredDevicesConfigurationRemovableMediaDevices ConfigurationSecuredDevicesConfigurationValue = "RemovableMediaDevices"
 	// CdRomDevices
-	ConfigurationSecuredDevicesConfigurationCdRomDevices = "CdRomDevices"
+	ConfigurationSecuredDevicesConfigurationCdRomDevices ConfigurationSecuredDevicesConfigurationValue = "CdRomDevices"
 	// WpdDevices
-	ConfigurationSecuredDevicesConfigurationWpdDevices = "WpdDevices"
+	ConfigurationSecuredDevicesConfigurationWpdDevices ConfigurationSecuredDevicesConfigurationValue = "WpdDevices"
 	// PrinterDevices
-	ConfigurationSecuredDevicesConfigurationPrinterDevices = "PrinterDevices"
+	ConfigurationSecuredDevicesConfigurationPrinterDevices ConfigurationSecuredDevicesConfigurationValue = "PrinterDevices"
 )
 
-// ConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnly allowed values.
+// String returns the ConfigurationSecuredDevicesConfigurationValue value as a plain string.
+func (e ConfigurationSecuredDevicesConfigurationValue) String() string { return string(e) }
+
+// ConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnlyValue — allowed values for the SecurityIntelligenceLocationUpdateAtScheduledTimeOnly node.
+type ConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnlyValue int64
+
 const (
 	// If you enable this setting and configure SecurityIntelligenceLocation, updates from the
 	// configured location occur only at the previously configured scheduled update time.
-	ConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnlyIfYouEnableThisSettingAnd int64 = 1
+	ConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnlyIfYouEnableThisSettingAnd ConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnlyValue = 1
 	// If you either disable or do not configure this setting, updates occur whenever a new security
 	// intelligence update is detected at the location that is specified by
 	// SecurityIntelligenceLocation.
-	ConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnlyIfYouEitherDisableOrDo int64 = 0
+	ConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnlyIfYouEitherDisableOrDo ConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnlyValue = 0
 )
 
-// ConfigurationSecurityIntelligenceUpdatesChannel allowed values.
+// String returns the ConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnlyValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnlyValue) String() string {
+	switch e {
+	case ConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnlyIfYouEnableThisSettingAnd:
+		return "ConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnlyIfYouEnableThisSettingAnd"
+	case ConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnlyIfYouEitherDisableOrDo:
+		return "ConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnlyIfYouEitherDisableOrDo"
+	default:
+		return fmt.Sprintf("ConfigurationSecurityIntelligenceLocationUpdateAtScheduledTimeOnlyValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationSecurityIntelligenceUpdatesChannelValue — allowed values for the SecurityIntelligenceUpdatesChannel node.
+type ConfigurationSecurityIntelligenceUpdatesChannelValue int64
+
 const (
 	// Not configured (Default). Microsoft will either assign the device to Current Channel (Broad) or
 	// a beta channel early in the gradual release cycle. The channel selected by Microsoft might be
 	// one that receives updates early during the gradual release cycle, which may not be suitable for
 	// devices in a production or critical environment
-	ConfigurationSecurityIntelligenceUpdatesChannelNotConfigured int64 = 0
+	ConfigurationSecurityIntelligenceUpdatesChannelNotConfigured ConfigurationSecurityIntelligenceUpdatesChannelValue = 0
 	// Current Channel (Staged): Same as Current Channel (Broad).
-	ConfigurationSecurityIntelligenceUpdatesChannelCurrentChannel int64 = 4
+	ConfigurationSecurityIntelligenceUpdatesChannelCurrentChannel ConfigurationSecurityIntelligenceUpdatesChannelValue = 4
 	// Current Channel (Broad): Devices will be offered updates only after the gradual release cycle
 	// completes. Suggested to apply to a broad set of devices in all populations, including
 	// production.
-	ConfigurationSecurityIntelligenceUpdatesChannelCurrentChannel2 int64 = 5
+	ConfigurationSecurityIntelligenceUpdatesChannelCurrentChannel2 ConfigurationSecurityIntelligenceUpdatesChannelValue = 5
 )
 
-// ConfigurationThrottleForScheduledScanOnly allowed values.
+// String returns the ConfigurationSecurityIntelligenceUpdatesChannelValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationSecurityIntelligenceUpdatesChannelValue) String() string {
+	switch e {
+	case ConfigurationSecurityIntelligenceUpdatesChannelNotConfigured:
+		return "ConfigurationSecurityIntelligenceUpdatesChannelNotConfigured"
+	case ConfigurationSecurityIntelligenceUpdatesChannelCurrentChannel:
+		return "ConfigurationSecurityIntelligenceUpdatesChannelCurrentChannel"
+	case ConfigurationSecurityIntelligenceUpdatesChannelCurrentChannel2:
+		return "ConfigurationSecurityIntelligenceUpdatesChannelCurrentChannel2"
+	default:
+		return fmt.Sprintf("ConfigurationSecurityIntelligenceUpdatesChannelValue(%d)", int64(e))
+	}
+}
+
+// ConfigurationThrottleForScheduledScanOnlyValue — allowed values for the ThrottleForScheduledScanOnly node.
+type ConfigurationThrottleForScheduledScanOnlyValue int64
+
 const (
 	// If you enable this setting, CPU throttling will apply only to scheduled scans.
-	ConfigurationThrottleForScheduledScanOnlyIfYouEnableThisSettingCPU int64 = 1
+	ConfigurationThrottleForScheduledScanOnlyIfYouEnableThisSettingCPU ConfigurationThrottleForScheduledScanOnlyValue = 1
 	// If you disable this setting, CPU throttling will apply to scheduled and custom scans.
-	ConfigurationThrottleForScheduledScanOnlyIfYouDisableThisSettingCPU int64 = 0
+	ConfigurationThrottleForScheduledScanOnlyIfYouDisableThisSettingCPU ConfigurationThrottleForScheduledScanOnlyValue = 0
 )
 
-// Scan allowed values.
+// String returns the ConfigurationThrottleForScheduledScanOnlyValue constant's name, or its numeric form
+// when the value is not a known constant.
+func (e ConfigurationThrottleForScheduledScanOnlyValue) String() string {
+	switch e {
+	case ConfigurationThrottleForScheduledScanOnlyIfYouEnableThisSettingCPU:
+		return "ConfigurationThrottleForScheduledScanOnlyIfYouEnableThisSettingCPU"
+	case ConfigurationThrottleForScheduledScanOnlyIfYouDisableThisSettingCPU:
+		return "ConfigurationThrottleForScheduledScanOnlyIfYouDisableThisSettingCPU"
+	default:
+		return fmt.Sprintf("ConfigurationThrottleForScheduledScanOnlyValue(%d)", int64(e))
+	}
+}
+
+// ScanValue — allowed values for the Scan node.
+type ScanValue string
+
 const (
 	// quick scan
-	ScanQuickScan = "1"
+	ScanQuickScan ScanValue = "1"
 	// full scan
-	ScanFullScan = "2"
+	ScanFullScan ScanValue = "2"
 )
+
+// String returns the ScanValue value as a plain string.
+func (e ScanValue) String() string { return string(e) }

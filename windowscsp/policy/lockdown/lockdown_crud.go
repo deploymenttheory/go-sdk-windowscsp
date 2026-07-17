@@ -17,12 +17,13 @@ import (
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *LockDown) GetAllowEdgeSwipe(ctx context.Context) (int64, error) {
+func (s *LockDown) GetAllowEdgeSwipe(ctx context.Context) (AllowEdgeSwipeValue, error) {
 	v, err := s.c.Get(ctx, URIAllowEdgeSwipe)
 	if err != nil {
 		return 0, err
 	}
-	return v.Int()
+	n, err := v.Int()
+	return AllowEdgeSwipeValue(n), err
 }
 
 // CreateAllowEdgeSwipe creates ./Device/Vendor/MSFT/Policy/Config/LockDown/AllowEdgeSwipe.
@@ -34,8 +35,8 @@ func (s *LockDown) GetAllowEdgeSwipe(ctx context.Context) (int64, error) {
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *LockDown) CreateAllowEdgeSwipe(ctx context.Context, value int64) error {
-	return s.c.Add(ctx, URIAllowEdgeSwipe, client.Int(value))
+func (s *LockDown) CreateAllowEdgeSwipe(ctx context.Context, value AllowEdgeSwipeValue) error {
+	return s.c.Add(ctx, URIAllowEdgeSwipe, client.Int(int64(value)))
 }
 
 // UpdateAllowEdgeSwipe updates ./Device/Vendor/MSFT/Policy/Config/LockDown/AllowEdgeSwipe.
@@ -47,8 +48,8 @@ func (s *LockDown) CreateAllowEdgeSwipe(ctx context.Context, value int64) error 
 //
 // Default: 1.
 // Supported from OS build 10.0.14393 (CSP v4.1).
-func (s *LockDown) UpdateAllowEdgeSwipe(ctx context.Context, value int64) error {
-	return s.c.Replace(ctx, URIAllowEdgeSwipe, client.Int(value))
+func (s *LockDown) UpdateAllowEdgeSwipe(ctx context.Context, value AllowEdgeSwipeValue) error {
+	return s.c.Replace(ctx, URIAllowEdgeSwipe, client.Int(int64(value)))
 }
 
 // DeleteAllowEdgeSwipe deletes ./Device/Vendor/MSFT/Policy/Config/LockDown/AllowEdgeSwipe.
